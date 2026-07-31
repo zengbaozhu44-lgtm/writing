@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkos://schemas/api/health.schema.json",
+  "title": "HealthResponse",
+  "type": "object",
+  "required": ["apiVersion", "runtimeVersion", "source", "current"],
+  "properties": {
+    "apiVersion": { "type": "string", "const": "1.0.0" },
+    "runtimeVersion": { "type": "string" },
+    "source": { "const": "story_health.json" },
+    "current": { "type": "object" },
+    "history": { "type": "array" }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "version": "scene-review-3",
+  "role": "scene-review",
+  "mode": "weighted-quality-score",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s4",
+    "index": 4,
+    "goal": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。"
+  },
+  "scores": {
+    "dialogue": 58,
+    "conflict": 100,
+    "hook": 38,
+    "emotion": 100,
+    "style": 98,
+    "pacing": 89
+  },
+  "weights": {
+    "dialogue": 0.1,
+    "conflict": 0.2,
+    "hook": 0.25,
+    "emotion": 0.15,
+    "style": 0.1,
+    "pacing": 0.2
+  },
+  "weightedScore": 78,
+  "total": 78,
+  "genreProfile": "suspense",
+  "dimensions": [
+    "dialogue",
+    "conflict",
+    "hook",
+    "emotion",
+    "style",
+    "pacing"
+  ],
+  "verdict": "warning",
+  "pass": false,
+  "warning": true,
+  "retry": false,
+  "suggestions": [
+    "hook: 结尾留悬念或未完成动作，避免平收（38/100）",
+    "dialogue: 加强对话密度与人物声音区分，用对白推进冲突（58/100）"
+  ],
+  "blocking": false,
+  "thresholds": {
+    "pass": 80,
+    "warning": 70
+  },
+  "policy": "加权评分 · >=80 Pass · 70~79 Warning · <70 Retry · 不阻塞当前 Scene",
+  "weakest": [
+    {
+      "id": "hook",
+      "score": 38,
+      "weight": 0.25
+    },
+    {
+      "id": "dialogue",
+      "score": 58,
+      "weight": 0.1
+    },
+    {
+      "id": "pacing",
+      "score": 89,
+      "weight": 0.2
+    }
+  ],
+  "totalChars": 1044,
+  "generatedAt": "2026-07-12T09:15:04.823Z"
+}

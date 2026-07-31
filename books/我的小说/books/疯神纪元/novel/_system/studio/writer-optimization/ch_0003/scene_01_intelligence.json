@@ -1,0 +1,566 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 1,
+  "sceneType": "opening",
+  "beatMemory": {
+    "newFacts": [
+      "低头看，是一块黑色的碎片，指甲盖大小，表面有蚀刻纹路",
+      "是硬的，边缘锋利，像某种设备的壳体碎片",
+      "不是刻的，是蚀刻，线条细得像头发丝",
+      "林小雅按了确认",
+      "不是普通的塑料壳",
+      "她盯着那两个字，手指捻了捻碎片边缘——不是设备壳，是某种容器的封口盖"
+    ],
+    "characterStateChanges": [
+      "两件事，只能选一个"
+    ],
+    "emotionChanges": [
+      "surprise"
+    ],
+    "unresolvedIssues": [
+      "她往里迈了一步，鞋底踩到什么东西——咔嚓一声，像塑料壳碎裂",
+      "屏幕弹出提示框——「未识别协议",
+      "碎片插槽底部的金属弹片弹出来，像被什么烧过",
+      "者留下来，门锁死，跟脚步声的主人面对面。\n\n碎片边缘割进她指腹。一滴血渗出来，渗进那道暗褐色的痕迹里。\n\n痕迹亮了。\n\n不是反射——是自发光，像血管接通了脉搏。"
+    ],
+    "changedDimensions": [
+      "worldCognition",
+      "goalDirection",
+      "information",
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "她愣了一下——昨晚卡了三次才打开的门，今天一次就转开了"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "血还在往碎片里渗，蚀刻纹路像毛细血管一样搏动"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "那圈暗褐色的痕迹——她凑近闻了闻"
+      }
+    ],
+    "lastAfterState": "那圈暗褐色的痕迹——她凑近闻了闻",
+    "stateChangeCount": 3
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "beforeState": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展 — 局势尚未被本 Scene 改写",
+      "action": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "她愣了一下——昨晚卡了三次才打开的门，今天一次就转开了",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "低头看，是一块黑色的碎片，指甲盖大小，表面有蚀刻纹路",
+        "是硬的，边缘锋利，像某种设备的壳体碎片"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "surprise"
+      ],
+      "unresolvedIssues": [
+        "她往里迈了一步，鞋底踩到什么东西——咔嚓一声，像塑料壳碎裂"
+      ],
+      "extractedAt": "2026-07-29T07:09:40.986Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。 — 且系统 / 规则本身不会让步",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "不是刻的，是蚀刻，线条细得像头发丝"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:09:58.713Z",
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 457 字仅 1 项增量，须 ≥2（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0379746835443038
+        },
+        "microPassed": [
+          "危险"
+        ]
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "血还在往碎片里渗，蚀刻纹路像毛细血管一样搏动",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "goalDirection"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "两件事，只能选一个"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:10:02.831Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.029850746268656716
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "选择产生可见代价，局面因此改变",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择产生可见代价，局面因此改变",
+      "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "林小雅按了确认"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "屏幕弹出提示框——「未识别协议",
+        "碎片插槽底部的金属弹片弹出来，像被什么烧过"
+      ],
+      "extractedAt": "2026-07-29T07:10:07.051Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.004672897196261682
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "认知被新信息改写",
+      "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "不是普通的塑料壳",
+        "她盯着那两个字，手指捻了捻碎片边缘——不是设备壳，是某种容器的封口盖"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:10:14.668Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常"
+        ],
+        "attempts": 2,
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.009433962264150943
+        },
+        "microPassed": [
+          "新信息",
+          "Promise兑现"
+        ]
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "beforeState": "读者与 POV 对世界/局势的理解已更新",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "那圈暗褐色的痕迹——她凑近闻了闻",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger",
+        "goalDirection"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "者留下来，门锁死，跟脚步声的主人面对面。\n\n碎片边缘割进她指腹。一滴血渗出来，渗进那道暗褐色的痕迹里。\n\n痕迹亮了。\n\n不是反射——是自发光，像血管接通了脉搏。"
+      ],
+      "extractedAt": "2026-07-29T07:10:23.507Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 2,
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0379746835443038
+        },
+        "microPassed": [
+          "危险"
+        ]
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 39,
+        "relief": 0,
+        "dominant": "surprise"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 39,
+      "relief": 0
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-07-29T07:10:23.522Z",
+    "sceneIndex": 1
+  },
+  "readerSimulation": {
+    "curiosity": 70,
+    "questionCount": 4,
+    "dropRisk": 10,
+    "continueProbability": 78,
+    "sceneIndex": 1,
+    "pov": "林小雅",
+    "simulatedAt": "2026-07-29T07:10:23.524Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 74,
+    "obstacleStrength": 75,
+    "choiceLevel": 57,
+    "consequenceLevel": 42,
+    "escalationLevel": 57,
+    "informationValue": 46,
+    "hookImpact": 75,
+    "stateChangeRate": 50,
+    "hookBreakdown": {
+      "hookLevel": 75,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 95,
+      "emotionalImpact": 53,
+      "characterCost": 78,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 62,
+    "weakest": "consequenceLevel",
+    "pass": true,
+    "blocking": false,
+    "analyzedAt": "2026-07-29T07:10:23.526Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 75,
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": true,
+    "actionHookScore": 70,
+    "forcesAction": true,
+    "cognitiveUpgrade": 95,
+    "emotionalImpact": 53,
+    "characterCost": 78
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 8,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-07-29T07:10:23.526Z"
+}

@@ -1,0 +1,13 @@
+# 已发生事实 — 只增不改，禁止推测
+
+facts: []
+
+# 示例：
+# facts:
+#   - id: F001
+#     fact: 不可篡改的事实陈述
+#     chapter: 1
+#     immutable: true
+#
+# 错误示例（禁止写入）：
+# ❌ "角色A可能是幕后黑手" → 这是推测，放 hooks 或 state_board

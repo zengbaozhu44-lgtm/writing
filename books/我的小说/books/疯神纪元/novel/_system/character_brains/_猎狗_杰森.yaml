@@ -1,0 +1,51 @@
+character: _猎狗_杰森
+goals:
+  surface: 完成秩序局任务，抓捕入侵网络的林小雅
+  hidden: 在追捕过程中寻找秩序局的真相，验证自己日益增长的怀疑
+fears:
+  - 发现自己一直效忠的秩序局才是真正的邪恶
+  - 失去'只杀目标不伤无辜'的职业底线
+  - 被林异（游戏里的偶像）发现自己真实身份
+bottom_line: 不干白嫖的活——必须拿到报酬，但绝不滥杀无辜
+current_state:
+  trust_protagonist: 5
+  fear: 30
+  betrayal_probability: 15
+  suspicion: 60
+  loyalty: 70
+growth_arc: 从体制内忠犬到觉醒反叛者——追猎者发现自己追猎的猎物才是正义的一方，最终反水成为主角的情报员
+triggers:
+  发现秩序局处理无辜者的证据:
+    trust: -10
+    suspicion: 30
+  林异展示源代码编辑器的能力:
+    trust: 15
+    suspicion: -10
+  被命令伤害无辜路人:
+    trust: -20
+    suspicion: 40
+  发现林小雅并非普通罪犯:
+    trust: 10
+    suspicion: 20
+  意外得知林异就是游戏里的榜一偶像:
+    trust: 40
+    suspicion: -30
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 5
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 60
+      loyalty: 70
+    at: 2026-07-29T06:35:51.124Z
+  - chapter: 2
+    state:
+      trust_protagonist: 5
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 60
+      loyalty: 70
+    at: 2026-07-29T06:41:54.418Z
+updatedAt: 2026-07-29T07:09:35.060Z

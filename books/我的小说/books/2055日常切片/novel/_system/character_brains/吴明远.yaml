@@ -1,0 +1,84 @@
+character: 吴明远
+goals:
+  surface: 达成季度绩效指标，维护城市AI调度系统99.97%的完美运行率，获得晋升资格
+  hidden: 掩盖年轻时参与的‘社会信用实验’遗留问题，防止任何系统异常引发对他过去行为的调查
+fears:
+  - 系统出现不可控的异常，暴露自己参与的社会信用实验漏洞
+  - 被下属或上级发现自己的秘密，导致职业生涯和声誉毁于一旦
+  - 失去对高度优化系统的控制权，被迫面对不可预测的人性变量
+bottom_line: 不直接造成他人生命损失，但可以为了系统效率牺牲员工的便利、隐私或尊严
+current_state:
+  trust_protagonist: 60
+  fear: 30
+  betrayal_probability: 15
+  suspicion: 20
+  loyalty: 85
+growth_arc: 从冷酷的绩效执行者逐渐意识到系统漏洞对个体的伤害，开始反思自己的选择——但转变过程缓慢、痛苦，伴随着对权力丧失的恐惧
+triggers:
+  系统中出现无法解释的偏差报警:
+    trust: -5
+    suspicion: 15
+  有人提起‘社会信用实验’相关话题:
+    fear: 30
+    suspicion: 25
+  下属林晓提出系统存在伦理漏洞的质疑:
+    trust: -10
+    suspicion: 20
+  亲眼看到系统误判对普通人造成的实质伤害:
+    trust: 5
+    suspicion: -10
+    loyalty: -15
+  上级暗示将审查历史项目记录:
+    fear: 35
+    betrayal_probability: 20
+lastChapter: 5
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-10T02:17:48.566Z
+  - chapter: 2
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-10T02:55:50.804Z
+  - chapter: 3
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-10T03:15:22.214Z
+  - chapter: 4
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-13T06:00:33.674Z
+  - chapter: 4
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-13T06:04:21.096Z
+  - chapter: 5
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 15
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-13T08:25:32.140Z
+updatedAt: 2026-07-13T08:25:32.141Z

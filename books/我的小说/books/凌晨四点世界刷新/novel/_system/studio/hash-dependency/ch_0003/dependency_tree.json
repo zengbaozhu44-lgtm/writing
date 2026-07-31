@@ -1,0 +1,207 @@
+{
+  "version": "hash-dependency-tree-2",
+  "chapter": 3,
+  "combinedHash": "7c8d1bf6792042b6",
+  "previousCombinedHash": "7c8d1bf6792042b6",
+  "trigger": "canon-write",
+  "promptCache": {
+    "status": "invalid",
+    "brain": false,
+    "studio": false,
+    "paths": {
+      "brain": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/凌晨四点世界刷新/novel/_system/brain/prompt-cache/ch_0003",
+      "studio": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/凌晨四点世界刷新/novel/_system/studio/compiled-prompts/ch_0003"
+    }
+  },
+  "nodes": [
+    {
+      "id": "world",
+      "label": "World",
+      "hash": "cb47af4ad35f24d2",
+      "previous": "cb47af4ad35f24d2",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "01_world_bible.md",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "Character",
+      "hash": "6a1c48d316e7851d",
+      "previous": "6a1c48d316e7851d",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "03_character_bible/",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "facts",
+      "label": "Facts",
+      "hash": "e726b13d87e19dcd",
+      "previous": "e726b13d87e19dcd",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "13_facts_db.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline",
+      "hash": "66d593bb75798774",
+      "previous": "66d593bb75798774",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "11_timeline.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship",
+      "hash": "empty",
+      "previous": "empty",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "05_relationship_graph.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "knowledge",
+      "label": "Knowledge",
+      "hash": "4f53cda18c2baa0c",
+      "previous": "4f53cda18c2baa0c",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "06_knowledge_matrix.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "hash": "44136fa355b3678a",
+      "previous": "44136fa355b3678a",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "14_resource_db.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "style",
+      "label": "Style DNA",
+      "hash": "02b90834d68cc64d",
+      "previous": "02b90834d68cc64d",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "_system/style_dna.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "writing",
+      "label": "Writing Bible",
+      "hash": "caf0f130aec8efba",
+      "previous": "caf0f130aec8efba",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "02_writing_bible.md",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "storyDna",
+      "label": "Story DNA",
+      "hash": "73572bf3b75b409f",
+      "previous": "73572bf3b75b409f",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "_system/story_dna.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    }
+  ],
+  "sceneNodes": [],
+  "graph": null,
+  "edges": [
+    {
+      "from": "world",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "character",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "facts",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "timeline",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "relationship",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "knowledge",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "resources",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "style",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "writing",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "storyDna",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "prompt-cache",
+      "to": "compiled-prompt",
+      "type": "compile"
+    }
+  ],
+  "summary": {
+    "cached": 0,
+    "modified": 0,
+    "invalid": 11,
+    "regenerating": 0
+  },
+  "invalidated": false,
+  "regenerating": false,
+  "changed": [],
+  "updatedAt": "2026-07-15T06:46:11.736Z"
+}

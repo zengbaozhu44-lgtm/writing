@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkos://schemas/api/runtime-control.schema.json",
+  "title": "RuntimeControlRequest",
+  "description": "Studio 唯一允许的控制类 POST 请求",
+  "type": "object",
+  "properties": {
+    "chapter": { "type": "integer", "minimum": 1 },
+    "force": { "type": "boolean" },
+    "resume": { "type": "boolean" },
+    "snapshotId": { "type": "string" }
+  }
+}

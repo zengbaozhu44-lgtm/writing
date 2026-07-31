@@ -1,0 +1,161 @@
+{
+  "hooks": [
+    {
+      "hookId": "H001",
+      "startChapter": 0,
+      "type": "前台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "天机密卷部分",
+      "payoffTiming": "near-term",
+      "notes": "叶知秋意外获得的天机密卷第一部分，记载着修改天道规则的方法",
+      "dependsOn": [],
+      "paysOffInArc": "第一卷中段",
+      "coreHook": false,
+      "halfLifeChapters": 10,
+      "promoted": false
+    },
+    {
+      "hookId": "H002",
+      "startChapter": 0,
+      "type": "后台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "天道被操控真相",
+      "payoffTiming": "slow-burn",
+      "notes": "世界天道规则被少数人操控的真相，叶知秋父亲因此被杀",
+      "dependsOn": [],
+      "paysOffInArc": "第五卷终章",
+      "coreHook": true,
+      "halfLifeChapters": 80,
+      "promoted": true
+    },
+    {
+      "hookId": "H003",
+      "startChapter": 0,
+      "type": "前台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "李清风的真实身份",
+      "payoffTiming": "near-term",
+      "notes": "李清风是叶知秋父亲的老友，暗中保护和指导叶知秋",
+      "dependsOn": [],
+      "paysOffInArc": "第一卷末尾",
+      "coreHook": false,
+      "halfLifeChapters": 10,
+      "promoted": false
+    },
+    {
+      "hookId": "H004",
+      "startChapter": 0,
+      "type": "后台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "天机阁的秘密",
+      "payoffTiming": "mid-arc",
+      "notes": "天机阁表面维护世界秩序，实则在暗中操控天道规则",
+      "dependsOn": [
+        "H002"
+      ],
+      "paysOffInArc": "第三卷中段",
+      "coreHook": true,
+      "halfLifeChapters": 30,
+      "promoted": true
+    },
+    {
+      "hookId": "H005",
+      "startChapter": 0,
+      "type": "前台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "宗门大比的异常",
+      "payoffTiming": "immediate",
+      "notes": "宗门大比中出现异常情况，暗示有人暗中操控",
+      "dependsOn": [],
+      "paysOffInArc": "第一卷初段",
+      "coreHook": false,
+      "halfLifeChapters": 10,
+      "promoted": false
+    },
+    {
+      "hookId": "H006",
+      "startChapter": 0,
+      "type": "后台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "叶知秋家族的秘密",
+      "payoffTiming": "slow-burn",
+      "notes": "叶知秋家族掌握着部分天道规则的秘密，因此被灭门",
+      "dependsOn": [],
+      "paysOffInArc": "第四卷末尾",
+      "coreHook": true,
+      "halfLifeChapters": 80,
+      "promoted": true
+    },
+    {
+      "hookId": "H007",
+      "startChapter": 0,
+      "type": "前台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "林雪初的调查",
+      "payoffTiming": "near-term",
+      "notes": "林雪初开始调查叶知秋，两人初次交锋",
+      "dependsOn": [],
+      "paysOffInArc": "第一卷中段",
+      "coreHook": false,
+      "halfLifeChapters": 10,
+      "promoted": false
+    },
+    {
+      "hookId": "H008",
+      "startChapter": 0,
+      "type": "后台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "玄机子的真实目的",
+      "payoffTiming": "endgame",
+      "notes": "玄机子表面想要维护世界秩序，实则是为了掌控世界",
+      "dependsOn": [
+        "H002",
+        "H004"
+      ],
+      "paysOffInArc": "第五卷终章",
+      "coreHook": true,
+      "halfLifeChapters": 80,
+      "promoted": true
+    },
+    {
+      "hookId": "H009",
+      "startChapter": 0,
+      "type": "前台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "神秘黑衣人的身份",
+      "payoffTiming": "mid-arc",
+      "notes": "多次出现在叶知秋身边的神秘黑衣人，真实身份待揭晓",
+      "dependsOn": [],
+      "paysOffInArc": "第三卷初段",
+      "coreHook": false,
+      "halfLifeChapters": 30,
+      "promoted": false
+    },
+    {
+      "hookId": "H010",
+      "startChapter": 0,
+      "type": "后台",
+      "status": "deferred",
+      "lastAdvancedChapter": 0,
+      "expectedPayoff": "天道规则的漏洞",
+      "payoffTiming": "mid-arc",
+      "notes": "天道规则中存在的漏洞，是叶知秋最终能够重构天道规则的关键",
+      "dependsOn": [
+        "H002"
+      ],
+      "paysOffInArc": "第四卷中段",
+      "coreHook": true,
+      "halfLifeChapters": 30,
+      "promoted": true
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "version": "context-rank-1",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s3",
+    "index": 3,
+    "goal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2654,
+    "topK": null,
+    "usedChars": 0,
+    "selectedCount": 0,
+    "trimmedCount": 0,
+    "totalCandidates": 0
+  },
+  "topK": [],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "timeline": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "让主角林夜经历第一次世界刷新，确认其真实性，并让他意识到自己成为了唯一保留记忆的‘清醒者’，为后续的探索与反抗奠定基础。",
+    "pov": "苏晚"
+  },
+  "generatedAt": "2026-07-12T09:14:35.627Z"
+}

@@ -1,0 +1,87 @@
+{
+  "version": "adaptive-learning-1",
+  "chaptersAnalyzed": [
+    4,
+    3,
+    2,
+    1
+  ],
+  "entryCount": 32,
+  "trends": {
+    "hook": {
+      "dimension": "hook",
+      "average": 84,
+      "streak": 2,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 32
+    },
+    "conflict": {
+      "dimension": "conflict",
+      "average": 83,
+      "streak": 2,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 32
+    },
+    "dialogue": {
+      "dimension": "dialogue",
+      "average": 65,
+      "streak": 5,
+      "low": true,
+      "needsBoost": true,
+      "sampleCount": 32
+    },
+    "pacing": {
+      "dimension": "pacing",
+      "average": 79,
+      "streak": 2,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 32
+    },
+    "emotion": {
+      "dimension": "emotion",
+      "average": 84,
+      "streak": 1,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 32
+    },
+    "style": {
+      "dimension": "style",
+      "average": 74,
+      "streak": 1,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 32
+    }
+  },
+  "adjustments": {
+    "activeDimensions": [
+      "dialogue"
+    ],
+    "budgetWeights": {
+      "character": 0.05,
+      "relationship": 0.04,
+      "world": -0.04
+    },
+    "endingBudgetBoost": 0,
+    "climaxHint": false,
+    "promptLines": [
+      "**对白强化**：增加对白块与潜台词，避免说明式旁白",
+      "对白需体现人物立场差异与情绪节拍"
+    ],
+    "generatedAt": "2026-07-28T03:20:46.026Z"
+  },
+  "suggestions": [
+    {
+      "id": "adaptive_dialogue",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "dialogue",
+      "text": "dialogue 连续 5 次低于 70 分（均分 65）→ 已自动调权 Prompt"
+    }
+  ],
+  "updatedAt": "2026-07-28T03:20:46.026Z"
+}

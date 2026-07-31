@@ -1,0 +1,171 @@
+{
+  "version": "chapter-review-3",
+  "role": "chapter-review",
+  "mode": "weighted-quality-score",
+  "chapter": 1,
+  "pass": true,
+  "blocking": false,
+  "policy": "章级加权评分汇总；Retry Scene 写入 Adaptive Planner，不阻塞章完成",
+  "averageWeightedScore": 80,
+  "averageTotal": 80,
+  "sceneCount": 4,
+  "sceneReviews": [
+    {
+      "sceneIndex": 1,
+      "weightedScore": 75,
+      "total": 75,
+      "verdict": "warning",
+      "scores": {
+        "dialogue": 54,
+        "conflict": 100,
+        "hook": 30,
+        "emotion": 100,
+        "style": 95,
+        "pacing": 89
+      },
+      "weights": {
+        "dialogue": 0.1,
+        "conflict": 0.2,
+        "hook": 0.25,
+        "emotion": 0.15,
+        "style": 0.1,
+        "pacing": 0.2
+      },
+      "suggestions": [
+        "hook: 结尾留悬念或未完成动作，避免平收（30/100）",
+        "dialogue: 加强对话密度与人物声音区分，用对白推进冲突（54/100）"
+      ],
+      "weakest": [
+        {
+          "id": "hook",
+          "score": 30,
+          "weight": 0.25
+        },
+        {
+          "id": "dialogue",
+          "score": 54,
+          "weight": 0.1
+        }
+      ]
+    },
+    {
+      "sceneIndex": 2,
+      "weightedScore": 84,
+      "total": 84,
+      "verdict": "pass",
+      "scores": {
+        "dialogue": 35,
+        "conflict": 100,
+        "hook": 78,
+        "emotion": 92,
+        "style": 94,
+        "pacing": 89
+      },
+      "weights": {
+        "dialogue": 0.1,
+        "conflict": 0.2,
+        "hook": 0.25,
+        "emotion": 0.15,
+        "style": 0.1,
+        "pacing": 0.2
+      },
+      "suggestions": [
+        "dialogue: 加强对话密度与人物声音区分，用对白推进冲突（35/100）",
+        "hook: 结尾留悬念或未完成动作，避免平收（78/100）"
+      ],
+      "weakest": [
+        {
+          "id": "dialogue",
+          "score": 35,
+          "weight": 0.1
+        },
+        {
+          "id": "hook",
+          "score": 78,
+          "weight": 0.25
+        }
+      ]
+    },
+    {
+      "sceneIndex": 3,
+      "weightedScore": 84,
+      "total": 84,
+      "verdict": "pass",
+      "scores": {
+        "dialogue": 35,
+        "conflict": 100,
+        "hook": 88,
+        "emotion": 76,
+        "style": 95,
+        "pacing": 89
+      },
+      "weights": {
+        "dialogue": 0.1,
+        "conflict": 0.2,
+        "hook": 0.25,
+        "emotion": 0.15,
+        "style": 0.1,
+        "pacing": 0.2
+      },
+      "suggestions": [
+        "dialogue: 加强对话密度与人物声音区分，用对白推进冲突（35/100）",
+        "emotion: 补充情绪层次与身体反应，避免纯说明（76/100）"
+      ],
+      "weakest": [
+        {
+          "id": "dialogue",
+          "score": 35,
+          "weight": 0.1
+        },
+        {
+          "id": "emotion",
+          "score": 76,
+          "weight": 0.15
+        }
+      ]
+    },
+    {
+      "sceneIndex": 4,
+      "weightedScore": 78,
+      "total": 78,
+      "verdict": "warning",
+      "scores": {
+        "dialogue": 58,
+        "conflict": 100,
+        "hook": 38,
+        "emotion": 100,
+        "style": 98,
+        "pacing": 89
+      },
+      "weights": {
+        "dialogue": 0.1,
+        "conflict": 0.2,
+        "hook": 0.25,
+        "emotion": 0.15,
+        "style": 0.1,
+        "pacing": 0.2
+      },
+      "suggestions": [
+        "hook: 结尾留悬念或未完成动作，避免平收（38/100）",
+        "dialogue: 加强对话密度与人物声音区分，用对白推进冲突（58/100）"
+      ],
+      "weakest": [
+        {
+          "id": "hook",
+          "score": 38,
+          "weight": 0.25
+        },
+        {
+          "id": "dialogue",
+          "score": 58,
+          "weight": 0.1
+        }
+      ]
+    }
+  ],
+  "retrySceneCount": 0,
+  "warningSceneCount": 2,
+  "adaptiveHints": [],
+  "intent": {},
+  "generatedAt": "2026-07-12T09:15:04.863Z"
+}

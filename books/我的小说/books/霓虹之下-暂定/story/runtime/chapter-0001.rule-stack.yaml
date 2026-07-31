@@ -1,0 +1,73 @@
+layers:
+  - id: L1
+    name: hard_facts
+    precedence: 100
+    scope: global
+  - id: L2
+    name: author_intent
+    precedence: 80
+    scope: book
+  - id: L3
+    name: planning
+    precedence: 60
+    scope: arc
+  - id: L4
+    name: current_task
+    precedence: 70
+    scope: local
+sections:
+  hard:
+    - story_frame
+    - current_state
+    - book_rules
+    - roles
+  soft:
+    - author_intent
+    - current_focus
+    - volume_map
+  diagnostic:
+    - anti_ai_checks
+    - continuity_audit
+    - style_regression_checks
+overrideEdges:
+  - from: L4
+    to: L3
+    allowed: true
+    scope: current_chapter
+  - from: L4
+    to: L2
+    allowed: false
+    scope: current_chapter
+  - from: L4
+    to: L1
+    allowed: false
+    scope: current_chapter
+activeOverrides:
+  - from: L4
+    to: L3
+    target: chapter:1/mustAvoid
+    reason: 禁止解释设定——任何世界观规则必须通过角色的戏剧动作（如"侵蚀度上升"表现为咳出灰烬，而非旁白解释）
+  - from: L4
+    to: L3
+    target: chapter:1/mustAvoid
+    reason: 禁止平铺直叙地介绍人物关系——情感通过具体动作（递水、摘下一页纸、在对方离开后多看了三秒门）传达
+  - from: L4
+    to: L3
+    target: chapter:1/mustAvoid
+    reason: 禁止使用"突然/然后/接着/之后"等顺承词，时间线跳跃用蒙太奇硬切实现
+  - from: L4
+    to: L3
+    target: chapter:1/mustAvoid
+    reason: 禁止角色在对话中说出"你知道的，记忆一旦被抹除就无法恢复"之类的话——角色不会在对话中讨论他们视为理所当然的世界规则
+  - from: L4
+    to: L3
+    target: chapter:1/mustAvoid
+    reason: 禁止主角在前期强行"开悟"——他的所有进步必须是试错、观察、犯错、总结的缓慢循环，不允许通过顿悟直接解决谜团
+  - from: L4
+    to: L3
+    target: chapter:1/styleEmphasis
+    reason: 当前裂隙数：3处（地铁站/图书馆地下/便利店冷库）
+  - from: L4
+    to: L3
+    target: chapter:1/styleEmphasis
+    reason: 侵蚀扩散速度：每卷+15%

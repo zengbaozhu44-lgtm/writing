@@ -1,0 +1,136 @@
+{
+  "boundaries": {
+    "goal": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+    "obstacle": "局势改变",
+    "escalation": "hook",
+    "newInformation": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+    "cliffhanger": "章尾强 Hook — 未完成动作或致命追问",
+    "start": "从上一 Scene 结尾动作/对话直接延续",
+    "end": "Hook / Cliffhanger 落地，读者必须想继续读",
+    "beat": "hook",
+    "conflict": "局势改变",
+    "hook": "章尾强 Hook — 未完成动作或致命追问"
+  },
+  "continuation": {
+    "block": "## 续写锚点\n上一 Scene 尚无正文缓存：从本 Scene Start 自然进入，禁止重新介绍主角、禁止重新开篇。",
+    "anchor": null
+  },
+  "hookSpec": {
+    "type": "chapter-hook",
+    "instruction": "**章末钩子（必须）**\n- 悬念种子：章尾强 Hook — 未完成动作或致命追问\n- 结尾形式：发现 / 威胁 / 未答问题 / 异常信号（四选一或组合）\n- 禁止圆满收束、禁止解释全部设定"
+  },
+  "chapter": 5,
+  "sceneIndex": 4,
+  "chapterTitle": "当人工智能接管了大部分工作与决策，普通人的存在意义和日常生活还剩下什么？",
+  "executionPlan": {
+    "version": "scene-execution-1",
+    "sceneIndex": 4,
+    "sceneId": "ch5_s4",
+    "wordTarget": 600,
+    "beats": [
+      {
+        "order": 1,
+        "id": "goal",
+        "structuralBeat": "goal",
+        "label": "Goal（主角目标）",
+        "libraryBeat": "Discovery",
+        "libraryInstruction": "Discovery：揭示未知细节/线索，让读者意识到「还有事没说完」（可用动词感：发现、注意到、辨认出、意识到）",
+        "content": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+        "wordBudget": 90,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 2,
+        "id": "obstacle",
+        "structuralBeat": "obstacle",
+        "label": "Obstacle（阻碍）",
+        "libraryBeat": "Danger",
+        "libraryInstruction": "Danger：威胁逼近或风险落地，POV 感到不安全（可用动词感：逼近、锁定、警告、失控）",
+        "content": "局势改变",
+        "wordBudget": 120,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 3,
+        "id": "escalation",
+        "structuralBeat": "escalation",
+        "label": "Escalation（冲突升级）",
+        "libraryBeat": "Twist",
+        "libraryInstruction": "Twist：预期被违背，信息翻盘或身份/动机反转（可用动词感：却、竟然、原来、不是…而是）",
+        "content": "hook",
+        "wordBudget": 150,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 4,
+        "id": "newInformation",
+        "structuralBeat": "newInformation",
+        "label": "New Information（信息新增）",
+        "libraryBeat": "Discovery",
+        "libraryInstruction": "Discovery：揭示未知细节/线索，让读者意识到「还有事没说完」（可用动词感：发现、注意到、辨认出、意识到）",
+        "content": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "wordBudget": 150,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 5,
+        "id": "hook",
+        "structuralBeat": "hook",
+        "label": "Hook（段末悬念）",
+        "libraryBeat": "Twist",
+        "libraryInstruction": "Twist：预期被违背，信息翻盘或身份/动机反转（可用动词感：却、竟然、原来、不是…而是）",
+        "content": "章尾强 Hook — 未完成动作或致命追问 · Hook Ladder Hook4（代价/倒计时）：明确代价逼近或时间窗口关闭，选择即将失效",
+        "wordBudget": 90,
+        "hookLadder": {
+          "sceneIndex": 4,
+          "level": 4,
+          "id": "Hook4",
+          "name": "代价/倒计时",
+          "description": "明确代价逼近或时间窗口关闭，选择即将失效",
+          "example": "还有七分钟，否则女儿断药",
+          "mustExceedPrevious": true,
+          "previousLevel": 3
+        },
+        "mustCompleteBeforeNext": true
+      }
+    ],
+    "libraryTypesUsed": [
+      "Discovery",
+      "Danger",
+      "Twist"
+    ],
+    "libraryBeatCount": 3,
+    "hookLadderEntry": {
+      "sceneIndex": 4,
+      "level": 4,
+      "id": "Hook4",
+      "name": "代价/倒计时",
+      "description": "明确代价逼近或时间窗口关闭，选择即将失效",
+      "example": "还有七分钟，否则女儿断药",
+      "mustExceedPrevious": true,
+      "previousLevel": 3
+    },
+    "sceneOutcome": {
+      "success": "若达成：深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。取得可见进展（哪怕只是半步）",
+      "failure": "若失败：局势改变导致代价落地（信用/时间/关系受损）",
+      "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+    },
+    "rules": [
+      "Writer 必须按 Beat 顺序执行，完成当前 Beat 后才能进入下一 Beat",
+      "禁止在当前 Beat 之前/之后写入其他 Beat 的内容",
+      "本 Scene 使用 3 种 Library Beat：Discovery、Danger、Twist",
+      "禁止连续两个 Beat 使用同类型 Library Beat"
+    ]
+  },
+  "sceneOutcome": {
+    "success": "若达成：深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：局势改变导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "beatExecution": true,
+  "updatedAt": "2026-07-13T08:25:15.871Z"
+}

@@ -1,0 +1,358 @@
+{
+  "version": "runtime-2.0",
+  "chapter": 3,
+  "finishedAt": "2026-07-10T03:15:22.182Z",
+  "pass": true,
+  "metrics": {
+    "chapter": 3,
+    "sceneCount": 4,
+    "climaxCount": 2,
+    "conflictDensity": 5,
+    "conflictTypes": [
+      "resource",
+      "relationship",
+      "interest",
+      "rule",
+      "information"
+    ],
+    "dialogueRatio": 0.03,
+    "actionRatio": 0.09,
+    "mindRatio": 0.06,
+    "wordCount": 1525,
+    "worldProgress": 0,
+    "characterGrowth": 1,
+    "foreshadowRate": 1,
+    "rhythmPeaks": [
+      {
+        "index": 32,
+        "intensity": 3,
+        "chars": 8
+      },
+      {
+        "index": 1,
+        "intensity": 2,
+        "chars": 21
+      },
+      {
+        "index": 5,
+        "intensity": 2,
+        "chars": 37
+      },
+      {
+        "index": 6,
+        "intensity": 2,
+        "chars": 5
+      },
+      {
+        "index": 7,
+        "intensity": 2,
+        "chars": 57
+      }
+    ],
+    "infoDensity": 3.81,
+    "timestamp": "2026-07-10T03:15:22.153Z"
+  },
+  "reader": {
+    "personas": [
+      {
+        "id": "commercial",
+        "name": "商业网文读者",
+        "readingDrive": 71,
+        "scores": {
+          "hook": 85,
+          "pace": 65,
+          "payoff": 55,
+          "emotion": 82
+        },
+        "comment": "可读但需加强钩子"
+      },
+      {
+        "id": "mystery",
+        "name": "悬疑读者",
+        "readingDrive": 70,
+        "scores": {
+          "hook": 85,
+          "pace": 65,
+          "payoff": 55,
+          "emotion": 82
+        },
+        "comment": "可读但需加强钩子"
+      },
+      {
+        "id": "editor",
+        "name": "编辑",
+        "readingDrive": 72,
+        "scores": {
+          "hook": 85,
+          "pace": 65,
+          "payoff": 55,
+          "emotion": 82
+        },
+        "comment": "可读但需加强钩子"
+      }
+    ],
+    "highlights": {
+      "best": "傍晚药房，林晓手持非正式渠道获得的电子凭据，却被药房AI以“跨区处方无效”拒绝出药。他必须在15分钟内找到参加线上听证会的社区管理员获得手动授权，否则凭据失效，女儿今晚将无药可用。最终他被迫上传女儿的隐私监控视频作为“紧急凭证”，换取授权，但个人信用档案被永久标记。",
+      "boring": "对话偏少，节奏偏叙述",
+      "draggy": null,
+      "anticipated": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在“全民气候共识日”期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。"
+    },
+    "readingDrive": 71,
+    "pass": true
+  },
+  "critic": {
+    "pass": true,
+    "overall": 69,
+    "scores": {
+      "commercialRhythm": 56,
+      "sellingPoint": 78,
+      "payoff": 55,
+      "patternRepeat": 69,
+      "chapterValue": 85,
+      "retention": 83
+    },
+    "issues": [
+      {
+        "level": "warning",
+        "msg": "商业节奏偏弱，中段需加压"
+      }
+    ],
+    "plannerHints": [
+      {
+        "type": "actionSceneWeight",
+        "delta": 0.1,
+        "reason": "节奏偏慢"
+      },
+      {
+        "type": "conflictPriority",
+        "delta": 0.15,
+        "reason": "高潮不足"
+      }
+    ],
+    "comment": "可上架连载"
+  },
+  "validation": {
+    "pass": true,
+    "passed": 7,
+    "total": 7,
+    "checks": {
+      "plot_advanced": true,
+      "relationship_advanced": true,
+      "world_advanced": true,
+      "character_advanced": true,
+      "situation_changed": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在“全民气候共识日”期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+      "new_goal": true,
+      "new_problem": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在“全民气候共识日”期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。"
+    },
+    "failures": [],
+    "message": "七项推进全部成立"
+  },
+  "adaptive": {
+    "actionSceneWeight": 1.1,
+    "conflictPriority": 1.1,
+    "dialogueTarget": 0.45,
+    "hookEmphasis": 1.08,
+    "styleStrictness": 1.05,
+    "sceneCountBias": 0
+  },
+  "health": {
+    "characterConsistency": 100,
+    "foreshadowRecoveryRate": 100,
+    "climaxIntervalAvg": 1,
+    "conflictDensityAvg": 4.33,
+    "worldProgressTotal": 0,
+    "relationshipChanges": 3,
+    "resourceDeltaChapters": 3,
+    "rhythmWaveform": [
+      {
+        "chapter": 1,
+        "intensity": 61.5
+      },
+      {
+        "chapter": 2,
+        "intensity": 100.9
+      },
+      {
+        "chapter": 3,
+        "intensity": 100.9
+      }
+    ],
+    "infoDensityAvg": 6.75,
+    "criticScoreAvg": 74,
+    "dialogueRatioAvg": 0.04,
+    "overallScore": 87.25,
+    "updatedAt": "2026-07-10T03:15:22.157Z"
+  },
+  "snapshot": {
+    "id": "snap_1783653322167_92f465",
+    "parent": "snap_1783652150772_eccf44",
+    "branch": "main",
+    "chapter": 3,
+    "label": "ch_3 completed",
+    "files": {
+      "decision_history.yaml": "df9ec25fca9106ed",
+      "scene_history.yaml": "48f584af229eb114",
+      "conflict_history.yaml": "135aa8b2aa548d2f",
+      "metrics_dashboard.json": "041b083bbf15ddd2",
+      "story_health.json": "cdbb8c329d6a7771",
+      "adaptive_state.json": "11ddb75bb67fcab1",
+      "critic_history.json": "9efb5bb5f0b5f27c",
+      "novel_08_current_state.md": "77c0c54208f34872",
+      "novel_09_current_chapter.md": "d52e09ebb3741869",
+      "novel_07_state_board.md": "3f2d9f7fd1f06de8",
+      "novel_11_timeline.yaml": "d5a2c07f60db0b98",
+      "novel_13_facts_db.yaml": "473c9ad0616e6c90",
+      "novel_05_relationship_graph.yaml": "c166e6f79d145103",
+      "novel_06_knowledge_matrix.yaml": "5f099533b3d3d772",
+      "novel_12_foreshadow_db.yaml": "345bb9ece1d51489",
+      "novel_14_resource_db.yaml": "8dc5826d08ab0051",
+      "ch_0003_plan.json": "0dc33a0fcac41a69",
+      "ch_0003_scenes.json": "f2bab772b40ff4df"
+    },
+    "createdAt": "2026-07-10T03:15:22.176Z",
+    "meta": {
+      "chapter": 3,
+      "label": "ch_3 completed"
+    }
+  },
+  "nextChapterPlan": {
+    "chapter": 4,
+    "intent": {
+      "chapterIntent": "第4章：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。",
+      "mainGoal": "展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。",
+      "obstacles": [
+        "林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。",
+        "信息不完整"
+      ],
+      "sceneCount": 4,
+      "pov": "林晓",
+      "bargain": "",
+      "turningPoint": "傍晚药房，林晓手持非正式渠道获得的电子凭据，却被药房AI以“跨区处方无效”拒绝出药。他必须在15分钟内找到参加线上听证会的社区管理员获得手动授权，否则凭据失效，女儿今晚将无药可用。最终他被迫上传女儿的隐私监控视频作为“紧急凭证”，换取授权，但个人信用档案被永久标记。",
+      "ending": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在“全民气候共识日”期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+      "mustLose": "林晓的个人信用档案被添加“非常规数据使用”备注，未来可能影响他申请更高级别的工作或贷款；他上传了女儿哮喘发作的隐私监控视频，该数据被AI系统永久记录，家庭隐私进一步被系统侵蚀。",
+      "newForeshadow": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在“全民气候共识日”期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。"
+    },
+    "ready": true
+  },
+  "stateUpdate": {
+    "chapter": 3,
+    "updated": [
+      "11_timeline",
+      "13_facts_db",
+      "12_foreshadow_db",
+      "08_current_state",
+      "09_current_chapter_reset",
+      "snapshot:ch_0003",
+      "manifest"
+    ],
+    "nextChapter": 4
+  },
+  "log": [
+    {
+      "stage": "consistency",
+      "pass": true
+    },
+    {
+      "stage": "metrics",
+      "metrics": {
+        "chapter": 3,
+        "sceneCount": 4,
+        "climaxCount": 2,
+        "conflictDensity": 5,
+        "conflictTypes": [
+          "resource",
+          "relationship",
+          "interest",
+          "rule",
+          "information"
+        ],
+        "dialogueRatio": 0.03,
+        "actionRatio": 0.09,
+        "mindRatio": 0.06,
+        "wordCount": 1525,
+        "worldProgress": 0,
+        "characterGrowth": 1,
+        "foreshadowRate": 1,
+        "rhythmPeaks": [
+          {
+            "index": 32,
+            "intensity": 3,
+            "chars": 8
+          },
+          {
+            "index": 1,
+            "intensity": 2,
+            "chars": 21
+          },
+          {
+            "index": 5,
+            "intensity": 2,
+            "chars": 37
+          },
+          {
+            "index": 6,
+            "intensity": 2,
+            "chars": 5
+          },
+          {
+            "index": 7,
+            "intensity": 2,
+            "chars": 57
+          }
+        ],
+        "infoDensity": 3.81,
+        "timestamp": "2026-07-10T03:15:22.153Z"
+      }
+    },
+    {
+      "stage": "reader",
+      "pass": true,
+      "readingDrive": 71
+    },
+    {
+      "stage": "critic",
+      "pass": true,
+      "overall": 69
+    },
+    {
+      "stage": "validation",
+      "pass": true,
+      "checks": {
+        "plot_advanced": true,
+        "relationship_advanced": true,
+        "world_advanced": true,
+        "character_advanced": true,
+        "situation_changed": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在“全民气候共识日”期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+        "new_goal": true,
+        "new_problem": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在“全民气候共识日”期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。"
+      }
+    },
+    {
+      "stage": "adaptive",
+      "weights": {
+        "actionSceneWeight": 1.1,
+        "conflictPriority": 1.1,
+        "dialogueTarget": 0.45,
+        "hookEmphasis": 1.08,
+        "styleStrictness": 1.05,
+        "sceneCountBias": 0
+      }
+    },
+    {
+      "stage": "story_health",
+      "overallScore": 87.25
+    },
+    {
+      "stage": "state_update",
+      "updated": [
+        "11_timeline",
+        "13_facts_db",
+        "12_foreshadow_db",
+        "08_current_state",
+        "09_current_chapter_reset",
+        "snapshot:ch_0003",
+        "manifest"
+      ]
+    }
+  ]
+}

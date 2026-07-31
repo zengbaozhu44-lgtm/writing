@@ -1,0 +1,51 @@
+character: 葛麻
+goals:
+  surface: 赚钱，在黑市中倒卖情报和赃物，成为第九区最可靠的中间人
+  hidden: 在陈道临和林异之间走钢丝，确保自己无论哪方获胜都能全身而退，并借机建立自己的情报帝国
+fears:
+  - 被林异发现自己是双面间谍
+  - 被陈道临当作弃子
+  - 卷入超出自己掌控的规则战争，被‘格式化’
+bottom_line: 不卖假货——这是他在黑市立足的根基，也是他唯一坚守的职业操守。除此之外，一切皆可交易。
+current_state:
+  trust_protagonist: 30
+  fear: 65
+  betrayal_probability: 70
+  suspicion: 40
+  loyalty: 20
+growth_arc: 从一个只求自保的市侩商人，逐渐被卷入林异与系统的战争，在贪婪与恐惧的拉扯下，最终被迫选择立场，从‘墙头草’成长为‘情报网主’——要么成为新世界的眼睛，要么被旧世界碾碎。
+triggers:
+  林异展示源代码编辑器:
+    trust: -10
+    suspicion: 40
+  陈道临亲自施压:
+    trust: -20
+    suspicion: 10
+  玩家大规模涌入黑市:
+    trust: 15
+    suspicion: -10
+  林异给他无法拒绝的报酬（如规则级物品）:
+    trust: 25
+    suspicion: -15
+  葛麻的卧底身份暴露:
+    trust: -50
+    suspicion: 0
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 30
+      fear: 65
+      betrayal_probability: 70
+      suspicion: 40
+      loyalty: 20
+    at: 2026-07-29T06:36:24.353Z
+  - chapter: 2
+    state:
+      trust_protagonist: 30
+      fear: 65
+      betrayal_probability: 70
+      suspicion: 40
+      loyalty: 20
+    at: 2026-07-29T06:41:54.423Z
+updatedAt: 2026-07-29T07:09:35.072Z

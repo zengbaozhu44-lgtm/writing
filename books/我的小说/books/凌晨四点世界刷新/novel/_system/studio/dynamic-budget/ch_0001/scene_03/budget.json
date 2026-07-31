@@ -1,0 +1,167 @@
+{
+  "version": "dynamic-budget-3",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s3",
+    "index": 3,
+    "goal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。"
+  },
+  "totalTokens": 3000,
+  "budgetRange": {
+    "min": 1800,
+    "max": 3200,
+    "target": 3000
+  },
+  "sceneType": "climax",
+  "complexity": {
+    "characterCount": 1,
+    "conflictCount": 3,
+    "worldChange": true,
+    "dialogueDensity": 0,
+    "battleScale": 0.1,
+    "infoRelease": 0.75,
+    "score": 0.5,
+    "level": "medium"
+  },
+  "dynamic": true,
+  "tierless": true,
+  "allocation": {
+    "goal": {
+      "key": "goal",
+      "label": "Goal",
+      "weight": 0.1538,
+      "tokens": 462,
+      "pct": 15.4,
+      "color": "#5b8def"
+    },
+    "conflict": {
+      "key": "conflict",
+      "label": "Conflict",
+      "weight": 0.2564,
+      "tokens": 769,
+      "pct": 25.6,
+      "color": "#f45b69"
+    },
+    "character": {
+      "key": "character",
+      "label": "Character",
+      "weight": 0.1026,
+      "tokens": 308,
+      "pct": 10.3,
+      "color": "#3dd68c"
+    },
+    "world": {
+      "key": "world",
+      "label": "World",
+      "weight": 0.0427,
+      "tokens": 128,
+      "pct": 4.3,
+      "color": "#a78bfa"
+    },
+    "facts": {
+      "key": "facts",
+      "label": "Facts",
+      "weight": 0.1709,
+      "tokens": 513,
+      "pct": 17.1,
+      "color": "#f5a623"
+    },
+    "history": {
+      "key": "history",
+      "label": "History",
+      "weight": 0.0427,
+      "tokens": 128,
+      "pct": 4.3,
+      "color": "#56cfe1"
+    },
+    "relationship": {
+      "key": "relationship",
+      "label": "Relationship",
+      "weight": 0.1111,
+      "tokens": 333,
+      "pct": 11.1,
+      "color": "#ff6b9d"
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "weight": 0.1197,
+      "tokens": 359,
+      "pct": 12,
+      "color": "#ffd166"
+    }
+  },
+  "pie": [
+    {
+      "key": "goal",
+      "label": "Goal",
+      "tokens": 462,
+      "pct": 15.4,
+      "color": "#5b8def"
+    },
+    {
+      "key": "conflict",
+      "label": "Conflict",
+      "tokens": 769,
+      "pct": 25.6,
+      "color": "#f45b69"
+    },
+    {
+      "key": "character",
+      "label": "Character",
+      "tokens": 308,
+      "pct": 10.3,
+      "color": "#3dd68c"
+    },
+    {
+      "key": "world",
+      "label": "World",
+      "tokens": 128,
+      "pct": 4.3,
+      "color": "#a78bfa"
+    },
+    {
+      "key": "facts",
+      "label": "Facts",
+      "tokens": 513,
+      "pct": 17.1,
+      "color": "#f5a623"
+    },
+    {
+      "key": "history",
+      "label": "History",
+      "tokens": 128,
+      "pct": 4.3,
+      "color": "#56cfe1"
+    },
+    {
+      "key": "relationship",
+      "label": "Relationship",
+      "tokens": 333,
+      "pct": 11.1,
+      "color": "#ff6b9d"
+    },
+    {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "tokens": 359,
+      "pct": 12,
+      "color": "#ffd166"
+    }
+  ],
+  "limits": {
+    "goalTokens": 462,
+    "conflictTokens": 769,
+    "characterTokens": 308,
+    "worldTokens": 128,
+    "factsTokens": 513,
+    "historyTokens": 128,
+    "relationshipTokens": 333,
+    "knowledgeTokens": 359
+  },
+  "intent": {
+    "mainGoal": "让主角林夜经历第一次世界刷新，确认其真实性，并让他意识到自己成为了唯一保留记忆的‘清醒者’，为后续的探索与反抗奠定基础。",
+    "pov": "苏晚"
+  },
+  "generatedAt": "2026-07-12T09:14:35.625Z"
+}

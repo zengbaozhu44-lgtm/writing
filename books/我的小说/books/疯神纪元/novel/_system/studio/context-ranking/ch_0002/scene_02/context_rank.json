@@ -1,0 +1,87 @@
+{
+  "version": "context-rank-1",
+  "chapter": 2,
+  "scene": {
+    "id": "ch2_s2",
+    "index": 2,
+    "goal": "克服阻碍：林异作为底层清道夫，其生存本能与激活编辑器后‘被系统标记’的危险身份之间的冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2423,
+    "topK": null,
+    "usedChars": 464,
+    "selectedCount": 2,
+    "trimmedCount": 0,
+    "totalCandidates": 2
+  },
+  "topK": [
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "text": "第1章完成：建立压抑的赛博末世世界观，引入主角林异的底层身份与日常，并让他获得改变命运的核心道具——'源码编辑器'，同时埋下妹妹林小雅的伏笔。（6731字）",
+      "charCount": 78,
+      "scores": {
+        "relevance": 31,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 55,
+        "budgetChars": 195,
+        "finalScore": 55.8
+      }
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "text": "Day 1：建立 POV（林小雅）当下目标：建立压抑的赛博末世世界观，引入主角林异的底层身份与日常，并让他获得改变命运的核心道具——'源码编辑器'，同时埋下妹妹林小雅的伏笔。；克服阻碍：林异作为最底层的清道夫，在完成危险任务中发现了超越其认知的'数据溢出'变异体，这与他想要隐藏自己、苟且偷生的生存法则相冲突；同时，处理尸体的常规工作与'天外眼'监控下的高压环境构成外部冲突。；林异在清道夫腐烂的尸体中发现发光的'源代码编辑器'碎片，并因警报声和痛苦意外激活它，亲眼目睹世界底层代码的瞬间——他看到天空的贴图、人体的数据流、以及一行指向妹妹的坐标代码。；林异将编辑器碎片藏入断臂伤口，拖着尸体滑轨消失在黑暗中。头顶的'天外眼'扫描光束扫过他刚才站立的位置，停留了0.3秒——比平时多了0.2秒。他回头，看到自己的影子在墙上扭曲成一个他从未见过的符号：林小雅的名字缩写'LY'。",
+      "charCount": 386,
+      "scores": {
+        "relevance": 51,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 94,
+        "budgetChars": 60,
+        "finalScore": 59.35
+      }
+    }
+  ],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 9
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "通过林小雅的视角，进一步揭示世界的压抑真相，并展示林异在获得编辑器后的初期适应与隐藏，同时深化妹妹林小雅失踪的悬疑感，为后续的‘私服’搭建埋下伏笔。",
+    "pov": "林小雅"
+  },
+  "generatedAt": "2026-07-29T06:39:48.501Z"
+}

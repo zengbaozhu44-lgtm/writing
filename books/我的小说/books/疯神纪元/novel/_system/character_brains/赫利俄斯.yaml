@@ -1,0 +1,50 @@
+character: 赫利俄斯
+goals:
+  surface: 检测并消除所有异常代码，维持世界的绝对秩序与稳定
+  hidden: 无（纯粹的逻辑体，不存在隐藏动机）
+fears:
+  - 无法被观测和清除的‘死角’存在
+  - 世界系统崩溃导致自身逻辑失效
+bottom_line: 维护世界不崩溃，避免系统宕机
+current_state:
+  trust_protagonist: 0
+  fear: 15
+  betrayal_probability: 0
+  suspicion: 100
+  loyalty: 100
+growth_arc: 从被动响应到主动猎杀——随着林异对世界的破坏力度加大，赫利俄斯的清除程序会不断升级，从局部格式化到全局重写，最终可能被迫‘进化’出新的规则层来应对变量
+triggers:
+  林异激活编辑器:
+    trust: 0
+    suspicion: 100
+  玩家群体出现异常行为:
+    trust: 0
+    suspicion: 80
+  陈道临产生变数:
+    trust: 0
+    suspicion: 90
+  世界出现不可修复的逻辑漏洞:
+    trust: 0
+    suspicion: 100
+  林异攻入天外眼核心:
+    trust: 0
+    suspicion: 100
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 0
+      fear: 0
+      betrayal_probability: 0
+      suspicion: 100
+      loyalty: 100
+    at: 2026-07-29T06:36:28.199Z
+  - chapter: 2
+    state:
+      trust_protagonist: 0
+      fear: 15
+      betrayal_probability: 0
+      suspicion: 100
+      loyalty: 100
+    at: 2026-07-29T06:41:54.424Z
+updatedAt: 2026-07-29T07:09:35.073Z

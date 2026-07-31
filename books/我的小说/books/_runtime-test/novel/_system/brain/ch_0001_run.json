@@ -1,0 +1,334 @@
+{
+  "version": "runtime-2.0",
+  "chapter": 1,
+  "finishedAt": "2026-07-08T11:18:27.748Z",
+  "pass": true,
+  "metrics": {
+    "chapter": 1,
+    "sceneCount": 4,
+    "climaxCount": 2,
+    "conflictDensity": 2,
+    "conflictTypes": [
+      "resource",
+      "information"
+    ],
+    "dialogueRatio": 0.2,
+    "actionRatio": 0.4,
+    "mindRatio": 0,
+    "wordCount": 113,
+    "worldProgress": 0,
+    "characterGrowth": 1,
+    "foreshadowRate": 0,
+    "rhythmPeaks": [
+      {
+        "index": 3,
+        "intensity": 3,
+        "chars": 25
+      },
+      {
+        "index": 1,
+        "intensity": 2,
+        "chars": 19
+      },
+      {
+        "index": 2,
+        "intensity": 2,
+        "chars": 26
+      },
+      {
+        "index": 4,
+        "intensity": 2,
+        "chars": 28
+      },
+      {
+        "index": 5,
+        "intensity": 2,
+        "chars": 15
+      }
+    ],
+    "infoDensity": 0.28,
+    "timestamp": "2026-07-08T11:18:27.735Z"
+  },
+  "reader": {
+    "personas": [
+      {
+        "id": "commercial",
+        "name": "商业网文读者",
+        "readingDrive": 77,
+        "scores": {
+          "hook": 85,
+          "pace": 65,
+          "payoff": 78,
+          "emotion": 82
+        },
+        "comment": "会继续读"
+      },
+      {
+        "id": "mystery",
+        "name": "悬疑读者",
+        "readingDrive": 78,
+        "scores": {
+          "hook": 85,
+          "pace": 65,
+          "payoff": 78,
+          "emotion": 82
+        },
+        "comment": "会继续读"
+      },
+      {
+        "id": "editor",
+        "name": "编辑",
+        "readingDrive": 78,
+        "scores": {
+          "hook": 85,
+          "pace": 65,
+          "payoff": 78,
+          "emotion": 82
+        },
+        "comment": "会继续读"
+      }
+    ],
+    "highlights": {
+      "best": "关键抉择导致不可逆变化",
+      "boring": "篇幅偏短，高潮不足",
+      "draggy": null,
+      "anticipated": "发现型钩子"
+    },
+    "readingDrive": 78,
+    "pass": true
+  },
+  "critic": {
+    "pass": true,
+    "overall": 76,
+    "scores": {
+      "commercialRhythm": 63,
+      "sellingPoint": 68,
+      "payoff": 80,
+      "patternRepeat": 85,
+      "chapterValue": 75,
+      "retention": 86
+    },
+    "issues": [],
+    "plannerHints": [
+      {
+        "type": "actionSceneWeight",
+        "delta": 0.1,
+        "reason": "节奏偏慢"
+      }
+    ],
+    "comment": "可上架连载"
+  },
+  "validation": {
+    "pass": false,
+    "passed": 5,
+    "total": 7,
+    "checks": {
+      "plot_advanced": true,
+      "relationship_advanced": false,
+      "world_advanced": false,
+      "character_advanced": true,
+      "situation_changed": "发现型钩子",
+      "new_goal": true,
+      "new_problem": true
+    },
+    "failures": [
+      "relationship_advanced",
+      "world_advanced"
+    ],
+    "message": "未通过（2/7 失败）— 需重新规划"
+  },
+  "adaptive": {
+    "actionSceneWeight": 1,
+    "conflictPriority": 1,
+    "dialogueTarget": 0.45,
+    "hookEmphasis": 1,
+    "styleStrictness": 1,
+    "sceneCountBias": 0
+  },
+  "health": {
+    "characterConsistency": 100,
+    "foreshadowRecoveryRate": 0,
+    "climaxIntervalAvg": 1,
+    "conflictDensityAvg": 2,
+    "worldProgressTotal": 0,
+    "relationshipChanges": 1,
+    "resourceDeltaChapters": 1,
+    "rhythmWaveform": [
+      {
+        "chapter": 1,
+        "intensity": 46
+      }
+    ],
+    "infoDensityAvg": 0.28,
+    "criticScoreAvg": 76,
+    "dialogueRatioAvg": 0.2,
+    "overallScore": 63.78,
+    "updatedAt": "2026-07-08T11:18:27.736Z"
+  },
+  "snapshot": {
+    "id": "snap_1783509507742_0ecccb",
+    "parent": null,
+    "branch": "main",
+    "chapter": 1,
+    "label": "ch_1 completed",
+    "files": {
+      "decision_history.yaml": "b1a3a9ddcee9d9ab",
+      "conflict_history.yaml": "bbb73458d07b7c1a",
+      "metrics_dashboard.json": "0115e42a65163988",
+      "story_health.json": "4c4346836da03356",
+      "adaptive_state.json": "dbc62516376fdc1d",
+      "critic_history.json": "4157bb9c196b81fe",
+      "novel_08_current_state.md": "7815a0866a0af199",
+      "novel_09_current_chapter.md": "13e3b3b7fdc59569",
+      "novel_07_state_board.md": "3f2d9f7fd1f06de8",
+      "novel_11_timeline.yaml": "85e6f343887bf0a3",
+      "novel_13_facts_db.yaml": "b15967f4db5049a8",
+      "novel_05_relationship_graph.yaml": "c166e6f79d145103",
+      "novel_06_knowledge_matrix.yaml": "5f099533b3d3d772",
+      "novel_12_foreshadow_db.yaml": "b5df5a41f6691ebe",
+      "novel_14_resource_db.yaml": "8dc5826d08ab0051",
+      "ch_0001_plan.json": "f325950fc009e5b5",
+      "ch_0001_scenes.json": "5fca579104ccc30e"
+    },
+    "createdAt": "2026-07-08T11:18:27.747Z",
+    "meta": {
+      "chapter": 1,
+      "label": "ch_1 completed"
+    }
+  },
+  "nextChapterPlan": {
+    "chapter": 2,
+    "intent": {
+      "chapterIntent": "第2章：进入世界",
+      "mainGoal": "进入世界",
+      "obstacles": [
+        "资源不足或时间压力",
+        "信息不完整"
+      ],
+      "sceneCount": 4,
+      "pov": "主角",
+      "bargain": "",
+      "turningPoint": "关键抉择导致不可逆变化",
+      "ending": "发现型钩子",
+      "mustLose": "时间或身体代价",
+      "newForeshadow": ""
+    },
+    "ready": true
+  },
+  "stateUpdate": {
+    "chapter": 1,
+    "updated": [
+      "11_timeline",
+      "13_facts_db",
+      "08_current_state",
+      "09_current_chapter_reset",
+      "snapshot:ch_0001",
+      "manifest"
+    ],
+    "nextChapter": 2
+  },
+  "log": [
+    {
+      "stage": "consistency",
+      "pass": true
+    },
+    {
+      "stage": "metrics",
+      "metrics": {
+        "chapter": 1,
+        "sceneCount": 4,
+        "climaxCount": 2,
+        "conflictDensity": 2,
+        "conflictTypes": [
+          "resource",
+          "information"
+        ],
+        "dialogueRatio": 0.2,
+        "actionRatio": 0.4,
+        "mindRatio": 0,
+        "wordCount": 113,
+        "worldProgress": 0,
+        "characterGrowth": 1,
+        "foreshadowRate": 0,
+        "rhythmPeaks": [
+          {
+            "index": 3,
+            "intensity": 3,
+            "chars": 25
+          },
+          {
+            "index": 1,
+            "intensity": 2,
+            "chars": 19
+          },
+          {
+            "index": 2,
+            "intensity": 2,
+            "chars": 26
+          },
+          {
+            "index": 4,
+            "intensity": 2,
+            "chars": 28
+          },
+          {
+            "index": 5,
+            "intensity": 2,
+            "chars": 15
+          }
+        ],
+        "infoDensity": 0.28,
+        "timestamp": "2026-07-08T11:18:27.735Z"
+      }
+    },
+    {
+      "stage": "reader",
+      "pass": true,
+      "readingDrive": 78
+    },
+    {
+      "stage": "critic",
+      "pass": true,
+      "overall": 76
+    },
+    {
+      "stage": "validation",
+      "pass": false,
+      "checks": {
+        "plot_advanced": true,
+        "relationship_advanced": false,
+        "world_advanced": false,
+        "character_advanced": true,
+        "situation_changed": "发现型钩子",
+        "new_goal": true,
+        "new_problem": true
+      }
+    },
+    {
+      "stage": "adaptive",
+      "weights": {
+        "actionSceneWeight": 1,
+        "conflictPriority": 1,
+        "dialogueTarget": 0.45,
+        "hookEmphasis": 1,
+        "styleStrictness": 1,
+        "sceneCountBias": 0
+      }
+    },
+    {
+      "stage": "story_health",
+      "overallScore": 63.78
+    },
+    {
+      "stage": "state_update",
+      "updated": [
+        "11_timeline",
+        "13_facts_db",
+        "08_current_state",
+        "09_current_chapter_reset",
+        "snapshot:ch_0001",
+        "manifest"
+      ]
+    }
+  ]
+}

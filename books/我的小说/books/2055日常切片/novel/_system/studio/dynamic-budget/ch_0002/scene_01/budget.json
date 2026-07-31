@@ -1,0 +1,104 @@
+{
+  "version": "dynamic-budget-1",
+  "chapter": 2,
+  "scene": {
+    "id": "ch2_s1",
+    "index": 1,
+    "goal": "建立 POV（林晓）当下目标：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系（人情、互助积分）在缝隙中生存。"
+  },
+  "totalTokens": 2500,
+  "sceneType": "opening",
+  "dynamic": true,
+  "tierless": true,
+  "allocation": {
+    "context": {
+      "key": "context",
+      "label": "Context",
+      "weight": 0.34,
+      "tokens": 850,
+      "pct": 34,
+      "color": "#5b8def"
+    },
+    "plan": {
+      "key": "plan",
+      "label": "Scene Plan",
+      "weight": 0.16,
+      "tokens": 400,
+      "pct": 16,
+      "color": "#3dd68c"
+    },
+    "rules": {
+      "key": "rules",
+      "label": "Writing Rules",
+      "weight": 0.12,
+      "tokens": 300,
+      "pct": 12,
+      "color": "#f5a623"
+    },
+    "prompt": {
+      "key": "prompt",
+      "label": "Instructions",
+      "weight": 0.1,
+      "tokens": 250,
+      "pct": 10,
+      "color": "#a78bfa"
+    },
+    "output": {
+      "key": "output",
+      "label": "Output Reserve",
+      "weight": 0.28,
+      "tokens": 700,
+      "pct": 28,
+      "color": "#f45b69"
+    }
+  },
+  "pie": [
+    {
+      "key": "context",
+      "label": "Context",
+      "tokens": 850,
+      "pct": 34,
+      "color": "#5b8def"
+    },
+    {
+      "key": "plan",
+      "label": "Scene Plan",
+      "tokens": 400,
+      "pct": 16,
+      "color": "#3dd68c"
+    },
+    {
+      "key": "rules",
+      "label": "Writing Rules",
+      "tokens": 300,
+      "pct": 12,
+      "color": "#f5a623"
+    },
+    {
+      "key": "prompt",
+      "label": "Instructions",
+      "tokens": 250,
+      "pct": 10,
+      "color": "#a78bfa"
+    },
+    {
+      "key": "output",
+      "label": "Output Reserve",
+      "tokens": 700,
+      "pct": 28,
+      "color": "#f45b69"
+    }
+  ],
+  "limits": {
+    "contextTokens": 850,
+    "planTokens": 400,
+    "rulesTokens": 300,
+    "promptTokens": 250,
+    "outputTokens": 700
+  },
+  "intent": {
+    "mainGoal": "展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系（人情、互助积分）在缝隙中生存。",
+    "pov": "林晓"
+  },
+  "generatedAt": "2026-07-10T08:26:54.285Z"
+}

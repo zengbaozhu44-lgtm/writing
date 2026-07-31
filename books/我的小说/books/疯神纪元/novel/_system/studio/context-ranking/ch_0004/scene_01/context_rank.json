@@ -1,0 +1,130 @@
+{
+  "version": "context-rank-1",
+  "chapter": 4,
+  "scene": {
+    "id": "ch4_s1",
+    "index": 1,
+    "goal": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 3611,
+    "topK": null,
+    "usedChars": 647,
+    "selectedCount": 4,
+    "trimmedCount": 2,
+    "totalCandidates": 6
+  },
+  "topK": [
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "text": "第3章完成：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。（6409字）",
+      "charCount": 80,
+      "scores": {
+        "relevance": 100,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 74,
+        "budgetChars": 386,
+        "finalScore": 88.75
+      }
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "text": "第2章完成：通过林小雅的视角，进一步揭示世界的压抑真相，并展示林异在获得编辑器后的初期适应与隐藏，同时深化妹妹林小雅失踪的悬疑感，为后续的‘私服’搭建埋下伏笔。（6619字）",
+      "charCount": 87,
+      "scores": {
+        "relevance": 100,
+        "importance": 75,
+        "freshness": 76,
+        "narrativePriority": 74,
+        "budgetChars": 386,
+        "finalScore": 86.35
+      }
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "text": "第1章完成：建立压抑的赛博末世世界观，引入主角林异的底层身份与日常，并让他获得改变命运的核心道具——'源码编辑器'，同时埋下妹妹林小雅的伏笔。（6731字）",
+      "charCount": 78,
+      "scores": {
+        "relevance": 34,
+        "importance": 75,
+        "freshness": 64,
+        "narrativePriority": 55,
+        "budgetChars": 386,
+        "finalScore": 52.35
+      }
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "text": "Day 2：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。；克服阻碍：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。；林异在第九区地下管道废弃泵站中，利用编辑器碎片第一次尝试修改一段现实代码——修复漏水管道以换取安全住所。但修改过程引发局部数据波动，被赫利俄斯的子程序扫描并试图追溯源头。他凭借清道夫对地形的熟悉和直觉，在千钧一发之际切断临时电源，中断了追溯。；章节结尾，林异在地下管道深处，用焊死的铁皮门封住泵站入口。他疲惫地靠在墙上，从伤口中取出那枚依然微热的碎片。碎片表面突然浮现一行新的代码，不是坐标，而是一句完整的句子：‘哥哥，别再找我了。——L.Y.’ 林异瞳孔骤缩。",
+      "charCount": 402,
+      "scores": {
+        "relevance": 100,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 90,
+        "budgetChars": 212,
+        "finalScore": 81
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "finalScore": 78,
+      "trimReason": "Budget 不足",
+      "charCount": 411
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "finalScore": 56.05,
+      "trimReason": "Budget 不足",
+      "charCount": 386
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 3,
+      "totalCandidates": 3,
+      "topK": 4
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 7
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 3,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+    "pov": "林小雅"
+  },
+  "generatedAt": "2026-07-29T07:52:30.133Z"
+}

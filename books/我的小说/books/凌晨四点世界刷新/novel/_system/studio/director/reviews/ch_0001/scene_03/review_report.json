@@ -1,0 +1,71 @@
+{
+  "version": "scene-review-3",
+  "role": "scene-review",
+  "mode": "weighted-quality-score",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s3",
+    "index": 3,
+    "goal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。"
+  },
+  "scores": {
+    "dialogue": 35,
+    "conflict": 100,
+    "hook": 88,
+    "emotion": 76,
+    "style": 95,
+    "pacing": 89
+  },
+  "weights": {
+    "dialogue": 0.1,
+    "conflict": 0.2,
+    "hook": 0.25,
+    "emotion": 0.15,
+    "style": 0.1,
+    "pacing": 0.2
+  },
+  "weightedScore": 84,
+  "total": 84,
+  "genreProfile": "suspense",
+  "dimensions": [
+    "dialogue",
+    "conflict",
+    "hook",
+    "emotion",
+    "style",
+    "pacing"
+  ],
+  "verdict": "pass",
+  "pass": true,
+  "warning": false,
+  "retry": false,
+  "suggestions": [
+    "dialogue: 加强对话密度与人物声音区分，用对白推进冲突（35/100）",
+    "emotion: 补充情绪层次与身体反应，避免纯说明（76/100）"
+  ],
+  "blocking": false,
+  "thresholds": {
+    "pass": 80,
+    "warning": 70
+  },
+  "policy": "加权评分 · >=80 Pass · 70~79 Warning · <70 Retry · 不阻塞当前 Scene",
+  "weakest": [
+    {
+      "id": "dialogue",
+      "score": 35,
+      "weight": 0.1
+    },
+    {
+      "id": "emotion",
+      "score": 76,
+      "weight": 0.15
+    },
+    {
+      "id": "hook",
+      "score": 88,
+      "weight": 0.25
+    }
+  ],
+  "totalChars": 1983,
+  "generatedAt": "2026-07-12T09:14:54.279Z"
+}

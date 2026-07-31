@@ -1,0 +1,51 @@
+character: 苏夜红
+goals:
+  surface: 向天外眼复仇，推翻神权统治
+  hidden: 摆脱体内神明碎片的控制，找回真正的自我
+fears:
+  - 成为林异手中的纯粹工具，失去自我意志
+  - 体内神明碎片彻底失控，变成自己憎恨的存在
+  - 复仇成功后发现自己也成了新的压迫者
+bottom_line: 不杀凡人
+current_state:
+  trust_protagonist: 50
+  fear: 30
+  betrayal_probability: 40
+  suspicion: 60
+  loyalty: 45
+growth_arc: 从复仇驱动的狂战士，成长为有自我信念的阵营领袖——学会在力量之外，用智慧与责任守护他人
+triggers:
+  林异展示编辑器源码:
+    trust: 15
+    suspicion: -10
+  林异命令她屠杀凡人:
+    trust: -30
+    suspicion: 40
+  遇到同被神明碎片折磨的受害者:
+    trust: 10
+    suspicion: 5
+  玩家集体称呼她为'世界BOSS':
+    trust: -5
+    suspicion: 20
+  林异主动帮她压制体内碎片:
+    trust: 25
+    suspicion: -15
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 50
+      fear: 30
+      betrayal_probability: 40
+      suspicion: 60
+      loyalty: 45
+    at: 2026-07-29T06:36:12.298Z
+  - chapter: 2
+    state:
+      trust_protagonist: 50
+      fear: 30
+      betrayal_probability: 40
+      suspicion: 60
+      loyalty: 45
+    at: 2026-07-29T06:41:54.422Z
+updatedAt: 2026-07-29T07:09:35.067Z

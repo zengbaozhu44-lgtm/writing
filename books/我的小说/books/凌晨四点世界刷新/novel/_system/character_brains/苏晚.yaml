@@ -1,0 +1,78 @@
+character: 苏晚
+goals:
+  surface: 完成每天的工作任务，维持日常生活的稳定与秩序
+  hidden: 潜意识中试图‘抓住’陈默在循环中的变化，验证自己对‘异常’的直觉，最终找到自己在系统中的真实位置
+fears:
+  - 害怕混乱与失序，因为秩序是她安全感的来源
+  - 恐惧自己可能不是‘真实的’，而是系统的一部分
+  - 害怕陈默消失或变得陌生，因为他是她唯一感到‘不同’的存在
+bottom_line: 不会主动背叛系统，因为系统是她信仰的基石；但会在规则边缘帮助陈默，因为他看起来‘需要帮助’
+current_state:
+  trust_protagonist: 45
+  fear: 70
+  betrayal_probability: 25
+  suspicion: 85
+  loyalty: 80
+growth_arc: 从完全信任系统的工具人，到开始质疑自己的认知，最终成为陈默与伊甸之间的桥梁，代表‘普通人’在系统中的困境与觉醒
+triggers:
+  陈默在循环中主动透露刷新记忆:
+    trust: 15
+    suspicion: 20
+  苏晚发现自己画画时出现不属于自己的记忆片段:
+    trust: -10
+    suspicion: 30
+  系统出现明显异常（如时间错乱、他人行为矛盾）:
+    trust: -5
+    suspicion: 25
+  陈默陷入危险，需要她违反规则帮助:
+    trust: 20
+    suspicion: -10
+  伊甸直接干涉她的意识或记忆:
+    trust: -30
+    suspicion: 50
+  看到陈默展示‘刷新’前的证据（如日记、照片）:
+    trust: 25
+    suspicion: 15
+lastChapter: 4
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 65
+      fear: 55
+      betrayal_probability: 10
+      suspicion: 55
+      loyalty: 80
+    at: 2026-07-12T09:15:15.343Z
+  - chapter: 2
+    state:
+      trust_protagonist: 65
+      fear: 70
+      betrayal_probability: 10
+      suspicion: 55
+      loyalty: 80
+    at: 2026-07-13T08:32:10.036Z
+  - chapter: 2
+    state:
+      trust_protagonist: 45
+      fear: 70
+      betrayal_probability: 25
+      suspicion: 85
+      loyalty: 80
+    at: 2026-07-15T06:11:48.235Z
+  - chapter: 3
+    state:
+      trust_protagonist: 45
+      fear: 70
+      betrayal_probability: 25
+      suspicion: 85
+      loyalty: 80
+    at: 2026-07-15T06:36:41.282Z
+  - chapter: 4
+    state:
+      trust_protagonist: 45
+      fear: 70
+      betrayal_probability: 25
+      suspicion: 85
+      loyalty: 80
+    at: 2026-07-15T06:49:54.013Z
+updatedAt: 2026-07-15T06:49:54.013Z

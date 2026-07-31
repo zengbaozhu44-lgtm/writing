@@ -1,0 +1,136 @@
+{
+  "boundaries": {
+    "goal": "建立 POV（林晓）当下目标：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。",
+    "obstacle": "林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。",
+    "escalation": "situation",
+    "newInformation": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+    "cliffhanger": "Scene 尾留悬念 — 禁止平收总结",
+    "start": "进入当前局面，300 字内出现事件或异常信号",
+    "end": "Goal 明确 + Obstacle 出现 + 第一条 New Information 落地",
+    "beat": "situation",
+    "conflict": "林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。",
+    "hook": "Scene 尾留悬念 — 禁止平收总结"
+  },
+  "continuation": {
+    "block": "## 续写锚点\n本章第一个 Scene：章首 300 字内须出现事件或异常信号。\n仍禁止冗长背景综述与重复性主角介绍。",
+    "anchor": null
+  },
+  "hookSpec": {
+    "type": "scene-hook",
+    "instruction": "**Scene 微钩子（段末）**\n- 用半句未说完、突然打断、异常细节、或角色未完成的动作收尾\n- 不要写下一 Scene 的内容"
+  },
+  "chapter": 4,
+  "sceneIndex": 1,
+  "chapterTitle": "当人工智能接管了大部分工作与决策，普通人的存在意义和日常生活还剩下什么？",
+  "executionPlan": {
+    "version": "scene-execution-1",
+    "sceneIndex": 1,
+    "sceneId": "ch4_s1",
+    "wordTarget": 800,
+    "beats": [
+      {
+        "order": 1,
+        "id": "goal",
+        "structuralBeat": "goal",
+        "label": "Goal（主角目标）",
+        "libraryBeat": "Discovery",
+        "libraryInstruction": "Discovery：揭示未知细节/线索，让读者意识到「还有事没说完」（可用动词感：发现、注意到、辨认出、意识到）",
+        "content": "建立 POV（林晓）当下目标：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。",
+        "wordBudget": 120,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 2,
+        "id": "obstacle",
+        "structuralBeat": "obstacle",
+        "label": "Obstacle（阻碍）",
+        "libraryBeat": "Danger",
+        "libraryInstruction": "Danger：威胁逼近或风险落地，POV 感到不安全（可用动词感：逼近、锁定、警告、失控）",
+        "content": "林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。",
+        "wordBudget": 160,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 3,
+        "id": "escalation",
+        "structuralBeat": "escalation",
+        "label": "Escalation（冲突升级）",
+        "libraryBeat": "Twist",
+        "libraryInstruction": "Twist：预期被违背，信息翻盘或身份/动机反转（可用动词感：却、竟然、原来、不是…而是）",
+        "content": "situation",
+        "wordBudget": 200,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 4,
+        "id": "newInformation",
+        "structuralBeat": "newInformation",
+        "label": "New Information（信息新增）",
+        "libraryBeat": "Discovery",
+        "libraryInstruction": "Discovery：揭示未知细节/线索，让读者意识到「还有事没说完」（可用动词感：发现、注意到、辨认出、意识到）",
+        "content": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "wordBudget": 200,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 5,
+        "id": "hook",
+        "structuralBeat": "hook",
+        "label": "Hook（段末悬念）",
+        "libraryBeat": "Twist",
+        "libraryInstruction": "Twist：预期被违背，信息翻盘或身份/动机反转（可用动词感：却、竟然、原来、不是…而是）",
+        "content": "Scene 尾留悬念 — 禁止平收总结 · Hook Ladder Hook1（感官异常）：POV 感知到不对劲的细节（声音/画面/身体反应），尚无法解释",
+        "wordBudget": 120,
+        "hookLadder": {
+          "sceneIndex": 1,
+          "level": 1,
+          "id": "Hook1",
+          "name": "感官异常",
+          "description": "POV 感知到不对劲的细节（声音/画面/身体反应），尚无法解释",
+          "example": "工具箱自己动了、倒计时多了一秒",
+          "mustExceedPrevious": false,
+          "previousLevel": 0
+        },
+        "mustCompleteBeforeNext": true
+      }
+    ],
+    "libraryTypesUsed": [
+      "Discovery",
+      "Danger",
+      "Twist"
+    ],
+    "libraryBeatCount": 3,
+    "hookLadderEntry": {
+      "sceneIndex": 1,
+      "level": 1,
+      "id": "Hook1",
+      "name": "感官异常",
+      "description": "POV 感知到不对劲的细节（声音/画面/身体反应），尚无法解释",
+      "example": "工具箱自己动了、倒计时多了一秒",
+      "mustExceedPrevious": false,
+      "previousLevel": 0
+    },
+    "sceneOutcome": {
+      "success": "若达成：建立 POV（林晓）当下目标：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。取得可见进展（哪怕只是半步）",
+      "failure": "若失败：林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。导致代价落地（信用/时间/关系受损）",
+      "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+    },
+    "rules": [
+      "Writer 必须按 Beat 顺序执行，完成当前 Beat 后才能进入下一 Beat",
+      "禁止在当前 Beat 之前/之后写入其他 Beat 的内容",
+      "本 Scene 使用 3 种 Library Beat：Discovery、Danger、Twist",
+      "禁止连续两个 Beat 使用同类型 Library Beat"
+    ]
+  },
+  "sceneOutcome": {
+    "success": "若达成：建立 POV（林晓）当下目标：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "beatExecution": true,
+  "updatedAt": "2026-07-13T06:03:13.219Z"
+}

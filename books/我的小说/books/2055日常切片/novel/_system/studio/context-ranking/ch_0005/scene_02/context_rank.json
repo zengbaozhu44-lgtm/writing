@@ -1,0 +1,151 @@
+{
+  "version": "context-rank-1",
+  "chapter": 5,
+  "scene": {
+    "id": "ch5_s2",
+    "index": 2,
+    "goal": "克服阻碍：林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2330,
+    "topK": null,
+    "usedChars": 645,
+    "selectedCount": 3,
+    "trimmedCount": 7,
+    "totalCandidates": 10
+  },
+  "topK": [
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "text": "第4章完成：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。（3978字）",
+      "charCount": 91,
+      "scores": {
+        "relevance": 76,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 51,
+        "budgetChars": 197,
+        "finalScore": 75.65
+      }
+    },
+    {
+      "id": "facts:4",
+      "source": "facts",
+      "text": "第4章完成：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。（4039字）",
+      "charCount": 91,
+      "scores": {
+        "relevance": 76,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 51,
+        "budgetChars": 197,
+        "finalScore": 75.65
+      }
+    },
+    {
+      "id": "timeline:3",
+      "source": "timeline",
+      "text": "Day 3：建立 POV（林晓）当下目标：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。；克服阻碍：林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。；傍晚药房，林晓手持非正式渠道获得的电子凭据，却被药房AI以‘跨区处方无效’拒绝出药。他必须在15分钟内找到参加线上听证会的社区管理员获得手动授权，否则凭据失效，女儿今晚将无药可用。最终他被迫上传女儿的隐私监控视频作为‘紧急凭证’，换取授权，但个人信用档案被永久标记。；深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+      "charCount": 463,
+      "scores": {
+        "relevance": 100,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 58,
+        "budgetChars": 141,
+        "finalScore": 77.8
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "finalScore": 73.25,
+      "trimReason": "超过 TopK",
+      "charCount": 91
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "finalScore": 69.05,
+      "trimReason": "超过 TopK",
+      "charCount": 100
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 41.95,
+      "trimReason": "超过 TopK",
+      "charCount": 83
+    },
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "finalScore": 77.8,
+      "trimReason": "Budget 不足",
+      "charCount": 463
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "finalScore": 74.8,
+      "trimReason": "Budget 不足",
+      "charCount": 463
+    },
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "finalScore": 71.8,
+      "trimReason": "Budget 不足",
+      "charCount": 472
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "finalScore": 36.3,
+      "trimReason": "Budget 不足",
+      "charCount": 374
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 2,
+      "totalCandidates": 5,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 9
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 5,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。",
+    "pov": "林晓"
+  },
+  "generatedAt": "2026-07-13T08:24:34.899Z"
+}

@@ -1,0 +1,1065 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 1,
+    "sceneType": "opening",
+    "beatMemory": {
+      "newFacts": [
+        "那是他三年前亲手封存的服务器核心，用来镇压邪神低语的备用节点",
+        "一个声音从阵列深处传来，语调平直，带着数据流特有的杂音：“测试员S-07，存活确认",
+        "林砚用左手接住一块残片，边缘烫得手套冒烟——上面刻着一串符文，不是人类的手笔"
+      ],
+      "characterStateChanges": [
+        "左臂抬起来，指尖碰到舱门边缘——整条手臂开始不受控地颤抖，三根手指的伺服电机发出尖啸"
+      ],
+      "emotionChanges": [
+        "fear",
+        "relief"
+      ],
+      "unresolvedIssues": [
+        "那艘被邪神污染的运输舰正在坠落，舰艏的符文阵纹路已经烧成焦黑，但货舱里有什么东西还在亮——是他三年前埋在核心区的备用神魂容器，连同那套完整的义体躯壳",
+        "发声器。右臂的焦壳裂开一道缝，露出底下的骨架，金属已经烧成暗红色。门缝里的空间不大，一张操作台，三面全是屏幕。其中一个亮着。\n\n屏幕上是倒计时。不是服务器重启的"
+      ],
+      "changedDimensions": [
+        "relationship",
+        "worldCognition",
+        "danger"
+      ],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Discovery",
+          "stateChange": true,
+          "afterState": "林砚的右臂卡在坍塌的承重墙里，机械指节从腕部裂到肘弯，润滑油混着血滴在碎砖上，发出细密的声响"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Danger",
+          "stateChange": true,
+          "afterState": "他听见自己胸腔里某根承重梁似的骨头发出同样的碎裂声——对方踏进废墟的每一步，都踩在他三年布下的防御阵线上，阵纹一路熄灭过去，像被人拔掉呼吸管的ICU病房"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Decision",
+          "stateChange": false,
+          "afterState": "POV 已做出不可逆选择，后果即将落地"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Danger",
+          "stateChange": false,
+          "afterState": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Discovery",
+          "stateChange": true,
+          "afterState": "林砚把身体压向门缝——左肩撞开一道口子，里面不是驾驶舱"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Twist",
+          "stateChange": true,
+          "afterState": "林砚用左手接住一块残片，边缘烫得手套冒烟——上面刻着一串符文，不是人类的手笔"
+        }
+      ],
+      "lastAfterState": "林砚用左手接住一块残片，边缘烫得手套冒烟——上面刻着一串符文，不是人类的手笔",
+      "stateChangeCount": 4
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "beforeState": "林砚当前目标：进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中 — 局势尚未被本 Scene 改写",
+        "action": "进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "林砚的右臂卡在坍塌的承重墙里，机械指节从腕部裂到肘弯，润滑油混着血滴在碎砖上，发出细密的声响",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "relationship",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-31T07:01:56.816Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": "disabled",
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "林砚当前目标：进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中 — 局",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "林砚肉身与神魂双重崩毁，濒死弥留之际意识被邪神低语侵蚀，同时青穹重工叛军围攻，生存与认知的双重绝境迫使他必须在崩溃中抓住唯一的觉醒契机。 — 且局面本身不会让步",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "他听见自己胸腔里某根承重梁似的骨头发出同样的碎裂声——对方踏进废墟的每一步，都踩在他三年布下的防御阵线上，阵纹一路熄灭过去，像被人拔掉呼吸管的ICU病房",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-31T07:02:09.617Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": "disabled",
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 163 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.025
+          },
+          "microPassed": [
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "那艘被邪神污染的运输舰正在坠落，舰艏的符文阵纹路已经烧成焦黑，但货舱里有什么东西还在亮——是他三年前埋在核心区的备用神魂容器，连同那套完整的义体躯壳"
+        ],
+        "extractedAt": "2026-07-31T07:02:20.958Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": "disabled",
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Language Variation：与近期表达重复，换动词/句式",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.1419753086419753
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "选择产生可见代价，局面因此改变",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择产生可见代价，局面因此改变",
+        "afterState": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [
+          "左臂抬起来，指尖碰到舱门边缘——整条手臂开始不受控地颤抖，三根手指的伺服电机发出尖啸"
+        ],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-31T07:02:33.148Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": "disabled",
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 168 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.01818181818181818
+          },
+          "microPassed": [
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "认知被新信息改写",
+        "afterState": "林砚把身体压向门缝——左肩撞开一道口子，里面不是驾驶舱",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "那是他三年前亲手封存的服务器核心，用来镇压邪神低语的备用节点",
+          "一个声音从阵列深处传来，语调平直，带着数据流特有的杂音：“测试员S-07，存活确认"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "relief"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-31T07:02:37.686Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": "disabled",
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+          "storyAfter": "危险升级：退路/安全态已失效",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.02531645569620253
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "beforeState": "读者与 POV 对世界/局势的理解已更新",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林砚用左手接住一块残片，边缘烫得手套冒烟——上面刻着一串符文，不是人类的手笔",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "林砚用左手接住一块残片，边缘烫得手套冒烟——上面刻着一串符文，不是人类的手笔"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "发声器。右臂的焦壳裂开一道缝，露出底下的骨架，金属已经烧成暗红色。门缝里的空间不大，一张操作台，三面全是屏幕。其中一个亮着。\n\n屏幕上是倒计时。不是服务器重启的"
+        ],
+        "extractedAt": "2026-07-31T07:02:51.509Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": "disabled",
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [],
+          "issues": [
+            "CONSISTENCY: 场景跳跃 浮空城坠落区 → 拘束操作台 无过渡，禁止重启开场"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动",
+            "CONSISTENCY: 场景跳跃 浮空城坠落区 → 拘束操作台 无过渡，禁止重启开场"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "危险升级：退路/安全态已失效",
+          "storyAfter": "林砚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.011428571428571429
+          },
+          "microPassed": [
+            "危险"
+          ],
+          "continuityPass": false
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 39,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 36,
+          "dominant": "relief"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        }
+      ],
+      "scenePeak": {
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 36
+      },
+      "emotionalVariance": 39,
+      "hasFluctuation": true,
+      "generatedAt": "2026-07-31T07:02:51.522Z",
+      "sceneIndex": 1
+    },
+    "readerSimulation": {
+      "curiosity": 62,
+      "questionCount": 1,
+      "dropRisk": 30,
+      "continueProbability": 61,
+      "sceneIndex": 1,
+      "pov": "林砚",
+      "simulatedAt": "2026-07-31T07:02:51.525Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 54,
+      "obstacleStrength": 41,
+      "choiceLevel": 39,
+      "consequenceLevel": 39,
+      "escalationLevel": 39,
+      "informationValue": 49,
+      "hookImpact": 70,
+      "stateChangeRate": 67,
+      "hookBreakdown": {
+        "hookLevel": 70,
+        "hookOutput": {
+          "type": "Truth",
+          "readerQuestion": "如果选这条路，还能回头吗？",
+          "cost": "不可逆 — 无论选哪条路都有全局性代价",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 4,
+          "stage": "Truth",
+          "name": "真相",
+          "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+          "example": "世界重置是人为控制",
+          "hookKind": "ActionHook",
+          "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": true,
+        "cognitiveUpgrade": 95,
+        "emotionalImpact": 53,
+        "characterCost": 63,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 49,
+      "weakest": "choiceLevel",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-07-31T07:02:51.526Z",
+      "hookOutput": {
+        "type": "Truth",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 4,
+        "stage": "Truth",
+        "name": "真相",
+        "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+        "example": "世界重置是人为控制",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": false,
+        "valid": true,
+        "promise": "[object Object]",
+        "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+        "confidence": 0,
+        "signals": {
+          "payoffHit": false,
+          "promiseEcho": false
+        }
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 70,
+      "hookOutput": {
+        "type": "Truth",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 4,
+        "stage": "Truth",
+        "name": "真相",
+        "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+        "example": "世界重置是人为控制",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "actionHookScore": 70,
+      "forcesAction": true,
+      "cognitiveUpgrade": 95,
+      "emotionalImpact": 53,
+      "characterCost": 63
+    },
+    "reward": {
+      "valid": true,
+      "requiresPromise": false,
+      "promiseId": "fs_0",
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "promiseSource": "foreshadow",
+      "promiseCategory": "foreshadow",
+      "promiseType": "medium",
+      "promiseImportance": 70,
+      "expectedChapter": 6,
+      "readerExpectation": 75,
+      "foreshadowId": "fs_0",
+      "description": "兑现期待：选择产生可见代价，局面因此改变",
+      "deliveryBeat": "newInformation",
+      "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+      "status": "pending"
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    },
+    "blocking": false,
+    "generatedAt": "2026-07-31T07:02:51.526Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 54,
+    "obstacleStrength": 41,
+    "choiceLevel": 39,
+    "consequenceLevel": 39,
+    "escalationLevel": 39,
+    "informationValue": 49,
+    "hookImpact": 70,
+    "stateChangeRate": 67,
+    "hookBreakdown": {
+      "hookLevel": 70,
+      "hookOutput": {
+        "type": "Truth",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 4,
+        "stage": "Truth",
+        "name": "真相",
+        "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+        "example": "世界重置是人为控制",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 95,
+      "emotionalImpact": 53,
+      "characterCost": 63,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 49,
+    "weakest": "choiceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-07-31T07:02:51.526Z",
+    "hookOutput": {
+      "type": "Truth",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 4,
+      "stage": "Truth",
+      "name": "真相",
+      "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+      "example": "世界重置是人为控制",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 62,
+    "questionCount": 1,
+    "dropRisk": 30,
+    "continueProbability": 61,
+    "sceneIndex": 1,
+    "pov": "林砚",
+    "simulatedAt": "2026-07-31T07:02:51.525Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 36,
+        "dominant": "relief"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 36
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-07-31T07:02:51.522Z",
+    "sceneIndex": 1
+  },
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s1",
+    "index": 1,
+    "goal": "进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 17,
+        "end": 64,
+        "chars": 47
+      },
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 64,
+        "end": 109,
+        "chars": 45
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 736,
+        "end": 1254,
+        "chars": 500
+      },
+      "edits": []
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 90,
+    "commercialPleasure": 100,
+    "styleConsistency": 89,
+    "characterConsistency": 100,
+    "infoRelease": 92
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 90,
+    "commercialPleasure": 100,
+    "styleConsistency": 89,
+    "characterConsistency": 100,
+    "infoRelease": 92
+  },
+  "total": 95,
+  "totalBefore": 95,
+  "weakest": [
+    {
+      "id": "styleConsistency",
+      "score": 89
+    },
+    {
+      "id": "hook",
+      "score": 90
+    },
+    {
+      "id": "infoRelease",
+      "score": 92
+    }
+  ],
+  "polish": {
+    "changed": false,
+    "mode": "none",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 17,
+          "end": 64,
+          "chars": 47
+        },
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 0,
+        "scoreAfter": 0,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 64,
+          "end": 109,
+          "chars": 45
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 90,
+        "scoreAfter": 90,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 736,
+          "end": 1254,
+          "chars": 500
+        },
+        "edits": []
+      }
+    },
+    "edits": []
+  },
+  "diff": {
+    "prefixUnchanged": 1254,
+    "draftChars": 1216,
+    "polishedChars": 1216,
+    "changed": false
+  },
+  "diffLines": [],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-07-31T07:02:51.552Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 100,
+      "hook": 90,
+      "commercialPleasure": 100,
+      "styleConsistency": 89,
+      "characterConsistency": 100,
+      "infoRelease": 92
+    },
+    "total": 95,
+    "weak": [
+      {
+        "id": "styleConsistency",
+        "score": 89
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "infoRelease",
+        "score": 92
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "climax",
+        "score": 100
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 100
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "styleConsistency",
+        "score": 89
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "infoRelease",
+        "score": 92
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 105,
+        "actionHits": 8,
+        "dialogHits": 0,
+        "variety": 3
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 0,
+        "len": 1216
+      },
+      "styleConsistency": {
+        "shortRatio": 60,
+        "expoRun": 105
+      },
+      "characterConsistency": {
+        "pov": "林砚",
+        "present": [
+          "林砚"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 53,
+        "stagger": true
+      }
+    },
+    "chapter": 1,
+    "sceneIndex": 1,
+    "totalChars": 1216
+  }
+}

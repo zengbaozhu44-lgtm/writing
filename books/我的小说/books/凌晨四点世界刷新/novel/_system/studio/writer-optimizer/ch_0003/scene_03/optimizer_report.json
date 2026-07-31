@@ -1,0 +1,1477 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 3,
+    "sceneType": "climax",
+    "beatMemory": {
+      "newFacts": [
+        "连回收站都是空的",
+        "“三个是对的",
+        "“你说的刷新，是从什么时候开始的"
+      ],
+      "characterStateChanges": [
+        "病房的灯管开始闪烁",
+        "苏晚站在门框边，看见他把手机屏幕转向自己",
+        "“你说的刷新，是从什么时候开始的"
+      ],
+      "emotionChanges": [
+        "surprise"
+      ],
+      "unresolvedIssues": [
+        "他什么都没说",
+        "“你说的刷新，是从什么时候开始的",
+        "“你在我病房里留了什么",
+        "镜面上什么都没有——干净的，反着惨白的灯光"
+      ],
+      "changedDimensions": [
+        "resource",
+        "goalDirection",
+        "worldCognition",
+        "information"
+      ],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Decision",
+          "stateChange": true,
+          "afterState": "凌晨3:59"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Danger",
+          "stateChange": true,
+          "afterState": "他拿起来——时间：4:01"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Decision",
+          "stateChange": true,
+          "afterState": "林夜的声音不大"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Danger",
+          "stateChange": true,
+          "afterState": "林夜还摊着掌心"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Twist",
+          "stateChange": true,
+          "afterState": "他什么都没说"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Countdown",
+          "stateChange": true,
+          "afterState": "林夜站在洗手间门口，推开了门"
+        }
+      ],
+      "lastAfterState": "林夜站在洗手间门口，推开了门",
+      "stateChangeCount": 6
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "苏晚当前目标：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间 — 局势尚未被本 Scene 改写",
+        "action": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "凌晨3:59",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource",
+          "goalDirection",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [
+          "病房的灯管开始闪烁"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:34:36.770Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "storyState": {
+            "kind": "storyState",
+            "before": "苏晚当前目标：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间 — 局势尚未被本 Scene 改写",
+            "after": "POV 已锁定可执行目标，局面即将被打破",
+            "changed": true,
+            "stagnant": false,
+            "signals": {
+              "info": false,
+              "danger": false,
+              "relation": true,
+              "character": false,
+              "world": false,
+              "goal": false,
+              "any": true
+            },
+            "pass": true,
+            "failReasons": []
+          },
+          "causeEffect": {
+            "kind": "causeEffect",
+            "lastEvent": null,
+            "cause": "苏晚当前目标：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间 — 局势尚未被本 Scene 改写",
+            "event": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。",
+            "effect": "POV 已锁定可执行目标，局面即将被打破",
+            "pass": true,
+            "failReasons": [],
+            "nextEvent": {
+              "cause": "苏晚当前目标：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间 — 局势尚未被本 Scene 改写",
+              "event": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间",
+              "effect": "POV 已锁定可执行目标，局面即将被打破"
+            }
+          },
+          "microScene": {
+            "kind": "microScene",
+            "checks": {
+              "新信息": false,
+              "关系": true,
+              "危险": false,
+              "Promise兑现": false,
+              "新行动": true
+            },
+            "passed": [
+              "关系",
+              "新行动"
+            ],
+            "required": 2,
+            "pass": true,
+            "failReasons": []
+          }
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "必须失去：林夜失去了对‘现实’的信任基础，被抛入一个只有自己知道真相的孤独战场。他前24小时积累的所有物理证据（录像、日记）随着刷新全部消失，一切只能依赖记忆，并且他意识到这种‘记忆’本身也成了系统的异常，可能带来危险。同时，苏晚因林夜的反常行为而对他产生怀疑，两人关系出现裂痕。 — 且系统 / 规则本身不会让步",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "他拿起来——时间：4:01",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "连回收站都是空的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:34:40.679Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "storyState": {
+            "kind": "storyState",
+            "before": "POV 已锁定可执行目标，局面即将被打破",
+            "after": "阻力落地，目标受挫，退路收窄",
+            "changed": true,
+            "stagnant": false,
+            "signals": {
+              "info": true,
+              "danger": true,
+              "relation": true,
+              "character": false,
+              "world": false,
+              "goal": false,
+              "any": true
+            },
+            "pass": true,
+            "failReasons": []
+          },
+          "causeEffect": {
+            "kind": "causeEffect",
+            "lastEvent": {
+              "cause": "苏晚当前目标：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间 — 局势尚未被本 Scene 改写",
+              "event": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间",
+              "effect": "POV 已锁定可执行目标，局面即将被打破"
+            },
+            "cause": "POV 已锁定可执行目标，局面即将被打破",
+            "event": "必须失去：林夜失去了对‘现实’的信任基础，被抛入一个只有自己知道真相的孤独战场。他前24小时积累的所有物理证据（录像、日记）随着刷新全部消失，一切只能依赖记忆，并且他意识到这种‘记忆’本身也成了系统的异常，可能带来危险。同时，苏晚因林夜的反常行为而对他产生怀疑，两人关系出现裂痕。 — 且系统 / 规则本身不会让步",
+            "effect": "阻力落地，目标受挫，退路收窄",
+            "pass": true,
+            "failReasons": [],
+            "nextEvent": {
+              "cause": "POV 已锁定可执行目标，局面即将被打破",
+              "event": "必须失去：林夜失去了对‘现实’的信任基础，被抛入一个只有自己知道真相的孤独战场。",
+              "effect": "阻力落地，目标受挫，退路收窄"
+            }
+          },
+          "microScene": {
+            "kind": "microScene",
+            "checks": {
+              "新信息": true,
+              "关系": true,
+              "危险": true,
+              "Promise兑现": false,
+              "新行动": false
+            },
+            "passed": [
+              "新信息",
+              "关系",
+              "危险"
+            ],
+            "required": 2,
+            "pass": true,
+            "failReasons": []
+          }
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "林夜的声音不大",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "goalDirection",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [
+          "苏晚站在门框边，看见他把手机屏幕转向自己"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:34:56.418Z",
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面"
+          ],
+          "attempts": 3,
+          "storyState": {
+            "kind": "storyState",
+            "before": "阻力落地，目标受挫，退路收窄",
+            "after": "POV 已做出不可逆选择，后果即将落地",
+            "changed": true,
+            "stagnant": false,
+            "signals": {
+              "info": true,
+              "danger": false,
+              "relation": true,
+              "character": false,
+              "world": false,
+              "goal": false,
+              "any": true
+            },
+            "pass": true,
+            "failReasons": []
+          },
+          "causeEffect": {
+            "kind": "causeEffect",
+            "lastEvent": {
+              "cause": "POV 已锁定可执行目标，局面即将被打破",
+              "event": "必须失去：林夜失去了对‘现实’的信任基础，被抛入一个只有自己知道真相的孤独战场。",
+              "effect": "阻力落地，目标受挫，退路收窄"
+            },
+            "cause": "阻力落地，目标受挫，退路收窄",
+            "event": "POV 必须在有限选项中做出选择，每个选项都有代价",
+            "effect": "POV 已做出不可逆选择，后果即将落地",
+            "pass": true,
+            "failReasons": [],
+            "nextEvent": {
+              "cause": "阻力落地，目标受挫，退路收窄",
+              "event": "POV 必须在有限选项中做出选择，每个选项都有代价",
+              "effect": "POV 已做出不可逆选择，后果即将落地"
+            }
+          },
+          "microScene": {
+            "kind": "microScene",
+            "checks": {
+              "新信息": true,
+              "关系": true,
+              "危险": false,
+              "Promise兑现": false,
+              "新行动": false
+            },
+            "passed": [
+              "新信息",
+              "关系"
+            ],
+            "required": 2,
+            "pass": true,
+            "failReasons": []
+          }
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "选择产生可见代价，局面因此改变",
+        "choice": null,
+        "consequence": "选择产生可见代价，局面因此改变",
+        "afterState": "林夜还摊着掌心",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "“三个是对的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "surprise"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:35:12.684Z",
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Show Don't Tell：禁止直接解释心理/认知（她知道、知道）→ 改为动作/对白/画面",
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "storyState": {
+            "kind": "storyState",
+            "before": "POV 已做出不可逆选择，后果即将落地",
+            "after": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+            "changed": true,
+            "stagnant": false,
+            "signals": {
+              "info": false,
+              "danger": false,
+              "relation": true,
+              "character": false,
+              "world": false,
+              "goal": false,
+              "any": true
+            },
+            "pass": true,
+            "failReasons": []
+          },
+          "causeEffect": {
+            "kind": "causeEffect",
+            "lastEvent": {
+              "cause": "阻力落地，目标受挫，退路收窄",
+              "event": "POV 必须在有限选项中做出选择，每个选项都有代价",
+              "effect": "POV 已做出不可逆选择，后果即将落地"
+            },
+            "cause": "POV 已做出不可逆选择，后果即将落地",
+            "event": "选择产生可见代价，局面因此改变",
+            "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+            "pass": true,
+            "failReasons": [],
+            "nextEvent": {
+              "cause": "POV 已做出不可逆选择，后果即将落地",
+              "event": "选择产生可见代价，局面因此改变",
+              "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+            }
+          },
+          "microScene": {
+            "kind": "microScene",
+            "checks": {
+              "新信息": false,
+              "关系": true,
+              "危险": false,
+              "Promise兑现": false,
+              "新行动": false
+            },
+            "passed": [
+              "关系"
+            ],
+            "required": 2,
+            "pass": false,
+            "failReasons": [
+              "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+            ]
+          }
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": null,
+        "consequence": "认知被新信息改写",
+        "afterState": "他什么都没说",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "“你说的刷新，是从什么时候开始的"
+        ],
+        "characterStateChanges": [
+          "“你说的刷新，是从什么时候开始的"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "他什么都没说",
+          "“你说的刷新，是从什么时候开始的"
+        ],
+        "extractedAt": "2026-07-15T06:35:25.829Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 3,
+          "storyState": {
+            "kind": "storyState",
+            "before": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+            "after": "危险升级：退路/安全态已失效",
+            "changed": true,
+            "stagnant": false,
+            "signals": {
+              "info": false,
+              "danger": true,
+              "relation": true,
+              "character": true,
+              "world": false,
+              "goal": false,
+              "any": true
+            },
+            "pass": true,
+            "failReasons": []
+          },
+          "causeEffect": {
+            "kind": "causeEffect",
+            "lastEvent": {
+              "cause": "POV 已做出不可逆选择，后果即将落地",
+              "event": "选择产生可见代价，局面因此改变",
+              "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+            },
+            "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+            "event": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+            "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+            "pass": true,
+            "failReasons": [],
+            "nextEvent": {
+              "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+              "event": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+              "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+            }
+          },
+          "microScene": {
+            "kind": "microScene",
+            "checks": {
+              "新信息": true,
+              "关系": true,
+              "危险": true,
+              "Promise兑现": true,
+              "新行动": false
+            },
+            "passed": [
+              "新信息",
+              "关系",
+              "危险",
+              "Promise兑现"
+            ],
+            "required": 2,
+            "pass": true,
+            "failReasons": []
+          }
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "读者与 POV 对世界/局势的理解已更新",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": null,
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林夜站在洗手间门口，推开了门",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "surprise"
+        ],
+        "unresolvedIssues": [
+          "“你在我病房里留了什么",
+          "镜面上什么都没有——干净的，反着惨白的灯光"
+        ],
+        "extractedAt": "2026-07-15T06:35:36.575Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 2,
+          "storyState": {
+            "kind": "storyState",
+            "before": "危险升级：退路/安全态已失效",
+            "after": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+            "changed": true,
+            "stagnant": false,
+            "signals": {
+              "info": true,
+              "danger": true,
+              "relation": true,
+              "character": false,
+              "world": true,
+              "goal": false,
+              "any": true
+            },
+            "pass": true,
+            "failReasons": []
+          },
+          "causeEffect": {
+            "kind": "causeEffect",
+            "lastEvent": {
+              "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+              "event": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+              "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+            },
+            "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+            "event": "Scene 尾留悬念 — 禁止平收总结",
+            "effect": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+            "pass": true,
+            "failReasons": [],
+            "nextEvent": {
+              "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+              "event": "Scene 尾留悬念 — 禁止平收总结",
+              "effect": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面"
+            }
+          },
+          "microScene": {
+            "kind": "microScene",
+            "checks": {
+              "新信息": true,
+              "关系": true,
+              "危险": true,
+              "Promise兑现": false,
+              "新行动": true
+            },
+            "passed": [
+              "新信息",
+              "关系",
+              "危险",
+              "新行动"
+            ],
+            "required": 2,
+            "pass": true,
+            "failReasons": []
+          }
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 0,
+          "hope": 37,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "hope"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 39,
+          "relief": 0,
+          "dominant": "surprise"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 39,
+          "relief": 0,
+          "dominant": "surprise"
+        }
+      ],
+      "scenePeak": {
+        "fear": 0,
+        "hope": 37,
+        "anger": 38,
+        "surprise": 39,
+        "relief": 0
+      },
+      "emotionalVariance": 39,
+      "hasFluctuation": true,
+      "generatedAt": "2026-07-15T06:35:36.603Z",
+      "sceneIndex": 3
+    },
+    "readerSimulation": {
+      "curiosity": 55,
+      "questionCount": 23,
+      "dropRisk": 45,
+      "continueProbability": 60,
+      "sceneIndex": 3,
+      "pov": "苏晚",
+      "simulatedAt": "2026-07-15T06:35:36.605Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 64,
+      "obstacleStrength": 46,
+      "choiceLevel": 68,
+      "consequenceLevel": 54,
+      "escalationLevel": 68,
+      "informationValue": 62,
+      "hookImpact": 72,
+      "stateChangeRate": 100,
+      "hookBreakdown": {
+        "hookLevel": 72,
+        "hookOutput": {
+          "type": "Truth",
+          "readerQuestion": "“你说今天是几号？",
+          "cost": "不可逆 — 无论选哪条路都有全局性代价",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 4,
+          "stage": "Truth",
+          "name": "真相",
+          "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+          "example": "世界重置是人为控制",
+          "hookKind": "ActionHook",
+          "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": true,
+        "cognitiveUpgrade": 70,
+        "emotionalImpact": 53,
+        "characterCost": 93,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 61,
+      "weakest": "obstacleStrength",
+      "pass": true,
+      "blocking": false,
+      "analyzedAt": "2026-07-15T06:35:36.606Z",
+      "hookOutput": {
+        "type": "Truth",
+        "readerQuestion": "“你说今天是几号？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 4,
+        "stage": "Truth",
+        "name": "真相",
+        "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+        "example": "世界重置是人为控制",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": false,
+        "valid": true,
+        "promise": "[object Object]",
+        "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+        "confidence": 0,
+        "signals": {
+          "payoffHit": false,
+          "promiseEcho": false
+        }
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 72,
+      "hookOutput": {
+        "type": "Truth",
+        "readerQuestion": "“你说今天是几号？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 4,
+        "stage": "Truth",
+        "name": "真相",
+        "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+        "example": "世界重置是人为控制",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "actionHookScore": 70,
+      "forcesAction": true,
+      "cognitiveUpgrade": 70,
+      "emotionalImpact": 53,
+      "characterCost": 93
+    },
+    "reward": {
+      "valid": true,
+      "requiresPromise": false,
+      "promiseId": "fs_0",
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "promiseSource": "foreshadow",
+      "promiseCategory": "foreshadow",
+      "promiseType": "medium",
+      "promiseImportance": 70,
+      "expectedChapter": 8,
+      "readerExpectation": 75,
+      "foreshadowId": "fs_0",
+      "description": "兑现期待：选择产生可见代价，局面因此改变",
+      "deliveryBeat": "newInformation",
+      "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+      "status": "pending"
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    },
+    "blocking": false,
+    "generatedAt": "2026-07-15T06:35:36.606Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 64,
+    "obstacleStrength": 46,
+    "choiceLevel": 68,
+    "consequenceLevel": 54,
+    "escalationLevel": 68,
+    "informationValue": 62,
+    "hookImpact": 72,
+    "stateChangeRate": 100,
+    "hookBreakdown": {
+      "hookLevel": 72,
+      "hookOutput": {
+        "type": "Truth",
+        "readerQuestion": "“你说今天是几号？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 4,
+        "stage": "Truth",
+        "name": "真相",
+        "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+        "example": "世界重置是人为控制",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 70,
+      "emotionalImpact": 53,
+      "characterCost": 93,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 61,
+    "weakest": "obstacleStrength",
+    "pass": true,
+    "blocking": false,
+    "analyzedAt": "2026-07-15T06:35:36.606Z",
+    "hookOutput": {
+      "type": "Truth",
+      "readerQuestion": "“你说今天是几号？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 4,
+      "stage": "Truth",
+      "name": "真相",
+      "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+      "example": "世界重置是人为控制",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 55,
+    "questionCount": 23,
+    "dropRisk": 45,
+    "continueProbability": 60,
+    "sceneIndex": 3,
+    "pov": "苏晚",
+    "simulatedAt": "2026-07-15T06:35:36.605Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 37,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "hope"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 39,
+        "relief": 0,
+        "dominant": "surprise"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 39,
+        "relief": 0,
+        "dominant": "surprise"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 37,
+      "anger": 38,
+      "surprise": 39,
+      "relief": 0
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-07-15T06:35:36.603Z",
+    "sceneIndex": 3
+  },
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s3",
+    "index": 3,
+    "goal": "凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 55,
+      "scoreAfter": 55,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 896,
+        "end": 1792,
+        "chars": 820
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 40,
+      "scoreAfter": 75,
+      "changed": true,
+      "skipped": false,
+      "mode": "rule+llm",
+      "region": {
+        "start": 2006,
+        "end": 2560,
+        "chars": 500
+      },
+      "edits": [
+        "ending-hook",
+        "ending-suspense",
+        "llm"
+      ]
+    }
+  },
+  "scores": {
+    "pacing": 59,
+    "climax": 100,
+    "hook": 75,
+    "commercialPleasure": 60,
+    "styleConsistency": 80,
+    "characterConsistency": 100,
+    "infoRelease": 92
+  },
+  "scoresBefore": {
+    "pacing": 59,
+    "climax": 100,
+    "hook": 40,
+    "commercialPleasure": 60,
+    "styleConsistency": 80,
+    "characterConsistency": 100,
+    "infoRelease": 92
+  },
+  "total": 81,
+  "totalBefore": 76,
+  "weakest": [
+    {
+      "id": "pacing",
+      "score": 59
+    },
+    {
+      "id": "commercialPleasure",
+      "score": 60
+    },
+    {
+      "id": "hook",
+      "score": 75
+    }
+  ],
+  "polish": {
+    "changed": true,
+    "mode": "four-module",
+    "modules": {
+      "description": {
+        "scoreBefore": 55,
+        "scoreAfter": 55,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 0,
+        "scoreAfter": 0,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 896,
+          "end": 1792,
+          "chars": 820
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 40,
+        "scoreAfter": 75,
+        "changed": true,
+        "skipped": false,
+        "mode": "rule+llm",
+        "region": {
+          "start": 2006,
+          "end": 2560,
+          "chars": 500
+        },
+        "edits": [
+          "ending-hook",
+          "ending-suspense",
+          "llm"
+        ]
+      }
+    },
+    "edits": [
+      "ending"
+    ]
+  },
+  "diff": {
+    "prefixUnchanged": 2006,
+    "draftChars": 2338,
+    "polishedChars": 2933,
+    "changed": true
+  },
+  "diffLines": [
+    {
+      "type": "change",
+      "before": "“我在镜子上用血写了三个字。”他说。“凌晨三点五十分写的。四点钟，世界刷新。镜子变干净了。”",
+      "after": "“我在镜子上用血苏晚的目光还停在锁屏的暗色镜面上。刚才那段对话被压进沉默里，像石子沉入深水。",
+      "index": 166
+    },
+    {
+      "type": "change",
+      "before": "他转过脸看着苏晚。",
+      "after": "林夜没有动。他站在窗边，手指扣着窗帘边缘，指节发白。凌晨四点二十分的光线落在他脸上，让她忽然意识到——他额头抵过镜面的那个位置，她刚才确实看了。没有血迹。没有指纹。什么都没有。",
+      "index": 168
+    },
+    {
+      "type": "change",
+      "before": "“但血不会消失得那么干净。对吧？”",
+      "after": "但他说是血。",
+      "index": 170
+    },
+    {
+      "type": "change",
+      "before": "苏晚盯着他额头抵过的位置。没有痕迹。没有指纹。什么都没有。",
+      "after": "“你什么时候写的？”她问。声音比预想中低。",
+      "index": 172
+    },
+    {
+      "type": "change",
+      "before": "“你动过我的病房吗？”林夜问。",
+      "after": "“三点五十分。”林夜没有回头。“四点整，世界刷新。镜子变干净了。”",
+      "index": 174
+    },
+    {
+      "type": "change",
+      "before": "“没有。”",
+      "after": "他转过脸。那双眼睛看着她，不是质问，不是求助——是某种已经完成验证后的平静。",
+      "index": 176
+    },
+    {
+      "type": "change",
+      "before": "“护士？”",
+      "after": "“但血不会消失得那么干净。对吧？”",
+      "index": 178
+    },
+    {
+      "type": "change",
+      "before": "“没接到报告。”",
+      "after": "苏晚盯着他额头抵过的位置。没有痕迹。没有指纹。什么都没有。她想到自己反复核查过的病房日志、护士站记录、走廊监控——全部显示无人进入。",
+      "index": 180
+    },
+    {
+      "type": "change",
+      "before": "林夜点了点头。不是相信的表情——是确认了什么的表情。",
+      "after": "“你动过我的病房吗？”林夜问。",
+      "index": 182
+    },
+    {
+      "type": "change",
+      "before": "“所以这个世界的刷新，连血迹都能清理。”他说。“录像。笔记。照片。全部。”",
+      "after": "“没有。”",
+      "index": 184
+    },
+    {
+      "type": "change",
+      "before": "苏晚站在门框边。她的手指在口袋里捏着那枚硬币的边缘。",
+      "after": "“护士？”",
+      "index": 186
+    },
+    {
+      "type": "change",
+      "before": "“那你现在打算怎么办？”",
+      "after": "“没接到报告。”",
+      "index": 188
+    },
+    {
+      "type": "change",
+      "before": "林夜没回答。他走到窗边，拉开窗帘。凌晨四点十五分。外面的路灯还亮着。",
+      "after": "林夜点了点头。不是相信的表情——是确认了什么的表情。那一刻苏晚忽然意识到，她站在这里，站在凌晨四点的医院走廊里，正在和一个声称世界被“刷新”的病人对话——而她的手指正在口袋里捏着一枚硬币的边缘，边缘很凉，凉得让她想起某个不该记得的触感。",
+      "index": 190
+    },
+    {
+      "type": "change",
+      "before": "“你说今天是几号？”",
+      "after": "“所以这个世界的刷新，连血迹都能清理。”他说。“录像。笔记。照片。全部。”",
+      "index": 192
+    },
+    {
+      "type": "change",
+      "before": "苏晚愣了一下。“十二号。”",
+      "after": "苏晚站在门框边。她的手指在口袋里捏着那枚硬币的边缘。她没有抽出手。",
+      "index": 194
+    },
+    {
+      "type": "change",
+      "before": "“你确定？”",
+      "after": "“那你现在打算怎么办？”",
+      "index": 196
+    },
+    {
+      "type": "change",
+      "before": "苏晚掏出手机。屏幕亮起来——日期显示：4月12日，凌晨4:16。",
+      "after": "林夜没回答。他走到窗边，拉开窗帘。凌晨四点十五分。外面的路灯还亮着。住院部配楼的窗户像一排闭合的眼睛。",
+      "index": 198
+    },
+    {
+      "type": "change",
+      "before": "林夜没看她的手机。他指着窗外：“昨天，我站在这里，看见对面楼的灯灭了三次。”",
+      "after": "“你说今天是几号？”",
+      "index": 200
+    },
+    {
+      "type": "change",
+      "before": "苏晚顺着他的手指看过去。对面是住院部的配楼。",
+      "after": "苏晚愣了一下。“十二号。”",
+      "index": 202
+    },
+    {
+      "type": "change",
+      "before": "“每隔五分钟灭一次。一共三轮。”林夜说。“现在看。”",
+      "after": "“你确定？”",
+      "index": 204
+    },
+    {
+      "type": "change",
+      "before": "苏晚盯着那栋楼。",
+      "after": "苏晚掏出手机。屏幕亮起来——日期显示：4月12日，凌晨4:16。",
+      "index": 206
+    },
+    {
+      "type": "change",
+      "before": "三十秒。一分钟。三分钟。",
+      "after": "林夜没看她的手机。他指着窗外：“昨天，我站在这里，看见对面楼的灯灭了三次。”",
+      "index": 208
+    },
+    {
+      "type": "change",
+      "before": "灯没有灭。",
+      "after": "苏晚顺着他的手指看过去。对面是住院部的配楼。",
+      "index": 210
+    },
+    {
+      "type": "change",
+      "before": "林夜转过身。“那是昨天，我记得的事。”",
+      "after": "“每隔五分钟灭一次。一共三轮。”林夜说。“现在看。”",
+      "index": 212
+    },
+    {
+      "type": "change",
+      "before": "苏晚没说话。她低头看着手机屏幕——4月12日，4月19分。",
+      "after": "苏晚盯着那栋楼。",
+      "index": 214
+    },
+    {
+      "type": "change",
+      "before": "她按了锁屏键。",
+      "after": "三十秒。一分钟。三分钟。",
+      "index": 216
+    },
+    {
+      "type": "change",
+      "before": "然后她抬头。",
+      "after": "灯没有灭。",
+      "index": 218
+    },
+    {
+      "type": "change",
+      "before": "“你说的刷新",
+      "after": "林夜转过身。“那是昨天，我记得的事。”",
+      "index": 220
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "苏晚没说话。她低头看着手机屏幕——4月12日，4点19分。",
+      "index": 222
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "她按了锁屏键。",
+      "index": 224
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "然后她抬头。",
+      "index": 226
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "“你说的刷新——”",
+      "index": 228
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "她的话被打断了。林夜的口袋里传来一声震动。不是电话，是某种短促的、机械的嗡鸣。林夜的表情变了——不是惊讶，是某种更接近于“终于来了”的确认。",
+      "index": 230
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "他伸手进口袋，掏出一张叠得整齐的纸。纸的边缘是烧焦的。",
+      "index": 232
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "他展开那张纸。",
+      "index": 234
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "苏晚看见上面只有一行字，字迹潦草，像是用左手写的：",
+      "index": 236
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "“四点零一分，你会在急诊大厅看见穿灰风衣的人。别让他看见你。”",
+      "index": 238
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "林夜看完，把纸重新叠好，塞回口袋。他抬头看着苏晚，嘴角动了一下——不是笑，是某种更凉薄的东西。",
+      "index": 240
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "“你说刷新。”他说。“那这个呢？”",
+      "index": 242
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "他的手指按在口袋上。",
+      "index": 244
+    }
+  ],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-07-15T06:35:44.227Z",
+  "quality": {
+    "scores": {
+      "pacing": 59,
+      "climax": 100,
+      "hook": 75,
+      "commercialPleasure": 60,
+      "styleConsistency": 80,
+      "characterConsistency": 100,
+      "infoRelease": 92
+    },
+    "total": 81,
+    "weak": [
+      {
+        "id": "pacing",
+        "score": 59
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 60
+      },
+      {
+        "id": "hook",
+        "score": 75
+      },
+      {
+        "id": "styleConsistency",
+        "score": 80
+      },
+      {
+        "id": "infoRelease",
+        "score": 92
+      },
+      {
+        "id": "climax",
+        "score": 100
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "pacing",
+        "score": 59
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 60
+      },
+      {
+        "id": "hook",
+        "score": 75
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 274,
+        "actionHits": 40,
+        "dialogHits": 0,
+        "variety": 2
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 0,
+        "len": 2933
+      },
+      "styleConsistency": {
+        "shortRatio": 98,
+        "expoRun": 274
+      },
+      "characterConsistency": {
+        "pov": "苏晚",
+        "present": [
+          "苏晚"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 19,
+        "stagger": true
+      }
+    },
+    "chapter": 3,
+    "sceneIndex": 3,
+    "totalChars": 2933
+  }
+}

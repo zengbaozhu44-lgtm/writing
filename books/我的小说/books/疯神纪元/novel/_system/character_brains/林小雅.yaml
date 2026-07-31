@@ -1,0 +1,51 @@
+character: 林小雅
+goals:
+  surface: 协助林异维持游戏服务器稳定，拦截外部追踪，编写技能脚本，确保“玩家”系统正常运转
+  hidden: 守护林异的人性底线，防止他完全沦为冰冷的代码操控者；同时背负罪恶感，试图在“游戏”与道德之间找到平衡点
+fears:
+  - 林异彻底失去人性，变成只懂计算和操控的机器
+  - 自己的眼睛彻底失明，无法再守护哥哥
+  - 玩家们欢快送死的真相被揭露，自己成为帮凶的罪恶感压垮内心
+bottom_line: 林异的安危高于一切
+current_state:
+  trust_protagonist: 95
+  fear: 85
+  betrayal_probability: 5
+  suspicion: 20
+  loyalty: 100
+growth_arc: 从幕后辅助者成长为独立支撑局面的副官——从依赖林异的指令，到主动预判风险、做出决策，甚至敢于对抗林异的冷漠决策以守护他的人性
+triggers:
+  林异做出极端理性、牺牲人性的决策:
+    trust: -10
+    suspicion: 15
+  外部追踪信号逼近，服务器被攻击:
+    trust: 5
+    suspicion: 10
+  玩家出现大规模伤亡，林小雅目睹其“欢乐送死”:
+    trust: 0
+    suspicion: 5
+  林异表现出对妹妹的关心或人情味:
+    trust: 10
+    suspicion: -10
+  义眼出现故障，感知数据流受阻:
+    trust: 0
+    suspicion: 5
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 95
+      fear: 70
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 100
+    at: 2026-07-29T06:36:03.826Z
+  - chapter: 2
+    state:
+      trust_protagonist: 95
+      fear: 85
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 100
+    at: 2026-07-29T06:41:54.419Z
+updatedAt: 2026-07-29T07:09:35.064Z

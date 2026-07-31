@@ -1,0 +1,64 @@
+{
+  "$schema": "https://inkos.local/schema/v4",
+  "version": 4,
+  "name": "Novel OS V4",
+  "description": "Git + Database + Workflow Engine + State Machine + Knowledge Graph",
+  "principles": [
+    "单文件单职责",
+    "按 AI 注意力 Tier 按需加载",
+    "动态记忆每章自动更新",
+    "状态机驱动：Situation → Goal → Conflict → Decision → Action → Consequence → New Situation",
+    "现实目标驱动，异常只能是代价或阻碍"
+  ],
+  "bookLayout": {
+    "bookJson": "book.json",
+    "chapters": "chapters/",
+    "novel": "novel/"
+  },
+  "modules": [
+    { "id": "01", "key": "world_bible", "path": "novel/01_world_bible.md", "role": "世界规则", "maxChars": 5000, "layer": "canon", "mutable": "rare" },
+    { "id": "02", "key": "writing_bible", "path": "novel/02_writing_bible.md", "role": "写作规则（唯一源）", "maxChars": 5000, "layer": "canon", "mutable": "rare" },
+    { "id": "03", "key": "character_bible", "path": "novel/03_character_bible/", "role": "人物恒定属性", "maxCharsPerFile": 1500, "layer": "canon", "mutable": "rare" },
+    { "id": "04", "key": "faction_bible", "path": "novel/04_faction_bible/", "role": "势力恒定属性", "maxCharsPerFile": 1000, "layer": "canon", "mutable": "rare" },
+    { "id": "05", "key": "relationship_graph", "path": "novel/05_relationship_graph.yaml", "role": "关系图", "layer": "dynamic", "mutable": "every_chapter" },
+    { "id": "06", "key": "knowledge_matrix", "path": "novel/06_knowledge_matrix.yaml", "role": "信息差矩阵", "layer": "dynamic", "mutable": "every_chapter" },
+    { "id": "07", "key": "state_board", "path": "novel/07_state_board.md", "role": "局势图", "maxChars": 800, "layer": "dynamic", "mutable": "every_chapter" },
+    { "id": "08", "key": "current_state", "path": "novel/08_current_state.md", "role": "当前状态", "maxChars": 1000, "layer": "dynamic", "mutable": "every_chapter" },
+    { "id": "09", "key": "current_chapter", "path": "novel/09_current_chapter.md", "role": "当前章节任务", "maxChars": 300, "layer": "dynamic", "mutable": "every_chapter_pre" },
+    { "id": "10", "key": "volume_outline", "path": "novel/10_volume_outline/", "role": "卷纲", "maxCharsPerFile": 600, "layer": "canon", "mutable": "per_volume" },
+    { "id": "11", "key": "timeline", "path": "novel/11_timeline.yaml", "role": "时间线", "layer": "dynamic", "mutable": "append_only" },
+    { "id": "12", "key": "foreshadow_db", "path": "novel/12_foreshadow_db.yaml", "role": "伏笔库", "layer": "dynamic", "mutable": "every_chapter" },
+    { "id": "13", "key": "facts_db", "path": "novel/13_facts_db.yaml", "role": "不可逆事实", "layer": "dynamic", "mutable": "append_only" },
+    { "id": "14", "key": "resource_db", "path": "novel/14_resource_db.yaml", "role": "资源系统", "layer": "dynamic", "mutable": "every_chapter" },
+    { "id": "15", "key": "npc_simulation", "path": "novel/15_npc_simulation.yaml", "role": "NPC 模拟", "layer": "dynamic", "mutable": "daily" },
+    { "id": "16", "key": "chapter_review", "path": "novel/16_chapter_review/", "role": "章后评审", "layer": "audit", "mutable": "per_chapter" }
+  ],
+  "systemFiles": [
+    { "path": "novel/_system/manifest.json" },
+    { "path": "novel/_system/state_machine.yaml" },
+    { "path": "novel/_system/refs.json" }
+  ],
+  "stateMachine": {
+    "chain": ["situation", "goal", "conflict", "decision", "action", "consequence", "new_situation"],
+    "path": "novel/_system/state_machine.yaml"
+  },
+  "attentionTiers": [
+    { "tier": 0, "modules": ["09_current_chapter"] },
+    { "tier": 1, "modules": ["08_current_state", "13_facts_db", "06_knowledge_matrix", "14_resource_db"] },
+    { "tier": 2, "modules": ["03_character_bible", "05_relationship_graph"] },
+    { "tier": 3, "modules": ["02_writing_bible"] },
+    { "tier": 4, "modules": ["01_world_bible", "04_faction_bible"] },
+    { "tier": 5, "modules": ["07_state_board", "11_timeline", "12_foreshadow_db"] },
+    { "tier": 6, "modules": ["15_npc_simulation", "10_volume_outline"] }
+  ],
+  "workflows": {
+    "beforeWrite": ["09", "08", "03", "06", "05", "14", "02", "01"],
+    "afterWrite": ["11", "13", "07", "12", "05", "06", "14", "08", "15", "_system/state_machine"],
+    "chapterReview": ["16"]
+  },
+  "reviewThreshold": 80,
+  "deprecated": {
+    "v2": ["story/"],
+    "v3": ["canon/", "runtime/"]
+  }
+}

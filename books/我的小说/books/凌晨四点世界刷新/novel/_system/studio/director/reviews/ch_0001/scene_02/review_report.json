@@ -1,0 +1,71 @@
+{
+  "version": "scene-review-3",
+  "role": "scene-review",
+  "mode": "weighted-quality-score",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s2",
+    "index": 2,
+    "goal": "克服阻碍：主角林夜所经历的、连续的记忆（昨天被车撞的伤疤消失、日期回退）与整个世界（所有人、所有记录都显示昨天是普通的一天）之间的根本性矛盾。他尝试证明自己是对的，但每一次尝试都加深了他的孤独与世界的不可知。"
+  },
+  "scores": {
+    "dialogue": 35,
+    "conflict": 100,
+    "hook": 78,
+    "emotion": 92,
+    "style": 94,
+    "pacing": 89
+  },
+  "weights": {
+    "dialogue": 0.1,
+    "conflict": 0.2,
+    "hook": 0.25,
+    "emotion": 0.15,
+    "style": 0.1,
+    "pacing": 0.2
+  },
+  "weightedScore": 84,
+  "total": 84,
+  "genreProfile": "suspense",
+  "dimensions": [
+    "dialogue",
+    "conflict",
+    "hook",
+    "emotion",
+    "style",
+    "pacing"
+  ],
+  "verdict": "pass",
+  "pass": true,
+  "warning": false,
+  "retry": false,
+  "suggestions": [
+    "dialogue: 加强对话密度与人物声音区分，用对白推进冲突（35/100）",
+    "hook: 结尾留悬念或未完成动作，避免平收（78/100）"
+  ],
+  "blocking": false,
+  "thresholds": {
+    "pass": 80,
+    "warning": 70
+  },
+  "policy": "加权评分 · >=80 Pass · 70~79 Warning · <70 Retry · 不阻塞当前 Scene",
+  "weakest": [
+    {
+      "id": "dialogue",
+      "score": 35,
+      "weight": 0.1
+    },
+    {
+      "id": "hook",
+      "score": 78,
+      "weight": 0.25
+    },
+    {
+      "id": "pacing",
+      "score": 89,
+      "weight": 0.2
+    }
+  ],
+  "totalChars": 1801,
+  "generatedAt": "2026-07-12T09:14:35.609Z"
+}

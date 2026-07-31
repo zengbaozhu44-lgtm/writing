@@ -1,0 +1,33 @@
+{
+  "name": "小说InkOS",
+  "version": "0.1.0",
+  "language": "zh",
+  "servePort": 4567,
+  "llm": {
+    "provider": "openai",
+    "service": "custom",
+    "configSource": "studio",
+    "baseUrl": "",
+    "model": "",
+    "apiFormat": "chat",
+    "stream": true
+  },
+  "notify": [],
+  "inputGovernanceMode": "v4",
+  "defaultBookSchema": 4,
+  "brainEnabled": true,
+  "runtimeEnabled": true,
+  "runtime": {
+    "autoWrite": true,
+    "autoNextChapter": true,
+    "maxSceneRetries": 2,
+    "maxReplan": 3
+  },
+  "daemon": {
+    "schedule": {
+      "radarCron": "0 */6 * * *",
+      "writeCron": "*/15 * * * *"
+    },
+    "maxConcurrentBooks": 3
+  }
+}

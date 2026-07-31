@@ -1,0 +1,742 @@
+{
+  "sceneIndex": 1,
+  "sceneType": "opening",
+  "parts": [
+    {
+      "order": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "chars": 350,
+      "beatStateDelta": {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "beforeState": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展 — 局势尚未被本 Scene 改写",
+        "action": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "她盯着门缝里透出的光——屏幕的蓝白色，不是走廊的日光灯"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-29T07:52:35.703Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "storyBefore": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": []
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "goal",
+        "beforeState": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展 — 局势尚未被本 Scene 改写",
+        "action": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": true,
+        "requiredDimension": "goalDirection"
+      },
+      "stateChange": false,
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "textPreview": "林小雅把钥匙插进锁孔。\n\n转了半圈。\n\n门开了。\n\n她没动。\n\n昨天这把锁卡了三次。今天一次就开了。她盯着门缝里透出的光——屏幕的蓝白色，不是走廊的日光灯。\n\n房间里的电脑开着。\n\n她不记得自己离开时开过机。\n\n林小雅推开门，鞋跟在地砖上磕",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "chars": 286,
+      "beatStateDelta": {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。 — 且系统 / 规则本身不会让步",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "那张脸——头发乱着，嘴角有干了的血",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-29T07:52:43.573Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 2,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.05907172995780591
+          },
+          "microPassed": []
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "obstacle",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。 — 且系统 / 规则本身不会让步",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": true,
+        "requiredDimension": "danger"
+      },
+      "stateChange": true,
+      "afterState": "那张脸——头发乱着，嘴角有干了的血",
+      "textPreview": "屏幕的光打在她脸上。\n\n那张脸——头发乱着，嘴角有干了的血。但眼神不对。\n\n林小雅的嘴皮子动了动。\n\n画面里的人也动了动嘴皮子。\n\n同步。\n\n她的手按在屏幕上。图像没动。她也没动。\n\n那行字还挂在右下角——\n\n**实时信号源：T-09-β*",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 2,
+        "rewritten": true,
+        "failReasons": [
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "chars": 120,
+      "beatStateDelta": {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "该假装什么都没看见"
+        ],
+        "extractedAt": "2026-07-29T07:52:46.192Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.042735042735042736
+          },
+          "microPassed": []
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "choice",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": true,
+        "requiredDimension": "relationship"
+      },
+      "stateChange": false,
+      "afterState": "POV 已做出不可逆选择，后果即将落地",
+      "textPreview": "林小雅盯着那三个字。\n\n屏幕的光刺得眼睛发涩。\n\n她该关掉监控。该去上班。该假装什么都没看见。\n\n但她想起七岁那年——妹妹摔倒在台阶上，额头磕出血，她跑去找大人，回来的时候伤口已经结了痂。妹妹没哭。她哭了。\n\n林小雅把手机攥紧。\n\n她打字。",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "chars": 185,
+      "beatStateDelta": {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "选择产生可见代价，局面因此改变",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择产生可见代价，局面因此改变",
+        "afterState": "屏幕上弹出一条消息——发送者的头像是个黑色方块",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "不是待机的红灯——是录制的蓝光"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-29T07:52:49.223Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.01098901098901099
+          },
+          "microPassed": []
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "consequence",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "选择产生可见代价，局面因此改变",
+        "choice": "",
+        "consequence": "选择产生可见代价，局面因此改变",
+        "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选",
+        "stateChange": true,
+        "requiredDimension": "resource"
+      },
+      "stateChange": true,
+      "afterState": "屏幕上弹出一条消息——发送者的头像是个黑色方块",
+      "textPreview": "手机震了一下。\n\n林小雅低头。\n\n屏幕上弹出一条消息——发送者的头像是个黑色方块。\n\n“第九区·第三泵站。今晚十点。”\n\n她盯着那行字。三秒。\n\n然后抬起头，看向走廊尽头的监控。\n\n镜头上的指示灯在闪。\n\n不是待机的红灯——是录制的蓝光。\n",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "chars": 214,
+      "beatStateDelta": {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "认知被新信息改写",
+        "afterState": "屏幕的光映在她脸上",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-29T07:52:52.188Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+          "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.0947867298578199
+          },
+          "microPassed": []
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "newInformation",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "",
+        "consequence": "认知被新信息改写",
+        "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选",
+        "stateChange": true,
+        "requiredDimension": "information"
+      },
+      "stateChange": true,
+      "afterState": "屏幕的光映在她脸上",
+      "textPreview": "林小雅盯着那行字。\n\n屏幕的光映在她脸上。\n\n第二条消息已经弹出来了。“你刚才回头的动作太大了。”\n\n她的手指悬在键盘上方，没碰。\n\n“秩序局的监控不覆盖这条走廊。”\n\n说话的人没露面。黑色方块头像后面，消息还在跳。“但我覆盖了。”\n\n林小",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "chars": 444,
+      "beatStateDelta": {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "beforeState": "读者与 POV 对世界/局势的理解已更新",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "屏幕上的对话框还在闪——那个没有头像、没有ID的账号，发来的最后一句话：",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "“你为什么能看到我发的消息"
+        ],
+        "extractedAt": "2026-07-29T07:52:57.366Z",
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+          "storyAfter": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.1350210970464135
+          },
+          "microPassed": []
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "hook",
+        "beforeState": "读者与 POV 对世界/局势的理解已更新",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": true,
+        "requiredDimension": "worldCognition"
+      },
+      "stateChange": true,
+      "afterState": "屏幕上的对话框还在闪——那个没有头像、没有ID的账号，发来的最后一句话：",
+      "textPreview": "林小雅的手指悬在键盘上方。\n\n屏幕上的对话框还在闪——那个没有头像、没有ID的账号，发来的最后一句话：\n\n“你为什么能看到我发的消息？”\n\n她没动。\n\n走廊里传来脚步声——很轻，但节奏固定，像巡逻。\n\n她盯着那行字。对方在等回复。对方也在第",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局",
+        "microPassed": []
+      }
+    }
+  ],
+  "beatMemory": {
+    "newFacts": [
+      "她盯着门缝里透出的光——屏幕的蓝白色，不是走廊的日光灯",
+      "不是待机的红灯——是录制的蓝光"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [],
+    "unresolvedIssues": [
+      "该假装什么都没看见",
+      "“你为什么能看到我发的消息"
+    ],
+    "changedDimensions": [
+      "worldCognition",
+      "resource",
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "那张脸——头发乱着，嘴角有干了的血"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已做出不可逆选择，后果即将落地"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "屏幕上弹出一条消息——发送者的头像是个黑色方块"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "屏幕的光映在她脸上"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "屏幕上的对话框还在闪——那个没有头像、没有ID的账号，发来的最后一句话："
+      }
+    ],
+    "lastAfterState": "屏幕上的对话框还在闪——那个没有头像、没有ID的账号，发来的最后一句话：",
+    "stateChangeCount": 4
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "beforeState": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展 — 局势尚未被本 Scene 改写",
+      "action": "建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "她盯着门缝里透出的光——屏幕的蓝白色，不是走廊的日光灯"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:52:35.703Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "林小雅当前目标：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。 — 且系统 / 规则本身不会让步",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "那张脸——头发乱着，嘴角有干了的血",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:52:43.573Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 2,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.05907172995780591
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "POV 已做出不可逆选择，后果即将落地",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "该假装什么都没看见"
+      ],
+      "extractedAt": "2026-07-29T07:52:46.192Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.042735042735042736
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "选择产生可见代价，局面因此改变",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择产生可见代价，局面因此改变",
+      "afterState": "屏幕上弹出一条消息——发送者的头像是个黑色方块",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "不是待机的红灯——是录制的蓝光"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:52:49.223Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.01098901098901099
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "认知被新信息改写",
+      "afterState": "屏幕的光映在她脸上",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:52:52.188Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0947867298578199
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "beforeState": "读者与 POV 对世界/局势的理解已更新",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "屏幕上的对话框还在闪——那个没有头像、没有ID的账号，发来的最后一句话：",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "“你为什么能看到我发的消息"
+      ],
+      "extractedAt": "2026-07-29T07:52:57.366Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.1350210970464135
+        },
+        "microPassed": []
+      }
+    }
+  ],
+  "runtimeSession": {
+    "lastEvent": {
+      "cause": "POV 已锁定可执行目标，局面即将被打破",
+      "event": "林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突",
+      "effect": "阻力落地，目标受挫，退路收窄"
+    },
+    "beforeState": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "rewriteCounts": {
+      "2": 1
+    }
+  },
+  "runtimeV2": false,
+  "sceneOutcome": {
+    "success": "若达成：建立 POV（林小雅）当下目标：通过林小雅的视角，揭示第九区更深层的压抑真相，展示林异获得编辑器后的初期适应与隐藏，并利用妹妹的留言深化悬疑，为搭建‘私服’埋下伏笔。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "updatedAt": "2026-07-29T07:52:57.373Z"
+}

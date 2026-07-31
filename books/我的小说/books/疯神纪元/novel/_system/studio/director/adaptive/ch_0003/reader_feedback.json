@@ -1,0 +1,448 @@
+{
+  "chapter": 3,
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "chapter": 3,
+      "metrics": {
+        "continueProbability": 78,
+        "questionCount": 4,
+        "dropRisk": 10,
+        "curiosity": 70
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[角色成长] 下一章须推动 林小雅 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.44999999999999996,
+        "relationship": 0.7,
+        "action": 0.6499999999999999,
+        "emotion": 0.3,
+        "twist": 0.5,
+        "growth": 0.6499999999999999,
+        "reasoning": 0.7499999999999999
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.44999999999999996,
+          "score": 33,
+          "continueProbability": 78,
+          "curiosity": 70
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.7,
+          "score": 53,
+          "continueProbability": 78,
+          "curiosity": 70
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 49,
+          "continueProbability": 78,
+          "curiosity": 70
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.3,
+          "score": 22,
+          "continueProbability": 78,
+          "curiosity": 70
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 36,
+          "continueProbability": 78,
+          "curiosity": 70
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.6499999999999999,
+          "score": 48,
+          "continueProbability": 78,
+          "curiosity": 70
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.7499999999999999,
+          "score": 55,
+          "continueProbability": 78,
+          "curiosity": 70
+        }
+      },
+      "at": "2026-07-29T07:10:23.534Z"
+    },
+    {
+      "sceneIndex": 2,
+      "chapter": 3,
+      "metrics": {
+        "continueProbability": 69,
+        "questionCount": 9,
+        "dropRisk": 30,
+        "curiosity": 62
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 69% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "[角色成长] 下一章须推动 林小雅 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.95,
+        "relationship": 1,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.5,
+        "growth": 0.3,
+        "reasoning": 0.44999999999999996
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.95,
+          "score": 62,
+          "continueProbability": 69,
+          "curiosity": 62
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 1,
+          "score": 67,
+          "continueProbability": 69,
+          "curiosity": 62
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 43,
+          "continueProbability": 69,
+          "curiosity": 62
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 29,
+          "continueProbability": 69,
+          "curiosity": 62
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 32,
+          "continueProbability": 69,
+          "curiosity": 62
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 20,
+          "continueProbability": 69,
+          "curiosity": 62
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.44999999999999996,
+          "score": 29,
+          "continueProbability": 69,
+          "curiosity": 62
+        }
+      },
+      "at": "2026-07-29T07:11:21.806Z"
+    },
+    {
+      "sceneIndex": 3,
+      "chapter": 3,
+      "metrics": {
+        "continueProbability": 83,
+        "questionCount": 5,
+        "dropRisk": 10,
+        "curiosity": 76
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[角色成长] 下一章须推动 林小雅 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.7999999999999999,
+        "relationship": 0.2,
+        "action": 0.7999999999999999,
+        "emotion": 0.6499999999999999,
+        "twist": 0.6499999999999999,
+        "growth": 0.7999999999999999,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.7999999999999999,
+          "score": 63,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.2,
+          "score": 16,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.7999999999999999,
+          "score": 64,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.6499999999999999,
+          "score": 52,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.6499999999999999,
+          "score": 51,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.7999999999999999,
+          "score": 64,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 24,
+          "continueProbability": 83,
+          "curiosity": 76
+        }
+      },
+      "at": "2026-07-29T07:11:56.272Z"
+    },
+    {
+      "sceneIndex": 4,
+      "chapter": 3,
+      "metrics": {
+        "continueProbability": 81,
+        "questionCount": 7,
+        "dropRisk": 10,
+        "curiosity": 72
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[角色成长] 下一章须推动 林小雅 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.44999999999999996,
+        "relationship": 0.2,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.15,
+        "growth": 0.6499999999999999,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.44999999999999996,
+          "score": 34,
+          "continueProbability": 81,
+          "curiosity": 72
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.2,
+          "score": 16,
+          "continueProbability": 81,
+          "curiosity": 72
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 50,
+          "continueProbability": 81,
+          "curiosity": 72
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 34,
+          "continueProbability": 81,
+          "curiosity": 72
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.15,
+          "score": 11,
+          "continueProbability": 81,
+          "curiosity": 72
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.6499999999999999,
+          "score": 50,
+          "continueProbability": 81,
+          "curiosity": 72
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 23,
+          "continueProbability": 81,
+          "curiosity": 72
+        }
+      },
+      "at": "2026-07-29T07:12:20.084Z"
+    }
+  ],
+  "aggregatedMetrics": {
+    "avgContinueProbability": 78,
+    "maxDropRisk": 30,
+    "avgQuestionCount": 6,
+    "avgCuriosity": 70,
+    "sceneCount": 4
+  },
+  "adjustments": {
+    "hookDensityBoost": 15,
+    "mysteryBoost": 0,
+    "conflictBoost": 0,
+    "payoffBoost": 0,
+    "relationshipBeatBoost": 0,
+    "hookLadderBoost": 0,
+    "firstScreenExplosion": false,
+    "advancePacing": false,
+    "increaseConflict": false,
+    "addMystery": false,
+    "addInformationGap": false,
+    "increaseHookDensity": true
+  },
+  "directives": [
+    "[角色成长] 下一章须推动 林小雅 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条",
+    "Continue Probability 69% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Mystery Curve 断档 — 下一章须加深核心追问，禁止过早全解",
+    "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+    "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+    "阅读驱动力 58/100 偏低 — 下一章增加代价逼近与不可逆选择",
+    "反转力度不足 — 下一章安排预期违背或信息翻盘"
+  ],
+  "storyMemoryDirectives": [
+    "[角色成长] 下一章须推动 林小雅 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+  ],
+  "elementScores": {
+    "conspiracy": 48,
+    "relationship": 38,
+    "action": 52,
+    "emotion": 34,
+    "twist": 33,
+    "growth": 46,
+    "reasoning": 33
+  },
+  "updatedAt": "2026-07-29T07:12:27.110Z",
+  "readerCurveReport": {
+    "readerAddictionScore": 69,
+    "nextChapterGuidance": [
+      "Mystery Curve 断档 — 下一章须加深核心追问，禁止过早全解",
+      "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+      "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+      "阅读驱动力 58/100 偏低 — 下一章增加代价逼近与不可逆选择",
+      "反转力度不足 — 下一章安排预期违背或信息翻盘"
+    ]
+  },
+  "finalizedAt": "2026-07-29T07:12:27.110Z"
+}

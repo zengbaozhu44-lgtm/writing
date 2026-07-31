@@ -1,0 +1,102 @@
+# Novel OS Brain 1.0 — 决策驱动工作流
+
+version: brain-1.0
+
+chain:
+  - current_state
+  - planner
+  - decision
+  - conflict
+  - scene_planner
+  - writer_scene
+  - scene_review
+  - consistency
+  - reader
+  - metrics
+  - validation
+  - memory_update
+
+planner:
+  maxReplan: 3
+  inputs:
+    - novel/10_volume_outline/
+    - novel/08_current_state.md
+    - novel/13_facts_db.yaml
+    - novel/05_relationship_graph.yaml
+    - novel/06_knowledge_matrix.yaml
+    - novel/09_current_chapter.md
+
+decision:
+  dimensions:
+    - values
+    - interest
+    - resources
+    - knowledge
+    - relationship
+    - risk
+
+conflict:
+  requiredTypes: 1
+  types:
+    - resource
+    - relationship
+    - interest
+    - rule
+    - values
+    - information
+
+scene:
+  mode: per_scene
+  reviewEach: true
+  maxScenesPerChapter: 4
+
+writer:
+  mode: scene_only
+  forbidWholeChapter: true
+
+consistency:
+  rejectOnFail: true
+  dimensions:
+    - character
+    - timeline
+    - world
+    - knowledge
+    - relationship
+    - resource
+    - ability
+
+reader:
+  personas:
+    - commercial
+    - mystery
+    - editor
+  minReadingDrive: 60
+
+metrics:
+  dashboard: novel/_system/brain/metrics_dashboard.json
+
+validation:
+  minPassed: 1
+  checks:
+    - plot_advanced
+    - relationship_advanced
+    - world_advanced
+    - character_advanced
+    - situation_changed
+    - new_goal
+    - new_problem
+
+memory:
+  history:
+    - novel/_system/brain/decision_history.yaml
+    - novel/_system/brain/scene_history.yaml
+    - novel/_system/brain/conflict_history.yaml
+
+prompt:
+  mode: dynamic
+  tokenBudgetChars: 12000
+  targetMinChars: 8000
+
+postChapter:
+  extends: post_chapter.v4.yaml
+  brainArtifacts: true

@@ -1,0 +1,581 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "beatMemory": {
+    "newFacts": [
+      "“你知道那下面有什么",
+      "“那你告诉我，第九区地下管道，废弃泵站，排水口——这三个地方，哪个是巡逻队查过的",
+      "“不是我给的",
+      "”对方打断她，“是你自己找到的",
+      "“你早就知道",
+      "”林小雅说，“你知道我会找到这些坐标——你知道我哥——”"
+    ],
+    "characterStateChanges": [
+      "林小雅把手机屏幕转向对面"
+    ],
+    "emotionChanges": [
+      "hope"
+    ],
+    "unresolvedIssues": [
+      "“你知道那下面有什么",
+      "“那你凭什么觉得——”",
+      "“什么时候焊的",
+      "铁皮另一侧，有什么东西在响",
+      "“那下面有什么",
+      "“那你手里是什么"
+    ],
+    "changedDimensions": [
+      "information",
+      "resource",
+      "goalDirection",
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "监控画面停在第九区地下管道入口——废弃泵站，排水口位置"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": true,
+        "afterState": "“那你告诉我，第九区地下管道，废弃泵站，排水口——这三个地方，哪个是巡逻队查过的"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": false,
+        "afterState": "POV 已做出不可逆选择，后果即将落地"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "是一个——坐标"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "倒计时——二十八秒"
+      }
+    ],
+    "lastAfterState": "倒计时——二十八秒",
+    "stateChangeCount": 4
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林小雅当前目标：克服阻碍：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间 — 局势尚未被本 Scene 改写",
+      "action": "克服阻碍：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "监控画面停在第九区地下管道入口——废弃泵站，排水口位置",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "resource",
+        "goalDirection"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "“你知道那下面有什么"
+      ],
+      "characterStateChanges": [
+        "林小雅把手机屏幕转向对面"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "“你知道那下面有什么",
+        "“那你凭什么觉得——”"
+      ],
+      "extractedAt": "2026-07-29T07:53:06.073Z",
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（觉得、知道）→ 改为动作/对白/画面",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "storyBefore": "林小雅当前目标：克服阻碍：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "信息不完整 — 且局面本身不会让步",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "“那你告诉我，第九区地下管道，废弃泵站，排水口——这三个地方，哪个是巡逻队查过的",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "“那你告诉我，第九区地下管道，废弃泵站，排水口——这三个地方，哪个是巡逻队查过的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "“什么时候焊的"
+      ],
+      "extractedAt": "2026-07-29T07:53:13.403Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.11864406779661017
+        },
+        "microPassed": [
+          "新信息",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "POV 已做出不可逆选择，后果即将落地",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "铁皮另一侧，有什么东西在响"
+      ],
+      "extractedAt": "2026-07-29T07:53:18.270Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.1518987341772152
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "选择产生可见代价，局面因此改变",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择产生可见代价，局面因此改变",
+      "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "“那下面有什么"
+      ],
+      "extractedAt": "2026-07-29T07:53:27.756Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.06936416184971098
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "认知被新信息改写",
+      "afterState": "是一个——坐标",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "“不是我给的",
+        "”对方打断她，“是你自己找到的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "hope"
+      ],
+      "unresolvedIssues": [
+        "“那你手里是什么"
+      ],
+      "extractedAt": "2026-07-29T07:53:30.653Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.025157232704402517
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "读者与 POV 对世界/局势的理解已更新",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "倒计时——二十八秒",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "“你早就知道",
+        "“你知道那下面有什么",
+        "”林小雅说，“你知道我会找到这些坐标——你知道我哥——”"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "hope"
+      ],
+      "unresolvedIssues": [
+        "“你知道那下面有什么"
+      ],
+      "extractedAt": "2026-07-29T07:53:39.666Z",
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.15611814345991562
+        },
+        "microPassed": [
+          "危险"
+        ]
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 37,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "hope"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 37,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "hope"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 37,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 37,
+    "hasFluctuation": true,
+    "generatedAt": "2026-07-29T07:53:39.681Z",
+    "sceneIndex": 2
+  },
+  "readerSimulation": {
+    "curiosity": 100,
+    "questionCount": 28,
+    "dropRisk": 10,
+    "continueProbability": 97,
+    "sceneIndex": 2,
+    "pov": "林小雅",
+    "simulatedAt": "2026-07-29T07:53:39.683Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 62,
+    "obstacleStrength": 48,
+    "choiceLevel": 50,
+    "consequenceLevel": 40,
+    "escalationLevel": 50,
+    "informationValue": 58,
+    "hookImpact": 57,
+    "stateChangeRate": 67,
+    "hookBreakdown": {
+      "hookLevel": 57,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "“什么时候知道的？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "在桌上。“那你告诉我——”她说，“那下面，到底有什么？”对方没有回答。只是看着她。“你终于发现自己不是第一次来到这里。”",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "在桌上。“那你告诉我——”她说，“那下面，到底有什么？”对方没有回答。只是看着她。“你终于发现自己不是第一次来到这里。”",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "克服阻碍：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 72,
+      "emotionalImpact": 53,
+      "characterCost": 45,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 53,
+    "weakest": "consequenceLevel",
+    "pass": true,
+    "blocking": false,
+    "analyzedAt": "2026-07-29T07:53:39.684Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "“什么时候知道的？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "在桌上。“那你告诉我——”她说，“那下面，到底有什么？”对方没有回答。只是看着她。“你终于发现自己不是第一次来到这里。”",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "在桌上。“那你告诉我——”她说，“那下面，到底有什么？”对方没有回答。只是看着她。“你终于发现自己不是第一次来到这里。”",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "克服阻碍：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 57,
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "“什么时候知道的？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "在桌上。“那你告诉我——”她说，“那下面，到底有什么？”对方没有回答。只是看着她。“你终于发现自己不是第一次来到这里。”",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "在桌上。“那你告诉我——”她说，“那下面，到底有什么？”对方没有回答。只是看着她。“你终于发现自己不是第一次来到这里。”",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "克服阻碍：林异作为底层清道夫的生存本能与激活编辑器后‘被系统标记’的危险身份之间的核心冲突；他渴望找到妹妹，但每一次使用编辑器都会增加被‘天外眼’和秩序局锁定的风险。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 72,
+    "emotionalImpact": 53,
+    "characterCost": 45
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 9,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": true,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 70,
+    "signals": {
+      "payoffHit": true,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-07-29T07:53:39.685Z"
+}

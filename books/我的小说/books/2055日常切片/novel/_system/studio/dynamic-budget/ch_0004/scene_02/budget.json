@@ -1,0 +1,167 @@
+{
+  "version": "dynamic-budget-3",
+  "chapter": 4,
+  "scene": {
+    "id": "ch4_s2",
+    "index": 2,
+    "goal": "克服阻碍：林晓必须在完成系统派发的六台机器人维修任务（维持生计）与为女儿取得急需的哮喘药（维持生命健康）之间分配有限的时间和信用资源；系统不断制造障碍（AI巡检、药房AI、处方验证），而人情网络（独居老人、老医生）则提供非正规的解决方案，两者形成对抗。"
+  },
+  "totalTokens": 2058,
+  "budgetRange": {
+    "min": 1800,
+    "max": 3200,
+    "target": 2058
+  },
+  "sceneType": "dialogue",
+  "complexity": {
+    "characterCount": 1,
+    "conflictCount": 5,
+    "worldChange": true,
+    "dialogueDensity": 0,
+    "battleScale": 0.1,
+    "infoRelease": 0.25,
+    "score": 0.43,
+    "level": "medium"
+  },
+  "dynamic": true,
+  "tierless": true,
+  "allocation": {
+    "goal": {
+      "key": "goal",
+      "label": "Goal",
+      "weight": 0.0818,
+      "tokens": 168,
+      "pct": 8.2,
+      "color": "#5b8def"
+    },
+    "conflict": {
+      "key": "conflict",
+      "label": "Conflict",
+      "weight": 0.1636,
+      "tokens": 337,
+      "pct": 16.4,
+      "color": "#f45b69"
+    },
+    "character": {
+      "key": "character",
+      "label": "Character",
+      "weight": 0.2361,
+      "tokens": 486,
+      "pct": 23.6,
+      "color": "#3dd68c"
+    },
+    "world": {
+      "key": "world",
+      "label": "World",
+      "weight": 0.0657,
+      "tokens": 135,
+      "pct": 6.6,
+      "color": "#a78bfa"
+    },
+    "facts": {
+      "key": "facts",
+      "label": "Facts",
+      "weight": 0.0981,
+      "tokens": 202,
+      "pct": 9.8,
+      "color": "#f5a623"
+    },
+    "history": {
+      "key": "history",
+      "label": "History",
+      "weight": 0.0455,
+      "tokens": 94,
+      "pct": 4.5,
+      "color": "#56cfe1"
+    },
+    "relationship": {
+      "key": "relationship",
+      "label": "Relationship",
+      "weight": 0.2455,
+      "tokens": 505,
+      "pct": 24.5,
+      "color": "#ff6b9d"
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "weight": 0.0636,
+      "tokens": 131,
+      "pct": 6.4,
+      "color": "#ffd166"
+    }
+  },
+  "pie": [
+    {
+      "key": "goal",
+      "label": "Goal",
+      "tokens": 168,
+      "pct": 8.2,
+      "color": "#5b8def"
+    },
+    {
+      "key": "conflict",
+      "label": "Conflict",
+      "tokens": 337,
+      "pct": 16.4,
+      "color": "#f45b69"
+    },
+    {
+      "key": "character",
+      "label": "Character",
+      "tokens": 486,
+      "pct": 23.6,
+      "color": "#3dd68c"
+    },
+    {
+      "key": "world",
+      "label": "World",
+      "tokens": 135,
+      "pct": 6.6,
+      "color": "#a78bfa"
+    },
+    {
+      "key": "facts",
+      "label": "Facts",
+      "tokens": 202,
+      "pct": 9.8,
+      "color": "#f5a623"
+    },
+    {
+      "key": "history",
+      "label": "History",
+      "tokens": 94,
+      "pct": 4.5,
+      "color": "#56cfe1"
+    },
+    {
+      "key": "relationship",
+      "label": "Relationship",
+      "tokens": 505,
+      "pct": 24.5,
+      "color": "#ff6b9d"
+    },
+    {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "tokens": 131,
+      "pct": 6.4,
+      "color": "#ffd166"
+    }
+  ],
+  "limits": {
+    "goalTokens": 168,
+    "conflictTokens": 337,
+    "characterTokens": 486,
+    "worldTokens": 135,
+    "factsTokens": 202,
+    "historyTokens": 94,
+    "relationshipTokens": 505,
+    "knowledgeTokens": 131
+  },
+  "intent": {
+    "mainGoal": "展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。",
+    "pov": "林晓"
+  },
+  "generatedAt": "2026-07-13T06:03:30.713Z"
+}

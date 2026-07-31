@@ -1,0 +1,230 @@
+{
+  "phase": "written",
+  "pass": false,
+  "rewriteRound": 2,
+  "failures": [
+    "Dialogue：本检测点 500 字对话不足（需 ≥1 次）",
+    "Conflict：检测点 2 未体现冲突升级",
+    "Dialogue：本检测点 395 字对话不足（需 ≥1 次）",
+    "Pacing：Scene 节拍须含 动作→对白→冲突→解释→动作→Hook 顺序",
+    "Pacing：Scene 缺少「对白」节拍",
+    "Pacing：Scene 缺少「Hook」节拍"
+  ],
+  "checkpoints": [
+    {
+      "index": 0,
+      "charRange": "0-500",
+      "charCount": 500,
+      "pass": false,
+      "failures": [
+        "Dialogue：本检测点 500 字对话不足（需 ≥1 次）"
+      ],
+      "dimensions": {
+        "opening": {
+          "id": "opening",
+          "pass": true,
+          "failures": [],
+          "score": 100
+        },
+        "conflict": {
+          "id": "conflict",
+          "pass": true,
+          "failures": [],
+          "score": 75
+        },
+        "dialogue": {
+          "id": "dialogue",
+          "pass": false,
+          "failures": [
+            "Dialogue：本检测点 500 字对话不足（需 ≥1 次）"
+          ],
+          "score": 25,
+          "metrics": {
+            "dialogueBlocks": 0,
+            "charCount": 500
+          }
+        },
+        "information": {
+          "id": "information",
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "metrics": {
+            "loreRun": 14
+          }
+        },
+        "hook": {
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "id": "hook"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "charRange": "500-1000",
+      "charCount": 500,
+      "pass": false,
+      "failures": [
+        "Conflict：检测点 2 未体现冲突升级",
+        "Dialogue：本检测点 500 字对话不足（需 ≥1 次）"
+      ],
+      "dimensions": {
+        "opening": {
+          "pass": true,
+          "failures": [],
+          "score": 100
+        },
+        "conflict": {
+          "id": "conflict",
+          "pass": false,
+          "failures": [
+            "Conflict：检测点 2 未体现冲突升级"
+          ],
+          "score": 40
+        },
+        "dialogue": {
+          "id": "dialogue",
+          "pass": false,
+          "failures": [
+            "Dialogue：本检测点 500 字对话不足（需 ≥1 次）"
+          ],
+          "score": 25,
+          "metrics": {
+            "dialogueBlocks": 0,
+            "charCount": 500
+          }
+        },
+        "information": {
+          "id": "information",
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "metrics": {
+            "loreRun": 42
+          }
+        },
+        "hook": {
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "id": "hook"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "charRange": "1000-1500",
+      "charCount": 500,
+      "pass": false,
+      "failures": [
+        "Dialogue：本检测点 500 字对话不足（需 ≥1 次）"
+      ],
+      "dimensions": {
+        "opening": {
+          "pass": true,
+          "failures": [],
+          "score": 100
+        },
+        "conflict": {
+          "id": "conflict",
+          "pass": true,
+          "failures": [],
+          "score": 75
+        },
+        "dialogue": {
+          "id": "dialogue",
+          "pass": false,
+          "failures": [
+            "Dialogue：本检测点 500 字对话不足（需 ≥1 次）"
+          ],
+          "score": 25,
+          "metrics": {
+            "dialogueBlocks": 0,
+            "charCount": 500
+          }
+        },
+        "information": {
+          "id": "information",
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "metrics": {
+            "loreRun": 39
+          }
+        },
+        "hook": {
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "id": "hook"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "charRange": "1500-2000",
+      "charCount": 395,
+      "pass": false,
+      "failures": [
+        "Dialogue：本检测点 395 字对话不足（需 ≥1 次）"
+      ],
+      "dimensions": {
+        "opening": {
+          "pass": true,
+          "failures": [],
+          "score": 100
+        },
+        "conflict": {
+          "id": "conflict",
+          "pass": true,
+          "failures": [],
+          "score": 100
+        },
+        "dialogue": {
+          "id": "dialogue",
+          "pass": false,
+          "failures": [
+            "Dialogue：本检测点 395 字对话不足（需 ≥1 次）"
+          ],
+          "score": 30.25,
+          "metrics": {
+            "dialogueBlocks": 0,
+            "charCount": 395
+          }
+        },
+        "information": {
+          "id": "information",
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "metrics": {
+            "loreRun": 23
+          }
+        },
+        "hook": {
+          "id": "hook",
+          "pass": true,
+          "failures": [],
+          "score": 100,
+          "metrics": {
+            "hasQuestion": true,
+            "tailLen": 120
+          }
+        }
+      }
+    }
+  ],
+  "pacing": {
+    "pass": false,
+    "failures": [
+      "Pacing：Scene 节拍须含 动作→对白→冲突→解释→动作→Hook 顺序",
+      "Pacing：Scene 缺少「对白」节拍",
+      "Pacing：Scene 缺少「Hook」节拍"
+    ]
+  },
+  "pacingReport": "pacing_report.json",
+  "totalChars": 1895,
+  "at": "2026-07-10T08:27:45.236Z"
+}

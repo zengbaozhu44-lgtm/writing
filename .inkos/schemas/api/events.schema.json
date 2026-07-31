@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkos://schemas/api/events.schema.json",
+  "title": "EventsResponse",
+  "type": "object",
+  "required": ["apiVersion", "runtimeVersion", "events"],
+  "properties": {
+    "apiVersion": { "type": "string", "const": "1.0.0" },
+    "runtimeVersion": { "type": "string" },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event", "at"],
+        "properties": {
+          "event": {
+            "enum": [
+              "sceneFinished", "sceneReviewFailed", "sceneRejected",
+              "chapterFinished", "chapterReviewFailed", "memoryUpdated",
+              "reviewFailed", "decisionRejected", "metricsLow",
+              "criticRejected", "validationRejected",
+              "pipelineCompleted", "pipelineFailed", "nextChapterPlanned"
+            ]
+          },
+          "at": { "type": "string", "format": "date-time" },
+          "label": { "type": "string" },
+          "payload": { "type": "object" }
+        }
+      }
+    }
+  }
+}

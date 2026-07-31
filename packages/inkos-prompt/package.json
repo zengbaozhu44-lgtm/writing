@@ -1,0 +1,15 @@
+{
+  "name": "@inkos/prompt",
+  "version": "1.0.0",
+  "description": "Novel OS Prompt Compiler — Cache + Context Diff + Dynamic Budget",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "dependencies": {
+    "@inkos/dynamic-budget": "1.0.0",
+    "@inkos/context-ranking": "1.0.0",
+    "@inkos/adaptive-learning": "1.0.0"
+  }
+}

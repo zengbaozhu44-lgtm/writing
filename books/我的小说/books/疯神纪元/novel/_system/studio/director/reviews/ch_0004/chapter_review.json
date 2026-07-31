@@ -1,0 +1,397 @@
+{
+  "version": "chapter-review-5",
+  "role": "chapter-review",
+  "mode": "reader-addiction-curve",
+  "chapter": 4,
+  "pass": false,
+  "blocking": false,
+  "policy": "章级 Reader Curve Report → nextChapterGuidance 输入下一章 Director；不阻塞章完成",
+  "averageWeightedScore": 75,
+  "averageTotal": 75,
+  "readerAddictionScore": 80,
+  "hookDensity": 99,
+  "questionDensity": 98,
+  "payoffDensity": 47,
+  "readerCuriosity": 69,
+  "readerWhyContinue": "Hook 密度 99 — 递进良好；追问深度 98 — 悬念持续；伏笔兑现 47 — 回收不足；追读动力 69 — 驱动力偏弱",
+  "readerCurveReport": {
+    "version": "reader-curve-2",
+    "chapter": 4,
+    "readerAddictionScore": 80,
+    "hookDensity": 99,
+    "questionDensity": 98,
+    "payoffDensity": 47,
+    "readerCuriosity": 69,
+    "hookCurve": [
+      {
+        "sceneIndex": 1,
+        "actual": 100,
+        "target": 45
+      },
+      {
+        "sceneIndex": 2,
+        "actual": 100,
+        "target": 58
+      },
+      {
+        "sceneIndex": 3,
+        "actual": 96,
+        "target": 72
+      },
+      {
+        "sceneIndex": 4,
+        "actual": 100,
+        "target": 95
+      }
+    ],
+    "mysteryCurve": [
+      {
+        "sceneIndex": 1,
+        "actual": 100,
+        "target": 35
+      },
+      {
+        "sceneIndex": 2,
+        "actual": 100,
+        "target": 60
+      },
+      {
+        "sceneIndex": 3,
+        "actual": 92,
+        "target": 68
+      },
+      {
+        "sceneIndex": 4,
+        "actual": 100,
+        "target": 93
+      }
+    ],
+    "payoffCurve": [
+      {
+        "sceneIndex": 1,
+        "actual": 36,
+        "target": 30
+      },
+      {
+        "sceneIndex": 2,
+        "actual": 68,
+        "target": 42
+      },
+      {
+        "sceneIndex": 3,
+        "actual": 46,
+        "target": 53
+      },
+      {
+        "sceneIndex": 4,
+        "actual": 36,
+        "target": 25
+      }
+    ],
+    "curveTrends": {
+      "hook": {
+        "increasing": true,
+        "dips": 0,
+        "start": 100,
+        "end": 100,
+        "delta": 0
+      },
+      "mystery": {
+        "increasing": true,
+        "dips": 0,
+        "start": 100,
+        "end": 100,
+        "delta": 0
+      },
+      "payoff": {
+        "increasing": false,
+        "dips": 2,
+        "start": 36,
+        "end": 36,
+        "delta": 0
+      }
+    },
+    "averages": {
+      "readerCuriosity": 69,
+      "twistStrength": 51,
+      "hookDensity": 99,
+      "questionDensity": 98,
+      "payoffDensity": 47
+    },
+    "readerWhyContinue": "Hook 密度 99 — 递进良好；追问深度 98 — 悬念持续；伏笔兑现 47 — 回收不足；追读动力 69 — 驱动力偏弱",
+    "nextChapterGuidance": [
+      "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+      "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+      "阅读驱动力 69/100 偏低 — 下一章增加代价逼近与不可逆选择",
+      "反转力度不足 — 下一章安排预期违背或信息翻盘"
+    ],
+    "generatedAt": "2026-07-29T07:54:42.042Z"
+  },
+  "sceneCount": 4,
+  "sceneReviews": [
+    {
+      "sceneIndex": 1,
+      "weightedScore": 76,
+      "total": 76,
+      "verdict": "warning",
+      "scores": {
+        "hookDensity": 100,
+        "questionDensity": 100,
+        "payoffDensity": 36,
+        "readerCuriosity": 81,
+        "twistStrength": 40,
+        "dialogue": 35,
+        "conflict": 100,
+        "hook": 100,
+        "emotion": 81,
+        "style": 40,
+        "pacing": 81
+      },
+      "weights": {
+        "hookDensity": 0.22,
+        "questionDensity": 0.18,
+        "payoffDensity": 0.1,
+        "readerCuriosity": 0.2,
+        "twistStrength": 0.15,
+        "dialogue": 0.08,
+        "conflict": 0.07
+      },
+      "suggestions": [
+        "dialogue: 用对白推进冲突，避免说明式旁白（35/100）",
+        "payoffDensity: 加强伏笔回收 — 兑现前文悬念或部分揭晓（36/100）",
+        "twistStrength: 加强反转力度 — 预期违背、信息翻盘或身份反转（40/100）"
+      ],
+      "weakest": [
+        {
+          "id": "dialogue",
+          "score": 35,
+          "weight": 0.08
+        },
+        {
+          "id": "payoffDensity",
+          "score": 36,
+          "weight": 0.1
+        }
+      ],
+      "readerCurves": {
+        "hookAvg": 100,
+        "mysteryAvg": 100,
+        "payoffAvg": 38,
+        "twistHits": 0
+      },
+      "hookDensity": 100,
+      "questionDensity": 100,
+      "payoffDensity": 36,
+      "readerCuriosity": 81
+    },
+    {
+      "sceneIndex": 2,
+      "weightedScore": 82,
+      "total": 82,
+      "verdict": "pass",
+      "scores": {
+        "hookDensity": 100,
+        "questionDensity": 100,
+        "payoffDensity": 68,
+        "readerCuriosity": 71,
+        "twistStrength": 67,
+        "dialogue": 55,
+        "conflict": 89,
+        "hook": 100,
+        "emotion": 71,
+        "style": 67,
+        "pacing": 71
+      },
+      "weights": {
+        "hookDensity": 0.22,
+        "questionDensity": 0.18,
+        "payoffDensity": 0.1,
+        "readerCuriosity": 0.2,
+        "twistStrength": 0.15,
+        "dialogue": 0.08,
+        "conflict": 0.07
+      },
+      "suggestions": [
+        "dialogue: 用对白推进冲突，避免说明式旁白（55/100）",
+        "readerCuriosity: 提升阅读驱动力 — 代价逼近、选择收窄、好奇心悬而未决（71/100）",
+        "twistStrength: 加强反转力度 — 预期违背、信息翻盘或身份反转（67/100）",
+        "payoffDensity: 加强伏笔回收 — 兑现前文悬念或部分揭晓（68/100）"
+      ],
+      "weakest": [
+        {
+          "id": "dialogue",
+          "score": 55,
+          "weight": 0.08
+        },
+        {
+          "id": "twistStrength",
+          "score": 67,
+          "weight": 0.15
+        }
+      ],
+      "readerCurves": {
+        "hookAvg": 100,
+        "mysteryAvg": 100,
+        "payoffAvg": 69,
+        "twistHits": 1
+      },
+      "hookDensity": 100,
+      "questionDensity": 100,
+      "payoffDensity": 68,
+      "readerCuriosity": 71
+    },
+    {
+      "sceneIndex": 3,
+      "weightedScore": 65,
+      "total": 65,
+      "verdict": "retry",
+      "scores": {
+        "hookDensity": 96,
+        "questionDensity": 92,
+        "payoffDensity": 46,
+        "readerCuriosity": 50,
+        "twistStrength": 40,
+        "dialogue": 35,
+        "conflict": 60,
+        "hook": 96,
+        "emotion": 50,
+        "style": 40,
+        "pacing": 50
+      },
+      "weights": {
+        "hookDensity": 0.22,
+        "questionDensity": 0.18,
+        "payoffDensity": 0.1,
+        "readerCuriosity": 0.2,
+        "twistStrength": 0.15,
+        "dialogue": 0.08,
+        "conflict": 0.07
+      },
+      "suggestions": [
+        "dialogue: 用对白推进冲突，避免说明式旁白（35/100）",
+        "twistStrength: 加强反转力度 — 预期违背、信息翻盘或身份反转（40/100）",
+        "readerCuriosity: 提升阅读驱动力 — 代价逼近、选择收窄、好奇心悬而未决（50/100）",
+        "payoffDensity: 加强伏笔回收 — 兑现前文悬念或部分揭晓（46/100）",
+        "conflict: 让目标与阻力同场升级，代价可见（60/100）"
+      ],
+      "weakest": [
+        {
+          "id": "dialogue",
+          "score": 35,
+          "weight": 0.08
+        },
+        {
+          "id": "twistStrength",
+          "score": 40,
+          "weight": 0.15
+        }
+      ],
+      "readerCurves": {
+        "hookAvg": 100,
+        "mysteryAvg": 69,
+        "payoffAvg": 38,
+        "twistHits": 0
+      },
+      "hookDensity": 96,
+      "questionDensity": 92,
+      "payoffDensity": 46,
+      "readerCuriosity": 50
+    },
+    {
+      "sceneIndex": 4,
+      "weightedScore": 76,
+      "total": 76,
+      "verdict": "warning",
+      "scores": {
+        "hookDensity": 100,
+        "questionDensity": 100,
+        "payoffDensity": 36,
+        "readerCuriosity": 72,
+        "twistStrength": 55,
+        "dialogue": 35,
+        "conflict": 100,
+        "hook": 100,
+        "emotion": 72,
+        "style": 55,
+        "pacing": 72
+      },
+      "weights": {
+        "hookDensity": 0.22,
+        "questionDensity": 0.18,
+        "payoffDensity": 0.1,
+        "readerCuriosity": 0.2,
+        "twistStrength": 0.15,
+        "dialogue": 0.08,
+        "conflict": 0.07
+      },
+      "suggestions": [
+        "dialogue: 用对白推进冲突，避免说明式旁白（35/100）",
+        "payoffDensity: 加强伏笔回收 — 兑现前文悬念或部分揭晓（36/100）",
+        "twistStrength: 加强反转力度 — 预期违背、信息翻盘或身份反转（55/100）",
+        "readerCuriosity: 提升阅读驱动力 — 代价逼近、选择收窄、好奇心悬而未决（72/100）"
+      ],
+      "weakest": [
+        {
+          "id": "dialogue",
+          "score": 35,
+          "weight": 0.08
+        },
+        {
+          "id": "payoffDensity",
+          "score": 36,
+          "weight": 0.1
+        }
+      ],
+      "readerCurves": {
+        "hookAvg": 100,
+        "mysteryAvg": 98,
+        "payoffAvg": 38,
+        "twistHits": 1
+      },
+      "hookDensity": 100,
+      "questionDensity": 100,
+      "payoffDensity": 36,
+      "readerCuriosity": 72
+    }
+  ],
+  "retrySceneCount": 1,
+  "warningSceneCount": 2,
+  "adaptiveHints": [
+    {
+      "sceneIndex": 3,
+      "message": "dialogue: 用对白推进冲突，避免说明式旁白（35/100）"
+    },
+    {
+      "sceneIndex": 3,
+      "message": "twistStrength: 加强反转力度 — 预期违背、信息翻盘或身份反转（40/100）"
+    },
+    {
+      "sceneIndex": 1,
+      "message": "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+      "source": "reader-curve"
+    },
+    {
+      "sceneIndex": 1,
+      "message": "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+      "source": "reader-curve"
+    },
+    {
+      "sceneIndex": 1,
+      "message": "阅读驱动力 69/100 偏低 — 下一章增加代价逼近与不可逆选择",
+      "source": "reader-curve"
+    },
+    {
+      "sceneIndex": 1,
+      "message": "反转力度不足 — 下一章安排预期违背或信息翻盘",
+      "source": "reader-curve"
+    }
+  ],
+  "nextChapterGuidance": [
+    "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+    "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+    "阅读驱动力 69/100 偏低 — 下一章增加代价逼近与不可逆选择",
+    "反转力度不足 — 下一章安排预期违背或信息翻盘"
+  ],
+  "intent": {},
+  "generatedAt": "2026-07-29T07:54:42.042Z"
+}

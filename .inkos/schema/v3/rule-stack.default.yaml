@@ -1,0 +1,83 @@
+# V3 规则栈 — 替代 V2 story/runtime/chapter-*.rule-stack.yaml
+
+version: 3
+
+layers:
+  - id: L1
+    name: immutable_facts
+    precedence: 100
+    scope: global
+    sources:
+      - runtime/10_facts.yaml
+
+  - id: L2
+    name: world_canon
+    precedence: 90
+    scope: book
+    sources:
+      - canon/01_world_bible.md
+
+  - id: L3
+    name: writing_bible
+    precedence: 85
+    scope: book
+    sources:
+      - canon/02_writing_bible.md
+
+  - id: L4
+    name: character_canon
+    precedence: 80
+    scope: character
+    sources:
+      - canon/03_characters/
+
+  - id: L5
+    name: current_state
+    precedence: 75
+    scope: scene
+    sources:
+      - runtime/06_current_state.md
+      - runtime/hidden/info_matrix.yaml
+      - runtime/hidden/relation_net.yaml
+
+  - id: L6
+    name: chapter_task
+    precedence: 70
+    scope: local
+    sources:
+      - runtime/07_chapter_task.md
+
+  - id: L7
+    name: hidden_forces
+    precedence: 65
+    scope: offscreen
+    sources:
+      - runtime/hidden/state_board.md
+
+sections:
+  hard:
+    - runtime/10_facts.yaml
+    - runtime/06_current_state.md
+    - canon/02_writing_bible.md
+    - runtime/hidden/info_matrix.yaml
+  soft:
+    - runtime/07_chapter_task.md
+    - runtime/hidden/state_board.md
+    - runtime/08_hooks.yaml
+  diagnostic:
+    - runtime/audit/drift.md
+
+overrideEdges:
+  - from: L6
+    to: L5
+    allowed: true
+    scope: current_chapter
+    reason: 本章任务可覆盖状态中的「当前任务」字段
+  - from: L6
+    to: L3
+    allowed: false
+    scope: current_chapter
+  - from: L6
+    to: L1
+    allowed: false
+    scope: current_chapter

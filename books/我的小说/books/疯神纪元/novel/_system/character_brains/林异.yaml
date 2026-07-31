@@ -1,0 +1,52 @@
+character: 林异
+goals:
+  surface: 在这个被天外眼锁死的世界里生存下去，利用玩家撕开规则的缺口
+  hidden: 找到世界的真相，弄清楚自己作为数据生命体的本质，最终重写规则成为新的造物主
+fears:
+  - 服务器（编辑器）崩溃导致自己消失
+  - 被陈道临或赫利俄斯彻底清除
+  - 玩家被自己当成纯粹的消耗品，失去人性底线
+  - 妹妹的真相是一个陷阱
+bottom_line: 绝不主动献祭玩家，尽力保证‘账号封禁率’最低
+current_state:
+  trust_protagonist: 0
+  fear: 80
+  betrayal_probability: 40
+  suspicion: 70
+  loyalty: 0
+growth_arc: 从废墟中挣扎求存的清道夫，到利用‘源码编辑器’操控玩家的幕后操盘手，最终成长为制定新规则的孤独造物主。核心弧线：生存者→操控者→造物主，在利用与底线之间不断挣扎，学会为‘公平’护犊子，最终接受孤独守望的命运。
+triggers:
+  发现源代码编辑器:
+    trust: 0
+    suspicion: 30
+  被天外眼追杀:
+    trust: 0
+    suspicion: 60
+  陈道临开始调查:
+    trust: 0
+    suspicion: 80
+  玩家出现伤亡:
+    trust: 15
+    suspicion: -10
+  妹妹留言出现:
+    trust: 10
+    suspicion: 50
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 0
+      fear: 65
+      betrayal_probability: 40
+      suspicion: 70
+      loyalty: 0
+    at: 2026-07-29T06:36:08.646Z
+  - chapter: 2
+    state:
+      trust_protagonist: 0
+      fear: 80
+      betrayal_probability: 40
+      suspicion: 70
+      loyalty: 0
+    at: 2026-07-29T06:41:54.421Z
+updatedAt: 2026-07-29T07:09:35.065Z

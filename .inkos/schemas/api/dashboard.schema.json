@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkos://schemas/api/dashboard.schema.json",
+  "title": "DashboardResponse",
+  "description": "Studio Dashboard 聚合响应 — 全部字段来自 Runtime 产出物，Studio 禁止重算",
+  "type": "object",
+  "required": ["apiVersion", "runtimeVersion", "book", "chapter", "runtime", "health", "scenes"],
+  "properties": {
+    "apiVersion": { "type": "string", "const": "1.0.0" },
+    "runtimeVersion": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "book": { "$ref": "#/$defs/BookMeta" },
+    "chapter": { "type": "integer", "minimum": 1 },
+    "runtime": { "$ref": "#/$defs/RuntimeStatus" },
+    "health": { "$ref": "#/$defs/HealthDisplay" },
+    "scenes": { "type": "array", "items": { "$ref": "#/$defs/Scene" } },
+    "plan": { "type": ["object", "null"] },
+    "run": { "type": ["object", "null"] },
+    "brainStages": { "type": "array", "items": { "$ref": "#/$defs/BrainStage" } },
+    "state": { "type": "object", "additionalProperties": { "type": "string" } },
+    "world": { "type": "array", "items": { "$ref": "#/$defs/WorldFaction" } },
+    "events": { "type": "array", "items": { "$ref": "#/$defs/Event" } },
+    "adaptive": { "type": ["object", "null"] },
+    "console": { "type": "array" }
+  },
+  "$defs": {
+    "BookMeta": {
+      "type": "object",
+      "required": ["id", "title", "schemaVersion", "brainEnabled"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "schemaVersion": { "type": "integer" },
+        "brainEnabled": { "type": "boolean" },
+        "runtimeCapable": { "type": "boolean" },
+        "currentChapter": { "type": "integer" }
+      }
+    },
+    "RuntimeStatus": {
+      "type": "object",
+      "properties": {
+        "phase": { "enum": ["Idle", "Planning", "Scene Writing", "Reviewing", "Updating Memory", "Waiting"] },
+        "running": { "type": "boolean" },
+        "status": { "type": "string" },
+        "queueSize": { "type": "integer" },
+        "healthScore": { "type": "number" },
+        "lastCompletedChapter": { "type": "integer" }
+      }
+    },
+    "HealthDisplay": {
+      "type": "object",
+      "required": ["overall", "source"],
+      "properties": {
+        "overall": { "type": "number" },
+        "source": { "const": "story_health.json" },
+        "raw": { "type": "object" }
+      }
+    },
+    "Scene": {
+      "type": "object",
+      "required": ["index", "id", "title", "status"],
+      "properties": {
+        "index": { "type": "integer" },
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "goal": { "type": "string" },
+        "conflict": { "type": "string" },
+        "status": { "type": "string" },
+        "text": { "type": "string" },
+        "wordCount": { "type": "integer" },
+        "dynamic": { "type": "object" }
+      }
+    },
+    "BrainStage": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "status": { "enum": ["done", "running", "waiting", "failed"] }
+      }
+    },
+    "WorldFaction": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "Event": {
+      "type": "object",
+      "properties": {
+        "event": { "type": "string" },
+        "label": { "type": "string" },
+        "at": { "type": "string", "format": "date-time" },
+        "time": { "type": "string" }
+      }
+    }
+  }
+}

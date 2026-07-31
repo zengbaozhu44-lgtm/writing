@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkos://schemas/api/planner.schema.json",
+  "title": "PlannerResponse",
+  "type": "object",
+  "required": ["apiVersion", "runtimeVersion", "chapter"],
+  "properties": {
+    "apiVersion": { "type": "string", "const": "1.0.0" },
+    "runtimeVersion": { "type": "string" },
+    "chapter": { "type": "integer" },
+    "intent": { "type": "object" },
+    "decisionResult": { "type": "object" },
+    "conflictResult": { "type": "object" },
+    "replanCount": { "type": "integer" }
+  }
+}

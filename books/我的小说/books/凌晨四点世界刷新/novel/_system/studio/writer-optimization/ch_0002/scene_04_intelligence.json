@@ -1,0 +1,790 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 4,
+  "sceneType": "ending",
+  "beatMemory": {
+    "newFacts": [
+      "告诉他四点重置是真的，那个空白消息是警告，系统已经发现她了",
+      "屏幕底部多了一行小字——不是短信，不是通知，是屏幕本身印上去的"
+    ],
+    "characterStateChanges": [
+      "不是截屏——是整块屏幕从边缘开始模糊，像被人从另一侧用手指抹掉水汽"
+    ],
+    "emotionChanges": [
+      "fear"
+    ],
+    "unresolvedIssues": [
+      "空白消息的文字一格格消失，从左到右，像被什么东西吃掉",
+      "她下意识去按通知——手指还没碰到屏幕，通知自动消失了",
+      "灯的颜色——是冷的。蓝白色。\n\n像手机屏幕的光。\n\n门缝里有什么东西在动。\n\n很小。很快。一闪就没了。\n\n苏晚没动。\n\n手机在口袋里震了一下。她没掏出来。\n\n又"
+    ],
+    "changedDimensions": [
+      "resource",
+      "information",
+      "danger",
+      "worldCognition"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "屏幕闪了一下"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "她应该去找林夜"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "她再按——长按音量键加锁屏键"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "手机震了一下"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 4
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "苏晚当前目标：林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统 — 局势尚未被本 Scene 改写",
+      "action": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-28T03:20:22.702Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyState": {
+          "kind": "storyState",
+          "before": "苏晚当前目标：林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统 — 局势尚未被本 Scene 改写",
+          "after": "POV 已锁定可执行目标，局面即将被打破",
+          "changed": true,
+          "stagnant": false,
+          "signals": {
+            "info": true,
+            "danger": false,
+            "relation": true,
+            "character": false,
+            "world": false,
+            "goal": false,
+            "any": true
+          },
+          "pass": true,
+          "failReasons": []
+        },
+        "causeEffect": {
+          "kind": "causeEffect",
+          "lastEvent": null,
+          "cause": "苏晚当前目标：林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统 — 局势尚未被本 Scene 改写",
+          "event": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。",
+          "effect": "POV 已锁定可执行目标，局面即将被打破",
+          "pass": true,
+          "failReasons": [],
+          "nextEvent": {
+            "cause": "苏晚当前目标：林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统 — 局势尚未被本 Scene 改写",
+            "event": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统",
+            "effect": "POV 已锁定可执行目标，局面即将被打破"
+          }
+        },
+        "microScene": {
+          "kind": "microScene",
+          "checks": {
+            "新信息": true,
+            "关系": true,
+            "危险": false,
+            "Promise兑现": false,
+            "新行动": true
+          },
+          "passed": [
+            "新信息",
+            "关系",
+            "新行动"
+          ],
+          "required": 2,
+          "pass": true,
+          "failReasons": []
+        }
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Countdown",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "局势改变 — 且局面本身不会让步",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "屏幕闪了一下",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "不是截屏——是整块屏幕从边缘开始模糊，像被人从另一侧用手指抹掉水汽"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "空白消息的文字一格格消失，从左到右，像被什么东西吃掉"
+      ],
+      "extractedAt": "2026-07-28T03:20:26.206Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyState": {
+          "kind": "storyState",
+          "before": "POV 已锁定可执行目标，局面即将被打破",
+          "after": "阻力落地，目标受挫，退路收窄",
+          "changed": true,
+          "stagnant": false,
+          "signals": {
+            "info": true,
+            "danger": true,
+            "relation": true,
+            "character": false,
+            "world": false,
+            "goal": false,
+            "any": true
+          },
+          "pass": true,
+          "failReasons": []
+        },
+        "causeEffect": {
+          "kind": "causeEffect",
+          "lastEvent": {
+            "cause": "苏晚当前目标：林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统 — 局势尚未被本 Scene 改写",
+            "event": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统",
+            "effect": "POV 已锁定可执行目标，局面即将被打破"
+          },
+          "cause": "POV 已锁定可执行目标，局面即将被打破",
+          "event": "局势改变 — 且局面本身不会让步",
+          "effect": "阻力落地，目标受挫，退路收窄",
+          "pass": true,
+          "failReasons": [],
+          "nextEvent": {
+            "cause": "POV 已锁定可执行目标，局面即将被打破",
+            "event": "局势改变 — 且局面本身不会让步",
+            "effect": "阻力落地，目标受挫，退路收窄"
+          }
+        },
+        "microScene": {
+          "kind": "microScene",
+          "checks": {
+            "新信息": true,
+            "关系": true,
+            "危险": true,
+            "Promise兑现": false,
+            "新行动": true
+          },
+          "passed": [
+            "新信息",
+            "关系",
+            "危险",
+            "新行动"
+          ],
+          "required": 2,
+          "pass": true,
+          "failReasons": []
+        }
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "她应该去找林夜",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "告诉他四点重置是真的，那个空白消息是警告，系统已经发现她了"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-28T03:20:28.989Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyState": {
+          "kind": "storyState",
+          "before": "阻力落地，目标受挫，退路收窄",
+          "after": "POV 已做出不可逆选择，后果即将落地",
+          "changed": true,
+          "stagnant": false,
+          "signals": {
+            "info": false,
+            "danger": true,
+            "relation": true,
+            "character": false,
+            "world": true,
+            "goal": false,
+            "any": true
+          },
+          "pass": true,
+          "failReasons": []
+        },
+        "causeEffect": {
+          "kind": "causeEffect",
+          "lastEvent": {
+            "cause": "POV 已锁定可执行目标，局面即将被打破",
+            "event": "局势改变 — 且局面本身不会让步",
+            "effect": "阻力落地，目标受挫，退路收窄"
+          },
+          "cause": "阻力落地，目标受挫，退路收窄",
+          "event": "POV 必须在有限选项中做出选择，每个选项都有代价",
+          "effect": "POV 已做出不可逆选择，后果即将落地",
+          "pass": true,
+          "failReasons": [],
+          "nextEvent": {
+            "cause": "阻力落地，目标受挫，退路收窄",
+            "event": "POV 必须在有限选项中做出选择，每个选项都有代价",
+            "effect": "POV 已做出不可逆选择，后果即将落地"
+          }
+        },
+        "microScene": {
+          "kind": "microScene",
+          "checks": {
+            "新信息": false,
+            "关系": true,
+            "危险": true,
+            "Promise兑现": false,
+            "新行动": true
+          },
+          "passed": [
+            "关系",
+            "危险",
+            "新行动"
+          ],
+          "required": 2,
+          "pass": true,
+          "failReasons": []
+        }
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Countdown",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "选择产生可见代价，局面因此改变",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择产生可见代价，局面因此改变",
+      "afterState": "她再按——长按音量键加锁屏键",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-28T03:20:36.860Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "storyState": {
+          "kind": "storyState",
+          "before": "POV 已做出不可逆选择，后果即将落地",
+          "after": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+          "changed": true,
+          "stagnant": false,
+          "signals": {
+            "info": true,
+            "danger": true,
+            "relation": true,
+            "character": false,
+            "world": true,
+            "goal": false,
+            "any": true
+          },
+          "pass": true,
+          "failReasons": []
+        },
+        "causeEffect": {
+          "kind": "causeEffect",
+          "lastEvent": {
+            "cause": "阻力落地，目标受挫，退路收窄",
+            "event": "POV 必须在有限选项中做出选择，每个选项都有代价",
+            "effect": "POV 已做出不可逆选择，后果即将落地"
+          },
+          "cause": "POV 已做出不可逆选择，后果即将落地",
+          "event": "选择产生可见代价，局面因此改变",
+          "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+          "pass": true,
+          "failReasons": [],
+          "nextEvent": {
+            "cause": "POV 已做出不可逆选择，后果即将落地",
+            "event": "选择产生可见代价，局面因此改变",
+            "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+          }
+        },
+        "microScene": {
+          "kind": "microScene",
+          "checks": {
+            "新信息": true,
+            "关系": true,
+            "危险": true,
+            "Promise兑现": false,
+            "新行动": true
+          },
+          "passed": [
+            "新信息",
+            "关系",
+            "危险",
+            "新行动"
+          ],
+          "required": 2,
+          "pass": true,
+          "failReasons": []
+        }
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "认知被新信息改写",
+      "afterState": "手机震了一下",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "她下意识去按通知——手指还没碰到屏幕，通知自动消失了"
+      ],
+      "extractedAt": "2026-07-28T03:20:39.030Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyState": {
+          "kind": "storyState",
+          "before": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+          "after": "认知更新：新信息已落地，局面无法装作不知道",
+          "changed": true,
+          "stagnant": false,
+          "signals": {
+            "info": true,
+            "danger": true,
+            "relation": true,
+            "character": false,
+            "world": true,
+            "goal": false,
+            "any": true
+          },
+          "pass": true,
+          "failReasons": []
+        },
+        "causeEffect": {
+          "kind": "causeEffect",
+          "lastEvent": {
+            "cause": "POV 已做出不可逆选择，后果即将落地",
+            "event": "选择产生可见代价，局面因此改变",
+            "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+          },
+          "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+          "event": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+          "pass": true,
+          "failReasons": [],
+          "nextEvent": {
+            "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+            "event": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+            "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+          }
+        },
+        "microScene": {
+          "kind": "microScene",
+          "checks": {
+            "新信息": true,
+            "关系": true,
+            "危险": true,
+            "Promise兑现": true,
+            "新行动": true
+          },
+          "passed": [
+            "新信息",
+            "关系",
+            "危险",
+            "Promise兑现",
+            "新行动"
+          ],
+          "required": 2,
+          "pass": true,
+          "failReasons": []
+        }
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "读者与 POV 对世界/局势的理解已更新",
+      "action": "章尾强 Hook — 未完成动作或致命追问",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "屏幕底部多了一行小字——不是短信，不是通知，是屏幕本身印上去的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "灯的颜色——是冷的。蓝白色。\n\n像手机屏幕的光。\n\n门缝里有什么东西在动。\n\n很小。很快。一闪就没了。\n\n苏晚没动。\n\n手机在口袋里震了一下。她没掏出来。\n\n又"
+      ],
+      "extractedAt": "2026-07-28T03:20:45.875Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyState": {
+          "kind": "storyState",
+          "before": "认知更新：新信息已落地，局面无法装作不知道",
+          "after": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+          "changed": true,
+          "stagnant": false,
+          "signals": {
+            "info": false,
+            "danger": true,
+            "relation": true,
+            "character": false,
+            "world": true,
+            "goal": false,
+            "any": true
+          },
+          "pass": true,
+          "failReasons": []
+        },
+        "causeEffect": {
+          "kind": "causeEffect",
+          "lastEvent": {
+            "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+            "event": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+            "effect": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实"
+          },
+          "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+          "event": "章尾强 Hook — 未完成动作或致命追问",
+          "effect": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+          "pass": true,
+          "failReasons": [],
+          "nextEvent": {
+            "cause": "局势向终局推进 — 苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实",
+            "event": "章尾强 Hook — 未完成动作或致命追问",
+            "effect": "苏晚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面"
+          }
+        },
+        "microScene": {
+          "kind": "microScene",
+          "checks": {
+            "新信息": false,
+            "关系": true,
+            "危险": true,
+            "Promise兑现": false,
+            "新行动": true
+          },
+          "passed": [
+            "关系",
+            "危险",
+            "新行动"
+          ],
+          "required": 2,
+          "pass": true,
+          "failReasons": []
+        }
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-07-28T03:20:45.895Z",
+    "sceneIndex": 4
+  },
+  "readerSimulation": {
+    "curiosity": 76,
+    "questionCount": 9,
+    "dropRisk": 10,
+    "continueProbability": 83,
+    "sceneIndex": 4,
+    "pov": "苏晚",
+    "simulatedAt": "2026-07-28T03:20:45.896Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 41,
+    "obstacleStrength": 43,
+    "choiceLevel": 39,
+    "consequenceLevel": 47,
+    "escalationLevel": 39,
+    "informationValue": 48,
+    "hookImpact": 53,
+    "stateChangeRate": 67,
+    "hookBreakdown": {
+      "hookLevel": 53,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 62,
+      "emotionalImpact": 53,
+      "characterCost": 45,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 45,
+    "weakest": "choiceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-07-28T03:20:45.897Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 53,
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": true,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 62,
+    "emotionalImpact": 53,
+    "characterCost": 45
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 7,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": true,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 70,
+    "signals": {
+      "payoffHit": true,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-07-28T03:20:45.897Z"
+}

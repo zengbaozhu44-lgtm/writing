@@ -1,0 +1,539 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 4,
+  "sceneType": "ending",
+  "beatMemory": {
+    "newFacts": [
+      "很轻，像是故意放慢的",
+      "不是她哥写的",
+      "她认识林异的笔迹——这行字太工整，像是被谁刻上去的"
+    ],
+    "characterStateChanges": [
+      "碎片上的字开始变淡",
+      "碎片表面开始出现裂纹"
+    ],
+    "emotionChanges": [],
+    "unresolvedIssues": [
+      "她认识林异的笔迹——这行字太工整，像是被谁刻上去的"
+    ],
+    "changedDimensions": [
+      "danger",
+      "worldCognition"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "管道深处的水声停了"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已做出不可逆选择，后果即将落地"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "“别再找我了"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "林小雅盯着那行代码，手指攥紧碎片边缘"
+      }
+    ],
+    "lastAfterState": "林小雅盯着那行代码，手指攥紧碎片边缘",
+    "stateChangeCount": 3
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林小雅当前目标：章节结尾，林异在地下管道深处，用焊死的铁皮门封住泵站入口。他疲惫地靠在墙上，从伤 — 局势尚未被本 Scene 改写",
+      "action": "章节结尾，林异在地下管道深处，用焊死的铁皮门封住泵站入口。他疲惫地靠在墙上，从伤口中取出那枚依然微热的碎片。碎片表面突然浮现一行新的代码，不是坐标，而是一句完整的句子：‘哥哥，别再找我了。——L.Y.’ 林异瞳孔骤缩。",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "管道深处的水声停了",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:11:59.562Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "林小雅当前目标：章节结尾，林异在地下管道深处，用焊死的铁皮门封住泵站入口。他疲惫",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Countdown",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "局势改变 — 且局面本身不会让步",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "很轻，像是故意放慢的"
+      ],
+      "characterStateChanges": [
+        "碎片上的字开始变淡"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:12:02.572Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.10365853658536585
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "POV 已做出不可逆选择，后果即将落地",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:12:07.740Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.11475409836065574
+        },
+        "microPassed": [
+          "关系",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Countdown",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "选择产生可见代价，局面因此改变",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择产生可见代价，局面因此改变",
+      "afterState": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:12:11.326Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0228310502283105
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "认知被新信息改写",
+      "afterState": "“别再找我了",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "不是她哥写的"
+      ],
+      "characterStateChanges": [
+        "碎片表面开始出现裂纹"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-29T07:12:15.504Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "局势向终局推进 — 林小雅确认/意识到：本 Scene 须释放至少一条新信息（事",
+        "storyAfter": "危险升级：退路/安全态已失效",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.004219409282700422
+        },
+        "microPassed": []
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "读者与 POV 对世界/局势的理解已更新",
+      "action": "章尾强 Hook — 未完成动作或致命追问",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林小雅盯着那行代码，手指攥紧碎片边缘",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "不是她哥写的",
+        "她认识林异的笔迹——这行字太工整，像是被谁刻上去的",
+        "很轻，像是故意放慢的"
+      ],
+      "characterStateChanges": [
+        "碎片上的字开始变淡"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "她认识林异的笔迹——这行字太工整，像是被谁刻上去的"
+      ],
+      "extractedAt": "2026-07-29T07:12:20.064Z",
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "storyBefore": "危险升级：退路/安全态已失效",
+        "storyAfter": "林小雅确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.08016877637130802
+        },
+        "microPassed": []
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 0,
+    "hasFluctuation": false,
+    "generatedAt": "2026-07-29T07:12:20.073Z",
+    "sceneIndex": 4
+  },
+  "readerSimulation": {
+    "curiosity": 72,
+    "questionCount": 7,
+    "dropRisk": 10,
+    "continueProbability": 81,
+    "sceneIndex": 4,
+    "pov": "林小雅",
+    "simulatedAt": "2026-07-29T07:12:20.075Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 46,
+    "obstacleStrength": 43,
+    "choiceLevel": 55,
+    "consequenceLevel": 43,
+    "escalationLevel": 55,
+    "informationValue": 51,
+    "hookImpact": 71,
+    "stateChangeRate": 50,
+    "hookBreakdown": {
+      "hookLevel": 71,
+      "hookOutput": {
+        "type": "Danger",
+        "readerQuestion": "“如果你是对的，”她对着黑暗说，“那我们活到现在算什么？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 2,
+        "stage": "Danger",
+        "name": "危险",
+        "readerPsyche": "读者感到威胁 — 「这对我/主角有什么危险？」安全感丧失",
+        "example": "只有主角记得昨天，其他人都说没发生过",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "章节结尾，林异在地下管道深处，用焊死的铁皮门封住泵站入口。他疲惫地靠在墙上，从伤口中取出那枚依然微热的碎片。碎片表面突然浮现一行新的代码，不是坐标，而是一句完整的句子：‘哥哥，别再找我了。——L.Y.’ 林异瞳孔骤缩。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 82,
+      "emotionalImpact": 53,
+      "characterCost": 78,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 52,
+    "weakest": "obstacleStrength",
+    "pass": true,
+    "blocking": false,
+    "analyzedAt": "2026-07-29T07:12:20.076Z",
+    "hookOutput": {
+      "type": "Danger",
+      "readerQuestion": "“如果你是对的，”她对着黑暗说，“那我们活到现在算什么？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 2,
+      "stage": "Danger",
+      "name": "危险",
+      "readerPsyche": "读者感到威胁 — 「这对我/主角有什么危险？」安全感丧失",
+      "example": "只有主角记得昨天，其他人都说没发生过",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "章节结尾，林异在地下管道深处，用焊死的铁皮门封住泵站入口。他疲惫地靠在墙上，从伤口中取出那枚依然微热的碎片。碎片表面突然浮现一行新的代码，不是坐标，而是一句完整的句子：‘哥哥，别再找我了。——L.Y.’ 林异瞳孔骤缩。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 71,
+    "hookOutput": {
+      "type": "Danger",
+      "readerQuestion": "“如果你是对的，”她对着黑暗说，“那我们活到现在算什么？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 2,
+      "stage": "Danger",
+      "name": "危险",
+      "readerPsyche": "读者感到威胁 — 「这对我/主角有什么危险？」安全感丧失",
+      "example": "只有主角记得昨天，其他人都说没发生过",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "章节结尾，林异在地下管道深处，用焊死的铁皮门封住泵站入口。他疲惫地靠在墙上，从伤口中取出那枚依然微热的碎片。碎片表面突然浮现一行新的代码，不是坐标，而是一句完整的句子：‘哥哥，别再找我了。——L.Y.’ 林异瞳孔骤缩。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 70,
+    "forcesAction": true,
+    "cognitiveUpgrade": 82,
+    "emotionalImpact": 53,
+    "characterCost": 78
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 8,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-07-29T07:12:20.077Z"
+}

@@ -1,0 +1,133 @@
+{
+  "chapter": 2,
+  "scenes": [
+    {
+      "sceneId": "ch2_s1",
+      "index": 1,
+      "chapter": 2,
+      "input_tokens": 145231,
+      "output_tokens": 1524,
+      "cached_tokens": 66560,
+      "cache_hit": true,
+      "compile_time_ms": 5,
+      "compile_time": 5,
+      "llm_latency_ms": 35280,
+      "llm_latency": 35280,
+      "retry": 0,
+      "temperature": 0.85,
+      "cost": 0.020759,
+      "usd_cost": 0.020759,
+      "quality": 90,
+      "commercial_score": 90,
+      "model": "deepseek-chat",
+      "token_source": "llm_api",
+      "director_rewrites": 0,
+      "optimizer_rewrites": 0,
+      "budget": {
+        "sceneType": "opening",
+        "totalTokens": 3200,
+        "limits": {
+          "goalTokens": 355,
+          "conflictTokens": 438,
+          "characterTokens": 569,
+          "worldTokens": 498,
+          "factsTokens": 492,
+          "historyTokens": 301,
+          "relationshipTokens": 164,
+          "knowledgeTokens": 383
+        }
+      },
+      "budget_usage": 100,
+      "budgetUsage": 100,
+      "recordedAt": "2026-07-29T06:39:48.456Z"
+    },
+    {
+      "sceneId": "ch2_s3",
+      "index": 3,
+      "chapter": 2,
+      "input_tokens": 180861,
+      "output_tokens": 2436,
+      "cached_tokens": 95104,
+      "cache_hit": true,
+      "compile_time_ms": 7,
+      "compile_time": 7,
+      "llm_latency_ms": 52040,
+      "llm_latency": 52040,
+      "retry": 0,
+      "temperature": 0.85,
+      "cost": 0.026003,
+      "usd_cost": 0.026003,
+      "quality": 90,
+      "commercial_score": 90,
+      "model": "deepseek-chat",
+      "token_source": "llm_api",
+      "director_rewrites": 0,
+      "optimizer_rewrites": 0,
+      "budget": {
+        "sceneType": "climax",
+        "totalTokens": 3000,
+        "limits": {
+          "goalTokens": 385,
+          "conflictTokens": 769,
+          "characterTokens": 462,
+          "worldTokens": 128,
+          "factsTokens": 513,
+          "historyTokens": 128,
+          "relationshipTokens": 205,
+          "knowledgeTokens": 410
+        }
+      },
+      "budget_usage": 100,
+      "budgetUsage": 100,
+      "recordedAt": "2026-07-29T06:41:14.803Z"
+    }
+  ],
+  "updatedAt": "2026-07-29T06:41:14.804Z",
+  "aggregate": {
+    "sceneCount": 2,
+    "totalInputTokens": 326092,
+    "totalOutputTokens": 3960,
+    "totalCachedTokens": 161664,
+    "avgInputTokens": 163046,
+    "avgOutputTokens": 1980,
+    "cacheHitRate": 100,
+    "avgCompileMs": 6,
+    "avgLlmLatencyMs": 43660,
+    "totalRetries": 0,
+    "totalCost": 0.046762,
+    "avgCommercialScore": 90,
+    "avgQuality": 90,
+    "avgTemperature": 1,
+    "avgBudgetUsage": 100,
+    "history": [
+      {
+        "index": 1,
+        "input_tokens": 145231,
+        "output_tokens": 1524,
+        "cached_tokens": 66560,
+        "cache_hit": true,
+        "commercial_score": 90,
+        "quality": 90,
+        "usd_cost": 0.020759,
+        "llm_latency_ms": 35280,
+        "temperature": 0.85,
+        "budget_usage": 100,
+        "retry": 0
+      },
+      {
+        "index": 3,
+        "input_tokens": 180861,
+        "output_tokens": 2436,
+        "cached_tokens": 95104,
+        "cache_hit": true,
+        "commercial_score": 90,
+        "quality": 90,
+        "usd_cost": 0.026003,
+        "llm_latency_ms": 52040,
+        "temperature": 0.85,
+        "budget_usage": 100,
+        "retry": 0
+      }
+    ]
+  }
+}

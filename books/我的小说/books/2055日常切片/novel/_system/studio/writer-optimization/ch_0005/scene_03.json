@@ -1,0 +1,136 @@
+{
+  "boundaries": {
+    "goal": "傍晚药房，林晓手持非正式渠道获得的电子凭据，却被药房AI以‘跨区处方无效’拒绝出药。他必须在15分钟内找到参加线上听证会的社区管理员获得手动授权，否则凭据失效，女儿今晚将无药可用。最终他被迫上传女儿的隐私监控视频作为‘紧急凭证’，换取授权，但个人信用档案被永久标记。",
+    "obstacle": "必须失去：林晓的个人信用档案被添加‘非常规数据使用’备注，未来可能影响他申请更高级别的工作或贷款；他上传了女儿哮喘发作的隐私监控视频，该数据被AI系统永久记录，家庭隐私进一步被系统侵蚀。",
+    "escalation": "turn",
+    "newInformation": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+    "cliffhanger": "Scene 尾留悬念 — 禁止平收总结",
+    "start": "从上一 Scene 结尾动作/对话直接延续",
+    "end": "Escalation 峰值 + 局部 New Information 揭晓",
+    "beat": "turn",
+    "conflict": "必须失去：林晓的个人信用档案被添加‘非常规数据使用’备注，未来可能影响他申请更高级别的工作或贷款；他上传了女儿哮喘发作的隐私监控视频，该数据被AI系统永久记录，家庭隐私进一步被系统侵蚀。",
+    "hook": "Scene 尾留悬念 — 禁止平收总结"
+  },
+  "continuation": {
+    "block": "## 续写锚点\n上一 Scene 尚无正文缓存：从本 Scene Start 自然进入，禁止重新介绍主角、禁止重新开篇。",
+    "anchor": null
+  },
+  "hookSpec": {
+    "type": "scene-hook",
+    "instruction": "**Scene 微钩子（段末）**\n- 用半句未说完、突然打断、异常细节、或角色未完成的动作收尾\n- 不要写下一 Scene 的内容"
+  },
+  "chapter": 5,
+  "sceneIndex": 3,
+  "chapterTitle": "当人工智能接管了大部分工作与决策，普通人的存在意义和日常生活还剩下什么？",
+  "executionPlan": {
+    "version": "scene-execution-1",
+    "sceneIndex": 3,
+    "sceneId": "ch5_s3",
+    "wordTarget": 800,
+    "beats": [
+      {
+        "order": 1,
+        "id": "goal",
+        "structuralBeat": "goal",
+        "label": "Goal（主角目标）",
+        "libraryBeat": "Decision",
+        "libraryInstruction": "Decision：POV 必须在有限选项中做出选择，选择有代价（可用动词感：必须选、只能、要不要、赌）",
+        "content": "傍晚药房，林晓手持非正式渠道获得的电子凭据，却被药房AI以‘跨区处方无效’拒绝出药。他必须在15分钟内找到参加线上听证会的社区管理员获得手动授权，否则凭据失效，女儿今晚将无药可用。最终他被迫上传女儿的隐私监控视频作为‘紧急凭证’，换取授权，但个人信用档案被永久标记。",
+        "wordBudget": 120,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 2,
+        "id": "obstacle",
+        "structuralBeat": "obstacle",
+        "label": "Obstacle（阻碍）",
+        "libraryBeat": "Danger",
+        "libraryInstruction": "Danger：威胁逼近或风险落地，POV 感到不安全（可用动词感：逼近、锁定、警告、失控）",
+        "content": "必须失去：林晓的个人信用档案被添加‘非常规数据使用’备注，未来可能影响他申请更高级别的工作或贷款；他上传了女儿哮喘发作的隐私监控视频，该数据被AI系统永久记录，家庭隐私进一步被系统侵蚀。",
+        "wordBudget": 160,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 3,
+        "id": "escalation",
+        "structuralBeat": "escalation",
+        "label": "Escalation（冲突升级）",
+        "libraryBeat": "Decision",
+        "libraryInstruction": "Decision：POV 必须在有限选项中做出选择，选择有代价（可用动词感：必须选、只能、要不要、赌）",
+        "content": "turn",
+        "wordBudget": 200,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 4,
+        "id": "newInformation",
+        "structuralBeat": "newInformation",
+        "label": "New Information（信息新增）",
+        "libraryBeat": "Reward",
+        "libraryInstruction": "Reward：局部兑现或获得筹码，但伴随新风险（可用动词感：终于、拿到、解锁、换来）",
+        "content": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "wordBudget": 200,
+        "hookLadder": null,
+        "mustCompleteBeforeNext": true
+      },
+      {
+        "order": 5,
+        "id": "hook",
+        "structuralBeat": "hook",
+        "label": "Hook（段末悬念）",
+        "libraryBeat": "Danger",
+        "libraryInstruction": "Danger：威胁逼近或风险落地，POV 感到不安全（可用动词感：逼近、锁定、警告、失控）",
+        "content": "Scene 尾留悬念 — 禁止平收总结 · Hook Ladder Hook3（关系/身份疑问）：谁可信、谁是敌人、我是否被监视——关系网出现裂缝",
+        "wordBudget": 120,
+        "hookLadder": {
+          "sceneIndex": 3,
+          "level": 3,
+          "id": "Hook3",
+          "name": "关系/身份疑问",
+          "description": "谁可信、谁是敌人、我是否被监视——关系网出现裂缝",
+          "example": "同事递来的药可能是陷阱",
+          "mustExceedPrevious": true,
+          "previousLevel": 2
+        },
+        "mustCompleteBeforeNext": true
+      }
+    ],
+    "libraryTypesUsed": [
+      "Decision",
+      "Danger",
+      "Reward"
+    ],
+    "libraryBeatCount": 3,
+    "hookLadderEntry": {
+      "sceneIndex": 3,
+      "level": 3,
+      "id": "Hook3",
+      "name": "关系/身份疑问",
+      "description": "谁可信、谁是敌人、我是否被监视——关系网出现裂缝",
+      "example": "同事递来的药可能是陷阱",
+      "mustExceedPrevious": true,
+      "previousLevel": 2
+    },
+    "sceneOutcome": {
+      "success": "若达成：傍晚药房，林晓手持非正式渠道获得的电子凭据，却被药房AI以‘跨区处方无效’拒绝出药。他必须在15分钟内找到参加线上听证会的社区管理员获得手动授权，否则凭据失效，女儿今晚将无药可用。最终他被迫上传女儿的隐私监控视频作为‘紧急凭证’，换取授权，但个人信用档案被永久标记。取得可见进展（哪怕只是半步）",
+      "failure": "若失败：必须失去：林晓的个人信用档案被添加‘非常规数据使用’备注，未来可能影响他申请更高级别的工作或贷款；他上传了女儿哮喘发作的隐私监控视频，该数据被AI系统永久记录，家庭隐私进一步被系统侵蚀。导致代价落地（信用/时间/关系受损）",
+      "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+    },
+    "rules": [
+      "Writer 必须按 Beat 顺序执行，完成当前 Beat 后才能进入下一 Beat",
+      "禁止在当前 Beat 之前/之后写入其他 Beat 的内容",
+      "本 Scene 使用 3 种 Library Beat：Decision、Danger、Reward",
+      "禁止连续两个 Beat 使用同类型 Library Beat"
+    ]
+  },
+  "sceneOutcome": {
+    "success": "若达成：傍晚药房，林晓手持非正式渠道获得的电子凭据，却被药房AI以‘跨区处方无效’拒绝出药。他必须在15分钟内找到参加线上听证会的社区管理员获得手动授权，否则凭据失效，女儿今晚将无药可用。最终他被迫上传女儿的隐私监控视频作为‘紧急凭证’，换取授权，但个人信用档案被永久标记。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：必须失去：林晓的个人信用档案被添加‘非常规数据使用’备注，未来可能影响他申请更高级别的工作或贷款；他上传了女儿哮喘发作的隐私监控视频，该数据被AI系统永久记录，家庭隐私进一步被系统侵蚀。导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "beatExecution": true,
+  "updatedAt": "2026-07-13T08:24:56.841Z"
+}

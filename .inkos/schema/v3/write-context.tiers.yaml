@@ -1,0 +1,81 @@
+# V3 写章上下文加载顺序（注意力机制）
+# Tier 数字越小，越优先加载；写正文时按序读取，禁止跳过 Tier 0-1
+
+version: 3
+
+preWrite:
+  phase: plan
+  steps:
+    - read: canon/05_volume_outlines/vol_{current_volume}.md
+    - read: runtime/06_current_state.md
+    - read: runtime/hidden/state_board.md
+    - read: runtime/08_hooks.yaml
+      filter: chapter_relevant
+    - write: runtime/07_chapter_task.md
+      maxChars: 300
+    - confirm: runtime/07_chapter_task.md
+
+write:
+  tiers:
+    - tier: 0
+      label: 本章任务
+      required: true
+      files:
+        - runtime/07_chapter_task.md
+
+    - tier: 1
+      label: 此刻状态
+      required: true
+      files:
+        - runtime/06_current_state.md
+        - runtime/10_facts.yaml
+          filter: pov_and_scene_relevant
+        - runtime/hidden/info_matrix.yaml
+          filter: pov_column_and_present_characters
+
+    - tier: 2
+      label: 人物与关系
+      required: true
+      files:
+        - canon/03_characters/{pov}.md
+        - canon/03_characters/{present_characters}.md
+        - runtime/hidden/relation_net.yaml
+          filter: scene_edges
+
+    - tier: 3
+      label: 写作规则
+      required: true
+      files:
+        - canon/02_writing_bible.md
+
+    - tier: 4
+      label: 世界边界
+      required: false
+      files:
+        - canon/01_world_bible.md
+          filter: scene_relevant_sections
+        - canon/04_factions/{scene_factions}.md
+
+    - tier: 5
+      label: 时空校验
+      required: false
+      files:
+        - runtime/09_timeline.yaml
+          filter: last_7_days
+        - runtime/hidden/state_board.md
+          filter: offscreen_forces
+
+    - tier: 6
+      label: 审计（仅偏航时）
+      required: false
+      files:
+        - runtime/audit/drift.md
+
+  forbiddenAtWrite:
+    - canon/05_volume_outlines/   # 除规划阶段外不加载全文
+    - runtime/snapshots/          # 快照仅供回滚
+    - chapters/                   # 最近 1-2 章正文按需摘要，不全量灌入
+
+postWrite:
+  phase: update
+  workflow: post_chapter.yaml

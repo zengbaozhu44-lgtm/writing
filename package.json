@@ -1,0 +1,45 @@
+{
+  "name": "inkos",
+  "version": "2.0.0",
+  "description": "Novel OS V4 + Brain + Runtime 2.0 — Event Driven AI Novel Engine",
+  "type": "module",
+  "bin": {
+    "inkos": "./packages/inkos-core/src/cli.js"
+  },
+  "scripts": {
+    "inkos": "node packages/inkos-core/src/cli.js",
+    "init-book": "node packages/inkos-core/src/cli.js init",
+    "test": "node scripts/test-runtime.js",
+    "test:runtime": "node scripts/test-runtime.js",
+    "test:regression": "node tests/runtime-regression/regression.js",
+    "test:prompt": "node tests/prompt-regression/regression.js",
+    "test:living": "node scripts/test-living-novel.js",
+    "test:writer-optimizer": "node scripts/test-writer-optimizer.js",
+    "test:writer-prompt": "node scripts/test-writer-prompt.js",
+    "test:beat-execution": "node scripts/test-beat-execution.js",
+    "test:director": "node scripts/test-director.js",
+    "test:pacing": "node scripts/test-pacing.js",
+    "test:story-thread": "node scripts/test-story-thread.js",
+    "test:context-ranking": "node scripts/test-context-ranking.js",
+    "test:dynamic-budget": "node scripts/test-dynamic-budget.js",
+    "test:prompt-metrics": "node scripts/test-prompt-metrics.js",
+    "test:hash-dependency": "node scripts/test-hash-dependency.js",
+    "test:story-memory": "node scripts/test-story-memory.js",
+    "test:adaptive-learning": "node scripts/test-adaptive-learning.js",
+    "test:semantic-hash": "node scripts/test-semantic-hash.js",
+    "studio:server": "node packages/inkos-studio-server/src/server.js",
+    "studio:dev": "npm run dev --workspace=@inkos/studio",
+    "studio:build": "npm run build --workspace=@inkos/studio",
+    "studio": "npm run studio:build && node packages/inkos-studio-server/src/server.js",
+    "studio:ide": "npm run studio:build && node packages/inkos-studio-server/src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "yaml": "^2.8.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

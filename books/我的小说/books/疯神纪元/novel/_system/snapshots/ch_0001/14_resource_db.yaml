@@ -1,0 +1,23 @@
+# 14 Resource DB — 每章变化
+
+meta:
+  last_updated_chapter: 0
+
+resources:
+  cash: 0
+  medicine: []
+  weapons: []
+  time_budget_hours: 0
+  identity_cover: null
+  favors: []       # 人情
+  reputation: {}   # 信誉 per faction
+  intelligence: [] # 情报条目
+  permissions: []  # 权限
+
+by_character: {}
+
+# 示例:
+# by_character:
+#   主角:
+#     cash: 200
+#     favors: [{ to: 老周, amount: 1, reason: 帮忙搬货 }]

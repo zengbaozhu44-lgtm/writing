@@ -1,0 +1,607 @@
+{
+  "version": "pacing-1",
+  "pass": false,
+  "failures": [
+    "Pacing：Scene 节拍须含 动作→对白→冲突→解释→动作→Hook 顺序",
+    "Pacing：Scene 缺少「对白」节拍",
+    "Pacing：Scene 缺少「Hook」节拍"
+  ],
+  "totalChars": 1895,
+  "rules": {
+    "eventBand": "每 800~1200 字须有事件",
+    "expositionRun": "连续说明 > 250 字 → 加入事件",
+    "psychologyRun": "连续心理 > 180 字 → 加入动作",
+    "settingRun": "连续设定 > 150 字 → 加入对话",
+    "beatSequence": "动作→对白→冲突→解释→动作→Hook",
+    "forbid": "禁止连续 4 段解释"
+  },
+  "bands": [
+    {
+      "index": 0,
+      "charCount": 1191,
+      "text": "巡检机器人的左臂关节发出一声干涩的嘎吱声。林晓的手指停在半空，焊枪的蓝光在晨雾里划出一道弧线。他蹲在第八街区垃圾中转站的铁皮屋檐下，工具箱敞开着，里面的螺丝刀和扳手在灰蒙蒙的光线里泛着冷光。“又卡了。”他自言自语，指尖探进关节缝隙，摸到一团凝固的油泥。手腕上的终端震了一下。他瞥了眼——系统派单：六台。截止时间：下午四点。六台，四个小时。如果每台检修四十分钟，不吃午饭刚好卡着线。但如果再遇到这种关节卡死的型号，时间就不够。他拧开关节外壳，油泥的气味冲进鼻腔——混合了铁锈和某种腐烂的有机物。手指在缝隙里摸索，触到一根扭曲的弹簧片。不是标准件，是被人硬塞进去的。“老李又改参数了。”林晓把弹簧片抽出来，扔进工具箱的废料格。“你总说他。”声音从身后传来。林晓没回头，手继续在关节腔里清理油泥。他知道那是独居在三楼的周姨，每天这个点下来倒垃圾。“他总干这事。”林晓说，“上次把扫地机器人的传感器调高了三厘米，整条走廊撞了七回墙。”周姨笑了，笑声干瘪。“他那是为了躲开门槛。你们系统又不给他修门槛。”林晓没接话。他把新弹簧片卡进关节，拧紧外壳，启动自检程序。机器人的手臂缓缓抬起，转动，落下——流畅了。“好了。”周姨从口袋里掏出一个纸包，塞进他工具箱的夹层。“小敏的药，我找老刘头开的。”林晓的手指顿了一下。他知道纸包里是哮喘喷雾，一种需要处方才能取的东西。系统药房的AI会验证患者ID和处方编号，匹配不上就锁死柜台。“老刘头说这次是三个月量。”周姨压低声音，“他儿子在药品配送站，多出来的库存。”“信用点？”“互助积分。你上次帮他修的空气净化器。”林晓点点头，拉上工具箱的拉链。纸包隔着帆布布料硌着他的膝盖，像一块温度异常的铁片。他站起来，看了眼时间。八点二十三分。还剩五台。最远的一台在第十二街区，走过去要二十五分钟。他拎起工具箱，朝那个方向迈步。“林晓。”周姨喊住他。他回头。“小敏上次说想见你。周末有空？”林晓的喉咙动了动，没说出话来。他摆了摆手，转身走进晨雾。第十二街区的垃圾中转站在一片废弃商铺的夹缝里。林晓到的时候，看见那台清扫机器人正绕着电线杆打转，轮子碾过碎玻璃，发出刺耳的摩擦声。他蹲下检查底盘，发现左侧驱动轮的齿轮磨损严重。这种配件系统仓库里有，但要申请——填表，上传故障代码，等AI审核，最快也要四十分钟。“等不起。”林晓从工具箱底层翻出一盒旧齿轮，表面有手工打磨的痕迹。那是他在废品站淘的，用锉刀和砂纸改过尺寸。换齿轮的时候，手腕上的终端又震了一下。他低头看——巡检AI：编号LX-0037，第十二街区维修耗时超限。请说明原因。林晓咬着嘴唇，用沾满机油的手指在屏幕点了几下：特殊故障，正在处理。终端再次震动：预计完成时间？他看了眼齿轮槽里还没拧紧的螺丝，又看了眼工具箱夹层里的纸包。“三十分钟。”他输入。发送。然后他把终端翻了个面，屏幕朝下扣在地上。齿轮换好了。",
+      "hasEvent": true
+    },
+    {
+      "index": 1,
+      "charCount": 704,
+      "text": "机器人启动，沿着规划路线缓缓驶向街道中央。林晓坐在路沿石上，拧开水壶喝了口水。水是温的，带着塑料瓶的余味。他盯着终端黑色的背面，等。三十秒后，终端亮了。他翻过来——新消息。不是巡检AI，是系统药房的。处方编号R-76842验证失败。患者信息不匹配。请重新提交。林晓看着那行字，手指悬在屏幕上方没动。周姨说老刘头已经改过系统记录。但系统药房的AI会在每个批次药品出库时二次核验。如果老刘头改的记录没同步到药房数据库——纸包里的喷雾就是废品。他站起来，工具箱的重量把肩膀往下拽了一截。晨雾还没散，街对面废弃商铺的橱窗里，一台老旧的立式空调内机蒙着灰，像一尊被遗忘的墓碑。终端又震了一下。巡检AI：编号LX-0037，剩余五台，请按路线执行。逾期将扣除本次任务积分。林晓把工具箱换到左手，朝下一条街道走去。走了三步，停下。他掏出终端，拨了一个编号——老刘头儿子的私人号码。线路接通，传来一阵滋啦的电噪声。“喂？”“我是林晓。药房的处方验证没过。你改的记录没同步。”电话那头沉默了几秒。然后声音压得更低：“系统今天做了全局数据刷新。我爸那边的接口被锁了。”“什么意思？”“意思是，除非你有药房柜台的物理访问权限，不然这批药拿不出来。”风穿过废弃的商铺，卷起一张旧报纸，贴上了林晓的小腿。他低头看了一眼——报纸头版的日期是2049年。标题已经被雨水泡得模糊不清。终端再次亮起。这次不是巡检AI，不是药房。是个陌生编号。林晓按下接听键，没说话。对面传来一个女声，很轻，像怕被人听见：“你是林晓？周姨让我找你的。”“什么事？”“我家空调坏了。制冷模块报错。系统派单要等两天。”林晓看了眼工具箱夹层里的纸包。“地址。”他说。",
+      "hasEvent": true
+    }
+  ],
+  "runs": {
+    "exposition": 80,
+    "psychology": 10,
+    "setting": 55,
+    "limits": {
+      "exposition": 250,
+      "psychology": 180,
+      "setting": 150
+    }
+  },
+  "beats": {
+    "sequence": [
+      "action",
+      "action",
+      "action",
+      "explanation",
+      "action",
+      "action",
+      "exposition",
+      "exposition",
+      "action",
+      "action",
+      "action",
+      "action",
+      "exposition",
+      "action",
+      "explanation",
+      "action",
+      "exposition",
+      "setting",
+      "action",
+      "action",
+      "action",
+      "exposition",
+      "action",
+      "psychology",
+      "action",
+      "action",
+      "action",
+      "action",
+      "exposition",
+      "action",
+      "exposition",
+      "exposition",
+      "exposition",
+      "action",
+      "exposition",
+      "exposition",
+      "action",
+      "setting",
+      "exposition",
+      "explanation",
+      "conflict",
+      "action",
+      "action",
+      "setting",
+      "action",
+      "exposition",
+      "action",
+      "action",
+      "action",
+      "action",
+      "exposition",
+      "exposition",
+      "action",
+      "exposition",
+      "action",
+      "setting",
+      "action",
+      "exposition",
+      "exposition",
+      "exposition",
+      "action",
+      "action",
+      "exposition",
+      "explanation",
+      "action",
+      "exposition"
+    ],
+    "normalized": [
+      "action",
+      "explanation",
+      "action",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "conflict",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "action",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "action",
+      "action",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "action",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "explanation",
+      "action",
+      "explanation",
+      "explanation"
+    ],
+    "paragraphs": [
+      {
+        "index": 0,
+        "beat": "action",
+        "charCount": 21
+      },
+      {
+        "index": 1,
+        "beat": "action",
+        "charCount": 74
+      },
+      {
+        "index": 2,
+        "beat": "action",
+        "charCount": 31
+      },
+      {
+        "index": 3,
+        "beat": "explanation",
+        "charCount": 35
+      },
+      {
+        "index": 4,
+        "beat": "action",
+        "charCount": 51
+      },
+      {
+        "index": 5,
+        "beat": "action",
+        "charCount": 69
+      },
+      {
+        "index": 6,
+        "beat": "exposition",
+        "charCount": 30
+      },
+      {
+        "index": 7,
+        "beat": "exposition",
+        "charCount": 7
+      },
+      {
+        "index": 8,
+        "beat": "action",
+        "charCount": 52
+      },
+      {
+        "index": 9,
+        "beat": "action",
+        "charCount": 43
+      },
+      {
+        "index": 10,
+        "beat": "action",
+        "charCount": 34
+      },
+      {
+        "index": 11,
+        "beat": "action",
+        "charCount": 51
+      },
+      {
+        "index": 12,
+        "beat": "exposition",
+        "charCount": 5
+      },
+      {
+        "index": 13,
+        "beat": "action",
+        "charCount": 38
+      },
+      {
+        "index": 14,
+        "beat": "explanation",
+        "charCount": 65
+      },
+      {
+        "index": 15,
+        "beat": "action",
+        "charCount": 40
+      },
+      {
+        "index": 16,
+        "beat": "exposition",
+        "charCount": 6
+      },
+      {
+        "index": 17,
+        "beat": "setting",
+        "charCount": 20
+      },
+      {
+        "index": 18,
+        "beat": "action",
+        "charCount": 41
+      },
+      {
+        "index": 19,
+        "beat": "action",
+        "charCount": 23
+      },
+      {
+        "index": 20,
+        "beat": "action",
+        "charCount": 37
+      },
+      {
+        "index": 21,
+        "beat": "exposition",
+        "charCount": 5
+      },
+      {
+        "index": 22,
+        "beat": "action",
+        "charCount": 10
+      },
+      {
+        "index": 23,
+        "beat": "psychology",
+        "charCount": 16
+      },
+      {
+        "index": 24,
+        "beat": "action",
+        "charCount": 28
+      },
+      {
+        "index": 25,
+        "beat": "action",
+        "charCount": 65
+      },
+      {
+        "index": 26,
+        "beat": "action",
+        "charCount": 65
+      },
+      {
+        "index": 27,
+        "beat": "action",
+        "charCount": 54
+      },
+      {
+        "index": 28,
+        "beat": "exposition",
+        "charCount": 19
+      },
+      {
+        "index": 29,
+        "beat": "action",
+        "charCount": 6
+      },
+      {
+        "index": 30,
+        "beat": "exposition",
+        "charCount": 33
+      },
+      {
+        "index": 31,
+        "beat": "exposition",
+        "charCount": 33
+      },
+      {
+        "index": 32,
+        "beat": "exposition",
+        "charCount": 14
+      },
+      {
+        "index": 33,
+        "beat": "action",
+        "charCount": 30
+      },
+      {
+        "index": 34,
+        "beat": "exposition",
+        "charCount": 11
+      },
+      {
+        "index": 35,
+        "beat": "exposition",
+        "charCount": 23
+      },
+      {
+        "index": 36,
+        "beat": "action",
+        "charCount": 59
+      },
+      {
+        "index": 37,
+        "beat": "setting",
+        "charCount": 13
+      },
+      {
+        "index": 38,
+        "beat": "exposition",
+        "charCount": 10
+      },
+      {
+        "index": 39,
+        "beat": "explanation",
+        "charCount": 24
+      },
+      {
+        "index": 40,
+        "beat": "conflict",
+        "charCount": 30
+      },
+      {
+        "index": 41,
+        "beat": "action",
+        "charCount": 19
+      },
+      {
+        "index": 42,
+        "beat": "action",
+        "charCount": 59
+      },
+      {
+        "index": 43,
+        "beat": "setting",
+        "charCount": 11
+      },
+      {
+        "index": 44,
+        "beat": "action",
+        "charCount": 64
+      },
+      {
+        "index": 45,
+        "beat": "exposition",
+        "charCount": 8
+      },
+      {
+        "index": 46,
+        "beat": "action",
+        "charCount": 39
+      },
+      {
+        "index": 47,
+        "beat": "action",
+        "charCount": 20
+      },
+      {
+        "index": 48,
+        "beat": "action",
+        "charCount": 8
+      },
+      {
+        "index": 49,
+        "beat": "action",
+        "charCount": 41
+      },
+      {
+        "index": 50,
+        "beat": "exposition",
+        "charCount": 4
+      },
+      {
+        "index": 51,
+        "beat": "exposition",
+        "charCount": 26
+      },
+      {
+        "index": 52,
+        "beat": "action",
+        "charCount": 45
+      },
+      {
+        "index": 53,
+        "beat": "exposition",
+        "charCount": 7
+      },
+      {
+        "index": 54,
+        "beat": "action",
+        "charCount": 32
+      },
+      {
+        "index": 55,
+        "beat": "setting",
+        "charCount": 26
+      },
+      {
+        "index": 56,
+        "beat": "action",
+        "charCount": 37
+      },
+      {
+        "index": 57,
+        "beat": "exposition",
+        "charCount": 7
+      },
+      {
+        "index": 58,
+        "beat": "exposition",
+        "charCount": 14
+      },
+      {
+        "index": 59,
+        "beat": "exposition",
+        "charCount": 7
+      },
+      {
+        "index": 60,
+        "beat": "action",
+        "charCount": 12
+      },
+      {
+        "index": 61,
+        "beat": "action",
+        "charCount": 34
+      },
+      {
+        "index": 62,
+        "beat": "exposition",
+        "charCount": 6
+      },
+      {
+        "index": 63,
+        "beat": "explanation",
+        "charCount": 25
+      },
+      {
+        "index": 64,
+        "beat": "action",
+        "charCount": 15
+      },
+      {
+        "index": 65,
+        "beat": "exposition",
+        "charCount": 8
+      }
+    ],
+    "requiredSequence": [
+      "action",
+      "dialogue",
+      "conflict",
+      "explanation",
+      "action",
+      "hook"
+    ],
+    "sequenceMatched": false,
+    "maxConsecutiveExplanation": 3
+  },
+  "scene": {
+    "id": "ch2_s1",
+    "index": 1,
+    "goal": "建立 POV（林晓）当下目标：展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系（人情、互助积分）在缝隙中生存。"
+  },
+  "intent": {
+    "pov": "林晓",
+    "mainGoal": "展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系（人情、互助积分）在缝隙中生存。"
+  },
+  "generatedAt": "2026-07-10T08:27:45.234Z",
+  "phase": "written",
+  "rewriteRound": 2
+}

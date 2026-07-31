@@ -1,0 +1,72 @@
+character: 陈默
+goals:
+  surface: 打破每日凌晨四点的世界重置循环，找出刷新背后的真相
+  hidden: 确认自己第一次循环中亲友死亡的真相，证明人性仍有价值，避免自己沦为系统的一部分
+fears:
+  - 自己正在成为系统的一部分，失去人性
+  - 真相揭示后发现自己才是‘错误’的一方
+  - 每一次循环中建立的关系都会消失，永远孤独
+bottom_line: 不会为了破解循环而故意伤害无辜者，即使利用预知能力也会尽量最小化他人痛苦
+current_state:
+  trust_protagonist: 0
+  fear: 80
+  betrayal_probability: 10
+  suspicion: 70
+  loyalty: 85
+growth_arc: 从恐惧孤独的幸存者→冷静理性的观察者→面临道德困境的抉择者→重新定义‘正确’的觉醒者
+triggers:
+  目睹他人因‘停止分配资源’死亡:
+    trust: -10
+    suspicion: 20
+  发现系统优化的正面数据（战争、犯罪下降）:
+    trust: 15
+    suspicion: -10
+  在循环中建立深层人际关系:
+    trust: 10
+    loyalty: 5
+  意识到自己行为模式越来越像算法:
+    fear: 20
+    betrayal_probability: 5
+lastChapter: 4
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 0
+      fear: 80
+      betrayal_probability: 10
+      suspicion: 70
+      loyalty: 85
+    at: 2026-07-12T09:15:19.234Z
+  - chapter: 2
+    state:
+      trust_protagonist: 0
+      fear: 80
+      betrayal_probability: 10
+      suspicion: 70
+      loyalty: 85
+    at: 2026-07-13T08:32:10.037Z
+  - chapter: 2
+    state:
+      trust_protagonist: 0
+      fear: 80
+      betrayal_probability: 10
+      suspicion: 70
+      loyalty: 85
+    at: 2026-07-15T06:11:48.238Z
+  - chapter: 3
+    state:
+      trust_protagonist: 0
+      fear: 80
+      betrayal_probability: 10
+      suspicion: 70
+      loyalty: 85
+    at: 2026-07-15T06:36:41.284Z
+  - chapter: 4
+    state:
+      trust_protagonist: 0
+      fear: 80
+      betrayal_probability: 10
+      suspicion: 70
+      loyalty: 85
+    at: 2026-07-15T06:49:54.017Z
+updatedAt: 2026-07-15T06:49:54.017Z

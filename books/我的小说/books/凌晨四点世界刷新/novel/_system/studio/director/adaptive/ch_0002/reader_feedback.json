@@ -1,0 +1,455 @@
+{
+  "chapter": 2,
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "chapter": 2,
+      "metrics": {
+        "continueProbability": 80,
+        "questionCount": 30,
+        "dropRisk": 10,
+        "curiosity": 70
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[角色成长] 下一章须推动 苏晚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.44999999999999996,
+        "relationship": 0.7,
+        "action": 0.6499999999999999,
+        "emotion": 0.3,
+        "twist": 0.8499999999999999,
+        "growth": 0.6499999999999999,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.44999999999999996,
+          "score": 34,
+          "continueProbability": 80,
+          "curiosity": 70
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.7,
+          "score": 54,
+          "continueProbability": 80,
+          "curiosity": 70
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 49,
+          "continueProbability": 80,
+          "curiosity": 70
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.3,
+          "score": 23,
+          "continueProbability": 80,
+          "curiosity": 70
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.8499999999999999,
+          "score": 62,
+          "continueProbability": 80,
+          "curiosity": 70
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.6499999999999999,
+          "score": 49,
+          "continueProbability": 80,
+          "curiosity": 70
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 22,
+          "continueProbability": 80,
+          "curiosity": 70
+        }
+      },
+      "at": "2026-07-28T03:18:28.041Z"
+    },
+    {
+      "sceneIndex": 2,
+      "chapter": 2,
+      "metrics": {
+        "continueProbability": 51,
+        "questionCount": 29,
+        "dropRisk": 65,
+        "curiosity": 52
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 15,
+        "payoffBoost": 0,
+        "hookLadderBoost": 1,
+        "firstScreenExplosion": true,
+        "advancePacing": true,
+        "increaseConflict": true,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 51% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "Drop Risk 65% 偏高 — 下一章开篇须第一屏爆点，节奏提前，冲突升级，Hook Ladder 须递进",
+        "[角色成长] 下一章须推动 苏晚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true,
+        "highDropRisk": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.6,
+        "relationship": 0.6499999999999999,
+        "action": 0.6499999999999999,
+        "emotion": 0.6499999999999999,
+        "twist": 0.5,
+        "growth": 0.6499999999999999,
+        "reasoning": 0.44999999999999996
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.6,
+          "score": 31,
+          "continueProbability": 51,
+          "curiosity": 52
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.6499999999999999,
+          "score": 33,
+          "continueProbability": 51,
+          "curiosity": 52
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 33,
+          "continueProbability": 51,
+          "curiosity": 52
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.6499999999999999,
+          "score": 33,
+          "continueProbability": 51,
+          "curiosity": 52
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 26,
+          "continueProbability": 51,
+          "curiosity": 52
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.6499999999999999,
+          "score": 33,
+          "continueProbability": 51,
+          "curiosity": 52
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.44999999999999996,
+          "score": 23,
+          "continueProbability": 51,
+          "curiosity": 52
+        }
+      },
+      "at": "2026-07-28T03:19:18.698Z"
+    },
+    {
+      "sceneIndex": 3,
+      "chapter": 2,
+      "metrics": {
+        "continueProbability": 54,
+        "questionCount": 18,
+        "dropRisk": 65,
+        "curiosity": 58
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 15,
+        "payoffBoost": 0,
+        "hookLadderBoost": 1,
+        "firstScreenExplosion": true,
+        "advancePacing": true,
+        "increaseConflict": true,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 54% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "Drop Risk 65% 偏高 — 下一章开篇须第一屏爆点，节奏提前，冲突升级，Hook Ladder 须递进",
+        "[角色成长] 下一章须推动 苏晚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true,
+        "highDropRisk": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.7999999999999999,
+        "relationship": 0.2,
+        "action": 0.7999999999999999,
+        "emotion": 0.3,
+        "twist": 1,
+        "growth": 0.44999999999999996,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.7999999999999999,
+          "score": 45,
+          "continueProbability": 54,
+          "curiosity": 58
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.2,
+          "score": 11,
+          "continueProbability": 54,
+          "curiosity": 58
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.7999999999999999,
+          "score": 44,
+          "continueProbability": 54,
+          "curiosity": 58
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 54,
+          "curiosity": 58
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 1,
+          "score": 57,
+          "continueProbability": 54,
+          "curiosity": 58
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.44999999999999996,
+          "score": 25,
+          "continueProbability": 54,
+          "curiosity": 58
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 54,
+          "curiosity": 58
+        }
+      },
+      "at": "2026-07-28T03:20:20.479Z"
+    },
+    {
+      "sceneIndex": 4,
+      "chapter": 2,
+      "metrics": {
+        "continueProbability": 83,
+        "questionCount": 9,
+        "dropRisk": 10,
+        "curiosity": 76
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[角色成长] 下一章须推动 苏晚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.7999999999999999,
+        "relationship": 0.2,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.5,
+        "growth": 0.3,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.7999999999999999,
+          "score": 63,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.2,
+          "score": 16,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 52,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 36,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 39,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 24,
+          "continueProbability": 83,
+          "curiosity": 76
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 24,
+          "continueProbability": 83,
+          "curiosity": 76
+        }
+      },
+      "at": "2026-07-28T03:20:45.910Z"
+    }
+  ],
+  "aggregatedMetrics": {
+    "avgContinueProbability": 67,
+    "maxDropRisk": 65,
+    "avgQuestionCount": 22,
+    "avgCuriosity": 64,
+    "sceneCount": 4
+  },
+  "adjustments": {
+    "hookDensityBoost": 15,
+    "mysteryBoost": 0,
+    "conflictBoost": 15,
+    "payoffBoost": 0,
+    "relationshipBeatBoost": 0,
+    "hookLadderBoost": 1,
+    "firstScreenExplosion": true,
+    "advancePacing": true,
+    "increaseConflict": true,
+    "addMystery": false,
+    "addInformationGap": false,
+    "increaseHookDensity": true
+  },
+  "directives": [
+    "[角色成长] 下一章须推动 苏晚 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条",
+    "Continue Probability 51% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Drop Risk 65% 偏高 — 下一章开篇须第一屏爆点，节奏提前，冲突升级，Hook Ladder 须递进",
+    "Continue Probability 54% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+    "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+    "阅读驱动力 58/100 偏低 — 下一章增加代价逼近与不可逆选择",
+    "反转力度不足 — 下一章安排预期违背或信息翻盘"
+  ],
+  "storyMemoryDirectives": [
+    "[角色成长] 下一章须推动 苏晚 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+  ],
+  "elementScores": {
+    "conspiracy": 43,
+    "relationship": 29,
+    "action": 45,
+    "emotion": 27,
+    "twist": 46,
+    "growth": 33,
+    "reasoning": 22
+  },
+  "updatedAt": "2026-07-28T03:20:46.126Z",
+  "readerCurveReport": {
+    "readerAddictionScore": 75,
+    "nextChapterGuidance": [
+      "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+      "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+      "阅读驱动力 58/100 偏低 — 下一章增加代价逼近与不可逆选择",
+      "反转力度不足 — 下一章安排预期违背或信息翻盘"
+    ]
+  },
+  "finalizedAt": "2026-07-28T03:20:46.126Z"
+}

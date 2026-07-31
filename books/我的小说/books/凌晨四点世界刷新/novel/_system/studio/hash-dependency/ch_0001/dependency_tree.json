@@ -1,0 +1,478 @@
+{
+  "version": "hash-dependency-tree-2",
+  "chapter": 1,
+  "combinedHash": "de0b6801febcae15",
+  "previousCombinedHash": "1ddddf8674acc922",
+  "trigger": null,
+  "promptCache": {
+    "status": "invalid",
+    "brain": false,
+    "studio": false,
+    "paths": {
+      "brain": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/凌晨四点世界刷新/novel/_system/brain/prompt-cache/ch_0001",
+      "studio": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/凌晨四点世界刷新/novel/_system/studio/compiled-prompts/ch_0001"
+    }
+  },
+  "nodes": [
+    {
+      "id": "world",
+      "label": "World",
+      "hash": "cb47af4ad35f24d2",
+      "previous": "cb47af4ad35f24d2",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "01_world_bible.md",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "character",
+      "label": "Character",
+      "hash": "6a1c48d316e7851d",
+      "previous": "6a1c48d316e7851d",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "03_character_bible/",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "facts",
+      "label": "Facts",
+      "hash": "1c759aab4f533a5b",
+      "previous": "empty",
+      "changed": true,
+      "status": "invalid",
+      "canonSource": "13_facts_db.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline",
+      "hash": "1ed0d77221698a45",
+      "previous": "empty",
+      "changed": true,
+      "status": "invalid",
+      "canonSource": "11_timeline.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship",
+      "hash": "empty",
+      "previous": "empty",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "05_relationship_graph.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "knowledge",
+      "label": "Knowledge",
+      "hash": "4f53cda18c2baa0c",
+      "previous": "4f53cda18c2baa0c",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "06_knowledge_matrix.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "resources",
+      "label": "Resources",
+      "hash": "44136fa355b3678a",
+      "previous": "44136fa355b3678a",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "14_resource_db.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "style",
+      "label": "Style DNA",
+      "hash": "02b90834d68cc64d",
+      "previous": "02b90834d68cc64d",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "_system/style_dna.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "writing",
+      "label": "Writing Bible",
+      "hash": "caf0f130aec8efba",
+      "previous": "caf0f130aec8efba",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "02_writing_bible.md",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    },
+    {
+      "id": "storyDna",
+      "label": "Story DNA",
+      "hash": "73572bf3b75b409f",
+      "previous": "73572bf3b75b409f",
+      "changed": false,
+      "status": "invalid",
+      "canonSource": "_system/story_dna.yaml",
+      "dependsOn": [
+        "prompt-cache"
+      ]
+    }
+  ],
+  "sceneNodes": [
+    {
+      "id": "scene_1",
+      "type": "scene",
+      "label": "Scene 1",
+      "index": 1,
+      "status": "invalid",
+      "mustRecompile": true
+    },
+    {
+      "id": "scene_2",
+      "type": "scene",
+      "label": "Scene 2",
+      "index": 2,
+      "status": "invalid",
+      "mustRecompile": true
+    },
+    {
+      "id": "scene_3",
+      "type": "scene",
+      "label": "Scene 3",
+      "index": 3,
+      "status": "invalid",
+      "mustRecompile": true
+    },
+    {
+      "id": "scene_4",
+      "type": "scene",
+      "label": "Scene 4",
+      "index": 4,
+      "status": "invalid",
+      "mustRecompile": true
+    }
+  ],
+  "graph": {
+    "affectedScenes": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sceneCount": 4,
+    "triggerScene": 1,
+    "summary": {
+      "cached": 8,
+      "modified": 2,
+      "invalid": 4,
+      "regenerating": 0
+    }
+  },
+  "edges": [
+    {
+      "from": "world",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "character",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "facts",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "timeline",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "relationship",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "knowledge",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "resources",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "style",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "writing",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "storyDna",
+      "to": "prompt-cache",
+      "type": "hash"
+    },
+    {
+      "from": "world",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "world",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "world",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "world",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "scene_1",
+      "to": "compiled-prompt",
+      "type": "compile"
+    },
+    {
+      "from": "scene_2",
+      "to": "compiled-prompt",
+      "type": "compile"
+    },
+    {
+      "from": "scene_3",
+      "to": "compiled-prompt",
+      "type": "compile"
+    },
+    {
+      "from": "scene_4",
+      "to": "compiled-prompt",
+      "type": "compile"
+    },
+    {
+      "from": "prompt-cache",
+      "to": "compiled-prompt",
+      "type": "compile"
+    }
+  ],
+  "summary": {
+    "cached": 0,
+    "modified": 0,
+    "invalid": 11,
+    "regenerating": 0
+  },
+  "invalidated": true,
+  "regenerating": false,
+  "changed": [
+    "facts",
+    "timeline"
+  ],
+  "updatedAt": "2026-07-15T05:57:20.523Z"
+}

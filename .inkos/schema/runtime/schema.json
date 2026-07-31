@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "name": "Novel OS Runtime 2.0",
+  "description": "Event Driven AI Novel Engine — Brain 之上的自动执行层",
+  "package": "packages/inkos-runtime",
+  "events": [
+    "sceneFinished",
+    "sceneReviewFailed",
+    "sceneRejected",
+    "chapterFinished",
+    "chapterReviewFailed",
+    "memoryUpdated",
+    "reviewFailed",
+    "decisionRejected",
+    "metricsLow",
+    "criticRejected",
+    "validationRejected",
+    "pipelineCompleted",
+    "pipelineFailed",
+    "nextChapterPlanned"
+  ],
+  "pipeline": {
+    "scene": ["review", "consistency", "decision", "memory"],
+    "chapter": ["consistency", "metrics", "reader", "critic", "validation", "adaptive", "storyHealth", "gitMemory", "nextPlanner"]
+  },
+  "compatibility": {
+    "v4": true,
+    "brain": "1.0",
+    "legacyCliFlag": "--legacy"
+  }
+}

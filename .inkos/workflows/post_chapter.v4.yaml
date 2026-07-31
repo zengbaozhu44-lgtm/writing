@@ -1,0 +1,47 @@
+# V4 写前上下文 — 按注意力 Tier 加载
+
+version: 4
+
+beforeWrite:
+  order:
+    - novel/09_current_chapter.md
+    - novel/08_current_state.md
+    - novel/13_facts_db.yaml
+    - novel/06_knowledge_matrix.yaml
+    - novel/14_resource_db.yaml
+    - novel/03_character_bible/{pov}.md
+    - novel/03_character_bible/{present}.md
+    - novel/05_relationship_graph.yaml
+    - novel/02_writing_bible.md
+    - novel/01_world_bible.md
+    - novel/04_faction_bible/{scene_factions}.md
+    - novel/07_state_board.md
+    - novel/11_timeline.yaml
+    - novel/12_foreshadow_db.yaml
+
+afterWrite:
+  order:
+    - novel/11_timeline.yaml
+    - novel/13_facts_db.yaml
+    - novel/07_state_board.md
+    - novel/12_foreshadow_db.yaml
+    - novel/05_relationship_graph.yaml
+    - novel/06_knowledge_matrix.yaml
+    - novel/14_resource_db.yaml
+    - novel/08_current_state.md
+    - novel/15_npc_simulation.yaml
+    - novel/_system/state_machine.yaml
+    - novel/16_chapter_review/ch_{chapter:04d}.yaml
+
+chapterReview:
+  dimensions:
+    - goal_progress
+    - conflict
+    - character_growth
+    - info_release
+    - foreshadow
+    - pacing
+    - readability
+    - world_progress
+    - emotion_curve
+  passThreshold: 80

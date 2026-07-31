@@ -1,0 +1,233 @@
+{
+  "intent": {
+    "chapter": 1,
+    "attempt": 1,
+    "pov": "主角",
+    "present": [],
+    "chapterIntent": "第1章：进入世界",
+    "mainGoal": "进入世界",
+    "obstacles": [
+      "资源不足或时间压力",
+      "信息不完整"
+    ],
+    "turningPoint": "关键抉择导致不可逆变化",
+    "ending": "发现型钩子",
+    "bargain": "",
+    "mustGain": "",
+    "mustLose": "时间或身体代价",
+    "newForeshadow": "",
+    "volumeGoals": [
+      "进入世界",
+      "建立关系",
+      "第一次失败",
+      "第一次成长",
+      "揭露第一层秘密"
+    ],
+    "contextFacts": [],
+    "location": "—",
+    "time": "Day 0",
+    "adaptiveWeights": {
+      "actionSceneWeight": 1,
+      "conflictPriority": 1,
+      "dialogueTarget": 0.45,
+      "hookEmphasis": 1,
+      "styleStrictness": 1,
+      "sceneCountBias": 0
+    },
+    "scenes": [
+      {
+        "index": 1,
+        "id": "ch1_s1",
+        "title": "进入局面",
+        "goal": "建立 POV（主角）当下目标：进入世界",
+        "conflict": "资源不足或时间压力",
+        "entities": [
+          "主角"
+        ],
+        "beat": "situation"
+      },
+      {
+        "index": 2,
+        "id": "ch1_s2",
+        "title": "受阻与博弈",
+        "goal": "克服阻碍：资源不足或时间压力",
+        "conflict": "信息不完整",
+        "entities": [
+          "主角"
+        ],
+        "beat": "complication"
+      },
+      {
+        "index": 3,
+        "id": "ch1_s3",
+        "title": "转折与代价",
+        "goal": "关键抉择导致不可逆变化",
+        "conflict": "必须失去：时间或身体代价",
+        "entities": [
+          "主角"
+        ],
+        "beat": "turn"
+      },
+      {
+        "index": 4,
+        "id": "ch1_s4",
+        "title": "章末钩子",
+        "goal": "发现型钩子",
+        "conflict": "局势改变",
+        "entities": [
+          "主角"
+        ],
+        "beat": "hook"
+      }
+    ]
+  },
+  "decisionResult": {
+    "pass": true,
+    "decisions": [
+      {
+        "sceneId": "ch1_s1",
+        "actor": "",
+        "action": "建立 POV（主角）当下目标：进入世界",
+        "checks": {
+          "values": {
+            "pass": true
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "sceneId": "ch1_s2",
+        "actor": "",
+        "action": "克服阻碍：资源不足或时间压力",
+        "checks": {
+          "values": {
+            "pass": true
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "sceneId": "ch1_s3",
+        "actor": "",
+        "action": "关键抉择导致不可逆变化",
+        "checks": {
+          "values": {
+            "pass": true
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "sceneId": "ch1_s4",
+        "actor": "",
+        "action": "发现型钩子",
+        "checks": {
+          "values": {
+            "pass": true
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": []
+      }
+    ],
+    "checks": [
+      "values",
+      "interest",
+      "resources",
+      "knowledge",
+      "relationship",
+      "risk"
+    ]
+  },
+  "conflictResult": {
+    "pass": true,
+    "types": [
+      "resource",
+      "information"
+    ],
+    "required": [
+      "resource",
+      "relationship",
+      "interest",
+      "rule",
+      "values",
+      "information"
+    ],
+    "evidence": [
+      {
+        "type": "resource",
+        "source": "资源/代价关键词"
+      },
+      {
+        "type": "information",
+        "source": "信息差"
+      }
+    ],
+    "primary": "resource",
+    "suggestObstacle": null
+  },
+  "replanCount": 0
+}

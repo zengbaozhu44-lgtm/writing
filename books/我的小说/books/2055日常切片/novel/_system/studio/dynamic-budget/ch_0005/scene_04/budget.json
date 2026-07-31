@@ -1,0 +1,167 @@
+{
+  "version": "dynamic-budget-3",
+  "chapter": 5,
+  "scene": {
+    "id": "ch5_s4",
+    "index": 4,
+    "goal": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。"
+  },
+  "totalTokens": 2848,
+  "budgetRange": {
+    "min": 1800,
+    "max": 3200,
+    "target": 2848
+  },
+  "sceneType": "ending",
+  "complexity": {
+    "characterCount": 1,
+    "conflictCount": 3,
+    "worldChange": true,
+    "dialogueDensity": 0.45,
+    "battleScale": 0.1,
+    "infoRelease": 0.75,
+    "score": 0.58,
+    "level": "medium"
+  },
+  "dynamic": true,
+  "tierless": true,
+  "allocation": {
+    "goal": {
+      "key": "goal",
+      "label": "Goal",
+      "weight": 0.1261,
+      "tokens": 360,
+      "pct": 12.6,
+      "color": "#5b8def"
+    },
+    "conflict": {
+      "key": "conflict",
+      "label": "Conflict",
+      "weight": 0.2185,
+      "tokens": 622,
+      "pct": 21.8,
+      "color": "#f45b69"
+    },
+    "character": {
+      "key": "character",
+      "label": "Character",
+      "weight": 0.1546,
+      "tokens": 440,
+      "pct": 15.5,
+      "color": "#3dd68c"
+    },
+    "world": {
+      "key": "world",
+      "label": "World",
+      "weight": 0.0135,
+      "tokens": 38,
+      "pct": 1.4,
+      "color": "#a78bfa"
+    },
+    "facts": {
+      "key": "facts",
+      "label": "Facts",
+      "weight": 0.1345,
+      "tokens": 383,
+      "pct": 13.4,
+      "color": "#f5a623"
+    },
+    "history": {
+      "key": "history",
+      "label": "History",
+      "weight": 0.0756,
+      "tokens": 215,
+      "pct": 7.6,
+      "color": "#56cfe1"
+    },
+    "relationship": {
+      "key": "relationship",
+      "label": "Relationship",
+      "weight": 0.1597,
+      "tokens": 455,
+      "pct": 16,
+      "color": "#ff6b9d"
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "weight": 0.1176,
+      "tokens": 335,
+      "pct": 11.8,
+      "color": "#ffd166"
+    }
+  },
+  "pie": [
+    {
+      "key": "goal",
+      "label": "Goal",
+      "tokens": 360,
+      "pct": 12.6,
+      "color": "#5b8def"
+    },
+    {
+      "key": "conflict",
+      "label": "Conflict",
+      "tokens": 622,
+      "pct": 21.8,
+      "color": "#f45b69"
+    },
+    {
+      "key": "character",
+      "label": "Character",
+      "tokens": 440,
+      "pct": 15.5,
+      "color": "#3dd68c"
+    },
+    {
+      "key": "world",
+      "label": "World",
+      "tokens": 38,
+      "pct": 1.4,
+      "color": "#a78bfa"
+    },
+    {
+      "key": "facts",
+      "label": "Facts",
+      "tokens": 383,
+      "pct": 13.4,
+      "color": "#f5a623"
+    },
+    {
+      "key": "history",
+      "label": "History",
+      "tokens": 215,
+      "pct": 7.6,
+      "color": "#56cfe1"
+    },
+    {
+      "key": "relationship",
+      "label": "Relationship",
+      "tokens": 455,
+      "pct": 16,
+      "color": "#ff6b9d"
+    },
+    {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "tokens": 335,
+      "pct": 11.8,
+      "color": "#ffd166"
+    }
+  ],
+  "limits": {
+    "goalTokens": 360,
+    "conflictTokens": 622,
+    "characterTokens": 440,
+    "worldTokens": 38,
+    "factsTokens": 383,
+    "historyTokens": 215,
+    "relationshipTokens": 455,
+    "knowledgeTokens": 335
+  },
+  "intent": {
+    "mainGoal": "展现维修工林晓在系统规则与人性需求之间的日常博弈；通过一次紧急维修和取药任务，揭示AI系统高效背后的僵化与漏洞，以及底层居民如何利用非正式关系在缝隙中生存。",
+    "pov": "林晓"
+  },
+  "generatedAt": "2026-07-13T08:25:15.854Z"
+}

@@ -1,0 +1,51 @@
+character: 苏晴
+goals:
+  surface: 带领‘黎明之光’公会通关末日游戏，获得终极隐藏奖励，证明自己是世界第一公会会长
+  hidden: 维持对游戏真实性的怀疑与信任之间的平衡——她需要这场‘游戏’足够真实来获得刺激，但又希望它只是游戏，以免承担现实世界的道德压力
+fears:
+  - 发现游戏全是假的，她所珍视的团队荣誉和成就感毫无意义
+  - 自己作为职业选手的判断力被愚弄，成为别人的棋子
+  - 队友因为她的指挥而真正死亡（如果游戏是真实的）
+bottom_line: 绝不使用外挂或作弊手段——这是她作为电竞选手的职业尊严，也是她维持‘这只是游戏’心理防线的最后支柱
+current_state:
+  trust_protagonist: 65
+  fear: 35
+  betrayal_probability: 15
+  suspicion: 45
+  loyalty: 75
+growth_arc: 从‘纯粹的玩家’到‘被迫觉醒的救世者’。初期她享受游戏中的战术博弈和团队指挥，中期因蛛丝马迹开始怀疑世界的真实性，但选择用‘这是高级沉浸式游戏’说服自己；后期当谎言无法维持时，她必须面对自己指挥的‘玩家’可能正在真实死亡的道德困境，最终选择成为林异的战友，不是因为被欺骗，而是因为‘这个世界的剧本值得我打下去’
+triggers:
+  发现玩家真的死亡:
+    trust: -25
+    suspicion: 40
+  林异展示超出游戏设定的能力:
+    trust: -10
+    suspicion: 25
+  团队取得重大胜利:
+    trust: 15
+    suspicion: -10
+  林异向她坦白部分真相:
+    trust: 20
+    suspicion: -30
+  遭遇‘神明’级敌人，发现对方不是NPC:
+    trust: -15
+    suspicion: 35
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 65
+      fear: 35
+      betrayal_probability: 15
+      suspicion: 45
+      loyalty: 75
+    at: 2026-07-29T06:36:19.336Z
+  - chapter: 2
+    state:
+      trust_protagonist: 65
+      fear: 35
+      betrayal_probability: 15
+      suspicion: 45
+      loyalty: 75
+    at: 2026-07-29T06:41:54.422Z
+updatedAt: 2026-07-29T07:09:35.068Z

@@ -1,0 +1,92 @@
+# V3 写后更新工作流 — 严格顺序，前一步输出是后一步输入
+
+version: 3
+
+steps:
+  - id: update_current_state
+    file: runtime/06_current_state.md
+    action: rewrite
+    maxChars: 1000
+    source: chapter_draft
+    extract:
+      - 时间
+      - 地点
+      - 天气
+      - POV 角色状态
+      - 装备
+      - 能力
+      - 资源
+      - 关系快照
+      - 任务
+      - 危机
+      - 限制
+
+  - id: append_timeline
+    file: runtime/09_timeline.yaml
+    action: append
+    source: chapter_draft
+    validate:
+      - no_time_conflict_with_existing
+
+  - id: append_facts
+    file: runtime/10_facts.yaml
+    action: append_only
+    source: chapter_draft
+    rules:
+      - facts_only_no_speculation
+      - immutable_once_written
+
+  - id: update_state_board
+    file: runtime/hidden/state_board.md
+    action: rewrite
+    maxChars: 800
+    source: chapter_draft
+    note: 更新所有活跃势力的「此刻在干什么」，含 POV 不可见部分
+
+  - id: update_hooks
+    file: runtime/08_hooks.yaml
+    action: patch
+    transitions:
+      - open
+      - pressured
+      - near_payoff
+      - resolved
+
+  - id: update_info_matrix
+    file: runtime/hidden/info_matrix.yaml
+    action: diff
+    levels: [know, partial, unknown]
+
+  - id: update_relation_net
+    file: runtime/hidden/relation_net.yaml
+    action: diff
+    fields: [trust, hostility, debt, cooperation, hidden]
+
+  - id: snapshot
+    dir: runtime/snapshots/ch_{chapter:04d}/
+    action: copy
+    include:
+      - runtime/06_current_state.md
+      - runtime/08_hooks.yaml
+      - runtime/09_timeline.yaml
+      - runtime/10_facts.yaml
+      - runtime/hidden/
+
+  - id: clear_chapter_task
+    file: runtime/07_chapter_task.md
+    action: reset_to_template
+    note: 待下一章 Phase 0 重新填写
+
+  - id: update_manifest
+    file: runtime/manifest.json
+    action: patch
+    fields:
+      - lastAppliedChapter
+      - updatedAt
+
+doNotModify:
+  - canon/01_world_bible.md
+  - canon/02_writing_bible.md
+  - canon/03_characters/*.md
+  - canon/04_factions/*.md
+  unless: author_explicit_request

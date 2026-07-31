@@ -1,0 +1,482 @@
+{
+  "sceneIndex": 1,
+  "sceneType": "opening",
+  "parts": [
+    {
+      "order": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "chars": 340,
+      "beatStateDelta": {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "beforeState": "主角当前目标：建立 POV（主角）当下目标：进入世界 — 局势尚未被本 Scene 改写",
+        "action": "建立 POV（主角）当下目标：进入世界",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "凌晨三点四十七分",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:03:56.826Z"
+      },
+      "beatPlan": {
+        "structuralBeat": "goal",
+        "beforeState": "主角当前目标：建立 POV（主角）当下目标：进入世界 — 局势尚未被本 Scene 改写",
+        "action": "建立 POV（主角）当下目标：进入世界",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": true,
+        "requiredDimension": "goalDirection"
+      },
+      "stateChange": true,
+      "afterState": "凌晨三点四十七分",
+      "textPreview": "林夜的手指在手机屏幕上停住了。\n\n凌晨三点四十七分。\n\n他盯着那行数字，拇指悬在“拨号”键上方。通讯录里，林小星的号码排在第一位——备注“别打，又会消失”。\n\n昨天她消失前说的最后一句话：“哥，四点见。”\n\n不是再见。\n\n是“四点见”。\n\n"
+    },
+    {
+      "order": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "chars": 296,
+      "beatStateDelta": {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "资源不足或时间压力 — 且局面本身不会让步",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "第三次——号码已关机",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "他放下手机，发现自己的手在抖"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:04:01.924Z"
+      },
+      "beatPlan": {
+        "structuralBeat": "obstacle",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "资源不足或时间压力 — 且局面本身不会让步",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": true,
+        "requiredDimension": "danger"
+      },
+      "stateChange": true,
+      "afterState": "第三次——号码已关机",
+      "textPreview": "林夜又拨了一次。\n\n忙音。\n\n第三次——号码已关机。\n\n他放下手机，发现自己的手在抖。不是因为冷。楼道里那股气味还在——消毒水混着别的东西，像医院太平间关上很久以后的味道。\n\n他往楼下走了两步。\n\n脚步声在楼梯间回荡。一层，两层。声控灯一直"
+    },
+    {
+      "order": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "chars": 269,
+      "beatStateDelta": {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "字迹是蓝墨水",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger",
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "hope"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:04:06.490Z"
+      },
+      "beatPlan": {
+        "structuralBeat": "choice",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": true,
+        "requiredDimension": "relationship"
+      },
+      "stateChange": true,
+      "afterState": "字迹是蓝墨水",
+      "textPreview": "林夜盯着那张便利贴。\n\n字迹是蓝墨水。笔锋收得急，最后一笔拖了个尾巴——像是在赶时间，或者手在抖。\n\n四点以后。地下室。\n\n他抬头看钟。\n\n秒针走。分针不动。\n\n三点四十七分。还有十三分钟。\n\n手机又亮了。不是来电，是备忘录推送。他不记得设"
+    },
+    {
+      "order": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "chars": 457,
+      "beatStateDelta": {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "选择产生可见代价，局面因此改变",
+        "choice": null,
+        "consequence": "选择产生可见代价，局面因此改变",
+        "afterState": "林夜推开门的时候，手指碰到铁皮——凉的，像冰",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource",
+          "goalDirection"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-07-15T06:04:12.688Z"
+      },
+      "beatPlan": {
+        "structuralBeat": "consequence",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "选择产生可见代价，局面因此改变",
+        "choice": "",
+        "consequence": "选择产生可见代价，局面因此改变",
+        "afterState": "局势向终局推进 — 主角确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+        "stateChange": true,
+        "requiredDimension": "resource"
+      },
+      "stateChange": true,
+      "afterState": "林夜推开门的时候，手指碰到铁皮——凉的，像冰",
+      "textPreview": "地下室的门没锁。\n\n林夜推开门的时候，手指碰到铁皮——凉的，像冰。楼道里的消毒水味在这里浓了，混着铁锈和灰。手机屏幕光照进去，只够看清三步以内的东西。\n\n水泥地。墙角堆着纸箱。一张桌子。\n\n桌上摆着两样东西。\n\n一台旧电脑，屏幕亮着。一个白"
+    },
+    {
+      "order": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "chars": 484,
+      "beatStateDelta": {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": null,
+        "consequence": "认知被新信息改写",
+        "afterState": "“如果你非要来——桌上有药",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "下面还有一行字，字号小了一号，像是后来补上去的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "里面装着小半瓶白色药片，和普通的止痛药没什么区别"
+        ],
+        "extractedAt": "2026-07-15T06:04:19.459Z"
+      },
+      "beatPlan": {
+        "structuralBeat": "newInformation",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "",
+        "consequence": "认知被新信息改写",
+        "afterState": "局势向终局推进 — 主角确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
+        "stateChange": true,
+        "requiredDimension": "information"
+      },
+      "stateChange": true,
+      "afterState": "“如果你非要来——桌上有药",
+      "textPreview": "下面还有一行字，字号小了一号，像是后来补上去的。\n\n“如果你非要来——桌上有药。吃了它，四点以后你还能记得。但副作用：你会忘掉我。”\n\n林夜的指尖停在鼠标上。\n\n药瓶就在手边。\n\n白色药瓶，没有标签。里面装着小半瓶白色药片，和普通的止痛药没"
+    },
+    {
+      "order": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "chars": 220,
+      "beatStateDelta": {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "beforeState": "读者与 POV 对世界/局势的理解已更新",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": null,
+        "consequence": "新危机/新疑问出现",
+        "afterState": "楼下那声响——像门，又不像",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "但他知道下面没人"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "声音太轻，不像有人推门，更像什么东西被风吹得撞上了门框"
+        ],
+        "extractedAt": "2026-07-15T06:04:23.363Z"
+      },
+      "beatPlan": {
+        "structuralBeat": "hook",
+        "beforeState": "读者与 POV 对世界/局势的理解已更新",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "主角确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": true,
+        "requiredDimension": "worldCognition"
+      },
+      "stateChange": true,
+      "afterState": "楼下那声响——像门，又不像",
+      "textPreview": "林夜攥着纸条，指节发白。\n\n楼下那声响——像门，又不像。声音太轻，不像有人推门，更像什么东西被风吹得撞上了门框。\n\n但他知道下面没人。\n\n他来过这地下室。第37次。\n\n手机屏幕又暗了一格。三点五十六分。\n\n林夜把纸条折进口袋，和那张便利贴放"
+    }
+  ],
+  "beatMemory": {
+    "newFacts": [
+      "他放下手机，发现自己的手在抖",
+      "下面还有一行字，字号小了一号，像是后来补上去的",
+      "但他知道下面没人"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "hope"
+    ],
+    "unresolvedIssues": [
+      "里面装着小半瓶白色药片，和普通的止痛药没什么区别",
+      "声音太轻，不像有人推门，更像什么东西被风吹得撞上了门框"
+    ],
+    "changedDimensions": [
+      "information",
+      "resource",
+      "danger",
+      "goalDirection",
+      "worldCognition"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "凌晨三点四十七分"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "第三次——号码已关机"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "字迹是蓝墨水"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "林夜推开门的时候，手指碰到铁皮——凉的，像冰"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "“如果你非要来——桌上有药"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "楼下那声响——像门，又不像"
+      }
+    ],
+    "lastAfterState": "楼下那声响——像门，又不像",
+    "stateChangeCount": 6
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "beforeState": "主角当前目标：建立 POV（主角）当下目标：进入世界 — 局势尚未被本 Scene 改写",
+      "action": "建立 POV（主角）当下目标：进入世界",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "凌晨三点四十七分",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-15T06:03:56.826Z"
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "资源不足或时间压力 — 且局面本身不会让步",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "第三次——号码已关机",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "他放下手机，发现自己的手在抖"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-15T06:04:01.924Z"
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "字迹是蓝墨水",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "hope"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-15T06:04:06.490Z"
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "选择产生可见代价，局面因此改变",
+      "choice": null,
+      "consequence": "选择产生可见代价，局面因此改变",
+      "afterState": "林夜推开门的时候，手指碰到铁皮——凉的，像冰",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource",
+        "goalDirection"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-07-15T06:04:12.688Z"
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": null,
+      "consequence": "认知被新信息改写",
+      "afterState": "“如果你非要来——桌上有药",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "下面还有一行字，字号小了一号，像是后来补上去的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "里面装着小半瓶白色药片，和普通的止痛药没什么区别"
+      ],
+      "extractedAt": "2026-07-15T06:04:19.459Z"
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "beforeState": "读者与 POV 对世界/局势的理解已更新",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": null,
+      "consequence": "新危机/新疑问出现",
+      "afterState": "楼下那声响——像门，又不像",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "但他知道下面没人"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "声音太轻，不像有人推门，更像什么东西被风吹得撞上了门框"
+      ],
+      "extractedAt": "2026-07-15T06:04:23.363Z"
+    }
+  ],
+  "sceneOutcome": {
+    "success": "若达成：建立 POV（主角）当下目标：进入世界取得可见进展（哪怕只是半步）",
+    "failure": "若失败：资源不足或时间压力导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "updatedAt": "2026-07-15T06:04:23.365Z"
+}

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://inkos.local/schema/v3",
+  "version": 3,
+  "name": "Novel OS V3",
+  "description": "AI 先理解 → 规划 → 写作 → 更新状态。适用于百万字长篇的稳定创作。",
+  "principles": [
+    "文件职责唯一（Single Responsibility）",
+    "信息不重复（Single Source of Truth）",
+    "世界观 / 写作规则 / 章节任务不得混在同一文件",
+    "写前按注意力 Tier 按需读取，禁止一次性灌入全部 canon",
+    "现实目标驱动剧情，异常只能是代价或阻碍"
+  ],
+  "bookLayout": {
+    "bookJson": "book.json",
+    "chapters": "chapters/",
+    "canon": "canon/",
+    "runtime": "runtime/"
+  },
+  "files": {
+    "canon": [
+      {
+        "id": "01",
+        "path": "canon/01_world_bible.md",
+        "role": "世界圣经",
+        "maxChars": 5000,
+        "mutable": "rare",
+        "forbidden": ["剧情", "当前状态", "写作技巧"]
+      },
+      {
+        "id": "02",
+        "path": "canon/02_writing_bible.md",
+        "role": "写作圣经（唯一规则源）",
+        "maxChars": 5000,
+        "mutable": "rare",
+        "forbidden": ["世界观设定", "角色当前状态"]
+      },
+      {
+        "id": "03",
+        "path": "canon/03_characters/",
+        "role": "人物圣经",
+        "maxCharsPerFile": 1500,
+        "mutable": "rare",
+        "note": "只存恒定属性；动态状态见 runtime/"
+      },
+      {
+        "id": "04",
+        "path": "canon/04_factions/",
+        "role": "势力圣经",
+        "maxCharsPerFile": 1000,
+        "mutable": "rare"
+      },
+      {
+        "id": "05",
+        "path": "canon/05_volume_outlines/",
+        "role": "卷纲（只写卷目标）",
+        "maxCharsPerFile": 600,
+        "mutable": "per_volume"
+      }
+    ],
+    "runtime": [
+      {
+        "id": "06",
+        "path": "runtime/06_current_state.md",
+        "role": "当前状态",
+        "maxChars": 1000,
+        "mutable": "every_chapter"
+      },
+      {
+        "id": "07",
+        "path": "runtime/07_chapter_task.md",
+        "role": "当前章节任务",
+        "maxChars": 300,
+        "mutable": "every_chapter_pre"
+      },
+      {
+        "id": "08",
+        "path": "runtime/08_hooks.yaml",
+        "role": "伏笔数据库",
+        "mutable": "every_chapter"
+      },
+      {
+        "id": "09",
+        "path": "runtime/09_timeline.yaml",
+        "role": "时间线",
+        "mutable": "every_chapter_append"
+      },
+      {
+        "id": "10",
+        "path": "runtime/10_facts.yaml",
+        "role": "已发生事实（不可改）",
+        "mutable": "every_chapter_append_only"
+      }
+    ],
+    "hidden": [
+      {
+        "id": "SB",
+        "path": "runtime/hidden/state_board.md",
+        "role": "局势图（各势力此刻在干什么）",
+        "maxChars": 800,
+        "mutable": "every_chapter",
+        "priority": "critical"
+      },
+      {
+        "id": "IM",
+        "path": "runtime/hidden/info_matrix.yaml",
+        "role": "信息差矩阵",
+        "mutable": "every_chapter"
+      },
+      {
+        "id": "RN",
+        "path": "runtime/hidden/relation_net.yaml",
+        "role": "关系网",
+        "mutable": "every_chapter"
+      }
+    ]
+  },
+  "deprecatedV2Paths": [
+    "story/brief.md",
+    "story/author_intent.md",
+    "story/story_bible.md",
+    "story/book_rules.md",
+    "story/style_guide.md",
+    "story/character_matrix.md",
+    "story/chapter_summaries.md",
+    "story/pending_hooks.md",
+    "story/emotional_arcs.md",
+    "story/current_focus.md",
+    "story/subplot_board.md"
+  ],
+  "narrativeChain": [
+    "现实目标（07）",
+    "利益计算（03 + relation_net）",
+    "博弈/交换",
+    "不可逆变化（06 + 10）",
+    "局势改变（state_board）",
+    "下一章目标"
+  ]
+}

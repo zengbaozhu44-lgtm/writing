@@ -1,0 +1,83 @@
+character: 林晓
+goals:
+  surface: 完成每天的供水系统维护工作，确保系统正常运行，保住自己的技术员岗位
+  hidden: 在技术全面接管的世界里，找到并守护自己作为‘人’的存在意义，不被系统彻底同化
+fears:
+  - 被AI系统判定为‘低效’或‘冗余’而失去工作，失去社会身份
+  - 自己收藏的旧时代书籍和磁带被发现、销毁，最后一点人性痕迹被抹去
+  - 彻底沦为系统的齿轮，再也感受不到真实的情感和连接
+bottom_line: 绝不利用职务之便篡改或破坏系统数据，即使面临失业威胁
+current_state:
+  trust_protagonist: 100
+  fear: 65
+  betrayal_probability: 0
+  suspicion: 15
+  loyalty: 95
+growth_arc: 从被动接受技术安排的顺从者，到通过日常细节觉察系统弊端，最终与社区建立互助网络，重新定义‘人’的价值
+triggers:
+  发现系统数据异常，可能导致老旧社区断水:
+    trust: 5
+    suspicion: 25
+  在社区遇到同样收藏旧物的邻居:
+    trust: 10
+    suspicion: -5
+  上级要求‘优化’维护流程，实则为裁员铺路:
+    trust: -15
+    suspicion: 30
+  某次维修中，AI系统给出明显违背伦理的指令:
+    trust: -20
+    suspicion: 40
+  在旧书店买到一本被AI标记为‘有害’的纸质书:
+    trust: 5
+    suspicion: 10
+lastChapter: 5
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 100
+      fear: 65
+      betrayal_probability: 0
+      suspicion: 15
+      loyalty: 90
+    at: 2026-07-10T02:17:55.944Z
+  - chapter: 2
+    state:
+      trust_protagonist: 100
+      fear: 65
+      betrayal_probability: 0
+      suspicion: 15
+      loyalty: 90
+    at: 2026-07-10T02:55:50.807Z
+  - chapter: 3
+    state:
+      trust_protagonist: 100
+      fear: 65
+      betrayal_probability: 0
+      suspicion: 15
+      loyalty: 90
+    at: 2026-07-10T03:15:22.219Z
+  - chapter: 4
+    state:
+      trust_protagonist: 100
+      fear: 65
+      betrayal_probability: 0
+      suspicion: 15
+      loyalty: 90
+    at: 2026-07-13T06:00:33.677Z
+  - chapter: 4
+    state:
+      trust_protagonist: 100
+      fear: 65
+      betrayal_probability: 0
+      suspicion: 15
+      loyalty: 95
+    at: 2026-07-13T06:04:21.099Z
+  - chapter: 5
+    state:
+      trust_protagonist: 100
+      fear: 65
+      betrayal_probability: 0
+      suspicion: 15
+      loyalty: 95
+    at: 2026-07-13T08:25:32.144Z
+updatedAt: 2026-07-13T08:25:32.144Z

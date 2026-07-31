@@ -1,0 +1,87 @@
+version: chapter-anchor-3
+chapter: 1
+current_date: Day 0
+pov: 林小雅
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 林小雅
+  present:
+    - 林小雅
+  edges:
+    - from: 林小雅
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 2
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止提前揭晓章末钩子：林异将编辑器碎片藏入断臂伤口，拖着尸体滑轨消失在黑暗中。头顶的'天外眼'扫描光束扫过他刚才站立的位置，停留了0.3秒——
+    expiresAtChapter: 2
+  - text: 禁止无损撤回本章代价：林异因激活编辑器时泄露的思维波，被'天外眼'标记，他平静的底层生活彻底打破，从此
+    expiresAtChapter: 3
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 2
+voiceDna:
+  version: voice-dna-2
+  presetId: default
+  label: 商业快节奏
+  sentenceLength: short
+  rhythm: staccato
+  sentenceRhythm:
+    mode: emotion
+    label: 读者情绪/信息差
+    rules:
+      - 减少解释。
+      - 增加动作与对白。
+      - 让读者比 POV 更紧张 — 用细节不用旁白。
+  dialogueRatio: 0.42
+  actionDensity: high
+  descriptionDensity: low
+  pov: 限知第三人称
+  notes: 对白推动剧情；动作优先于心理；禁止总结句
+  bannedPhrases:
+    - 不禁
+    - 心中一凛
+    - 隐约感到
+    - 莫名
+    - 仿佛
+    - 似乎
+    - 不由得
+    - 内心深处
+    - 这一刻
+    - 空气仿佛凝固
+    - 时间仿佛静止
+    - 嘴角微微上扬
+    - 眼中闪过一丝
+    - 心中暗道
+    - 脑海中浮现
+    - 一股莫名的
+    - 难以言喻
+    - 说不清道不明
+    - 她感觉
+    - 他感觉
+    - 她意识到
+    - 他意识到
+    - 心中一震
+    - 眉头微皱
+  sampleLines: []
+  forced: true
+  inherited: false
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 1
+  closing_emotion: 清道夫林异在第九区处理编号R-114的尸体时，发现尸体手指异常活动，并捡到一枚刻
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+  mustInheritScene1: true
+  tailExcerpt: 第五遍。 她的影子站起来。 不是她站起来的。她的身体还蹲着，墙上的轮廓却已经立直，朝通道深处走去。影子的手腕上多了一道裂口——像第二只手的轮廓，正从她的影子里生长出来。 “还有两秒。” 她只有一个选择。 跟着影子走。 还是等第六遍光束过来。
+committedAt: 2026-07-29T06:35:45.993Z

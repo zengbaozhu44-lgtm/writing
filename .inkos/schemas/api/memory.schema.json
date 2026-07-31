@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkos://schemas/api/memory.schema.json",
+  "title": "MemoryResponse",
+  "type": "object",
+  "required": ["apiVersion", "runtimeVersion"],
+  "properties": {
+    "apiVersion": { "type": "string", "const": "1.0.0" },
+    "runtimeVersion": { "type": "string" },
+    "snapshots": { "type": "array" },
+    "diff": {
+      "type": "object",
+      "properties": {
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "changes": { "type": "array" }
+      }
+    }
+  }
+}

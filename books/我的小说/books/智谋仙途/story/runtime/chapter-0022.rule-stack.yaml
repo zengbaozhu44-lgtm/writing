@@ -1,0 +1,57 @@
+layers:
+  - id: L1
+    name: hard_facts
+    precedence: 100
+    scope: global
+  - id: L2
+    name: author_intent
+    precedence: 80
+    scope: book
+  - id: L3
+    name: planning
+    precedence: 60
+    scope: arc
+  - id: L4
+    name: current_task
+    precedence: 70
+    scope: local
+sections:
+  hard:
+    - story_frame
+    - current_state
+    - book_rules
+    - roles
+  soft:
+    - author_intent
+    - current_focus
+    - volume_map
+  diagnostic:
+    - anti_ai_checks
+    - continuity_audit
+    - style_regression_checks
+overrideEdges:
+  - from: L4
+    to: L3
+    allowed: true
+    scope: current_chapter
+  - from: L4
+    to: L2
+    allowed: false
+    scope: current_chapter
+  - from: L4
+    to: L1
+    allowed: false
+    scope: current_chapter
+activeOverrides:
+  - from: L4
+    to: L3
+    target: chapter:22/styleEmphasis
+    reason: 通过他接下废柴巡查任务的细节，展现天生高敏感观察力——他注意到任务单路线盲区、师兄摩挲笔杆的紧张动作、窗外射来的目光
+  - from: L4
+    to: L3
+    target: chapter:22/styleEmphasis
+    reason: 增加「算计后内耗」的人性软肋锚点：他看到屋檐下一只被困的寒鸦，犹豫了一下，没救，走远了又折返回去放了它——这个动作让他后怕，因为暴露了自己的心软
+  - from: L4
+    to: L3
+    target: chapter:22/styleEmphasis
+    reason: 暗示失忆设定：他翻出神秘老者留下的册子，看着三年空白期的记录，对自己失忆前可能是个什么样的人产生恐惧

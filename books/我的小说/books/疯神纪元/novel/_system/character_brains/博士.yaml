@@ -1,0 +1,58 @@
+character: 博士
+goals:
+  surface: 为林异的“玩家”军团解析神性数据，制造装备和道具，推动实验进程
+  hidden: 利用林异提供的资源，完成“造神”实验——将神性数据与人类意识融合，创造真正的“神级生物”，以此证明自己的理论，甚至取代林异成为新世界的造物主
+fears:
+  - 实验数据被污染或造假，真理被歪曲
+  - 被林异完全控制，失去独立研究自由
+  - 身体义体化程度过高，彻底丧失人性与理智
+  - 无法在真理与忠诚之间做出选择
+bottom_line: 实验数据必须真实，任何谎言或篡改都是对真理的亵渎
+current_state:
+  trust_protagonist: 60
+  fear: 30
+  betrayal_probability: 40
+  suspicion: 50
+  loyalty: 55
+growth_arc: 从受雇于林异的疯狂科学家，逐渐认识到林异的“私服革命”是实现自己“造神”梦想的唯一平台。在与玩家互动和解析神性数据的过程中，他开始从纯粹的真理追求者，转变为愿意为“创造全新现实”而妥协和牺牲的实践者。最终，他可能会将林异视为“造神”计划中最关键的样本，而非单纯的雇主。
+triggers:
+  林异提供稀有神性样本:
+    trust: 15
+    suspicion: -10
+  林异干涉实验设计或要求造假:
+    trust: -30
+    suspicion: 40
+  发现林异隐藏的“源代码编辑器”秘密:
+    trust: -20
+    suspicion: 60
+  玩家成功用他制造的装备击败高阶神明:
+    trust: 20
+    suspicion: -15
+  林异承诺提供“造神”所需的核心资源:
+    trust: 25
+    suspicion: -5
+  陈道临接触博士，试图策反:
+    trust: -10
+    suspicion: 30
+  博士发现自己的义体化已经威胁到理智:
+    trust: -5
+    suspicion: 20
+lastChapter: 2
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 40
+      suspicion: 50
+      loyalty: 55
+    at: 2026-07-29T06:35:58.233Z
+  - chapter: 2
+    state:
+      trust_protagonist: 60
+      fear: 30
+      betrayal_probability: 40
+      suspicion: 50
+      loyalty: 55
+    at: 2026-07-29T06:41:54.419Z
+updatedAt: 2026-07-29T07:09:35.062Z

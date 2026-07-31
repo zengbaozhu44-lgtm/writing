@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inkos://schemas/api/scene.schema.json",
+  "title": "SceneResponse",
+  "type": "object",
+  "required": ["apiVersion", "runtimeVersion", "chapter", "scenes"],
+  "properties": {
+    "apiVersion": { "type": "string", "const": "1.0.0" },
+    "runtimeVersion": { "type": "string" },
+    "chapter": { "type": "integer" },
+    "scenes": { "type": "array", "items": { "$ref": "dashboard.schema.json#/$defs/Scene" } },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

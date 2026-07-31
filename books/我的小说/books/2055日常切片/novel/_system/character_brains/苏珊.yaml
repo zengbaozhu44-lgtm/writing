@@ -1,0 +1,80 @@
+character: 苏珊
+goals:
+  surface: 在AI主导的福利分配系统中，为被边缘化的老年人、低收入群体争取更多人文关怀资源
+  hidden: 通过推动社区自治，证明即使患有神经退行性疾病、拒绝脑机接口治疗，她依然能保持自主性与价值，对抗系统对‘缺陷者’的隐性淘汰逻辑
+fears:
+  - 自己的疾病最终导致认知衰退，失去为他人发声的能力
+  - 她的抗争只是杯水车薪，最终被系统同化或边缘化
+  - 因拒绝脑机接口而逐渐被社会视为‘低效个体’，被亲友和社区抛弃
+bottom_line: 绝不利用联络员权限私下修改居民数据或收受好处
+current_state:
+  trust_protagonist: 70
+  fear: 40
+  betrayal_probability: 5
+  suspicion: 20
+  loyalty: 85
+growth_arc: 从温和的协调者成长为组织居民集体发声的领导者，推动社区自治章程修改
+triggers:
+  发现主角林晓也因拒绝某种AI优化而遭遇系统歧视:
+    trust: 15
+    suspicion: -10
+  系统以‘效率优化’为由裁减她负责的人文关怀预算:
+    trust: -5
+    suspicion: 25
+  主角主动协助她组织居民会议，并分享自己保留的纸质记录:
+    trust: 20
+    suspicion: -15
+  有人匿名举报她‘利用职务煽动居民对抗系统’:
+    trust: 0
+    suspicion: 10
+lastChapter: 5
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 70
+      fear: 40
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-10T02:18:02.660Z
+  - chapter: 2
+    state:
+      trust_protagonist: 70
+      fear: 40
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-10T02:55:50.810Z
+  - chapter: 3
+    state:
+      trust_protagonist: 70
+      fear: 40
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-10T03:15:22.224Z
+  - chapter: 4
+    state:
+      trust_protagonist: 70
+      fear: 40
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-13T06:00:33.680Z
+  - chapter: 4
+    state:
+      trust_protagonist: 70
+      fear: 40
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-13T06:04:21.101Z
+  - chapter: 5
+    state:
+      trust_protagonist: 70
+      fear: 40
+      betrayal_probability: 5
+      suspicion: 20
+      loyalty: 85
+    at: 2026-07-13T08:25:32.147Z
+updatedAt: 2026-07-13T08:25:32.147Z

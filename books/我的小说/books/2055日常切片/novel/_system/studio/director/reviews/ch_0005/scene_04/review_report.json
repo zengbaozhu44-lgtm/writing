@@ -1,0 +1,144 @@
+{
+  "version": "scene-review-4",
+  "role": "scene-review",
+  "mode": "commercial-director-score",
+  "chapter": 5,
+  "scene": {
+    "id": "ch5_s4",
+    "index": 4,
+    "goal": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+    "scenePlan": {
+      "goal": "深夜，林晓在维修最后一台机器人时，发现其内存芯片中残留了一段未加密的对话日志，内容显示有市民计划在‘全民气候共识日’期间，利用配送网络传播反对碳配额上调的手写传单。他望向窗外社区集会的灯光，陷入了沉默与抉择。",
+      "obstacle": "局势改变",
+      "escalation": "hook",
+      "newInformation": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "cliffhanger": "章尾强 Hook — 未完成动作或致命追问"
+    }
+  },
+  "scores": {
+    "hookDensity": 90,
+    "questionDensity": 100,
+    "payoffDensity": 63,
+    "readerCuriosity": 48,
+    "twistStrength": 69,
+    "dialogue": 35,
+    "conflict": 100,
+    "hook": 90,
+    "emotion": 48,
+    "style": 69,
+    "pacing": 48
+  },
+  "weights": {
+    "hookDensity": 0.22,
+    "questionDensity": 0.18,
+    "payoffDensity": 0.1,
+    "readerCuriosity": 0.2,
+    "twistStrength": 0.15,
+    "dialogue": 0.08,
+    "conflict": 0.07
+  },
+  "weightedScore": 74,
+  "total": 74,
+  "genreProfile": "commercial",
+  "dimensions": [
+    "hookDensity",
+    "questionDensity",
+    "payoffDensity",
+    "readerCuriosity",
+    "twistStrength",
+    "dialogue",
+    "conflict"
+  ],
+  "commercialDimensions": [
+    "hookDensity",
+    "questionDensity",
+    "payoffDensity",
+    "readerCuriosity",
+    "twistStrength"
+  ],
+  "readerCurves": {
+    "hookCurve": [
+      {
+        "offset": 0,
+        "value": 100
+      },
+      {
+        "offset": 1,
+        "value": 100
+      },
+      {
+        "offset": 2,
+        "value": 100
+      }
+    ],
+    "mysteryCurve": [
+      {
+        "offset": 0,
+        "value": 94
+      },
+      {
+        "offset": 1,
+        "value": 100
+      },
+      {
+        "offset": 2,
+        "value": 38
+      }
+    ],
+    "payoffCurve": [
+      {
+        "offset": 0,
+        "value": 100
+      },
+      {
+        "offset": 1,
+        "value": 38
+      },
+      {
+        "offset": 2,
+        "value": 38
+      }
+    ],
+    "summary": {
+      "hookAvg": 100,
+      "mysteryAvg": 72,
+      "payoffAvg": 59,
+      "twistHits": 1
+    }
+  },
+  "verdict": "warning",
+  "pass": false,
+  "warning": true,
+  "retry": false,
+  "suggestions": [
+    "dialogue: 用对白推进冲突，避免说明式旁白（35/100）",
+    "readerCuriosity: 提升阅读驱动力 — 代价逼近、选择收窄、好奇心悬而未决（48/100）",
+    "payoffDensity: 加强伏笔回收 — 兑现前文悬念或部分揭晓（63/100）",
+    "twistStrength: 加强反转力度 — 预期违背、信息翻盘或身份反转（69/100）"
+  ],
+  "blocking": false,
+  "thresholds": {
+    "pass": 80,
+    "warning": 70
+  },
+  "policy": "商业导演评分 · Reader Addiction 优先 · >=80 Pass · 70~79 Warning · <70 Retry · 不阻塞",
+  "weakest": [
+    {
+      "id": "dialogue",
+      "score": 35,
+      "weight": 0.08
+    },
+    {
+      "id": "readerCuriosity",
+      "score": 48,
+      "weight": 0.2
+    },
+    {
+      "id": "payoffDensity",
+      "score": 63,
+      "weight": 0.1
+    }
+  ],
+  "totalChars": 852,
+  "generatedAt": "2026-07-13T08:25:32.060Z"
+}

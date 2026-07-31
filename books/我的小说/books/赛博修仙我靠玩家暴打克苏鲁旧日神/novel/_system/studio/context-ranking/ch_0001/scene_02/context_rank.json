@@ -1,0 +1,87 @@
+{
+  "version": "context-rank-1",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s2",
+    "index": 2,
+    "goal": "克服阻碍：林砚肉身与神魂双重崩毁"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2423,
+    "topK": null,
+    "usedChars": 181,
+    "selectedCount": 2,
+    "trimmedCount": 0,
+    "totalCandidates": 2
+  },
+  "topK": [
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "text": "第1章完成：林砚在浮空城陷落、神魂破碎的濒死绝境中，觉醒【世界管理员GM权限】，窥见世界为高维测试服务器的真相，并回溯时间重生至三年前邪神入侵与财团叛变的关键节点，为逆转末世奠定基础。（4881字）",
+      "charCount": 99,
+      "scores": {
+        "relevance": 94,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 59,
+        "budgetChars": 257,
+        "finalScore": 86.95
+      }
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "text": "Day 1：进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中；克服阻碍：林砚肉身与神魂双重崩毁；林砚在意识即将被低语彻底吞噬的瞬间；看着掌心跳动的数据流权限",
+      "charCount": 82,
+      "scores": {
+        "relevance": 78,
+        "importance": 40,
+        "freshness": 100,
+        "narrativePriority": 58,
+        "budgetChars": 189,
+        "finalScore": 70.9
+      }
+    }
+  ],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 7
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "林砚在浮空城陷落、神魂破碎的濒死绝境中，觉醒【世界管理员GM权限】，窥见世界为高维测试服务器的真相，并回溯时间重生至三年前邪神入侵与财团叛变的关键节点，为逆转末世奠定基础。",
+    "pov": "林砚"
+  },
+  "generatedAt": "2026-07-31T07:02:51.615Z"
+}

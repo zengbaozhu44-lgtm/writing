@@ -1,0 +1,58 @@
+{
+  "version": "context-rank-1",
+  "chapter": 2,
+  "scene": {
+    "id": "ch2_s1",
+    "index": 1,
+    "goal": "建立 POV（主角）当下目标：进入世界"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 3486,
+    "topK": null,
+    "usedChars": 0,
+    "selectedCount": 0,
+    "trimmedCount": 0,
+    "totalCandidates": 0
+  },
+  "topK": [],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "timeline": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    }
+  },
+  "intent": {
+    "mainGoal": "进入世界",
+    "pov": "主角"
+  },
+  "generatedAt": "2026-07-15T06:00:12.287Z"
+}

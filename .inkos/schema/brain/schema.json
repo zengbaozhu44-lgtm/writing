@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "name": "Novel OS Brain",
+  "chain": [
+    "current_state",
+    "planner",
+    "decision",
+    "conflict",
+    "scene_planner",
+    "writer_scene",
+    "scene_review",
+    "consistency",
+    "reader",
+    "metrics",
+    "validation",
+    "memory_update"
+  ],
+  "package": "packages/inkos-brain",
+  "runtimeDir": "novel/_system/brain",
+  "prompt": {
+    "mode": "dynamic",
+    "tokenBudgetChars": 12000
+  }
+}
