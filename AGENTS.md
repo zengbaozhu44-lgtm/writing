@@ -10,6 +10,8 @@
 
 ## Runtime 2.0 — 全自动闭环
 
+Runtime 2.0 在单次运行中按 Scene 逐步推进，覆盖规划、决策、冲突、场景生成、写作、审查、一致性、度量、读者反馈、批判、验证、自适应、Git Memory、故事健康等阶段。
+
 ```
 Planner → Decision → Conflict → Scene → Writer
   → Review → Consistency → Decision（逐 Scene）
