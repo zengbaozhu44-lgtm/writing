@@ -9,9 +9,15 @@
   - `AGENTS.md`
   - `WORK_REPORT.md`
 
-## 2. 已观察范围的审计结果
+## 2. 当前状态标注
 
-### 2.1 `packages/inkos-brain/src/prompt/dynamic-prompt.js`
+- P3.7-B4 / deriveSceneFear — **AUDIT INCOMPLETE / DELETE BLOCKED**
+- 尚未得出“孤儿确认”结论。
+- 当前不允许执行删除步骤。
+
+## 3. 已观察范围的审计结果
+
+### 3.1 `packages/inkos-brain/src/prompt/dynamic-prompt.js`
 - 内容：仅导出 `buildDynamicPrompt` 和 `buildDynamicContextForChapter`。
 - `deriveSceneFear` 检查结果：
   - definition：未发现
@@ -20,7 +26,7 @@
   - direct call：未发现
   - indirect reference：未发现
 
-### 2.2 `AGENTS.md`
+### 3.2 `AGENTS.md`
 - `deriveSceneFear` 检查结果：
   - definition：未发现
   - export：未发现
@@ -28,7 +34,7 @@
   - direct call：未发现
   - indirect reference：未发现
 
-### 2.3 `WORK_REPORT.md`
+### 3.3 `WORK_REPORT.md`
 - `deriveSceneFear` 检查结果：
   - definition：未发现
   - export：未发现
@@ -36,17 +42,18 @@
   - direct call：未发现
   - indirect reference：仅文档内部提及该名称（元级别提及），不算生产/测试/脚本 consumer。
 
-## 3. 当前 consumer map（已观察范围）
+## 4. 当前 consumer map（已观察范围）
 
 - production consumer：0
 - test consumer：0
 - script consumer：0
+- fixtures consumer：0
 - docs-only reference：0（除 WORK_REPORT 元提及外）
 - definition / export 来源：未在已观察范围内定位
 
 注意：这里的 file:line 为空，因为在已观察文件中没有命中。
 
-## 4. 尚未完成的全仓搜索（必须执行）
+## 5. 全仓只读 grep 要求（必须执行）
 
 为确认“0 consumers + orphan export”，需要在实际仓库中运行全仓搜索，覆盖：
 
@@ -58,10 +65,11 @@
 - `_ai_system_map/`
 - 以及 JS/TS/JSON/Markdown 等非源码文件
 
-建议的搜索项：
+### 5.1 搜索项
 
 1. 名称定位
    - `deriveSceneFear`
+
 2. 按角色分类
    - definition / export：
      - `export.*deriveSceneFear`
@@ -76,42 +84,74 @@
      - 注释或文档中提及该函数名
      - 字符串常量或键名中包含该名称（如果有）
 
-3. 输出格式要求
-   - 每个命中都记录为 `file:line`
-   - 每个命中都标注为：
-     - definition / export
-     - production consumer
-     - test consumer
-     - script consumer
-     - docs-only reference
+### 5.2 分类规则（重要）
 
-## 5. 当前结论（仅基于已观察范围）
+- 不要把“任意字符串命中”全部算作 consumer。
+- 例如：
+  - `const name = "deriveSceneFear";`
+  - 历史审计文档里的“deriveSceneFear 是孤儿导出”
+- 这些应分类为 reference / docs-only，而不是 consumer。
+- 真正阻止删除的是：
+  - definition / export
+  - import
+  - callable reference
+  - dynamic require
+  - re-export chain
 
-- 在已加入聊天的文件中，`deriveSceneFear` 没有 definition/export，也没有 consumer。
-- 尚无法得出“唯一孤儿 export + 0 consumers”的最终结论，因为尚未覆盖全仓。
-- 因此当前不允许执行删除步骤。
+### 5.3 输出格式要求
 
-## 6. 下一步最小操作范围（仅供后续参考）
+最终表格应压缩成这样的形式：
 
-若后续全仓搜索确认以下条件：
+file:line	命中内容	类型	是否阻止删除
+xxx.js:123	function deriveSceneFear	definition	—
+xxx.js:456	export { deriveSceneFear }	export	—
+yyy.js:78	deriveSceneFear(...)	production consumer	❌
+tests/...:20	import	test consumer	❌
+scripts/...:30	import	script consumer	❌
+docs/...:40	文档提及	docs-only	通常不阻止
+WORK_REPORT.md:...	审计文字	meta	不阻止
+
+## 6. 允许的结果路径
+
+### A. 真正确认孤儿
 
 - definition/export = 1
-- production consumers = 0
-- test consumers = 0
-- script consumers = 0
-- indirect references = 0（或仅元提及）
+- production = 0
+- tests = 0
+- scripts = 0
+- fixtures = 0
+- docs = 0（或仅历史/审计记录）
 
-则最小修改范围才可设为：
+→ 才进入删除。
 
-- 删除该孤儿 export（仅限定义它的文件）
-- 不碰调用方（因为不存在）
-- 不改 Runtime 行为
-- 不删脚本
-- 删除后再次全仓 grep，确保无残留
+### B. 出现任何真实 consumer
 
-否则，若仍存在任何 consumer 或多个 export 来源，则不进入删除步骤。
+- 立即停止。
+- 不得由 Aider 自行判断“这个 consumer 应该也能删”。
 
-## 7. P3.7 文档债务审计状态（未变）
+## 7. 任务拆分建议（保持节奏）
+
+- B4 deriveSceneFear
+  - 全仓审计
+  - 确认孤儿
+  - 1 处最小删除
+  - 回归
+
+- B1/B2 文档事实对账
+  - 逐文件只读审计
+  - 冲突清单
+  - 拍板
+  - 最小文字修改
+  - 回归
+
+不要把 deriveSceneFear 和文档债务混成一个修改任务。
+
+## 8. 回归要求（后续删除时）
+
+- 删除后跑固定的 module-4 + regression + golden 3×。
+- 每次执行后的结果和修改说明写入 WORK_REPORT.md，方便转给其他 AI 查看。
+
+## 9. P3.7 文档债务审计状态（未变）
 
 - 已观察：`AGENTS.md`（当前文本与 Runtime 2.0 描述一致，未发现手动串联脑管线引导）。
 - 未加入、未审计：
@@ -125,7 +165,7 @@
   - `Golden README`
 - 这些文件仍需要加入后阅读，才能确认是否存在 P3.1 旧架构描述或其他失实内容。
 
-## 8. 备注
+## 10. 备注
 
 - 本次更新仅为审计记录，不修改任何文件内容。
 - 所有结论都带有范围限制，便于后续接续。
