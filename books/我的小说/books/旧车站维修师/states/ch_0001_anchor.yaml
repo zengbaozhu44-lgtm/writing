@@ -1,0 +1,50 @@
+version: chapter-anchor-3
+chapter: 1
+current_date: 车站关闭前三天
+pov: 林岚
+location: 即将被拆除的旧车站
+relationship_state:
+  machine: relationship-state-v2
+  pov: 林岚
+  present:
+    - 林岚
+  edges:
+    - from: 林岚
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 2
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止提前揭晓章末钩子：no_causal_basis
+    expiresAtChapter: 2
+  - text: 禁止无损撤回本章代价：no_causal_basis
+    expiresAtChapter: 3
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 2
+voiceDna:
+  id: inherit-default
+  label: 章级 Voice DNA（待首次写入）
+  sentenceLength: mixed
+  rhythm: varied
+  dialogueRatio: 0.45
+  actionDensity: high
+  descriptionDensity: low
+  forced: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 1
+  closing_emotion: 压抑·余波未平
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+  mustInheritScene1: true
+  tailExcerpt: 棚底积了三天的雨水，她踩着水面走过去，鞋底黏了雨棚的褪色塑料，一拂就落了。 售票机刷一下，吐出最后一张纸的声音还在她耳朵里打转。她没回头。她知道明天早上有人来买票，这机子会喂给他一张纸。至于那张纸是什么票，她不管。 她只是把东西修好再离开。
+committedAt: 2026-08-29T02:37:06.367Z

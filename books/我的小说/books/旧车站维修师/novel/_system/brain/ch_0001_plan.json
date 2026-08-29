@@ -1,0 +1,324 @@
+{
+  "intent": {
+    "chapter": 1,
+    "attempt": 1,
+    "pov": "林岚",
+    "present": [],
+    "chapterIntent": "第1章：把售票机修好",
+    "mainGoal": "把售票机修好",
+    "obstacles": [
+      "no_causal_basis",
+      "no_causal_basis"
+    ],
+    "turningPoint": "no_causal_basis",
+    "ending": "no_causal_basis",
+    "bargain": "",
+    "mustGain": "",
+    "mustLose": "no_causal_basis",
+    "newForeshadow": "",
+    "volumeGoals": [
+      "进入世界",
+      "建立关系",
+      "第一次失败",
+      "第一次成长",
+      "揭露第一层秘密"
+    ],
+    "sceneSeeds": [
+      {
+        "title": "进入世界",
+        "seed": "进入世界",
+        "goal": "进入世界"
+      },
+      {
+        "title": "建立关系",
+        "seed": "建立关系",
+        "goal": "建立关系"
+      },
+      {
+        "title": "第一次失败",
+        "seed": "第一次失败",
+        "goal": "第一次失败"
+      },
+      {
+        "title": "第一次成长",
+        "seed": "第一次成长",
+        "goal": "第一次成长"
+      },
+      {
+        "title": "揭露第一层秘密",
+        "seed": "揭露第一层秘密",
+        "goal": "揭露第一层秘密"
+      }
+    ],
+    "volumeAuthorNotes": "[ ] 可验证项",
+    "volumeSeed": {
+      "title": "进入世界",
+      "seed": "进入世界",
+      "goal": "进入世界"
+    },
+    "contextFacts": [],
+    "location": "即将被拆除的旧车站",
+    "time": "车站关闭前三天",
+    "currentDate": "车站关闭前三天",
+    "adaptiveWeights": {
+      "actionSceneWeight": 1,
+      "conflictPriority": 1,
+      "dialogueTarget": 0.45,
+      "hookEmphasis": 1,
+      "styleStrictness": 1,
+      "sceneCountBias": 0
+    },
+    "priorAnchor": null,
+    "bannedElements": [],
+    "relationshipState": null,
+    "narrativeMomentum": null,
+    "closingEmotion": null,
+    "forbiddenOpenings": [],
+    "tailExcerpt": null,
+    "voiceDna": null,
+    "chapterTone": null,
+    "tone": null,
+    "endingDirection": "no_causal_basis",
+    "wordTarget": null,
+    "scenes": [
+      {
+        "index": 1,
+        "id": "ch1_s1",
+        "title": "进入世界",
+        "goal": "进入现场并确立危机：把售票机修好",
+        "conflict": "no_causal_basis",
+        "entities": [
+          "林岚"
+        ],
+        "beat": "situation",
+        "inheritedEmotion": null,
+        "forbiddenOpenings": [],
+        "openingConstraint": null,
+        "spatialAnchor": {
+          "location": "本章起始现场",
+          "povPosition": "POV 首次落地位置",
+          "note": "后续 Scene 必须承接此处或给出过渡"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": true,
+          "keyRevealBeat": "newInformation"
+        },
+        "authorIntent": "进入世界"
+      },
+      {
+        "index": 2,
+        "id": "ch1_s2",
+        "title": "建立关系",
+        "goal": "克服阻碍：no_causal_basis",
+        "conflict": "no_causal_basis",
+        "entities": [
+          "林岚"
+        ],
+        "beat": "complication",
+        "spatialAnchor": {
+          "location": "承接 Scene1 现场或合理过渡后的邻接区",
+          "note": "禁止重写章开场坠落/濒死"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": false,
+          "advanceOnly": true
+        },
+        "authorIntent": "建立关系"
+      },
+      {
+        "index": 3,
+        "id": "ch1_s3",
+        "title": "第一次失败",
+        "goal": "转折（本 Scene 兑现完整行动线）：no_causal_basis",
+        "conflict": "no_causal_basis",
+        "entities": [
+          "林岚"
+        ],
+        "beat": "turn",
+        "spatialAnchor": {
+          "location": "同线推进至转折点",
+          "note": "禁止换场无过渡；禁止复读已揭示关键信息的「首次发现」"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": false,
+          "advanceOnly": true
+        },
+        "authorIntent": "第一次失败"
+      },
+      {
+        "index": 4,
+        "id": "ch1_s4",
+        "title": "第一次成长",
+        "goal": "章末钩子（承接转折后果）：no_causal_basis",
+        "conflict": "no_causal_basis",
+        "entities": [
+          "林岚"
+        ],
+        "beat": "hook",
+        "spatialAnchor": {
+          "location": "同线收束现场",
+          "note": "只推进后果与新疑问，不重启开场"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": false,
+          "advanceOnly": true
+        },
+        "authorIntent": "第一次成长"
+      }
+    ],
+    "actionLine": "no_causal_basis"
+  },
+  "decisionResult": {
+    "pass": true,
+    "decisions": [
+      {
+        "sceneId": "ch1_s1",
+        "actor": "林岚",
+        "action": "进入现场并确立危机：把售票机修好",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "sceneId": "ch1_s2",
+        "actor": "林岚",
+        "action": "克服阻碍：no_causal_basis",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "sceneId": "ch1_s3",
+        "actor": "林岚",
+        "action": "转折（本 Scene 兑现完整行动线）：no_causal_basis",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "sceneId": "ch1_s4",
+        "actor": "林岚",
+        "action": "章末钩子（承接转折后果）：no_causal_basis",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": []
+      }
+    ],
+    "checks": [
+      "content",
+      "interest",
+      "resources",
+      "knowledge",
+      "relationship",
+      "risk"
+    ]
+  },
+  "conflictResult": {
+    "pass": true,
+    "degraded": false,
+    "types": [
+      "information"
+    ],
+    "required": [
+      "resource",
+      "relationship",
+      "interest",
+      "rule",
+      "values",
+      "information"
+    ],
+    "evidence": [
+      {
+        "type": "information",
+        "source": "信息差"
+      }
+    ],
+    "primary": "information",
+    "suggestObstacle": null
+  },
+  "replanCount": 0
+}
