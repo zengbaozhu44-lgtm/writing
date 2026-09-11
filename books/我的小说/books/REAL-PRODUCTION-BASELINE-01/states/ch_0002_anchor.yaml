@@ -1,0 +1,74 @@
+version: chapter-anchor-3
+chapter: 2
+current_date: 未标注
+pov: 苏晚
+location: 未标注
+relationship_state:
+  machine: relationship-state-v2
+  pov: 苏晚
+  present:
+    - 苏晚
+  edges:
+    - from: 苏晚
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 3
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止提前揭晓章末钩子：约定悬而未决；钥匙已不在苏晚手里
+    expiresAtChapter: 2
+  - text: 禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙
+    expiresAtChapter: 3
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 2
+  - text: 禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水
+    expiresAtChapter: 3
+  - text: 禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙的安全感
+    expiresAtChapter: 4
+voiceDna:
+  id: inherit-default
+  label: 章级 Voice DNA（待首次写入）
+  sentenceLength: mixed
+  rhythm: varied
+  dialogueRatio: 0.45
+  actionDensity: high
+  descriptionDensity: low
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 2
+  closing_emotion: 压抑·余波未平
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+  mustInheritScene1: true
+  tailExcerpt: 然按着钥匙，金属棱角顶住手心，凉得像冰。 她吸了口气，看着楼梯拐角的灯泡再度吞吐。光线摇晃两次，照亮墙面上的水渍痕迹——从天花板边缘往下，像一条发黑的泪痕，刚好落在她头顶的高度。 她没有动。水又在上面落了一滴，砸进桶里，声音比前两次更清脆。
+committedAt: 2026-09-11T06:48:04.953Z
+d1InferenceDemotion:
+  eo: EO-P4
+  role: operational_planner_hint
+  producesObtains: false
+  isRealityAuthority: false
+  isCharacterReality: false
+  isRelationshipFact: false
+  authorityAct: NOT_AN_AUTHORITY_ACT
+  claimLevelAuthority: NOT_THIS_PATH
+  note: Anchor / heuristic ops hint ≠ Reality / obtains.
+  paths:
+    - deriveRelationshipState
+    - deriveClosingEmotion
+    - buildChapterAnchor
+  relationship_state: operational_planner_hint_not_fact
+  closing_emotion: ops_hint_not_character_reality
