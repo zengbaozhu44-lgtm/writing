@@ -1,0 +1,166 @@
+[stress] workDir = /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ
+
+===== runChapter ch1 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[orchestrator] ch1 使用已确认的具体章节计划（/var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/_system/chapter_plans/chapter_0001.yaml），跳过派生规划
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[entity] loaded characters: 0 (none)
+[entity] bookDir= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ
+[lore] worldBible length: 964 bookDir= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ
+[Orchestrator] Unexpected error: Error: LLM 请求失败 402: {"error":{"message":"Insufficient Balance","type":"unknown_error","param":null,"code":"invalid_request_error"}}
+    at chatCompletion (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/writer/llm-writer.js:177:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async llmWriter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/writer/llm-writer.js:87:20)
+    at async RuntimeOrchestrator._runScenesAndChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:533:22)
+    at async RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:223:9)
+    at async scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:16)
+    at async Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:24)
+[stress] ch1 pass=false
+
+===== runChapter ch2 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0001_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch2 pass=false
+
+===== runChapter ch3 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0002_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch3 pass=false
+
+===== runChapter ch4 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0003_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch4 pass=false
+
+===== runChapter ch5 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0004_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch5 pass=false
+
+===== runChapter ch6 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0005_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch6 pass=false
+
+===== runChapter ch7 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0006_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch7 pass=false
+
+===== runChapter ch8 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0007_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch8 pass=false
+
+===== runChapter ch9 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0008_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch9 pass=false
+
+===== runChapter ch10 =====
+[lore] worldBible length: 964 path= /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/01_world_bible.md
+[entity] loaded characters: 7 from /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/novel/03_character_bible
+[Orchestrator] Unexpected error: Error: Anchor not found: /var/folders/5d/l_7hygg15k14cstgpvz0lrwh0000gn/T/inkos-stress-YiObgJ/states/ch_0009_anchor.yaml
+    at loadPriorChapterAnchor (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-brain/src/planner/planner.js:58:13)
+    at RuntimeOrchestrator._runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:151:21)
+    at scheduler.enqueue.type (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:86:27)
+    at Scheduler._drain (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:24:30)
+    at file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:14:12
+    at new Promise (<anonymous>)
+    at Scheduler.enqueue (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/scheduler.js:12:12)
+    at RuntimeOrchestrator.runChapter (file:///Users/zora/Desktop/ai/InkOS/packages/inkos-runtime/src/pipeline/orchestrator.js:84:27)
+    at main (file:///Users/zora/Desktop/ai/InkOS/scripts/stress-story-route-run.js:227:35)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[stress] ch10 pass=false
+
+[stress] done → /Users/zora/Desktop/ai/InkOS/tmp-stress

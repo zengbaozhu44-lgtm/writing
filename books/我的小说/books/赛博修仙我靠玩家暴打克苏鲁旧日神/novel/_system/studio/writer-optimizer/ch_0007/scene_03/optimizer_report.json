@@ -1,0 +1,1127 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 3,
+    "sceneType": "climax",
+    "beatMemory": {
+      "newFacts": [
+        "林砚把「数据祛妄」的写入权限挂到沈寒舟的ID上时，指尖在确认键上方悬了整整三秒",
+        "战术确认的瞬间，尸潮已经冲进了颅骨碾压者的第一层骨甲",
+        "沈寒舟在通讯频道里只说了一句：“第七人是我选的"
+      ],
+      "characterStateChanges": [
+        "他把视线从屏幕移开，落在自己左手的焦疤上，那处的皮肉又开始发紧",
+        "屏幕上的数字开始跳——玩家在线数每秒骤降三百、五百、七百——每一跳都是一个名字，名字后面跟着“已阵亡·复活中”"
+      ],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "林砚盯着那行跳动的数字，喉咙里滚了半圈，什么也没说出来",
+        "他调出玩家复活的排队列表，第三批人的名字已经滚到了尽头。沈寒舟在通讯频道里只说了一句：“第七人是我选的。”林砚没接话，他把嘴唇咬出了血，然后按下了全员冲锋的指令"
+      ],
+      "changedDimensions": [
+        "information",
+        "danger",
+        "resource"
+      ],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Decision",
+          "stateChange": true,
+          "afterState": "他把「正面强攻」的预案拖进回收站，光标停在「数据祛妄」的病毒代码上"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Danger",
+          "stateChange": true,
+          "afterState": "他盯着那个数字，手指在键盘上悬了半秒，没落下去"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Decision",
+          "stateChange": false,
+          "afterState": "POV 已做出不可逆选择，后果即将落地"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Danger",
+          "stateChange": true,
+          "afterState": "他想起林薇下线前那行字，想起她后背抵着他胸口时的体温"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Twist",
+          "stateChange": true,
+          "afterState": "”他说，声音干得像砂石磨过铁皮，“让所有玩家切自杀式冲锋，缠住那东西的外壳"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Countdown",
+          "stateChange": true,
+          "afterState": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰"
+        }
+      ],
+      "lastAfterState": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰",
+      "stateChangeCount": 5
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "林砚当前目标：转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自 — 局势尚未被本 Scene 改写",
+        "action": "转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲锋缠住「颅骨碾压者」，掩护精英小队深入其内部，植入林砚以管理员权限编写的「数据祛妄」病毒，从内部瓦解污染核心。",
+        "choice": "为了完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "他把「正面强攻」的预案拖进回收站，光标停在「数据祛妄」的病毒代码上",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-10T09:31:34.177Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 2,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "林砚当前目标：转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [
+            "关系",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "必须失去：玩家军团阵亡超过两万人次，大量低级装备报废；林砚强行以数据流连接战场，神魂再次受到轻微污染，为后续埋下隐患；浮空城外围防御工事被摧毁三分之一。 — 且局面本身不会让步",
+        "choice": "为了完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "他盯着那个数字，手指在键盘上悬了半秒，没落下去",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [
+          "他把视线从屏幕移开，落在自己左手的焦疤上，那处的皮肉又开始发紧"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-10T09:31:43.989Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 163 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.0375
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-10T09:31:53.095Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 162 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.03773584905660377
+          },
+          "microPassed": [
+            "关系",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "他想起林薇下线前那行字，想起她后背抵着他胸口时的体温",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "林砚把「数据祛妄」的写入权限挂到沈寒舟的ID上时，指尖在确认键上方悬了整整三秒"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-10T09:32:03.812Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：推进已有界面的后果/约束，禁止「再发现一个新界面",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.024096385542168676
+          },
+          "microPassed": [
+            "新信息",
+            "关系",
+            "危险"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+        "choice": "为了完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "”他说，声音干得像砂石磨过铁皮，“让所有玩家切自杀式冲锋，缠住那东西的外壳",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [
+          "屏幕上的数字开始跳——玩家在线数每秒骤降三百、五百、七百——每一跳都是一个名字，名字后面跟着“已阵亡·复活中”"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "林砚盯着那行跳动的数字，喉咙里滚了半圈，什么也没说出来"
+        ],
+        "extractedAt": "2026-08-10T09:32:12.128Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 2,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：推进已有界面的后果/约束，禁止「再发现一个新界面",
+          "storyAfter": "认知更新：新信息已落地，局面无法装作不知道",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.046413502109704644
+          },
+          "microPassed": [
+            "新信息",
+            "关系",
+            "Promise兑现",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "段末悬念",
+        "choice": "为了完成「林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger",
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "战术确认的瞬间，尸潮已经冲进了颅骨碾压者的第一层骨甲",
+          "沈寒舟在通讯频道里只说了一句：“第七人是我选的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "他调出玩家复活的排队列表，第三批人的名字已经滚到了尽头。沈寒舟在通讯频道里只说了一句：“第七人是我选的。”林砚没接话，他把嘴唇咬出了血，然后按下了全员冲锋的指令"
+        ],
+        "extractedAt": "2026-08-10T09:32:22.105Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "认知更新：新信息已落地，局面无法装作不知道",
+          "storyAfter": "林砚已掌握：推进已有界面的后果/约束，禁止「再发现一个新界面」；局面代价：选择产",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.011235955056179775
+          },
+          "microPassed": [
+            "新信息",
+            "关系",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 39,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 39,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 56,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        }
+      ],
+      "scenePeak": {
+        "fear": 39,
+        "hope": 0,
+        "anger": 56,
+        "surprise": 0,
+        "relief": 0
+      },
+      "emotionalVariance": 56,
+      "hasFluctuation": true,
+      "generatedAt": "2026-08-10T09:32:22.114Z",
+      "sceneIndex": 3
+    },
+    "readerSimulation": {
+      "curiosity": 62,
+      "questionCount": 1,
+      "dropRisk": 30,
+      "continueProbability": 61,
+      "sceneIndex": 3,
+      "pov": "林砚",
+      "simulatedAt": "2026-08-10T09:32:22.115Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 61,
+      "obstacleStrength": 56,
+      "choiceLevel": 39,
+      "consequenceLevel": 39,
+      "escalationLevel": 39,
+      "informationValue": 50,
+      "hookImpact": 47,
+      "stateChangeRate": 83,
+      "hookBreakdown": {
+        "hookLevel": 47,
+        "hookOutput": {
+          "type": "Cost",
+          "readerQuestion": "追查下去会付出什么代价？",
+          "cost": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰",
+          "nextNeedToKnow": "代价能否承受、有无退路",
+          "level": 3,
+          "stage": "Cost",
+          "name": "代价",
+          "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+          "example": "记得的人都会死亡",
+          "hookKind": "ActionHook",
+          "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+          "actionDeadline": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+          "newGoal": "转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲锋缠住「颅骨碾压者」，掩护精英小队深入其内部，植入林砚以管理员权限编写的「数据祛妄」病毒，从内部瓦解污染核心。",
+          "newAction": "POV必须针对「代价能否承受、有无退路」立刻行动",
+          "countdown": "如果现在不行动 — 高 — 明确代价已出",
+          "plantedPromise": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+          "mustForceAction": true
+        },
+        "stageMatch": true,
+        "cognitiveUpgrade": 34,
+        "emotionalImpact": 30,
+        "characterCost": 78,
+        "targetType": "Cost",
+        "targetLevel": 3
+      },
+      "average": 49,
+      "weakest": "choiceLevel",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-08-10T09:32:22.116Z",
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "追查下去会付出什么代价？",
+        "cost": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰",
+        "nextNeedToKnow": "代价能否承受、有无退路",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+        "actionDeadline": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+        "newGoal": "转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲锋缠住「颅骨碾压者」，掩护精英小队深入其内部，植入林砚以管理员权限编写的「数据祛妄」病毒，从内部瓦解污染核心。",
+        "newAction": "POV必须针对「代价能否承受、有无退路」立刻行动",
+        "countdown": "如果现在不行动 — 高 — 明确代价已出",
+        "plantedPromise": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": false,
+        "valid": false,
+        "reason": "no_promise_bound"
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 47,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "追查下去会付出什么代价？",
+        "cost": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰",
+        "nextNeedToKnow": "代价能否承受、有无退路",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+        "actionDeadline": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+        "newGoal": "转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲锋缠住「颅骨碾压者」，掩护精英小队深入其内部，植入林砚以管理员权限编写的「数据祛妄」病毒，从内部瓦解污染核心。",
+        "newAction": "POV必须针对「代价能否承受、有无退路」立刻行动",
+        "countdown": "如果现在不行动 — 高 — 明确代价已出",
+        "plantedPromise": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "actionHookScore": 0,
+      "forcesAction": true,
+      "cognitiveUpgrade": 34,
+      "emotionalImpact": 30,
+      "characterCost": 78
+    },
+    "reward": {
+      "valid": false,
+      "requiresPromise": true,
+      "promise": null,
+      "payoff": null,
+      "promiseId": null,
+      "promiseSource": null,
+      "description": "⚠ 本 Scene 无可用 Promise — Writer 须先承接 Story Memory 伏笔/前序 Hook 再写 Payoff",
+      "deliveryBeat": "newInformation",
+      "rule": "没有对应 Promise 的 Reward 不允许出现"
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": false,
+      "reason": "no_promise_bound"
+    },
+    "blocking": false,
+    "generatedAt": "2026-08-10T09:32:22.116Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 61,
+    "obstacleStrength": 56,
+    "choiceLevel": 39,
+    "consequenceLevel": 39,
+    "escalationLevel": 39,
+    "informationValue": 50,
+    "hookImpact": 47,
+    "stateChangeRate": 83,
+    "hookBreakdown": {
+      "hookLevel": 47,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "追查下去会付出什么代价？",
+        "cost": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰",
+        "nextNeedToKnow": "代价能否承受、有无退路",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+        "actionDeadline": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+        "newGoal": "转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲锋缠住「颅骨碾压者」，掩护精英小队深入其内部，植入林砚以管理员权限编写的「数据祛妄」病毒，从内部瓦解污染核心。",
+        "newAction": "POV必须针对「代价能否承受、有无退路」立刻行动",
+        "countdown": "如果现在不行动 — 高 — 明确代价已出",
+        "plantedPromise": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 34,
+      "emotionalImpact": 30,
+      "characterCost": 78,
+      "targetType": "Cost",
+      "targetLevel": 3
+    },
+    "average": 49,
+    "weakest": "choiceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-10T09:32:22.116Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "追查下去会付出什么代价？",
+      "cost": "林砚的左手按在键盘上，指尖发白——那枚他亲手埋在精英小队第七人脊髓里的定位芯片，正随着那人的死亡闪烁成灰",
+      "nextNeedToKnow": "代价能否承受、有无退路",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+      "actionDeadline": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+      "newGoal": "转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲锋缠住「颅骨碾压者」，掩护精英小队深入其内部，植入林砚以管理员权限编写的「数据祛妄」病毒，从内部瓦解污染核心。",
+      "newAction": "POV必须针对「代价能否承受、有无退路」立刻行动",
+      "countdown": "如果现在不行动 — 高 — 明确代价已出",
+      "plantedPromise": "如果现在不行动 — 高 — 明确代价已出现或逼近（生命/关系/资源）",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": false,
+      "reason": "no_promise_bound"
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 62,
+    "questionCount": 1,
+    "dropRisk": 30,
+    "continueProbability": 61,
+    "sceneIndex": 3,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-10T09:32:22.115Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 39,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 56,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 56,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 56,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-10T09:32:22.114Z",
+    "sceneIndex": 3
+  },
+  "chapter": 7,
+  "scene": {
+    "id": "ch7_s3",
+    "index": 3,
+    "goal": "转折：林砚放弃正面硬抗，利用玩家无限复活的特性，设计「尸潮战术」：数千名玩家以自杀式冲锋缠住「颅骨碾压者」，掩护精英小队深入其内部，植入林砚以管理员权限编写的「数据祛妄」病毒，从内部瓦解污染核心。"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 70,
+      "scoreAfter": 70,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 30,
+        "end": 36,
+        "chars": 6
+      },
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 178,
+        "end": 228,
+        "chars": 50
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 638,
+        "end": 1160,
+        "chars": 500
+      },
+      "edits": []
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 86,
+    "hook": 75,
+    "commercialPleasure": 100,
+    "styleConsistency": 92,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 86,
+    "hook": 75,
+    "commercialPleasure": 100,
+    "styleConsistency": 92,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "total": 90,
+  "totalBefore": 90,
+  "weakest": [
+    {
+      "id": "hook",
+      "score": 75
+    },
+    {
+      "id": "infoRelease",
+      "score": 80
+    },
+    {
+      "id": "climax",
+      "score": 86
+    }
+  ],
+  "polish": {
+    "changed": false,
+    "mode": "none",
+    "modules": {
+      "description": {
+        "scoreBefore": 70,
+        "scoreAfter": 70,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 30,
+          "end": 36,
+          "chars": 6
+        },
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 178,
+          "end": 228,
+          "chars": 50
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 638,
+          "end": 1160,
+          "chars": 500
+        },
+        "edits": []
+      }
+    },
+    "edits": []
+  },
+  "diff": {
+    "prefixUnchanged": 1160,
+    "draftChars": 1118,
+    "polishedChars": 1118,
+    "changed": false
+  },
+  "diffLines": [],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-08-10T09:32:22.140Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 86,
+      "hook": 75,
+      "commercialPleasure": 100,
+      "styleConsistency": 92,
+      "characterConsistency": 100,
+      "infoRelease": 80
+    },
+    "total": 90,
+    "weak": [
+      {
+        "id": "hook",
+        "score": 75
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "climax",
+        "score": 86
+      },
+      {
+        "id": "styleConsistency",
+        "score": 92
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 100
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "hook",
+        "score": 75
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "climax",
+        "score": 86
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 37,
+        "actionHits": 16,
+        "dialogHits": 10,
+        "variety": 4
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 10,
+        "len": 1118
+      },
+      "styleConsistency": {
+        "shortRatio": 70,
+        "expoRun": 37
+      },
+      "characterConsistency": {
+        "pov": "林砚",
+        "present": [
+          "林砚"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 0,
+        "stagger": false
+      }
+    },
+    "chapter": 7,
+    "sceneIndex": 3,
+    "totalChars": 1118
+  }
+}

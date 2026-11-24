@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "fixtureFingerprint": "40f62211523c654649b0fc262adbf1dfc877fac37c92102b33e48914e75de943",
+    "builtAt": "2026-08-20T05:02:21.560Z",
+    "schemaVersion": 1
+  },
+  "artifacts": {
+    "executionPlan": {
+      "scenes": [
+        {
+          "id": "ch1_s1",
+          "index": 1,
+          "title": "进入世界",
+          "goal": "进入现场并确立危机：进入世界",
+          "conflict": "资源不足或时间压力",
+          "beat": "situation",
+          "entities": [
+            "主角"
+          ],
+          "wordTarget": 800,
+          "status": "pending",
+          "reviewRequired": true
+        },
+        {
+          "id": "ch1_s2",
+          "index": 2,
+          "title": "建立关系",
+          "goal": "克服阻碍：资源不足或时间压力",
+          "conflict": "信息不完整",
+          "beat": "complication",
+          "entities": [
+            "主角"
+          ],
+          "wordTarget": 800,
+          "status": "pending",
+          "reviewRequired": true
+        },
+        {
+          "id": "ch1_s3",
+          "index": 3,
+          "title": "第一次失败",
+          "goal": "转折（本 Scene 兑现完整行动线）：关键抉择导致不可逆变化",
+          "conflict": "必须失去：时间或身体代价",
+          "beat": "turn",
+          "entities": [
+            "主角"
+          ],
+          "wordTarget": 800,
+          "status": "pending",
+          "reviewRequired": true
+        },
+        {
+          "id": "ch1_s4",
+          "index": 4,
+          "title": "第一次成长",
+          "goal": "章末钩子（承接转折后果）：发现型钩子",
+          "conflict": "局势改变",
+          "beat": "hook",
+          "entities": [
+            "主角"
+          ],
+          "wordTarget": 600,
+          "status": "pending",
+          "reviewRequired": true
+        }
+      ],
+      "count": 4
+    },
+    "promptFingerprint": {
+      "ch1_s1": "26fa6de77b011e251080b575294fd860fca2d6ecb31594a42f8613ee4c710ad6",
+      "ch1_s2": "7e995ece93d00b55c403dc0d1dfef009783725979d107f3009f1e80955ee0849",
+      "ch1_s3": "e21abe5aa54f6ce3c101c5c01c5053b2e1a57370a80162b85a47b3880f3cd139",
+      "ch1_s4": "40e395803e0d58d525472bdd098ba940e08e13c39d395e0c9d08904d070f4787"
+    },
+    "gateOutputs": {
+      "consistency": true,
+      "metrics": {
+        "actionRatio": 0.33,
+        "chapter": 1,
+        "characterGrowth": 1,
+        "climaxCount": 2,
+        "conflictDensity": 2,
+        "conflictTypes": [
+          "resource",
+          "information"
+        ],
+        "dialogueRatio": 0.04,
+        "foreshadowRate": 0,
+        "humanDialogueCount": 8,
+        "infoDensity": 1.46,
+        "longDialogueBlocks": 4,
+        "mindRatio": 0,
+        "rhythmPeaks": [
+          {
+            "chars": 34,
+            "index": 2,
+            "intensity": 3
+          },
+          {
+            "chars": 24,
+            "index": 6,
+            "intensity": 3
+          },
+          {
+            "chars": 34,
+            "index": 8,
+            "intensity": 3
+          },
+          {
+            "chars": 24,
+            "index": 12,
+            "intensity": 3
+          },
+          {
+            "chars": 49,
+            "index": 14,
+            "intensity": 3
+          }
+        ],
+        "sceneCount": 4,
+        "wordCount": 583,
+        "worldProgress": 0
+      },
+      "critic": {
+        "comment": "可上架连载",
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "商业节奏偏弱，中段需加压"
+          }
+        ],
+        "overall": 80,
+        "pass": true,
+        "plannerHints": [
+          {
+            "delta": 0.1,
+            "reason": "节奏偏慢",
+            "type": "actionSceneWeight"
+          }
+        ],
+        "scores": {
+          "chapterValue": 75,
+          "commercialRhythm": 58,
+          "patternRepeat": 85,
+          "payoff": 100,
+          "retention": 85,
+          "sellingPoint": 78
+        }
+      },
+      "reader": {
+        "highlights": {
+          "anticipated": "发现型钩子",
+          "best": "关键抉择导致不可逆变化",
+          "boring": "篇幅偏短，高潮不足",
+          "draggy": null,
+          "withheld": {
+            "bodyEmotionCount": 0,
+            "note": null,
+            "overloaded": false
+          }
+        },
+        "pass": true,
+        "personas": [
+          {
+            "comment": "可读但需加强钩子",
+            "id": "commercial",
+            "name": "商业网文读者",
+            "readingDrive": 74,
+            "scores": {
+              "emotion": 60,
+              "hook": 85,
+              "pace": 65,
+              "payoff": 78
+            }
+          },
+          {
+            "comment": "可读但需加强钩子",
+            "id": "mystery",
+            "name": "悬疑读者",
+            "readingDrive": 72,
+            "scores": {
+              "emotion": 60,
+              "hook": 85,
+              "pace": 65,
+              "payoff": 78
+            }
+          },
+          {
+            "comment": "可读但需加强钩子",
+            "id": "editor",
+            "name": "编辑",
+            "readingDrive": 72,
+            "scores": {
+              "emotion": 60,
+              "hook": 85,
+              "pace": 65,
+              "payoff": 78
+            }
+          }
+        ],
+        "readingDrive": 73
+      },
+      "validation": {
+        "checks": {
+          "character_advanced": true,
+          "dialogue_balance": true,
+          "new_goal": true,
+          "new_problem": true,
+          "plot_advanced": true,
+          "relationship_advanced": false,
+          "situation_changed": "发现型钩子",
+          "world_advanced": true
+        },
+        "failures": [
+          "relationship_advanced"
+        ],
+        "message": "未通过（1/8 失败）— 需重新规划",
+        "pass": false,
+        "passed": 7,
+        "total": 8
+      },
+      "readerSimulator": {
+        "baseline": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "samples": []
+        },
+        "degraded": true,
+        "dragSections": [
+          "主角推开门，光线从缝隙里倾泻进来，落在手背上。\n\n“我们得进入现场并确立危机：进入世界，但是时间不等人啊！”主角喊道。\n"
+        ],
+        "error": "no-api-key",
+        "hookScore": 5,
+        "softFail": true,
+        "summary": "启发式评估：约 583 字",
+        "threshold": 6
+      }
+    },
+    "memoryMutation": {
+      "added": {
+        "chapters/0001_第1章.md": "c74b37cd325441ba055a960ad7a980df9958572da5b769039e77a600b3444daa",
+        "chapters/0001_进入世界.md": "5a5a751ae1fbebd856025311c2eb6f0d66bc0d39d087a8559633418e38e5f2c9",
+        "novel/_system/brain/ch_0001_run.json": "dacc7647334ff476a4ddf249feeac1f69da7c09562f7f0e8e27092fc8dc25e98",
+        "novel/_system/brain/ch_0001_scenes.json": "e3c0378fad6f662f8f53b4f5323587d77b84a15f0076c4387dba9dd6d54fb0ab",
+        "novel/_system/brain/ch_0002_plan.json": "32ee3d760bab2c31316be41ff0828c153551516b872666374150f19d2fb87454",
+        "novel/_system/brain/critic_history.json": "404e4e84592cf1da2aed8d63d35215766e421fa739cce76d57a0f9bb523e3cdf",
+        "novel/_system/brain/memory_hierarchy.json": "7021fc232ce802b4a752f61c451046dc313756778e75c78c091e5ba887f6245d",
+        "novel/_system/brain/metrics_dashboard.json": "22477a41b191acb00f48bc09cb5ed87cfdeff4c3dadb52fb6200e85c0aadbaef",
+        "novel/_system/brain/prompt-cache/ch_0001/cache/world.content": "991e027919ffc6d267ae3995809fef4601d267a9bbb498af36389a5b1cf5aef0",
+        "novel/_system/brain/prompt-cache/ch_0001/cache/world.hash": "9ddfca054e5358e8cfb2935296680ee4a6052c4e7866a9007652e21a1c50cebf",
+        "novel/_system/brain/prompt-cache/ch_0001/cache/writing.content": "a46dc8f304a37609122b93d1c00724fe662ae3f40359698677f0f6205331edc6",
+        "novel/_system/brain/prompt-cache/ch_0001/cache/writing.hash": "21818276b9668b4f7fb4bea6ab0b6fa6c71429e640c18cc164fbf978ddec1de8",
+        "novel/_system/brain/prompt-cache/ch_0001/cache_validator.json": "0d505751613a54691dee904c3de97bdd92497f5a3ed4b3dbd0d5e70c6482b41c",
+        "novel/_system/brain/prompt-cache/ch_0001/context_snapshot.json": "df9ab42ff49188440849b68637d1ba6c2fd9d810ead5b5dce415f97bfea54a8e",
+        "novel/_system/brain/prompt-cache/ch_0001/prompt_metrics.json": "604c970eadadd21d58ca557adce27039672dcb27025e10f33c21670cbb1598e7",
+        "novel/_system/brain/prompt-cache/ch_0001/prompts/098ea600581f5208.txt": "39540556ee3b1d004f674898bcd851dd1c0b5ff114129b72c71c741a32dec0d7",
+        "novel/_system/brain/prompt-cache/ch_0001/prompts/14b8cf20fcafb84d.txt": "23a000271814edf614b7b5b2db5337791d2bd3d479351a34d3caf3adb5c8f103",
+        "novel/_system/brain/prompt-cache/ch_0001/prompts/159a1bb175ec915c.txt": "56f8f59f000024095255812db87d1424640075d7c8a637c3e8e8a6bc5599cea4",
+        "novel/_system/brain/prompt-cache/ch_0001/prompts/c04e7b345e2d0c73.txt": "a4035016651774b4792aa6a93be7f48abff11b037abe0d6b572edc6fb04a1968",
+        "novel/_system/brain/prompt-cache/relevance_stats.json": "b4a8b0553da2e46813f810676e1da22be7dd8d2279b779ca6630872b138e7111",
+        "novel/_system/snapshots/ch_0001/07_state_board.md": "4f49bdc092ad0b3afe44a91019d324443b99e078fa521dd555ddc09baccd3bc1",
+        "novel/_system/snapshots/ch_0001/08_current_state.md": "5b5d6d124e8aec00060de581292577a2b7970022e7bbe11ab9aa11aa33ba54d0",
+        "novel/_system/snapshots/ch_0001/11_timeline.yaml": "ae698c53dca821b0b41c5d2859522db21a3358bd1c58196de2c6dc3adb6bef68",
+        "novel/_system/snapshots/ch_0001/12_foreshadow_db.yaml": "2468f9c690abce9df6eb1d63c69d5484a63e2909ec6f040c9d37a829dc6dc470",
+        "novel/_system/snapshots/ch_0001/13_facts_db.yaml": "475ca62a7b0c5d9b68a8218ea9d676fe57d632a10b16e346970835beae0de60c",
+        "novel/_system/snapshots/ch_0001/14_resource_db.yaml": "99fb40b9d164367ef33361c57debe9bb5dc39bad4a14a6af5f5256ecca7452e8",
+        "novel/_system/snapshots/ch_0001/15_npc_simulation.yaml": "4745ba448c06ad455d458f635c07b4e983c5a5eea4314ea44cbe987647458496",
+        "novel/_system/studio/writer-optimizer/ch_0001/scene_01/draft.md": "5a5a751ae1fbebd856025311c2eb6f0d66bc0d39d087a8559633418e38e5f2c9",
+        "novel/_system/studio/writer-optimizer/ch_0001/scene_01/optimizer_report.json": "05a19a7458b09f27aab07a7a3e8e88ff964ff5e40cffb0afbab9319f70e1114c",
+        "novel/_system/studio/writer-optimizer/ch_0001/scene_01/polished_draft.md": "5a5a751ae1fbebd856025311c2eb6f0d66bc0d39d087a8559633418e38e5f2c9",
+        "states/ch_0001.json": "eb6e8c179cb79e878a52edf22db646eeebfbe5863ca7a8529e4e678b5e162c40",
+        "states/ch_0001_anchor.yaml": "f0c406e5e8e8948afb39eea002e7ab6f9feab91f1d8366adaa6c2fafe2e20d23"
+      },
+      "modified": {
+        "novel/08_current_state.md": "5b5d6d124e8aec00060de581292577a2b7970022e7bbe11ab9aa11aa33ba54d0",
+        "novel/11_timeline.yaml": "ae698c53dca821b0b41c5d2859522db21a3358bd1c58196de2c6dc3adb6bef68",
+        "novel/13_facts_db.yaml": "475ca62a7b0c5d9b68a8218ea9d676fe57d632a10b16e346970835beae0de60c",
+        "novel/_system/brain/adaptive_state.json": "fc3c50cc06b3b3534e1c7ebd4c216b96584e25991263bc1b945c621ad417b6e8",
+        "novel/_system/brain/ch_0001_plan.json": "58bfc1493ea5baaac2a2630c66f4ab8207e668b5b3e30e3d987d35b5b1b90711",
+        "novel/_system/manifest.json": "4ae9f9c6dac2c2c79f37fcb7cb1821ac3f59f91b7351a5840fc8cf1c22b5c62c"
+      },
+      "unchangedCount": 35
+    },
+    "pipeline": {
+      "pass": true,
+      "awaiting": null,
+      "error": null,
+      "stages": [
+        {
+          "attempt": 1,
+          "intent": {
+            "bannedElements": [],
+            "chapterIntent": "第1章：进入世界",
+            "mainGoal": "进入世界",
+            "sceneCount": 4,
+            "voiceDna": null
+          },
+          "stage": "planner"
+        },
+        {
+          "pass": true,
+          "stage": "decision"
+        },
+        {
+          "pass": true,
+          "stage": "conflict",
+          "types": [
+            "resource",
+            "information"
+          ]
+        },
+        {
+          "count": 4,
+          "passed": 4,
+          "stage": "scenes"
+        },
+        {
+          "pass": true,
+          "stage": "chapter_pipeline"
+        }
+      ]
+    }
+  }
+}

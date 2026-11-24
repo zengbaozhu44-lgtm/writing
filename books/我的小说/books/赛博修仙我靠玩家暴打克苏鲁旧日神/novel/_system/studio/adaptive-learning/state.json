@@ -1,67 +1,116 @@
 {
   "version": "adaptive-learning-1",
   "chaptersAnalyzed": [
-    1
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7
   ],
-  "entryCount": 8,
+  "entryCount": 62,
   "trends": {
     "hook": {
       "dimension": "hook",
-      "average": 92,
-      "streak": 0,
+      "average": 88,
+      "streak": 2,
       "low": false,
       "needsBoost": false,
-      "sampleCount": 8
+      "sampleCount": 62
     },
     "conflict": {
       "dimension": "conflict",
-      "average": 88,
-      "streak": 0,
+      "average": 82,
+      "streak": 2,
       "low": false,
       "needsBoost": false,
-      "sampleCount": 8
+      "sampleCount": 62
     },
     "dialogue": {
       "dimension": "dialogue",
-      "average": 68,
-      "streak": 1,
-      "low": true,
+      "average": 91,
+      "streak": 2,
+      "low": false,
       "needsBoost": false,
-      "sampleCount": 8
+      "sampleCount": 62
     },
     "pacing": {
       "dimension": "pacing",
-      "average": 78,
-      "streak": 1,
+      "average": 74,
+      "streak": 4,
       "low": false,
-      "needsBoost": false,
-      "sampleCount": 8
+      "needsBoost": true,
+      "sampleCount": 62
     },
     "emotion": {
       "dimension": "emotion",
-      "average": 80,
-      "streak": 1,
+      "average": 76,
+      "streak": 4,
       "low": false,
-      "needsBoost": false,
-      "sampleCount": 8
+      "needsBoost": true,
+      "sampleCount": 62
     },
     "style": {
       "dimension": "style",
-      "average": 83,
-      "streak": 1,
-      "low": false,
-      "needsBoost": false,
-      "sampleCount": 8
+      "average": 68,
+      "streak": 5,
+      "low": true,
+      "needsBoost": true,
+      "sampleCount": 62
     }
   },
   "adjustments": {
-    "activeDimensions": [],
-    "budgetWeights": {},
+    "activeDimensions": [
+      "pacing",
+      "emotion",
+      "style"
+    ],
+    "budgetWeights": {
+      "history": -0.05,
+      "facts": -0.03,
+      "goal": 0.02,
+      "character": 0.07,
+      "relationship": 0.03,
+      "world": 0.03
+    },
     "endingBudgetBoost": 0,
     "climaxHint": false,
-    "promptLines": [],
-    "generatedAt": "2026-07-31T07:05:31.683Z"
+    "promptLines": [
+      "**节奏强化**：压缩说明段，增加事件推进与场景切换",
+      "避免连续环境描写超过 2 句",
+      "**情绪强化**：POV 内心反应与身体感受必须可见",
+      "情绪需随冲突升级而变化",
+      "**文风强化**：遵守写作圣经硬切、身体先行、限知视角",
+      "减少说明腔，增加具体感官细节"
+    ],
+    "generatedAt": "2026-08-13T04:21:04.371Z"
   },
-  "suggestions": [],
-  "updatedAt": "2026-07-31T07:05:31.683Z"
+  "suggestions": [
+    {
+      "id": "adaptive_pacing",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "pacing",
+      "text": "pacing 连续 4 次低于 70 分（均分 74）→ 已自动调权 Prompt"
+    },
+    {
+      "id": "adaptive_emotion",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "emotion",
+      "text": "emotion 连续 4 次低于 70 分（均分 76）→ 已自动调权 Prompt"
+    },
+    {
+      "id": "adaptive_style",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "style",
+      "text": "style 连续 5 次低于 70 分（均分 68）→ 已自动调权 Prompt"
+    }
+  ],
+  "updatedAt": "2026-08-13T04:21:04.371Z"
 }

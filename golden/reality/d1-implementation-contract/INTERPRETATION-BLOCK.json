@@ -1,0 +1,67 @@
+{
+  "eo": "EO-P1",
+  "status": "BINDING",
+  "date": "2026-09-03",
+  "claimLevelAuthority": "NOT_IMPLEMENTED",
+  "claimLevelAuthorityNote": "Dual BLOCK A paths; EO-P6 Act module is separate MINIMAL_IMPLEMENTED",
+  "invariants": [
+    "Persistence ≠ Reality Status",
+    "Validation ≠ obtains",
+    "Acceptance ≠ obtains",
+    "Commit ≠ obtains",
+    "Inference ≠ fact",
+    "Narrative = evidence only",
+    "Subject = Author",
+    "Legacy disk ≠ re-authenticated Reality"
+  ],
+  "forbiddenEquations": [
+    "plan = obtains",
+    "validation = obtains",
+    "accept = obtains",
+    "commit = obtains",
+    "confirmed = obtains",
+    "verified = obtains",
+    "immutable = obtains",
+    "authored = Authority Act",
+    "post alone = Authority",
+    "narrative presence = obtains",
+    "delete/rollback = ¬obtains",
+    "disk presence = obtains"
+  ],
+  "interpretations": [
+    { "id": "I-01", "disposition": "CUT", "path": "commit ⇒ obtains" },
+    { "id": "I-02", "disposition": "CUT", "path": "accept ⇒ obtains" },
+    { "id": "I-03", "disposition": "CUT", "path": "validation.pass ⇒ obtains" },
+    { "id": "I-04", "disposition": "CUT", "path": "consistency.pass ⇒ obtains" },
+    { "id": "I-05", "disposition": "CUT", "path": "immutable ⇒ truth", "demoteTo": "retention" },
+    { "id": "I-06", "disposition": "CUT", "path": "confirmed ⇒ obtains", "demoteTo": "eligibility" },
+    { "id": "I-07", "disposition": "CUT", "path": "verified ⇒ obtains", "demoteTo": "eligibility" },
+    { "id": "I-08", "disposition": "CUT", "path": "authored ⇒ Authority Act", "demoteTo": "provenance" },
+    { "id": "I-09", "disposition": "CUT", "path": "UI accept ⇒ Reality confirmation", "demoteTo": "workflow" },
+    { "id": "I-10", "disposition": "CUT", "path": "narrative presence ⇒ obtains" },
+    { "id": "I-11", "disposition": "KEEP", "path": "narrative as evidence" },
+    { "id": "I-12", "disposition": "CUT", "path": "Operator post ⇒ Subject", "note": "EO-P3: Executor=Operator; Subject=Author; Act NOT IMPLEMENTED" },
+    { "id": "I-13", "disposition": "CUT", "path": "delete/rollback ⇒ ¬obtains" }
+  ],
+  "nonGoals": [
+    "realityStatus schema",
+    "rename confirmed/verified/immutable/accepted/authored",
+    "Authority Act",
+    "Legacy re-authentication as Reality",
+    "W-04 foreshadow write cut",
+    "auto-start P3"
+  ],
+  "requiredDocs": [
+    "golden/reality/d1-implementation-contract/INTERPRETATION-BLOCK.md",
+    "golden/reality/d1-implementation-contract/APPROVED.md",
+    "golden/reality/d1-implementation-contract/EO-P1.md"
+  ],
+  "requiredDocPhrases": [
+    "Persistence ≠ Reality Status",
+    "Validation ≠ obtains",
+    "Acceptance ≠ obtains",
+    "Commit ≠ obtains",
+    "Narrative = evidence only",
+    "NO new realityStatus"
+  ]
+}

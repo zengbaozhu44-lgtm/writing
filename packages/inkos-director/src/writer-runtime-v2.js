@@ -133,7 +133,7 @@ function detectStateSignals(text = '') {
   const t = text;
   const info = /名单|密码|记录|照片|死亡|第\d+次|不是唯一|闪过|显示|文件|权限/u.test(t);
   const danger = /锁定|清除|倒计时|警告|追杀|封禁|红灯|消失|清空|枪|刀|爆炸/u.test(t);
-  const relation = /背叛|信任|同盟|分手|同行|名字|苏晚|妹妹|坦白|隐瞒/u.test(t);
+  const relation = /背叛|信任|同盟|分手|同行|名字|林薇|妹妹|坦白|隐瞒/u.test(t);
   const character = /选择|拒绝|决定|迈|推门|拔脚|转身|不敢|破例/u.test(t);
   const world = /重置|规则|系统|节点|世界|空间|归档/u.test(t);
   const goal = /必须|逃|救|阻止|闯入|上报|诱饵/u.test(t);
@@ -532,8 +532,8 @@ function buildRewriteHint(failReasons, detail) {
     '【Writer Runtime V2 重写指令】上一版未通过，立即整段重写（只输出正文）：',
     ...failReasons.slice(0, 6).map((r) => `- ${r}`),
     '',
-    `Current Story State Before：${detail.storyState.before}`,
-    `必须 After ≠ Before。目标 After：${detail.storyState.after}`,
+    `Current Story State Before〔EXPECTED / session〕：${detail.storyState.before}`,
+    `必须 After ≠ Before。目标 After〔EXPECTED TARGET〕：${detail.storyState.after}（≠ Observed Continuity / ≠ Canon）`,
     '',
     'Every event must satisfy：Cause → Event → Effect',
     detail.causeEffect.lastEvent?.effect
@@ -565,12 +565,13 @@ export function formatWriterRuntimeV2PromptBlock({
     '### Writer Runtime V2 · 边写边验',
     `**${WRITER_RUNTIME_V2_POLICY.core}**`,
     '',
-    '**Current Story State**',
-    `- Before：${String(before).slice(0, 60)}`,
-    `- After：${String(after).slice(0, 60)}`,
+    '**Current Story State〔EXPECTED / session TARGET〕**',
+    `- Before〔EXPECTED〕：${String(before).slice(0, 60)}`,
+    `- After〔EXPECTED TARGET〕：${String(after).slice(0, 60)}`,
+    '- Before/After = 规划目标，≠ Observed Continuity / ≠ Canon Reality',
     '- 必须真正改变故事。禁止调查→继续调查→继续发现异常',
     '',
-    '**Cause → Event → Effect**',
+    '**Cause → Event → Effect〔HEURISTIC 约束〕**',
     lastEvent?.effect ? `- 上一事件 Effect（须承接）：${lastEvent.effect}` : '- 本事件须写清：为什么发生 → 发生了什么 → 导致什么',
     '',
     '**Micro Scene（本 Beat 至少 2 项）**：新信息 · 关系 · 危险 · Promise · 新行动',

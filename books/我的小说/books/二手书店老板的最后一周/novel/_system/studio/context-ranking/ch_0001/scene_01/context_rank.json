@@ -1,0 +1,172 @@
+{
+  "version": "context-rank-1",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s1",
+    "index": 1,
+    "goal": "承接上章推进：场景1：清晨开门——林守常发现门槛内侧躺着一片梧桐叶，夹进《植物名实图考》。引燃煤炉，'目录'从抽屉探头。时间像糨糊一样黏稠。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 3630,
+    "topK": null,
+    "usedChars": 160,
+    "selectedCount": 6,
+    "trimmedCount": 4,
+    "totalCandidates": 10
+  },
+  "topK": [
+    {
+      "id": "knowledge:2",
+      "source": "knowledge",
+      "text": "三年前是林薇把《陶庵梦忆》递给老周（林守常：partial）",
+      "charCount": 30,
+      "scores": {
+        "relevance": 32,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 564,
+        "finalScore": 43.05
+      }
+    },
+    {
+      "id": "knowledge:3",
+      "source": "knowledge",
+      "text": "《陶庵梦忆》书脊裂缝里夹着一张泛黄照片（林守常：partial）",
+      "charCount": 32,
+      "scores": {
+        "relevance": 32,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 564,
+        "finalScore": 43.05
+      }
+    },
+    {
+      "id": "knowledge:1",
+      "source": "knowledge",
+      "text": "老周的《浮生六记》谎言（林守常：know）",
+      "charCount": 21,
+      "scores": {
+        "relevance": 24,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 564,
+        "finalScore": 39.45
+      }
+    },
+    {
+      "id": "knowledge:0",
+      "source": "knowledge",
+      "text": "梧桐叶是谁放在门槛内侧的（林守常：unknown）",
+      "charCount": 25,
+      "scores": {
+        "relevance": 24,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 564,
+        "finalScore": 39.45
+      }
+    },
+    {
+      "id": "knowledge:7",
+      "source": "knowledge",
+      "text": "老周下周日离开（店拆了回老家）（林守常：know）",
+      "charCount": 25,
+      "scores": {
+        "relevance": 24,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 564,
+        "finalScore": 39.45
+      }
+    },
+    {
+      "id": "knowledge:4",
+      "source": "knowledge",
+      "text": "林薇吃橘子络过敏；去年除夕她包饺子（林守常：know）",
+      "charCount": 27,
+      "scores": {
+        "relevance": 24,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 564,
+        "finalScore": 39.45
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "knowledge:9",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 29
+    },
+    {
+      "id": "knowledge:5",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 30
+    },
+    {
+      "id": "knowledge:6",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 30
+    },
+    {
+      "id": "knowledge:8",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 39
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 6,
+      "totalCandidates": 10,
+      "topK": 6
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "timeline": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 5
+    }
+  },
+  "intent": {
+    "mainGoal": "【主线推进】 沉缓、温热、两个老男人的告别仪式。时间像糨糊一样黏稠，对话带文言气，但绝不过度。老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人为「修不修旧书」产生表面分歧，林守常沉默地修好；老周留下一个橘子。本章的折痕是一个被咽回去的句子：有人看破不说破，有人用一个体面的借口维持处境。本章须为「阿婆手帕上的周字浮现老周妻子的遗物连接」完成情感前置。对悬而未决的悬念只推进、不解答——用物证与质感加深悬疑，绝不给答案。POV 林守常——只写他看见的与咽回去的，不写答案。",
+    "pov": "林守常"
+  },
+  "generatedAt": "2026-08-15T08:40:19.631Z"
+}

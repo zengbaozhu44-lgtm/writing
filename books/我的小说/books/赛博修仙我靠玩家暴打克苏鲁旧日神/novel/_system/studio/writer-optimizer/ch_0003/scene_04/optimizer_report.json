@@ -1,0 +1,1217 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 4,
+    "sceneType": "ending",
+    "beatMemory": {
+      "newFacts": [
+        "沈寒舟的呼吸声从耳麦里传来，粗重地卡在某个频率上——那是他压着血在走的动静",
+        "林砚用残废的右臂肘部撞向确认键，骨头在焦黑的皮肤下发出闷响",
+        "指尖悬停在确认上方，整个身体在抖，像一台过载的机器",
+        "林砚用牙咬住左腕残存的皮肉，把焦黑的手指压上确认键",
+        "剧痛从脊柱炸开，视线里泛白，他迎着光把确认键砸了下去",
+        "界面没有碎，只是裂开一道缝，从他的掌心渗下去"
+      ],
+      "characterStateChanges": [
+        "右臂的肌腱在第三次集束校准里崩断了一根，林砚盯着面前的光栅，视野边缘开始发灰"
+      ],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "界面弹出新的一行字：【前置条件——未满足"
+      ],
+      "changedDimensions": [
+        "information",
+        "resource",
+        "worldCognition"
+      ],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Decision",
+          "stateChange": true,
+          "afterState": "左臂吊在身侧，焦毁的神经末梢一阵一阵地抽，像有人拿砂纸在骨头缝里来回磨"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Countdown",
+          "stateChange": false,
+          "afterState": "阻力落地，目标受挫，退路收窄"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Decision",
+          "stateChange": true,
+          "afterState": "界面弹出代价清单——林薇的锚点记忆将永久封存"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Countdown",
+          "stateChange": true,
+          "afterState": "他拿断指压住止血带，拧紧，血从指缝渗出来，洇湿了鞋面"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Discovery",
+          "stateChange": true,
+          "afterState": "他盯着那行字，指尖还悬在烧焦的键盘上方——焦皮黏在键帽上，扯出一缕细丝"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Countdown",
+          "stateChange": true,
+          "afterState": "林砚用牙咬住左腕残存的皮肉，把焦黑的手指压上确认键"
+        }
+      ],
+      "lastAfterState": "林砚用牙咬住左腕残存的皮肉，把焦黑的手指压上确认键",
+      "stateChangeCount": 5
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "林砚当前目标：章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深 — 局势尚未被本 Scene 改写",
+        "action": "章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深处，一只克苏鲁祭司的虚影正在低语，其目光似乎穿透了虚空，直接锁定了玩家通道的入口。",
+        "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "左臂吊在身侧，焦毁的神经末梢一阵一阵地抽，像有人拿砂纸在骨头缝里来回磨",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "resource",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-04T07:18:40.093Z",
+        "continuity": {
+          "leftArm": "disabled",
+          "rightArm": "damaged",
+          "legs": "damaged",
+          "location": null,
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press",
+            "hand_withdraw"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（新信息），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 2,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "林砚当前目标：章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [
+            "新信息"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Countdown",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "局势改变 — 且局面本身不会让步",
+        "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "沈寒舟的呼吸声从耳麦里传来，粗重地卡在某个频率上——那是他压着血在走的动静"
+        ],
+        "characterStateChanges": [
+          "右臂的肌腱在第三次集束校准里崩断了一根，林砚盯着面前的光栅，视野边缘开始发灰"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-04T07:18:47.918Z",
+        "continuity": {
+          "leftArm": "disabled",
+          "rightArm": "disabled",
+          "legs": "damaged",
+          "location": null,
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press",
+            "hand_withdraw"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 158 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.06451612903225806
+          },
+          "microPassed": [
+            "危险"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "界面弹出代价清单——林薇的锚点记忆将永久封存",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "林砚用残废的右臂肘部撞向确认键，骨头在焦黑的皮肤下发出闷响",
+          "指尖悬停在确认上方，整个身体在抖，像一台过载的机器"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-04T07:18:50.011Z",
+        "continuity": {
+          "leftArm": "disabled",
+          "rightArm": "disabled",
+          "legs": "damaged",
+          "location": null,
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press",
+            "hand_withdraw"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Countdown",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「完成前置」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「完成前置」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "他拿断指压住止血带，拧紧，血从指缝渗出来，洇湿了鞋面",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-04T07:18:58.314Z",
+        "continuity": {
+          "leftArm": "disabled",
+          "rightArm": "disabled",
+          "legs": "damaged",
+          "location": null,
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press",
+            "hand_withdraw"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 163 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.00625
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "他盯着那行字，指尖还悬在烧焦的键盘上方——焦皮黏在键帽上，扯出一缕细丝",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-04T07:19:05.038Z",
+        "continuity": {
+          "leftArm": "disabled",
+          "rightArm": "disabled",
+          "legs": "damaged",
+          "location": null,
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press",
+            "hand_withdraw"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [
+            "Event 缺少可观察动作"
+          ],
+          "attempts": 2,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.008849557522123894
+          },
+          "microPassed": [
+            "关系",
+            "危险",
+            "Promise兑现"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "章尾强 Hook — 未完成动作或致命追问",
+        "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林砚用牙咬住左腕残存的皮肉，把焦黑的手指压上确认键",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "林砚用牙咬住左腕残存的皮肉，把焦黑的手指压上确认键",
+          "剧痛从脊柱炸开，视线里泛白，他迎着光把确认键砸了下去",
+          "界面没有碎，只是裂开一道缝，从他的掌心渗下去"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "界面弹出新的一行字：【前置条件——未满足"
+        ],
+        "extractedAt": "2026-08-04T07:19:16.507Z",
+        "continuity": {
+          "leftArm": "disabled",
+          "rightArm": "disabled",
+          "legs": "damaged",
+          "location": null,
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press",
+            "hand_withdraw"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "RAW_SYSTEM: 贴出生硬系统原文「【同步率63%——】」；改为林砚的感知/情绪/身体反应（如：屏幕上那行字像烧红的烙铁烫进眼底），禁止直接引用系统格式"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 172 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.011834319526627219
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 39,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 39,
+          "relief": 0,
+          "dominant": "surprise"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        }
+      ],
+      "scenePeak": {
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 39,
+        "relief": 0
+      },
+      "emotionalVariance": 39,
+      "hasFluctuation": true,
+      "generatedAt": "2026-08-04T07:19:16.527Z",
+      "sceneIndex": 4
+    },
+    "readerSimulation": {
+      "curiosity": 66,
+      "questionCount": 0,
+      "dropRisk": 30,
+      "continueProbability": 61,
+      "sceneIndex": 4,
+      "pov": "林砚",
+      "simulatedAt": "2026-08-04T07:19:16.529Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 46,
+      "obstacleStrength": 41,
+      "choiceLevel": 37,
+      "consequenceLevel": 39,
+      "escalationLevel": 37,
+      "informationValue": 62,
+      "hookImpact": 44,
+      "stateChangeRate": 83,
+      "hookBreakdown": {
+        "hookLevel": 44,
+        "hookOutput": {
+          "type": "PointOfNoReturn",
+          "readerQuestion": "如果选这条路，还能回头吗？",
+          "cost": "不可逆 — 无论选哪条路都有全局性代价",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 5,
+          "stage": "PointOfNoReturn",
+          "name": "不可回头",
+          "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+          "example": "主角必须选择重置自己",
+          "hookKind": "ActionHook",
+          "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深处，一只克苏鲁祭司的虚影正在低语，其目光似乎穿透了虚空，直接锁定了玩家通道的入口。",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": true,
+        "cognitiveUpgrade": 50,
+        "emotionalImpact": 38,
+        "characterCost": 45,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 45,
+      "weakest": "choiceLevel",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-08-04T07:19:16.531Z",
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深处，一只克苏鲁祭司的虚影正在低语，其目光似乎穿透了虚空，直接锁定了玩家通道的入口。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": true,
+        "valid": true,
+        "promise": "[object Object]",
+        "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+        "confidence": 70,
+        "signals": {
+          "payoffHit": true,
+          "promiseEcho": false
+        }
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 44,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深处，一只克苏鲁祭司的虚影正在低语，其目光似乎穿透了虚空，直接锁定了玩家通道的入口。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "actionHookScore": 0,
+      "forcesAction": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 45
+    },
+    "reward": {
+      "valid": true,
+      "requiresPromise": false,
+      "promiseId": "fs_0",
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "promiseSource": "foreshadow",
+      "promiseCategory": "foreshadow",
+      "promiseType": "medium",
+      "promiseImportance": 70,
+      "expectedChapter": 8,
+      "readerExpectation": 75,
+      "foreshadowId": "fs_0",
+      "description": "兑现期待：选择产生可见代价，局面因此改变",
+      "deliveryBeat": "newInformation",
+      "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+      "status": "pending"
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    },
+    "blocking": false,
+    "generatedAt": "2026-08-04T07:19:16.531Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 46,
+    "obstacleStrength": 41,
+    "choiceLevel": 37,
+    "consequenceLevel": 39,
+    "escalationLevel": 37,
+    "informationValue": 62,
+    "hookImpact": 44,
+    "stateChangeRate": 83,
+    "hookBreakdown": {
+      "hookLevel": 44,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深处，一只克苏鲁祭司的虚影正在低语，其目光似乎穿透了虚空，直接锁定了玩家通道的入口。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 45,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 45,
+    "weakest": "choiceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-04T07:19:16.531Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深处，一只克苏鲁祭司的虚影正在低语，其目光似乎穿透了虚空，直接锁定了玩家通道的入口。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 66,
+    "questionCount": 0,
+    "dropRisk": 30,
+    "continueProbability": 61,
+    "sceneIndex": 4,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-04T07:19:16.529Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 39,
+        "relief": 0,
+        "dominant": "surprise"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 39,
+      "relief": 0
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-04T07:19:16.527Z",
+    "sceneIndex": 4
+  },
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s4",
+    "index": 4,
+    "goal": "章末钩子（承接转折后果）：战斗结束后，林砚通过一名玩家的共享视野，瞥见财团基地深处，一只克苏鲁祭司的虚影正在低语，其目光似乎穿透了虚空，直接锁定了玩家通道的入口。"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 576,
+        "end": 620,
+        "chars": 44
+      },
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 836,
+        "end": 852,
+        "chars": 16
+      },
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 372,
+        "end": 744,
+        "chars": 354
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 541,
+        "end": 1063,
+        "chars": 500
+      },
+      "edits": []
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 90,
+    "commercialPleasure": 84,
+    "styleConsistency": 90,
+    "characterConsistency": 100,
+    "infoRelease": 100
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 90,
+    "commercialPleasure": 84,
+    "styleConsistency": 90,
+    "characterConsistency": 100,
+    "infoRelease": 100
+  },
+  "total": 94,
+  "totalBefore": 94,
+  "weakest": [
+    {
+      "id": "commercialPleasure",
+      "score": 84
+    },
+    {
+      "id": "hook",
+      "score": 90
+    },
+    {
+      "id": "styleConsistency",
+      "score": 90
+    }
+  ],
+  "polish": {
+    "changed": false,
+    "mode": "none",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 576,
+          "end": 620,
+          "chars": 44
+        },
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 836,
+          "end": 852,
+          "chars": 16
+        },
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 372,
+          "end": 744,
+          "chars": 354
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 90,
+        "scoreAfter": 90,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 541,
+          "end": 1063,
+          "chars": 500
+        },
+        "edits": []
+      }
+    },
+    "edits": []
+  },
+  "diff": {
+    "prefixUnchanged": 1063,
+    "draftChars": 1015,
+    "polishedChars": 1015,
+    "changed": false
+  },
+  "diffLines": [],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-08-04T07:19:16.572Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 100,
+      "hook": 90,
+      "commercialPleasure": 84,
+      "styleConsistency": 90,
+      "characterConsistency": 100,
+      "infoRelease": 100
+    },
+    "total": 94,
+    "weak": [
+      {
+        "id": "commercialPleasure",
+        "score": 84
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "styleConsistency",
+        "score": 90
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "climax",
+        "score": 100
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      },
+      {
+        "id": "infoRelease",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "commercialPleasure",
+        "score": 84
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "styleConsistency",
+        "score": 90
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 80,
+        "actionHits": 9,
+        "dialogHits": 1,
+        "variety": 4
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 1,
+        "len": 1015
+      },
+      "styleConsistency": {
+        "shortRatio": 80,
+        "expoRun": 80
+      },
+      "characterConsistency": {
+        "pov": "林砚",
+        "present": [
+          "林砚"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 35,
+        "stagger": true
+      }
+    },
+    "chapter": 3,
+    "sceneIndex": 4,
+    "totalChars": 1015
+  }
+}

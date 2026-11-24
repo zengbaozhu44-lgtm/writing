@@ -21,9 +21,6 @@ import { validateChapter } from '../validation/validation.js';
 import {
   saveChapterPlan,
   saveSceneArtifacts,
-  appendDecisionHistory,
-  appendSceneHistory,
-  appendConflictHistory,
   saveBrainRun,
   ensureBrainDir,
 } from '../memory/memory.js';

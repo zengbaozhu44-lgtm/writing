@@ -12,7 +12,7 @@ export function normalizeDashboard(raw) {
     runtime: raw.runtime,
     health: {
       overall: raw.health?.overall ?? raw.healthRaw?.overallScore ?? 0,
-      source: 'story_health.json',
+      source: 'live:metrics_dashboard',
       raw: raw.healthRaw ?? null,
     },
     scenes: raw.scenes ?? [],
@@ -45,9 +45,11 @@ export function normalizePlanner(chapter, plan) {
 }
 
 export function normalizeHealth(healthData) {
+  // P3.1b：退役 story_health.json 后，入参为实时计算的 health 对象（无 current/history 壳）；
+  // 兼容旧持久化形状（{current, history}）与实时形状两种。
   return envelope({
-    source: 'story_health.json',
-    current: healthData?.current ?? null,
+    source: 'live:metrics_dashboard',
+    current: healthData?.current ?? healthData ?? null,
     history: healthData?.history ?? [],
   });
 }

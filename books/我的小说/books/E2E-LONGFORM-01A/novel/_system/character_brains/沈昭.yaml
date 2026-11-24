@@ -1,0 +1,40 @@
+character: 沈昭
+goals:
+  surface: 调查连环失踪案与二十年前断桥坍塌旧案，揭开真相
+  hidden: 通过破解案件证明自己作为理赔员的职业价值，弥补内心深处对过往无力感的补偿
+fears:
+  - 真相被永久掩埋
+  - 自己因执着而陷入孤立无援
+  - 调查过程中伤害无辜者
+bottom_line: 绝不伪造证据或为私利歪曲事实；即使威胁自身安全，也要为失踪者正名
+current_state:
+  trust_protagonist: 50
+  fear: 30
+  betrayal_probability: 10
+  suspicion: 40
+  loyalty: 70
+growth_arc: 从对系统内情持谨慎怀疑的理赔员，逐步在关键证据与盟友支持下坚定信念，成为串联旧案与失踪案的核心推动者，最终完成从‘怀疑者’到‘揭幕者’的蜕变
+triggers:
+  发现新的时间线矛盾证据:
+    trust: 5
+    suspicion: 10
+  关键证人遭遇不测:
+    trust: -10
+    suspicion: 20
+  被上级警告停止调查:
+    trust: -15
+    suspicion: 15
+  盟友提供实质性保护或证据:
+    trust: 20
+    suspicion: -10
+lastChapter: 3
+evolutionLog:
+  - chapter: 3
+    state:
+      trust_protagonist: 50
+      fear: 30
+      betrayal_probability: 10
+      suspicion: 40
+      loyalty: 70
+    at: 2026-10-22T08:53:26.902Z
+updatedAt: 2026-10-22T08:53:53.633Z

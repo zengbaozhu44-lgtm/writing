@@ -1,0 +1,106 @@
+{
+  "book": "凌晨四点世界刷新",
+  "chapter": 2,
+  "allPass": true,
+  "canonUnchanged": true,
+  "rows": [
+    {
+      "scene": 1,
+      "title": "进入局面",
+      "checks": {
+        "hasLocalOc": true,
+        "confirmedIds": [
+          "door_warning",
+          "notebook_message",
+          "clock_anomaly"
+        ],
+        "unresolvedIds": [
+          "meaning_door_warning",
+          "meaning_notebook_message",
+          "open_choice_s1",
+          "tail_cliff_s1"
+        ],
+        "prevConfirmed": [],
+        "prevUnresolved": [],
+        "L1hasOc": false,
+        "L2hasOc": false,
+        "L4hasOc": false,
+        "ocProvType": "derived",
+        "ocProvReason": "unavailable",
+        "ocProvKept": false,
+        "planDidNotClearOpenChoice": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "scene": 2,
+      "title": "受阻与博弈",
+      "checks": {
+        "hasLocalOc": true,
+        "confirmedIds": [],
+        "unresolvedIds": [
+          "open_choice_s2",
+          "tail_cliff_s2"
+        ],
+        "prevConfirmed": [
+          "door_warning",
+          "notebook_message",
+          "clock_anomaly"
+        ],
+        "prevUnresolved": [
+          "meaning_door_warning",
+          "meaning_notebook_message",
+          "open_choice_s1",
+          "tail_cliff_s1"
+        ],
+        "L1hasOc": true,
+        "L2hasOc": true,
+        "L4hasOc": true,
+        "ocProvType": "derived",
+        "ocProvReason": "budget_trim",
+        "ocProvKept": true,
+        "planDidNotClearOpenChoice": null,
+        "s1HooksSurvived": true,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "scene": 3,
+      "title": "转折与代价",
+      "checks": {
+        "hasLocalOc": true,
+        "confirmedIds": [
+          "clock_anomaly"
+        ],
+        "unresolvedIds": [
+          "open_choice_s3",
+          "tail_cliff_s3"
+        ],
+        "prevConfirmed": [
+          "door_warning",
+          "notebook_message",
+          "clock_anomaly"
+        ],
+        "prevUnresolved": [
+          "meaning_door_warning",
+          "meaning_notebook_message",
+          "open_choice_s1",
+          "tail_cliff_s1",
+          "open_choice_s2",
+          "tail_cliff_s2"
+        ],
+        "L1hasOc": true,
+        "L2hasOc": true,
+        "L4hasOc": true,
+        "ocProvType": "derived",
+        "ocProvReason": "budget_trim",
+        "ocProvKept": true,
+        "planDidNotClearOpenChoice": true,
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

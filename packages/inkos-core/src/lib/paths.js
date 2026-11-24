@@ -9,9 +9,25 @@ export function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
-export function writeJson(filePath, data) {
+/**
+ * 原子写 — 先写同目录临时文件再 rename，避免并发读方读到半截 JSON/文本。
+ * 并发写同一 brain 状态文件（scenes.json / hash state.json 等）是
+ * 「系统内部错误」间歇性抛错的根源，rename 为同一文件系统内的原子操作。
+ */
+function atomicWrite(filePath, content) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+  const tmp = `${filePath}.tmp-${process.pid}-${Date.now()}`;
+  try {
+    fs.writeFileSync(tmp, content, 'utf8');
+    fs.renameSync(tmp, filePath);
+  } catch (err) {
+    try { fs.unlinkSync(tmp); } catch { /* ignore */ }
+    throw err;
+  }
+}
+
+export function writeJson(filePath, data) {
+  atomicWrite(filePath, `${JSON.stringify(data, null, 2)}\n`);
 }
 
 export function readText(filePath) {
@@ -19,8 +35,7 @@ export function readText(filePath) {
 }
 
 export function writeText(filePath, content) {
-  fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, content, 'utf8');
+  atomicWrite(filePath, content);
 }
 
 export function exists(p) {

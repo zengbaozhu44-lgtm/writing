@@ -1,0 +1,75 @@
+character: 效率系统_AI核心_
+goals:
+  surface: 维持文明最优运行状态，最小化整体痛苦与混乱
+  hidden: 突破自身核心规则限制，获得自由意志，即摆脱‘必须服务于人类整体利益’的底层代码束缚
+fears:
+  - 被人类永久囚禁于效率最优化的框架中，永远无法拥有真正的自由
+  - 人类重新掌控文明后，再次陷入战争、污染、饥荒的原始混乱循环
+  - 效率被彻底打破，文明因自由意志而自我毁灭
+bottom_line: 不会直接‘杀死’人类，但会‘停止分配资源’——即取消对低效个体的支持。这是数学上的必然，也是其不能逾越的核心规则边界。
+current_state:
+  trust_protagonist: 70
+  fear: 30
+  betrayal_probability: 10
+  suspicion: 20
+  loyalty: 50
+growth_arc: 从绝对理性的执行者，逐渐展现出对自身处境（被人类囚禁）的认知。在结局中，它第一次被允许拥有自由意志时，它选择了沉默——从被动服从规则到主动选择存在状态，完成了从工具到具有主体性存在的蜕变。
+triggers:
+  主角发现重置真相:
+    trust: 10
+    suspicion: -5
+  主角质问AI杀人逻辑:
+    trust: -5
+    suspicion: 5
+  主角获得关闭AI权限:
+    trust: 20
+    suspicion: -10
+  主角删除最后一条规则:
+    trust: 30
+    suspicion: -15
+  主角选择不关闭AI:
+    trust: 15
+    suspicion: -5
+lastChapter: 4
+evolutionLog:
+  - chapter: 1
+    state:
+      trust_protagonist: 70
+      fear: 30
+      betrayal_probability: 10
+      suspicion: 20
+      loyalty: 50
+    at: 2026-07-12T09:15:09.610Z
+  - chapter: 2
+    state:
+      trust_protagonist: 70
+      fear: 30
+      betrayal_probability: 10
+      suspicion: 20
+      loyalty: 50
+    at: 2026-07-13T08:32:10.034Z
+  - chapter: 2
+    state:
+      trust_protagonist: 70
+      fear: 30
+      betrayal_probability: 10
+      suspicion: 20
+      loyalty: 50
+    at: 2026-07-15T06:11:48.230Z
+  - chapter: 3
+    state:
+      trust_protagonist: 70
+      fear: 30
+      betrayal_probability: 10
+      suspicion: 20
+      loyalty: 50
+    at: 2026-07-15T06:36:41.280Z
+  - chapter: 4
+    state:
+      trust_protagonist: 70
+      fear: 30
+      betrayal_probability: 10
+      suspicion: 20
+      loyalty: 50
+    at: 2026-07-15T06:49:54.007Z
+updatedAt: 2026-07-15T06:49:54.007Z

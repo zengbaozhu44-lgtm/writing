@@ -1,0 +1,221 @@
+{
+  "version": "context-rank-1",
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s3",
+    "index": 3,
+    "goal": "转折（本 Scene 兑现完整行动线）：林砚利用管理员权限实时提取玩家死亡数据，解析出执法者护盾的频率漏洞，将数据流注入战场，解锁【召唤阵强化】技能，全体玩家获得临时属性加成，以花式战术彻底击溃机械执法者。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2466,
+    "topK": null,
+    "usedChars": 503,
+    "selectedCount": 5,
+    "trimmedCount": 13,
+    "totalCandidates": 18
+  },
+  "topK": [
+    {
+      "id": "facts:7",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4020字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 51,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 26,
+        "budgetChars": 294,
+        "finalScore": 64.3
+      }
+    },
+    {
+      "id": "facts:8",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4161字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 51,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 26,
+        "budgetChars": 294,
+        "finalScore": 64.3
+      }
+    },
+    {
+      "id": "facts:5",
+      "source": "facts",
+      "text": "第2章完成：林砚重生后立即行动，在24小时倒计时内完成第一批玩家招募，初步验证玩家体系对邪神污染的抗性，同时暴露青穹重工的追杀威胁。（4280字）",
+      "charCount": 73,
+      "scores": {
+        "relevance": 28,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 51,
+        "budgetChars": 294,
+        "finalScore": 54.05
+      }
+    },
+    {
+      "id": "timeline:7",
+      "source": "timeline",
+      "text": "Day 3：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章；克服阻碍：青穹重工派遣的机械执法者小队突袭林砚藏身点；林砚利用管理员权限实时提取玩家死亡数据；战斗结束后",
+      "charCount": 164,
+      "scores": {
+        "relevance": 86,
+        "importance": 40,
+        "freshness": 100,
+        "narrativePriority": 54,
+        "budgetChars": 335,
+        "finalScore": 74.1
+      }
+    },
+    {
+      "id": "timeline:8",
+      "source": "timeline",
+      "text": "Day 3：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章；克服阻碍：青穹重工派遣的机械执法者小队突袭林砚藏身点；林砚利用管理员权限实时提取玩家死亡数据；战斗结束后",
+      "charCount": 164,
+      "scores": {
+        "relevance": 86,
+        "importance": 40,
+        "freshness": 100,
+        "narrativePriority": 54,
+        "budgetChars": 335,
+        "finalScore": 74.1
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:6",
+      "source": "facts",
+      "finalScore": 54.05,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:4",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "timeline:5",
+      "source": "timeline",
+      "finalScore": 43.95,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:6",
+      "source": "timeline",
+      "finalScore": 43.95,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:3",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 3,
+      "totalCandidates": 9,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "timeline": {
+      "selectedCount": 2,
+      "totalCandidates": 9,
+      "topK": 4
+    }
+  },
+  "intent": {
+    "mainGoal": "紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置",
+    "pov": "林砚"
+  },
+  "generatedAt": "2026-08-04T07:17:33.482Z"
+}

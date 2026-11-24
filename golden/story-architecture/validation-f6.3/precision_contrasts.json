@@ -1,0 +1,103 @@
+[
+  {
+    "id": "contrast_pure_action",
+    "text": "她把手机放进包里，拉上拉链，站起身。",
+    "oc": {
+      "role": "scene_derived_continuity",
+      "sceneId": "c1",
+      "index": 1,
+      "sourceTextHash": "550304387",
+      "confirmed": [],
+      "unresolved": [],
+      "empty": true,
+      "extractedAt": "2026-09-07T10:15:13.856Z",
+      "writesCanon": false,
+      "writesSR": false,
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "scene_local_projection_not_reality",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "buildObservedContinuity"
+        ]
+      }
+    }
+  },
+  {
+    "id": "contrast_plan_conflict",
+    "plan": "下一场去医院",
+    "text": "她决定不去医院。她把外套挂回衣架。",
+    "bundle": {
+      "role": "previous_scene_observed_continuity",
+      "confirmed": [],
+      "unresolved": [],
+      "sources": [
+        {
+          "sceneId": "c2",
+          "index": 1
+        }
+      ],
+      "planCannotResolve": true,
+      "writesCanon": false,
+      "writesSR": false
+    }
+  },
+  {
+    "id": "contrast_unresolved_carry",
+    "bundle": {
+      "role": "previous_scene_observed_continuity",
+      "confirmed": [
+        {
+          "id": "quote_11072399",
+          "label": "原文引语「跟我走。」",
+          "evidence": {
+            "sceneId": "c3a",
+            "index": 1,
+            "excerpt": "「跟我走。」或者留在这里。你有三十秒。"
+          },
+          "fromScene": 1
+        }
+      ],
+      "unresolved": [
+        {
+          "id": "open_choice_s1",
+          "label": "未结算选择/倒计时",
+          "evidence": {
+            "sceneId": "c3a",
+            "index": 1,
+            "excerpt": "「跟我走。」或者留在这里。你有三十秒。"
+          },
+          "fromScene": 1
+        },
+        {
+          "id": "tail_cliff_s1",
+          "label": "段末未收束悬念",
+          "evidence": {
+            "sceneId": "c3a",
+            "index": 1,
+            "excerpt": "「跟我走。」或者留在这里。你有三十秒。"
+          },
+          "fromScene": 1
+        }
+      ],
+      "sources": [
+        {
+          "sceneId": "c3a",
+          "index": 1
+        },
+        {
+          "sceneId": "c3b",
+          "index": 2
+        }
+      ],
+      "planCannotResolve": true,
+      "writesCanon": false,
+      "writesSR": false
+    }
+  }
+]

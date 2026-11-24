@@ -1,0 +1,32 @@
+[
+  {
+    "id": "NEG-G01",
+    "assertion": "guardSkeletonGoalsNotInTimeline",
+    "description": "S6.1: skeleton goals not in timeline.events"
+  },
+  {
+    "id": "NEG-G02",
+    "assertion": "guardTemplateFallbackRejected",
+    "description": "B-class templates rejected by isActualTimelineEvent"
+  },
+  {
+    "id": "NEG-G03",
+    "assertion": "guardResolveTimelineEventsNoProseParam",
+    "description": "resolveTimelineEvents has no prose input (structural)"
+  },
+  {
+    "id": "NEG-G04",
+    "assertion": "guardUnknownProvenanceNotAuthored",
+    "description": "S3.4: unmarked 09 = unknown, not authored"
+  },
+  {
+    "id": "NEG-G05",
+    "assertion": "guardEmptyTimelineWhenNoConsequence",
+    "description": "宁缺勿滥: no consequence → empty timeline"
+  },
+  {
+    "id": "NEG-G06",
+    "assertion": "guardProseNotInFactsBeyondMainGoal",
+    "description": "prose events not in facts (only mainGoal template)"
+  }
+]

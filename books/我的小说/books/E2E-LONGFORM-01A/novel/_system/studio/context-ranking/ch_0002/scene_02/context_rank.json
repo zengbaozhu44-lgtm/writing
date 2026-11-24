@@ -1,0 +1,58 @@
+{
+  "version": "context-rank-1",
+  "chapter": 2,
+  "scene": {
+    "id": "ch2_s2",
+    "index": 2,
+    "goal": "克服阻碍：no_causal_basis"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2132,
+    "topK": null,
+    "usedChars": 0,
+    "selectedCount": 0,
+    "trimmedCount": 0,
+    "totalCandidates": 0
+  },
+  "topK": [],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 9
+    },
+    "timeline": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    }
+  },
+  "intent": {
+    "mainGoal": "紧急铺垫：距里程碑「第一次主动使用核心能力并付出明确代价」仅 1 章，须完成前置",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-22T08:48:49.095Z"
+}

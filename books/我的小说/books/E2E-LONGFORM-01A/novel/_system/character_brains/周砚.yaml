@@ -1,0 +1,44 @@
+character: 周砚
+goals:
+  surface: 完成断桥重建工程，获取利益
+  hidden: 掩盖与重建工程相关的利益关系，防止被举报
+fears:
+  - 工程款去向被举报
+  - 利益关系暴露
+  - 失去父亲（镇长）的庇护和地位
+  - 工程失败导致名誉扫地
+bottom_line: 关心工程款去向被谁举报，绝不允许利益链条被追查到自身
+current_state:
+  trust_protagonist: 40
+  fear: 55
+  betrayal_probability: 45
+  suspicion: 60
+  loyalty: 30
+growth_arc: 从表面上的镇定到内心的动摇：初期自信强势、圆滑应对，随着举报威胁和工程压力增大，逐渐暴露焦虑与不安，最终可能因恐惧而做出极端选择或被迫坦白
+triggers:
+  主角询问工程款去向:
+    trust: -10
+    suspicion: 15
+  主角表示支持工程并愿意帮忙:
+    trust: 15
+    suspicion: -5
+  有人匿名举报工程款问题:
+    trust: -20
+    suspicion: 25
+  主角发现他与承包商私下会面:
+    trust: -15
+    suspicion: 20
+  主角替他挡下举报调查:
+    trust: 25
+    suspicion: -10
+lastChapter: 3
+evolutionLog:
+  - chapter: 3
+    state:
+      trust_protagonist: 40
+      fear: 55
+      betrayal_probability: 45
+      suspicion: 60
+      loyalty: 30
+    at: 2026-10-22T08:53:24.169Z
+updatedAt: 2026-10-22T08:53:53.631Z

@@ -1,0 +1,775 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "beatMemory": {
+    "newFacts": [
+      "她低头去翻数据板，翻到的页面全是红的——财团高层的加密通讯记录，发件人那一栏，代号统一是同一个：深",
+      "他低头看了一眼——财团高层的加密通讯记录，每一行都指向同一个结论：那些指令根本不是人类写的",
+      "\"你早就知道",
+      "你知道它为什么选你吗",
+      "“你早就知道",
+      "林砚低头看见第一页的财团徽记，瞳孔缩了缩——那上面被红笔划穿了一个符号，不是任何已知的密钥格式",
+      "“你激活权限的那一秒，他们就知道你站在哪了",
+      "林砚盯着屏幕上她标注的红圈，声音干得像碎玻璃：\"你早知道了，却看着我一步步走进去"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "你知道它为什么选你吗",
+      "”她的声音发抖，不是在哭，是压着怒意，“你猜高层开会时，那些人的眼睛是什么颜色",
+      "她抬起头，眼底烧着一种他从未见过的狠：\"你以为财团里那些老东西是他们自己",
+      "他们连自己是谁都忘了，全被更高维的东西塞了脑子"
+    ],
+    "changedDimensions": [
+      "information",
+      "danger",
+      "resource"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他低头看了一眼——财团高层的加密通讯记录，每一行都指向同一个结论：那些指令根本不是人类写的"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "林砚低头看见第一页的财团徽记，瞳孔缩了缩——那上面被红笔划穿了一个符号，不是任何已知的密钥格式"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 2
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：承接上章推进：场景2：兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景2：兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林薇情绪爆发揭露她早已发现财团高层被更高维诡秘操控，并警告林砚‘管理员权限本身就是陷阱’，兄妹关系出现裂痕，苏清鸢在病床上听到对话后神色复杂。",
+      "choice": "为了完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T09:01:10.354Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 167 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "林砚当前目标：承接上章推进：场景2：兄妹对峙——战后废墟中，林薇带着财团核心机密",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：深空之眼投影的污染正在以指数级速度侵蚀浮空城核心矩阵，林砚的【数据重塑】权限尚不完整——启动需要燃烧自身神魂本源作为代价；与此同时，苏清鸢在战斗中濒临死亡，林砚必须在复活所有玩家与拯救苏清鸢之间做出抉择，而林薇的离线信号暗示她掌握了财团更深层的秘密却拒绝共享。 — 且局面本身不会让步",
+      "choice": "为了完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "”他说，声音平得像一截断了的钢筋，“你早就知道",
+        "她低头去翻数据板，翻到的页面全是红的——财团高层的加密通讯记录，发件人那一栏，代号统一是同一个：深"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T09:01:18.717Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.006097560975609756
+        },
+        "microPassed": [
+          "新信息",
+          "关系"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "他低头看了一眼——财团高层的加密通讯记录，每一行都指向同一个结论：那些指令根本不是人类写的",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "他低头看了一眼——财团高层的加密通讯记录，每一行都指向同一个结论：那些指令根本不是人类写的",
+        "\"你早就知道",
+        "你知道它为什么选你吗"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "你知道它为什么选你吗"
+      ],
+      "extractedAt": "2026-08-11T09:01:26.726Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "POV_BREAK: 旁白出现第一人称（我）；全章固定第三人称叙述（用角色姓名/他），仅角色对白内可用「我」。把旁白「我」改写为第三人称。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "POV_BREAK: 旁白出现第一人称（我）；全章固定第三人称叙述（用角色姓名/他），仅角色对白内可用「我」。把旁白「我」改写为第三人称。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.09497206703910614
+        },
+        "microPassed": [
+          "新信息",
+          "关系"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "“你早就知道"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T09:01:34.353Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.026845637583892617
+        },
+        "microPassed": [
+          "关系"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "林砚低头看见第一页的财团徽记，瞳孔缩了缩——那上面被红笔划穿了一个符号，不是任何已知的密钥格式",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "林砚低头看见第一页的财团徽记，瞳孔缩了缩——那上面被红笔划穿了一个符号，不是任何已知的密钥格式",
+        "“你激活权限的那一秒，他们就知道你站在哪了"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [
+        "”她的声音发抖，不是在哭，是压着怒意，“你猜高层开会时，那些人的眼睛是什么颜色"
+      ],
+      "extractedAt": "2026-08-11T09:01:41.748Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui",
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "STYLE: 本段「不是…是…」≥2 次；改成直接描写（一处对比即可，或不用）"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Event 缺少可观察动作",
+          "STYLE: 本段「不是…是…」≥2 次；改成直接描写（一处对比即可，或不用）"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.004975124378109453
+        },
+        "microPassed": [
+          "新信息",
+          "关系",
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "林砚盯着屏幕上她标注的红圈，声音干得像碎玻璃：\"你早知道了，却看着我一步步走进去"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "她抬起头，眼底烧着一种他从未见过的狠：\"你以为财团里那些老东西是他们自己",
+        "他们连自己是谁都忘了，全被更高维的东西塞了脑子"
+      ],
+      "extractedAt": "2026-08-11T09:01:48.847Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui",
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.011428571428571429
+        },
+        "microPassed": [
+          "新信息",
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 38,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 38,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-11T09:01:48.876Z",
+    "sceneIndex": 2
+  },
+  "readerSimulation": {
+    "curiosity": 86,
+    "questionCount": 7,
+    "dropRisk": 10,
+    "continueProbability": 89,
+    "sceneIndex": 2,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-11T09:01:48.877Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 61,
+    "obstacleStrength": 41,
+    "choiceLevel": 40,
+    "consequenceLevel": 38,
+    "escalationLevel": 40,
+    "informationValue": 61,
+    "hookImpact": 63,
+    "stateChangeRate": 33,
+    "hookBreakdown": {
+      "hookLevel": 63,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "底烧着一种他从未见过的狠：\"你以为财团里那些老东西是他们自己？",
+        "cost": "他们连自己是谁都忘了，全被更高维的东西塞了脑子",
+        "nextNeedToKnow": "未见过的狠：\"你以为财团里那些老东西是他们自己？他们连自己是谁都忘了，全被更高维的东西塞了脑子。\"林砚喉结动了一下，喉咙",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景2：兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林薇情绪爆发揭露她早已发现财团高层被更高维诡秘操控，并警告林砚‘管理员权限本身就是陷阱’，兄妹关系出现裂痕，苏清鸢在病床上听到对话后神色复杂。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 62,
+      "emotionalImpact": 53,
+      "characterCost": 75,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 51,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-11T09:01:48.878Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "底烧着一种他从未见过的狠：\"你以为财团里那些老东西是他们自己？",
+      "cost": "他们连自己是谁都忘了，全被更高维的东西塞了脑子",
+      "nextNeedToKnow": "未见过的狠：\"你以为财团里那些老东西是他们自己？他们连自己是谁都忘了，全被更高维的东西塞了脑子。\"林砚喉结动了一下，喉咙",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林薇情绪爆发揭露她早已发现财团高层被更高维诡秘操控，并警告林砚‘管理员权限本身就是陷阱’，兄妹关系出现裂痕，苏清鸢在病床上听到对话后神色复杂。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 63,
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "底烧着一种他从未见过的狠：\"你以为财团里那些老东西是他们自己？",
+      "cost": "他们连自己是谁都忘了，全被更高维的东西塞了脑子",
+      "nextNeedToKnow": "未见过的狠：\"你以为财团里那些老东西是他们自己？他们连自己是谁都忘了，全被更高维的东西塞了脑子。\"林砚喉结动了一下，喉咙",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：兄妹对峙——战后废墟中，林薇带着财团核心机密资料现身，林砚质问她为何隐瞒情报，林薇情绪爆发揭露她早已发现财团高层被更高维诡秘操控，并警告林砚‘管理员权限本身就是陷阱’，兄妹关系出现裂痕，苏清鸢在病床上听到对话后神色复杂。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": true,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 62,
+    "emotionalImpact": 53,
+    "characterCost": 75
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 17,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": true,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 70,
+    "signals": {
+      "payoffHit": true,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-11T09:01:48.878Z"
+}

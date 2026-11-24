@@ -2,7 +2,7 @@
  * Story Health — 全书长期健康度 Dashboard
  */
 import path from 'node:path';
-import { exists, readJson, writeJson } from '../../../inkos-core/src/lib/paths.js';
+import { exists, readJson } from '../../../inkos-core/src/lib/paths.js';
 import { brainSystemDir } from '../loader.js';
 
 export function computeStoryHealth(bookDir, dashboard, criticHistory = [], consistencyRuns = []) {
@@ -58,20 +58,16 @@ export function computeStoryHealth(bookDir, dashboard, criticHistory = [], consi
   return health;
 }
 
-export function saveStoryHealth(bookDir, health) {
-  const file = path.join(brainSystemDir(bookDir), 'story_health.json');
-  const prev = exists(file) ? readJson(file) : { history: [] };
-  prev.current = health;
-  prev.history = (prev.history || []).slice(-99);
-  prev.history.push({ ...health, at: health.updatedAt });
-  writeJson(file, prev);
-  return file;
-}
-
-export function loadStoryHealth(bookDir) {
-  const file = path.join(brainSystemDir(bookDir), 'story_health.json');
-  if (!exists(file)) return null;
-  return readJson(file);
+/**
+ * 实时健康度 — Author View：从已有运行产物（metrics_dashboard + critic_history）现算，
+ * 不再持久化 story_health.json（P3.1b：退役持久化，保留 Author View 能力）。
+ */
+export function computeCurrentHealth(bookDir) {
+  const dashboardPath = path.join(brainSystemDir(bookDir), 'metrics_dashboard.json');
+  const dashboard = exists(dashboardPath) ? readJson(dashboardPath) : { chapters: [] };
+  const criticPath = path.join(brainSystemDir(bookDir), 'critic_history.json');
+  const criticHistory = exists(criticPath) ? (readJson(criticPath).entries ?? []) : [];
+  return computeStoryHealth(bookDir, dashboard, criticHistory, []);
 }
 
 function round(n) {

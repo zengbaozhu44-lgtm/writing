@@ -1952,6 +1952,24 @@ body {
 }
 .drawer-metrics-grid { margin-top: 16px; }
 
+/* 协议渲染预览抽屉 */
+.plan-preview-drawer .plan-audit { margin-bottom: 16px; }
+.plan-audit-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 16px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.plan-audit-grid > span:nth-child(odd) { color: var(--text-dim); }
+.plan-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
 @media (max-width: 1100px) {
   .ide-body { grid-template-columns: 160px 1fr; }
   .ide-right { display: none; }
@@ -2060,6 +2078,19 @@ body {
 .diag-suggestion-list .sev-high { border-left: 3px solid #e35d6a; }
 .diag-suggestion-list .sev-medium { border-left: 3px solid #f0b429; }
 .diag-suggestion-list .sev-low { border-left: 3px solid #8b95a1; }
+
+.audit-pending-banner {
+  margin: 16px 0 0; border: 1px solid var(--accent, #f0b429);
+  background: rgba(240, 180, 41, 0.08);
+}
+.audit-pending-banner-inner {
+  display: flex; align-items: center; gap: 12px; padding: 12px 14px; flex-wrap: wrap;
+}
+.audit-pending-emoji { font-size: 20px; }
+.audit-pending-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 180px; }
+.audit-pending-text strong { font-size: 14px; }
+.audit-pending-text .text-dim { font-size: 12px; }
+.audit-pending-banner .btn { flex: none; }
 
 .chapter-health-panel { margin-top: 16px; }
 .chapter-health-list { display: flex; flex-direction: column; gap: 6px; }

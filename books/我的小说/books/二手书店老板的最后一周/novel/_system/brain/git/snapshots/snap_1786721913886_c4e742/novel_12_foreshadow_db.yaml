@@ -1,0 +1,102 @@
+hooks:
+  - id: H001
+    title: 梧桐叶：巷子里没有梧桐，门槛内侧却出现断口齐整如刀切的枯叶
+    first_seen: ch_0001
+    status: open
+    trigger: 林守常每次发现叶子被动过 / 夹入的书被翻开
+    expected_reveal: vol_01_ch_10（叶子作为钥匙留在周岚合同上）
+    true_answer: （作者填）投放者是谁
+    done: false
+  - id: H002
+    title: 「等你」纸片：关门后门缝塞入，铅笔字无署名，边缘卷曲像被夹在某本书里很久
+    first_seen: ch_0001
+    status: open
+    trigger: 有人再来塞纸片 / 林守常在某本书里翻到同样的纸
+    expected_reveal: （作者填）
+    true_answer: （作者填）谁写的、从哪本书来
+    done: false
+  - id: H003
+    title: 老周的谎言：他说老伴儿让他还《浮生六记》，其实从没借过
+    first_seen: ch_0001
+    status: open
+    trigger: 老周下周日不来 / 儿子线展开
+    expected_reveal: vol_01_ch_10（还书离城）
+    true_answer: （作者填）老周为什么撒谎；「儿子也读过」的含义
+    done: false
+  - id: H004
+    title: 书脊照片：泛黄照片夹在《陶庵梦忆》裂缝里，老周说「三年前你妹妹亲手递给我」
+    first_seen: ch_0001
+    status: open
+    trigger: 照片被翻出 / 林薇线推进
+    expected_reveal: （作者填）
+    true_answer: （作者填）照片里是谁、老周与林薇的关系
+    done: false
+  - id: H005
+    title: 林薇：三年前把《陶庵梦忆》递给老周；吃橘子络过敏；去年除夕包饺子
+    first_seen: ch_0001
+    status: open
+    trigger: 林薇相关物件再现（叶 / 照片 / 借阅卡）
+    expected_reveal: 卷2（暗线）
+    true_answer: （作者填）林薇是谁、怎么离开
+    done: false
+  - id: H006
+    title: 世界真相：2052 年 AI 控制率 93% 的城市里，书店 / 书 / 叶子的抵抗意义
+    first_seen: ch_0001
+    status: open
+    trigger: 拆迁推进、报纸「大静默三百年」标题（日期是明天）
+    expected_reveal: 卷2
+    true_answer: （作者填）
+    done: false
+  - id: H007
+    title: 「今日营业」木牌的消失：门框旧钉子上挂的木牌已不在
+    first_seen: ch_0001
+    status: open
+    trigger: 第 9 章祖父手写木板重现
+    expected_reveal: vol_01_ch_09
+    true_answer: （作者填）谁摘的
+    done: false
+  - id: H008
+    title: 「目录」的寿命：17 岁聋猫，倒计时生物隐喻
+    first_seen: ch_0001
+    status: open
+    trigger: 猫的状态每章一笔
+    expected_reveal: vol_01_ch_10（被抱走，未死）
+    true_answer: 被林守常抱走，未死（作者已定）
+    done: false
+  - id: H009
+    title: 阿婆手帕绣「周」字：老周妻子多年前遗落之物
+    first_seen: ch_0003
+    status: dormant
+    trigger: 阿婆第 3 章入场
+    expected_reveal: （作者填）
+    true_answer: （作者填）手帕与老周妻子的关系
+    done: false
+  - id: H010
+    title: 周岚·1987 借阅卡：褪色借阅卡滑落，露出「周岚·1987」
+    first_seen: ch_0007
+    status: dormant
+    trigger: 阿婆第 7 章打翻书架
+    expected_reveal: vol_01_ch_10（借阅卡压在《植物名实图考》里，背面「有些书不是用来读的」）
+    true_answer: 周岚年轻时偷过《局外人》1987
+    done: false
+  - id: H011
+    title: 祖父手抄本：第 8 章从床底拖出，「第七天，你会明白，告别不是结束，是换一种方式存放」
+    first_seen: ch_0008
+    status: dormant
+    trigger: 林守常第 8 章首次打开
+    expected_reveal: 卷2 核心钥匙
+    true_answer: （作者填）
+    done: false
+  - id: H012
+    title: 橘子的归还之约：老周三年前推橘「看完就还」，如今再次推橘
+    first_seen: ch_0001
+    status: open
+    trigger: 橘子以不同形态出现（生 / 剥 / 烤 / 晾 / 压 / 埋）
+    expected_reveal: vol_01_ch_10（三个橘子对应老周 / 阿婆 / 林守常）
+    true_answer: 橘子 = 归还与等待的意象（作者已定）
+    done: false
+
+# 说明：本文件由作者侧 P0 预填，系统 commit 通过 patchHooks 按 id 去重合并，
+# 不会覆盖手动钩子。status=dormant 表示「未来章才会首现」的钩子。
+# 注意：目前 prompt-compiler 不注入伏笔区块，本库是「先统一、待接线」的存档源，
+# 模型真正看到的缺口请同步到 07_state_board.md。

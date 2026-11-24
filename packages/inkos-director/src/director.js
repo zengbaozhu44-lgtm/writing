@@ -16,7 +16,6 @@ import {
   loadDirectorOverrides,
 } from './adaptive-planner.js';
 import { runStoryMemory } from '@inkos/story-memory';
-import { analyzeSceneCheckpoints } from './checkpoint.js';
 import { buildReaderFeedbackDirectorBlock, loadReaderFeedbackState, getReaderFeedbackAdjustmentsForChapter } from './reader-feedback.js';
 import { mergeAdaptiveIntoIntent } from './writer-first.js';
 
@@ -230,7 +229,6 @@ export {
   runSceneDirector,
   runSceneReview,
   runChapterReview,
-  analyzeSceneCheckpoints,
   loadAdaptiveHints,
   buildAdaptivePlannerBlock,
   recordAdaptiveHint,

@@ -1,0 +1,1135 @@
+{
+  "sceneIndex": 1,
+  "sceneType": "opening",
+  "parts": [
+    {
+      "order": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "chars": 241,
+      "beatStateDelta": {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "beforeState": "林砚当前目标：承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再 — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次主动释放【数据祛妄】，先做一次对自己神魂的「自我检查」，确认能力边界与消耗。",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "林砚把政府警告信的时间戳和触手首次出现的节点并排摆在一起，指尖划过两道光标之间的空隙——隔了十一个小时",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger",
+          "resource",
+          "goalDirection",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "神魂深处有什么东西在轻轻震颤，像一扇门后有人贴着门板听他"
+        ],
+        "extractedAt": "2026-08-11T06:58:54.864Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "doneActions": [],
+          "activeInterfaces": [],
+          "eventPhase": "setup",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "林砚当前目标：承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "goal",
+        "beforeState": "林砚当前目标：承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再 — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次主动释放【数据祛妄】，先做一次对自己神魂的「自我检查」，确认能力边界与消耗。",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": true,
+        "requiredDimension": "goalDirection"
+      },
+      "stateChange": true,
+      "afterState": "林砚把政府警告信的时间戳和触手首次出现的节点并排摆在一起，指尖划过两道光标之间的空隙——隔了十一个小时",
+      "textPreview": "触手渗入的图，在指挥室全息屏上第七次展开。林砚把政府警告信的时间戳和触手首次出现的节点并排摆在一起，指尖划过两道光标之间的空隙——隔了十一个小时。那十一个小时里，浮空城的地下管网没有任何一条异常记录。\n\n他调出管网监控日志，从渗入点逐层向外",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "林砚当前目标：承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "chars": 173,
+      "beatStateDelta": {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：触手是跨服务器边界的侵蚀，不是可被玩家刷掉的怪物——常规玩家手段对它无效。林砚的【数据祛妄】能净化它，但作用半径、消耗与反噬未知。与此同时，玩家世界政府察觉异变，以「监管」之名要求林砚交出玩家频道的数据接口：拒绝则失去政府信任与资源，交出则把触手渗透通道也暴露给政府。 — 且局面本身不会让步",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [
+          "指挥室穹顶的星图屏突然跳了一下，三条数据流像被什么东西咬住，从边缘开始灰败、卷曲、剥落"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "指挥室穹顶的星图屏突然跳了一下，三条数据流像被什么东西咬住，从边缘开始灰败、卷曲、剥落"
+        ],
+        "extractedAt": "2026-08-11T06:59:04.076Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            },
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "discovered",
+          "issues": [
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.0058823529411764705
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "obstacle",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：触手是跨服务器边界的侵蚀，不是可被玩家刷掉的怪物——常规玩家手段对它无效。林砚的【数据祛妄】能净化它，但作用半径、消耗与反噬未知。与此同时，玩家世界政府察觉异变，以「监管」之名要求林砚交出玩家频道的数据接口：拒绝则失去政府信任与资源，交出则把触手渗透通道也暴露给政府。 — 且局面本身不会让步",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": true,
+        "requiredDimension": "danger"
+      },
+      "stateChange": false,
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "textPreview": "指挥室穹顶的星图屏突然跳了一下，三条数据流像被什么东西咬住，从边缘开始灰败、卷曲、剥落。\n\n林砚的手指按在虚拟键盘上，指腹刚触到冰凉的投影面，那三条数据流已经彻底熄灭，在屏幕上留下三道焦黑的疤。他的呼吸顿了一拍。他认得那种灰败的纹理——和三",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "microPassed": [
+          "关系"
+        ]
+      }
+    },
+    {
+      "order": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "chars": 200,
+      "beatStateDelta": {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "触手渗入的路径图在视网膜上烧灼——从下水管道，从通风井，从林薇房间窗台的裂缝",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T06:59:06.530Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            },
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.01015228426395939
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "choice",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": true,
+        "requiredDimension": "relationship"
+      },
+      "stateChange": true,
+      "afterState": "触手渗入的路径图在视网膜上烧灼——从下水管道，从通风井，从林薇房间窗台的裂缝",
+      "textPreview": "他盯着那行倒计时，指节抵住太阳穴。触手渗入的路径图在视网膜上烧灼——从下水管道，从通风井，从林薇房间窗台的裂缝。\n\n「你确定要自己先试？」沈寒舟的声音从通讯器里传来，带着静电杂音。\n\n林砚没答。他低头看自己的手，指缝里还嵌着三天前从林薇指甲",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "chars": 173,
+      "beatStateDelta": {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "林砚把左手按在操控台上，指尖抵着冰凉的金属面，指节发白",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T06:59:14.796Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            },
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.058823529411764705
+          },
+          "microPassed": [
+            "危险"
+          ],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "consequence",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "",
+        "consequence": "为完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": true,
+        "requiredDimension": "resource"
+      },
+      "stateChange": true,
+      "afterState": "林砚把左手按在操控台上，指尖抵着冰凉的金属面，指节发白",
+      "textPreview": "浮空城指挥室的玻璃映出他的脸。林砚把左手按在操控台上，指尖抵着冰凉的金属面，指节发白。\n\n触手渗入的路径在屏幕上铺开——政府警告里那条被隐去的暗线，从地下水脉一路爬进城区管网，然后绕过所有监测节点，直指浮空城的能源核心。他数了数那路径上的节",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "microPassed": [
+          "危险"
+        ]
+      }
+    },
+    {
+      "order": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "chars": 176,
+      "beatStateDelta": {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "他的视野在黑暗中裂成两半——一半是空荡荡的浮空城指挥室，另一半是密密麻麻的数据层"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "细纹里有什么东西在动"
+        ],
+        "extractedAt": "2026-08-11T06:59:23.201Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "doneActions": [
+            "hand_touch",
+            "data_orb"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            },
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "EVENT_LOOP:「掌心数据流」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 1/5（Promise兑现），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+            "EVENT_LOOP:「掌心数据流」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.057803468208092484
+          },
+          "microPassed": [
+            "Promise兑现"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "newInformation",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": true,
+        "requiredDimension": "information"
+      },
+      "stateChange": false,
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "textPreview": "林砚把左手掌心朝上摊开。数据流从指根涌出，【数据祛妄】的符文在他皮肤下亮起暗蓝的光。他闭上眼，用第一缕神识刺入自己神魂深处。\n\n嗡。\n\n耳鸣像一根针，从耳膜直扎进后脑。他的视野在黑暗中裂成两半——一半是空荡荡的浮空城指挥室，另一半是密密麻麻",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 1/5（Promise兑现），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+          "EVENT_LOOP:「掌心数据流」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+        ],
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "microPassed": [
+          "Promise兑现"
+        ]
+      }
+    },
+    {
+      "order": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "chars": 169,
+      "beatStateDelta": {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear",
+          "hope"
+        ],
+        "unresolvedIssues": [
+          "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖",
+          "像是有什么东西，顺着他的七窍，正往脑干里爬"
+        ],
+        "extractedAt": "2026-08-11T06:59:32.878Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "浮空城坠落区",
+          "revealed": [],
+          "doneActions": [
+            "hand_touch",
+            "data_orb"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            },
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.04819277108433735
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "hook",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": true,
+        "requiredDimension": "worldCognition"
+      },
+      "stateChange": true,
+      "afterState": "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖",
+      "textPreview": "林砚把左手按上自己的眉心。指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖。\n\n眉心深处一片死寂。\n\n没有光团，没有系统回响，连心跳都平稳得可疑。他等了三秒，五秒，十秒。神魂深处终于泛起一点涟漪——不是来",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "microPassed": []
+      }
+    }
+  ],
+  "beatMemory": {
+    "newFacts": [
+      "他的视野在黑暗中裂成两半——一半是空荡荡的浮空城指挥室，另一半是密密麻麻的数据层",
+      "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖"
+    ],
+    "characterStateChanges": [
+      "指挥室穹顶的星图屏突然跳了一下，三条数据流像被什么东西咬住，从边缘开始灰败、卷曲、剥落"
+    ],
+    "emotionChanges": [
+      "fear",
+      "hope"
+    ],
+    "unresolvedIssues": [
+      "神魂深处有什么东西在轻轻震颤，像一扇门后有人贴着门板听他",
+      "指挥室穹顶的星图屏突然跳了一下，三条数据流像被什么东西咬住，从边缘开始灰败、卷曲、剥落",
+      "细纹里有什么东西在动",
+      "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖",
+      "像是有什么东西，顺着他的七窍，正往脑干里爬"
+    ],
+    "changedDimensions": [
+      "danger",
+      "resource",
+      "goalDirection",
+      "worldCognition"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "林砚把政府警告信的时间戳和触手首次出现的节点并排摆在一起，指尖划过两道光标之间的空隙——隔了十一个小时"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "触手渗入的路径图在视网膜上烧灼——从下水管道，从通风井，从林薇房间窗台的裂缝"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "林砚把左手按在操控台上，指尖抵着冰凉的金属面，指节发白"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖"
+      }
+    ],
+    "lastAfterState": "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖",
+    "stateChangeCount": 4
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "beforeState": "林砚当前目标：承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次主动释放【数据祛妄】，先做一次对自己神魂的「自我检查」，确认能力边界与消耗。",
+      "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "林砚把政府警告信的时间戳和触手首次出现的节点并排摆在一起，指尖划过两道光标之间的空隙——隔了十一个小时",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "resource",
+        "goalDirection",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "神魂深处有什么东西在轻轻震颤，像一扇门后有人贴着门板听他"
+      ],
+      "extractedAt": "2026-08-11T06:58:54.864Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [],
+        "activeInterfaces": [],
+        "eventPhase": "setup",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "林砚当前目标：承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：触手是跨服务器边界的侵蚀，不是可被玩家刷掉的怪物——常规玩家手段对它无效。林砚的【数据祛妄】能净化它，但作用半径、消耗与反噬未知。与此同时，玩家世界政府察觉异变，以「监管」之名要求林砚交出玩家频道的数据接口：拒绝则失去政府信任与资源，交出则把触手渗透通道也暴露给政府。 — 且局面本身不会让步",
+      "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "指挥室穹顶的星图屏突然跳了一下，三条数据流像被什么东西咬住，从边缘开始灰败、卷曲、剥落"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "指挥室穹顶的星图屏突然跳了一下，三条数据流像被什么东西咬住，从边缘开始灰败、卷曲、剥落"
+      ],
+      "extractedAt": "2026-08-11T06:59:04.076Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "discovered",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0058823529411764705
+        },
+        "microPassed": [
+          "关系"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "触手渗入的路径图在视网膜上烧灼——从下水管道，从通风井，从林薇房间窗台的裂缝",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:59:06.530Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.01015228426395939
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "林砚把左手按在操控台上，指尖抵着冰凉的金属面，指节发白",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:59:14.796Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.058823529411764705
+        },
+        "microPassed": [
+          "危险"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "他的视野在黑暗中裂成两半——一半是空荡荡的浮空城指挥室，另一半是密密麻麻的数据层"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "细纹里有什么东西在动"
+      ],
+      "extractedAt": "2026-08-11T06:59:23.201Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "hand_touch",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "EVENT_LOOP:「掌心数据流」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 1/5（Promise兑现），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+          "EVENT_LOOP:「掌心数据流」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.057803468208092484
+        },
+        "microPassed": [
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear",
+        "hope"
+      ],
+      "unresolvedIssues": [
+        "指尖触到皮肤的一瞬，他刻意让指腹发凉——他要知道这具身体在【数据祛妄】启动时会不会抖",
+        "像是有什么东西，顺着他的七窍，正往脑干里爬"
+      ],
+      "extractedAt": "2026-08-11T06:59:32.878Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "hand_touch",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.04819277108433735
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    }
+  ],
+  "runtimeSession": {
+    "lastEvent": {
+      "cause": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+      "event": "Scene 尾留悬念 — 禁止平收总结",
+      "effect": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价："
+    },
+    "beforeState": "林砚已掌握：信息后果已落地；局面代价：选择产生可见代价，局面因此改变",
+    "rewriteCounts": {
+      "2": 3,
+      "4": 3,
+      "5": 3,
+      "6": 3
+    }
+  },
+  "runtimeV2": false,
+  "sceneOutcome": {
+    "success": "若达成：承接上章推进：场景1：浮空城指挥室——林砚复盘政府警告与触手渗入的路径，决定不再被动等待。他准备第一次主动释放【数据祛妄】，先做一次对自己神魂的「自我检查」，确认能力边界与消耗。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：推进冲突：触手是跨服务器边界的侵蚀，不是可被玩家刷掉的怪物——常规玩家手段对它无效。林砚的【数据祛妄】能净化它，但作用半径、消耗与反噬未知。与此同时，玩家世界政府察觉异变，以「监管」之名要求林砚交出玩家频道的数据接口：拒绝则失去政府信任与资源，交出则把触手渗透通道也暴露给政府。导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "updatedAt": "2026-08-11T06:59:32.890Z"
+}

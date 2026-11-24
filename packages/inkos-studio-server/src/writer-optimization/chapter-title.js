@@ -7,9 +7,13 @@ const SUSPENSE_MARKERS = /[？?]|谁|什么|为什么|能否|会不会|到底|�
 function cleanTitle(text) {
   return String(text || '')
     .replace(/^[#\s]+/, '')
+    .replace(/\*\*/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
+
+/** 模板占位标题素材（planner 默认值）——用作标题会污染每章，一律跳过 */
+const TITLE_TEMPLATE_RE = /待规划|发现型钩子|关键抉择导致不可逆变化|推进当前现实目标|资源不足或时间压力|信息不完整|时间或身体代价|no_causal_basis/;
 
 function isSuspenseTitle(text) {
   const t = cleanTitle(text);
@@ -25,19 +29,32 @@ function buildFromIntent(intent = {}, chapter = 1, storyDna = {}) {
   const ending = intent.ending || intent.newForeshadow || '';
   const obstacle = intent.obstacles?.[0] || '';
 
-  if (question && question.length >= 4) {
-    const q = cleanTitle(question);
-    return q.endsWith('？') || q.endsWith('?') ? q : `${q}？`;
+  // 主线悬念可能被误存为长文档（如整份卷纲/大纲）；仅当是短问句时才用作标题
+  const cleanQuestion = cleanTitle(question);
+  if (cleanQuestion.length >= 4 && cleanQuestion.length <= 60
+    && !/大纲|核心定位|第\d+章/.test(cleanQuestion)) {
+    return cleanQuestion.endsWith('？') || cleanQuestion.endsWith('?')
+      ? cleanQuestion
+      : `${cleanQuestion}？`;
   }
-  if (ending && ending.length >= 4) {
-    return cleanTitle(ending).slice(0, 24);
-  }
-  if (obstacle && obstacle.length >= 4) {
-    return `${cleanTitle(obstacle).slice(0, 18)}，还能撑多久？`;
-  }
-  if (goal && goal.length >= 4) {
-    return `${cleanTitle(goal).slice(0, 16)}，代价是什么？`;
-  }
+
+  // 只接受"真内容"作为标题素材；模板占位（发现型钩子/关键抉择…）一律跳过
+  const realText = (v) => {
+    const s = cleanTitle(v);
+    return s.length >= 4 && !TITLE_TEMPLATE_RE.test(s) ? s : '';
+  };
+
+  const cleanEnding = realText(ending);
+  if (cleanEnding) return cleanEnding.slice(0, 24);
+
+  const cleanObstacle = realText(obstacle);
+  if (cleanObstacle) return `${cleanObstacle.slice(0, 18)}，还能撑多久？`;
+
+  const cleanGoal = realText(
+    String(goal).replace(/\*\*[^*]+\*\*[：:]\s*/g, '').replace(/^第\d+章[：:]\s*/, ''),
+  );
+  if (cleanGoal) return `${cleanGoal.slice(0, 16)}，代价是什么？`;
+
   return chapter === 1 ? '异常从第一秒开始' : `第 ${chapter} 章的未解之问`;
 }
 

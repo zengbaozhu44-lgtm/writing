@@ -1,0 +1,43 @@
+# 角色名册 · Character Roster（IRP v0.1）
+# ----------------------------------------------------------------------------
+# 定位：POV 合法性校验的权威源。意图渲染器在写 chapter_NNNN.yaml 前校验：
+#   pov 的 entrance_chapter ≤ 当前章，且 pov_allowed ≠ false，否则拒绝渲染并报警。
+#
+# 字段：
+#   entrance_chapter  该角色首次正面入场的章节号（1 起）。null = 卷 1 不正面出场。
+#   pov_allowed       是否可作为 POV（false = 群像 / 幽灵 / 未出场角色，永不可作 POV）。
+#   note              作者备注。
+# ----------------------------------------------------------------------------
+characters:
+  - name: 林守常
+    entrance_chapter: 1
+    pov_allowed: true
+    note: 全卷唯一 POV（vol_01 全 10 章）
+  - name: 老周
+    entrance_chapter: 1
+    pov_allowed: false
+    note: ch1 入场；ch1 末离店。可作在场角色，不作 POV
+  - name: 林小满
+    entrance_chapter: 2
+    pov_allowed: false
+    note: ch2 入场。可作在场角色，不作 POV
+  - name: 阿婆
+    entrance_chapter: 3
+    pov_allowed: false
+    note: ch3 入场。可作在场角色，不作 POV
+  - name: 周岚
+    entrance_chapter: 6
+    pov_allowed: false
+    note: ch6 入场。可作在场角色，不作 POV
+  - name: 林薇
+    entrance_chapter: null
+    pov_allowed: false
+    note: 卷 1 正面未出场（幽灵角色），不可作 POV、不可出现在 present 名单
+  - name: 旧页同盟
+    entrance_chapter: 4
+    pov_allowed: false
+    note: ch4 登场（群像），不可作 POV
+  - name: 拆迁方
+    entrance_chapter: null
+    pov_allowed: false
+    note: 未正面出场，不可作 POV

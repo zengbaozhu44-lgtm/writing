@@ -6,23 +6,48 @@ import path from 'node:path';
 import { exists, readText, readJson, writeText } from '../../inkos-core/src/lib/paths.js';
 import { loadScenes } from './book-service.js';
 import { brainSystemDir } from '../../inkos-brain/src/loader.js';
+import { listChapterAuditStatuses } from './chapter-audit.js';
 
 /**
- * 下一章应写编号：填补从 1 起第一个无正文空洞。
- * 避免样本章（10/25/50）把「下一章」算成 51，或空章误跳成 chapter+1。
+ * 下一章应写编号：填补从 1 起第一个可写空洞。
+ * 可写 = 无正文 且 未审计锁定（locked / pending_audit 不可生成）。
+ * 若 1..max 全被正文/锁定占满，回退到最靠前的 pending_audit / locked（提示先审计），
+ * 全部有正文才新增 max+1。避免把「待审计章」误算成超范围编号。
  */
 export function resolveNextWritableChapter(bookDir, { preferChapter = null } = {}) {
   const { chapters } = listChapters(bookDir);
   const withText = new Set(
     chapters.filter((c) => c.hasText).map((c) => c.number),
   );
+  // 审计状态：locked / pending_audit 的章不可生成
+  let statusByCh = new Map();
+  try {
+    statusByCh = new Map(
+      listChapterAuditStatuses(bookDir, 200).chapters.map((c) => [c.chapter, c.status]),
+    );
+  } catch { /* 无审计文件时退化为仅正文判断 */ }
+
+  const maxCh = Math.max(1, ...chapters.map((c) => c.number), ...statusByCh.keys());
+  const canWrite = (n) => (
+    !withText.has(n)
+    && !['locked', 'pending_audit'].includes(statusByCh.get(n))
+  );
+
   const prefer = Number(preferChapter);
-  if (Number.isFinite(prefer) && prefer >= 1 && !withText.has(prefer)) {
+  if (Number.isFinite(prefer) && prefer >= 1 && canWrite(prefer)) {
     return prefer;
   }
-  let n = 1;
-  while (withText.has(n)) n += 1;
-  return n;
+  for (let n = 1; n <= maxCh; n += 1) {
+    if (canWrite(n)) return n;
+  }
+  // 全部被占：优先提示「待审计」（接受后即解锁），其次最靠前的锁定章
+  for (let n = 1; n <= maxCh; n += 1) {
+    if (!withText.has(n) && statusByCh.get(n) === 'pending_audit') return n;
+  }
+  for (let n = 1; n <= maxCh; n += 1) {
+    if (!withText.has(n) && statusByCh.get(n) === 'locked') return n;
+  }
+  return maxCh + 1;
 }
 
 export function listChapters(bookDir) {

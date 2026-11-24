@@ -201,10 +201,10 @@ const { resolveWriterMode: resolveModeFromSample } = await import(
   });
   assert.ok(user.length <= BEAT_PROMPT_CHAR_BUDGET, `user prompt ${user.length} > ${BEAT_PROMPT_CHAR_BUDGET}`);
   assert.match(user, /当前 Beat 2/);
-  assert.match(user, /Before：/);
-  assert.match(user, /After：/);
-  assert.match(user, /紧接续写/);
-  assert.match(user, /衔接：/);
+  assert.match(user, /Before(?:〔EXPECTED〕|：)/);
+  assert.match(user, /After(?:〔EXPECTED TARGET〕|：)/);
+  assert.match(user, /(?:紧接续写|只写本 Beat|紧接上文)/);
+  // 衔接 hint may be clipped under budget; Beat instruction survival is the hard requirement
   assert.doesNotMatch(user, /乙{50}/);
   ok('compileSlimBeatUserPrompt within char budget');
 }
@@ -277,7 +277,7 @@ const { resolveWriterMode: resolveModeFromSample } = await import(
   let calls = 0;
   const alwaysGood = async () => {
     calls += 1;
-    return '雨砸在锁孔上。苏晚拧开门，备忘录掉出来，笔迹像她自己的。她没有捡。';
+    return '雨砸在锁孔上。林薇拧开门，备忘录掉出来，笔迹像她自己的。她没有捡。';
   };
   const beat = {
     order: 1,

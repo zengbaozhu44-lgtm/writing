@@ -1,0 +1,720 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 1,
+  "sceneType": "opening",
+  "beatMemory": {
+    "newFacts": [
+      "身后是沈寒舟的呼吸声，沉稳，却比平时快了半拍",
+      "林砚的手指悬在确认键上方，停了一瞬",
+      "“塔基坐标变了，”齐玥的声音干涩，“不是我们探测到的那个点"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "林砚站在门槛上，右手按住腰侧那把还没出鞘的长刀，指节压得发白",
+      "谁死了，我骂谁",
+      "黑暗中，他听见一刀岁暮在低声数着什么东西——从一百往下数",
+      "林砚听见自己的耳鸣，像地底深处有什么东西在磨牙"
+    ],
+    "changedDimensions": [
+      "danger",
+      "resource",
+      "worldCognition",
+      "information"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "林砚站在门槛上，右手按住腰侧那把还没出鞘的长刀，指节压得发白"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "他低头，看见半截断裂的腕骨，森白的断面嵌在砖缝里，指节还保持着握拳的姿态"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "屏幕里沈寒舟的头像亮着，齐玥、苏清鸢、一刀岁暮——所有人的生命值都在他眼前跳动"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "金属壁面贴着林砚的背，冰凉刺骨"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "stateChange": false,
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 4
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "beforeState": "林砚当前目标：承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场： — 局势尚未被本 Scene 改写",
+      "action": "承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**：林砚率精英玩家进入数据塔地底",
+      "choice": "为了完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "林砚站在门槛上，右手按住腰侧那把还没出鞘的长刀，指节压得发白",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "resource",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "身后是沈寒舟的呼吸声，沉稳，却比平时快了半拍"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "林砚站在门槛上，右手按住腰侧那把还没出鞘的长刀，指节压得发白"
+      ],
+      "extractedAt": "2026-08-12T10:02:50.935Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": false,
+        "storyBefore": "林砚当前目标：承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "危险"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "资源不足或时间压力 — 且局面本身不会让步",
+      "choice": "为了完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "他低头，看见半截断裂的腕骨，森白的断面嵌在砖缝里，指节还保持着握拳的姿态",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-12T10:02:59.255Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 163 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.00625
+        },
+        "microPassed": [
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "屏幕里沈寒舟的头像亮着，齐玥、苏清鸢、一刀岁暮——所有人的生命值都在他眼前跳动",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "林砚的手指悬在确认键上方，停了一瞬"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [
+        "谁死了，我骂谁"
+      ],
+      "extractedAt": "2026-08-12T10:03:05.577Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "POV_BREAK: 旁白出现第一人称（我）；全章固定第三人称叙述（用角色姓名/他），仅角色对白内可用「我」。把旁白「我」改写为第三人称。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "POV_BREAK: 旁白出现第一人称（我）；全章固定第三人称叙述（用角色姓名/他），仅角色对白内可用「我」。把旁白「我」改写为第三人称。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.018072289156626505
+        },
+        "microPassed": [
+          "关系",
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-12T10:03:12.883Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 159 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.01282051282051282
+        },
+        "microPassed": [
+          "关系",
+          "危险"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "金属壁面贴着林砚的背，冰凉刺骨",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "黑暗中，他听见一刀岁暮在低声数着什么东西——从一百往下数"
+      ],
+      "extractedAt": "2026-08-12T10:03:20.733Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "PHRASE_REUSE: 复用已用措辞「倒计时」；换一种身体/感官/对白的写法，禁止原样复用"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "PHRASE_REUSE: 复用已用措辞「倒计时」；换一种身体/感官/对白的写法，禁止原样复用"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.03664921465968586
+        },
+        "microPassed": [
+          "危险",
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "“塔基坐标变了，”齐玥的声音干涩，“不是我们探测到的那个点"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "林砚听见自己的耳鸣，像地底深处有什么东西在磨牙"
+      ],
+      "extractedAt": "2026-08-12T10:03:23.287Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": null,
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.08016877637130802
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 38,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 38,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-12T10:03:23.304Z",
+    "sceneIndex": 1
+  },
+  "readerSimulation": {
+    "curiosity": 86,
+    "questionCount": 8,
+    "dropRisk": 10,
+    "continueProbability": 89,
+    "sceneIndex": 1,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-12T10:03:23.306Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 62,
+    "obstacleStrength": 41,
+    "choiceLevel": 39,
+    "consequenceLevel": 39,
+    "escalationLevel": 39,
+    "informationValue": 45,
+    "hookImpact": 58,
+    "stateChangeRate": 67,
+    "hookBreakdown": {
+      "hookLevel": 58,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "”“是什么？",
+        "cost": "他扣紧头盔，声音平稳得自己都陌生：“改道",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**：林砚率精英玩家进入数据塔地底",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 62,
+      "emotionalImpact": 38,
+      "characterCost": 75,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 47,
+    "weakest": "choiceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-12T10:03:23.307Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "”“是什么？",
+      "cost": "他扣紧头盔，声音平稳得自己都陌生：“改道",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**：林砚率精英玩家进入数据塔地底",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 58,
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "”“是什么？",
+      "cost": "他扣紧头盔，声音平稳得自己都陌生：“改道",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：第15章：地底深渊 **探索**：林砚率精英玩家进入数据塔地底",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": true,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 62,
+    "emotionalImpact": 38,
+    "characterCost": 75
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 20,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-12T10:03:23.307Z"
+}

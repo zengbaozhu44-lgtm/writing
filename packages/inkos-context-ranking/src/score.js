@@ -16,6 +16,7 @@ function scoreRelevance(entry, sceneKeywords, intentKeywords) {
 
 function scoreImportance(entry) {
   let score = 40;
+  // EO-P7 I-05: immutable boosts *retention ranking* for Writer context, not obtains.
   if (entry.source === 'facts' && entry.meta?.immutable) score += 35;
   if (entry.source === 'relationships' && (entry.meta?.hostility >= 3 || entry.meta?.trust <= 2)) score += 25;
   if (entry.source === 'characters' && entry.meta?.isPov) score += 30;

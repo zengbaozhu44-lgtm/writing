@@ -4,6 +4,7 @@ import { MODULE_KEYS } from './collect.js';
 import { hashCombined } from './hash.js';
 import { MODULE_LABELS, MODULE_CANON_SOURCE, STATUS } from './labels.js';
 import { getHashDependencyRoot } from './canon-state.js';
+import { atomicWriteJson } from './atomic.js';
 
 function promptCacheExists(bookDir, chapter) {
   const ch = `ch_${String(chapter).padStart(4, '0')}`;
@@ -144,12 +145,11 @@ export function persistDependencyTree(bookDir, chapter, tree) {
       getHashDependencyRoot(bookDir),
       `ch_${String(chapter).padStart(4, '0')}`,
     );
-    fs.mkdirSync(dir, { recursive: true });
     const file = path.join(dir, 'dependency_tree.json');
-    fs.writeFileSync(file, JSON.stringify(tree, null, 2), 'utf8');
+    atomicWriteJson(file, tree);
 
     const rootFile = path.join(getHashDependencyRoot(bookDir), 'dependency_tree.json');
-    fs.writeFileSync(rootFile, JSON.stringify({ ...tree, latestChapter: chapter }, null, 2), 'utf8');
+    atomicWriteJson(rootFile, { ...tree, latestChapter: chapter });
     return file;
   } catch {
     return null;

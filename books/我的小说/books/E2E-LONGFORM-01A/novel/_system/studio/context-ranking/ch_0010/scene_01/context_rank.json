@@ -1,0 +1,87 @@
+{
+  "version": "context-rank-1",
+  "chapter": 10,
+  "scene": {
+    "id": "ch10_s1",
+    "index": 1,
+    "goal": "承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：收束代价与余韵"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 3509,
+    "topK": null,
+    "usedChars": 70,
+    "selectedCount": 2,
+    "trimmedCount": 0,
+    "totalCandidates": 2
+  },
+  "topK": [
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "text": "Day 0：回车：回车按下去，屏幕闪了两下，弹出来的不是档案，是一道红锁—",
+      "charCount": 36,
+      "scores": {
+        "relevance": 20,
+        "importance": 40,
+        "freshness": 25,
+        "narrativePriority": 18,
+        "budgetChars": 204,
+        "finalScore": 25.8
+      }
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "text": "Day 0：他：他按下对讲机的通话键：“第九区，认知污染，一具，指甲缺",
+      "charCount": 34,
+      "scores": {
+        "relevance": 20,
+        "importance": 40,
+        "freshness": 20,
+        "narrativePriority": 18,
+        "budgetChars": 204,
+        "finalScore": 24.8
+      }
+    }
+  ],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 8
+    },
+    "timeline": {
+      "selectedCount": 2,
+      "totalCandidates": 2,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "收束代价与余韵，兑现伏笔，留白而非解释完",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-30T09:43:12.137Z"
+}

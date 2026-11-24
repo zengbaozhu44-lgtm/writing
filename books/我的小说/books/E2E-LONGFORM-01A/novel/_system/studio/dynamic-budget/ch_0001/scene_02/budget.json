@@ -1,0 +1,167 @@
+{
+  "version": "dynamic-budget-3",
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s2",
+    "index": 2,
+    "goal": "克服阻碍：no_causal_basis"
+  },
+  "totalTokens": 2016,
+  "budgetRange": {
+    "min": 1800,
+    "max": 3200,
+    "target": 2016
+  },
+  "sceneType": "dialogue",
+  "complexity": {
+    "characterCount": 1,
+    "conflictCount": 4,
+    "worldChange": false,
+    "dialogueDensity": 0,
+    "battleScale": 0.1,
+    "infoRelease": 0.75,
+    "score": 0.36,
+    "level": "medium"
+  },
+  "dynamic": true,
+  "tierless": true,
+  "allocation": {
+    "goal": {
+      "key": "goal",
+      "label": "Goal",
+      "weight": 0.0811,
+      "tokens": 164,
+      "pct": 8.1,
+      "color": "#5b8def"
+    },
+    "conflict": {
+      "key": "conflict",
+      "label": "Conflict",
+      "weight": 0.1622,
+      "tokens": 327,
+      "pct": 16.2,
+      "color": "#f45b69"
+    },
+    "character": {
+      "key": "character",
+      "label": "Character",
+      "weight": 0.2348,
+      "tokens": 473,
+      "pct": 23.5,
+      "color": "#3dd68c"
+    },
+    "world": {
+      "key": "world",
+      "label": "World",
+      "weight": -0.0265,
+      "tokens": -53,
+      "pct": -2.6,
+      "color": "#a78bfa"
+    },
+    "facts": {
+      "key": "facts",
+      "label": "Facts",
+      "weight": 0.116,
+      "tokens": 234,
+      "pct": 11.6,
+      "color": "#f5a623"
+    },
+    "history": {
+      "key": "history",
+      "label": "History",
+      "weight": 0.1081,
+      "tokens": 218,
+      "pct": 10.8,
+      "color": "#56cfe1"
+    },
+    "relationship": {
+      "key": "relationship",
+      "label": "Relationship",
+      "weight": 0.2432,
+      "tokens": 490,
+      "pct": 24.3,
+      "color": "#ff6b9d"
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "weight": 0.0811,
+      "tokens": 163,
+      "pct": 8.1,
+      "color": "#ffd166"
+    }
+  },
+  "pie": [
+    {
+      "key": "goal",
+      "label": "Goal",
+      "tokens": 164,
+      "pct": 8.1,
+      "color": "#5b8def"
+    },
+    {
+      "key": "conflict",
+      "label": "Conflict",
+      "tokens": 327,
+      "pct": 16.2,
+      "color": "#f45b69"
+    },
+    {
+      "key": "character",
+      "label": "Character",
+      "tokens": 473,
+      "pct": 23.5,
+      "color": "#3dd68c"
+    },
+    {
+      "key": "world",
+      "label": "World",
+      "tokens": -53,
+      "pct": -2.6,
+      "color": "#a78bfa"
+    },
+    {
+      "key": "facts",
+      "label": "Facts",
+      "tokens": 234,
+      "pct": 11.6,
+      "color": "#f5a623"
+    },
+    {
+      "key": "history",
+      "label": "History",
+      "tokens": 218,
+      "pct": 10.8,
+      "color": "#56cfe1"
+    },
+    {
+      "key": "relationship",
+      "label": "Relationship",
+      "tokens": 490,
+      "pct": 24.3,
+      "color": "#ff6b9d"
+    },
+    {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "tokens": 163,
+      "pct": 8.1,
+      "color": "#ffd166"
+    }
+  ],
+  "limits": {
+    "goalTokens": 164,
+    "conflictTokens": 327,
+    "characterTokens": 473,
+    "worldTokens": -53,
+    "factsTokens": 234,
+    "historyTokens": 218,
+    "relationshipTokens": 490,
+    "knowledgeTokens": 163
+  },
+  "intent": {
+    "mainGoal": "沈昭用理赔数据逼顾满仓重查，陈茂的儿子陈小帆恰是失踪者之一迫使父亲开口，周砚在重建勘探中挖出旧桥墩残骸。线索延迟揭示：断裂钢筋的检测报告分三章逐步浮出；人物关系从戒备、利用转向脆弱同盟再破裂；跨章因果约束：任何一章确立的物证（钢筋编号、抽走的卷宗页、举报信笔迹）在后续章节不可被否认或凭空复现，每章结尾留下可被后文兑现的实证钩子。十章内闭合：失踪案、坍塌案、举报案三线收束于同一夜。",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-22T08:29:50.990Z"
+}

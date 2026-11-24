@@ -117,6 +117,27 @@ export {
   MAX_STUDIO_REWRITES,
 } from './post-review.js';
 export {
+  hashPromptText,
+  persistFinalContextCompile,
+  persistFinalContextWriterCall,
+  loadFinalContextSnapshot,
+  listFinalContextSnapshots,
+  verifyFinalContextIntegrity,
+  assertFinalContextReadOnlyContract,
+  FINAL_CONTEXT_ROLE,
+} from './final-context-viewer.js';
+export {
+  buildContextProvenanceTrace,
+  findProvenanceBlock,
+  PROVENANCE_ROLE,
+  PROVENANCE_TYPES,
+} from './context-provenance.js';
+export {
+  applyProseBoundaryGate,
+  isInternalBeatScaffoldLine,
+  PROSE_BOUNDARY_VERSION,
+} from './prose-boundary.js';
+export {
   analyzeCommercialScene,
   runWriterOptimizer,
   COMMERCIAL_THRESHOLD,

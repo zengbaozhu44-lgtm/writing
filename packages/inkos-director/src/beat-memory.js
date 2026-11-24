@@ -1,11 +1,17 @@
 /**
  * Beat Memory Context — beatStateDelta + 状态变化验证
+ *
+ * EO-P4: extractBeatStateDelta outputs are heuristic / plan-residue candidates.
+ * `newFacts` / choice / consequence here ≠ Canon facts / obtains / Reality Authority.
+ *
+ * @see golden/reality/d1-implementation-contract/INFERENCE-DEMOTION.md
  */
 import {
   detectStateChanges,
   validateBeatStateChange,
   STATE_CHANGE_DIMENSIONS,
 } from './beat-state.js';
+import { stampInferenceCandidate } from '../../inkos-core/src/lib/inference-demotion.js';
 
 const FACT_RE = /发现|原来|意识到|注意到|辨认|确认|知道|是.{1,8}的|意味着|表明|证明/u;
 const CHAR_CHANGE_RE = /决定|不再|开始|放弃|转向|信任|怀疑|答应|拒绝|妥协|翻脸|让步|选择|只能|必须/u;
@@ -83,6 +89,12 @@ export function extractBeatStateDelta(beat = {}, text = '', priorText = '') {
     emotionChanges,
     unresolvedIssues,
     extractedAt: new Date().toISOString(),
+    // EO-P4: field names retained; semantics demoted — not Canon / obtains
+    d1InferenceDemotion: stampInferenceCandidate({
+      paths: ['extractBeatStateDelta', 'beatPlan.choice/consequence', 'newFacts heuristic'],
+      newFactsRole: 'heuristic_candidate_not_canon_fact',
+      planChoiceConsequenceRole: 'plan_residue_not_reality',
+    }),
   };
 }
 
@@ -137,26 +149,28 @@ export function formatBeatMemoryBlock(memory = {}) {
   }
 
   if (memory.lastAfterState) {
-    lines.push(`**当前 After State（本 Beat 的 Before State 须从此接续）**：${memory.lastAfterState}`);
+    lines.push(
+      `**当前 After State〔EXPECTED / TARGET〕**（本 Beat 的 Before 接续目标；≠ Observed Result / ≠ Canon）：${memory.lastAfterState}`,
+    );
   }
   if (memory.changedDimensions?.length) {
     const labels = memory.changedDimensions
       .map((id) => STATE_CHANGE_DIMENSIONS.find((d) => d.id === id)?.label || id);
-    lines.push(`**已改变的状态维度**：${labels.join('、')}`);
+    lines.push(`**已改变的状态维度〔HEURISTIC〕**：${labels.join('、')}`);
   }
   if (memory.newFacts?.length) {
-    lines.push('**已确立事实**（禁止推翻或重复陈述）：');
+    lines.push('**HEURISTIC 候选笔记**（拍间启发；≠ Observed Continuity；≠ Canon；禁止当作「已发生事实」）：');
     memory.newFacts.forEach((f) => lines.push(`- ${f}`));
   }
   if (memory.characterStateChanges?.length) {
-    lines.push('**人物状态变化**（须延续）：');
+    lines.push('**人物状态变化〔HEURISTIC〕**（须延续线索，非 Reality）：');
     memory.characterStateChanges.forEach((c) => lines.push(`- ${c}`));
   }
   if (memory.emotionChanges?.length) {
-    lines.push(`**当前情绪基调**：${memory.emotionChanges.join('、')}`);
+    lines.push(`**当前情绪基调〔EXPECTED / HEURISTIC〕**：${memory.emotionChanges.join('、')}`);
   }
   if (memory.unresolvedIssues?.length) {
-    lines.push('**未解决问题**（后续 Beat 须推进或加深，禁止忽略）：');
+    lines.push('**未解决问题〔HEURISTIC 提示〕**（后续 Beat 可推进；不得伪造为上一场已结算）：');
     memory.unresolvedIssues.forEach((u) => lines.push(`- ${u}`));
   }
 

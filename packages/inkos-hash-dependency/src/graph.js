@@ -3,6 +3,7 @@ import path from 'node:path';
 import { MODULE_KEYS } from './collect.js';
 import { STATUS } from './labels.js';
 import { getHashDependencyRoot } from './canon-state.js';
+import { atomicWriteJson } from './atomic.js';
 
 /** global = 全章失效；forward = 从触发 Scene 起失效 */
 export const MODULE_SCENE_SCOPE = {
@@ -68,8 +69,7 @@ function persistInvalidSceneState(chapterRoot, sceneIndices) {
   const file = path.join(chapterRoot, 'invalid_scenes.json');
   const prev = loadInvalidSceneState(chapterRoot);
   const scenes = [...new Set([...(prev.scenes || []), ...sceneIndices])].sort((a, b) => a - b);
-  fs.mkdirSync(chapterRoot, { recursive: true });
-  fs.writeFileSync(file, JSON.stringify({ scenes, updatedAt: new Date().toISOString() }, null, 2), 'utf8');
+  atomicWriteJson(file, { scenes, updatedAt: new Date().toISOString() });
   return scenes;
 }
 
@@ -226,9 +226,8 @@ export function persistDependencyGraph(bookDir, chapter, graph) {
       getHashDependencyRoot(bookDir),
       `ch_${String(chapter).padStart(4, '0')}`,
     );
-    fs.mkdirSync(dir, { recursive: true });
     const file = path.join(dir, 'dependency_graph.json');
-    fs.writeFileSync(file, JSON.stringify(graph, null, 2), 'utf8');
+    atomicWriteJson(file, graph);
     return file;
   } catch {
     return null;

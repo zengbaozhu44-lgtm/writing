@@ -1,0 +1,1195 @@
+{
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "parts": [
+    {
+      "order": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "chars": 173,
+      "beatStateDelta": {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人 — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "relief"
+        ],
+        "unresolvedIssues": [
+          "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了"
+        ],
+        "extractedAt": "2026-08-11T06:52:52.893Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "goal",
+        "beforeState": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人 — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": true,
+        "requiredDimension": "goalDirection"
+      },
+      "stateChange": false,
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "textPreview": "直播间的热度条在屏幕右下角烧成一片虚白，弹幕滚得看不清字。深渊猎手扛着冒烟的机炮从铁颅军团炸开的缺口里跳出来，一脚踩在翻倒的装甲车残骸上，对着镜头比了个中指。\n\n林砚坐在控制台前，看着那个画面，嘴角刚要翘起来。\n\n然后他看见了。\n\n镜头扫过",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "storyBefore": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "chars": 173,
+      "beatStateDelta": {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：铁颅军团巨型战争机器的正面碾压威胁 vs 玩家群体不按常理出牌的混沌战术；表面上是战术与武力的对抗，实质是旧日邪神‘秩序污染’与玩家‘混乱自由意志’的首次理念碰撞。 — 且系统 / 规则本身不会让步",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear",
+          "anger"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T06:53:01.633Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 173 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作",
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.041176470588235294
+          },
+          "microPassed": [
+            "新信息",
+            "新行动"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "obstacle",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：铁颅军团巨型战争机器的正面碾压威胁 vs 玩家群体不按常理出牌的混沌战术；表面上是战术与武力的对抗，实质是旧日邪神‘秩序污染’与玩家‘混乱自由意志’的首次理念碰撞。 — 且系统 / 规则本身不会让步",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": true,
+        "requiredDimension": "danger"
+      },
+      "stateChange": false,
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "textPreview": "深渊猎手的直播间热度冲破七百万时，林砚正盯着那块屏幕。画面里主播端着榴弹发射器，对着铁颅军团一架三足机甲轰出火舌，弹幕刷成白瀑，打赏特效像烟花一样炸开。他听见自己牙根咬紧的声响，想笑，嘴角却僵着。\n\n直播镜头扫过战场边缘，一道细长的黑影从焦",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Information Density：约 173 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "microPassed": [
+          "新信息",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "order": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "chars": 155,
+      "beatStateDelta": {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "他咬住牙关，牙根发酸——沈寒舟还在镜头边缘，触手已经缠上他的脚踝",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T06:53:09.687Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.013157894736842105
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "choice",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": true,
+        "requiredDimension": "relationship"
+      },
+      "stateChange": true,
+      "afterState": "他咬住牙关，牙根发酸——沈寒舟还在镜头边缘，触手已经缠上他的脚踝",
+      "textPreview": "林砚盯着屏幕里那道从暗角蔓延的黑色触手，指节掐进掌心，血从指缝渗出。他咬住牙关，牙根发酸——沈寒舟还在镜头边缘，触手已经缠上他的脚踝。他按下「直播续传」键，却弹出「信号已切断」。\n\n「操。」他声音发颤，手指却稳得可怕，敲下一行指令：以深渊猎",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "chars": 145,
+      "beatStateDelta": {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [
+          "他整个人僵住，喉咙里堵着什么"
+        ],
+        "extractedAt": "2026-08-11T06:53:18.601Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.028169014084507043
+          },
+          "microPassed": [
+            "新信息",
+            "危险"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "consequence",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "",
+        "consequence": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": true,
+        "requiredDimension": "resource"
+      },
+      "stateChange": false,
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "textPreview": "深渊猎手的刀劈开铁颅装甲的瞬间，直播间弹幕炸成白瀑。金流数字疯跳，林砚盯着屏幕，指尖发烫——直到角落闪过一道不该存在的阴影。触手。灰白的、蠕动的高维之物，只出现一帧，直播信号断了。他整个人僵住，喉咙里堵着什么。观众列表还在滚动，全是问号与惊",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "microPassed": [
+          "新信息",
+          "危险"
+        ]
+      }
+    },
+    {
+      "order": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "chars": 190,
+      "beatStateDelta": {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T06:53:28.163Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 190 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.0374331550802139
+          },
+          "microPassed": [
+            "Promise兑现",
+            "新行动"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "newInformation",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": true,
+        "requiredDimension": "information"
+      },
+      "stateChange": false,
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "textPreview": "深渊猎手的直播间在线人数冲过三百万时，林砚听见自己后槽牙咬得发酸。屏幕上铁颅军团的重装步兵像麦子一样被收割，打赏特效铺满整块面板——直到那根触手从镜头右上角的焦土里伸出来，慢得几乎像一场幻觉。\n\n他猛地拍下暂停键。画面定格在触手末梢，正指向",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Information Density：约 190 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "microPassed": [
+          "Promise兑现",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "order": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "chars": 173,
+      "beatStateDelta": {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "不是我们切的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [
+          "直播间的在线人数从四百七十万瞬间归零。他听见自己的心跳，像一块石头砸进深井。沈寒舟的声音从耳麦里传来，带着电流的杂音：「信号……不是我们切的。」\n\n林砚盯着"
+        ],
+        "extractedAt": "2026-08-11T06:53:36.798Z",
+        "continuity": {
+          "leftArm": "damaged",
+          "rightArm": null,
+          "legs": null,
+          "location": "城墙/天台",
+          "revealed": [
+            "gm_auth",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "hand_touch",
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.047058823529411764
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "hook",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": true,
+        "requiredDimension": "worldCognition"
+      },
+      "stateChange": false,
+      "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "textPreview": "深渊猎手的画面在第七秒断掉。前一帧还是铁颅战车碾过弹坑、弹幕刷爆「666」的狂欢，下一帧——镜头角落一道湿滑的暗影卷过，像某种不该有骨骼的东西。屏幕黑下去，林砚的指尖还停在键盘上，没来得及落下。\n\n直播间的在线人数从四百七十万瞬间归零。他听",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "microPassed": []
+      }
+    }
+  ],
+  "beatMemory": {
+    "newFacts": [
+      "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了",
+      "不是我们切的"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "relief",
+      "fear",
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了",
+      "他整个人僵住，喉咙里堵着什么",
+      "直播间的在线人数从四百七十万瞬间归零。他听见自己的心跳，像一块石头砸进深井。沈寒舟的声音从耳麦里传来，带着电流的杂音：「信号……不是我们切的。」\n\n林砚盯着"
+    ],
+    "changedDimensions": [
+      "information"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他咬住牙关，牙根发酸——沈寒舟还在镜头边缘，触手已经缠上他的脚踝"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 1
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "relief"
+      ],
+      "unresolvedIssues": [
+        "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了"
+      ],
+      "extractedAt": "2026-08-11T06:52:52.893Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：铁颅军团巨型战争机器的正面碾压威胁 vs 玩家群体不按常理出牌的混沌战术；表面上是战术与武力的对抗，实质是旧日邪神‘秩序污染’与玩家‘混乱自由意志’的首次理念碰撞。 — 且系统 / 规则本身不会让步",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear",
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:01.633Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 173 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.041176470588235294
+        },
+        "microPassed": [
+          "新信息",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "他咬住牙关，牙根发酸——沈寒舟还在镜头边缘，触手已经缠上他的脚踝",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:09.687Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.013157894736842105
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "他整个人僵住，喉咙里堵着什么"
+      ],
+      "extractedAt": "2026-08-11T06:53:18.601Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.028169014084507043
+        },
+        "microPassed": [
+          "新信息",
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:28.163Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 190 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0374331550802139
+        },
+        "microPassed": [
+          "Promise兑现",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "不是我们切的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "直播间的在线人数从四百七十万瞬间归零。他听见自己的心跳，像一块石头砸进深井。沈寒舟的声音从耳麦里传来，带着电流的杂音：「信号……不是我们切的。」\n\n林砚盯着"
+      ],
+      "extractedAt": "2026-08-11T06:53:36.798Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.047058823529411764
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    }
+  ],
+  "runtimeSession": {
+    "lastEvent": {
+      "cause": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+      "event": "Scene 尾留悬念 — 禁止平收总结",
+      "effect": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价："
+    },
+    "beforeState": "林砚已掌握：信息后果已落地；局面代价：选择产生可见代价，局面因此改变",
+    "rewriteCounts": {
+      "1": 3,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 3
+    }
+  },
+  "runtimeV2": false,
+  "sceneOutcome": {
+    "success": "若达成：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：推进冲突：铁颅军团巨型战争机器的正面碾压威胁 vs 玩家群体不按常理出牌的混沌战术；表面上是战术与武力的对抗，实质是旧日邪神‘秩序污染’与玩家‘混乱自由意志’的首次理念碰撞。导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "updatedAt": "2026-08-11T06:53:36.812Z"
+}

@@ -1,0 +1,52 @@
+character: 林砚
+goals:
+  surface: 清算青穹重工背叛之仇，肃清地面畸变灾厄，斩断深空邪神入侵通道
+  hidden: 打破世界服务器的养蛊桎梏，终结邪神轮回，证明自己作为'BUG'的存在意义——人类不屈意志的化身
+fears:
+  - 重蹈覆辙，再次失去一切却无能为力
+  - 被GM权限异化，失去人性底线，变成自己对抗的怪物
+  - 玩家世界也被更高维度诡秘渗透，最终无路可退
+  - 自己的存在本身只是邪神布局的一环
+bottom_line: 绝不利用无辜普通人献祭、绝不放任邪神污染现世、绝不操控玩家做灭绝人性的事、守护底层幸存者
+current_state:
+  trust_protagonist: 70
+  fear: 80
+  betrayal_probability: 40
+  suspicion: 50
+  loyalty: 100
+growth_arc: 从自保复仇的幸存者，成长为掌控位面规则、跨界弑神的诸天管理员，彻底摆脱世界桎梏，终结邪神轮回。核心转变：从'利用玩家变强'到'与玩家共同成为破局者'，从孤身守城到建立跨位面联盟。
+triggers:
+  青穹重工再次背叛:
+    trust: -20
+    suspicion: 30
+  玩家展现真正牺牲精神:
+    trust: 15
+    suspicion: -10
+  邪神低语直接针对自己:
+    trust: -5
+    suspicion: 20
+  发现世界服务器更深层真相:
+    trust: -10
+    suspicion: 40
+  机械邪神质问'你只是下一个待献祭的BUG':
+    trust: -15
+    suspicion: 55
+lastChapter: 12
+evolutionLog:
+  - chapter: 8
+    state:
+      trust_protagonist: 85
+      fear: 65
+      betrayal_probability: 20
+      suspicion: 50
+      loyalty: 100
+    at: 2026-08-11T06:35:29.998Z
+  - chapter: 12
+    state:
+      trust_protagonist: 70
+      fear: 80
+      betrayal_probability: 40
+      suspicion: 50
+      loyalty: 100
+    at: 2026-08-11T09:03:07.496Z
+updatedAt: 2026-08-11T09:24:38.517Z

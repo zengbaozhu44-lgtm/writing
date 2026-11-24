@@ -1,0 +1,720 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 1,
+  "sceneType": "opening",
+  "beatMemory": {
+    "newFacts": [],
+    "characterStateChanges": [],
+    "emotionChanges": [],
+    "unresolvedIssues": [
+      "死亡时间在凌晨两点，报案记录是四点，中间两小时谁签的",
+      "顾满仓没答，抄起座机按了三个键，对面接起来，他嗓门压得很低：“九号仓那批，谁批的放行"
+    ],
+    "changedDimensions": [
+      "danger",
+      "resource",
+      "worldCognition"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "沈昭把打印件推过去，指尖压住第三行：“齐全"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已做出不可逆选择，后果即将落地"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 Scene"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": true,
+        "afterState": "“理赔流水，三笔，同一家评估公司出的报告"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "stateChange": false,
+        "afterState": "周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同"
+      }
+    ],
+    "lastAfterState": "周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同",
+    "stateChangeCount": 2
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "beforeState": "周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 Scene 改写",
+      "action": "进入现场并确立危机：沈昭用理赔数据逼顾满仓重查",
+      "choice": null,
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-22T08:29:26.800Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 ",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": null,
+      "choice": null,
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "沈昭把打印件推过去，指尖压住第三行：“齐全",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "resource",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "死亡时间在凌晨两点，报案记录是四点，中间两小时谁签的"
+      ],
+      "extractedAt": "2026-10-22T08:29:28.597Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.05755395683453238
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": null,
+      "choice": null,
+      "consequence": "选择本身即代价前奏",
+      "afterState": "POV 已做出不可逆选择，后果即将落地",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-22T08:29:33.701Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 140 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.08029197080291971
+        },
+        "microPassed": [
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": null,
+      "choice": null,
+      "consequence": "选择代价可见落地",
+      "afterState": "局势向终局推进 — 周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 Scene",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-22T08:29:38.893Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 109 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.009433962264150943
+        },
+        "microPassed": [
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": null,
+      "choice": null,
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "“理赔流水，三笔，同一家评估公司出的报告",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-22T08:29:43.547Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "局势向终局推进 — 周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查",
+        "storyAfter": "认知更新：新信息已落地，局面无法装作不知道",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.05485232067510549
+        },
+        "microPassed": [
+          "新信息",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Twist",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "上报，或者成为共犯 — 她只有三秒。",
+      "choice": null,
+      "consequence": "新危机/新疑问出现",
+      "afterState": "周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "顾满仓没答，抄起座机按了三个键，对面接起来，他嗓门压得很低：“九号仓那批，谁批的放行"
+      ],
+      "extractedAt": "2026-10-22T08:29:50.939Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "认知更新：新信息已落地，局面无法装作不知道",
+        "storyAfter": "周砚当前目标：进入现场并确立危机：沈昭用理赔数据逼顾满仓重查 — 局势尚未被本 ",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.03225806451612903
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 0,
+    "hasFluctuation": false,
+    "generatedAt": "2026-10-22T08:29:50.947Z",
+    "sceneIndex": 1
+  },
+  "readerSimulation": {
+    "curiosity": 86,
+    "questionCount": 8,
+    "dropRisk": 10,
+    "continueProbability": 89,
+    "sceneIndex": 1,
+    "pov": "周砚",
+    "simulatedAt": "2026-10-22T08:29:50.947Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 67,
+    "obstacleStrength": 39,
+    "choiceLevel": 37,
+    "consequenceLevel": 35,
+    "escalationLevel": 37,
+    "informationValue": 52,
+    "hookImpact": 33,
+    "stateChangeRate": 33,
+    "hookBreakdown": {
+      "hookLevel": 33,
+      "hookOutput": {
+        "type": "Danger",
+        "readerQuestion": "“你动过库里数据？",
+        "cost": "低 — 好奇心被点燃，尚未付出实质代价",
+        "nextNeedToKnow": "异常的成因是什么",
+        "level": 2,
+        "stage": "Danger",
+        "name": "危险",
+        "readerPsyche": "读者感到威胁 — 「这对我/主角有什么危险？」安全感丧失",
+        "example": "只有主角记得昨天，其他人都说没发生过",
+        "hookKind": "ActionHook",
+        "discovery": "异常的成因是什么",
+        "actionDeadline": "若不查清异常，主角将失去唯一先机",
+        "newGoal": "进入现场并确立危机：沈昭用理赔数据逼顾满仓重查",
+        "newAction": "POV必须针对「异常的成因是什么」立刻行动",
+        "countdown": "若不查清异常，主角将失去唯一先机",
+        "plantedPromise": "若不查清异常，主角将失去唯一先机",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 55,
+      "emotionalImpact": 22,
+      "characterCost": 21,
+      "targetType": "Curiosity",
+      "targetLevel": 1
+    },
+    "average": 44,
+    "weakest": "hookImpact",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-10-22T08:29:50.947Z",
+    "hookOutput": {
+      "type": "Danger",
+      "readerQuestion": "“你动过库里数据？",
+      "cost": "低 — 好奇心被点燃，尚未付出实质代价",
+      "nextNeedToKnow": "异常的成因是什么",
+      "level": 2,
+      "stage": "Danger",
+      "name": "危险",
+      "readerPsyche": "读者感到威胁 — 「这对我/主角有什么危险？」安全感丧失",
+      "example": "只有主角记得昨天，其他人都说没发生过",
+      "hookKind": "ActionHook",
+      "discovery": "异常的成因是什么",
+      "actionDeadline": "若不查清异常，主角将失去唯一先机",
+      "newGoal": "进入现场并确立危机：沈昭用理赔数据逼顾满仓重查",
+      "newAction": "POV必须针对「异常的成因是什么」立刻行动",
+      "countdown": "若不查清异常，主角将失去唯一先机",
+      "plantedPromise": "若不查清异常，主角将失去唯一先机",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": false,
+      "reason": "no_promise_bound"
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 33,
+    "hookOutput": {
+      "type": "Danger",
+      "readerQuestion": "“你动过库里数据？",
+      "cost": "低 — 好奇心被点燃，尚未付出实质代价",
+      "nextNeedToKnow": "异常的成因是什么",
+      "level": 2,
+      "stage": "Danger",
+      "name": "危险",
+      "readerPsyche": "读者感到威胁 — 「这对我/主角有什么危险？」安全感丧失",
+      "example": "只有主角记得昨天，其他人都说没发生过",
+      "hookKind": "ActionHook",
+      "discovery": "异常的成因是什么",
+      "actionDeadline": "若不查清异常，主角将失去唯一先机",
+      "newGoal": "进入现场并确立危机：沈昭用理赔数据逼顾满仓重查",
+      "newAction": "POV必须针对「异常的成因是什么」立刻行动",
+      "countdown": "若不查清异常，主角将失去唯一先机",
+      "plantedPromise": "若不查清异常，主角将失去唯一先机",
+      "mustForceAction": true
+    },
+    "stageMatch": true,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 55,
+    "emotionalImpact": 22,
+    "characterCost": 21
+  },
+  "reward": {
+    "valid": false,
+    "requiresPromise": true,
+    "promise": null,
+    "payoff": null,
+    "promiseId": null,
+    "promiseSource": null,
+    "description": "⚠ 本 Scene 无可用 Promise — Writer 须先承接 Story Memory 伏笔/前序 Hook 再写 Payoff",
+    "deliveryBeat": "newInformation",
+    "rule": "没有对应 Promise 的 Reward 不允许出现"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": false,
+    "reason": "no_promise_bound"
+  },
+  "blocking": false,
+  "generatedAt": "2026-10-22T08:29:50.948Z"
+}

@@ -1,8 +1,14 @@
 /**
- * Entity Selector — 从当前书目录加载角色卡（禁止跨书 / 错误缓存路径）
+ * Entity Selector — Runtime / Memory：从当前书目录加载角色卡（禁止跨书）
+ *
+ * 职责（≠ packages/inkos-prompt/src/entity-selector.js）：
+ * - 磁盘 I/O：novel/03_character_bible/*.md → { name, path, raw }
+ * - selectEntities：仅返回实体名列表（无 factions / knowledge 过滤）
+ *
+ * Prompt Compiler 的实体过滤与 Writer 注入在 inkos-prompt/entity-selector。
+ * 不要新增第三套 selector。
  *
  * V4 Canon 路径：{bookDir}/novel/03_character_bible/*.md
- * （不是 novel/:bookId/characters/，也不是全局缓存）
  */
 import fs from 'node:fs';
 import path from 'node:path';

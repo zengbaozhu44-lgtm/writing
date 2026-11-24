@@ -1,0 +1,377 @@
+{
+  "version": "hash-dependency-graph-1",
+  "chapter": 17,
+  "triggerScene": 1,
+  "sceneCount": 4,
+  "affectedScenes": [],
+  "invalidScenes": [],
+  "moduleNodes": [
+    {
+      "id": "world",
+      "type": "module",
+      "label": "world",
+      "hash": "18bc295698f6aba0",
+      "previous": "18bc295698f6aba0",
+      "changed": false,
+      "scope": "global",
+      "status": "cached"
+    },
+    {
+      "id": "character",
+      "type": "module",
+      "label": "character",
+      "hash": "99f83084573f25e0",
+      "previous": "99f83084573f25e0",
+      "changed": false,
+      "scope": "forward",
+      "status": "cached"
+    },
+    {
+      "id": "facts",
+      "type": "module",
+      "label": "facts",
+      "hash": "b40ecabbe2cb6acf",
+      "previous": "b40ecabbe2cb6acf",
+      "changed": false,
+      "scope": "forward",
+      "status": "cached"
+    },
+    {
+      "id": "timeline",
+      "type": "module",
+      "label": "timeline",
+      "hash": "2720a44d736612e0",
+      "previous": "2720a44d736612e0",
+      "changed": false,
+      "scope": "forward",
+      "status": "cached"
+    },
+    {
+      "id": "relationship",
+      "type": "module",
+      "label": "relationship",
+      "hash": "empty",
+      "previous": "empty",
+      "changed": false,
+      "scope": "forward",
+      "status": "cached"
+    },
+    {
+      "id": "knowledge",
+      "type": "module",
+      "label": "knowledge",
+      "hash": "4f53cda18c2baa0c",
+      "previous": "4f53cda18c2baa0c",
+      "changed": false,
+      "scope": "forward",
+      "status": "cached"
+    },
+    {
+      "id": "resources",
+      "type": "module",
+      "label": "resources",
+      "hash": "44136fa355b3678a",
+      "previous": "44136fa355b3678a",
+      "changed": false,
+      "scope": "forward",
+      "status": "cached"
+    },
+    {
+      "id": "style",
+      "type": "module",
+      "label": "style",
+      "hash": "02b90834d68cc64d",
+      "previous": "02b90834d68cc64d",
+      "changed": false,
+      "scope": "global",
+      "status": "cached"
+    },
+    {
+      "id": "writing",
+      "type": "module",
+      "label": "writing",
+      "hash": "64a08d0c0adf6e5e",
+      "previous": "64a08d0c0adf6e5e",
+      "changed": false,
+      "scope": "global",
+      "status": "cached"
+    },
+    {
+      "id": "storyDna",
+      "type": "module",
+      "label": "storyDna",
+      "hash": "ac91552ffeda2dd7",
+      "previous": "ac91552ffeda2dd7",
+      "changed": false,
+      "scope": "global",
+      "status": "cached"
+    }
+  ],
+  "sceneNodes": [
+    {
+      "id": "scene_1",
+      "type": "scene",
+      "label": "Scene 1",
+      "index": 1,
+      "status": "invalid",
+      "mustRecompile": false
+    },
+    {
+      "id": "scene_2",
+      "type": "scene",
+      "label": "Scene 2",
+      "index": 2,
+      "status": "invalid",
+      "mustRecompile": false
+    },
+    {
+      "id": "scene_3",
+      "type": "scene",
+      "label": "Scene 3",
+      "index": 3,
+      "status": "invalid",
+      "mustRecompile": false
+    },
+    {
+      "id": "scene_4",
+      "type": "scene",
+      "label": "Scene 4",
+      "index": 4,
+      "status": "invalid",
+      "mustRecompile": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "world",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "world",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "world",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "world",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "style",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "writing",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "storyDna",
+      "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "scene_1",
+      "to": "compiled-prompt",
+      "type": "compile"
+    },
+    {
+      "from": "scene_2",
+      "to": "compiled-prompt",
+      "type": "compile"
+    },
+    {
+      "from": "scene_3",
+      "to": "compiled-prompt",
+      "type": "compile"
+    },
+    {
+      "from": "scene_4",
+      "to": "compiled-prompt",
+      "type": "compile"
+    }
+  ],
+  "summary": {
+    "cached": 10,
+    "modified": 0,
+    "invalid": 4,
+    "regenerating": 0
+  },
+  "invalidated": false,
+  "regenerating": false,
+  "changed": [],
+  "trigger": null,
+  "updatedAt": "2026-10-15T03:27:49.482Z"
+}

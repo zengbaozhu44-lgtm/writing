@@ -12,6 +12,11 @@
  */
 import { countTokens } from '../../../inkos-prompt/src/token-meter.js';
 import {
+  ensurePlanValidity,
+  isExecutionPrivilegeDemoted,
+  formatPlanValidityDemotionBlock,
+} from '../../../inkos-prompt/src/plan-validity.js';
+import {
   formatWriterCraftPromptBlock,
   resolveCraftMode,
   WRITER_CRAFT_POLICY,
@@ -39,6 +44,12 @@ import {
   formatWriterExecutionChecklist,
   formatWriterFirstPolicyBlock,
 } from '../../../inkos-director/src/writer-first.js';
+import { renderCausalChain } from '../../../inkos-prompt/src/compiler.js';
+import {
+  buildProtectedSemanticContext,
+  wrapHistoricalPriorExcerpt,
+  markContinuationHistorical,
+} from '../../../inkos-core/src/lib/prompt-survival.js';
 
 export const PROMPT_STACK = Object.freeze({
   P0: {
@@ -157,6 +168,23 @@ function formatStoryDnaExcerpt(storyDna = {}) {
   return ['### Story DNA（摘录）', ...lines].join('\n');
 }
 
+/**
+ * 角色对白风格 — 从 character bible 提取，注入 P1（不可被裁剪）。
+ * 解决「角色语言无区分度」：林砚（短/冲/糙）vs 沈寒舟（冷静/精确）。
+ */
+function formatCharacterDialogueStyles(ctx) {
+  const chars = ctx.characters || {};
+  const lines = [];
+  for (const [name, c] of Object.entries(chars)) {
+    if (c?.voice) lines.push(`- ${name}：${c.voice}`);
+    if (c?.catchphrase) lines.push(`  · 口头禅：${c.catchphrase}`);
+  }
+  if (!lines.length) return '';
+  return ['### 角色对白风格（必须区分，禁止同质化）', ...lines,
+    '- 不同角色用词、句长、节奏、口头禅须不同；读者应能从台词判断「这是谁在说话」',
+  ].join('\n');
+}
+
 function formatNarrativeTask(ctx) {
   const { scene = {}, intent = {}, executionPlan = {}, chapter } = ctx;
   const ep = executionPlan;
@@ -164,15 +192,42 @@ function formatNarrativeTask(ctx) {
     ? formatHookOutputBlock(ep.hookOutput)
     : (ep.hookLadderEntry?.hookOutput ? formatHookOutputBlock(ep.hookLadderEntry.hookOutput) : '');
 
+  // D3.2：消费章级 causal_chain（P1 protected，不裁剪）。只读 scene/intent，禁止本层再推理。
+  const causalChain = scene.causalChain || intent?.causalChain || null;
+  const causalBlock = causalChain
+    ? renderCausalChain(causalChain, scene, { pov: intent.pov || scene.pov || '' })
+    : '';
+
+  // F1: Story Clock + Information Boundary → P1 absolute protection (not ordinary P2 lore)
+  const protectedSemantic = buildProtectedSemanticContext({
+    loreText: ctx.loreText || '',
+    ctx,
+    intent,
+    scene,
+  });
+
+  // F8.3: Plan Validity demotion inside protected P1 (opening premise only)
+  if (!scene.planValidity && Number(scene.index) > 1) {
+    ensurePlanValidity(scene, intent);
+  }
+  const demoted = isExecutionPrivilegeDemoted(scene.planValidity);
+  const planValidityBlock = formatPlanValidityDemotionBlock(scene.planValidity);
+  const goalLine = demoted
+    ? `- **Scene 目标〔STRATEGIC · 保留〕**：${scene.goal || ep.scenePlan?.goal || '—'}\n- **开场执行资格**：demoted — 禁止直接写成已成立开场；须先承接/桥接 Actual`
+    : `- **Scene 目标**：${scene.goal || ep.scenePlan?.goal || '—'}`;
+
   return joinBlocks(
     [
       '### Narrative Task',
       `Chapter ${chapter ?? '—'} · Scene ${scene.index ?? '—'} · POV ${intent.pov || '—'}`,
       `- **章目标**：${intent.mainGoal || '—'}`,
-      `- **Scene 目标**：${scene.goal || ep.scenePlan?.goal || '—'}`,
+      goalLine,
       `- **冲突**：${scene.conflict || ep.scenePlan?.obstacle || '—'}`,
       scene.wordTarget ? `- **字数目标**：~${scene.wordTarget}` : '',
     ].filter(Boolean).join('\n'),
+    planValidityBlock,
+    protectedSemantic,
+    formatCharacterDialogueStyles(ctx),
     formatChapterAuthorGoalBlock(ep.chapterAuthorGoal),
     formatWriterSceneArcBlock(ep.writerSceneArc),
     formatBeatPlan(ep),
@@ -187,6 +242,7 @@ function formatNarrativeTask(ctx) {
     formatReaderEmotionBlock(ep.readerEmotion),
     formatSceneRhythmBlock(ep.sceneRhythm),
     hook,
+    causalBlock,
   );
 }
 
@@ -282,7 +338,8 @@ export function filterLoreForScene(loreText = '', ctx = {}) {
 
     if (isOtherCharCard) continue;
 
-    const alwaysKeep = /Scene\s*目标|Scene\s*冲突|写作规则|世界规则|本章任务|Adaptive|续写|局势|状态差量|时空/u.test(head)
+    // F1: Story Clock / Information Boundary survive filter even if still present in lore
+    const alwaysKeep = /Scene\s*目标|Scene\s*冲突|写作规则|世界规则|本章目标|Adaptive|续写|局势|状态差量|时空|Story Clock|故事钟|信息边界|Information Boundary|Semantic Protected/u.test(head)
       || (isCharSection && mentionsPov);
 
     if (alwaysKeep) {
@@ -319,7 +376,7 @@ function filterLoreLines(text = '', pov = '', keywords = []) {
     const block = buffer.join('\n');
     const hit = (pov && block.includes(pov))
       || keywords.some((k) => block.includes(k))
-      || /Scene|目标|冲突|写作|世界|POV|续写/u.test(block);
+      || /Scene|目标|冲突|写作|世界|POV|续写|Story Clock|故事钟|信息边界|Information Boundary/u.test(block);
     if (hit) kept.push(block);
     buffer = [];
   };
@@ -362,13 +419,17 @@ function formatLore(ctx) {
 }
 
 function formatAdaptive(ctx) {
+  // F1: prior / continuation = Historical; never same semantic precedence as Clock in P1
+  const prior = nonEmpty(ctx.priorExcerpt) ? wrapHistoricalPriorExcerpt(ctx.priorExcerpt) : '';
+  const cont = markContinuationHistorical(ctx.continuationBlock || '');
   return joinBlocks(
     nonEmpty(ctx.storyMemoryBlock) ? `### Story Memory\n${ctx.storyMemoryBlock}` : '',
     nonEmpty(ctx.adaptiveBlock) ? `### Adaptive Hints\n${ctx.adaptiveBlock}` : '',
-    nonEmpty(ctx.priorExcerpt) ? `### Prior Excerpt\n${ctx.priorExcerpt}` : '',
-    ctx.continuationBlock || '',
+    prior,
+    cont,
     ctx.boundaryBlock || '',
     ctx.revealBlock || '',
+    ctx.revisitBlock || '',
     ctx.hookBlock || '',
   );
 }

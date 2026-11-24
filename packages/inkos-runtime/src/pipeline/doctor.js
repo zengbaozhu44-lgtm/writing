@@ -10,7 +10,7 @@ import { loadPriorChapterAnchor } from '../../../inkos-brain/src/planner/planner
 import { loadMemoryHierarchy } from '../memory/memory-hierarchy.js';
 import { loadChapterAnchor } from '../memory/memory-unit.js';
 import { validateHookRotation } from '../../../inkos-director/src/hook-rotation.js';
-import { OPTIMIZER_HOOK_FLOOR, AB_TEST_INTERVAL, resolveLightModel } from './cost-controls.js';
+import { OPTIMIZER_HOOK_FLOOR, resolveLightModel } from './cost-controls.js';
 
 /**
  * @returns {{ ok: boolean, score: number, checks: object[], fixes: string[] }}
@@ -115,7 +115,6 @@ export function runDoctor(bookDir, { chapter = null } = {}) {
       `model=${cfg.llm?.model || '—'}`,
       `lightModel=${light}`,
       `optimizerFloor=${OPTIMIZER_HOOK_FLOOR}`,
-      `abEvery=${AB_TEST_INTERVAL}`,
       `lastCompress=${lastCompress?.atChapter ?? '—'}`,
       `brain=${isBrainEnabled(bookDir)}`,
     ].join(' · '),

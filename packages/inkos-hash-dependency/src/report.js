@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { hashCombined } from './hash.js';
 import { MODULE_KEYS } from './collect.js';
+import { atomicWriteJson } from './atomic.js';
 
 export function getHashDependencyDir(bookDir, chapter) {
   return path.join(
@@ -60,9 +61,8 @@ export function persistCacheDependencyReport(bookDir, chapter, scene, report) {
       getHashDependencyDir(bookDir, chapter),
       `scene_${String(scene?.index ?? 0).padStart(2, '0')}`,
     );
-    fs.mkdirSync(dir, { recursive: true });
     const file = path.join(dir, 'cache_dependency.json');
-    fs.writeFileSync(file, JSON.stringify(report, null, 2), 'utf8');
+    atomicWriteJson(file, report);
     return file;
   } catch {
     return null;
@@ -99,15 +99,11 @@ export function saveChapterHashState(bookDir, chapter, hashes, meta = {}) {
   if (fs.existsSync(prevPath)) {
     try { prev = JSON.parse(fs.readFileSync(prevPath, 'utf8')); } catch { /* fresh */ }
   }
-  fs.writeFileSync(
-    path.join(dir, 'state.json'),
-    JSON.stringify({
-      hashes,
-      moduleTexts: meta.moduleTexts ?? prev.moduleTexts ?? null,
-      semanticHashes: meta.semanticHashes ?? prev.semanticHashes ?? null,
-      semanticPreserved: meta.semanticPreserved ?? prev.semanticPreserved ?? [],
-      updatedAt: new Date().toISOString(),
-    }, null, 2),
-    'utf8',
-  );
+  atomicWriteJson(path.join(dir, 'state.json'), {
+    hashes,
+    moduleTexts: meta.moduleTexts ?? prev.moduleTexts ?? null,
+    semanticHashes: meta.semanticHashes ?? prev.semanticHashes ?? null,
+    semanticPreserved: meta.semanticPreserved ?? prev.semanticPreserved ?? [],
+    updatedAt: new Date().toISOString(),
+  });
 }

@@ -13,6 +13,12 @@ import { recordScenePromptMetrics } from '@inkos/prompt-metrics';
 import { runHashDependencyCheck } from '@inkos/hash-dependency';
 import { buildTokenRecord, countTokens } from '../../inkos-prompt/src/token-meter.js';
 import { compileScenePrompt } from '../../inkos-prompt/src/index.js';
+import { ensureObservedContinuity } from '../../inkos-prompt/src/scene-observed-continuity.js';
+import { ensureActualEvents } from '../../inkos-brain/src/events/index.js';
+import { applyCharacterSRAfterActual } from '../../inkos-brain/src/character/character-sr-updater.js';
+import { applyAttributionAfterActual } from '../../inkos-brain/src/attribution/index.js';
+import { attachActionIntentTruthFromCADE, attachCharacterActionTruth, attachWorldConsequenceTruth } from '../../inkos-brain/src/causality/index.js';
+import { buildSceneWritePrompt } from '../../inkos-brain/src/scene/scene.js';
 import { loadInkOsConfig } from '../../inkos-core/src/lib/config.js';
 import { loadPromptMetrics } from '../../inkos-prompt/src/metrics.js';
 import { studioEmitRuntimeEvent } from './event-stream.js';
@@ -23,10 +29,17 @@ import {
   persistBeatExecutionLog,
   getWriterOptimizationDir,
 } from './writer-optimization/index.js';
+import {
+  persistFinalContextCompile,
+  persistFinalContextWriterCall,
+  hashPromptText,
+} from './writer-optimization/final-context-viewer.js';
+import { resolveStoryClock } from '../../inkos-core/src/lib/story-clock.js';
 import { runWriterOptimizer } from '@inkos/writer-optimizer';
 import { executeBeatSequence } from './writer-optimization/beat-execution.js';
 import {
   createContinuityState,
+  deriveBodyStateFromFacts,
 } from './writer-optimization/beat-continuity.js';
 import { readJson, writeJson, exists } from '../../inkos-core/src/lib/paths.js';
 import path from 'node:path';
@@ -55,13 +68,21 @@ function continuityPath(bookDir, chapter) {
   );
 }
 
-function loadChapterContinuity(bookDir, chapter) {
+function loadChapterContinuity(bookDir, chapter, facts = null) {
+  // B) F013 播种：事实库确立的左臂焦毁/知觉丧失 → 注入连续状态，
+  //    使 validateCrossBeatConsistency 从 Scene1 首拍就拦截左臂主动作（而非后置修正）。
+  const seedFactBody = (base) => {
+    const factBody = deriveBodyStateFromFacts(facts);
+    if (factBody.leftArm) base.leftArm = factBody.leftArm;
+    if (factBody.rightArm) base.rightArm = factBody.rightArm;
+    return base;
+  };
   try {
     const file = continuityPath(bookDir, chapter);
-    if (!exists(file)) return createContinuityState();
-    return createContinuityState(readJson(file));
+    if (!exists(file)) return seedFactBody(createContinuityState());
+    return seedFactBody(createContinuityState(readJson(file)));
   } catch {
-    return createContinuityState();
+    return seedFactBody(createContinuityState());
   }
 }
 
@@ -73,6 +94,40 @@ function saveChapterContinuity(bookDir, chapter, state) {
   } catch (err) {
     console.warn('[studio-llm-writer] continuity save failed:', err?.message || err);
   }
+}
+
+/**
+ * 书籍档案：world bible + facts + state board + 写作 bible + 角色 bible 名单 + POV。
+ * 供 beat-continuity 按书籍语境门控 cyberpunk 意象规则（青穹/浮空城/权限/机械左臂…）：
+ * 本书世界数据没提及的设定 → 对应提取规则不触发。
+ * 非 cyberpunk 书（如《二手书店老板的最后一周》）不再把「铸铁煤炉」误判成「拘束操作台」、
+ * 不再把普通动作误判成「系统界面/权限操作」、不再把新角色名误判成 林砚 系幻觉名。
+ * 按章缓存（每章构建一次；Scene 间复用）。
+ */
+function buildContinuityProfile(ctx = {}) {
+  const vocabParts = [
+    ctx.worldBible,
+    ctx.stateBoard,
+    ctx.writingBible,
+    (ctx.facts || []).map((f) => f?.fact || f?.text || '').join('\n'),
+  ];
+  const names = new Set();
+  try {
+    const bibleDir = ctx.modules?.character_bible;
+    if (bibleDir && fs.existsSync(bibleDir)) {
+      for (const f of fs.readdirSync(bibleDir)) {
+        if (!f.endsWith('.md') || f.startsWith('_')) continue;
+        names.add(f.replace(/\.md$/, '').replace(/（[^）]*）$/, '').trim());
+      }
+    }
+  } catch { /* 角色档目录缺失时忽略 */ }
+  if (ctx.pov) names.add(String(ctx.pov).replace(/（[^）]*）$/, '').trim());
+  for (const p of ctx.present || []) names.add(String(p).replace(/（[^）]*）$/, '').trim());
+  return {
+    vocab: vocabParts.filter(Boolean).join('\n'),
+    characters: [...names].filter(Boolean),
+    pov: ctx.pov || null,
+  };
 }
 
 export function getChapterTimeoutMs() {
@@ -105,17 +160,42 @@ function stripFences(text) {
     .trim();
 }
 
+/** Names that may appear in prose — never from Plan goals. */
+function collectSceneKnownNames(scene = {}, intent = {}) {
+  const names = [];
+  if (scene.pov) names.push(String(scene.pov));
+  if (intent.pov) names.push(String(intent.pov));
+  for (const c of scene.characters || []) {
+    names.push(typeof c === 'string' ? c : c?.name);
+  }
+  for (const c of intent.characters || intent.cast || []) {
+    names.push(typeof c === 'string' ? c : c?.name);
+  }
+  return [...new Set(names.map((n) => String(n || '').trim()).filter(Boolean))];
+}
+
 /**
  * @param {string} bookDir
  * @param {string} bookId
  * @param {ReturnType<import('../../inkos-runtime/src/runtime/execution-guard.js').createExecutionGuard>} [guard]
  */
 export function createStudioLlmWriter(bookDir, bookId, guard = null) {
+  // 跨 Scene 预防式防复读：本章内已判复读的短语累积，传给后续 Scene 首稿 prompt（换章清空）
+  let chapterUsedImages = new Set();
+  let chapterUsedImagesChapter = null;
+  // 书籍档案按章缓存（vocab/角色名/POV 每章构建一次）
+  let chapterProfileCache = { chapter: null, profile: null };
   return async function studioLlmWriter({ scene, prompt, chapter, bookDir: bd, ctx, intent, trace = null }) {
     const sceneIndex = scene?.index ?? null;
     const sceneLabel = `Scene ${sceneIndex ?? '?'}/${intent?.scenes?.length ?? '?'}`;
     const taskId = guard?.getTaskId?.() ?? null;
     const runBookDir = bd || bookDir;
+
+    // 换章时重置跨 Scene 累积
+    if (chapterUsedImagesChapter !== chapter) {
+      chapterUsedImages = new Set();
+      chapterUsedImagesChapter = chapter;
+    }
 
     if (guard?.isTaskAborted?.()) {
       const reason = guard.getAbortReason() || 'Pipeline 已中止';
@@ -145,6 +225,19 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
 
     const storyDna = readStoryDna(runBookDir) || {};
     const styleDna = readSystemFile(runBookDir, 'style_dna') || {};
+
+    // EO-P4-Causal-Bridge-01: CADE → Action Intent Truth (consume-only; absent-by-default)
+    // Must run before Prompt compile so Writer can realize Y without minting Intent.
+    try {
+      attachActionIntentTruthFromCADE(runBookDir, chapter, scene);
+    } catch (cadeErr) {
+      console.warn('[studio-writer] Action Intent bridge skipped:', cadeErr?.message || cadeErr);
+      scene.actionIntentTruth = scene.actionIntentTruth || {
+        status: 'absent',
+        reason: 'bridge_error',
+        isChoice: false,
+      };
+    }
 
     let hashDep = scene?._hashDependency;
     if (!hashDep) {
@@ -187,6 +280,9 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
     }
 
     let basePrompt = prompt;
+    // Action Intent Truth 由 compiler 的 action_intent_truth 模块（canonical）注入；
+    // 此处曾手工追加 scene._actionIntentPromptBlock 造成 Studio prompt 双重注入，已移除
+    // （presentation cleanup · 不改 Truth / 不影响 Runtime）。
     if (hashDep.mustRecompile) {
       studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
         chapter,
@@ -197,7 +293,9 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
           ? `${sceneLabel} Hash 变化 · 重新 Compile Prompt`
           : `${sceneLabel} 首次 Hash 基准 · 重新 Compile Prompt`,
       });
-      basePrompt = compileScenePrompt(ctx, scene).text;
+      // F1: never replace L2 with bare compileScenePrompt (drops Clock / IB header)
+      const dynamic = compileScenePrompt(ctx, scene);
+      basePrompt = buildSceneWritePrompt(ctx, intent || {}, scene, dynamic);
       const persisted = runHashDependencyCheck({
         bookDir: runBookDir,
         chapter,
@@ -234,6 +332,7 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
       intent,
       ctx: { ...ctx, bookDir: runBookDir, styleDna },
       storyMemoryBlock: storyMem.writerBlock,
+      storyMemory: storyMem,
       storyDna,
       chapterDir,
     });
@@ -243,6 +342,27 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
     }
     const compileMs = Math.round(performance.now() - compileT0);
     persistWriterOptimizationMeta(runBookDir, chapter, scene, optMeta);
+
+    // F2: READ-ONLY final-context snapshot (L1/L2/L3) — observability only
+    try {
+      const l1Text = typeof scene?.dynamic === 'string'
+        ? scene.dynamic
+        : (scene?.dynamic?.text || '');
+      const clock = resolveStoryClock({ ctx, intent, scene });
+      persistFinalContextCompile(runBookDir, chapter, scene, {
+        l1Text,
+        l2Text: basePrompt,
+        l3Text: optimizedPrompt,
+        sealedHash: hashPromptText(optimizedPrompt),
+        clockSource: clock?.source || null,
+        ibSource: 'buildSceneWritePrompt / Semantic Protected Context',
+        intent,
+        ctx,
+        l1Modules: typeof scene?.dynamic === 'object' ? scene.dynamic?.modules : null,
+      });
+    } catch {
+      /* observability must not break Writer */
+    }
 
     studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
       chapter,
@@ -294,6 +414,19 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
         throw new Error('未配置 LLM API Key（INKOS_LLM_API_KEY / LLM_API_KEY / OPENAI_API_KEY）');
       }
       llmCalls += 1;
+      // F2: record exact userPrompt hash for the Writer call (READ-ONLY artifact)
+      try {
+        persistFinalContextWriterCall(runBookDir, chapter, scene, {
+          userPrompt,
+          beatOrder: beat?.order ?? null,
+          callId: `s${sceneIndex}-b${beat?.order ?? 'x'}-c${llmCalls}`,
+          systemPrompt: system,
+          intent,
+          ctx,
+        });
+      } catch {
+        /* observability must not break Writer */
+      }
       const t0 = performance.now();
       const beatTemp = Number.isFinite(temperature) ? temperature : 0.85;
       const maxTok = maxTokensHint
@@ -333,8 +466,8 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
           executionPlan,
           basePrompt: optimizedPrompt,
           llmFn,
-          intent: { ...intent, _bookDir: runBookDir, _styleDna: styleDna, styleDna },
-          scene: { ...scene, _bookDir: runBookDir },
+          intent: { ...intent, _bookDir: runBookDir, _chapter: chapter, _styleDna: styleDna, styleDna },
+          scene: { ...scene, _bookDir: runBookDir, _chapter: chapter },
           goldenSample,
           bookDir: runBookDir,
           onStart: () => {
@@ -363,12 +496,26 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
           intent: {
             ...intent,
             _bookDir: runBookDir,
+            _chapter: chapter,
             _styleDna: styleDna,
             styleDna,
-            _continuityState: loadChapterContinuity(runBookDir, chapter),
+            _continuityState: loadChapterContinuity(runBookDir, chapter, ctx?.facts),
           },
-          scene: { ...scene, _bookDir: runBookDir },
-          continuityState: loadChapterContinuity(runBookDir, chapter),
+          scene: { ...scene, _bookDir: runBookDir, _chapter: chapter },
+          continuityState: loadChapterContinuity(runBookDir, chapter, ctx?.facts),
+          profile: (() => {
+            if (chapterProfileCache.chapter !== chapter || !chapterProfileCache.profile) {
+              chapterProfileCache = { chapter, profile: buildContinuityProfile(ctx || {}) };
+            }
+            return chapterProfileCache.profile;
+          })(),
+          // 跨 Scene 防重复：把本章已生成的前序 scene 正文并入比对基准（Beat 层同章重复检测）
+          chapterTextSoFar: (intent?.scenes || [])
+            .filter((s) => s.index != null && s.index < sceneIndex && s.text?.trim())
+            .map((s) => s.text.trim())
+            .join('\n\n'),
+          // 跨 Scene 预防式：本章已 flag 的复读短语 → 注入本 Scene 首稿 prompt
+          usedImagesSeed: [...chapterUsedImages],
           onBeatStart: (beat) => {
             studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
               chapter,
@@ -393,6 +540,10 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
         saveChapterContinuity(runBookDir, chapter, beatResult.continuityState);
         scene.continuityState = beatResult.continuityState;
       }
+      // 回传本 Scene 新 flag 的复读短语，累积进章级 usedImages（供后续 Scene 预防式注入）
+      if (Array.isArray(beatResult.usedImages)) {
+        for (const im of beatResult.usedImages) chapterUsedImages.add(im);
+      }
       persistBeatExecutionLog(runBookDir, chapter, scene, beatResult);
       scene.sceneOutcome = beatResult.sceneOutcome;
       scene.executionPlan = executionPlan;
@@ -406,8 +557,87 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
       const draftText = beatResult.text;
       if (!draftText) throw new Error(`${sceneLabel} Beat Execution 返回空正文`);
 
+      // A) 防复读/身体禁令硬失败 → 场景级拒绝（Orchestrator 捕获后触发有界 replan）。
+      //    必须在 scene.text 落盘前抛：正文不落盘 → 坏稿不进正文。
+      if (beatResult.hardFail) {
+        // 上抛前先把本 scene 已 flag 的复读短语累积进章级集合，
+        // 供重规划后的重跑首稿 prompt 预防式避用（换章由外层清空）。
+        if (Array.isArray(beatResult.usedImages)) {
+          for (const im of beatResult.usedImages) chapterUsedImages.add(im);
+        }
+        const hardErr = new Error(`${sceneLabel} 硬失败：${beatResult.hardFailReason || '防复读/身体禁令未通过'}`);
+        hardErr.code = 'SCENE_HARD_FAIL';
+        hardErr.sceneIndex = sceneIndex;
+        hardErr.llmReturned = true;
+        // 续写锚句随错误上抛：重规划修正指令据此点名「从哪续写」（见 buildHardFailCorrection）
+        hardErr.hardFailAnchor = beatResult.hardFailAnchor || '';
+        studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
+          chapter,
+          scene: sceneIndex,
+          stage: 'writer-beat',
+          status: 'retry',
+          detail: `${sceneLabel} · 硬失败（拒绝接受 → 场景重规划）：${beatResult.hardFailReason || '防复读未通过'}`,
+        });
+        throw hardErr;
+      }
+
       // 先落 Scene 正文，避免后续 Intelligence/Optimizer 异常导致「有 Beat 无章节」
       scene.text = draftText;
+      // F6.2: scene-local Observed Continuity (projection from text; not Canon / SR)
+      ensureObservedContinuity(scene);
+      // Phase 1: Actual Event from text only (never Plan); persist with scenes JSON
+      ensureActualEvents(scene, {
+        knownNames: collectSceneKnownNames(scene, intent),
+        stripPlan: true,
+      });
+      if (String(scene.text || '').trim() && !(scene.actualEvents || []).length) {
+        const hardErr = new Error(`${sceneLabel} 硬失败：正文存在但无有效 Actual Event`);
+        hardErr.code = 'ACTUAL_EVENT_REQUIRED';
+        hardErr.sceneIndex = sceneIndex;
+        hardErr.llmReturned = true;
+        throw hardErr;
+      }
+      // EO-P4-Character-Action-Bridge-01: Intent Truth + matching occurrence → Character Action
+      // (beside Actual; does not redefine occurrence; Attribution not required)
+      try {
+        attachCharacterActionTruth(scene);
+      } catch (caErr) {
+        console.warn('[studio-writer] Character Action bridge skipped:', caErr?.message || caErr);
+        scene.characterActionTruth = scene.characterActionTruth || {
+          status: 'absent',
+          reason: 'bridge_error',
+          isChoice: false,
+        };
+      }
+      // EO-P4-World-Consequence-Bridge-01: Character Action + grounded W → World Consequence
+      // (Studio Living 主路径必须与 Runtime Orchestrator 对齐；否则 N+1 读不到 WCT)
+      try {
+        attachWorldConsequenceTruth(scene);
+      } catch (wcErr) {
+        console.warn('[studio-writer] World Consequence bridge skipped:', wcErr?.message || wcErr);
+        scene.worldConsequenceTruth = scene.worldConsequenceTruth || {
+          status: 'absent',
+          reason: 'bridge_error',
+          isChoice: false,
+        };
+      }
+      // Phase 3.2: Actual → IB → CharacterSR (never Plan / Reasoner / Living)
+      try {
+        applyCharacterSRAfterActual(runBookDir || bookDir, chapter, scene, {
+          authoredCharacterSR: intent?.characterSR || intent?.authoredCharacterSR || null,
+        });
+      } catch (srErr) {
+        if (srErr?.code === 'SR_FORBIDDEN_SOURCE') throw srErr;
+        console.warn('[studio-writer] CharacterSR update skipped:', srErr?.message || srErr);
+      }
+      // Phase 4.4.1c: soft Attribution (never blocks Actual / later State)
+      try {
+        applyAttributionAfterActual(runBookDir || bookDir, chapter, scene, {
+          characterSRState: scene.characterSRState || null,
+        });
+      } catch (attrErr) {
+        console.warn('[studio-writer] Attribution soft wiring skipped:', attrErr?.message || attrErr);
+      }
       scene.status = scene.status === 'done' ? 'done' : 'draft';
       if (beatResult.needsHumanReview) {
         scene.needsHumanReview = true;
@@ -685,6 +915,14 @@ export function createStudioLlmWriter(bookDir, bookId, guard = null) {
 
       return finalText;
     } catch (err) {
+      if (err?.code === 'SCENE_HARD_FAIL') {
+        // 硬失败不走 failEvent：guard 的 enrichEvent 会把 pipelineFailed 视为 failEvent →
+        // abortTask 标记整个 task aborted，Orchestrator 的重规划再进 Writer 会立刻被
+        // isTaskAborted 拦下（2026-08-13 新书第一章误伤案就是如此：replan 根本没跑 LLM）。
+        // 只清 scene 锁 + 原样上抛，由 Orchestrator 捕获并发起有界重规划。
+        if (guard && sceneIndex != null) guard.clearSceneLock(chapter, sceneIndex);
+        throw err;
+      }
       if (guard && sceneIndex != null && err.message?.includes('超时')) {
         const outcome = guard.handleWriterTimeout(chapter, sceneIndex, { llmReturned: Boolean(err.llmReturned) });
         const msg = outcome.message || err.message;

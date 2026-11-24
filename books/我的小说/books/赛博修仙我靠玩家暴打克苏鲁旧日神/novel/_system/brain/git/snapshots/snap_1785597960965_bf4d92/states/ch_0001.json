@@ -1,0 +1,339 @@
+{
+  "version": "memory-unit-1",
+  "chapter": 1,
+  "livingPrepare": {
+    "version": "living-prepare-1",
+    "fromChapter": 1,
+    "forChapter": 2,
+    "worldProposal": {
+      "year": 2052,
+      "ai_control": 93,
+      "social_stability": 87,
+      "rebellion_level": 20,
+      "deep_zone_activity": 30,
+      "lastChapter": 1,
+      "updatedAt": "2026-08-01T15:25:29.841Z",
+      "_proposal": true
+    },
+    "characterProposals": [
+      {
+        "name": "一刀岁暮（玩家ID，现实身份未知）",
+        "brain": {
+          "character": "一刀岁暮（玩家ID，现实身份未知）",
+          "goals": {
+            "surface": "打通末世副本、吊打所有BOSS、解锁隐藏神装、玩遍所有玩法",
+            "hidden": "在虚拟与真实的边界中寻找刺激与意义，逃避现实中的空虚或压力，潜意识渴望证明自己的存在价值"
+          },
+          "fears": [
+            "游戏结束（再也无法体验这种刺激）",
+            "被现实拉回平庸",
+            "队友因自己指挥失误而永久消失",
+            "世界真实感太强，开始怀疑自己是否真实"
+          ],
+          "bottom_line": "绝对服从主角管理员指令、不滥杀无辜人类、专注刷怪打BOSS",
+          "current_state": {
+            "trust_protagonist": 90,
+            "fear": 15,
+            "betrayal_probability": 5,
+            "suspicion": 25,
+            "loyalty": 95
+          },
+          "growth_arc": "从单纯追求游戏快感的沙雕高玩，逐步被卷入世界真相的漩涡，经历从娱乐到责任、从怀疑到接受的蜕变，最终成为对抗更高维度诡秘的关键棋子",
+          "triggers": {
+            "主角解锁全域管理员权限": {
+              "trust": 10,
+              "suspicion": -5
+            },
+            "世界真相被部分揭露": {
+              "trust": -5,
+              "suspicion": 15
+            },
+            "队友因BUG无法复活": {
+              "trust": -10,
+              "suspicion": 10
+            },
+            "主角下令牺牲部分玩家": {
+              "trust": -15,
+              "suspicion": 20
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 90,
+                "fear": 15,
+                "betrayal_probability": 5,
+                "suspicion": 25,
+                "loyalty": 95
+              },
+              "at": "2026-08-01T15:25:33.942Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "林砚",
+        "brain": {
+          "character": "林砚",
+          "goals": {
+            "surface": "完成当前任务",
+            "hidden": "保护重要之人"
+          },
+          "fears": [
+            "被抛弃",
+            "失去记忆"
+          ],
+          "bottom_line": "不伤害无辜者",
+          "current_state": {
+            "trust_protagonist": 45,
+            "fear": 30,
+            "betrayal_probability": 35,
+            "suspicion": 20,
+            "loyalty": 70
+          },
+          "growth_arc": "从怀疑到并肩，或走向对立",
+          "triggers": {
+            "lie": {
+              "trust": -20,
+              "suspicion": 30
+            },
+            "betrayal": {
+              "betrayal_probability": 25
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 45,
+                "fear": 30,
+                "betrayal_probability": 35,
+                "suspicion": 20,
+                "loyalty": 70
+              },
+              "at": "2026-08-01T15:25:41.508Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "沈寒舟",
+        "brain": {
+          "character": "沈寒舟",
+          "goals": {
+            "surface": "打压一切威胁自己地位的人，辅佐渊尊完成邪神献祭，坐稳人族最高权贵之位",
+            "hidden": "渴望摆脱渊尊的阴影，证明自己不是傀儡而是真正的强者；内心深处希望被认可，而非仅仅作为家族和邪神的工具"
+          },
+          "fears": [
+            "被渊尊抛弃或视为无用",
+            "被揭穿自己只是家族培养的傀儡、没有真正自主意志",
+            "被主角林砚或玩家军团踩在脚下，彻底失去权贵身份",
+            "邪神污染彻底吞噬自我，沦为毫无理智的怪物"
+          ],
+          "bottom_line": "权贵无底线，为权势可以陷害、屠戮、牺牲任何人——但唯独恐惧彻底失去自我意志，沦为完全的邪神傀儡",
+          "current_state": {
+            "trust_protagonist": 0,
+            "fear": 55,
+            "betrayal_probability": 75,
+            "suspicion": 80,
+            "loyalty": 25
+          },
+          "growth_arc": "从嚣张权贵反派，逐渐被邪神深度污染，从傲慢的执行者沦为毫无理智的畸变傀儡，最终被玩家军团彻底碾压淘汰——一条从'伪强者'到'真怪物'再到'彻底败亡'的堕落弧线",
+          "triggers": {
+            "主角林砚展现特殊天赋或体质": {
+              "trust": -10,
+              "suspicion": 15
+            },
+            "渊尊对自己表达不满或忽视": {
+              "trust": 0,
+              "suspicion": 10
+            },
+            "玩家军团以沙雕方式破解自己的高端术法": {
+              "trust": -5,
+              "suspicion": 20
+            },
+            "被揭穿傀儡身份或家族真相": {
+              "trust": -10,
+              "suspicion": 30
+            },
+            "邪神低语加深侵蚀": {
+              "trust": 0,
+              "suspicion": 5
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 0,
+                "fear": 55,
+                "betrayal_probability": 75,
+                "suspicion": 80,
+                "loyalty": 25
+              },
+              "at": "2026-08-01T15:25:46.730Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "渊尊",
+        "brain": {
+          "character": "渊尊",
+          "goals": {
+            "surface": "彻底放开深空裂隙，让旧日支配者降临现世，完成对全人类的收割与献祭，从而突破至真正的神境",
+            "hidden": "作为邪神碎片的寄生傀儡，他渴望通过完成献祭来证明自己仍有价值、仍被邪神需要——他恐惧被邪神抛弃后彻底消亡，这是他唯一能维持'存在'的方式；同时，他内心深处仍残存一丝对昔日人族荣光的执念，他想要创造一个'完美的新世界'来证明自己当年的选择是'正确'的救赎"
+          },
+          "fears": [
+            "被邪神本体抛弃/吞噬，彻底失去自我意识，连傀儡的存在意义都消亡",
+            "主角林砚真正觉醒GM权限，成为他计划中无法计算的'变量'，导致整个献祭仪式崩溃",
+            "自己当年'牺牲人类换取永恒'的抉择被证明是错误——如果献祭失败，他将永远背负背叛全人类的罪孽，而这是他在理性上已经接受、但在灵魂深处仍无法直视的"
+          ],
+          "bottom_line": "无底线——为成神可牺牲一切、屠戮众生、背叛同族、献祭世界。但唯一的'隐性底线'是：他必须在献祭仪式中担任'最终执行者'，不能被邪神直接绕过——因为这代表他连被利用的价值都失去了",
+          "current_state": {
+            "trust_protagonist": 0,
+            "fear": 35,
+            "betrayal_probability": 100,
+            "suspicion": 95,
+            "loyalty": 0
+          },
+          "growth_arc": "从'伪善的救世者'到'彻底沉沦的邪神容器'——他曾经真心想用科技与修仙结合拯救人类，却在绝境中被邪神诱惑、一步步堕落；随着主角不断破坏他的布局，他越来越急迫、越来越疯狂，从高高在上的操盘手逐渐显露出傀儡的绝望本质；最终在30章登场时，他表面威严不可一世，实则已经是一个被邪神意志侵蚀殆尽的空壳，只余执念驱动",
+          "triggers": {
+            "主角解锁全域管理员权限": {
+              "trust": -10,
+              "suspicion": 20
+            },
+            "玩家军团首次击伤机械邪神分身": {
+              "trust": 0,
+              "suspicion": 30
+            },
+            "主角发现世界是养蛊容器的真相": {
+              "trust": 0,
+              "suspicion": 25
+            },
+            "主角突破境界并觉醒神级功法雏形": {
+              "trust": -5,
+              "suspicion": 35
+            },
+            "主角开始肃清青穹重工内部被污染的内鬼": {
+              "trust": 0,
+              "suspicion": 40
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 0,
+                "fear": 35,
+                "betrayal_probability": 100,
+                "suspicion": 95,
+                "loyalty": 0
+              },
+              "at": "2026-08-01T15:25:54.512Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "苏清鸢",
+        "brain": {
+          "character": "苏清鸢",
+          "goals": {
+            "surface": "守护浮空城底层幸存者，寻找真正的救世之道，阻止人类内耗堕落",
+            "hidden": "在目睹全员堕落的末世中，证明正道仍有意义——即使自己力量微薄，也要成为人族初心的最后火种，让坚守本身成为抵抗邪神的武器"
+          },
+          "fears": [
+            "自己坚守的正道在末世中毫无意义，最终被现实逼迫妥协",
+            "亲眼看着所有无辜幸存者被邪神污染或沦为权贵牺牲品，自己却无能为力",
+            "体内封印邪神的血脉秘密暴露，成为下一个被利用的祭品",
+            "孤独——自己是唯一清醒的人，连盟友都可能随时被低语侵蚀"
+          ],
+          "bottom_line": "绝不勾结邪神、绝不残害同类、绝不放弃无辜幸存者——即使面对死亡或终极诱惑，这三条底线不可逾越",
+          "current_state": {
+            "trust_protagonist": 20,
+            "fear": 65,
+            "betrayal_probability": 0,
+            "suspicion": 35,
+            "loyalty": 80
+          },
+          "growth_arc": "从迷茫坚守的普通修士（对正道意义存疑，靠意志硬撑）→ 在主角玩家体系的冲击下重新审视'力量与守护'的定义 → 接受新方法但保持初心，将自身诡秘抗性转化为实质战力 → 成长为人道守护者、人族防线中不可替代的正道象征",
+          "triggers": {
+            "主角用玩家军团碾压邪神眷属，且不伤害无辜幸存者": {
+              "trust": 20,
+              "suspicion": -10
+            },
+            "得知主角被青穹重工背叛且仍选择反抗": {
+              "trust": 15,
+              "suspicion": -5
+            },
+            "发现主角的GM权限可以操控世界规则": {
+              "trust": -10,
+              "suspicion": 25
+            },
+            "看到玩家将修仙与科技结合产生离经叛道的打法": {
+              "trust": 5,
+              "suspicion": 10
+            },
+            "主角主动保护底层幸存者、不以人命为代价": {
+              "trust": 25,
+              "suspicion": -15
+            },
+            "发现主角有意利用她体内的封印血脉": {
+              "trust": -30,
+              "suspicion": 40
+            },
+            "目睹主角为了对抗邪神不惜自毁修为": {
+              "trust": 30,
+              "suspicion": -20
+            },
+            "邪神低语直接针对她进行精神攻击，主角出手相救": {
+              "trust": 20,
+              "suspicion": -5
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 20,
+                "fear": 65,
+                "betrayal_probability": 0,
+                "suspicion": 35,
+                "loyalty": 80
+              },
+              "at": "2026-08-01T15:26:00.961Z"
+            }
+          ],
+          "_proposal": true
+        }
+      }
+    ],
+    "editorFeedback": {
+      "chapter": 1,
+      "commercial_score": 82,
+      "literary_score": 78,
+      "serial_score": 90,
+      "problems": [],
+      "suggestions": [
+        "strengthen_chapter_hook"
+      ],
+      "review_summary": "本章以高密度感官描写构建末日绝境，'GM权限需献祭唯一羁绊'的代价设定具备强情感张力，低语侵蚀的诡秘质感符合克苏鲁基调。但核心缺陷在于：结尾未兑现'权限激活+重生回溯'的黄金三章承诺，读者追读动力被悬置在最高点却未得释放。建议第2章开篇立即完成权限激活与时间倒转，以'玩家招募通道开启'引爆第四天灾爽点，同时用'24小时倒计时'强化紧迫感。文学性上，需整合重复的肢体损伤描写，统一角色指代，将情感力量集中于灵核裂纹与重生睁眼的瞬间——那一刻才是本章真正的灵魂所在。",
+      "updatedAt": "2026-08-01T15:25:35.055Z"
+    },
+    "createdAt": "2026-08-01T15:26:00.961Z",
+    "analysisOnly": true,
+    "attachedAt": "2026-08-01T15:26:00.962Z"
+  },
+  "updatedAt": "2026-08-01T15:26:00.962Z"
+}

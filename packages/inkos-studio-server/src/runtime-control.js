@@ -86,7 +86,7 @@ async function runViaDaemon(daemon, bookDir, bookId, chapter, { force, resume } 
     if (guard.isTaskAborted()) {
       throw new RuntimePipelineError(guard.getAbortReason() || err.message || String(err), { chapter });
     }
-    guard.abortTask(err.message || String(err), { chapter });
+    guard.abortTask(err.message || String(err), { chapter, taskId });
     throw new RuntimePipelineError(err.message || String(err), { chapter });
   } finally {
     clearInterval(heartbeat);
@@ -98,7 +98,7 @@ async function runViaDaemon(daemon, bookDir, bookId, chapter, { force, resume } 
   }
 
   if (result?.awaiting === 'writer') {
-    guard.abortTask(result.message || 'Writer 未产出正文', { chapter });
+    guard.abortTask(result.message || 'Writer 未产出正文', { chapter, taskId });
     guard.releaseChapterRun(chapter);
     return failPipeline(
       bookDir,
@@ -111,7 +111,7 @@ async function runViaDaemon(daemon, bookDir, bookId, chapter, { force, resume } 
 
   if (result?.pass === false || result?.error) {
     const err = result.error || result.message || 'Pipeline 未通过（可能因 Scene 校验失败）';
-    guard.abortTask(err, { chapter });
+    guard.abortTask(err, { chapter, taskId });
     guard.releaseChapterRun(chapter);
     return failPipeline(bookDir, bookId, chapter, err, { pipeline: result });
   }
@@ -159,7 +159,7 @@ async function runViaDaemon(daemon, bookDir, bookId, chapter, { force, resume } 
   } catch { /* non-blocking */ }
 
   studioEmitRuntimeEvent(bookDir, bookId, 'pipelineCompleted', { bookDir, chapter, result });
-  guard.completeTask(chapter, result);
+  guard.completeTask(chapter, result, taskId);
 
   return result;
 }
@@ -182,7 +182,7 @@ export async function controlRun(bookDir, { chapter, force, resume, plan, living
   }
 
   const result = daemon
-    ? await runViaDaemon(daemon, bookDir, bookId, ch, { force: force ?? true, resume })
+    ? await runViaDaemon(daemon, bookDir, bookId, ch, { force: force ?? false, resume })
     : await runFullPipeline(bookDir, { chapter: ch, force, resume, deferCommit: living });
 
   if (living && result?.pass === true && !result?.awaiting && !result?.error) {
@@ -251,7 +251,7 @@ export async function controlRunLiving(bookDir, options = {}, daemon = null) {
 export async function controlResume(bookDir, chapter, { force, bookId } = {}, daemon = null) {
   const meta = getBookMeta(bookDir);
   const id = bookId || meta.id || meta.bookId;
-  if (daemon) return runViaDaemon(daemon, bookDir, id, chapter, { force: force ?? true, resume: true });
+  if (daemon) return runViaDaemon(daemon, bookDir, id, chapter, { force: force ?? false, resume: true });
   return runFullPipeline(bookDir, { chapter, force, resume: true });
 }
 

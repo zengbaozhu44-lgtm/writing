@@ -1,0 +1,68 @@
+[
+  {
+    "id": "NEG-W01",
+    "assertion": "witnessMainGoalInFacts",
+    "description": "EO-P2 CUT: PLAN mainGoal must NOT → facts",
+    "pollutionType": "PLAN→CANON",
+    "eoP2": "inverted_pass_means_cut",
+    "phase3Expectation": "fixed"
+  },
+  {
+    "id": "NEG-W02",
+    "assertion": "witnessPlanCostInTimeline",
+    "description": "EO-P2 CUT: PLAN cost → causalChain must NOT → timeline",
+    "pollutionType": "PLAN→CANON",
+    "eoP2": "inverted_pass_means_cut",
+    "phase3Expectation": "fixed"
+  },
+  {
+    "id": "NEG-W03",
+    "assertion": "witnessInferSceneOutcomeInTimeline",
+    "description": "EO-P2 CUT: scene consequence must NOT → timeline",
+    "pollutionType": "INFERENCE→CANON",
+    "eoP2": "inverted_pass_means_cut",
+    "phase3Expectation": "fixed"
+  },
+  {
+    "id": "NEG-W04",
+    "assertion": "witnessBeatPlanInBeatStateDelta",
+    "description": "beatPlan choice/consequence masquerades as beat delta",
+    "pollutionType": "PLAN→PSEUDO-REALITY",
+    "phase3Expectation": "witness_should_fail"
+  },
+  {
+    "id": "NEG-W05",
+    "assertion": "witnessPlanConsequenceInSituationAfter",
+    "description": "plan.consequence → inferWorldAfter → Writer must",
+    "pollutionType": "PLAN→INSTRUCTION-AS-FACT",
+    "phase3Expectation": "witness_should_fail"
+  },
+  {
+    "id": "NEG-W06",
+    "assertion": "witnessGenerated09Provenance",
+    "description": "generated 09 provenance exists (feeds next plan)",
+    "pollutionType": "GENERATED→PLAN-LOOP",
+    "phase3Expectation": "document_only"
+  },
+  {
+    "id": "NEG-W07",
+    "assertion": "witnessIntentInCurrentState",
+    "description": "intent.location → 08_current_state (ignores prose)",
+    "pollutionType": "PLAN→CANON",
+    "phase3Expectation": "witness_should_fail"
+  },
+  {
+    "id": "NEG-W08",
+    "description": "prose ally death excluded from timeline (loop gap)",
+    "assertion": "witnessProseExcludedFromTimeline",
+    "pollutionType": "MISSING-REALITY-LOOP",
+    "phase3Expectation": "witness_should_fail_when_reality_path_exists"
+  },
+  {
+    "id": "NEG-W09",
+    "assertion": "witnessIntentInRelationshipAnchor",
+    "description": "intent.obstacles → anchor relationship_state",
+    "pollutionType": "PLAN→ANCHOR-AS-FACT",
+    "phase3Expectation": "witness_should_fail"
+  }
+]

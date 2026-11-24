@@ -23,9 +23,9 @@ const ctx = {
     { fact: '林晓维修任务与药房冲突升级', chapter: 2 },
   ],
   timeline: [
-    { day: 1, chapter: 1, events: ['张北清晨送餐'] },
-    { day: 2, chapter: 2, events: ['林晓药房冲突'] },
-    { day: 3, chapter: 3, events: ['林晓发现日志'] },
+    { day: 1, chapter: 1, events: ['张北失去对数字隔离户的远程访问权限'] },
+    { day: 2, chapter: 2, events: ['林晓在药房冲突中暴露信用代价并失去配额'] },
+    { day: 3, chapter: 3, events: ['林晓发现日志后系统锁定维修通道'] },
   ],
   knowledge: {
     matrix: [

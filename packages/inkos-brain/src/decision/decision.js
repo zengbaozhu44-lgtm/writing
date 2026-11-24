@@ -1,5 +1,8 @@
 /**
  * Decision Engine — 角色行动前六维校验 + 分级内容审核
+ *
+ * EO-P7 R-06: knowledge / facts checks are epistemic qualification.
+ * They do not certify disk facts as obtains / Reality Authority.
  */
 import { checkSceneContentPolicy } from './content-policy.js';
 import { suggestSafeObstacle } from '../planner/conflict-suggester.js';
@@ -109,6 +112,7 @@ function checkResources(pov, resources, scene) {
 }
 
 function checkKnowledge(pov, knowledge, scene, ctx) {
+  // EO-P7: ctx.facts are registered_legacy / operational — epistemic gate, not obtains.
   const matrix = knowledge.matrix || [];
   const text = `${scene.goal} ${scene.conflict}`;
   for (const row of matrix) {

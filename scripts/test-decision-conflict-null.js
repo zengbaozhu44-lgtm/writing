@@ -1,21 +1,11 @@
 /**
- * 回归：Decision 耗尽重试后 Conflict 为 null 不得崩；剧情词不得误杀
+ * 回归：剧情词（旁白「背叛/底线」等）不得被 Decision 内容策略误杀；政治敏感须 HARD_BLOCK
  */
 import { evaluateDecisions } from '../packages/inkos-brain/src/decision/decision.js';
-import { appendConflictHistory, appendDecisionHistory } from '../packages/inkos-brain/src/memory/memory.js';
-import fs from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
 
 function assert(cond, msg) {
   if (!cond) throw new Error(msg);
 }
-
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'inkos-decision-'));
-fs.mkdirSync(path.join(tmp, 'novel', '_system', 'brain'), { recursive: true });
-
-assert(appendConflictHistory(tmp, 1, null) === null, 'null conflictResult 应跳过');
-assert(appendDecisionHistory(tmp, 1, null) === null, 'null decisionResult 应跳过');
 
 const ctx = {
   pov: '林砚',
@@ -74,5 +64,4 @@ assert(
   'suggestObstacle 不得再含「底线受阻需换路径」',
 );
 
-fs.rmSync(tmp, { recursive: true, force: true });
 console.log('OK test-decision-conflict-null');

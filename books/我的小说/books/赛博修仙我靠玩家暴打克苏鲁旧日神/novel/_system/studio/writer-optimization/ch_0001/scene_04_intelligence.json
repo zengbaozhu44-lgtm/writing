@@ -7,21 +7,29 @@
   "sceneType": "ending",
   "beatMemory": {
     "newFacts": [
-      "一行字从裂缝里爬出来，用的是他三年前亲手烧毁的军用加密协议"
+      "远处，浮空城南沿传来一声闷响，是结构断裂的声音",
+      "确认键在视野边缘泛着冷光，像林薇手术台上那盏无影灯",
+      "他咬碎舌尖，血腥味裹着痛意冲上喉头，一拳砸下确认",
+      "监控屏上，他的权限树突然长出一根他从未见过的枝桠——编号是林薇的生日",
+      "名单展开，第一行是林薇的名字——灰的，像烧过的纸"
     ],
     "characterStateChanges": [
-      "左臂的关节锁卡死，林砚只能把掌心翻过来",
-      "屏幕上的字开始倒数"
+      "”屏幕闪了一下，那根枝桠开始发光，像血管一样跳动"
     ],
     "emotionChanges": [
+      "fear",
       "anger"
     ],
     "unresolvedIssues": [
-      "状态：已激活】\n\n他右手的传感器全断了，但左手还能动。他抬起左手，掌心的数据流权限光团剧烈跳动，温度高到烫穿手套，烧进皮肉里。\n\n屏幕上的字开始倒数。\n\n【距"
+      "“贪多嚼不烂，”他哑着嗓子，对着空无一人的屏幕说，“但我不嚼，谁嚼",
+      "监控屏上，他的权限树突然长出一根他从未见过的枝桠——编号是林薇的生日",
+      "林砚的指节抵住屏幕，指甲刮过那行灰字：`父权限：未认证`",
+      "用她换你，换不换？”界面上浮出一行字，烫得他眼眶发酸。\n\n他选了“否”。\n\n整座浮空城的警报器同时炸响，沈寒舟的声音从废墟里传来：“你刚把咱俩的命门交给它了。”"
     ],
     "changedDimensions": [
+      "information",
       "danger",
-      "goalDirection",
+      "resource",
       "worldCognition"
     ],
     "beatHistory": [
@@ -30,46 +38,46 @@
         "structuralBeat": "goal",
         "libraryBeat": "Decision",
         "stateChange": true,
-        "afterState": "半截断指上，数据流像活物一样蜷曲着，蓝白色的光纹沿着烧焦的神经线爬向腕骨"
+        "afterState": "他认得这个纹路"
       },
       {
         "order": 2,
         "structuralBeat": "obstacle",
         "libraryBeat": "Countdown",
-        "stateChange": false,
-        "afterState": "阻力落地，目标受挫，退路收窄"
+        "stateChange": true,
+        "afterState": "权限的轮廓在掌心里挣扎，边缘锋利，割进皮肉"
       },
       {
         "order": 3,
         "structuralBeat": "choice",
         "libraryBeat": "Decision",
         "stateChange": true,
-        "afterState": "暗红字符跳了跳，裂成碎片"
+        "afterState": "林砚的指尖悬在上面，指腹能感觉到屏幕散出的热，灼得神经一跳一跳"
       },
       {
         "order": 4,
         "structuralBeat": "consequence",
         "libraryBeat": "Countdown",
         "stateChange": true,
-        "afterState": "林砚把掌心翻过来，血从裂开的皮肤渗进数据流，字符亮了一瞬，又暗下去"
+        "afterState": "权限树在他视野里炸开，无数节点像血管一样搏动——他看见林薇的名字挂在最末端，灰暗、静止，像被抽干了血"
       },
       {
         "order": 5,
         "structuralBeat": "newInformation",
         "libraryBeat": "Discovery",
-        "stateChange": false,
-        "afterState": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择"
+        "stateChange": true,
+        "afterState": "林砚的指节抵住屏幕，指甲刮过那行灰字：`父权限：未认证`"
       },
       {
         "order": 6,
         "structuralBeat": "hook",
         "libraryBeat": "Countdown",
         "stateChange": true,
-        "afterState": "字迹在碎裂的屏幕上继续爬行，像活物"
+        "afterState": "名单展开，第一行是林薇的名字——灰的，像烧过的纸"
       }
     ],
-    "lastAfterState": "字迹在碎裂的屏幕上继续爬行，像活物",
-    "stateChangeCount": 4
+    "lastAfterState": "名单展开，第一行是林薇的名字——灰的，像烧过的纸",
+    "stateChangeCount": 6
   },
   "beatStateDeltas": [
     {
@@ -78,40 +86,61 @@
       "libraryBeat": "Decision",
       "beforeState": "林砚当前目标：看着掌心跳动的数据流权限 — 局势尚未被本 Scene 改写",
       "action": "看着掌心跳动的数据流权限",
-      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "为了完成「觉醒【世界管理员GM权限】」，明知会触碰「再次失去重要的人」仍必须现在行动",
       "consequence": "目标锁定，行动方向确定",
-      "afterState": "半截断指上，数据流像活物一样蜷曲着，蓝白色的光纹沿着烧焦的神经线爬向腕骨",
+      "afterState": "他认得这个纹路",
       "stateChange": true,
       "stateChangeValid": true,
       "changedDimensions": [
-        "danger",
-        "goalDirection"
+        "information"
       ],
       "repetitive": false,
       "newFacts": [],
-      "characterStateChanges": [
-        "左臂的关节锁卡死，林砚只能把掌心翻过来"
-      ],
+      "characterStateChanges": [],
       "emotionChanges": [
-        "anger"
+        "fear"
       ],
-      "unresolvedIssues": [],
-      "extractedAt": "2026-07-31T07:04:51.856Z",
+      "unresolvedIssues": [
+        "“贪多嚼不烂，”他哑着嗓子，对着空无一人的屏幕说，“但我不嚼，谁嚼"
+      ],
+      "extractedAt": "2026-08-04T04:37:23.167Z",
       "continuity": {
-        "leftArm": "damaged",
-        "rightArm": "disabled",
+        "leftArm": null,
+        "rightArm": null,
         "legs": null,
-        "location": "拘束操作台",
-        "revealed": [],
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "kneel_ash",
+          "auth_press",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
         "issues": []
       },
       "runtimeV2": {
         "pass": true,
-        "failReasons": [
-          "Micro Scene 仅满足 1/5（新信息），须至少两项：新信息/关系/危险/Promise/新行动"
-        ],
-        "attempts": 3,
-        "degraded": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
         "needsHumanReview": false,
         "storyBefore": "林砚当前目标：看着掌心跳动的数据流权限 — 局势尚未被本 Scene 改写",
         "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
@@ -125,9 +154,7 @@
           "failReasons": [],
           "priorOverlap": 0
         },
-        "microPassed": [
-          "新信息"
-        ],
+        "microPassed": [],
         "continuityPass": true
       }
     },
@@ -137,24 +164,53 @@
       "libraryBeat": "Countdown",
       "beforeState": "POV 已锁定可执行目标，局面即将被打破",
       "action": "局势改变 — 且局面本身不会让步",
-      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "为了完成「觉醒【世界管理员GM权限】」，明知会触碰「再次失去重要的人」仍必须现在行动",
       "consequence": "原路径受阻，stakes 升高",
-      "afterState": "阻力落地，目标受挫，退路收窄",
-      "stateChange": false,
-      "stateChangeValid": false,
-      "changedDimensions": [],
+      "afterState": "权限的轮廓在掌心里挣扎，边缘锋利，割进皮肉",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
       "repetitive": false,
-      "newFacts": [],
+      "newFacts": [
+        "远处，浮空城南沿传来一声闷响，是结构断裂的声音"
+      ],
       "characterStateChanges": [],
       "emotionChanges": [],
       "unresolvedIssues": [],
-      "extractedAt": "2026-07-31T07:04:54.271Z",
+      "extractedAt": "2026-08-04T04:37:25.228Z",
       "continuity": {
-        "leftArm": "damaged",
-        "rightArm": "disabled",
+        "leftArm": null,
+        "rightArm": null,
         "legs": null,
-        "location": "拘束操作台",
-        "revealed": [],
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "kneel_ash",
+          "auth_press",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
         "issues": []
       },
       "runtimeV2": {
@@ -173,7 +229,7 @@
           "noRepeat": true,
           "hits": [],
           "failReasons": [],
-          "priorOverlap": 0
+          "priorOverlap": 0.07333333333333333
         },
         "microPassed": [],
         "continuityPass": true
@@ -184,36 +240,73 @@
       "structuralBeat": "choice",
       "libraryBeat": "Decision",
       "beforeState": "阻力落地，目标受挫，退路收窄",
-      "action": "POV 必须在有限选项中做出选择，每个选项都有代价",
-      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "action": "为了完成「觉醒【世界管理员GM权限】」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「觉醒【世界管理员GM权限】」，明知会触碰「再次失去重要的人」仍必须现在行动",
       "consequence": "选择本身即代价前奏",
-      "afterState": "暗红字符跳了跳，裂成碎片",
+      "afterState": "林砚的指尖悬在上面，指腹能感觉到屏幕散出的热，灼得神经一跳一跳",
       "stateChange": true,
       "stateChangeValid": true,
       "changedDimensions": [
-        "danger",
+        "information",
+        "resource",
         "worldCognition"
       ],
       "repetitive": false,
-      "newFacts": [],
+      "newFacts": [
+        "确认键在视野边缘泛着冷光，像林薇手术台上那盏无影灯",
+        "他咬碎舌尖，血腥味裹着痛意冲上喉头，一拳砸下确认"
+      ],
       "characterStateChanges": [],
       "emotionChanges": [],
       "unresolvedIssues": [],
-      "extractedAt": "2026-07-31T07:04:58.500Z",
+      "extractedAt": "2026-08-04T04:37:31.285Z",
       "continuity": {
-        "leftArm": "damaged",
-        "rightArm": "disabled",
+        "leftArm": null,
+        "rightArm": null,
         "legs": null,
-        "location": "拘束操作台",
-        "revealed": [],
-        "issues": []
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "kneel_ash",
+          "auth_press",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 8 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ]
       },
       "runtimeV2": {
-        "pass": true,
-        "failReasons": [],
-        "attempts": 1,
-        "degraded": false,
-        "needsHumanReview": false,
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 8 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
         "storyBefore": "阻力落地，目标受挫，退路收窄",
         "storyAfter": "POV 已做出不可逆选择，后果即将落地",
         "formatPass": true,
@@ -224,10 +317,13 @@
           "noRepeat": true,
           "hits": [],
           "failReasons": [],
-          "priorOverlap": 0.006802721088435374
+          "priorOverlap": 0.00625
         },
-        "microPassed": [],
-        "continuityPass": true
+        "microPassed": [
+          "关系",
+          "新行动"
+        ],
+        "continuityPass": false
       }
     },
     {
@@ -235,41 +331,67 @@
       "structuralBeat": "consequence",
       "libraryBeat": "Countdown",
       "beforeState": "POV 已做出不可逆选择，后果即将落地",
-      "action": "选择产生可见代价，局面因此改变",
-      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
-      "consequence": "选择产生可见代价，局面因此改变",
-      "afterState": "林砚把掌心翻过来，血从裂开的皮肤渗进数据流，字符亮了一瞬，又暗下去",
+      "action": "为完成「觉醒【世界管理员GM权限】」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「觉醒【世界管理员GM权限】」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「觉醒【世界管理员GM权限】」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "权限树在他视野里炸开，无数节点像血管一样搏动——他看见林薇的名字挂在最末端，灰暗、静止，像被抽干了血",
       "stateChange": true,
       "stateChangeValid": true,
       "changedDimensions": [
-        "danger",
-        "worldCognition"
+        "information"
       ],
       "repetitive": false,
       "newFacts": [],
       "characterStateChanges": [],
-      "emotionChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
       "unresolvedIssues": [],
-      "extractedAt": "2026-07-31T07:05:08.539Z",
+      "extractedAt": "2026-08-04T04:37:37.833Z",
       "continuity": {
-        "leftArm": "damaged",
-        "rightArm": "disabled",
+        "leftArm": null,
+        "rightArm": null,
         "legs": null,
-        "location": "拘束操作台",
-        "revealed": [],
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "kneel_ash",
+          "auth_press",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
         "issues": []
       },
       "runtimeV2": {
-        "pass": true,
+        "pass": false,
         "failReasons": [
-          "Micro Scene 仅满足 1/5（新信息），须至少两项：新信息/关系/危险/Promise/新行动"
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作"
         ],
         "attempts": 3,
         "degraded": true,
-        "needsHumanReview": false,
+        "needsHumanReview": true,
         "storyBefore": "POV 已做出不可逆选择，后果即将落地",
-        "storyAfter": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实",
-        "formatPass": true,
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
         "noRepeat": true,
         "stateChange": true,
         "fourGram": {
@@ -277,10 +399,11 @@
           "noRepeat": true,
           "hits": [],
           "failReasons": [],
-          "priorOverlap": 0.006329113924050633
+          "priorOverlap": 0.024691358024691357
         },
         "microPassed": [
-          "新信息"
+          "新信息",
+          "关系"
         ],
         "continuityPass": true
       }
@@ -291,42 +414,76 @@
       "libraryBeat": "Discovery",
       "beforeState": "代价已落地，局面比选择前更紧或更糟",
       "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
-      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
-      "consequence": "认知被新信息改写",
-      "afterState": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择",
-      "stateChange": false,
-      "stateChangeValid": false,
-      "changedDimensions": [],
+      "choice": "为了完成「觉醒【世界管理员GM权限】」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "林砚的指节抵住屏幕，指甲刮过那行灰字：`父权限：未认证`",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information"
+      ],
       "repetitive": false,
       "newFacts": [
-        "一行字从裂缝里爬出来，用的是他三年前亲手烧毁的军用加密协议"
+        "监控屏上，他的权限树突然长出一根他从未见过的枝桠——编号是林薇的生日"
       ],
-      "characterStateChanges": [],
+      "characterStateChanges": [
+        "”屏幕闪了一下，那根枝桠开始发光，像血管一样跳动"
+      ],
       "emotionChanges": [],
-      "unresolvedIssues": [],
-      "extractedAt": "2026-07-31T07:05:17.909Z",
+      "unresolvedIssues": [
+        "监控屏上，他的权限树突然长出一根他从未见过的枝桠——编号是林薇的生日",
+        "林砚的指节抵住屏幕，指甲刮过那行灰字：`父权限：未认证`"
+      ],
+      "extractedAt": "2026-08-04T04:37:44.194Z",
       "continuity": {
-        "leftArm": "damaged",
-        "rightArm": "disabled",
+        "leftArm": null,
+        "rightArm": null,
         "legs": null,
-        "location": "拘束操作台",
-        "revealed": [],
-        "issues": []
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "kneel_ash",
+          "auth_press",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "REPEAT_REVEAL:「系统界面」已揭示，禁止再写首次发现/突然激活语气；只写后果或推进",
+          "EVENT_LOOP:「系统/监控屏」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
       },
       "runtimeV2": {
         "pass": false,
         "failReasons": [
-          "Information Density：约 90 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
-          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
-          "未承接上一事件的 Effect，像独立抛异常",
-          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          "REPEAT_REVEAL:「系统界面」已揭示，禁止再写首次发现/突然激活语气；只写后果或推进",
+          "EVENT_LOOP:「系统/监控屏」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
         ],
         "attempts": 3,
         "degraded": true,
         "needsHumanReview": true,
-        "storyBefore": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实",
-        "storyAfter": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实",
-        "formatPass": false,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
         "noRepeat": true,
         "stateChange": true,
         "fourGram": {
@@ -334,48 +491,72 @@
           "noRepeat": true,
           "hits": [],
           "failReasons": [],
-          "priorOverlap": 0.022988505747126436
+          "priorOverlap": 0.03968253968253968
         },
         "microPassed": [
-          "Promise兑现",
-          "新行动"
+          "新信息",
+          "关系",
+          "Promise兑现"
         ],
-        "continuityPass": true
+        "continuityPass": false
       }
     },
     {
       "beatOrder": 6,
       "structuralBeat": "hook",
       "libraryBeat": "Countdown",
-      "beforeState": "读者与 POV 对世界/局势的理解已更新",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
       "action": "章尾强 Hook — 未完成动作或致命追问",
-      "choice": "POV 必须在有限选项中做出选择，每个选项都有代价",
+      "choice": "为了完成「觉醒【世界管理员GM权限】」，明知会触碰「再次失去重要的人」仍必须现在行动",
       "consequence": "新危机/新疑问出现",
-      "afterState": "字迹在碎裂的屏幕上继续爬行，像活物",
+      "afterState": "名单展开，第一行是林薇的名字——灰的，像烧过的纸",
       "stateChange": true,
       "stateChangeValid": true,
       "changedDimensions": [
-        "goalDirection"
+        "information"
       ],
       "repetitive": false,
-      "newFacts": [],
-      "characterStateChanges": [
-        "屏幕上的字开始倒数"
+      "newFacts": [
+        "名单展开，第一行是林薇的名字——灰的，像烧过的纸"
       ],
+      "characterStateChanges": [],
       "emotionChanges": [],
       "unresolvedIssues": [
-        "状态：已激活】\n\n他右手的传感器全断了，但左手还能动。他抬起左手，掌心的数据流权限光团剧烈跳动，温度高到烫穿手套，烧进皮肉里。\n\n屏幕上的字开始倒数。\n\n【距"
+        "用她换你，换不换？”界面上浮出一行字，烫得他眼眶发酸。\n\n他选了“否”。\n\n整座浮空城的警报器同时炸响，沈寒舟的声音从废墟里传来：“你刚把咱俩的命门交给它了。”"
       ],
-      "extractedAt": "2026-07-31T07:05:31.616Z",
+      "extractedAt": "2026-08-04T04:37:55.288Z",
       "continuity": {
-        "leftArm": "damaged",
-        "rightArm": "disabled",
+        "leftArm": null,
+        "rightArm": null,
         "legs": null,
         "location": "浮空城坠落区",
-        "revealed": [],
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "kneel_ash",
+          "auth_press",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
         "issues": [
-          "CONSISTENCY: 场景跳跃 拘束操作台 → 浮空城坠落区 无过渡，禁止重启开场",
-          "ACTION_REPLAY: 禁止重演已发生动作「掌心光团」；从上一句后果接着写下一动作"
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
         ]
       },
       "runtimeV2": {
@@ -383,15 +564,13 @@
         "failReasons": [
           "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
           "Event 缺少可观察动作",
-          "Micro Scene 仅满足 1/5（新信息），须至少两项：新信息/关系/危险/Promise/新行动",
-          "CONSISTENCY: 场景跳跃 拘束操作台 → 浮空城坠落区 无过渡，禁止重启开场",
-          "ACTION_REPLAY: 禁止重演已发生动作「掌心光团」；从上一句后果接着写下一动作"
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
         ],
         "attempts": 3,
         "degraded": true,
         "needsHumanReview": true,
-        "storyBefore": "局势向终局推进 — 林砚确认/意识到：本 Scene 须释放至少一条新信息（事实",
-        "storyAfter": "林砚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面",
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
         "formatPass": false,
         "noRepeat": true,
         "stateChange": true,
@@ -400,10 +579,11 @@
           "noRepeat": true,
           "hits": [],
           "failReasons": [],
-          "priorOverlap": 0.025
+          "priorOverlap": 0.015748031496062992
         },
         "microPassed": [
-          "新信息"
+          "新信息",
+          "关系"
         ],
         "continuityPass": false
       }
@@ -414,12 +594,12 @@
       {
         "order": 1,
         "structuralBeat": "goal",
-        "fear": 0,
+        "fear": 39,
         "hope": 0,
-        "anger": 38,
+        "anger": 0,
         "surprise": 0,
         "relief": 0,
-        "dominant": "anger"
+        "dominant": "fear"
       },
       {
         "order": 2,
@@ -436,20 +616,20 @@
         "structuralBeat": "choice",
         "fear": 0,
         "hope": 0,
-        "anger": 0,
+        "anger": 38,
         "surprise": 0,
         "relief": 0,
-        "dominant": "fear"
+        "dominant": "anger"
       },
       {
         "order": 4,
         "structuralBeat": "consequence",
         "fear": 0,
         "hope": 0,
-        "anger": 0,
+        "anger": 38,
         "surprise": 0,
         "relief": 0,
-        "dominant": "fear"
+        "dominant": "anger"
       },
       {
         "order": 5,
@@ -473,47 +653,47 @@
       }
     ],
     "scenePeak": {
-      "fear": 0,
+      "fear": 39,
       "hope": 0,
       "anger": 38,
       "surprise": 0,
       "relief": 0
     },
-    "emotionalVariance": 38,
+    "emotionalVariance": 39,
     "hasFluctuation": true,
-    "generatedAt": "2026-07-31T07:05:31.627Z",
+    "generatedAt": "2026-08-04T04:37:55.308Z",
     "sceneIndex": 4
   },
   "readerSimulation": {
-    "curiosity": 56,
-    "questionCount": 0,
-    "dropRisk": 30,
-    "continueProbability": 55,
+    "curiosity": 86,
+    "questionCount": 4,
+    "dropRisk": 10,
+    "continueProbability": 87,
     "sceneIndex": 4,
     "pov": "林砚",
-    "simulatedAt": "2026-07-31T07:05:31.627Z"
+    "simulatedAt": "2026-08-04T04:37:55.310Z"
   },
   "beatCompliance": {
-    "goalCompletion": 45,
-    "obstacleStrength": 53,
-    "choiceLevel": 53,
+    "goalCompletion": 60,
+    "obstacleStrength": 40,
+    "choiceLevel": 39,
     "consequenceLevel": 39,
-    "escalationLevel": 53,
-    "informationValue": 38,
-    "hookImpact": 59,
-    "stateChangeRate": 67,
+    "escalationLevel": 39,
+    "informationValue": 41,
+    "hookImpact": 48,
+    "stateChangeRate": 100,
     "hookBreakdown": {
-      "hookLevel": 59,
+      "hookLevel": 48,
       "hookOutput": {
-        "type": "Cost",
-        "readerQuestion": "如果选这条路，还能回头吗？",
+        "type": "PointOfNoReturn",
+        "readerQuestion": "“用她换你，换不换？",
         "cost": "不可逆 — 无论选哪条路都有全局性代价",
-        "nextNeedToKnow": "器全断了，但左手还能动。他抬起左手，掌心的数据流权限光团剧烈跳动，温度高到烫穿手套，烧进皮肉里。屏幕上的字开始倒数。【距",
-        "level": 3,
-        "stage": "Cost",
-        "name": "代价",
-        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
-        "example": "记得的人都会死亡",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
         "hookKind": "ActionHook",
         "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
         "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
@@ -523,28 +703,28 @@
         "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
         "mustForceAction": true
       },
-      "stageMatch": false,
-      "cognitiveUpgrade": 50,
-      "emotionalImpact": 53,
-      "characterCost": 75,
+      "stageMatch": true,
+      "cognitiveUpgrade": 62,
+      "emotionalImpact": 38,
+      "characterCost": 45,
       "targetType": "PointOfNoReturn",
       "targetLevel": 5
     },
-    "average": 48,
-    "weakest": "informationValue",
+    "average": 45,
+    "weakest": "choiceLevel",
     "pass": false,
     "blocking": false,
-    "analyzedAt": "2026-07-31T07:05:31.628Z",
+    "analyzedAt": "2026-08-04T04:37:55.311Z",
     "hookOutput": {
-      "type": "Cost",
-      "readerQuestion": "如果选这条路，还能回头吗？",
+      "type": "PointOfNoReturn",
+      "readerQuestion": "“用她换你，换不换？",
       "cost": "不可逆 — 无论选哪条路都有全局性代价",
-      "nextNeedToKnow": "器全断了，但左手还能动。他抬起左手，掌心的数据流权限光团剧烈跳动，温度高到烫穿手套，烧进皮肉里。屏幕上的字开始倒数。【距",
-      "level": 3,
-      "stage": "Cost",
-      "name": "代价",
-      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
-      "example": "记得的人都会死亡",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
       "hookKind": "ActionHook",
       "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
       "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
@@ -567,17 +747,17 @@
     }
   },
   "hookLevel": {
-    "hookLevel": 59,
+    "hookLevel": 48,
     "hookOutput": {
-      "type": "Cost",
-      "readerQuestion": "如果选这条路，还能回头吗？",
+      "type": "PointOfNoReturn",
+      "readerQuestion": "“用她换你，换不换？",
       "cost": "不可逆 — 无论选哪条路都有全局性代价",
-      "nextNeedToKnow": "器全断了，但左手还能动。他抬起左手，掌心的数据流权限光团剧烈跳动，温度高到烫穿手套，烧进皮肉里。屏幕上的字开始倒数。【距",
-      "level": 3,
-      "stage": "Cost",
-      "name": "代价",
-      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
-      "example": "记得的人都会死亡",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
       "hookKind": "ActionHook",
       "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
       "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
@@ -587,12 +767,12 @@
       "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
       "mustForceAction": true
     },
-    "stageMatch": false,
+    "stageMatch": true,
     "actionHookScore": 0,
     "forcesAction": true,
-    "cognitiveUpgrade": 50,
-    "emotionalImpact": 53,
-    "characterCost": 75
+    "cognitiveUpgrade": 62,
+    "emotionalImpact": 38,
+    "characterCost": 45
   },
   "reward": {
     "valid": true,
@@ -624,5 +804,5 @@
     }
   },
   "blocking": false,
-  "generatedAt": "2026-07-31T07:05:31.628Z"
+  "generatedAt": "2026-08-04T04:37:55.311Z"
 }

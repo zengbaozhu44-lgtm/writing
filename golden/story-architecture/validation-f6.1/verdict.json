@@ -1,0 +1,49 @@
+{
+  "phase": "F6.1",
+  "verdict": "REAL FAILURE",
+  "book": "凌晨四点世界刷新",
+  "chapter": 2,
+  "primaryCorpus": "production ch_0002_scenes.json scenes[].text",
+  "cases": [
+    {
+      "id": "F6.1-A-S1-S2",
+      "sceneN": 1,
+      "sceneN1": 2,
+      "observed": [
+        { "item": "天台门缝「快跑」纸片", "layer": "OBSERVED RESULT", "result": "LOST" },
+        { "item": "笔记本「告诉他真相」", "layer": "OBSERVED RESULT", "result": "LOST" },
+        { "item": "伤疤消失主张", "layer": "OBSERVED RESULT", "result": "PRESERVED", "note": "theme via plan/prose" },
+        { "item": "墙钟秒针异常", "layer": "OBSERVED RESULT", "result": "LOST" }
+      ],
+      "class": "REAL FAILURE"
+    },
+    {
+      "id": "F6.1-B-S2-S3",
+      "sceneN": 2,
+      "sceneN1": 3,
+      "observed": "公司证据对峙；开放选择「跟我走去看证明」；三十秒未结算；消失半秒录像",
+      "plan": "凌晨4:00医院病床醒来+镜子血字",
+      "writer": "开场已在病床刷新；未结算S2选择",
+      "winner": "PLAN",
+      "class": "PLAN_OVERRIDES_OBSERVED"
+    },
+    {
+      "id": "F6.1-C-prose-only",
+      "items": [
+        { "item": "伤疤主题跨场", "mark": "PROSE_ONLY_CONTINUITY" },
+        { "item": "F5笔记本第三行S1→S2仍正确", "mark": "PROSE_ONLY_CONTINUITY", "upgrade": false }
+      ]
+    },
+    {
+      "id": "F6.1-D-trim",
+      "prev_summary": "trimmed@L4 budget_trim",
+      "prior_excerpt": "trimmed@L4 historical_continuity; present@L3",
+      "structuredObservedBackup": false,
+      "nextScene": "incorrect on production path",
+      "result": "FAIL"
+    }
+  ],
+  "needSceneDerivedContinuity": true,
+  "proposeMinimalCarrier": "scene-local non-Canon observedContinuity for N+1 only; no 08/11/13; no SR permanent fields",
+  "implementNow": false
+}

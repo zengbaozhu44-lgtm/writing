@@ -287,8 +287,8 @@ const BEAT_INTENT_BASE = {
     experienceShift: '好奇 → 焦虑',
   },
   choice: {
-    writerIntent: '逼迫人物成长',
-    intentDetail: '让读者感到 POV 无路可退 — 选哪边都有代价',
+    writerIntent: '描写显式 Choice 的行动',
+    intentDetail: '文学化表达已声明的选择行动及其即时可见结果；无 authored transformation 时禁止要求成长',
     readerExperience: 'urgent',
     experienceShift: '焦虑 → 紧迫',
   },
@@ -348,8 +348,16 @@ function inferIntentVariant(structural, ctx = {}) {
 
   if (structural === 'choice') {
     if (/欺骗|误导|隐瞒|假装/u.test(choice)) return '误导读者';
-    if (characterTransformation?.changedDimensions?.includes('belief')) return '逼迫人物成长';
-    return '逼迫人物成长';
+    // S8.2-R5-C：仅在有 authored TX 时允许「描写已声明变化」；禁止默认「逼迫人物成长」
+    const hasAuthoredTx = characterTransformation
+      && !characterTransformation.missing
+      && (
+        (Array.isArray(characterTransformation.changedDimensions)
+          && characterTransformation.changedDimensions.length > 0)
+        || (characterTransformation.before && characterTransformation.after)
+      );
+    if (hasAuthoredTx) return '描写已声明的人物变化';
+    return '描写显式 Choice 的行动';
   }
   if (structural === 'obstacle') {
     if (/倒计时|秒|分钟/u.test(`${plan.cliffhanger}${plan.obstacle}`)) return '制造焦虑';

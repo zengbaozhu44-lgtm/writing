@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { atomicWriteJson } from './atomic.js';
 
 export function getHashDependencyRoot(bookDir) {
   return path.join(bookDir, 'novel', '_system', 'studio', 'hash-dependency');
@@ -28,7 +29,7 @@ export function saveCanonHashState(bookDir, hashes, meta = {}) {
     updatedAt: new Date().toISOString(),
     ...meta,
   };
-  fs.writeFileSync(getCanonStatePath(bookDir), JSON.stringify(payload, null, 2), 'utf8');
+  atomicWriteJson(getCanonStatePath(bookDir), payload);
   return payload;
 }
 

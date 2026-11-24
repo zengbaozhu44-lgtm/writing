@@ -1,0 +1,148 @@
+{
+  "version": "phase-0.5-readonly",
+  "semanticRulings": "DEFERRED — R2/R3/R4/Author Protocol not frozen",
+  "canonPhysicalGate": {
+    "path": "MemoryUnit.commit → applyStateDiffToCanon → applyPostChapter",
+    "files": [
+      "packages/inkos-runtime/src/memory/memory-unit.js",
+      "packages/inkos-brain/src/memory/state-updater.js",
+      "packages/inkos-core/src/workflows/post-chapter.js",
+      "packages/inkos-core/src/lib/yaml-store.js"
+    ],
+    "writes": [
+      { "target": "novel/11_timeline.yaml", "fn": "appendTimeline" },
+      { "target": "novel/13_facts_db.yaml", "fn": "appendFacts" },
+      { "target": "novel/08_current_state.md", "fn": "writeText" },
+      { "target": "novel/12_foreshadow_db.yaml", "fn": "patchHooks" },
+      { "target": "novel/09_current_chapter.md", "fn": "reset template + writeNextChapterTask" },
+      { "target": "chapters/*.md", "fn": "writeChapterMarkdown" },
+      { "target": "states/ch_XXXX.json", "fn": "writeAggregatedState" },
+      { "target": "states/ch_XXXX_anchor.yaml", "fn": "buildChapterAnchor" }
+    ]
+  },
+  "writers": [
+    {
+      "entry": "chapter-pipeline.runChapterPipeline",
+      "file": "packages/inkos-runtime/src/pipeline/chapter-pipeline.js",
+      "producer": "ORCHESTRATION",
+      "calls": ["MemoryUnit.commit", "writeNextChapterTask", "pending_commit"]
+    },
+    {
+      "entry": "chapter-audit.acceptChapter",
+      "file": "packages/inkos-studio-server/src/chapter-audit.js",
+      "producer": "AUTHOR-GATE",
+      "calls": ["MemoryUnit.commit", "planNextChapter", "writeNextChapterTask"]
+    },
+    {
+      "entry": "cli applyPostChapter",
+      "file": "packages/inkos-core/src/cli.js",
+      "producer": "MANUAL",
+      "calls": ["applyPostChapter"]
+    },
+    {
+      "entry": "routes writeModule",
+      "file": "packages/inkos-studio-server/src/routes.js",
+      "producer": "UI/HUMAN",
+      "calls": ["module-service.writeModule"]
+    },
+    {
+      "entry": "patchCurrentStateTime",
+      "file": "packages/inkos-brain/src/memory/state-updater.js",
+      "producer": "INFERENCE (day heuristic)",
+      "writes": ["08_current_state.md time row only"]
+    }
+  ],
+  "readers": [
+    {
+      "fn": "loadBrainContext",
+      "file": "packages/inkos-brain/src/loader.js",
+      "reads": ["09", "08", "11", "13", "12", "07", "relationship_graph", "resource_db"],
+      "feeds": ["planChapter", "projectStoryTruth", "causal", "Director"]
+    },
+    {
+      "fn": "loadPriorChapterAnchor",
+      "file": "packages/inkos-brain/src/planner/planner.js",
+      "reads": ["states/ch_XXXX_anchor.yaml"],
+      "feeds": ["planNextChapter"]
+    },
+    {
+      "fn": "planNextChapter",
+      "file": "packages/inkos-brain/src/planner/planner.js",
+      "reads": ["anchor", "09", "08", "13", "11", "chapter_plans/yaml", "adaptive_state"],
+      "feeds": ["writeNextChapterTask", "saveChapterPlan"]
+    },
+    {
+      "fn": "buildSceneSituation",
+      "file": "packages/inkos-director/src/situation-engine.js",
+      "reads": ["plan", "scene plan fields"],
+      "feeds": ["Writer prompt — NOT canon disk"]
+    },
+    {
+      "fn": "assembleWorldPressure",
+      "file": "packages/inkos-brain/src/causal/causal-reasoner.js",
+      "reads": ["09", "authored yaml"],
+      "feeds": ["mockReason", "causalChain"]
+    },
+    {
+      "fn": "getChapterText",
+      "file": "packages/inkos-studio-server/src/chapter-service.js",
+      "reads": ["chapters/*.md", "ch_*_scenes.json"],
+      "feeds": ["UI", "critic", "living-novel", "续写 — NOT canon facts"]
+    },
+    {
+      "fn": "deriveBodyStateFromFacts",
+      "file": "packages/inkos-studio-server/src/writer-optimization/beat-continuity.js",
+      "reads": ["13_facts_db (canon)"],
+      "feeds": ["continuity.json — writer only"]
+    }
+  ],
+  "proseStorage": [
+    { "path": "novel/_system/brain/ch_XXXX_scenes.json", "field": "scene.text", "writer": "LLM Writer / persistScenes" },
+    { "path": "chapters/NNNN_*.md", "field": "body", "writer": "assembleChapter / MemoryUnit.commit / saveChapterText" },
+    { "path": "novel/_system/pending_commit/ch_XXXX.json", "field": "chapterText + canonDelta", "writer": "deferCommit" },
+    { "path": "novel/_system/studio/writer-optimization/ch_XXXX/continuity.json", "field": "body/location", "writer": "beat-continuity — NOT canon" }
+  ],
+  "importsOfCanonStack": [
+    "packages/inkos-runtime/src/memory/memory-unit.js → state-updater",
+    "packages/inkos-runtime/src/pipeline/chapter-pipeline.js → MemoryUnit, writeNextChapterTask",
+    "packages/inkos-studio-server/src/chapter-audit.js → MemoryUnit, writeNextChapterTask",
+    "packages/inkos-studio-server/src/brain-context-sync.js → patchCurrentStateTime",
+    "packages/inkos-runtime/src/pipeline/orchestrator.js → ensureChapterCausalChain",
+    "packages/inkos-studio-server/src/studio-orchestrator.js → ensureChapterCausalChain",
+    "packages/inkos-core/src/cli.js → applyPostChapter"
+  ],
+  "fallbackChains": [
+    {
+      "id": "F01",
+      "path": "acceptChapter no pending → MemoryUnit.commit({ intent: { pov: '主角' }, scenes: [] })",
+      "risk": "degraded canon from minimal intent"
+    },
+    {
+      "id": "F02",
+      "path": "deriveClosingEmotion → intent.closingEmotion → readerSimulator.summary",
+      "risk": "plan/inference overrides prose tail"
+    },
+    {
+      "id": "F03",
+      "path": "inferWorldAfter → generic '世界认知须与开局不同'",
+      "risk": "inference fills unknown world after"
+    },
+    {
+      "id": "F04",
+      "path": "inferSceneOutcome default consequence",
+      "risk": "plan template → timeline"
+    },
+    {
+      "id": "F05",
+      "path": "planNextChapter fallback planChapter when no yaml",
+      "risk": "09 generated fields → next intent"
+    }
+  ],
+  "generated09": {
+    "writer": "writeNextChapterTask",
+    "provenance": "kind=generated source=writeNextChapterTask",
+    "trigger": ["acceptChapter", "chapter-pipeline after commit", "MemoryUnit.commit nextChapterPlan"],
+    "consumers": ["loadBrainContext.chapterTask", "assembleWorldPressure", "planChapter"],
+    "notAuthorDirection": true
+  }
+}

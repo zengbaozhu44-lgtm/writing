@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 /**
  * Chapter Pipeline 业务错误 — 前端可读，禁止把 TypeError 原文甩给用户
  */
@@ -57,6 +60,24 @@ export function wrapOrchestratorError(err, ctx = {}) {
     };
   }
   console.error('[Orchestrator] Unexpected error:', err);
+  // 「系统内部错误」必须可诊断：真实异常堆栈无条件落盘（不再依赖 INKOS_DEBUG）。
+  // 否则用户只在 UI 看到「系统内部错误」，服务端又不透出堆栈，问题无法排查。
+  if (ctx.bookDir) {
+    try {
+      const dir = path.join(ctx.bookDir, 'novel', '_system', 'runtime', 'runtime-debug');
+      fs.mkdirSync(dir, { recursive: true });
+      const file = path.join(dir, 'orchestrator-error.log');
+      const entry = JSON.stringify({
+        at: new Date().toISOString(),
+        chapter: ctx.chapter ?? null,
+        bookDir: ctx.bookDir,
+        name: err?.constructor?.name || 'Error',
+        message: err?.message || String(err),
+        stack: err?.stack || '',
+      });
+      fs.appendFileSync(file, `${entry}\n`, 'utf8');
+    } catch { /* 落盘失败不影响主流程 */ }
+  }
   return {
     pass: false,
     status: 'error',

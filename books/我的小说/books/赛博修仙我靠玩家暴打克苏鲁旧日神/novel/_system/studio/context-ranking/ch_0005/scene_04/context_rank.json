@@ -1,0 +1,242 @@
+{
+  "version": "context-rank-1",
+  "chapter": 5,
+  "scene": {
+    "id": "ch5_s4",
+    "index": 4,
+    "goal": "章末钩子（承接转折后果）：位面碎片显示，玩家世界正被高维诡秘渗透，现实中出现诡异游戏BUG——林砚意识到，这场战争远未结束，玩家世界已成为新战场。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2400,
+    "topK": null,
+    "usedChars": 518,
+    "selectedCount": 4,
+    "trimmedCount": 18,
+    "totalCandidates": 22
+  },
+  "topK": [
+    {
+      "id": "facts:10",
+      "source": "facts",
+      "text": "第4章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 1 章，须完成前置（3740字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 38,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 26,
+        "budgetChars": 323,
+        "finalScore": 56.05
+      }
+    },
+    {
+      "id": "facts:7",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4020字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 38,
+        "importance": 75,
+        "freshness": 76,
+        "narrativePriority": 26,
+        "budgetChars": 323,
+        "finalScore": 53.65
+      }
+    },
+    {
+      "id": "facts:8",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4161字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 38,
+        "importance": 75,
+        "freshness": 76,
+        "narrativePriority": 26,
+        "budgetChars": 323,
+        "finalScore": 53.65
+      }
+    },
+    {
+      "id": "timeline:10",
+      "source": "timeline",
+      "text": "Day 4：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 1 章；推进阻碍（行动线第2步）：一名主播玩家偶然发现畸变兽的污染核心可被‘游戏化认知’反向解析；转折（本 Scene 兑现完整行动线）：玩家军团在死亡与复活中疯狂刷级，一名主播玩家偶然发现畸变兽的污染核心可被‘游戏化认知’反向解析，林砚借此解锁【召唤阵强化·数据污染转化】，将玩家死亡数据转化为群体增益BUFF，一举撕开第一层防线。；章末钩子（承接转折后果）：攻破第一层时，林砚的系统面板突然弹出红色警告——‘检测到高维诡秘信号，玩家世界坐标已暴露’，而塔顶传来一声不属于任何已知生物的低语：‘管理员，你终于来了。’",
+      "charCount": 365,
+      "scores": {
+        "relevance": 61,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 62,
+        "budgetChars": 38,
+        "finalScore": 60.65
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:9",
+      "source": "facts",
+      "finalScore": 53.65,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:5",
+      "source": "facts",
+      "finalScore": 48.8,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:6",
+      "source": "facts",
+      "finalScore": 48.8,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 45.85,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "finalScore": 45.85,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "finalScore": 45.85,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "finalScore": 45.85,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:4",
+      "source": "facts",
+      "finalScore": 45.85,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "timeline:9",
+      "source": "timeline",
+      "finalScore": 56.85,
+      "trimReason": "Budget 不足",
+      "charCount": 322
+    },
+    {
+      "id": "timeline:7",
+      "source": "timeline",
+      "finalScore": 46.35,
+      "trimReason": "Budget 不足",
+      "charCount": 164
+    },
+    {
+      "id": "timeline:8",
+      "source": "timeline",
+      "finalScore": 46.35,
+      "trimReason": "Budget 不足",
+      "charCount": 164
+    },
+    {
+      "id": "timeline:5",
+      "source": "timeline",
+      "finalScore": 35.7,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:6",
+      "source": "timeline",
+      "finalScore": 35.7,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "finalScore": 33.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "finalScore": 33.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "finalScore": 33.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:3",
+      "source": "timeline",
+      "finalScore": 33.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "finalScore": 33.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 3,
+      "totalCandidates": 11,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 11,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "本章必须发生：第一次不可逆代价（死亡/暴露/失去）；情感冲击落在「恐惧」",
+    "pov": "林砚"
+  },
+  "generatedAt": "2026-08-04T07:50:58.793Z"
+}

@@ -1,0 +1,251 @@
+# ============================================================================
+# 支线卡片 · Plot Threads
+# ----------------------------------------------------------------------------
+# 定位：每条支线的读者留存卡片。story-map/loadPlotThreads 读取 `plot_threads`，
+#   机器读取部分 = 每条 thread 的 id / name / type / status / chapters[{ch,event,status}]，
+#   按 `chapters[].ch` 匹配当前章生成 activeThreads 提示。
+#   作者面部分（新增强化，机器忽略，不影响读取）= retention_question / gap_focus /
+#   beats / trigger_next / intersects_with。缺口 id 与 story-map/cognitive-gaps.yaml 对齐。
+#   IRP v0.1 对齐（见 docs/inkos-intent-rendering-protocol-v0.1.md）：`trigger_next`
+#   即协议支线调度器的触发链；`beats[].opens_gap / closes_gap` 即协议
+#   `beats[].cognitive_gaps`（opens=打开/推进，closes=闭合）——已存在，不重复加字段。
+# 类型约定：type=hidden 或 status=hidden → story-map 视为「未来暗线」，
+#   会在 upcomingHiddenReveals 里提前提示（林薇线用 hidden）。
+# ============================================================================
+
+plot_threads:
+  # --------------------------------------------------------------------------
+  # 主线：林守常的告别周（卷 1 · 枯叶与橘子）
+  # 读者留存模型原表保留在 retention_model 字段（同时由 story_dna.main_question
+  # 注入每章 09 任务卡，注入不丢失）。
+  # --------------------------------------------------------------------------
+  - id: main_core
+    name: 林守常的告别周（主线）
+    type: main
+    status: active
+    retention_model: |-
+      读者追更下去是为了什么 —— AI导演「用户留存模型」：
+      「今天谁来？」：7个访客像7个盲盒 → 每人入场必须有「反常细节」（如小李包里的书、陈姐的戒痕）
+      「那片叶子/那个橘子到底什么意思？」：第一天埋下的物品第三天/第七天变形回应 → 前文细节必须后文「回收」
+      「他会哭吗？」：真正的追更动力是「他到底能忍到什么时候」→ 不哭、不放、把钥匙塞回门槛
+      「我的城市有没有这样的店？」：日常奇观 → 每章一个「金动作」而非「金句」
+      「目录（猫）还活着吗？」：17岁老猫是倒计时的生物隐喻
+    retention_question: 「今天谁来？」「叶子/橘子什么意思？」「他会哭吗？」「目录还活着吗？」
+    gap_focus:
+      - gap_001
+      - gap_002
+      - gap_008
+    chapters:
+      - ch: 1
+        event: 枯叶入门：梧桐叶现于门槛（巷里没有梧桐），夹入《植物名实图考》；老周还《陶庵梦忆》留橘，点破浮生六记谎言；关门后门缝塞入「等你」纸片
+        status: setup
+      - ch: 2
+        event: 谎言的折痕：小满卖《哈利·波特》撒谎（扉页2015铅笔字），收书并多塞《挪威的森林》；她绊倒没回头；地砖被蹭歪
+        status: development
+      - ch: 3
+        event: 橘子的影子：阿婆留手帕裹的橘子，回赠缺页《繁星·春水》；手帕绣「周」字；烤橘一瓣瓣摆窗台，橘影投墙像弓背的猫
+        status: complication
+      - ch: 4
+        event: 旧页同盟的黄昏：三名老读者聚会议「千人重读」；巷口拆迁公告下粉笔字「书店不死」被擦；橘子放公告前
+        status: inciting
+      - ch: 5
+        event: 空屋来客：夜行者头目潜入被「目录」惊动；《几何原本》扉页批注「证明完毕，人生无解」；留干瘪橘子，被埋进花盆
+        status: development
+      - ch: 6
+        event: 茶与合同：周岚首次进店谈收购；林守常点破他偷过《局外人》1987（封底折痕）；合同上桌，茶续满
+        status: complication
+      - ch: 7
+        event: 苔丝的回声：阿婆打翻书架滑落「周岚·1987」借阅卡；周岚正面交锋；祖父手抄本只说了半句
+        status: climax
+      - ch: 8
+        event: 手抄本的重量：林守常打开祖父手抄本（「第七天，你会明白，告别不是结束」）；枯叶被煤炉烘烤，边缘卷曲像合拢的翅膀
+        status: reveal
+      - ch: 9
+        event: 千人重读：旧页同盟与单向街读者会集结；祖父手写「今日营业」木牌重现；三只橘子放门槛/藤椅/柜台
+        status: climax
+      - ch: 10
+        event: 钥匙与灰烬：周岚带合同来；枯叶置于合同上；林守常抱「目录」、把钥匙放门槛内侧后离店；借阅卡背面字迹「有些书不是用来读的，是用来等你回来认领的」
+        status: resolution
+    beats:
+      - beat: 进入局面（ch1-3）
+        note: 以物代叙述立契约——叶/橘/木牌/猫四意象入场，三访客（老周/小满/阿婆）各留一橘或橘形动作。
+        opens_gap: [gap_001, gap_002]
+        closes_gap: []
+      - beat: 暗流涌动（ch4-6）
+        note: 势力介入——旧页同盟、夜行者、周岚依次出手；林守常始终「静」，每个动作指向倒计时。
+        opens_gap: [gap_006]
+        closes_gap: []
+      - beat: 冲突爆发（ch7-8）
+        note: 借阅卡/手抄本两处重击；林守常首次提及祖父手抄本却只说半句。
+        opens_gap: []
+        closes_gap: [gap_003]
+      - beat: 收束与变调（ch9-10）
+        note: 逐一为访客寻书；枯叶作钥匙留在合同上；书店空，余橘与木牌。
+        opens_gap: []
+        closes_gap: [gap_001, gap_002, gap_007, gap_008]
+    trigger_next: 老周离店（ch1末）→ 小满入场（ch2）；拆迁公告（ch4）→ 旧页同盟与夜行者（ch4-5）；周岚合同（ch6）→ 借阅卡揭示（ch7）
+    intersects_with: [sub_laozhou, sub_linwei, sub_afpo, sub_bond, main_world]
+
+  # --------------------------------------------------------------------------
+  # 支线：老周的告别与谎言
+  # --------------------------------------------------------------------------
+  - id: sub_laozhou
+    name: 老周的告别与谎言
+    type: main_emotional
+    status: active
+    retention_question: 老周为什么撒谎？「这书我儿子也读过」——他的儿子呢？
+    gap_focus:
+      - gap_003
+      - gap_004
+    chapters:
+      - ch: 1
+        event: 还《陶庵梦忆》留橘；点破浮生六记谎言；书脊照片；「下周日店拆了回老家，这些书你留着别修了」
+        status: setup
+      - ch: 10
+        event: 林守常把修好的《陶庵梦忆》给老周——归还之谢的橘子
+        status: resolution
+    beats:
+      - beat: 谎言与照片（ch1）
+        note: 两重反常：没借过的《浮生六记》+ 书脊里林薇递书的照片。谎言动机与照片内容都未解。
+        opens_gap: [gap_003, gap_004]
+      - beat: 离城（ch10）
+        note: 老周拿到修好的书，女儿接他离开。谎言是否点破，由作者定。
+        closes_gap: [gap_003]
+    trigger_next: 老周离店 → 小满入场（第2章）
+    intersects_with: [main_core, sub_linwei]
+
+  # --------------------------------------------------------------------------
+  # 暗线：林薇（幽灵 · 书店前史）
+  # type=hidden → story-map 会在后续章提前提示 upcomingHiddenReveals
+  # --------------------------------------------------------------------------
+  - id: sub_linwei
+    name: 林薇暗线（书店前史）
+    type: hidden
+    status: hidden
+    retention_question: 林薇是谁、她怎么离开的——为什么书店里处处是她的痕迹？
+    gap_focus:
+      - gap_005
+    chapters:
+      - ch: 1
+        event: 三年前林薇把《陶庵梦忆》递给老周；吃橘子络过敏；去年除夕包饺子（叶心米粒）
+        status: setup
+      - ch: 8
+        event: 手抄本/枯叶烘烤——林守常与林薇的共同记忆被重新触碰
+        status: reveal
+      - ch: 10
+        event: 借阅卡背面字迹「有些书不是用来读的，是用来等你回来认领的」——林薇式的留白
+        status: reveal
+    beats:
+      - beat: 痕迹（ch1）
+        note: 只留物证（书/橘子络/米粒），不给答案。
+        opens_gap: [gap_005]
+      - beat: 触碰（ch8）
+        note: 枯叶烘烤暗示记忆回温，仍不解开。
+        opens_gap: []
+        closes_gap: []
+      - beat: 留白（ch10）
+        note: 借阅卡字迹作卷末悬念，真相留给卷2。
+        closes_gap: []
+    trigger_next: 林薇线由物证（照片/借阅卡/手抄本）接力推进，无需人物入场
+    intersects_with: [main_core, sub_laozhou, sub_afpo, sub_bond]
+
+  # --------------------------------------------------------------------------
+  # 支线：阿婆的等待（ch3 入场）
+  # --------------------------------------------------------------------------
+  - id: sub_afpo
+    name: 阿婆的等待
+    type: main_emotional
+    status: dormant
+    retention_question: 阿婆每天来晒太阳，她到底在等什么？
+    gap_focus: []
+    chapters:
+      - ch: 3
+        event: 手帕裹橘留下；回赠缺页《繁星·春水》；手帕绣「周」字（老周妻子遗物，不点破）
+        status: setup
+      - ch: 7
+        event: 翻找《苔丝》失手打翻书架，借阅卡滑落露出「周岚·1987」；她抱《苔丝》像抱一个人
+        status: reveal
+      - ch: 10
+        event: 林守常给她的书是《苔丝》——扉页她初恋的字迹已褪成一道痕；藤椅上的橘子
+        status: resolution
+    beats:
+      - beat: 手帕周字（ch3）
+        note: 与老周妻子挂钩，阿婆与老周家存在隐线，不点破。
+        opens_gap: [gap_005]
+      - beat: 苔丝（ch7）
+        note: 借阅卡揭示阿婆与周岚年轻时的交集（初恋/故人），此时才浮出。
+        opens_gap: []
+      - beat: 归还（ch10）
+        note: 《苔丝》作为「找到的书」归还，等待有了落点。
+        closes_gap: []
+    trigger_next: 阿婆 ch3 入场接小满之后；ch7 打翻书架是周岚线引爆点
+    intersects_with: [main_core, sub_bond, sub_linwei]
+
+  # --------------------------------------------------------------------------
+  # 支线：周岚与收购（ch6 首现）
+  # --------------------------------------------------------------------------
+  - id: sub_bond
+    name: 周岚与收购（当年的偷书少年）
+    type: main_emotional
+    status: dormant
+    retention_question: 周岚记得「偷过一本书但忘了书名」——他真的忘了吗？
+    gap_focus:
+      - gap_006
+    chapters:
+      - ch: 6
+        event: 周岚首次进店谈收购；自称年轻时偷过一本书「但我忘了书名」；林守常点破《局外人》1987（封底折痕）
+        status: setup
+      - ch: 7
+        event: 阿婆打翻书架露出「周岚·1987」借阅卡；周岚与林守常正面交锋；手抄本只说了半句
+        status: complication
+      - ch: 10
+        event: 周岚带合同踏入；枯叶置于合同上他僵住；拿到借阅卡，背面字迹「等你回来认领」；猫叫声从书架深处传来
+        status: reveal
+    beats:
+      - beat: 试探（ch6）
+        note: 茶与合同——收购是表象，当年的偷书记忆是里子。
+        opens_gap: [gap_006]
+      - beat: 交锋（ch7）
+        note: 借阅卡让「周岚·1987」坐实，收购线与故人线合流。
+        opens_gap: []
+      - beat: 认领（ch10）
+        note: 借阅卡背面字迹是给周岚的答案，也是卷末悬念。
+        closes_gap: []
+    trigger_next: 合同（ch6）→ 借阅卡（ch7）→ 枯叶留合同（ch10）；收购线在 ch10 由「认领」化解
+    intersects_with: [main_core, sub_afpo, sub_linwei]
+
+  # --------------------------------------------------------------------------
+  # 世界线：旧页同盟 · 夜行者 · 拆迁（卷 2 的核心钥匙，卷 1 只露冰山）
+  # --------------------------------------------------------------------------
+  - id: main_world
+    name: 旧页同盟 · 夜行者 · 拆迁（世界线）
+    type: main_world
+    status: dormant
+    retention_question: 一个 AI 控制率 93% 的城市，为什么盯着一间二手书店？
+    gap_focus:
+      - gap_006
+    chapters:
+      - ch: 4
+        event: 旧页同盟三名老读者聚会议「千人重读」；巷口拆迁公告；粉笔字「书店不死」被擦
+        status: setup
+      - ch: 5
+        event: 夜行者头目潜入，被「目录」惊动；留下拆迁空屋里捡来的干瘪橘子
+        status: inciting
+      - ch: 9
+        event: 旧页同盟「千人重读」与单向街读者会集结；林守常挂祖父手写「今日营业」木牌，人群安静
+        status: climax
+      - ch: 10
+        event: 拆迁队机械声从巷口传来；卷末报纸「大静默三百年纪念：城市立誓保存每一页纸」，日期是明天
+        status: reveal
+    beats:
+      - beat: 势力浮出（ch4-5）
+        note: 同盟/夜行者/拆迁三角各亮一手，都不给底牌。
+        opens_gap: [gap_006]
+      - beat: 集结（ch9）
+        note: 木牌重现是最高光，但世界真相仍只露一角。
+        opens_gap: []
+      - beat: 卷末钩（ch10）
+        note: 报纸日期是「明天」——时间诡计，卷2开篇即接续。
+        closes_gap: []
+    trigger_next: 拆迁公告（ch4）激活夜行者（ch5）与同盟（ch4/ch9）；卷末报纸把世界线移交卷2
+    intersects_with: [main_core, sub_bond]

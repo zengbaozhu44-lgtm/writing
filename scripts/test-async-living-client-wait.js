@@ -91,7 +91,7 @@ const server = http.createServer((req, res) => {
   res.end('no');
 });
 
-await new Promise((r) => server.listen(0, '127.0.0.1', r));
+await new Promise((r) => server.listen(0, '0.0.0.0', r));
 const { port } = server.address();
 const base = `http://127.0.0.1:${port}`;
 

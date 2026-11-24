@@ -197,6 +197,12 @@ export function createExecutionGuard(bookDir) {
 
   function abortTask(reason, meta = {}) {
     const nextReason = reason || 'Pipeline 失败';
+    // 旧任务在中止后被新任务取代：旧任务的失败不得覆盖「已被取代」的状态，
+    // 否则用户看到的错误是旧任务的过期报错（「系统内部错误」的根源之一）。
+    if (meta.taskId && meta.taskId !== currentTaskId) {
+      appendDebugLog('stale_task_abort_blocked', { taskId: meta.taskId, currentTaskId, reason: nextReason });
+      return;
+    }
     if (taskAborted && abortReason) {
       // 已有具体原因时，禁止用「Pipeline 失败」等泛化文案覆盖
       if (!isGenericAbortReason(abortReason) && isGenericAbortReason(nextReason)) return;
@@ -241,6 +247,31 @@ export function createExecutionGuard(bookDir) {
       });
     }
     appendDebugLog('chapter_reset_for_rerun', { chapter, reason });
+  }
+
+  /**
+   * 章节重规划专用窄复位：只清除单调序号 + 章节场景锁，供 scenes 1..N 合法重建。
+   * 与 resetChapterForRerun 的关键区别：不 abortTask —— 重规划重入时当前任务仍存活，
+   * abort 会把 taskAborted 置真，导致重入后的 acquireSceneLock 全部抛「Pipeline 已中止」。
+   * 只绕过单调序号检查，绝不绕过 state validation / author constraints / consistency /
+   * hard-fail budget / duplicate protection（这些由重入后的完整 pipeline 重新执行）。
+   */
+  function resetSceneProgressForReplan(chapter, reason = 'replan') {
+    if (chapter == null) return false;
+    sceneProgress.delete(`progress:${chapter}`);
+    clearChapterSceneLocks(chapter);
+    if (exists(paths.locks)) {
+      for (const f of fs.readdirSync(paths.locks)) {
+        if (!f.startsWith(`ch_${padChapter(chapter)}_`)) continue;
+        try { fs.unlinkSync(path.join(paths.locks, f)); } catch { /* */ }
+      }
+    }
+    const state = readState();
+    if (state.chapter === chapter) {
+      writeState({ chapter, currentScene: null, phase: 'planning', status: 'ready', taskId: currentTaskId || null });
+    }
+    appendDebugLog('scene_progress_reset_for_replan', { chapter, reason });
+    return true;
   }
 
   /** 延长章节运行锁，避免长章节被当成 stale 后并行重跑 */
@@ -487,7 +518,13 @@ export function createExecutionGuard(bookDir) {
     return true;
   }
 
-  function completeTask(chapter, result = {}) {
+  function completeTask(chapter, result = {}, taskId) {
+    // 旧任务完成时已被新任务取代：不得清空新任务的 taskId / 锁 / 状态。
+    const owner = taskId ?? result.taskId ?? null;
+    if (owner && currentTaskId && owner !== currentTaskId) {
+      appendDebugLog('stale_task_complete_blocked', { taskId: owner, currentTaskId, chapter });
+      return;
+    }
     writeState({
       chapter,
       phase: result.pass === false ? 'failed' : 'completed',
@@ -538,6 +575,7 @@ export function createExecutionGuard(bookDir) {
     isTaskAborted,
     isStaleTask,
     resetChapterForRerun,
+    resetSceneProgressForReplan,
     touchChapterRun,
     getAbortReason,
     getTaskId,

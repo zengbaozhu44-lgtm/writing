@@ -1,0 +1,706 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 3,
+  "sceneType": "climax",
+  "beatMemory": {
+    "newFacts": [
+      "林砚看着弹幕像雪崩一样刷过，全是同样的字眼——触手、直播、那是什么"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "relief"
+    ],
+    "unresolvedIssues": [
+      "林砚看着弹幕像雪崩一样刷过，全是同样的字眼——触手、直播、那是什么",
+      "”他对设备那头的导播说，声音压得极低，像怕吵醒什么，“让它播",
+      "\"后面那是什么",
+      "12万。\n\n他后槽牙咬得发酸。齐玥的声音从通讯里传来，抖得厉害：“林砚……热搜前十全是‘铁颅触手’。”\n\n“我知道。”他掐断通话，手指悬在键盘上方。铁颅军团在画"
+    ],
+    "changedDimensions": [
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "他盯着那个叫「老苟」的主播——蹲在铁颅军团一台报废机甲残骸后面，枪管搭在膝盖上，正对着镜头挤眉弄眼"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已做出不可逆选择，后果即将落地"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "林砚的余光扫过直播间角落——那截触手正从摄像头死角缩回去，像浸了墨的蛇，指节粗的吸盘上还挂着一块铁颅军团装甲的碎屑"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "铁颅军团的装甲车炸开时，直播间的弹幕疯了——不是因为爆炸"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 3
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：转折：一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的 — 局势尚未被本 Scene 改写",
+      "action": "转折：一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄然探出，瞬间被全球数百万观众目睹，引发玩家世界舆论海啸。",
+      "choice": "为了完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "他盯着那个叫「老苟」的主播——蹲在铁颅军团一台报废机甲残骸后面，枪管搭在膝盖上，正对着镜头挤眉弄眼",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:39.753Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "林砚当前目标：转折：一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "必须失去：虽然成功击退了铁颅军团的第一波攻势，但林砚为维持玩家频道稳定和压制邪神对玩家数据的初步渗透，消耗了部分管理员权限能量，导致‘数据重塑’技能的解锁进度延缓。 — 且局面本身不会让步",
+      "choice": "为了完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "relief"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:47.801Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 163 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.013157894736842105
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "POV 已做出不可逆选择，后果即将落地",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "林砚看着弹幕像雪崩一样刷过，全是同样的字眼——触手、直播、那是什么"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "林砚看着弹幕像雪崩一样刷过，全是同样的字眼——触手、直播、那是什么",
+        "”他对设备那头的导播说，声音压得极低，像怕吵醒什么，“让它播"
+      ],
+      "extractedAt": "2026-08-11T06:53:50.857Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.01762114537444934
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "林砚的余光扫过直播间角落——那截触手正从摄像头死角缩回去，像浸了墨的蛇，指节粗的吸盘上还挂着一块铁颅军团装甲的碎屑",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "\"后面那是什么"
+      ],
+      "extractedAt": "2026-08-11T06:54:00.136Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": false,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.025806451612903226
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "铁颅军团的装甲车炸开时，直播间的弹幕疯了——不是因为爆炸",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:54:08.864Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.012345679012345678
+        },
+        "microPassed": [
+          "新信息",
+          "危险",
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "12万。\n\n他后槽牙咬得发酸。齐玥的声音从通讯里传来，抖得厉害：“林砚……热搜前十全是‘铁颅触手’。”\n\n“我知道。”他掐断通话，手指悬在键盘上方。铁颅军团在画"
+      ],
+      "extractedAt": "2026-08-11T06:54:17.774Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 167 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.06707317073170732
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 52,
+        "dominant": "relief"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 52
+    },
+    "emotionalVariance": 52,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-11T06:54:17.790Z",
+    "sceneIndex": 3
+  },
+  "readerSimulation": {
+    "curiosity": 70,
+    "questionCount": 5,
+    "dropRisk": 10,
+    "continueProbability": 80,
+    "sceneIndex": 3,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-11T06:54:17.792Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 60,
+    "obstacleStrength": 41,
+    "choiceLevel": 43,
+    "consequenceLevel": 39,
+    "escalationLevel": 43,
+    "informationValue": 43,
+    "hookImpact": 54,
+    "stateChangeRate": 50,
+    "hookBreakdown": {
+      "hookLevel": 54,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "转折：一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄然探出，瞬间被全球数百万观众目睹，引发玩家世界舆论海啸。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 75,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 47,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-11T06:54:17.793Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "转折：一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄然探出，瞬间被全球数百万观众目睹，引发玩家世界舆论海啸。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 54,
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "转折：一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘的触手悄然探出，瞬间被全球数百万观众目睹，引发玩家世界舆论海啸。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 50,
+    "emotionalImpact": 38,
+    "characterCost": 75
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 13,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-11T06:54:17.793Z"
+}

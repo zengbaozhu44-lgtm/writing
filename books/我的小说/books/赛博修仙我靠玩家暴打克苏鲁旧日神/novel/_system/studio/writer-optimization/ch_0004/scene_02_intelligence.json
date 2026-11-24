@@ -1,0 +1,733 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "beatMemory": {
+    "newFacts": [
+      "沈寒舟的拇指悬在确认键上方，指腹压出一道白印",
+      "”他说，声音发颤，手指砸下确认",
+      "界面炸开成一片猩红，他的视线跟着发烫——那不是系统提示，是血液涌上眼球的温度",
+      "沈寒舟的指尖在确认键上悬停了三秒",
+      "齐玥的手指悬在确认键上方，没动",
+      "屏幕角上那条校验码——不是他输的那串",
+      "他输入的是“林薇”，回显的是“渊尊”"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "后——\"\n\n\"你疯——\"苏清鸢的声音卡在通讯器里，被他截断。\n\n\"锁死。\"他已经往通道口走，防护服拉链扯到一半，卷进指缝里勒出一条血痕，\"林薇还在里面。十四分钟"
+    ],
+    "changedDimensions": [
+      "information",
+      "worldCognition",
+      "resource",
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "直播间里的主播还在喊——“核心能改认知"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": true,
+        "afterState": "屏幕上那行代价条款像根生锈的钉子，钉进他眼眶里——林薇的名字嵌在第二栏，标注着\"锚点剥离\""
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他把掌心按在刀刃上，血顺着腕骨淌进袖口，烫得像林薇小时候握着他手指的温度"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "他掰断卡死的锁舌，机械臂的残响在耳膜里炸开"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "屏幕角上那条校验码——不是他输的那串"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "界面上的倒计时在跳——还剩九分钟"
+      }
+    ],
+    "lastAfterState": "界面上的倒计时在跳——还剩九分钟",
+    "stateChangeCount": 6
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "沈寒舟当前目标：推进阻碍（行动线第2步）：一名主播玩家偶然发现畸变兽的污染核心可被‘游戏化认知’ — 局势尚未被本 Scene 改写",
+      "action": "推进阻碍（行动线第2步）：一名主播玩家偶然发现畸变兽的污染核心可被‘游戏化认知’反向解析",
+      "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "直播间里的主播还在喊——“核心能改认知",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "沈寒舟的拇指悬在确认键上方，指腹压出一道白印",
+        "”他说，声音发颤，手指砸下确认",
+        "界面炸开成一片猩红，他的视线跟着发烫——那不是系统提示，是血液涌上眼球的温度"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-04T07:36:55.629Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "沈寒舟当前目标：推进阻碍（行动线第2步）：一名主播玩家偶然发现畸变兽的污染核心可",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "新信息",
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "信息不完整 — 且局面本身不会让步",
+      "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "屏幕上那行代价条款像根生锈的钉子，钉进他眼眶里——林薇的名字嵌在第二栏，标注着\"锚点剥离\"",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "沈寒舟的指尖在确认键上悬停了三秒"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-04T07:37:05.120Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": false,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.03164556962025317
+        },
+        "microPassed": [
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "他把掌心按在刀刃上，血顺着腕骨淌进袖口，烫得像林薇小时候握着他手指的温度",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "齐玥的手指悬在确认键上方，没动"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-04T07:37:08.171Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0625
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「完成前置」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「完成前置」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "他掰断卡死的锁舌，机械臂的残响在耳膜里炸开",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-04T07:37:17.393Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动",
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.020833333333333332
+        },
+        "microPassed": [
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "屏幕角上那条校验码——不是他输的那串",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "屏幕角上那条校验码——不是他输的那串",
+        "他输入的是“林薇”，回显的是“渊尊”"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-04T07:37:27.457Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 4 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 4 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "新信息",
+          "关系",
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「完成前置」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "界面上的倒计时在跳——还剩九分钟",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "后——\"\n\n\"你疯——\"苏清鸢的声音卡在通讯器里，被他截断。\n\n\"锁死。\"他已经往通道口走，防护服拉链扯到一半，卷进指缝里勒出一条血痕，\"林薇还在里面。十四分钟"
+      ],
+      "extractedAt": "2026-08-04T07:37:36.893Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 5 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 5 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.00641025641025641
+        },
+        "microPassed": [
+          "关系",
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 56,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 56,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 56,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-04T07:37:36.918Z",
+    "sceneIndex": 2
+  },
+  "readerSimulation": {
+    "curiosity": 56,
+    "questionCount": 3,
+    "dropRisk": 30,
+    "continueProbability": 61,
+    "sceneIndex": 2,
+    "pov": "沈寒舟",
+    "simulatedAt": "2026-08-04T07:37:36.920Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 46,
+    "obstacleStrength": 41,
+    "choiceLevel": 56,
+    "consequenceLevel": 38,
+    "escalationLevel": 56,
+    "informationValue": 40,
+    "hookImpact": 83,
+    "stateChangeRate": 100,
+    "hookBreakdown": {
+      "hookLevel": 83,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "推进阻碍（行动线第2步）：一名主播玩家偶然发现畸变兽的污染核心可被‘游戏化认知’反向解析",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 95,
+      "emotionalImpact": 53,
+      "characterCost": 100,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 51,
+    "weakest": "consequenceLevel",
+    "pass": true,
+    "blocking": false,
+    "analyzedAt": "2026-08-04T07:37:36.921Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "推进阻碍（行动线第2步）：一名主播玩家偶然发现畸变兽的污染核心可被‘游戏化认知’反向解析",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 83,
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "推进阻碍（行动线第2步）：一名主播玩家偶然发现畸变兽的污染核心可被‘游戏化认知’反向解析",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 70,
+    "forcesAction": true,
+    "cognitiveUpgrade": 95,
+    "emotionalImpact": 53,
+    "characterCost": 100
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 9,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-04T07:37:36.922Z"
+}

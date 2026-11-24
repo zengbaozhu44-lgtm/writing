@@ -54,26 +54,24 @@ import {
 
 export function buildScenePlan(scene = {}, intent = {}, chapterDir = null) {
   const chapterGap = chapterDir?.chapterInformationGap || null;
+  // P3.2 C3：sceneSeed/lore 是 planner 别名，从未被 authored 数据携带——回退链只剩 authorIntent
   const authorIntent = scene.authorIntent
-    || scene.sceneSeed
-    || scene.lore
     || intent.sceneSeeds?.[(scene.index ?? 1) - 1]?.seed
     || null;
+  // 2026-08-18（Beat Plan 退化硬化）：缺字段就保持空串，不再注入模板占位。
+  // 空串/元指令由 buildSceneBeatPlan 记入 missing，缺口显式暴露（宁可 Planner fail，不拿模板填）。
   const raw = {
-    goal: scene.goal || authorIntent || intent.mainGoal || '推进章目标',
-    obstacle: scene.obstacle || scene.conflict || intent.obstacles?.[0] || '外部阻力或内心犹豫',
-    escalation: scene.escalation || scene.beat || '冲突升级 — 代价逼近或选择收窄',
-    choice: scene.choice || 'POV 必须在有限选项中做出选择，每个选项都有代价',
-    consequence: scene.consequence || scene.cost || '选择产生可见代价，局面因此改变',
-    cost: scene.cost || scene.consequence || '选择产生可见代价，局面因此改变',
+    goal: scene.goal || authorIntent || intent.mainGoal || '',
+    obstacle: scene.obstacle || scene.conflict || intent.obstacles?.[0] || '',
+    escalation: scene.escalation || scene.beat || '',
+    choice: scene.choice || '',
+    consequence: scene.consequence || scene.cost || '',
+    cost: scene.cost || scene.consequence || '',
     reward: scene.reward || scene.payoff || null,
     newInformation: scene.newInformation || scene.reveal
       || (intent.scenes?.find((s) => s.index === scene.index)?.newInformation)
-      || '本 Scene 须释放至少一条新信息（事实/关系/规则）',
-    cliffhanger: scene.cliffhanger || scene.hook
-      || (scene.index === (intent.scenes?.length || intent.sceneCount)
-        ? '章尾强 Hook — 未完成动作或致命追问'
-        : 'Scene 尾留悬念 — 禁止平收总结'),
+      || '',
+    cliffhanger: scene.cliffhanger || scene.hook || '',
     // Narrative 规划种子（ExecutionPlan 深化；不含 Promise Registry）
     targetEmotion: scene.targetEmotion || null,
     informationGap: scene.informationGap || chapterGap || null,
@@ -81,10 +79,8 @@ export function buildScenePlan(scene = {}, intent = {}, chapterDir = null) {
       || chapterDir?.chapterPromisePlan?.promisePointer
       || chapterDir?.promisePointer
       || null,
-    // 卷纲散文意图 → Scene lore / authorIntent
-    lore: authorIntent || scene.lore || null,
+    // P3.2 C3：卷纲散文意图 → authorIntent（唯一作者意图载体）
     authorIntent: authorIntent || null,
-    sceneSeed: scene.sceneSeed || authorIntent || null,
   };
   return migrateScenePlan(raw);
 }
@@ -96,6 +92,13 @@ function attachSceneEngines(plan, scene, intent, chapterDir) {
   const storyDna = intent._storyDna || intent.storyDna || {};
   const prevScene = (intent.scenes || []).find((s) => s.index === sceneIndex - 1);
   const hookLadder = chapterDir?.hookLadder || intent.hookLadder || null;
+  // P3.6-1 候选①：统一输入——attachSceneEngines 传入 chapterClimax（与 buildSceneExecutionPlan 同源，
+  // scene-execution.js:628-629）。使 ④ 产出 chapter-aware climaxRole/conflict，reuse 守卫传播到
+  // ②/①/SD brief/prompt，兑现 conflict-engine:110-113 的章级注入设计意图。
+  // 不动 chapterRhythm（bundle 死入参，0 消费，另立 FOLLOW-UP）。
+  const chapterClimax = chapterDir?.chapterClimax
+    || intent._chapterDirector?.chapterClimax
+    || null;
 
   const engines = buildSceneEngineBundle({
     scene,
@@ -107,6 +110,7 @@ function attachSceneEngines(plan, scene, intent, chapterDir) {
     storyDna,
     hookLadder,
     prevScene,
+    chapterClimax,
   });
 
   return {

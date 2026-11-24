@@ -1,0 +1,214 @@
+{
+  "version": "context-rank-1",
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s2",
+    "index": 2,
+    "goal": "推进阻碍（行动线第2步）：解析出执法者护盾的频率漏洞"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2132,
+    "topK": null,
+    "usedChars": 348,
+    "selectedCount": 4,
+    "trimmedCount": 14,
+    "totalCandidates": 18
+  },
+  "topK": [
+    {
+      "id": "facts:7",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4020字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 51,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 26,
+        "budgetChars": 120,
+        "finalScore": 64.3
+      }
+    },
+    {
+      "id": "facts:8",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4161字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 51,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 26,
+        "budgetChars": 120,
+        "finalScore": 64.3
+      }
+    },
+    {
+      "id": "timeline:7",
+      "source": "timeline",
+      "text": "Day 3：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章；克服阻碍：青穹重工派遣的机械执法者小队突袭林砚藏身点；林砚利用管理员权限实时提取玩家死亡数据；战斗结束后",
+      "charCount": 164,
+      "scores": {
+        "relevance": 51,
+        "importance": 40,
+        "freshness": 100,
+        "narrativePriority": 39,
+        "budgetChars": 288,
+        "finalScore": 56.85
+      }
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "text": "Day 1：进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中；克服阻碍：林砚肉身与神魂双重崩毁；林砚在意识即将被低语彻底吞噬的瞬间；看着掌心跳动的数据流权限",
+      "charCount": 82,
+      "scores": {
+        "relevance": 24,
+        "importance": 40,
+        "freshness": 70,
+        "narrativePriority": 43,
+        "budgetChars": 288,
+        "finalScore": 39.1
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:5",
+      "source": "facts",
+      "finalScore": 54.05,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:6",
+      "source": "facts",
+      "finalScore": 54.05,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:4",
+      "source": "facts",
+      "finalScore": 50.65,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "timeline:8",
+      "source": "timeline",
+      "finalScore": 56.85,
+      "trimReason": "Budget 不足",
+      "charCount": 164
+    },
+    {
+      "id": "timeline:5",
+      "source": "timeline",
+      "finalScore": 41.7,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:6",
+      "source": "timeline",
+      "finalScore": 41.7,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:3",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "finalScore": 39.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 2,
+      "totalCandidates": 9,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 7
+    },
+    "timeline": {
+      "selectedCount": 2,
+      "totalCandidates": 9,
+      "topK": 3
+    }
+  },
+  "intent": {
+    "mainGoal": "紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置",
+    "pov": "林砚"
+  },
+  "generatedAt": "2026-08-04T07:16:49.423Z"
+}

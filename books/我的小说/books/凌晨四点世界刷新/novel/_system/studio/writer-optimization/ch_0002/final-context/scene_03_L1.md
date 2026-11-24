@@ -1,0 +1,101 @@
+<!-- prompt-compiler v2 | scene=ch2_s3 | tokens=1024 | profile=ending | cache=100% | compile=3ms -->
+
+### Scene 目标
+目标: 凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。
+节拍: turn
+
+### 人物:苏晚
+### 人物：苏晚
+- **身份**：26岁，政府‘效率优化项目’的前数据分析师，陈默的同事兼好友（在原始时间线中）。在循环中，她是一个‘NPC’，但陈默发现她每次循环中都会做出细微不同的选择，暗示她可能有部分残留记忆。她是陈默在循环中唯一试图信任的人。
+- **性格**：温和、细心、有同理心，但过于顺从。她对秩序有依赖，害怕混乱。喜欢用数据解释一切，但面对陈默时，会表现出直觉性的信任。她是故事中‘人性’的温暖面。
+- **口头禅**：- **成长方向**：从完全信任系统的工具人，到开始质疑自己的认知。在结局中，她会成为陈默与伊甸之间的桥梁，因为她代表了‘普通人’在系统中的困境。
+- **
+…[truncated]
+
+### Scene 冲突
+冲突: 必须失去：林夜失去了对‘现实’的信任基础，被抛入一个只有自己知道真相的孤独战场。他前24小时积累的所有物理证据（录像、日记）随着刷新全部消失，一切只能依赖记忆，并且他意识到这种‘记忆’本身也成了系统的异常，可能带来危险。
+阻碍: 必须失去：林夜失去了对‘现实’的信任基础，被抛入一个只有自己知道真相的孤独战场。他前24小时积累的所有物理证据（录像、日记）随着刷新全部消失，一切只能依赖记忆，并且他意识到这种‘记忆’本身也成了系统的异常，可能带来危险。
+
+### Adaptive Learning
+<!-- inkos-adaptive-learning -->
+## Adaptive Learning · Prompt 自动调权
+
+活跃维度：dialogue
+
+- **对白强化**：增加对白块与潜台词，避免说明式旁白
+- 对白需体现人物立场差异与情绪节拍
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「10月27日」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 苏晚把手机屏幕转向林夜。 “看这个。
+
+### 本章目标
+让主角林夜经历第一次世界刷新，确认其真实性，并让他意识到自己成为了唯一保留记忆的‘清醒者’，为后续的探索与反抗奠定基础。
+
+### Previous Scene Observed Continuity
+### Previous Scene Observed Continuity
+> **角色：scene-derived · previous · ≠ Canon · ≠ Plan · ≠ Character SR**
+> Observed Continuity = 上一场正文实际建立的结果（confirmed）与未结算事项（unresolved）。
+> **不是** Plan / Scene Goal；**不是** Character SR；**不是** Canon Reality。
+> Plan 可以安排下一场方向，但 **不得假设** 上一场未结算事项已被解决。
+> 当前 Story Clock Canonical = **10月27日*
+…[truncated]
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Phase 1.R）
+- **World / Narration ≠ Character Knowledge**。
+- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。
+- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。
+- Awareness = om
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+> 当前 Story Clock Canonical = **10月27日**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。
+- **Scene 1** (进入局
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+> 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 时间线 TopK
+- [rel=100] Day 1：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间
+…[truncated]
+
+### 世界规则
+# 01 World Bible · 凌晨四点，世界刷新
+> Studio AI 自动生成
+## 1. 世界背景 / 时代
+近未来，约2045年，全球高度数字化，AI深度嵌入社会治理、资源分配与个人生活。表面上城市繁荣、犯罪率极低、环境改善，但个体自由被算法隐形限制。
+## 2. 世界历史
+2035年，全球联合政府启动‘普罗米修
+…[truncated]
+
+### 写作规则
+# 02 Writing Bible · 凌晨四点，世界刷新
+
+> Studio AI 自动生成
+
+> 文风: 暗
+…[truncated]

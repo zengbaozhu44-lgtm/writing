@@ -1,0 +1,682 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 3,
+  "sceneType": "ending",
+  "beatMemory": {
+    "newFacts": [],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "中午十二点刚过，收书单上的字迹还没干，店门铃被风箱般拉响，林守常从柜台后面推出来，只撑住右边的门框，把门挡住一条缝",
+      "“你等一下——”声音扯着，哑在喉咙底，像被什么堵住了",
+      "橘子皮的甜味还在喉咙底，像被什么堵住了"
+    ],
+    "changedDimensions": [
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "他手腕处的纸壳擦过皮肤，起了两道细红，指尖蹭破了角质，血珠在潮湿的空气里蹭出一点铁味"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "他咬牙，牙根蹭破了一点血，铁味混进橘子皮烂熟的甜香里，鼻腔底发涩"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 2
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林守常当前目标：承接上章推进：场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，只是蹲下去，把周二早上被她蹭歪的那块地砖又踩平了一次。他回到柜台，拉开抽屉，从一沓旧借阅卡中抽出一张「小满 2015.6」，和今天的收书单夹在一起。「目录」在抽屉里翻了个身，尾巴扫过那张卡片。",
+      "choice": "为了完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "中午十二点刚过，收书单上的字迹还没干，店门铃被风箱般拉响，林守常从柜台后面推出来，只撑住右边的门框，把门挡住一条缝"
+      ],
+      "extractedAt": "2026-08-18T10:54:30.342Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "slip_note",
+          "hand_touch",
+          "hand_withdraw",
+          "leaf_into_book"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 120 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "林守常当前目标：承接上章推进：场景3（收束）：小满抱着两本书跑出门，在门槛处绊了",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Countdown",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：表面冲突是「小满来卖一套《哈利·波特》，声称不稀罕了。林守常发现扉页有她 2015 年的铅笔字，知道她在撒谎需要钱。他按原价收了书，多塞一本《挪威的森林》。」。真正的冲突不在动作，而在没说出口的话：一方不肯承认自己的窘迫，另一方不肯戳穿这个谎。若本章没有这样一个「被咽回去的句子」作折痕，场景就只是日 — 且局面本身不会让步",
+      "choice": "为了完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-18T10:54:39.211Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "slip_note",
+          "hand_touch",
+          "hand_withdraw",
+          "leaf_into_book"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 114 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.009009009009009009
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "他手腕处的纸壳擦过皮肤，起了两道细红，指尖蹭破了角质，血珠在潮湿的空气里蹭出一点铁味",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-18T10:54:49.527Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "slip_note",
+          "hand_touch",
+          "hand_withdraw",
+          "leaf_into_book"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 112 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.05504587155963303
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Countdown",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "他咬牙，牙根蹭破了一点血，铁味混进橘子皮烂熟的甜香里，鼻腔底发涩",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-18T10:54:57.883Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "slip_note",
+          "hand_touch",
+          "hand_withdraw",
+          "leaf_into_book"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 110 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.018691588785046728
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Discovery",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [
+        "“你等一下——”声音扯着，哑在喉咙底，像被什么堵住了"
+      ],
+      "extractedAt": "2026-08-18T10:55:20.121Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "slip_note",
+          "hand_touch",
+          "hand_withdraw",
+          "leaf_into_book"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "未承接上一事件的 Effect，像独立抛异常",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "局势向终局推进 — 林守常已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.004219409282700422
+        },
+        "microPassed": [
+          "Promise兑现",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Danger",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "章尾强 Hook — 未完成动作或致命追问",
+      "choice": "为了完成「场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "橘子皮的甜味还在喉咙底，像被什么堵住了",
+        "橘子皮的甜味还在喉咙底，像被什么堵住了"
+      ],
+      "extractedAt": "2026-08-18T10:55:32.745Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "slip_note",
+          "hand_touch",
+          "hand_withdraw",
+          "leaf_into_book"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Language Variation：与近期表达重复，换动词/句式",
+          "4-gram 自重复：「。他没叫她别走，也没跟出去，只把…」",
+          "与上一段结尾高度重复",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林守常已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+        "formatPass": false,
+        "noRepeat": false,
+        "stateChange": true,
+        "fourGram": {
+          "pass": false,
+          "noRepeat": false,
+          "hits": [
+            "。他没叫她别走，也没跟出去，只把"
+          ],
+          "failReasons": [
+            "4-gram 自重复：「。他没叫她别走，也没跟出去，只把…」"
+          ],
+          "selfOverlap": 1
+        },
+        "microPassed": [
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 38,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 38,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-18T10:55:32.765Z",
+    "sceneIndex": 3
+  },
+  "readerSimulation": {
+    "curiosity": 84,
+    "questionCount": 3,
+    "dropRisk": 10,
+    "continueProbability": 84,
+    "sceneIndex": 3,
+    "pov": "林守常",
+    "simulatedAt": "2026-08-18T10:55:32.766Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 43,
+    "obstacleStrength": 38,
+    "choiceLevel": 50,
+    "consequenceLevel": 35,
+    "escalationLevel": 50,
+    "informationValue": 49,
+    "hookImpact": 57,
+    "stateChangeRate": 33,
+    "hookBreakdown": {
+      "hookLevel": 57,
+      "hookOutput": {
+        "type": "Curiosity",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 1,
+        "stage": "Curiosity",
+        "name": "好奇",
+        "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+        "example": "为什么时间突然停了？",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，只是蹲下去，把周二早上被她蹭歪的那块地砖又踩平了一次。他回到柜台，拉开抽屉，从一沓旧借阅卡中抽出一张「小满 2015.6」，和今天的收书单夹在一起。「目录」在抽屉里翻了个身，尾巴扫过那张卡片。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 87,
+      "emotionalImpact": 38,
+      "characterCost": 45,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 45,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-18T10:55:32.767Z",
+    "hookOutput": {
+      "type": "Curiosity",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 1,
+      "stage": "Curiosity",
+      "name": "好奇",
+      "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+      "example": "为什么时间突然停了？",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，只是蹲下去，把周二早上被她蹭歪的那块地砖又踩平了一次。他回到柜台，拉开抽屉，从一沓旧借阅卡中抽出一张「小满 2015.6」，和今天的收书单夹在一起。「目录」在抽屉里翻了个身，尾巴扫过那张卡片。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 57,
+    "hookOutput": {
+      "type": "Curiosity",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 1,
+      "stage": "Curiosity",
+      "name": "好奇",
+      "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+      "example": "为什么时间突然停了？",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景3（收束）：小满抱着两本书跑出门，在门槛处绊了一下，没回头。林守常没追出去，只是蹲下去，把周二早上被她蹭歪的那块地砖又踩平了一次。他回到柜台，拉开抽屉，从一沓旧借阅卡中抽出一张「小满 2015.6」，和今天的收书单夹在一起。「目录」在抽屉里翻了个身，尾巴扫过那张卡片。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 87,
+    "emotionalImpact": 38,
+    "characterCost": 45
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "H001",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 7,
+    "readerExpectation": 75,
+    "foreshadowId": "H001",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-18T10:55:32.767Z"
+}

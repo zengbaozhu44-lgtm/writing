@@ -1,0 +1,270 @@
+{
+  "version": "context-rank-1",
+  "chapter": 2,
+  "scene": {
+    "id": "ch2_s3",
+    "index": 3,
+    "goal": "承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死亡换取战斗数据，林砚在混乱中完成数据收集与权限初調试。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2487,
+    "topK": null,
+    "usedChars": 540,
+    "selectedCount": 5,
+    "trimmedCount": 33,
+    "totalCandidates": 38
+  },
+  "topK": [
+    {
+      "id": "facts:5",
+      "source": "facts",
+      "text": "第2章完成：林砚重生后立即行动，在24小时倒计时内完成第一批玩家招募，初步验证玩家体系对邪神污染的抗性，同时暴露青穹重工的追杀威胁。（4280字）",
+      "charCount": 73,
+      "scores": {
+        "relevance": 81,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 51,
+        "budgetChars": 392,
+        "finalScore": 80.3
+      }
+    },
+    {
+      "id": "facts:6",
+      "source": "facts",
+      "text": "第2章完成：林砚重生后立即行动，在24小时倒计时内完成第一批玩家招募，初步验证玩家体系对邪神污染的抗性，同时暴露青穹重工的追杀威胁。（4403字）",
+      "charCount": 73,
+      "scores": {
+        "relevance": 81,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 51,
+        "budgetChars": 392,
+        "finalScore": 80.3
+      }
+    },
+    {
+      "id": "facts:17",
+      "source": "facts",
+      "text": "第9章完成：第9章是「裂隙」卷的第一个里程碑——林砚第一次主动使用【数据祛妄】核心能力对抗触手渗透，并付出明确可见的代价。触手线从第8章的「被动目睹」推进到「主动介入」：触手确实跟着玩家信号爬进了玩家世界，且源头直指林薇的直播信号。本章让读者感到「爽点落地，同时埋下更大的恐惧」，而不是又一个悬置钩子。（4335字）",
+      "charCount": 158,
+      "scores": {
+        "relevance": 35,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 51,
+        "budgetChars": 392,
+        "finalScore": 59.6
+      }
+    },
+    {
+      "id": "facts:19",
+      "source": "facts",
+      "text": "第11章完成：林砚与玩家世界政府建立秘密合作，组建跨位面联合军团，同时应对‘深空之眼’投影降临浮空城的致命危机，在绝境中觉醒管理员新技能【数据重塑】。（4319字）",
+      "charCount": 82,
+      "scores": {
+        "relevance": 30,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 55,
+        "budgetChars": 392,
+        "finalScore": 57.75
+      }
+    },
+    {
+      "id": "timeline:5",
+      "source": "timeline",
+      "text": "Day 2：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：林砚重生后立即行动；克服阻碍：林砚必须在极短时间内建立玩家信任并部署防御；青穹重工机械执法者突袭藏身点；林砚的脑海中响起系统提示：‘玩家招募通道已激活",
+      "charCount": 154,
+      "scores": {
+        "relevance": 74,
+        "importance": 40,
+        "freshness": 100,
+        "narrativePriority": 54,
+        "budgetChars": 60,
+        "finalScore": 68.7
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:14",
+      "source": "facts",
+      "finalScore": 58.25,
+      "trimReason": "Budget 不足",
+      "charCount": 114
+    },
+    {
+      "id": "facts:16",
+      "source": "facts",
+      "finalScore": 55.65,
+      "trimReason": "超过 TopK",
+      "charCount": 91
+    },
+    {
+      "id": "facts:18",
+      "source": "facts",
+      "finalScore": 55.5,
+      "trimReason": "超过 TopK",
+      "charCount": 87
+    },
+    {
+      "id": "facts:15",
+      "source": "facts",
+      "finalScore": 54.4,
+      "trimReason": "超过 TopK",
+      "charCount": 78
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 53.5,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "finalScore": 53.5,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "finalScore": 53.5,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "finalScore": 53.5,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:4",
+      "source": "facts",
+      "finalScore": 53.5,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:13",
+      "source": "facts",
+      "finalScore": 52.45,
+      "trimReason": "超过 TopK",
+      "charCount": 50
+    },
+    {
+      "id": "facts:12",
+      "source": "facts",
+      "finalScore": 52.45,
+      "trimReason": "超过 TopK",
+      "charCount": 140
+    },
+    {
+      "id": "facts:11",
+      "source": "facts",
+      "finalScore": 50.35,
+      "trimReason": "超过 TopK",
+      "charCount": 49
+    },
+    {
+      "id": "facts:7",
+      "source": "facts",
+      "finalScore": 50.35,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:8",
+      "source": "facts",
+      "finalScore": 50.35,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:9",
+      "source": "facts",
+      "finalScore": 50.35,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:10",
+      "source": "facts",
+      "finalScore": 50.35,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "timeline:6",
+      "source": "timeline",
+      "finalScore": 68.7,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:16",
+      "source": "timeline",
+      "finalScore": 59.65,
+      "trimReason": "Budget 不足",
+      "charCount": 579
+    },
+    {
+      "id": "timeline:12",
+      "source": "timeline",
+      "finalScore": 58.25,
+      "trimReason": "Budget 不足",
+      "charCount": 393
+    },
+    {
+      "id": "timeline:13",
+      "source": "timeline",
+      "finalScore": 56.05,
+      "trimReason": "Budget 不足",
+      "charCount": 374
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 4,
+      "totalCandidates": 20,
+      "topK": 4
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 9
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 18,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "林砚重生后立即行动，在24小时倒计时内完成第一批玩家招募，初步验证玩家体系对邪神污染的抗性，同时暴露青穹重工的追杀威胁。",
+    "pov": "沈寒舟"
+  },
+  "generatedAt": "2026-08-11T09:16:40.108Z"
+}

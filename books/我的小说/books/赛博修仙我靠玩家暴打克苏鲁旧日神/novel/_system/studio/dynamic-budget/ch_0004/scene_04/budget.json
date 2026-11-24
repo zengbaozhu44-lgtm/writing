@@ -1,0 +1,167 @@
+{
+  "version": "dynamic-budget-3",
+  "chapter": 4,
+  "scene": {
+    "id": "ch4_s4",
+    "index": 4,
+    "goal": "章末钩子（承接转折后果）：攻破第一层时，林砚的系统面板突然弹出红色警告——‘检测到高维诡秘信号，玩家世界坐标已暴露’，而塔顶传来一声不属于任何已知生物的低语：‘管理员，你终于来了。’"
+  },
+  "totalTokens": 2782,
+  "budgetRange": {
+    "min": 1800,
+    "max": 3200,
+    "target": 2782
+  },
+  "sceneType": "ending",
+  "complexity": {
+    "characterCount": 1,
+    "conflictCount": 3,
+    "worldChange": true,
+    "dialogueDensity": 0.2,
+    "battleScale": 0.1,
+    "infoRelease": 0.25,
+    "score": 0.47,
+    "level": "medium"
+  },
+  "dynamic": true,
+  "tierless": true,
+  "allocation": {
+    "goal": {
+      "key": "goal",
+      "label": "Goal",
+      "weight": 0.1818,
+      "tokens": 506,
+      "pct": 18.2,
+      "color": "#5b8def"
+    },
+    "conflict": {
+      "key": "conflict",
+      "label": "Conflict",
+      "weight": 0.2727,
+      "tokens": 759,
+      "pct": 27.3,
+      "color": "#f45b69"
+    },
+    "character": {
+      "key": "character",
+      "label": "Character",
+      "weight": 0.1284,
+      "tokens": 357,
+      "pct": 12.8,
+      "color": "#3dd68c"
+    },
+    "world": {
+      "key": "world",
+      "label": "World",
+      "weight": 0.0897,
+      "tokens": 250,
+      "pct": 9,
+      "color": "#a78bfa"
+    },
+    "facts": {
+      "key": "facts",
+      "label": "Facts",
+      "weight": 0.1273,
+      "tokens": 354,
+      "pct": 12.7,
+      "color": "#f5a623"
+    },
+    "history": {
+      "key": "history",
+      "label": "History",
+      "weight": 0.0091,
+      "tokens": 25,
+      "pct": 0.9,
+      "color": "#56cfe1"
+    },
+    "relationship": {
+      "key": "relationship",
+      "label": "Relationship",
+      "weight": 0.0909,
+      "tokens": 253,
+      "pct": 9.1,
+      "color": "#ff6b9d"
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "weight": 0.1,
+      "tokens": 278,
+      "pct": 10,
+      "color": "#ffd166"
+    }
+  },
+  "pie": [
+    {
+      "key": "goal",
+      "label": "Goal",
+      "tokens": 506,
+      "pct": 18.2,
+      "color": "#5b8def"
+    },
+    {
+      "key": "conflict",
+      "label": "Conflict",
+      "tokens": 759,
+      "pct": 27.3,
+      "color": "#f45b69"
+    },
+    {
+      "key": "character",
+      "label": "Character",
+      "tokens": 357,
+      "pct": 12.8,
+      "color": "#3dd68c"
+    },
+    {
+      "key": "world",
+      "label": "World",
+      "tokens": 250,
+      "pct": 9,
+      "color": "#a78bfa"
+    },
+    {
+      "key": "facts",
+      "label": "Facts",
+      "tokens": 354,
+      "pct": 12.7,
+      "color": "#f5a623"
+    },
+    {
+      "key": "history",
+      "label": "History",
+      "tokens": 25,
+      "pct": 0.9,
+      "color": "#56cfe1"
+    },
+    {
+      "key": "relationship",
+      "label": "Relationship",
+      "tokens": 253,
+      "pct": 9.1,
+      "color": "#ff6b9d"
+    },
+    {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "tokens": 278,
+      "pct": 10,
+      "color": "#ffd166"
+    }
+  ],
+  "limits": {
+    "goalTokens": 506,
+    "conflictTokens": 759,
+    "characterTokens": 357,
+    "worldTokens": 250,
+    "factsTokens": 354,
+    "historyTokens": 25,
+    "relationshipTokens": 253,
+    "knowledgeTokens": 278
+  },
+  "intent": {
+    "mainGoal": "紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 1 章，须完成前置",
+    "pov": "沈寒舟"
+  },
+  "generatedAt": "2026-08-04T07:38:32.520Z"
+}

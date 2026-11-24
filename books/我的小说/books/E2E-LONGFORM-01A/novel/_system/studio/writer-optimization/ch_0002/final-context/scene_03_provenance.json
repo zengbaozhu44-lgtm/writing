@@ -1,0 +1,213 @@
+{
+  "role": "read_only_diagnostic_trace",
+  "readOnly": true,
+  "writesCanon": false,
+  "writesSR": false,
+  "schema": {
+    "fields": [
+      "key",
+      "type",
+      "source",
+      "priority",
+      "kept",
+      "reason",
+      "layers"
+    ],
+    "types": [
+      "canon",
+      "projection",
+      "plan",
+      "sr",
+      "historical",
+      "temporary",
+      "guard",
+      "derived",
+      "unavailable"
+    ],
+    "priorities": [
+      "P0",
+      "P1",
+      "P2",
+      "P3"
+    ]
+  },
+  "blocks": [
+    {
+      "key": "story_clock",
+      "type": "plan",
+      "source": "intent.time",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "information_boundary",
+      "type": "guard",
+      "source": "buildSceneWritePrompt / prompt-survival",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "character_sr",
+      "type": "sr",
+      "source": "minimal-sr (assembleMinimalSR)",
+      "priority": "P2",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "prior_excerpt",
+      "type": "historical",
+      "source": "scene-02.text",
+      "priority": "P3",
+      "kept": false,
+      "reason": "historical_continuity",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "present",
+        "L4": "trimmed"
+      },
+      "note": "Historical dates ≠ current Story Clock; demoted vs P1 Canonical"
+    },
+    {
+      "key": "prev_summary",
+      "type": "historical",
+      "source": "resolvePreviousScenes → scene-summary",
+      "priority": "P2",
+      "kept": false,
+      "reason": "budget_trim",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "trimmed"
+      }
+    },
+    {
+      "key": "observed_continuity",
+      "type": "derived",
+      "source": "scene_2.text → buildObservedContinuity",
+      "priority": "P2",
+      "kept": true,
+      "reason": "scene_continuity",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "absent",
+        "L4": "present"
+      },
+      "note": "Scene-local derived projection for N+1 only; ≠ Canon / SR / Plan settlement"
+    },
+    {
+      "key": "chapter_goal",
+      "type": "plan",
+      "source": "intent.mainGoal",
+      "priority": "P1",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "scene_goal",
+      "type": "plan",
+      "source": "scene.goal",
+      "priority": "P1",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "causal_chain",
+      "type": "plan",
+      "source": "scene.causalChain|intent.causalChain",
+      "priority": "P1",
+      "kept": false,
+      "reason": "intentional_projection",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "trimmed"
+      },
+      "channels": [
+        "L1_compile_append",
+        "L3_P1_narrative"
+      ],
+      "note": "duplicate: intentional projection (L1 lore append + sealed P1)"
+    },
+    {
+      "key": "entity",
+      "type": "derived",
+      "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+      "priority": "P2",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      },
+      "note": "selected: 周砚,周砚"
+    },
+    {
+      "key": "character_context",
+      "type": "canon",
+      "source": "03_character_bible whitelist → char:周砚",
+      "priority": "P2",
+      "kept": false,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "trimmed"
+      }
+    },
+    {
+      "key": "knowledge",
+      "type": "projection",
+      "source": "unavailable",
+      "priority": "P2",
+      "kept": false,
+      "reason": "unavailable",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "absent",
+        "L4": "absent"
+      }
+    }
+  ],
+  "updatedAt": "2026-10-22T08:49:35.652Z"
+}

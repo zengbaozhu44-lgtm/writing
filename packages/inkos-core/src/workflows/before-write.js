@@ -111,7 +111,6 @@ function buildLegacyWriteContext(bookDir, options = {}) {
   add(0, 'novel/09_current_chapter.md', '09 Current Chapter');
   add(1, 'novel/08_current_state.md', '08 Current State');
   add(1, 'novel/13_facts_db.yaml', '13 Facts DB');
-  add(1, 'novel/06_knowledge_matrix.yaml', '06 Knowledge Matrix');
   add(1, 'novel/14_resource_db.yaml', '14 Resource DB');
 
   if (pov) {
@@ -126,7 +125,6 @@ function buildLegacyWriteContext(bookDir, options = {}) {
     const f = `novel/03_character_bible/${name}.md`;
     if (exists(path.join(bookDir, f))) add(2, f, `出场: ${name}`);
   }
-  add(2, 'novel/05_relationship_graph.yaml', '05 Relationship Graph');
   add(3, 'novel/02_writing_bible.md', '02 Writing Bible');
   add(4, 'novel/01_world_bible.md', '01 World Bible');
   if (exists(m.faction_bible)) {

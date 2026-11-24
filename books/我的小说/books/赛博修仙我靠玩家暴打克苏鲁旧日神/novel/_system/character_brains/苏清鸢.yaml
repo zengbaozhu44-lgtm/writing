@@ -1,0 +1,51 @@
+character: 苏清鸢
+goals:
+  surface: 守护浮空城底层幸存者，寻找真正的救世之道
+  hidden: 阻止人类内耗堕落，证明正道在末世依然有存在的意义
+fears:
+  - 目睹所有坚守正道的人逐一堕落或死亡，自己最终孤身一人
+  - 自身诡秘抗性被利用，成为邪神封印的活体容器而失去人性
+  - 人类放弃抵抗，在绝望中自相残杀，彻底丧失人道初心
+bottom_line: 绝不勾结邪神、绝不残害同类、绝不放弃无辜幸存者
+current_state:
+  trust_protagonist: 0
+  fear: 85
+  betrayal_probability: 45
+  suspicion: 40
+  loyalty: 80
+growth_arc: 从迷茫坚守的普通修士，成长为人道守护者，辅助主角稳固人族防线，成为人间正道象征
+triggers:
+  主角展示玩家军团不惧污染、守护平民:
+    trust: 30
+    suspicion: -10
+  主角被财团污蔑为邪神走狗:
+    trust: 10
+    suspicion: 20
+  目睹玩家牺牲复活、保护幸存者:
+    trust: 20
+    suspicion: -5
+  发现自身血脉可克制污染、被邪神眷属盯上:
+    trust: 5
+    suspicion: 10
+  主角揭露财团与邪神勾结的真相:
+    trust: 25
+    suspicion: -15
+lastChapter: 12
+evolutionLog:
+  - chapter: 8
+    state:
+      trust_protagonist: 15
+      fear: 70
+      betrayal_probability: 25
+      suspicion: 40
+      loyalty: 80
+    at: 2026-08-11T06:35:49.937Z
+  - chapter: 12
+    state:
+      trust_protagonist: 0
+      fear: 85
+      betrayal_probability: 45
+      suspicion: 40
+      loyalty: 80
+    at: 2026-08-11T09:03:07.499Z
+updatedAt: 2026-08-11T09:24:38.535Z

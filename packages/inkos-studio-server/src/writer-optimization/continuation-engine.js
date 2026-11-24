@@ -60,7 +60,10 @@ export function buildContinuationBlock({ scene, intent, scenes = [], chapter = 1
     };
   }
 
-  const prev = scenes.find((s) => s.index === idx - 1) || intent?.scenes?.find((s) => s.index === idx - 1);
+  // 优先用传入的工作 scenes 数组（已有正文），再回退 intent.scenes（planner 原始定义可能无 text）
+  const workScenes = Array.isArray(scenes) && scenes.length ? scenes : (intent?.scenes || []);
+  const prev = workScenes.find((s) => s.index === idx - 1 && s.text?.trim())
+    || workScenes.find((s) => s.index === idx - 1);
   const prevText = prev?.text || '';
   const { anchor, chars, hasPrev } = extractContinuationAnchor(prevText);
 
@@ -77,11 +80,36 @@ export function buildContinuationBlock({ scene, intent, scenes = [], chapter = 1
   const emotion = inferEmotionHint(anchor);
   const body = inferBodyHint(anchor);
 
+  // ── 方案 D：Scene 间目标锚定 — 上一 Scene 完成的目标 + 本 Scene 目标变化 ──
+  const prevPlan = prev?.executionPlan || prev?.scenePlan || {};
+  // S8.2：Scene 间锚定用显式 goal，不用 priorityGoal 压缩裁决
+  const prevGoal = prevPlan.goal
+    || prevPlan.scenePlan?.goal
+    || '';
+  const prevOutcome = prevPlan.sceneOutcome?.success
+    || prevPlan.sceneOutcome?.failure
+    || '';
+  const curPlan = scene?.executionPlan || scene?.scenePlan || {};
+  const curGoal = curPlan.goal
+    || curPlan.scenePlan?.goal
+    || scene?.goal
+    || '';
+
+  const goalAnchorLines = [];
+  if (prevGoal) {
+    goalAnchorLines.push(`- 上一 Scene 目标：${String(prevGoal).slice(0, 48)}${prevOutcome ? `（${String(prevOutcome).slice(0, 28)}）` : '（已推进）'}`);
+  }
+  if (curGoal) {
+    goalAnchorLines.push(`- 本 Scene explicit goal（承接上一目标的新进展；非 Character Dominance）：${String(curGoal).slice(0, 48)}`);
+    goalAnchorLines.push('- 上一 Scene goal 若未收束，本 Scene 可先承接其现场后果；禁止平行开无关新线（编排承接，非心理裁决）。');
+  }
+
   return {
     block: [
       '## 前文情绪锚定（必须承接）',
       `- 上一 Scene 结尾情绪：「${emotion}」`,
       `- 角色身体状态：${body}`,
+      ...goalAnchorLines,
       `- 环境余韵（上一 Scene 末尾约 ${chars} 字）：`,
       '---',
       anchor,
@@ -91,5 +119,6 @@ export function buildContinuationBlock({ scene, intent, scenes = [], chapter = 1
     ].join('\n'),
     anchor,
     emotion,
+    goalAnchor: goalAnchorLines.join('\n'),
   };
 }

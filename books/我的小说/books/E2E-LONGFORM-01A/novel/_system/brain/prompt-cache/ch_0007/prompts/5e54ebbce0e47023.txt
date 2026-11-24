@@ -1,0 +1,125 @@
+<!-- prompt-compiler v2 | scene=ch7_s1 | tokens=910 | profile=opening | cache=0% | compile=7ms -->
+
+### Scene 目标
+目标: 承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：收束代价与余韵
+节拍: situation
+
+### 人物:周砚
+### 人物：周砚
+- **身份**：镇长儿子
+- **性格**：自信、强势、圆滑
+- **口头禅**：- **成长方向**：从表面上的镇定到内心的动摇
+- **价值观**：野心、务实、精明
+- **底线**：关心工程款去向被谁举报
+- （省略：秘密 / 真实目标 / 成长方向 / raw bible — 非 Writer 公开卡）
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### Adaptive Learning
+<!-- inkos-adaptive-learning -->
+## Adaptive Learning · Prompt 自动调权
+
+活跃维度：dialogue、style
+
+- **对白强化**：增加对白块与潜台词，避免说明式旁白
+- 对白需体现人物立场差异与情绪节拍
+- **文风强化**：遵守写作圣经硬切、身体先行、限知视角
+- 减少说明腔，增加具体感官细节
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+> role: occurrence_readback（continuity fuel · 只读）
+> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate
+> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。
+> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。
+
+- [S3/action] participants: 然后 · reported happening: 然后转身朝焚化区反方向跑，鞋底在积水里滑了半步，膝盖磕上
+  text-noted aftermath: 场面动作已发生：转身
+  state_mentions: action:然后:转身
+- [S4/presence] participants: 周砚 · reported happening: 了三秒，传来椅子腿刮地的声音。 周砚把烟按灭在数据台的边沿，焦痕旁边跳出一行红字：缓存窗口剩余九十秒。他扯过键盘，指节砸下去，屏幕上的进度条却往回缩了一格。 “
+  text-noted aftermath: 场面叙述成为后续可引用事实
+  state_mentions: presence:周砚
+
+### 本章目标
+收束代价与余韵，兑现伏笔，留白而非解释完
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Phase 1.R）
+- **World / Narration ≠ Character Knowledge**。
+- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。
+- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。
+- Awaren
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 周砚
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- **Validity**：current
+
+### 当前状态
+# 08 Current State · 第 6 
+…[truncated]
+
+### 时间线 TopK
+- [rel=20]
+…[truncated]
+
+### 世界规则
+# 01 World Bible · 雾桥谜案
+> Studio AI 自动生成
+## 1. 世界背景 / 时代
+现代都市
+## 2. 世界历史
+[object Object]
+## 3. 世界规则
+[object Object]
+## 4. 超凡体系 / 力量体系
+[object Object]
+## 5. 社会结构
+[object Object]
+## 6. 势力体系（详情见 04_faction_bible/）
+[object Object]
+## 7. 地理 / 地图
+[object Object]
+危险区域：[object Object]
+### 主要城市
+[object Object]
+### 危险区域
+[object Object]
+
+### 重要地点
+[object Object]
+## 8. 禁忌
+
+### 写作规则
+# 02 Writing Bible · 雾桥谜案
+
+> Studio AI 自动生成
+
+> 文风: 都市异能 | 节奏: 紧凑、错落有致 | POV: 多视角切换，沈昭为主视角
+
+## 叙事原则 / 叙事节奏
+1. **都市异能**
+
+## 文风原则 / 语言风格
+1. **细腻描写、悬念迭起**
+
+## 章节结构
+每章包含案件进展、人物关系发展、悬念设置
+
+#
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「周砚」想 完成断桥重建工程，获取利益
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure

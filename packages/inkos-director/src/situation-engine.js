@@ -1,8 +1,14 @@
 /**
  * Situation Engine v2 — 三维状态变化
  * 世界 + 人物 + 关系 — 每 Scene 须至少改变其中两个维度
+ *
+ * EO-P4: inferWorldAfter / inferred relationship axes = Writer instruction or
+ * inference_candidate only — ≠ world fact / obtains / Reality Authority.
+ *
+ * @see golden/reality/d1-implementation-contract/INFERENCE-DEMOTION.md
  */
 import { STATE_CHANGE_DIMENSIONS } from './beat-state.js';
+import { stampInferenceCandidate } from '../../inkos-core/src/lib/inference-demotion.js';
 
 const STAGNANT_PATTERN = /继续调查|发现异常|调查异常|寻找线索|继续寻找|再次确认|又发现|更多信息/u;
 
@@ -25,8 +31,16 @@ export function buildSceneSituation({
   characterDesire = null,
   characterPush = null,
 } = {}) {
+  void characterDesire; // R5-A：desire 不得冒充 Situation 人物 After
   if (scene.situation?.worldState?.before && scene.situation?.worldState?.after) {
-    return normalizeSituationV2(scene.situation);
+    const normalized = normalizeSituationV2(scene.situation);
+    return {
+      ...normalized,
+      d1InferenceDemotion: stampInferenceCandidate({
+        paths: ['authored_or_prebuilt_situation'],
+        worldAfterRole: 'carrier_demoted_not_obtains',
+      }),
+    };
   }
 
   const pov = intent.pov || 'POV';
@@ -41,13 +55,10 @@ export function buildSceneSituation({
     || plan.closingWorldState
     || inferWorldAfter(pov, plan, scene, worldBefore);
 
-  const charBefore = characterPush?.before
-    || scene.characterStateBefore
-    || `${pov}${characterDesire?.belief ? `相信${characterDesire.belief.slice(0, 25)}` : '认为局面尚可控制'}`;
-
-  const charAfter = characterPush?.after
-    || scene.characterStateAfter
-    || inferCharacterAfter(pov, plan, scene, charBefore, characterDesire);
+  // S8.2-R5-A：人物 before/after 仅 authored；Choice ≠ Character Transformation
+  const charState = resolveAuthoredCharacterState({ scene, plan, characterPush });
+  const charBefore = charState.before;
+  const charAfter = charState.after;
 
   const relBefore = scene.relationshipStateBefore
     || plan.relationshipStateBefore
@@ -58,7 +69,11 @@ export function buildSceneSituation({
     || inferRelationshipAfter(pov, keyRelation, plan, scene, relBefore);
 
   const worldState = { before: worldBefore, after: worldAfter };
-  const characterState = { before: charBefore, after: charAfter };
+  const characterState = {
+    before: charBefore,
+    after: charAfter,
+    missing: charState.missing,
+  };
   const relationshipState = { before: relBefore, after: relAfter };
 
   const changedDimensions = detectChangedDimensions(worldState, characterState, relationshipState);
@@ -80,7 +95,34 @@ export function buildSceneSituation({
     valid: !stagnant && dimensionsChanged >= 2,
     pov,
     keyRelationship: keyRelation,
+    characterTransformationMissing: Boolean(charState.missing),
+    // EO-P4: demote inference ≠ fact (does not remove Writer instruction carrier)
+    d1InferenceDemotion: stampInferenceCandidate({
+      paths: ['inferWorldAfter', 'inferRelationship*', 'plan.consequence→worldState.after'],
+      worldAfterRole: 'inference_candidate_or_writer_instruction',
+    }),
   };
+}
+
+function resolveAuthoredCharacterState({ scene = {}, plan = {}, characterPush = null } = {}) {
+  const tx = scene.characterTransformation;
+  if (tx && !tx.missing && tx.before && tx.after) {
+    const before = typeof tx.before === 'string'
+      ? norm(tx.before)
+      : norm(tx.before.belief || tx.before.identity || Object.values(tx.before).find(Boolean) || '');
+    const after = typeof tx.after === 'string'
+      ? norm(tx.after)
+      : norm(tx.after.belief || tx.after.identity || Object.values(tx.after).find(Boolean) || '');
+    if (before && after) return { before, after, missing: false };
+  }
+  const before = norm(scene.characterStateBefore || plan.characterStateBefore || scene.situation?.characterState?.before);
+  const after = norm(scene.characterStateAfter || plan.characterStateAfter || scene.situation?.characterState?.after);
+  if (before && after) return { before, after, missing: false };
+  // 仅透传已标记为 authored 的 push；禁止用 push 的推断成长
+  if (characterPush?.authoredChange && norm(characterPush.before) && norm(characterPush.after)) {
+    return { before: norm(characterPush.before), after: norm(characterPush.after), missing: false };
+  }
+  return { before: '', after: '', missing: true };
 }
 
 function resolveKeyRelationship(intent = {}, plan = {}, scene = {}) {
@@ -94,13 +136,14 @@ function resolveKeyRelationship(intent = {}, plan = {}, scene = {}) {
 function inferWorldBefore(pov, plan = {}, scene = {}) {
   const goal = plan.goal || scene.goal || '';
   if (/认为|以为|相信|正常|安全|还不知道|尚未/u.test(goal)) {
-    return goal.includes(pov) ? goal : `${pov}${goal.startsWith('认为') ? '' : '认为'}${goal.replace(/^.*认为/, '认为') || '局面尚可控制'}`;
+    return goal.includes(pov) ? goal : `${pov}${goal.startsWith('认为') ? '' : '认为'}${goal.replace(/^.*认为/, '认为') || '进入现场'}`;
   }
   if (goal) return `${pov}当前目标：${goal.slice(0, 40)} — 局势尚未被本 Scene 改写`;
   return `${pov}进入本 Scene 时，对世界/局势的认知尚未被本章事件改写`;
 }
 
 function inferWorldAfter(pov, plan = {}, scene = {}, opening = '') {
+  // EO-P4: output is inference_candidate / Writer instruction — not obtains / world fact.
   const info = plan.newInformation || scene.newInformation || '';
   const consequence = plan.consequence || scene.consequence || '';
   const cliff = plan.cliffhanger || scene.cliffhanger || '';
@@ -108,7 +151,7 @@ function inferWorldAfter(pov, plan = {}, scene = {}, opening = '') {
   if (info && !STAGNANT_PATTERN.test(info)) {
     const stmt = info.includes(pov) ? info : `${pov}已掌握：${info.slice(0, 60)}`;
     if (consequence && !STAGNANT_PATTERN.test(consequence)) {
-      return `${stmt}；局面代价：${consequence.slice(0, 50)}`;
+      return `${stmt}；局面声明结果：${consequence.slice(0, 50)}`;
     }
     return stmt;
   }
@@ -119,15 +162,9 @@ function inferWorldAfter(pov, plan = {}, scene = {}, opening = '') {
   return `${opening} → 本 Scene 结束后，世界认知/危险/资源须与开局不同`;
 }
 
-function inferCharacterAfter(pov, plan = {}, scene = {}, before = '', desire = null) {
-  const consequence = plan.consequence || scene.consequence || '';
-  const choice = plan.choice || scene.choice || '';
-  if (consequence) return `${pov}内心/立场变化 — ${consequence.slice(0, 55)}`;
-  if (choice) return `${pov}做出选择后无法回头 — ${choice.slice(0, 50)}`;
-  if (desire?.internalDesire) {
-    return `${pov}对「${desire.internalDesire.slice(0, 20)}」的认知被迫更新`;
-  }
-  return `${before} → ${pov}在本 Scene 须可见成长或受挫`;
+/** @deprecated S8.2-R5-A：不再从 choice/consequence 推断人物 After；保留空实现防外部引用 */
+function inferCharacterAfter() {
+  return '';
 }
 
 function inferRelationshipBefore(pov, keyRelation, plan = {}) {
@@ -159,7 +196,10 @@ function axisChanged(before = '', after = '') {
 function detectChangedDimensions(worldState, characterState, relationshipState) {
   const changed = [];
   if (axisChanged(worldState.before, worldState.after)) changed.push('world');
-  if (axisChanged(characterState.before, characterState.after)) changed.push('character');
+  // missing 人物轴：不计入「已变」，也不用空串假变化
+  if (!characterState?.missing && axisChanged(characterState.before, characterState.after)) {
+    changed.push('character');
+  }
   if (axisChanged(relationshipState.before, relationshipState.after)) changed.push('relationship');
   return changed;
 }
@@ -169,8 +209,10 @@ function summarizeStateDeltaV2(worldState, characterState, relationshipState) {
   if (axisChanged(worldState.before, worldState.after)) {
     parts.push(`世界：「${worldState.before.slice(0, 25)}」→「${worldState.after.slice(0, 25)}」`);
   }
-  if (axisChanged(characterState.before, characterState.after)) {
+  if (!characterState?.missing && axisChanged(characterState.before, characterState.after)) {
     parts.push(`人物：「${characterState.before.slice(0, 25)}」→「${characterState.after.slice(0, 25)}」`);
+  } else if (characterState?.missing) {
+    parts.push('人物：character transformation missing（Choice ≠ Character Transformation）');
   }
   if (axisChanged(relationshipState.before, relationshipState.after)) {
     parts.push(`关系：「${relationshipState.before.slice(0, 25)}」→「${relationshipState.after.slice(0, 25)}」`);
@@ -193,7 +235,14 @@ function normalizeSituationV2(s = {}) {
     before: s.openingWorldState || '',
     after: s.closingWorldState || '',
   };
-  const characterState = s.characterState || { before: '', after: '' };
+  const rawCs = s.characterState || { before: '', after: '' };
+  const charMissing = Boolean(rawCs.missing)
+    || (!norm(rawCs.before) && !norm(rawCs.after));
+  const characterState = {
+    before: charMissing ? '' : norm(rawCs.before),
+    after: charMissing ? '' : norm(rawCs.after),
+    missing: charMissing,
+  };
   const relationshipState = s.relationshipState || { before: '', after: '' };
   const changedDimensions = s.changedDimensions
     || detectChangedDimensions(worldState, characterState, relationshipState);
@@ -214,6 +263,7 @@ function normalizeSituationV2(s = {}) {
     valid: !stagnant && changedDimensions.length >= 2,
     pov: s.pov,
     keyRelationship: s.keyRelationship,
+    characterTransformationMissing: charMissing,
   };
 }
 
@@ -251,23 +301,25 @@ export function formatSituationBlock(situation = {}) {
   const rs = situation.relationshipState || {};
   if (!ws.before) return '';
 
+  const characterLine = cs.missing || situation.characterTransformationMissing || (!cs.before && !cs.after)
+    ? '- **人物**：character transformation: missing（Choice ≠ Character Transformation；勿预写人物 After）'
+    : (cs.before ? `- **人物**：${cs.before} → ${cs.after}` : '');
+
   return [
     '### Situation Engine v2 · 三维状态变化（P1）',
-    '**完成标准**：至少改变 **两个维度**（世界 / 人物 / 关系）',
+    '**完成标准**：世界/关系可推进；人物变化仅在有 authored transformation 时陈述',
     '',
     `- **世界**：${ws.before} → ${ws.after}`,
-    cs.before ? `- **人物**：${cs.before} → ${cs.after}` : '',
+    characterLine,
     rs.before ? `- **关系**：${rs.before} → ${rs.after}` : '',
     `- **变化摘要**：${situation.stateDelta || '—'}`,
     situation.changedDimensions?.length
       ? `- **已变维度**：${situation.changedDimensions.join('、')}（${situation.dimensionsChanged}/3）`
       : '',
     '',
-    '**禁止无效 Scene**：',
-    '- ❌ 只有世界观推进，主角/关系原地踏步',
-    '- ✅ 世界+人物+关系至少两项改变',
-    situation.stagnant || (situation.dimensionsChanged ?? 0) < 2
-      ? '- ⚠️ **Director 警告**：当前规划维度不足，Writer 须补足人物/关系变化'
+    '**禁止**：无证据时编造人物成长 / 信念变化 / 不可逆人物结论',
+    situation.stagnant || (situation.dimensionsChanged ?? 0) < 1
+      ? '- ⚠️ **Director 警告**：世界或关系推进不足（人物轴缺失合法，勿用假成长补维度）'
       : '',
   ].filter(Boolean).join('\n');
 }
@@ -280,9 +332,11 @@ export function formatSituationBrief(situation = {}) {
   return [
     '### Situation v2 · 三维状态',
     `- **世界**：${ws.before} → ${ws.after}`,
-    cs.before ? `- **人物**：${cs.before} → ${cs.after}` : null,
+    cs.missing || (!cs.before && !cs.after)
+      ? '- **人物**：transformation missing'
+      : (cs.before ? `- **人物**：${cs.before} → ${cs.after}` : null),
     rs.before ? `- **关系**：${rs.before} → ${rs.after}` : null,
-    `- **铁律**：至少 2 个维度须变化`,
+    '- **边界**：Choice ≠ Character Transformation',
   ].filter(Boolean).join('\n');
 }
 

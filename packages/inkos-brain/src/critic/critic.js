@@ -30,7 +30,7 @@ export function runCritic(chapterText, intent, metrics, readerResult) {
   if (scores.retention < 60) issues.push({ level: 'critical', msg: '留存风险高' });
 
   const pass = overall >= 62 && !issues.some((i) => i.level === 'critical');
-  const plannerHints = buildPlannerHints(scores, issues, metrics);
+  const plannerHints = buildPlannerHints(scores, issues, metrics, readerResult);
 
   return {
     pass,
@@ -90,12 +90,20 @@ function scoreRetention(text, reader) {
   return clamp(s);
 }
 
-function buildPlannerHints(scores, issues, metrics) {
+function buildPlannerHints(scores, issues, metrics, reader) {
   const hints = [];
   if (scores.commercialRhythm < 65) hints.push({ type: 'actionSceneWeight', delta: 0.1, reason: '节奏偏慢' });
   if (scores.payoff < 60) hints.push({ type: 'conflictPriority', delta: 0.15, reason: '高潮不足' });
   if (metrics?.conflictDensity < 2) hints.push({ type: 'conflictPriority', delta: 0.1, reason: '冲突密度低' });
   if (scores.patternRepeat < 55) hints.push({ type: 'styleStrictness', delta: 0.1, reason: '套路重复' });
+  // 留白软提示（②层）：结尾情绪身体词过密 → 下章收尾克制，不硬拦
+  if (reader?.highlights?.withheld?.overloaded) {
+    hints.push({
+      type: 'styleStrictness',
+      delta: 0.1,
+      reason: `结尾写尽无留白（${reader.highlights.withheld.bodyEmotionCount} 个情绪身体词挤在 120 字内）— 下章收尾克制、留呼吸`,
+    });
+  }
   return hints;
 }
 

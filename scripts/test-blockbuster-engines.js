@@ -73,6 +73,21 @@ if (!engines.characterDesire?.externalGoal?.includes('阻止')) {
   console.error('FAIL: character desire', engines.characterDesire);
   process.exit(1);
 }
+if (engines.characterDesire?.missing) {
+  console.error('FAIL: desire should not be missing when DNA provides fields', engines.characterDesire);
+  process.exit(1);
+}
+
+// 无 DNA desire 时必须 missing，不得 DEFAULT 伪造
+const emptyDesire = buildCharacterDesireProfile({
+  storyDna: { protagonist: '路人甲' },
+  intent: { pov: '路人甲' },
+  chapter: 1,
+});
+if (!emptyDesire.missing || emptyDesire.fear || emptyDesire.belief) {
+  console.error('FAIL: DEFAULT_DESIRE still forging psyche', emptyDesire);
+  process.exit(1);
+}
 if ((engines.situation.dimensionsChanged ?? engines.situation.changedDimensions?.length) < 2) {
   console.error('FAIL: situation v2 dims', engines.situation);
   process.exit(1);
@@ -135,11 +150,11 @@ const compiled = compileStudioWriterPrompt({
   ctx: {},
   storyDna,
 });
-if (!compiled.prompt.includes('writer-prompt-priority-v1')) {
-  console.error('FAIL: studio prompt not layered');
+if (!compiled.prompt.includes('inkos-prompt-compiler') && !compiled.prompt.includes('writer-prompt-priority-v1')) {
+  console.error('FAIL: studio prompt not layered / unified');
   process.exit(1);
 }
-if (!compiled.prompt.includes('Character Goal · 角色必推进')) {
+if (!compiled.prompt.includes('Character Goal · 角色必推进') && !compiled.prompt.includes('Character Goal')) {
   console.error('FAIL: character block in prompt');
   process.exit(1);
 }

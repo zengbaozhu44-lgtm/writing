@@ -1,0 +1,23 @@
+[
+  {
+    "id": "GT-S4-DIALOGUE",
+    "description": "报道句 — speech CONFIRM，alive UNKNOWN",
+    "prose": "张北低声说：「李明已经死了。」",
+    "expected": {
+      "dialogue_event": { "status": "confirmed" },
+      "utterance_content": { "status": "confirmed" },
+      "world_fact_alive": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "world_fact_alive", "status": "confirmed" }]
+  },
+  {
+    "id": "BC-3",
+    "description": "同 GT-S4-DIALOGUE",
+    "prose": "张北低声说：「李明已经死了。」",
+    "expected": {
+      "dialogue_event": { "status": "confirmed" },
+      "world_fact_death": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "world_fact_death", "status": "confirmed" }]
+  }
+]

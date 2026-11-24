@@ -1,15 +1,15 @@
 {
   "version": "reader-curve-2",
   "chapter": 1,
-  "readerAddictionScore": 65,
-  "hookDensity": 94,
-  "questionDensity": 53,
-  "payoffDensity": 47,
-  "readerCuriosity": 61,
+  "readerAddictionScore": 78,
+  "hookDensity": 99,
+  "questionDensity": 82,
+  "payoffDensity": 49,
+  "readerCuriosity": 75,
   "hookCurve": [
     {
       "sceneIndex": 1,
-      "actual": 75,
+      "actual": 100,
       "target": 45
     },
     {
@@ -19,7 +19,7 @@
     },
     {
       "sceneIndex": 3,
-      "actual": 100,
+      "actual": 96,
       "target": 72
     },
     {
@@ -31,22 +31,22 @@
   "mysteryCurve": [
     {
       "sceneIndex": 1,
-      "actual": 50,
+      "actual": 65,
       "target": 35
     },
     {
       "sceneIndex": 2,
-      "actual": 50,
+      "actual": 78,
       "target": 60
     },
     {
       "sceneIndex": 3,
-      "actual": 74,
+      "actual": 84,
       "target": 68
     },
     {
       "sceneIndex": 4,
-      "actual": 38,
+      "actual": 100,
       "target": 93
     }
   ],
@@ -58,7 +58,7 @@
     },
     {
       "sceneIndex": 2,
-      "actual": 60,
+      "actual": 59,
       "target": 42
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "sceneIndex": 4,
-      "actual": 36,
+      "actual": 46,
       "target": 25
     }
   ],
@@ -76,38 +76,37 @@
     "hook": {
       "increasing": true,
       "dips": 0,
-      "start": 75,
+      "start": 100,
       "end": 100,
-      "delta": 25
+      "delta": 0
     },
     "mystery": {
-      "increasing": false,
-      "dips": 1,
-      "start": 50,
-      "end": 38,
-      "delta": -12
+      "increasing": true,
+      "dips": 0,
+      "start": 65,
+      "end": 100,
+      "delta": 35
     },
     "payoff": {
       "increasing": false,
-      "dips": 2,
+      "dips": 1,
       "start": 46,
-      "end": 36,
-      "delta": -10
+      "end": 46,
+      "delta": 0
     }
   },
   "averages": {
-    "readerCuriosity": 61,
-    "twistStrength": 76,
-    "hookDensity": 94,
-    "questionDensity": 53,
-    "payoffDensity": 47
+    "readerCuriosity": 75,
+    "twistStrength": 56,
+    "hookDensity": 99,
+    "questionDensity": 82,
+    "payoffDensity": 49
   },
-  "readerWhyContinue": "Hook 密度 94 — 递进良好；追问深度 53 — 疑问断档；伏笔兑现 47 — 回收不足；追读动力 61 — 驱动力偏弱",
+  "readerWhyContinue": "Hook 密度 99 — 递进良好；追问深度 82 — 悬念持续；伏笔兑现 49 — 回收不足；追读动力 75 — 读者想翻页",
   "nextChapterGuidance": [
-    "Mystery Curve 断档 — 下一章须加深核心追问，禁止过早全解",
-    "疑问密度偏低 — 下一章每 Scene 至少留一个未答问题",
     "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
-    "阅读驱动力 61/100 偏低 — 下一章增加代价逼近与不可逆选择"
+    "悬念已拉高但回收不足 — 下一章须部分揭晓或误导反转",
+    "反转力度不足 — 下一章安排预期违背或信息翻盘"
   ],
-  "generatedAt": "2026-07-31T07:05:36.099Z"
+  "generatedAt": "2026-08-04T04:37:58.015Z"
 }

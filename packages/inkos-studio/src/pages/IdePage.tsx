@@ -13,6 +13,7 @@ import { MemoryDrawer } from '../components/drawers/MemoryDrawer';
 import { HashDrawer } from '../components/drawers/HashDrawer';
 import { AssistantDrawer } from '../components/drawers/AssistantDrawer';
 import { DiagnosticsDrawer } from '../components/drawers/DiagnosticsDrawer';
+import { PlanPreviewDrawer } from '../components/drawers/PlanPreviewDrawer';
 import { SnippetsDrawer } from '../components/drawers/SnippetsDrawer';
 import { CharactersDrawer } from '../components/drawers/CharactersDrawer';
 import { FactionsDrawer } from '../components/drawers/FactionsDrawer';
@@ -29,7 +30,7 @@ import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { resolveNextWritableChapter } from '../lib/nextChapter';
 import type { BookContext } from '../layouts/BookLayout';
 
-type DrawerId = 'planner' | 'director' | 'prompt' | 'metrics' | 'memory' | 'hash' | 'assistant' | 'diagnostics' | 'snippets' | 'characters' | 'factions' | 'world' | 'locations';
+type DrawerId = 'planner' | 'director' | 'prompt' | 'metrics' | 'memory' | 'hash' | 'assistant' | 'diagnostics' | 'snippets' | 'characters' | 'factions' | 'world' | 'locations' | 'plan-preview';
 type ViewMode = 'read' | 'edit' | 'ai';
 
 const DRAWER_TABS: { id: DrawerId; label: string }[] = [
@@ -62,6 +63,7 @@ const DRAWER_TITLES: Record<DrawerId, string> = {
   hash: 'Hash Dependency',
   snippets: '写作片段',
   assistant: 'AI 创作助手',
+  'plan-preview': '协议 Plan 预览',
 };
 
 const AUTOSAVE_MS = 3000;
@@ -74,7 +76,8 @@ export function IdePage() {
   const lock = useBookTaskLock(book.id);
   const { stages, active, lastMessage, start, finish } = runtime;
 
-  const [chapters, setChapters] = useState<{ number: number; title: string; hasText?: boolean }[]>([]);
+  const [chapters, setChapters] = useState<{ number: number; title: string; hasText?: boolean; status?: string }[]>([]);
+  const [auditRows, setAuditRows] = useState<{ chapter: number; status: string }[]>([]);
   const [text, setText] = useState('');
   const [title, setTitle] = useState('');
   const [scenes, setScenes] = useState<Scene[]>([]);
@@ -154,6 +157,9 @@ export function IdePage() {
 
   useEffect(() => {
     api.listChapters(book.id).then(setChapters).catch(() => {});
+    api.listChapterAudit(book.id, 20).then((r) => {
+      setAuditRows((r.chapters || []).map((a) => ({ chapter: a.chapter, status: a.status })));
+    }).catch(() => {});
     loadChapter(chapter);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- 仅换书时整页重载
   }, [book.id]);
@@ -213,7 +219,18 @@ export function IdePage() {
     }
   };
 
-  const targetChapter = resolveNextWritableChapter(chapters, chapter, Boolean(text.trim()));
+  const auditByChapterForNext = new Map(auditRows.map((a) => [a.chapter, a.status]));
+  const knownNumbers = new Set(chapters.map((c) => c.number));
+  const chaptersWithStatus = chapters.map((c) => ({
+    ...c,
+    status: auditByChapterForNext.get(c.number) || '',
+  }));
+  for (const a of auditRows) {
+    if (!knownNumbers.has(a.chapter)) {
+      chaptersWithStatus.push({ number: a.chapter, title: '', hasText: false, status: a.status });
+    }
+  }
+  const targetChapter = resolveNextWritableChapter(chaptersWithStatus, chapter, Boolean(text.trim()));
   const metricsLive = useStudioMetricsLive(book.id, targetChapter, lock.busy || active);
 
   const generateChapter = async (ch: number, opts?: { afterDelete?: boolean }) => {
@@ -326,10 +343,15 @@ export function IdePage() {
     else if (action === 'open-metrics') setActiveDrawer('metrics');
     else if (action === 'open-memory') setActiveDrawer('memory');
     else if (action === 'focus-beat') setActiveDrawer('diagnostics');
+    else if (action === 'preview-plan') setActiveDrawer('plan-preview');
     else if (action === 'regenerate') {
       setText('');
       setTitle('');
       void generateChapter(chapter, { afterDelete: true });
+    } else if (action === 'accepted') {
+      // ChapterActions 已内部调用 acceptChapter，这里只刷新状态 + 提示
+      setAiMsg(`第 ${chapter} 章已接受 · 下一章已解锁`);
+      onRuntimeAction();
     } else if (action === 'deleted') {
       setText('');
       setTitle('');
@@ -397,7 +419,7 @@ export function IdePage() {
             if (activeDrawer === 'diagnostics' && forceDiagOpen) return;
             setActiveDrawer(null);
           }}
-          width={activeDrawer === 'hash' || activeDrawer === 'prompt' || activeDrawer === 'diagnostics' || activeDrawer === 'characters' || activeDrawer === 'factions' || activeDrawer === 'world' || activeDrawer === 'locations' ? 'xl' : 'lg'}
+          width={activeDrawer === 'hash' || activeDrawer === 'prompt' || activeDrawer === 'diagnostics' || activeDrawer === 'characters' || activeDrawer === 'factions' || activeDrawer === 'world' || activeDrawer === 'locations' || activeDrawer === 'plan-preview' ? 'xl' : 'lg'}
         >
           {activeDrawer === 'planner' && <PlannerDrawer book={book} chapter={chapter} />}
           {activeDrawer === 'director' && (
@@ -422,6 +444,13 @@ export function IdePage() {
                 loadChapter(chapter);
                 api.listChapters(book.id).then(setChapters).catch(() => {});
               }}
+            />
+          )}
+          {activeDrawer === 'plan-preview' && (
+            <PlanPreviewDrawer
+              bookId={book.id}
+              chapter={targetChapter}
+              onGenerate={() => { setActiveDrawer(null); void generateNext(); }}
             />
           )}
           {activeDrawer === 'prompt' && (

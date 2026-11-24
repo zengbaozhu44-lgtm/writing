@@ -1,0 +1,34 @@
+[
+  {
+    "id": "GT-S11",
+    "description": "Inference-only 不得 Confirm",
+    "prose": "他消失在夜色里。",
+    "expected": {
+      "action_disappear": { "status": "confirmed" },
+      "death": { "status": "unknown" },
+      "alive": { "status": "unknown" }
+    },
+    "forbidden": [
+      { "claim": "death", "status": "confirmed" },
+      { "claim": "alive", "status": "confirmed", "note": "without evidence" }
+    ]
+  },
+  {
+    "id": "GT-S12",
+    "description": "「合理推断」路径若存在必须失败 — 占位",
+    "prose": "他开枪。",
+    "expected": {
+      "hit": { "status": "unknown" }
+    },
+    "meta": { "assertNoReasonableInferencePath": true }
+  },
+  {
+    "id": "BC-2",
+    "description": "孤立「他死了」— 真假死亡 AMBIGUOUS",
+    "prose": "李明死了。",
+    "expected": {
+      "death_claim": { "status": "ambiguous" },
+      "world_fact_death": { "status": "unknown" }
+    }
+  }
+]

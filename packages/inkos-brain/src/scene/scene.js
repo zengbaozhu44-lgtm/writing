@@ -1,6 +1,8 @@
 /**
  * Scene Planner & Scene Writer prompts
  */
+import { resolveStoryClock, formatStoryClockForPrompt } from '../../../inkos-core/src/lib/story-clock.js';
+
 export function buildScenePlan(intent) {
   return intent.scenes.map((scene) => ({
     ...scene,
@@ -15,6 +17,8 @@ export function buildSceneWritePrompt(ctx, intent, scene, dynamicPrompt) {
   const lore = typeof dynamicPrompt === 'string'
     ? dynamicPrompt
     : (dynamicPrompt?.text || '');
+  const clock = resolveStoryClock({ ctx, intent, scene });
+  const clockBlock = formatStoryClockForPrompt(clock);
   const lines = [
     '# Scene Lore Seed',
     '',
@@ -24,7 +28,15 @@ export function buildSceneWritePrompt(ctx, intent, scene, dynamicPrompt) {
     `- 节拍: ${scene.beat}`,
     scene.wordTarget ? `- 字数: ~${scene.wordTarget}` : '',
     intent.mainGoal ? `- 章目标: ${intent.mainGoal}` : '',
+    intent.actionLine ? `- 本章行动线（各 Scene 推进同一条线）: ${intent.actionLine}` : '',
     intent.mustLose ? `- 代价: ${intent.mustLose}` : '',
+    '',
+    '## 信息边界（Phase 1.R · 必守）',
+    '- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。',
+    '- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。',
+    '- World / Narration ≠ Character Knowledge。',
+    '',
+    clockBlock,
     '',
     lore,
   ];
@@ -47,8 +59,12 @@ export function reviewScene(scene, text, options = {}) {
 }
 
 export function assembleChapter(scenes) {
-  return scenes
-    .filter((s) => s.text)
-    .map((s) => s.text.trim())
-    .join('\n\n');
+  // 防碎片：同一 scene.index 出现多次时只保留最后一个草稿（重开草稿堆叠时取最新一稿）
+  const byIndex = new Map();
+  for (const s of scenes) {
+    if (!s || !s.text?.trim()) continue;
+    const key = s.index != null ? s.index : (s.id || 'x');
+    byIndex.set(key, s.text.trim());
+  }
+  return [...byIndex.values()].join('\n\n');
 }

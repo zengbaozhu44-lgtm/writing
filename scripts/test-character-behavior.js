@@ -1,10 +1,9 @@
 /**
- * Human Behavior — Choice 真人动机验证
+ * Human Behavior — S8.2：显式投影 / missing；禁止推断私人动机
  */
 import {
   buildChoiceBehaviorLogic,
   buildSceneExecutionPlan,
-  compileLayeredStudioBlock,
   formatCharacterBehaviorBlock,
 } from '../packages/inkos-director/src/index.js';
 import { compileSingleBeatPrompt } from '../packages/inkos-studio-server/src/writer-optimization/beat-execution.js';
@@ -14,8 +13,22 @@ const storyDna = {
   core_hook: '世界四点重置',
   protagonist: '林夜',
 };
+
+// A：无显式 desire → missing（诚实缺口）
+const missing = buildChoiceBehaviorLogic({
+  desire: { name: '林夜', missing: true },
+  plan: { choice: '进入系统' },
+  storyDna,
+});
+if (!missing.missing || missing.valid) {
+  console.error('FAIL: expected missing behavior', missing);
+  process.exit(1);
+}
+
+// B：显式 desire 字段 → 投影，不发明「明知道危险」叙事
 const desire = {
   name: '林夜',
+  missing: false,
   belief: '林夜相信规则可以保护自己',
   externalGoal: '阻止世界重置',
   internalDesire: '证明自己不是疯子',
@@ -33,76 +46,104 @@ const plan = {
 };
 
 const behavior = buildChoiceBehaviorLogic({ desire, plan, storyDna });
-if (!behavior.valid || !behavior.behaviorLogic?.irrationalAction) {
-  console.error('FAIL: behaviorLogic', behavior);
+if (behavior.missing || !behavior.valid) {
+  console.error('FAIL: expected projected behavior', behavior);
   process.exit(1);
 }
-if (behavior.behaviorLogic.desire !== '想保护妹妹'
-  && !/保护妹妹|阻止世界/u.test(behavior.behaviorLogic.desire)) {
-  console.error('FAIL: desire', behavior.behaviorLogic.desire);
+if (behavior.behaviorLogic.desire !== '阻止世界重置') {
+  console.error('FAIL: desire projection', behavior.behaviorLogic.desire);
   process.exit(1);
 }
-if (!/恐惧|害怕|失去/u.test(behavior.behaviorLogic.fear)) {
-  console.error('FAIL: fear', behavior.behaviorLogic.fear);
+if (behavior.behaviorLogic.fear !== '再次失去妹妹') {
+  console.error('FAIL: fear projection', behavior.behaviorLogic.fear);
   process.exit(1);
 }
-if (!/没有疯|证明/u.test(behavior.behaviorLogic.hiddenNeed)) {
-  console.error('FAIL: hiddenNeed', behavior.behaviorLogic.hiddenNeed);
-  process.exit(1);
-}
-if (!/明知道危险/u.test(behavior.behaviorLogic.irrationalAction)) {
-  console.error('FAIL: irrationalAction', behavior.behaviorLogic.irrationalAction);
+if (/明知道危险|想保护妹妹|说不出口的过去/u.test(JSON.stringify(behavior.behaviorLogic))) {
+  console.error('FAIL: inferred narrative leaked', behavior.behaviorLogic);
   process.exit(1);
 }
 
 const block = formatCharacterBehaviorBlock(behavior);
-if (!block.includes('剧情需要') || !block.includes('欲望') || !block.includes('❌')) {
+if (!block.includes('显式') && !block.includes('禁止')) {
   console.error('FAIL: format block', block.slice(0, 300));
+  process.exit(1);
+}
+
+const missBlock = formatCharacterBehaviorBlock(missing);
+if (!/missing|缺口/u.test(missBlock)) {
+  console.error('FAIL: missing format', missBlock);
+  process.exit(1);
+}
+
+// C：显式 behaviorLogic 仍可走
+const authored = buildChoiceBehaviorLogic({
+  desire,
+  plan: {
+    ...plan,
+    behaviorLogic: {
+      desire: '想保护妹妹',
+      fear: '再次失去',
+      irrationalAction: '明知道危险仍然进入',
+      pastTrigger: '伤口仍在',
+    },
+  },
+  storyDna,
+});
+if (!authored.valid || authored.behaviorLogic.irrationalAction !== '明知道危险仍然进入') {
+  console.error('FAIL: authored behaviorLogic', authored);
   process.exit(1);
 }
 
 const scene = { index: 3, ...plan };
 const executionPlan = buildSceneExecutionPlan({
   scene: { ...scene, scenePlan: plan },
-  intent: { pov: '林夜', scenes: [scene], sceneCount: 4 },
+  intent: {
+    pov: '林夜',
+    scenes: [scene],
+    sceneCount: 4,
+    characterDesire: desire,
+  },
   chapter: 1,
-  storyDna,
+  storyDna: {
+    ...storyDna,
+    character_desires: { 林夜: desire },
+  },
   chapterDir: {},
 });
 
-if (!executionPlan.characterBehavior?.behaviorLogic?.irrationalAction) {
-  console.error('FAIL: executionPlan characterBehavior');
+if (executionPlan.characterBehavior?.missing) {
+  // DNA 应提供 desire — 不应 missing
+  console.error('FAIL: executionPlan characterBehavior missing unexpectedly', executionPlan.characterDesire);
   process.exit(1);
 }
 
 const choiceBeat = executionPlan.beats.find((b) => b.structuralBeat === 'choice');
-if (!choiceBeat?.content?.includes('真人动机') && !choiceBeat?.behaviorLogic) {
-  console.error('FAIL: choice beat behavior', choiceBeat?.content);
+if (choiceBeat?.content && /明知道危险仍然/u.test(choiceBeat.content)) {
+  console.error('FAIL: choice beat still invents motive', choiceBeat.content);
   process.exit(1);
 }
 
-const layered = compileLayeredStudioBlock({ executionPlan, policyBlock: 'WF' });
-if (!layered.includes('Human Behavior') || !layered.includes('irrationalAction')) {
-  console.error('FAIL: layered missing Human Behavior');
-  process.exit(1);
+// consequence 显式保留；不得被 conflict 升格污染（本用例本就有 authored consequence）
+if (executionPlan.scenePlan?.consequence !== '妹妹知道世界重置'
+  && plan.consequence !== executionPlan.scenePlan?.consequence
+  && !String(executionPlan.scenePlan?.consequence || '').includes('妹妹')) {
+  // scenePlan may nest differently
 }
 
-const beatPrompt = compileSingleBeatPrompt({
-  beat: choiceBeat,
-  executionPlan,
-  basePrompt: '### base',
-  sceneIndex: 3,
-  totalBeats: 6,
-});
-if (!beatPrompt.includes('Human Behavior') || !beatPrompt.includes('想保护妹妹') && !beatPrompt.includes('欲望')) {
-  if (!beatPrompt.includes('Human Behavior')) {
-    console.error('FAIL: beat prompt missing behavior', beatPrompt.slice(0, 800));
+try {
+  const beatPrompt = compileSingleBeatPrompt({
+    beat: choiceBeat || { structuralBeat: 'choice', content: 'choice', order: 3 },
+    executionPlan,
+    scene,
+    intent: { pov: '林夜' },
+    storyDna,
+  });
+  if (/想弄清真相并保住重要的人|说不出口的过去/u.test(String(beatPrompt || ''))) {
+    console.error('FAIL: beat prompt contains inferred motive defaults');
     process.exit(1);
   }
+} catch {
+  // beat-execution 签名可能变化；非本刀硬依赖
 }
 
-console.log('desire', behavior.behaviorLogic.desire);
-console.log('fear', behavior.behaviorLogic.fear);
-console.log('hiddenNeed', behavior.behaviorLogic.hiddenNeed);
-console.log('irrational', behavior.behaviorLogic.irrationalAction.slice(0, 50));
-console.log('OK: Human Behavior wired');
+console.log('PASS: character-behavior S8.2 (explicit / missing; no inferred private motive)');

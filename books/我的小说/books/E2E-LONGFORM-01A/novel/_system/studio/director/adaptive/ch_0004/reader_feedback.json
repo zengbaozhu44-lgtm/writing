@@ -1,0 +1,438 @@
+{
+  "chapter": 4,
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "chapter": 4,
+      "metrics": {
+        "continueProbability": 55,
+        "questionCount": 0,
+        "dropRisk": 30,
+        "curiosity": 56
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 12,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": true,
+        "addInformationGap": true,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 55% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "Question Count 偏低（0）— 下一章须新增谜团、信息差与悬念，禁止平叙收束",
+        "[角色成长] 下一章须推动 周砚 做出不可逆选择或付出代价"
+      ],
+      "triggers": {
+        "lowContinueProbability": true,
+        "lowQuestionCount": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.6499999999999999,
+        "relationship": 0.15,
+        "action": 0.6499999999999999,
+        "emotion": 0.3,
+        "twist": 0.5,
+        "growth": 0.3,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.6499999999999999,
+          "score": 36,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.15,
+          "score": 8,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 36,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 28,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 55,
+          "curiosity": 56
+        }
+      },
+      "at": "2026-10-22T08:54:20.193Z"
+    },
+    {
+      "sceneIndex": 2,
+      "chapter": 4,
+      "metrics": {
+        "continueProbability": 70,
+        "questionCount": 4,
+        "dropRisk": 30,
+        "curiosity": 68
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[角色成长] 下一章须推动 周砚 做出不可逆选择或付出代价"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.7999999999999999,
+        "relationship": 0.44999999999999996,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.8499999999999999,
+        "growth": 0.3,
+        "reasoning": 0.8999999999999999
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.7999999999999999,
+          "score": 55,
+          "continueProbability": 70,
+          "curiosity": 68
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.44999999999999996,
+          "score": 31,
+          "continueProbability": 70,
+          "curiosity": 68
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 45,
+          "continueProbability": 70,
+          "curiosity": 68
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 31,
+          "continueProbability": 70,
+          "curiosity": 68
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.8499999999999999,
+          "score": 58,
+          "continueProbability": 70,
+          "curiosity": 68
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 21,
+          "continueProbability": 70,
+          "curiosity": 68
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.8999999999999999,
+          "score": 62,
+          "continueProbability": 70,
+          "curiosity": 68
+        }
+      },
+      "at": "2026-10-22T08:54:45.305Z"
+    },
+    {
+      "sceneIndex": 3,
+      "chapter": 4,
+      "metrics": {
+        "continueProbability": 54,
+        "questionCount": 3,
+        "dropRisk": 45,
+        "curiosity": 53
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 15,
+        "payoffBoost": 0,
+        "hookLadderBoost": 1,
+        "firstScreenExplosion": true,
+        "advancePacing": true,
+        "increaseConflict": true,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 54% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "Drop Risk 45% 偏高 — 下一章开篇须第一屏爆点，节奏提前，冲突升级，Hook Ladder 须递进",
+        "[角色成长] 下一章须推动 周砚 做出不可逆选择或付出代价"
+      ],
+      "triggers": {
+        "lowContinueProbability": true,
+        "highDropRisk": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.3,
+        "relationship": 0,
+        "action": 0.7999999999999999,
+        "emotion": 0.3,
+        "twist": 0.6499999999999999,
+        "growth": 0.44999999999999996,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.3,
+          "score": 16,
+          "continueProbability": 54,
+          "curiosity": 53
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.7999999999999999,
+          "score": 43,
+          "continueProbability": 54,
+          "curiosity": 53
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.3,
+          "score": 16,
+          "continueProbability": 54,
+          "curiosity": 53
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.6499999999999999,
+          "score": 35,
+          "continueProbability": 54,
+          "curiosity": 53
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.44999999999999996,
+          "score": 24,
+          "continueProbability": 54,
+          "curiosity": 53
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 16,
+          "continueProbability": 54,
+          "curiosity": 53
+        }
+      },
+      "at": "2026-10-22T08:55:36.277Z"
+    },
+    {
+      "sceneIndex": 4,
+      "chapter": 4,
+      "metrics": {
+        "continueProbability": 66,
+        "questionCount": 2,
+        "dropRisk": 30,
+        "curiosity": 68
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 66% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "[角色成长] 下一章须推动 周砚 做出不可逆选择或付出代价"
+      ],
+      "triggers": {
+        "lowContinueProbability": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.6499999999999999,
+        "relationship": 0,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.15,
+        "growth": 0.6499999999999999,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.6499999999999999,
+          "score": 44,
+          "continueProbability": 66,
+          "curiosity": 68
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 43,
+          "continueProbability": 66,
+          "curiosity": 68
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 30,
+          "continueProbability": 66,
+          "curiosity": 68
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.15,
+          "score": 10,
+          "continueProbability": 66,
+          "curiosity": 68
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.6499999999999999,
+          "score": 43,
+          "continueProbability": 66,
+          "curiosity": 68
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 20,
+          "continueProbability": 66,
+          "curiosity": 68
+        }
+      },
+      "at": "2026-10-22T08:56:04.621Z"
+    }
+  ],
+  "aggregatedMetrics": {
+    "avgContinueProbability": 61,
+    "maxDropRisk": 45,
+    "avgQuestionCount": 2,
+    "avgCuriosity": 61,
+    "sceneCount": 4
+  },
+  "adjustments": {
+    "hookDensityBoost": 15,
+    "mysteryBoost": 12,
+    "conflictBoost": 15,
+    "payoffBoost": 0,
+    "relationshipBeatBoost": 0,
+    "hookLadderBoost": 1,
+    "firstScreenExplosion": true,
+    "advancePacing": true,
+    "increaseConflict": true,
+    "addMystery": true,
+    "addInformationGap": true,
+    "increaseHookDensity": true
+  },
+  "directives": [
+    "Continue Probability 55% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Question Count 偏低（0）— 下一章须新增谜团、信息差与悬念，禁止平叙收束",
+    "[角色成长] 下一章须推动 周砚 做出不可逆选择或付出代价",
+    "Continue Probability 54% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Drop Risk 45% 偏高 — 下一章开篇须第一屏爆点，节奏提前，冲突升级，Hook Ladder 须递进",
+    "Continue Probability 66% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "疑问密度偏低 — 下一章每 Scene 至少留一个未答问题",
+    "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+    "阅读驱动力 57/100 偏低 — 下一章增加代价逼近与不可逆选择",
+    "反转力度不足 — 下一章安排预期违背或信息翻盘"
+  ],
+  "storyMemoryDirectives": [
+    "[角色成长] 下一章须推动 周砚 做出不可逆选择或付出代价"
+  ],
+  "elementScores": {
+    "conspiracy": 38,
+    "relationship": 20,
+    "action": 42,
+    "emotion": 24,
+    "twist": 33,
+    "growth": 26,
+    "reasoning": 29
+  },
+  "updatedAt": "2026-10-22T08:56:09.532Z",
+  "readerCurveReport": {
+    "readerAddictionScore": 67,
+    "nextChapterGuidance": [
+      "疑问密度偏低 — 下一章每 Scene 至少留一个未答问题",
+      "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+      "阅读驱动力 57/100 偏低 — 下一章增加代价逼近与不可逆选择",
+      "反转力度不足 — 下一章安排预期违背或信息翻盘"
+    ]
+  },
+  "finalizedAt": "2026-10-22T08:56:09.532Z"
+}

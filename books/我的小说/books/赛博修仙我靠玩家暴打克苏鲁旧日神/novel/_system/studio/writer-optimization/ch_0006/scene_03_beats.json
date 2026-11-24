@@ -1,0 +1,1179 @@
+{
+  "sceneIndex": 3,
+  "sceneType": "climax",
+  "parts": [
+    {
+      "order": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "chars": 175,
+      "beatStateDelta": {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "林砚当前目标：转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，在林砚面前施展 — 局势尚未被本 Scene 改写",
+        "action": "转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，在林砚面前施展邪神禁术，精神攻击直刺其神魂。林砚借助玩家‘雷达’预警争取的宝贵时间，利用刚刚爆出的神级义体‘数据眼’逆天改命，看穿‘蚀骨’招式中的因果破绽，以数据流飞剑一击反杀，完成从猎物到猎人的瞬间逆转。",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "屏幕上，蚀骨的坐标正以每秒十七公里的速度逼近——那东西穿透了第七防线，玩家ID像碎玻璃一样往下掉",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger",
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "林砚的手指悬在确认键上方",
+          "沈寒舟的声音从通讯器里挤出来，尾音带着电流撕裂的沙哑：「你不确认，我就把林薇的备份数据也拖进战场",
+          "确认框弹出，代价栏跳出一行字：失去外围通讯权"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "他喉咙里滚出一声闷哼，像被什么东西卡住了"
+        ],
+        "extractedAt": "2026-08-04T08:28:03.962Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "LOOP_STALL: 「操作→痛苦→反馈」已循环 5 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+            "LOOP_STALL: 「操作→痛苦→反馈」已循环 5 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "林砚当前目标：转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "goal",
+        "beforeState": "林砚当前目标：转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，在林砚面前施展 — 局势尚未被本 Scene 改写",
+        "action": "转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，在林砚面前施展邪神禁术，精神攻击直刺其神魂。林砚借助玩家‘雷达’预警争取的宝贵时间，利用刚刚爆出的神级义体‘数据眼’逆天改命，看穿‘蚀骨’招式中的因果破绽，以数据流飞剑一击反杀，完成从猎物到猎人的瞬间逆转。",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": true,
+        "requiredDimension": "goalDirection"
+      },
+      "stateChange": true,
+      "afterState": "屏幕上，蚀骨的坐标正以每秒十七公里的速度逼近——那东西穿透了第七防线，玩家ID像碎玻璃一样往下掉",
+      "textPreview": "林砚的手指悬在确认键上方。屏幕上，蚀骨的坐标正以每秒十七公里的速度逼近——那东西穿透了第七防线，玩家ID像碎玻璃一样往下掉。\n\n沈寒舟的声音从通讯器里挤出来，尾音带着电流撕裂的沙哑：「你不确认，我就把林薇的备份数据也拖进战场。」\n\n林砚的拇",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 5 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ],
+        "storyBefore": "林砚当前目标：转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "microPassed": [
+          "关系"
+        ]
+      }
+    },
+    {
+      "order": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "chars": 231,
+      "beatStateDelta": {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "必须失去：林砚为强行驱动‘数据眼’并解析邪神代码 — 且局面本身不会让步",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "”他喉咙里滚出一声闷哼，像被什么碾碎了"
+        ],
+        "extractedAt": "2026-08-04T08:28:07.292Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.06976744186046512
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "obstacle",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "必须失去：林砚为强行驱动‘数据眼’并解析邪神代码 — 且局面本身不会让步",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": true,
+        "requiredDimension": "danger"
+      },
+      "stateChange": false,
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "textPreview": "解析进度卡在87%的瞬间，林砚的右眼像被针扎穿——数据眼强行撕裂折叠层，他看见了邪神代码的骨架，也看见了林薇站在骨架中央。\n\n她全身被暗紫色的丝线吊着，像一具被风干的木偶。\n\n“姐。”他喉咙里滚出一声闷哼，像被什么碾碎了。\n\n解析链断了。那",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "chars": 152,
+      "beatStateDelta": {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "强制选项标注着：成功率17%，不可逆损伤",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "屏幕上的弹窗还在闪烁，请求他确认调取林薇的残存神经信号",
+          "林砚的手指悬在确认键上方，指节发白",
+          "那是你妹妹的——”"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-04T08:28:15.941Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "choice",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": true,
+        "requiredDimension": "relationship"
+      },
+      "stateChange": true,
+      "afterState": "强制选项标注着：成功率17%，不可逆损伤",
+      "textPreview": "屏幕上的弹窗还在闪烁，请求他确认调取林薇的残存神经信号。强制选项标注着：成功率17%，不可逆损伤。\n\n林砚的手指悬在确认键上方，指节发白。他听见自己喉咙里发出干涩的吞咽声，像砂纸磨过钢板。齐玥的声音从通讯器里传来：“你疯了？那是你妹妹的——",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "microPassed": [
+          "关系"
+        ]
+      }
+    },
+    {
+      "order": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "chars": 159,
+      "beatStateDelta": {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「获取关键情报」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「获取关键情报」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状"
+        ],
+        "extractedAt": "2026-08-04T08:28:26.154Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.00641025641025641
+          },
+          "microPassed": [
+            "关系",
+            "新行动"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "consequence",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「获取关键情报」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "",
+        "consequence": "为完成「获取关键情报」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": true,
+        "requiredDimension": "resource"
+      },
+      "stateChange": true,
+      "afterState": "身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状",
+      "textPreview": "林砚攥着那截烧焦的掌纹钥匙，指缝里渗出血珠。身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状。他来不及回头，胸口一凉——一根骨刺从墙缝里穿出，钉住他左肩，把他钉在原地。\n\n林薇的声音从耳机里传来，断断续续：“哥……别管我了，它冲",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "microPassed": [
+          "关系",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "order": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "chars": 127,
+      "beatStateDelta": {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "他拇指按在键盘上，伤口裂开，血渗进按键缝里",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "goalDirection"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "”他的嗓音发颤，像被什么卡住，“是沈寒舟的权限印记"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "监控屏上滚过一行数据，林砚的瞳孔骤缩——林薇的档案编号下方，跳出一段从未见过的加密指令",
+          "”他的嗓音发颤，像被什么卡住，“是沈寒舟的权限印记"
+        ],
+        "extractedAt": "2026-08-04T08:28:33.192Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "REPEAT_REVEAL:「系统界面」已揭示，禁止再写首次发现/突然激活语气；只写后果或推进",
+            "EVENT_LOOP:「系统/监控屏」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "REPEAT_REVEAL:「系统界面」已揭示，禁止再写首次发现/突然激活语气；只写后果或推进",
+            "EVENT_LOOP:「系统/监控屏」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.008064516129032258
+          },
+          "microPassed": [
+            "新信息",
+            "关系",
+            "Promise兑现"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "newInformation",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": true,
+        "requiredDimension": "information"
+      },
+      "stateChange": true,
+      "afterState": "他拇指按在键盘上，伤口裂开，血渗进按键缝里",
+      "textPreview": "监控屏上滚过一行数据，林砚的瞳孔骤缩——林薇的档案编号下方，跳出一段从未见过的加密指令。他拇指按在键盘上，伤口裂开，血渗进按键缝里。\n\n“这指令……”他的嗓音发颤，像被什么卡住，“是沈寒舟的权限印记。”\n\n屏幕闪了一下。那段指令自动执行，目",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "REPEAT_REVEAL:「系统界面」已揭示，禁止再写首次发现/突然激活语气；只写后果或推进",
+          "EVENT_LOOP:「系统/监控屏」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+        ],
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "microPassed": [
+          "新信息",
+          "关系",
+          "Promise兑现"
+        ]
+      }
+    },
+    {
+      "order": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "chars": 160,
+      "beatStateDelta": {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "血珠顺着指缝滴在键盘上，他没擦",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "内拿到坐标，否则——”\n\n林砚已经切断通讯。他甩开面前报废的主控台，从断裂的线缆堆里扯出那根数据软管。右手掌心的伤口被撕开，他咬住管口，把血咽下去，然后一把将软"
+        ],
+        "extractedAt": "2026-08-04T08:28:42.392Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "主控台",
+          "revealed": [
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.050955414012738856
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "hook",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": true,
+        "requiredDimension": "worldCognition"
+      },
+      "stateChange": true,
+      "afterState": "血珠顺着指缝滴在键盘上，他没擦",
+      "textPreview": "林薇的ID从监控屏上熄灭的那一刻，林砚的指甲掐进了掌心。血珠顺着指缝滴在键盘上，他没擦。\n\n“她进蚀骨舱了。”沈寒舟的声音从耳麦里传来，带着电流的杂音，“你得在四十七秒内拿到坐标，否则——”\n\n林砚已经切断通讯。他甩开面前报废的主控台，从断",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "microPassed": [
+          "关系"
+        ]
+      }
+    }
+  ],
+  "beatMemory": {
+    "newFacts": [
+      "林砚的手指悬在确认键上方",
+      "沈寒舟的声音从通讯器里挤出来，尾音带着电流撕裂的沙哑：「你不确认，我就把林薇的备份数据也拖进战场",
+      "确认框弹出，代价栏跳出一行字：失去外围通讯权",
+      "屏幕上的弹窗还在闪烁，请求他确认调取林薇的残存神经信号",
+      "林砚的手指悬在确认键上方，指节发白",
+      "那是你妹妹的——”",
+      "”他的嗓音发颤，像被什么卡住，“是沈寒舟的权限印记"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [],
+    "unresolvedIssues": [
+      "他喉咙里滚出一声闷哼，像被什么东西卡住了",
+      "”他喉咙里滚出一声闷哼，像被什么碾碎了",
+      "身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状",
+      "监控屏上滚过一行数据，林砚的瞳孔骤缩——林薇的档案编号下方，跳出一段从未见过的加密指令",
+      "”他的嗓音发颤，像被什么卡住，“是沈寒舟的权限印记",
+      "内拿到坐标，否则——”\n\n林砚已经切断通讯。他甩开面前报废的主控台，从断裂的线缆堆里扯出那根数据软管。右手掌心的伤口被撕开，他咬住管口，把血咽下去，然后一把将软"
+    ],
+    "changedDimensions": [
+      "information",
+      "danger",
+      "resource",
+      "goalDirection"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "屏幕上，蚀骨的坐标正以每秒十七公里的速度逼近——那东西穿透了第七防线，玩家ID像碎玻璃一样往下掉"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "强制选项标注着：成功率17%，不可逆损伤"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他拇指按在键盘上，伤口裂开，血渗进按键缝里"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "血珠顺着指缝滴在键盘上，他没擦"
+      }
+    ],
+    "lastAfterState": "血珠顺着指缝滴在键盘上，他没擦",
+    "stateChangeCount": 5
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，在林砚面前施展 — 局势尚未被本 Scene 改写",
+      "action": "转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，在林砚面前施展邪神禁术，精神攻击直刺其神魂。林砚借助玩家‘雷达’预警争取的宝贵时间，利用刚刚爆出的神级义体‘数据眼’逆天改命，看穿‘蚀骨’招式中的因果破绽，以数据流飞剑一击反杀，完成从猎物到猎人的瞬间逆转。",
+      "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "屏幕上，蚀骨的坐标正以每秒十七公里的速度逼近——那东西穿透了第七防线，玩家ID像碎玻璃一样往下掉",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "林砚的手指悬在确认键上方",
+        "沈寒舟的声音从通讯器里挤出来，尾音带着电流撕裂的沙哑：「你不确认，我就把林薇的备份数据也拖进战场",
+        "确认框弹出，代价栏跳出一行字：失去外围通讯权"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "他喉咙里滚出一声闷哼，像被什么东西卡住了"
+      ],
+      "extractedAt": "2026-08-04T08:28:03.962Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 5 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+          "LOOP_STALL: 「操作→痛苦→反馈」已循环 5 次，中段原地踏步；本拍禁止再开同类交互，必须把代价写成一个不可逆的转折（截断/反噬/失败），或直接跳进下一危机"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "林砚当前目标：转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "关系"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "必须失去：林砚为强行驱动‘数据眼’并解析邪神代码 — 且局面本身不会让步",
+      "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "”他喉咙里滚出一声闷哼，像被什么碾碎了"
+      ],
+      "extractedAt": "2026-08-04T08:28:07.292Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.06976744186046512
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "强制选项标注着：成功率17%，不可逆损伤",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "屏幕上的弹窗还在闪烁，请求他确认调取林薇的残存神经信号",
+        "林砚的手指悬在确认键上方，指节发白",
+        "那是你妹妹的——”"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-04T08:28:15.941Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「获取关键情报」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「获取关键情报」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "身后通风管道的铁皮被什么东西从外面撕开，金属尖叫着卷成花瓣状"
+      ],
+      "extractedAt": "2026-08-04T08:28:26.154Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.00641025641025641
+        },
+        "microPassed": [
+          "关系",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "他拇指按在键盘上，伤口裂开，血渗进按键缝里",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "goalDirection"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "”他的嗓音发颤，像被什么卡住，“是沈寒舟的权限印记"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "监控屏上滚过一行数据，林砚的瞳孔骤缩——林薇的档案编号下方，跳出一段从未见过的加密指令",
+        "”他的嗓音发颤，像被什么卡住，“是沈寒舟的权限印记"
+      ],
+      "extractedAt": "2026-08-04T08:28:33.192Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "拘束操作台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "REPEAT_REVEAL:「系统界面」已揭示，禁止再写首次发现/突然激活语气；只写后果或推进",
+          "EVENT_LOOP:「系统/监控屏」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "REPEAT_REVEAL:「系统界面」已揭示，禁止再写首次发现/突然激活语气；只写后果或推进",
+          "EVENT_LOOP:「系统/监控屏」已发现（相位=advanced）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.008064516129032258
+        },
+        "microPassed": [
+          "新信息",
+          "关系",
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「获取关键情报」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "血珠顺着指缝滴在键盘上，他没擦",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "内拿到坐标，否则——”\n\n林砚已经切断通讯。他甩开面前报废的主控台，从断裂的线缆堆里扯出那根数据软管。右手掌心的伤口被撕开，他咬住管口，把血咽下去，然后一把将软"
+      ],
+      "extractedAt": "2026-08-04T08:28:42.392Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "主控台",
+        "revealed": [
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.050955414012738856
+        },
+        "microPassed": [
+          "关系"
+        ],
+        "continuityPass": false
+      }
+    }
+  ],
+  "runtimeSession": {
+    "lastEvent": {
+      "cause": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+      "event": "Scene 尾留悬念 — 禁止平收总结",
+      "effect": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价："
+    },
+    "beforeState": "林砚已掌握：信息后果已落地；局面代价：选择产生可见代价，局面因此改变",
+    "rewriteCounts": {
+      "1": 3,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 3
+    }
+  },
+  "runtimeV2": false,
+  "sceneOutcome": {
+    "success": "若达成：转折（本 Scene 兑现完整行动线）：‘蚀骨’突破玩家层层防线，在林砚面前施展邪神禁术，精神攻击直刺其神魂。林砚借助玩家‘雷达’预警争取的宝贵时间，利用刚刚爆出的神级义体‘数据眼’逆天改命，看穿‘蚀骨’招式中的因果破绽，以数据流飞剑一击反杀，完成从猎物到猎人的瞬间逆转。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：必须失去：林砚为强行驱动‘数据眼’并解析邪神代码导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "updatedAt": "2026-08-04T08:28:42.409Z"
+}

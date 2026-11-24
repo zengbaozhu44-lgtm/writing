@@ -1,0 +1,211 @@
+{
+  "role": "read_only_diagnostic_trace",
+  "readOnly": true,
+  "writesCanon": false,
+  "writesSR": false,
+  "schema": {
+    "fields": [
+      "key",
+      "type",
+      "source",
+      "priority",
+      "kept",
+      "reason",
+      "layers"
+    ],
+    "types": [
+      "canon",
+      "projection",
+      "plan",
+      "sr",
+      "historical",
+      "temporary",
+      "guard",
+      "derived",
+      "unavailable"
+    ],
+    "priorities": [
+      "P0",
+      "P1",
+      "P2",
+      "P3"
+    ]
+  },
+  "blocks": [
+    {
+      "key": "story_clock",
+      "type": "plan",
+      "source": "intent.time",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "layers": {
+        "L1": "absent",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "information_boundary",
+      "type": "guard",
+      "source": "buildSceneWritePrompt / prompt-survival",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "character_sr",
+      "type": "sr",
+      "source": "minimal-sr (assembleMinimalSR)",
+      "priority": "P2",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "prior_excerpt",
+      "type": "historical",
+      "source": "prior_scene.text",
+      "priority": "P3",
+      "kept": false,
+      "reason": "unavailable",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "absent",
+        "L4": "absent"
+      },
+      "note": "Historical dates ≠ current Story Clock; demoted vs P1 Canonical"
+    },
+    {
+      "key": "prev_summary",
+      "type": "historical",
+      "source": "resolvePreviousScenes → scene-summary",
+      "priority": "P2",
+      "kept": false,
+      "reason": "unavailable",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "present",
+        "L4": "trimmed"
+      }
+    },
+    {
+      "key": "observed_continuity",
+      "type": "derived",
+      "source": "previous_scene.text → buildObservedContinuity",
+      "priority": "P2",
+      "kept": false,
+      "reason": "unavailable",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "absent",
+        "L4": "absent"
+      },
+      "note": "Scene-local derived projection for N+1 only; ≠ Canon / SR / Plan settlement"
+    },
+    {
+      "key": "chapter_goal",
+      "type": "plan",
+      "source": "intent.mainGoal",
+      "priority": "P1",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "scene_goal",
+      "type": "plan",
+      "source": "scene.goal",
+      "priority": "P1",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      }
+    },
+    {
+      "key": "causal_chain",
+      "type": "plan",
+      "source": "unavailable",
+      "priority": "P1",
+      "kept": false,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "present",
+        "L4": "trimmed"
+      },
+      "channels": [
+        "L3_P1_narrative"
+      ]
+    },
+    {
+      "key": "entity",
+      "type": "derived",
+      "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+      "priority": "P2",
+      "kept": true,
+      "reason": "scene_relevant",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "present",
+        "L4": "present"
+      },
+      "note": "selected: 苏晚,苏晚,林夜,苏晚"
+    },
+    {
+      "key": "character_context",
+      "type": "canon",
+      "source": "03_character_bible whitelist",
+      "priority": "P2",
+      "kept": false,
+      "reason": "budget_trim",
+      "layers": {
+        "L1": "present",
+        "L2": "present",
+        "L3": "trimmed",
+        "L4": "absent"
+      }
+    },
+    {
+      "key": "knowledge",
+      "type": "projection",
+      "source": "unavailable",
+      "priority": "P2",
+      "kept": false,
+      "reason": "unavailable",
+      "layers": {
+        "L1": "absent",
+        "L2": "absent",
+        "L3": "absent",
+        "L4": "absent"
+      }
+    }
+  ],
+  "updatedAt": "2026-09-07T10:07:39.970Z"
+}

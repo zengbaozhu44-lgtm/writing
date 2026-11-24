@@ -10,11 +10,7 @@ import { brainSystemDir } from '../loader.js';
 import { getBookPaths } from '../../../inkos-core/src/lib/book.js';
 
 const TRACKED = [
-  'decision_history.yaml',
-  'scene_history.yaml',
-  'conflict_history.yaml',
   'metrics_dashboard.json',
-  'story_health.json',
   'adaptive_state.json',
   'critic_history.json',
   'manifest.json',
@@ -26,8 +22,6 @@ const NOVEL_TRACKED = [
   '07_state_board.md',
   '11_timeline.yaml',
   '13_facts_db.yaml',
-  '05_relationship_graph.yaml',
-  '06_knowledge_matrix.yaml',
   '12_foreshadow_db.yaml',
   '14_resource_db.yaml',
 ];

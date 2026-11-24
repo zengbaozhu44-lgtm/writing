@@ -1,3 +1,6 @@
+import { spawnSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
 import { RuntimeDaemon, applyDaemonExecutionGuard, formatDebugReport } from '../../inkos-runtime/src/index.js';
 import { StudioRuntimeOrchestrator } from './studio-orchestrator.js';
 import { isLlmConfigured } from '../../inkos-brain/src/writer/llm-writer.js';
@@ -516,6 +519,37 @@ export async function handleApi(req, res, url, body) {
       return send(200, { ...normalizeVersion(), ...persisted });
     }
 
+    // ── 协议渲染器接入（预审-确认-执行 · MVP）──
+    // 渲染器：<bookDir>/_tools/generate-chapter-plan.mjs（IRP v0.1）。spawnSync 跑 CLI，
+    // --json 输出机器可读 plan+audit。commit 让渲染器自己写盘——不走 persistChapterPlan
+    // （它是白名单全量覆写，会丢 foreshadow/_plan_note/mustGain 等协议字段）。
+    //   render-preview：dry（不写盘），返回 { plan, audit } 供抽屉预览。
+    //   render-commit ：--force 写盘，返回 { ok, plan, audit, wrote: true }。
+    const chapterPlanRenderMatch = rest.match(/^\/chapter-plans\/(\d+)\/(render-preview|render-commit)$/);
+    if (chapterPlanRenderMatch && req.method === 'POST') {
+      const ch = Number(chapterPlanRenderMatch[1]);
+      const mode = chapterPlanRenderMatch[2];
+      const script = path.join(bookDir, '_tools', 'generate-chapter-plan.mjs');
+      if (!fs.existsSync(script)) {
+        return send(404, { ...normalizeVersion(), ok: false, error: '该书未安装协议渲染器（_tools/generate-chapter-plan.mjs 不存在）' });
+      }
+      const args = [script, '--chapter', String(ch), '--book', bookDir, '--json'];
+      if (mode === 'render-commit') args.push('--force'); // 抽屉已提示覆盖，确认即写
+      if (body.plant) args.push('--plant', String(body.plant));
+      if (body.overrides?.goal != null) args.push('--override-goal', String(body.overrides.goal));
+      if (Array.isArray(body.overrides?.scenes)) args.push('--override-scenes', JSON.stringify(body.overrides.scenes));
+      const r = spawnSync(process.execPath, args, { encoding: 'utf8', timeout: 30_000 });
+      if (r.status !== 0) {
+        return send(422, { ...normalizeVersion(), ok: false, error: (r.stderr || r.stdout || '渲染器异常退出').trim() });
+      }
+      try {
+        const data = JSON.parse(r.stdout || '{}');
+        return send(200, { ...normalizeVersion(), ...data });
+      } catch {
+        return send(500, { ...normalizeVersion(), ok: false, error: '渲染器输出不是合法 JSON' });
+      }
+    }
+
     if (rest === '/world-state' && req.method === 'GET') {
       return send(200, { ...normalizeVersion(), worldState: readWorldState(bookDir) });
     }
@@ -983,6 +1017,39 @@ export async function handleApi(req, res, url, body) {
           aggregate: studio.aggregate || legacy.aggregate,
           scenes: studio.scenes?.length ? studio.scenes : legacy.scenes,
         },
+      });
+    }
+
+    // F2: Final Context Viewer — READ-ONLY L1–L4 observability
+    if (rest === '/final-context' && req.method === 'GET') {
+      const { listFinalContextSnapshots, loadFinalContextSnapshot, verifyFinalContextIntegrity } = await import(
+        './writer-optimization/final-context-viewer.js'
+      );
+      const chapter = Number(url.searchParams.get('chapter')) || getBookMeta(bookDir).currentChapter || 1;
+      const sceneIndex = Number(url.searchParams.get('scene'));
+      const includeText = url.searchParams.get('text') === '1';
+      if (sceneIndex) {
+        const snapshot = loadFinalContextSnapshot(bookDir, chapter, sceneIndex, { includeText });
+        const integrity = verifyFinalContextIntegrity(snapshot);
+        return send(200, {
+          ...normalizeVersion(),
+          readOnly: true,
+          chapter,
+          scene: sceneIndex,
+          snapshot,
+          integrity,
+        });
+      }
+      const snapshots = listFinalContextSnapshots(bookDir, chapter);
+      return send(200, {
+        ...normalizeVersion(),
+        readOnly: true,
+        chapter,
+        snapshots,
+        integrity: snapshots.map((s) => ({
+          sceneIndex: s.sceneIndex,
+          ...verifyFinalContextIntegrity(s),
+        })),
       });
     }
 

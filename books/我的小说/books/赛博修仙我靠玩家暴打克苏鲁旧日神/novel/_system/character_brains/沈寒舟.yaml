@@ -1,0 +1,55 @@
+character: 沈寒舟
+goals:
+  surface: 打压一切威胁自己地位的人，辅佐渊尊完成邪神献祭，坐稳人族最高权贵之位，维护青穹重工在浮空城的统治权威
+  hidden: 向渊尊证明自己比林砚更有价值，摆脱被当作傀儡的屈辱感；渴望通过邪神献祭获得真正的力量认可，摆脱永远活在渊尊阴影下的自卑
+fears:
+  - 被渊尊抛弃或视为无用之物
+  - 被林砚超越，证明自己天赋不如对方
+  - 自己的傀儡身份被公开揭穿
+  - 邪神污染的失控——彻底丧失自我意识
+bottom_line: 权贵无底线——为权势可以陷害、屠戮、牺牲任何人，包括同族、下属、甚至自己的亲友；唯一不敢触碰的底线是不敢直接违抗渊尊的意志
+current_state:
+  trust_protagonist: 0
+  fear: 50
+  betrayal_probability: 100
+  suspicion: 70
+  loyalty: 90
+growth_arc: 从嚣张权贵反派，逐渐被邪神深度污染，从有自主意识的阴狠小人沦为由邪神支配的畸变傀儡，最终被玩家军团彻底碾压淘汰——一条从人变怪物的堕落弧线，既是打脸爽点载体，也是邪神污染威力的具象化展示
+triggers:
+  林砚实力快速反超:
+    trust: -10
+    suspicion: 20
+  玩家军团花式吊打自己:
+    trust: -5
+    suspicion: 15
+  渊尊对自己的表现不满:
+    trust: 0
+    suspicion: 10
+  发现自己被邪神污染加深:
+    trust: -5
+    suspicion: 25
+  林砚当众揭穿自己傀儡身份:
+    trust: -15
+    suspicion: 30
+  玩家展示出无视邪神污染的特性:
+    trust: -10
+    suspicion: 40
+lastChapter: 12
+evolutionLog:
+  - chapter: 8
+    state:
+      trust_protagonist: 0
+      fear: 35
+      betrayal_probability: 100
+      suspicion: 70
+      loyalty: 90
+    at: 2026-08-11T06:35:38.823Z
+  - chapter: 12
+    state:
+      trust_protagonist: 0
+      fear: 50
+      betrayal_probability: 100
+      suspicion: 70
+      loyalty: 90
+    at: 2026-08-11T09:03:07.497Z
+updatedAt: 2026-08-11T09:24:38.526Z

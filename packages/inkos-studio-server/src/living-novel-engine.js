@@ -19,7 +19,7 @@ import {
   readSystemFile,
 } from './system-store.js';
 import { syncContextToCanon, buildNovelIntelligenceContext } from './story-context-provider.js';
-import { normalizeBrainContextForRun, resolveProtagonistName, resolveEffectiveChapterPov, getTimelineLastDay, resolveStoryDayForChapterRun, syncStoryDayAfterChapter } from './brain-context-sync.js';
+import { normalizeBrainContextForRun, resolveProtagonistName, resolveEffectiveChapterPov } from './brain-context-sync.js';
 import { runAiEditor, analyzeCharacterBrain } from './creator-intelligence.js';
 import { isLlmConfigured } from '../../inkos-brain/src/writer/llm-writer.js';
 import { loadInkOsConfig } from '../../inkos-core/src/lib/config.js';
@@ -35,6 +35,14 @@ function clamp(n, min = 0, max = 100) {
 
 /** 持久化 Chapter Director 计划 */
 export function persistChapterPlan(bookDir, chapter, plan) {
+  // EO-P4 边界防线：characterDecisions 是 CADE 唯一合法生产通道（authored
+  // character-side evidence，人工创作）。Chapter Director 是 STORY CONTROL，
+  // 其计划不得携带该字段 —— 显式拒绝而非透传，防止未来白名单扩张造成
+  // Story Control → Story Truth 越权（CADE 侧 createCADE 亦会拒绝 plan.* sourceRef）。
+  if (plan.characterDecisions != null) {
+    console.warn('[living-novel-engine] Chapter Director 计划携带 characterDecisions —— 已拒绝写入（CADE 只接受人工 authored 通道）');
+    throw Object.assign(new Error('DIRECTOR_CANNOT_AUTH_CHARACTER_DECISIONS'), { code: 'DIRECTOR_CANNOT_AUTH_CHARACTER_DECISIONS' });
+  }
   const saved = writeChapterPlan(bookDir, chapter, {
     chapter,
     goal: plan.goal,
@@ -47,7 +55,11 @@ export function persistChapterPlan(bookDir, chapter, plan) {
     obstacle1: plan.conflict,
     ending: plan.hook,
     pov: plan.pov || resolveEffectiveChapterPov(bookDir, chapter).pov || resolveProtagonistName(bookDir) || '主角',
-    time: plan.time || resolveStoryDayForChapterRun(chapter, getTimelineLastDay(bookDir)),
+    time: plan.time || plan.currentDate || undefined,
+    // 渲染器写盘协议字段保留：beats（逐拍 narrativePush/envKeywords，七元素 prompt 的
+    // 【叙事推进】/【环境触发器】来源）。白名单此前丢弃 → writer 的 loadSceneContext
+    // 读到空 beats，七元素块降级。writeChapterPlan 透传任意键，这里只补这一个。
+    beats: plan.beats,
     updatedAt: new Date().toISOString(),
   });
   const { md } = syncContextToCanon(bookDir, chapter, saved);

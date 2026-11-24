@@ -6,6 +6,7 @@ import { buildRhythmBlock } from './rhythm.js';
 import { buildInfoReleaseBlock } from './info-release.js';
 import { buildConflictBlock, analyzeConflict } from './conflict.js';
 import { buildHookBlock, scoreHook, plannerHookHints } from './hook.js';
+import { buildEmotionSampleBlock } from './emotion-sample.js';
 import { countTokens } from '../../inkos-prompt/src/token-meter.js';
 
 const OPTIMIZER_TOKEN_BUDGET = 180;
@@ -13,6 +14,8 @@ const OPTIMIZER_TOKEN_BUDGET = 180;
 export function optimizeWriterPrompt({ prompt, scene, ctx, intent }) {
   if (!prompt || !scene) return { prompt: prompt || '', meta: {} };
 
+  // 情绪范例块（脏话预算）是核心约束，必须保留；其余按优先级裁剪
+  const emotionBlock = buildEmotionSampleBlock(ctx);
   const blocks = [
     buildRhythmBlock(scene),
     buildStyleBlock(ctx, scene),
@@ -21,9 +24,12 @@ export function optimizeWriterPrompt({ prompt, scene, ctx, intent }) {
     buildHookBlock(scene),
   ].filter(Boolean);
 
-  let optimizerBlock = blocks.join('\n\n');
+  let optimizerBlock = [emotionBlock, blocks.join('\n\n')].filter(Boolean).join('\n\n');
   if (countTokens(optimizerBlock) > OPTIMIZER_TOKEN_BUDGET) {
-    optimizerBlock = blocks.slice(0, 2).join('\n\n');
+    optimizerBlock = [emotionBlock, blocks.slice(0, 2).join('\n\n')].filter(Boolean).join('\n\n');
+  }
+  if (countTokens(optimizerBlock) > OPTIMIZER_TOKEN_BUDGET + 240) {
+    optimizerBlock = emotionBlock; // 极端预算下也保留情绪块
   }
 
   const conflict = analyzeConflict(scene);

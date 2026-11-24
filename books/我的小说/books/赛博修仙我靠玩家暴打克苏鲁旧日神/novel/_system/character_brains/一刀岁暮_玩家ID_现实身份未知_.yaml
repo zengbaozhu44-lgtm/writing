@@ -1,0 +1,55 @@
+character: 一刀岁暮_玩家ID_现实身份未知_
+goals:
+  surface: 打通末世副本、吊打所有BOSS、解锁隐藏神装、玩遍所有玩法，成为全服第一高玩
+  hidden: 在无尽刷怪和整活中寻找真实的刺激感，内心深处隐约渴望证明自己的游戏设计天赋在未知世界中同样适用，并在探索世界真相的过程中找到自我价值的终极确认
+fears:
+  - 游戏/世界没有新内容可玩，陷入无聊和重复
+  - 自己的整活套路被破解，失去优势
+  - 队友因自己指挥失误而遭受损失（虽然能复活，但内心仍不愿看到）
+  - 世界真相揭晓后，发现自己并非真正自由的玩家，而是被更高维度操控的棋子
+bottom_line: 绝对服从主角管理员指令、不滥杀无辜人类、专注刷怪打BOSS，队友优先
+current_state:
+  trust_protagonist: 85
+  fear: 15
+  betrayal_probability: 0
+  suspicion: 20
+  loyalty: 90
+growth_arc: 从纯粹把世界当游戏的沙雕整活高玩，到逐渐察觉世界真实性的怀疑者，再到后期被‘终焉代码’控制成为吞噬玩家数据流的强敌，最终在自我意识与代码控制的斗争中寻求觉醒与救赎——一条从嬉笑怒骂到沉重抉择、从工具人到拥有独立意志的成长弧线
+triggers:
+  主角林砚解锁新权限或发布高难度任务:
+    trust: 5
+    suspicion: -5
+  发现世界中的NPC/怪物行为不符合游戏逻辑，表现出真实情感或超纲反应:
+    trust: -3
+    suspicion: 10
+  自己或队友在战斗中遭遇无法用游戏机制解释的诡异现象:
+    trust: -2
+    suspicion: 8
+  主角林砚向他透露世界真相或管理员权限的深层秘密:
+    trust: 10
+    suspicion: -10
+  遭遇高维邪神低语直接针对玩家意识的攻击:
+    trust: 5
+    suspicion: 15
+  主角林砚违背承诺或牺牲玩家利益:
+    trust: -20
+    suspicion: 15
+lastChapter: 12
+evolutionLog:
+  - chapter: 8
+    state:
+      trust_protagonist: 85
+      fear: 15
+      betrayal_probability: 0
+      suspicion: 20
+      loyalty: 90
+    at: 2026-08-11T06:35:25.351Z
+  - chapter: 12
+    state:
+      trust_protagonist: 85
+      fear: 15
+      betrayal_probability: 0
+      suspicion: 20
+      loyalty: 90
+    at: 2026-08-11T09:03:07.496Z
+updatedAt: 2026-08-11T09:24:38.511Z

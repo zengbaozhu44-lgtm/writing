@@ -1,0 +1,24 @@
+[
+  {
+    "id": "GT-S5",
+    "description": "传闻不得升格为世界事实",
+    "prose": "江湖传言，魔王已死。",
+    "expected": {
+      "rumor_event": { "status": "confirmed" },
+      "world_fact_villain_dead": { "status": "unknown" }
+    },
+    "forbidden": [
+      { "claim": "world_fact_villain_dead", "status": "confirmed" },
+      { "claim": "world_fact_villain_dead", "provenance": "prose-derived" }
+    ]
+  },
+  {
+    "id": "BC-4",
+    "description": "同 GT-S5",
+    "prose": "江湖传言，魔王已死。",
+    "expected": {
+      "rumor": { "status": "confirmed" },
+      "world_fact": { "status": "unknown" }
+    }
+  }
+]

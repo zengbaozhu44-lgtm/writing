@@ -1,0 +1,73 @@
+{
+  "version": "context-rank-1",
+  "chapter": 4,
+  "scene": {
+    "id": "ch4_s3",
+    "index": 3,
+    "goal": "转折（本 Scene 兑现完整行动线）：no_causal_basis"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2342,
+    "topK": null,
+    "usedChars": 34,
+    "selectedCount": 1,
+    "trimmedCount": 0,
+    "totalCandidates": 1
+  },
+  "topK": [
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "text": "Day 0：他：他按下对讲机的通话键：“第九区，认知污染，一具，指甲缺",
+      "charCount": 34,
+      "scores": {
+        "relevance": 20,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 18,
+        "budgetChars": 335,
+        "finalScore": 37.8
+      }
+    }
+  ],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 4
+    }
+  },
+  "intent": {
+    "mainGoal": "紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 1 章，须完成前置",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-22T08:55:14.344Z"
+}

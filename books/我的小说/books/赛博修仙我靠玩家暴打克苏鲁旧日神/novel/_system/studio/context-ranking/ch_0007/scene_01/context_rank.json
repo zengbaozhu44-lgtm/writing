@@ -1,0 +1,270 @@
+{
+  "version": "context-rank-1",
+  "chapter": 7,
+  "scene": {
+    "id": "ch7_s1",
+    "index": 1,
+    "goal": "承接上章推进：场景一：战争前夜——林砚召开战术会议，玩家主播「一刀岁暮」直播间出现异常信号，提前预警铁颅军团进攻。林砚利用权限快速部署，玩家军团完成动员，展现高度组织性。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 3459,
+    "topK": null,
+    "usedChars": 579,
+    "selectedCount": 5,
+    "trimmedCount": 23,
+    "totalCandidates": 28
+  },
+  "topK": [
+    {
+      "id": "facts:14",
+      "source": "facts",
+      "text": "第6章完成：展现青穹重工‘净化计划’的凌厉反击——顶级机械修士‘蚀骨’对林砚发动定点清除，通过玩家军团的预警、牺牲与反制，凸显玩家体系核心价值；林砚在反杀后获取关键情报，将主线引向旧日支配者‘混沌之核’的封印之地。（4087字）",
+      "charCount": 114,
+      "scores": {
+        "relevance": 32,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 30,
+        "budgetChars": 303,
+        "finalScore": 53.75
+      }
+    },
+    {
+      "id": "facts:13",
+      "source": "facts",
+      "text": "第5章林砚左臂遵循F013：左臂为焦毁无知觉残肢；所有用力动作由右臂/肩完成。第五章正文已按此修正。",
+      "charCount": 50,
+      "scores": {
+        "relevance": 24,
+        "importance": 75,
+        "freshness": 76,
+        "narrativePriority": 26,
+        "budgetChars": 303,
+        "finalScore": 47.35
+      }
+    },
+    {
+      "id": "facts:11",
+      "source": "facts",
+      "text": "第5章完成：本章必须发生：第一次不可逆代价（死亡/暴露/失去）；情感冲击落在「恐惧」（4190字）",
+      "charCount": 49,
+      "scores": {
+        "relevance": 20,
+        "importance": 75,
+        "freshness": 76,
+        "narrativePriority": 26,
+        "budgetChars": 303,
+        "finalScore": 45.55
+      }
+    },
+    {
+      "id": "timeline:11",
+      "source": "timeline",
+      "text": "Day 5：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：本章必须发生：第一次不可逆代价（死亡/暴露/失去）；推进阻碍（行动线第2步）：玩家军团碾压守军；转折（本 Scene 兑现完整行动线）：林砚用管理员权限强制解除财团机甲核心代码，玩家军团碾压守军，但塔顶邪神祭坛召唤出旧日支配者投影，林砚与玩家合力击溃，夺取位面碎片。；章末钩子（承接转折后果）：位面碎片显示，玩家世界正被高维诡秘渗透，现实中出现诡异游戏BUG——林砚意识到，这场战争远未结束，玩家世界已成为新战场。",
+      "charCount": 284,
+      "scores": {
+        "relevance": 44,
+        "importance": 40,
+        "freshness": 70,
+        "narrativePriority": 70,
+        "budgetChars": 366,
+        "finalScore": 50.8
+      }
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "text": "Day 1：进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中；克服阻碍：林砚肉身与神魂双重崩毁；林砚在意识即将被低语彻底吞噬的瞬间；看着掌心跳动的数据流权限",
+      "charCount": 82,
+      "scores": {
+        "relevance": 24,
+        "importance": 40,
+        "freshness": 20,
+        "narrativePriority": 43,
+        "budgetChars": 366,
+        "finalScore": 29.1
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:10",
+      "source": "facts",
+      "finalScore": 43.15,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:12",
+      "source": "facts",
+      "finalScore": 42.55,
+      "trimReason": "超过 TopK",
+      "charCount": 140
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 41.45,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "finalScore": 41.45,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "finalScore": 41.45,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "finalScore": 41.45,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:4",
+      "source": "facts",
+      "finalScore": 41.45,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:7",
+      "source": "facts",
+      "finalScore": 40.75,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:8",
+      "source": "facts",
+      "finalScore": 40.75,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:9",
+      "source": "facts",
+      "finalScore": 40.75,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:5",
+      "source": "facts",
+      "finalScore": 40.55,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:6",
+      "source": "facts",
+      "finalScore": 40.55,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "timeline:12",
+      "source": "timeline",
+      "finalScore": 49.25,
+      "trimReason": "Budget 不足",
+      "charCount": 393
+    },
+    {
+      "id": "timeline:10",
+      "source": "timeline",
+      "finalScore": 47,
+      "trimReason": "Budget 不足",
+      "charCount": 365
+    },
+    {
+      "id": "timeline:9",
+      "source": "timeline",
+      "finalScore": 43.2,
+      "trimReason": "Budget 不足",
+      "charCount": 322
+    },
+    {
+      "id": "timeline:7",
+      "source": "timeline",
+      "finalScore": 39.45,
+      "trimReason": "Budget 不足",
+      "charCount": 164
+    },
+    {
+      "id": "timeline:8",
+      "source": "timeline",
+      "finalScore": 39.45,
+      "trimReason": "Budget 不足",
+      "charCount": 164
+    },
+    {
+      "id": "timeline:5",
+      "source": "timeline",
+      "finalScore": 38.7,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:6",
+      "source": "timeline",
+      "finalScore": 38.7,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "finalScore": 29.1,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 3,
+      "totalCandidates": 15,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 7
+    },
+    "timeline": {
+      "selectedCount": 2,
+      "totalCandidates": 13,
+      "topK": 4
+    }
+  },
+  "intent": {
+    "mainGoal": "在蚀骨渗透的紧迫威胁下，完成对铁颅军团先锋部队的首次战术反制，展示玩家体系的进化与管理员权限的初步运用，同时为更深的阴谋埋下伏笔。",
+    "pov": "林砚"
+  },
+  "generatedAt": "2026-08-10T09:25:23.953Z"
+}

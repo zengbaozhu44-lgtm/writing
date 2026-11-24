@@ -1,0 +1,410 @@
+{
+  "version": "scene-review-5-analysis",
+  "role": "scene-review",
+  "mode": "analysis-only",
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s1",
+    "index": 1,
+    "goal": "承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆如常来店里",
+    "scenePlan": {
+      "goal": "承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆如常来店里",
+      "obstacle": "no_causal_basis",
+      "escalation": "situation",
+      "choice": "",
+      "consequence": "",
+      "cost": "",
+      "reward": {
+        "valid": true,
+        "requiresPromise": false,
+        "promiseId": "H001",
+        "promise": "[object Object]",
+        "payoff": "读者期待兑现 — [object Object]",
+        "promiseSource": "foreshadow",
+        "promiseCategory": "foreshadow",
+        "promiseType": "medium",
+        "promiseImportance": 70,
+        "expectedChapter": 8,
+        "readerExpectation": 75,
+        "foreshadowId": "H001",
+        "description": "读者期待兑现 — [object Object]",
+        "deliveryBeat": "newInformation",
+        "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+        "status": "pending"
+      },
+      "newInformation": "",
+      "cliffhanger": "",
+      "targetEmotion": null,
+      "informationGap": {
+        "version": "chapter-information-gap-1",
+        "readerKnows": [
+          "读者追更下去是为了什么\n\n把这个作为AI导演的「用户留存模型」：\n表格\n\n\n追更动力\t具体表现\t系统必须做到\n「今天谁来"
+        ],
+        "heroKnows": [
+          "林守常 只掌握行动任务，未必知全貌"
+        ],
+        "enemyKnows": [
+          "对手侧：no_causal_basis"
+        ],
+        "valid": true,
+        "failReasons": [],
+        "rule": "禁止所有角色知道同样的信息 — 必须制造读者/主角/敌人信息差"
+      },
+      "promisePointer": "ch3_payoff",
+      "authorIntent": null,
+      "situation": {
+        "version": "situation-v2",
+        "worldState": {
+          "before": "林守常当前目标：承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆 — 局势尚未被本 Scene 改写",
+          "after": "林守常当前目标：承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆 — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同"
+        },
+        "characterState": {
+          "before": "",
+          "after": "",
+          "missing": true
+        },
+        "relationshipState": {
+          "before": "林守常与重要关系人的关系尚未被本 Scene 事件改写",
+          "after": "林守常与重要关系人的关系尚未被本 Scene 事件改写 → 林守常与重要关系人的关系须与本 Scene 前不同"
+        },
+        "openingWorldState": "林守常当前目标：承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆 — 局势尚未被本 Scene 改写",
+        "closingWorldState": "林守常当前目标：承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆 — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同",
+        "changedDimensions": [
+          "relationship"
+        ],
+        "dimensionsChanged": 1,
+        "changedDimension": "relationship",
+        "stateDelta": "人物：character transformation missing（Choice ≠ Character Transformation） · 关系：「林守常与重要关系人的关系尚未被本 Scene 事件」→「林守常与重要关系人的关系尚未被本 Scene 事件」",
+        "stagnant": true,
+        "valid": false,
+        "pov": "林守常",
+        "keyRelationship": "重要关系人",
+        "characterTransformationMissing": true,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "inferWorldAfter",
+            "inferRelationship*",
+            "plan.consequence→worldState.after"
+          ],
+          "worldAfterRole": "inference_candidate_or_writer_instruction"
+        }
+      },
+      "questions": {
+        "bookQuestion": "读者追更下去是为了什么\n\n把这个作为AI导演的「用户留存模型」：\n表格\n\n\n追更动力\t具体表现\t系统必须做到\n「今天谁来？」\t7个访客像7个盲盒，读者想知道下一个人和林守常是什么关系\t每个人物的入场必须有「反常细节」（如小李包里的书、陈姐的戒痕）\n「那片叶子/那个橘子到底什么意思？」\t第一天埋下的物品，第三天/第七天会以变形方式回应\t前文细节必须在后文「回收」，形成解谜快感\n「他会哭吗？」\t读者在等一个硬汉/沉默者的崩溃时刻，但系统必须不给\t真正的追更动力是「他到底能忍到什么时候」——如果第七天他哭了，读者会流失；如果他只是把钥匙塞回门槛，读者会记住这个故事\n「我的城市有没有这样的店？」\t代入感来自「日常奇观」——在极度平凡中发现诗意\t每章必须有一个「金动作」（如把橘子挪到辞海旁边），而不是「金句」\n「目录（猫）还活着吗？」\t17岁的老猫是倒计时的生物隐喻？",
+        "chapterQuestion": "追查下去会付出什么代价？",
+        "sceneQuestion": "本 Scene 的核心追问是什么？",
+        "authorQuestion": {
+          "authorQuestion": "本 Scene 的核心追问是什么？",
+          "readerQuestion": "本 Scene 的核心追问是什么？",
+          "answerProgress": 0,
+          "importance": 60,
+          "source": "author"
+        },
+        "readerQuestion": {
+          "authorQuestion": "本 Scene 的核心追问是什么？",
+          "readerQuestion": "林守常这一步会付出什么代价？",
+          "answerProgress": 0,
+          "importance": 80,
+          "source": "template"
+        },
+        "answeredReaderQuestion": {
+          "authorQuestion": "追查下去会付出什么代价？",
+          "readerQuestion": "林守常这一步会付出什么代价？",
+          "answerProgress": 90,
+          "importance": 80,
+          "source": "answerTarget",
+          "state": "partially_answered"
+        },
+        "newReaderQuestions": [
+          {
+            "authorQuestion": "追查下去会付出什么代价？",
+            "readerQuestion": "如果不现在行动，林守常这一步会付出什么代价的后果是什么？",
+            "answerProgress": 0,
+            "importance": 88,
+            "source": "new1",
+            "state": "created",
+            "expireByChapter": 11
+          },
+          {
+            "authorQuestion": "本 Scene 的核心追问是什么？",
+            "readerQuestion": "这与「追查下去会付出什么代价」有何关联？",
+            "answerProgress": 0,
+            "importance": 82,
+            "source": "new2",
+            "state": "created",
+            "expireByChapter": 11
+          }
+        ],
+        "answeredQuestion": "林守常这一步会付出什么代价？",
+        "newQuestions": [
+          "如果不现在行动，林守常这一步会付出什么代价的后果是什么？",
+          "这与「追查下去会付出什么代价」有何关联？"
+        ],
+        "rule": "每 Scene：回答 1 个 Reader Question + 提出 2 个新 Reader Question（优先于 Author Question）",
+        "lifecycle": {
+          "answered": {
+            "id": "q_林守常这一步会付出什么代_3_1",
+            "readerQuestion": "林守常这一步会付出什么代价？",
+            "authorQuestion": "",
+            "importance": 80,
+            "state": "partially_answered",
+            "answerProgress": 90,
+            "horizon": "medium",
+            "createdChapter": 3,
+            "createdSceneIndex": 1,
+            "lastTouchedChapter": 3,
+            "expireByChapter": 11
+          },
+          "created": [
+            {
+              "id": "q_如果不现在行动，林守常这_3_1",
+              "readerQuestion": "如果不现在行动，林守常这一步会付出什么代价的后果是什么？",
+              "authorQuestion": "追查下去会付出什么代价？",
+              "importance": 88,
+              "state": "created",
+              "answerProgress": 0,
+              "horizon": "medium",
+              "createdChapter": 3,
+              "createdSceneIndex": 1,
+              "lastTouchedChapter": 3,
+              "expireByChapter": 11
+            },
+            {
+              "id": "q_这与「追查下去会付出什么_3_1",
+              "readerQuestion": "这与「追查下去会付出什么代价」有何关联？",
+              "authorQuestion": "本 Scene 的核心追问是什么？",
+              "importance": 82,
+              "state": "created",
+              "answerProgress": 0,
+              "horizon": "medium",
+              "createdChapter": 3,
+              "createdSceneIndex": 1,
+              "lastTouchedChapter": 3,
+              "expireByChapter": 11
+            }
+          ],
+          "activeCount": 0,
+          "expiredClosed": [],
+          "rule": "回答 1 个（可 Partially）+ 新建 2 个；Expired 追问不再展开"
+        }
+      },
+      "questionRegistry": {
+        "registry": [],
+        "active": [],
+        "expired": [],
+        "maxActive": 12,
+        "mustExpireCount": 0,
+        "rule": "活跃追问 ≤12；超时未推进的追问标记 Expired，Writer 不得再铺陈"
+      },
+      "characterDesire": {
+        "name": "林守常",
+        "missing": true,
+        "externalGoal": "",
+        "internalDesire": "",
+        "fear": "",
+        "wound": "",
+        "belief": "",
+        "changeArc": "",
+        "chapter": 3
+      },
+      "characterPush": {
+        "character": "林守常",
+        "missing": true,
+        "authoredChange": false,
+        "before": "",
+        "after": "",
+        "externalGoal": "",
+        "internalDesire": "",
+        "fear": "",
+        "scenePush": "",
+        "mustChange": false,
+        "valid": false
+      },
+      "emotionCurve": {
+        "emotionStart": "疑惑",
+        "emotionMiddle": "紧张",
+        "emotionPeak": "震惊",
+        "emotionEnd": "恐惧",
+        "sceneIndex": 1,
+        "chapter": 3,
+        "sceneType": null,
+        "rule": "禁止整章单一情绪 — 须紧张→释放→更大危机→希望交替",
+        "beats": {
+          "goal": "疑惑",
+          "obstacle": "紧张",
+          "choice": "紧张",
+          "consequence": "震惊",
+          "newInformation": "震惊",
+          "hook": "恐惧"
+        },
+        "hasVariation": true,
+        "valid": true
+      },
+      "conflict": {
+        "version": "conflict-engine-2",
+        "opponent": "周一，林守常打开店门时，发现门槛内侧躺着",
+        "opposition": "no_causal_basis",
+        "risk": "林守常这一步会付出什么代价？",
+        "cost": "",
+        "loss": "",
+        "irreversibleChange": null,
+        "isIrreversible": false,
+        "valid": false,
+        "costAuthored": false,
+        "lossAuthored": false,
+        "riskAuthored": false,
+        "irreversibleAuthored": false,
+        "costSource": null,
+        "rule": "Conflict Situation ≠ Choice Consequence；Potential Risk ≠ Authored Consequence",
+        "writerMust": "Obstacle：写清 conflict pressure / potential risk；代价 basis missing — 禁止编造 Choice consequence",
+        "irreversibleRule": null
+      },
+      "climaxRole": {
+        "sceneIndex": 1,
+        "role": "opening",
+        "isClimax": false,
+        "isPreClimax": false,
+        "climaxPlan": null,
+        "writerMust": null
+      },
+      "openingWorldState": "林守常当前目标：承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆 — 局势尚未被本 Scene 改写",
+      "closingWorldState": "林守常当前目标：承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：阿婆 — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同"
+    }
+  },
+  "scores": {
+    "hookDensity": 98,
+    "questionDensity": 100,
+    "payoffDensity": 46,
+    "readerCuriosity": 50,
+    "twistStrength": 69,
+    "dialogue": 59,
+    "conflict": 92,
+    "hook": 98,
+    "emotion": 50,
+    "style": 69,
+    "pacing": 50
+  },
+  "weights": {
+    "hookDensity": 0.18,
+    "questionDensity": 0.16,
+    "payoffDensity": 0.12,
+    "readerCuriosity": 0.18,
+    "twistStrength": 0.14,
+    "dialogue": 0.11,
+    "conflict": 0.11
+  },
+  "weightedScore": 74,
+  "total": 74,
+  "genreProfile": "default",
+  "dimensions": [
+    "hookDensity",
+    "questionDensity",
+    "payoffDensity",
+    "readerCuriosity",
+    "twistStrength",
+    "dialogue",
+    "conflict"
+  ],
+  "commercialDimensions": [
+    "hookDensity",
+    "questionDensity",
+    "payoffDensity",
+    "readerCuriosity",
+    "twistStrength"
+  ],
+  "readerCurves": {
+    "hookCurve": [
+      {
+        "offset": 0,
+        "value": 100
+      },
+      {
+        "offset": 1,
+        "value": 100
+      },
+      {
+        "offset": 2,
+        "value": 100
+      }
+    ],
+    "mysteryCurve": [
+      {
+        "offset": 0,
+        "value": 100
+      },
+      {
+        "offset": 1,
+        "value": 100
+      },
+      {
+        "offset": 2,
+        "value": 100
+      }
+    ],
+    "payoffCurve": [
+      {
+        "offset": 0,
+        "value": 38
+      },
+      {
+        "offset": 1,
+        "value": 38
+      },
+      {
+        "offset": 2,
+        "value": 38
+      }
+    ],
+    "summary": {
+      "hookAvg": 92,
+      "mysteryAvg": 95,
+      "payoffAvg": 38,
+      "twistHits": 1
+    }
+  },
+  "verdict": "warning",
+  "pass": true,
+  "analysisPass": false,
+  "warning": true,
+  "retry": false,
+  "suggestions": [
+    "payoffDensity: 加强伏笔回收 — 兑现前文悬念或部分揭晓（46/100）",
+    "readerCuriosity: 提升阅读驱动力 — 代价逼近、选择收窄、好奇心悬而未决（50/100）",
+    "dialogue: 用对白推进冲突，避免说明式旁白（59/100）",
+    "twistStrength: 加强反转力度 — 预期违背、信息翻盘或身份反转（69/100）"
+  ],
+  "blocking": false,
+  "analysisOnly": true,
+  "thresholds": {
+    "pass": 80,
+    "warning": 70
+  },
+  "policy": "Analysis Only · 评分写入 Adaptive Hints · 禁止 Replan/Rewrite · 不阻断 nextScene",
+  "weakest": [
+    {
+      "id": "payoffDensity",
+      "score": 46,
+      "weight": 0.12
+    },
+    {
+      "id": "readerCuriosity",
+      "score": 50,
+      "weight": 0.18
+    },
+    {
+      "id": "dialogue",
+      "score": 59,
+      "weight": 0.11
+    }
+  ],
+  "totalChars": 969,
+  "generatedAt": "2026-10-15T03:36:48.738Z"
+}

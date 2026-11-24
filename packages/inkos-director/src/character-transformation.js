@@ -1,7 +1,8 @@
 /**
- * Character Transformation — 选择改变人物，不只是事件
- * 每个重要 Choice 须改变 ≥1 维度：Belief / Fear / Relationship / Identity / Goal / Value
- * 驱动 Writer P1，贯穿 Character Arc
+ * Character Transformation — 人物变化（仅在有证据时表达）
+ *
+ * S8.2-R4-A：Actual Change > Planned Change
+ * 无 authored transformation / 无实际变化证据 → missing（禁止预写成长）
  */
 
 export const TRANSFORMATION_DIMENSIONS = [
@@ -17,104 +18,97 @@ function norm(v = '') {
   return String(v || '').trim();
 }
 
-function inferChangedDimensions(plan = {}, desire = {}, situation = {}) {
-  const dims = [];
-  const choice = norm(plan.choice);
-  const consequence = norm(plan.consequence);
-  const info = norm(plan.newInformation);
+function hasAuthoredTransformation(scene = {}) {
+  const tx = scene.characterTransformation;
+  if (!tx || typeof tx !== 'object') return false;
+  const before = tx.before;
+  const after = tx.after;
+  if (!before || !after || typeof before !== 'object' || typeof after !== 'object') return false;
+  // 至少一个维度有显式内容，才算「作者声明了变化」
+  return TRANSFORMATION_DIMENSIONS.some((d) => norm(before[d.id]) || norm(after[d.id]));
+}
 
-  if (/相信|规则|系统|信任/u.test(desire.belief || '') && /欺骗|反抗|背叛|隐瞒|上报/u.test(choice + consequence)) {
-    dims.push('belief');
+/** changedDimensions：仅 authored 显式列表，或 before/after 字段实差（不读 choice/conflict） */
+function dimsFromAuthored(tx = {}) {
+  if (Array.isArray(tx.changedDimensions) && tx.changedDimensions.length) {
+    return [...new Set(tx.changedDimensions.map((id) => norm(id)).filter(Boolean))];
   }
-  if (/恐惧|害怕|失去/u.test(desire.fear || '') && /触发|直面|克服|再次/u.test(consequence + info)) {
-    dims.push('fear');
+  const dims = [];
+  for (const d of TRANSFORMATION_DIMENSIONS) {
+    const b = norm(tx.before?.[d.id]);
+    const a = norm(tx.after?.[d.id]);
+    if (b && a && b !== a) dims.push(d.id);
   }
-  if (situation.relationshipState?.before !== situation.relationshipState?.after
-    || /信任|决裂|同盟|背叛|知情/u.test(`${info}${consequence}`)) {
-    dims.push('relationship');
-  }
-  if (/身份|暴露|伪装|系统目标|被标记/u.test(`${info}${consequence}`)) {
-    dims.push('identity');
-  }
-  if (/目标|方向|停止|改变计划/u.test(choice + consequence)) {
-    dims.push('goal');
-  }
-  if (/值得|底线|牺牲|不再/u.test(choice + consequence)) {
-    dims.push('value');
-  }
-  if (!dims.length) dims.push('belief', 'goal');
-  return [...new Set(dims)].slice(0, 3);
+  return dims;
+}
+
+function missingTransformation(name, choice) {
+  return {
+    version: 'character-transformation-1',
+    character: name,
+    missing: true,
+    before: null,
+    after: null,
+    changedDimensions: [],
+    choice: choice || '',
+    arcStage: null,
+    writerMust: 'transformation evidence missing — 避免虚构未发生的人物变化',
+    valid: false, // valid = transformation evidence exists
+    rule: 'Actual Change > Planned Change；无证据不得预写成长',
+  };
 }
 
 /**
- * Scene 级角色转变 — Writer Choice Beat 须落地
+ * Scene 级角色转变 — 仅投影 authored；禁止从 choice/conflict/goal 推断 After
  */
 export function buildSceneCharacterTransformation({
   desire = {},
   plan = {},
   scene = {},
-  situation = {},
-  prevTransformation = null,
+  situation = {}, // 保留签名；R4-A 不据此发明心理 after
+  prevTransformation = null, // 保留签名；无 authored 时不链式推断成长
 } = {}) {
-  if (scene.characterTransformation?.before && scene.characterTransformation?.after) {
-    return { ...scene.characterTransformation, valid: true };
-  }
+  void situation;
+  void prevTransformation;
 
-  const name = desire.name || 'POV';
-  const beforeBelief = prevTransformation?.after?.belief
-    || desire.belief
-    || `${name}相信规则可以保护自己`;
+  const name = desire.name || scene.pov || 'POV';
   const choice = norm(plan.choice || scene.choice);
-  const consequence = norm(plan.consequence || scene.consequence);
 
-  let afterBelief = beforeBelief;
-  if (/欺骗系统|反抗|上报|隐瞒/u.test(choice)) {
-    afterBelief = `${name}开始主动反抗系统，不再只相信规则`;
-  } else if (consequence) {
-    afterBelief = `${name}对世界的信念被迫更新 — ${consequence.slice(0, 40)}`;
+  if (!hasAuthoredTransformation(scene)) {
+    return missingTransformation(name, choice);
   }
 
-  const before = {
-    belief: beforeBelief,
-    fear: desire.fear || '再次失去重要的人',
-    relationship: situation.relationshipState?.before || '关系尚未被本 Scene 改写',
-    identity: `${name}：守规矩的普通人`,
-    goal: desire.externalGoal || plan.goal,
-    value: desire.internalDesire || '证明自己值得被信任',
-  };
-
-  const after = {
-    belief: afterBelief,
-    fear: /再次|失去|暴露/u.test(consequence) ? desire.fear : before.fear,
-    relationship: situation.relationshipState?.after || before.relationship,
-    identity: /系统目标|被标记|知情者/u.test(consequence + plan.newInformation)
-      ? `${name}不再是局外人 — 身份已改变`
-      : before.identity,
-    goal: plan.goal || desire.externalGoal,
-    value: /牺牲|救|瞒/u.test(choice) ? `${name}把重要的人置于规则之上` : before.value,
-  };
-
-  const changedDimensions = inferChangedDimensions(plan, desire, situation);
-  const writerMust = choice
-    ? `Choice Beat 须写出人物变化：${before.belief?.slice(0, 25)} → ${after.belief?.slice(0, 25)}（不是只写事件）`
-    : `本 Scene 须可见 ${name} 的内在变化，不只推进外部事件`;
+  const raw = scene.characterTransformation;
+  const changedDimensions = dimsFromAuthored(raw);
+  const writerMust = norm(raw.writerMust)
+    || (changedDimensions.length
+      ? `仅文学化表达已声明的人物变化（${changedDimensions.join(', ')}），禁止另造 After`
+      : '仅表达 authored transformation 已写明的 before→after，禁止另造成长');
 
   return {
     version: 'character-transformation-1',
-    character: name,
-    before,
-    after,
+    character: norm(raw.character) || name,
+    missing: false,
+    before: raw.before,
+    after: raw.after,
     changedDimensions,
-    choice,
-    arcStage: desire.changeArc?.slice(0, 40) || '成长弧推进',
+    choice: norm(raw.choice) || choice,
+    arcStage: norm(raw.arcStage) || null,
     writerMust,
-    valid: changedDimensions.length >= 1 && before.belief !== after.belief,
-    rule: 'Writer 写人物变化，不是只写事件变化',
+    valid: true, // evidence exists
+    rule: 'Authored transformation — Writer 描写已声明变化，不得替人物完成意义吸收',
   };
 }
 
 export function formatCharacterTransformationBlock(tx = {}) {
-  if (!tx?.before) return '';
+  if (tx?.missing || !tx?.before || !tx?.after) {
+    if (!tx?.missing) return '';
+    return [
+      '### Character Transformation · 人物成长（P1）',
+      '- **状态**：transformation evidence missing',
+      `- **Writer**：${tx.writerMust || '避免虚构未发生的人物变化'}`,
+    ].join('\n');
+  }
 
   const dims = (tx.changedDimensions || [])
     .map((id) => TRANSFORMATION_DIMENSIONS.find((d) => d.id === id)?.label || id)
@@ -122,23 +116,23 @@ export function formatCharacterTransformationBlock(tx = {}) {
 
   return [
     '### Character Transformation · 人物成长（P1）',
-    '**铁律**：Choice 须改变人物，不是只改变事件。',
+    '**范围**：仅描写已声明的 before→after；禁止系统补未发生的成长。',
     '',
-    `- **Before · Belief**：${tx.before.belief?.slice(0, 55)}`,
+    tx.before.belief ? `- **Before · Belief**：${String(tx.before.belief).slice(0, 55)}` : '',
     `- **Choice**：${tx.choice || '—'}`,
-    `- **After · Belief**：${tx.after.belief?.slice(0, 55)}`,
+    tx.after.belief ? `- **After · Belief**：${String(tx.after.belief).slice(0, 55)}` : '',
     dims ? `- **改变维度**：${dims}` : '',
-    tx.before.relationship !== tx.after.relationship
-      ? `- **关系**：${tx.before.relationship?.slice(0, 30)} → ${tx.after.relationship?.slice(0, 30)}`
+    tx.before.relationship && tx.after.relationship
+      && tx.before.relationship !== tx.after.relationship
+      ? `- **关系**：${String(tx.before.relationship).slice(0, 30)} → ${String(tx.after.relationship).slice(0, 30)}`
       : '',
-    `- **成长弧**：${tx.arcStage}`,
+    tx.arcStage ? `- **成长弧**：${tx.arcStage}` : '',
     '',
     `- **Writer 必做**：${tx.writerMust}`,
-    '- 禁止：事件发生了，人物内心毫无变化',
   ].filter(Boolean).join('\n');
 }
 
 export function formatCharacterTransformationBrief(tx = {}) {
-  if (!tx?.after?.belief) return '';
-  return `Character TX：${tx.before?.belief?.slice(0, 20)} → ${tx.after.belief?.slice(0, 25)}`;
+  if (tx?.missing || !tx?.after?.belief) return '';
+  return `Character TX：${String(tx.before?.belief || '').slice(0, 20)} → ${String(tx.after.belief).slice(0, 25)}`;
 }

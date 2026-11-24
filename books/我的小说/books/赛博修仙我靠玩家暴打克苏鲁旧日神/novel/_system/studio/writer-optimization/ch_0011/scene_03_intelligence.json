@@ -1,0 +1,783 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 3,
+  "sceneType": "climax",
+  "beatMemory": {
+    "newFacts": [
+      "他选了【确认】",
+      "面板上跳出最后一行确认，烫得他眼眶发红：接入全城死亡数据流，需以生命为燃料，过程不可逆",
+      "他低头看着面板上那个闪烁的确认键，拇指按上去，停了三秒",
+      "那串名字是倒着排的，最新的在最上面，他数到第七行，手指僵住了"
+    ],
+    "characterStateChanges": [
+      "生命线在界面上开始燃烧，像一根被点着的引线，烧向全城每一具倒下的玩家尸体"
+    ],
+    "emotionChanges": [
+      "fear"
+    ],
+    "unresolvedIssues": [
+      "塔顶的投影锁死他的神魂，渊尊的声音像碾碎的铁片：管理员，你还能拿什么来搏",
+      "“这次，谁他妈也别想带走他们",
+      "梁。\n\n还剩三十一秒。\n\n他想起林薇关机前最后一条语音：哥，我等你。\n\n他深吸一口气，把全城死亡数据流灌进自己的血管。剧痛从骨髓烧到瞳孔，他听见自己的骨骼在咔咔"
+    ],
+    "changedDimensions": [
+      "information",
+      "danger",
+      "resource"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "林砚跪在光柱里，视野边缘浮着全城玩家的死亡名单——四万七千条灰字，还在跳"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "沈寒舟在通讯频道里嘶吼：“林砚，他在用玩家当锁链绑你——你接数据流就等于接住他们所有人的死"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "塔顶的投影锁死他的神魂，渊尊的声音像碾碎的铁片：管理员，你还能拿什么来搏"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他低头，看见自己燃烧的血正顺着指缝滴落，每一滴都变成一行滚动的小字——苏清鸢 · 已阵亡；沈寒舟 · 已离线；一刀岁暮 · 已离线；齐玥 · 已离线"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "林砚没看投影"
+      }
+    ],
+    "lastAfterState": "林砚没看投影",
+    "stateChangeCount": 5
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：承接上章推进：场景3：绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景3：绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将全城玩家的死亡数据流接入自身，觉醒【数据重塑】。全城玩家复活并升级，发起疯狂反攻。",
+      "choice": "为了完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "林砚跪在光柱里，视野边缘浮着全城玩家的死亡名单——四万七千条灰字，还在跳",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "他选了【确认】"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:43:45.740Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（新信息），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "林砚当前目标：承接上章推进：场景3：绝境觉醒——林砚在核心塔顶被投影锁定，神魂被",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "新信息"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：双线作战的极限压力：一方面，‘深空之眼’投影的威能远超当前玩家战力，精神污染开始穿透玩家的‘游戏化认知’防御，导致玩家出现真实死亡恐惧与大规模退出；另一方面，玩家世界政府的合作并非无条件，他们要求林砚交出部分管理员权限作为‘信任抵押’，否则拒绝派遣现实武装支援。林砚陷入‘妥协则可能丧失GM权限’与‘ — 且局面本身不会让步",
+      "choice": "为了完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "沈寒舟在通讯频道里嘶吼：“林砚，他在用玩家当锁链绑你——你接数据流就等于接住他们所有人的死",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:43:53.965Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": false,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "关系",
+          "危险"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "塔顶的投影锁死他的神魂，渊尊的声音像碾碎的铁片：管理员，你还能拿什么来搏",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "面板上跳出最后一行确认，烫得他眼眶发红：接入全城死亡数据流，需以生命为燃料，过程不可逆",
+        "他低头看着面板上那个闪烁的确认键，拇指按上去，停了三秒"
+      ],
+      "characterStateChanges": [
+        "生命线在界面上开始燃烧，像一根被点着的引线，烧向全城每一具倒下的玩家尸体"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "塔顶的投影锁死他的神魂，渊尊的声音像碾碎的铁片：管理员，你还能拿什么来搏",
+        "“这次，谁他妈也别想带走他们"
+      ],
+      "extractedAt": "2026-08-11T08:43:59.529Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "新信息",
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:44:08.659Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "CONSISTENCY: 场景跳跃 浮空城坠落区 → 城墙/天台 无过渡，禁止重启开场"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 154 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动",
+          "CONSISTENCY: 场景跳跃 浮空城坠落区 → 城墙/天台 无过渡，禁止重启开场"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.026490066225165563
+        },
+        "microPassed": [
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "他低头，看见自己燃烧的血正顺着指缝滴落，每一滴都变成一行滚动的小字——苏清鸢 · 已阵亡；沈寒舟 · 已离线；一刀岁暮 · 已离线；齐玥 · 已离线",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "那串名字是倒着排的，最新的在最上面，他数到第七行，手指僵住了"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:44:16.435Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Event 缺少可观察动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": false,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [
+          "关系",
+          "危险",
+          "Promise兑现"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林砚没看投影",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "梁。\n\n还剩三十一秒。\n\n他想起林薇关机前最后一条语音：哥，我等你。\n\n他深吸一口气，把全城死亡数据流灌进自己的血管。剧痛从骨髓烧到瞳孔，他听见自己的骨骼在咔咔"
+      ],
+      "extractedAt": "2026-08-11T08:44:25.163Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Language Variation：AI 高频表达须改写（深吸一口气）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.029585798816568046
+        },
+        "microPassed": [
+          "新信息",
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 38,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-11T08:44:25.187Z",
+    "sceneIndex": 3
+  },
+  "readerSimulation": {
+    "curiosity": 68,
+    "questionCount": 3,
+    "dropRisk": 30,
+    "continueProbability": 68,
+    "sceneIndex": 3,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-11T08:44:25.190Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 57,
+    "obstacleStrength": 41,
+    "choiceLevel": 45,
+    "consequenceLevel": 38,
+    "escalationLevel": 45,
+    "informationValue": 42,
+    "hookImpact": 59,
+    "stateChangeRate": 83,
+    "hookBreakdown": {
+      "hookLevel": 59,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景3：绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将全城玩家的死亡数据流接入自身，觉醒【数据重塑】。全城玩家复活并升级，发起疯狂反攻。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 90,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 47,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-11T08:44:25.191Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景3：绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将全城玩家的死亡数据流接入自身，觉醒【数据重塑】。全城玩家复活并升级，发起疯狂反攻。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 59,
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景3：绝境觉醒——林砚在核心塔顶被投影锁定，神魂被压制，他强行燃烧生命，以管理员权限将全城玩家的死亡数据流接入自身，觉醒【数据重塑】。全城玩家复活并升级，发起疯狂反攻。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 50,
+    "emotionalImpact": 38,
+    "characterCost": 90
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 16,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-11T08:44:25.191Z"
+}

@@ -1,21 +1,19 @@
 /**
  * Conflict / Decision 重试建议 — 禁止含旧误拦触发词（底线、背叛…）
+ *
+ * D2（Phase 4 · Step 4-D2）：切断模板因果。
+ * 结构占位符（「增加利益交换或信息差阻碍」「身体或资源代价」…）一旦落入 plan 的
+ * obstacle 字段就成了假因果——宁可薄场景，不假因果。所有通用重试建议统一为
+ * no_causal_basis 标记；唯一保留的是内容安全指令（调整表述…），它不是因果声明。
  */
 
-export const SAFE_RETRY_SUGGESTIONS = [
-  '尝试让主角的核心原则受到挑战，被迫改变策略',
-  '用信任破裂事件触发转折',
-  '让主角面临两难选择，无论选哪边都有代价',
-  '增加利益交换或信息差阻碍',
-  '资源短缺迫使替代方案',
-  '先获取情报再行动',
-];
+export const SAFE_RETRY_SUGGESTIONS = ['no_causal_basis'];
 
-/** Decision values/content 硬拦后的安全建议 */
+/** Decision values/content 硬拦后的安全建议（内容安全指令，非因果声明，保留） */
 export const CONTENT_HARD_BLOCK_SUGGESTION = '调整表述，避开政治敏感表述后继续推进';
 
-/** Conflict 未检出冲突时的安全建议 */
-export const CONFLICT_MISSING_SUGGESTION = '增加利益交换或信息差阻碍';
+/** Conflict 未检出冲突时的安全建议（D2：不再用关键词自洽的假因果，用诚实标记） */
+export const CONFLICT_MISSING_SUGGESTION = 'no_causal_basis';
 
 /**
  * 按失败维度取安全建议（永不返回含「底线受阻」的毒文案）
@@ -26,15 +24,16 @@ export function suggestSafeObstacle(dimension = '', fallback = '') {
   const map = {
     values: CONTENT_HARD_BLOCK_SUGGESTION,
     content: CONTENT_HARD_BLOCK_SUGGESTION,
-    interest: '增加与真实目标的利益绑定',
-    resources: '资源短缺迫使替代方案',
-    knowledge: '先获取情报再行动',
-    relationship: '关系冲突阻碍合作',
-    risk: '身体或资源代价',
-    conflict: CONFLICT_MISSING_SUGGESTION,
-    metrics: '外部阻力或信息差',
+    // D2：其余维度缺因果依据 → no_causal_basis（不补「资源短缺/关系冲突/代价」等假因果）
+    interest: 'no_causal_basis',
+    resources: 'no_causal_basis',
+    knowledge: 'no_causal_basis',
+    relationship: 'no_causal_basis',
+    risk: 'no_causal_basis',
+    conflict: 'no_causal_basis',
+    metrics: 'no_causal_basis',
   };
-  const picked = map[dimension] || fallback || SAFE_RETRY_SUGGESTIONS[0];
+  const picked = map[dimension] || fallback || 'no_causal_basis';
   // 二次消毒：任何含旧毒词的建议一律替换
   if (/底线受阻|价值观冲突，?需改/.test(picked)) {
     return SAFE_RETRY_SUGGESTIONS[0];

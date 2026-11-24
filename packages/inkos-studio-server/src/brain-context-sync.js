@@ -4,11 +4,15 @@
  */
 import path from 'node:path';
 import { getBookPaths } from '../../inkos-core/src/lib/book.js';
-import { exists, readJson, writeJson, writeText } from '../../inkos-core/src/lib/paths.js';
+import { exists, readJson, writeJson } from '../../inkos-core/src/lib/paths.js';
 import { readYaml } from '../../inkos-core/src/lib/yaml-store.js';
 import { readModule, writeModule } from './module-service.js';
 import { parseCharacterCard } from './canon-analyzer.js';
 import { readChapterPlan } from './system-store.js';
+// current_state 写入已收口到 Brain 侧（state-updater.patchCurrentStateTime），
+// Studio 不再直接 writeText 08_current_state.md。保留 re-export 兼容外部调用方。
+import { patchCurrentStateTime } from '../../inkos-brain/src/memory/state-updater.js';
+export { patchCurrentStateTime };
 
 const POV_INVALID = /一次|紧急|通过|展现|维修|任务|信息|系统|日常|博弈|女儿|机器人|维修工|外卖员|展现维修|停止|生成|章节|场景/;
 
@@ -135,53 +139,23 @@ export function getTimelineLastDay(bookDir) {
   }
 }
 
-/** 章节生成前应对齐的故事日（满足 last.day <= stateDay + 1） */
+/** 章节生成前故事日 — F5: chapter ≠ World Day；无真实日期则不发明 */
 export function resolveStoryDayForChapterRun(chapter, lastTimelineDay = 0) {
-  const fromChapter = Math.max(0, (Number(chapter) || 1) - 1);
-  const minForTimeline = Math.max(0, lastTimelineDay - 1);
-  return `Day ${Math.max(fromChapter, minForTimeline)}`;
+  // Narrative order args kept for API compatibility; must not invent Day N
+  void chapter;
+  void lastTimelineDay;
+  return null;
 }
 
-/** 章节完成后故事日 */
+/** 章节完成后故事日 — F5: 同禁 chapter→Day */
 export function resolveStoryDayAfterChapter(chapter) {
-  return `Day ${Math.max(1, Number(chapter) || 1)}`;
+  void chapter;
+  return null;
 }
 
 function parseStateDay(dayStr) {
   const m = String(dayStr || '').match(/Day\s*(\d+)/i);
   return m ? Number(m[1]) : null;
-}
-
-/** 修补 08_current_state.md 的时间字段（Runtime 模块，Studio 预同步用） */
-export function patchCurrentStateTime(bookDir, dayStr, chapter = null) {
-  const bp = getBookPaths(bookDir);
-  const statePath = bp.modules?.current_state;
-  if (!statePath) return { patched: false };
-
-  let content = '';
-  try {
-    content = readModule(bookDir, 'state').content || '';
-  } catch { /* empty */ }
-
-  if (!content.trim()) {
-    content = [
-      `# 08 Current State · 第 ${chapter ?? '—'} 章后`,
-      '',
-      '| 字段 | 值 |',
-      '| --- | --- |',
-      `| 时间 | ${dayStr} |`,
-      '',
-    ].join('\n');
-  } else if (/\| 时间 \|/.test(content)) {
-    const current = content.match(/\| 时间 \| ([^|]+) \|/)?.[1]?.trim();
-    if (current === dayStr) return { patched: false, dayStr };
-    content = content.replace(/\| 时间 \| [^|]+ \|/, `| 时间 | ${dayStr} |`);
-  } else {
-    content = `${content.trim()}\n| 时间 | ${dayStr} |\n`;
-  }
-
-  writeText(statePath, content);
-  return { patched: true, dayStr };
 }
 
 /** 同步 Brain plan.json 中的 intent.time，避免 Planner 缓存 Day 0 */
@@ -201,6 +175,9 @@ export function syncPlanTimeForRun(bookDir, chapter, dayStr) {
     if (!needsPatch) return { patched: false, time: dayStr };
 
     plan.intent.time = dayStr;
+    // AUTHORIZED — ch_NNNN_plan.json 属 Brain 规划产物，Studio 预同步直接写回属白名单例外
+    // （与 08_current_state.md 不同，后者必须经 state-updater 入口）。理由：plan.json 是
+    // Studio 生成的规划缓存，POV/时间纠偏是 Studio 的职责，Brain 侧无等价补丁入口。
     writeJson(planPath, plan);
     return { patched: true, time: dayStr, previousTime: prev };
   } catch {
@@ -212,6 +189,15 @@ export function syncPlanTimeForRun(bookDir, chapter, dayStr) {
 export function syncStoryDayForRun(bookDir, chapter) {
   const lastDay = getTimelineLastDay(bookDir);
   const dayStr = resolveStoryDayForChapterRun(chapter, lastDay);
+  // F5: no chapter→Day invention — skip patch when unknown
+  if (!dayStr || dayStr === 'unknown') {
+    return {
+      dayStr: null,
+      lastTimelineDay: lastDay,
+      patched: false,
+      blocked: 'chapter_is_not_world_day',
+    };
+  }
   const statePatch = patchCurrentStateTime(bookDir, dayStr, chapter);
   const planSync = syncPlanTimeForRun(bookDir, chapter, dayStr);
   return {
@@ -226,6 +212,9 @@ export function syncStoryDayForRun(bookDir, chapter) {
 /** 章节完成后将 current_state 推进到本章故事日 */
 export function syncStoryDayAfterChapter(bookDir, chapter) {
   const dayStr = resolveStoryDayAfterChapter(chapter);
+  if (!dayStr || dayStr === 'unknown') {
+    return { patched: false, blocked: 'chapter_is_not_world_day', dayStr: null };
+  }
   return patchCurrentStateTime(bookDir, dayStr, chapter);
 }
 
@@ -259,6 +248,7 @@ export function syncPlanPovForRun(bookDir, chapter, pov) {
         if (d.actor && !isPlausiblePovName(d.actor, bookDir)) d.actor = pov;
       }
     }
+    // AUTHORIZED — 同 syncPlanTimeForRun：ch_NNNN_plan.json 为 Studio 规划缓存白名单例外。
     writeJson(planPath, plan);
     return { patched: true, pov, previousPov: prev };
   } catch {

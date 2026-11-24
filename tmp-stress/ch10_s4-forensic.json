@@ -1,0 +1,167 @@
+{
+  "at": "2026-09-21T09:05:37.709Z",
+  "sceneId": "ch10_s4",
+  "text": "光标停在两个图标之间，像一根悬在半空的针。\n\n林逸的右手食指微微抬起，指腹上还残留着鼠标侧键的纹路。他盯着“清空回收站”那个图标，回收站里躺着母亲的声音。“不要打开那扇门”——那句话卡在他脑子里，像一段副歌，循环往复，却始终找不到出口。\n\n他左手摸到录音带，拇指抵住磁带壳的边角，塑料棱边压进指腹。带子还是温的，刚从播放器里弹出来，余热在掌心散得很慢。\n\n“不要打开那扇门。”\n\n他低声念了一遍，喉咙里像吞了砂砾。那扇门。他在心里画出一扇门——三楼东侧，封存区，管理员每次经过都要多看一眼的那扇铁灰色门。母亲的声音在“不要”两个字上微微发颤，他听出来了。那种颤，和一个人站在悬崖边往下看时的腿抖是一样的。\n\n他把录音带翻了个面。B面标签上有一行手写字，墨迹被汗渍洇开：“小逸，如果你听到这里——”\n\n后面的话被撕掉了。\n\n林逸的手指停在撕痕上，边缘参差，像被什么急迫的东西打断了。他盯着那个断口，脑子里浮出两个画面：一个是苏眠的脸，她昨天说“我弟弟还在他们手上”时嘴唇发白；另一个是母亲写下这行字时的背影，也许就在这间实验室里，也许就在这盏还亮着的台灯下。\n\n他把录音带轻轻放在桌上，磕出一声脆响。\n\n“公开，”他对自己说，声音在空荡荡的实验室里撞了一下墙，“苏眠弟弟就会死。”\n\n“不公开，”他低头看着自己的手，掌心有汗，湿漉漉的反着光，“镜渊继续。”\n\n这两个句子像两块磨盘，把他夹在中间。他闭上眼，感觉到太阳穴上血管在跳，一下，一下，数出了七下。母亲的遗愿是一扇门，门后是她想保护的东西。苏眠的弟弟是另一扇门，门后是一条命。\n\n他睁开眼，光标还在闪。\n\n林逸伸手，按下了那个键。",
+  "meta": {
+    "sceneId": "ch10_s4",
+    "source": "scene.text",
+    "candidateCount": 1,
+    "planFieldsIgnored": true,
+    "extraction": "llm-assisted-1",
+    "fallbackUsed": true,
+    "fallbackReason": "all_candidates_rejected",
+    "llmRejected": 6,
+    "rejectedCount": 6,
+    "doubleFallbackUsed": true,
+    "llmMeta": {
+      "sceneId": "ch10_s4",
+      "source": "scene.text",
+      "candidateCount": 1,
+      "planFieldsIgnored": true,
+      "extraction": "llm-assisted-1",
+      "fallbackUsed": true,
+      "fallbackReason": "all_candidates_rejected",
+      "llmRejected": 6
+    }
+  },
+  "rejected": [
+    {
+      "errors": [
+        "missing_consequence",
+        "action_not_grounded"
+      ],
+      "candidate": {
+        "kind": "informational",
+        "actors": [
+          "林逸"
+        ],
+        "action": "林逸盯着清空回收站图标",
+        "consequence": "",
+        "stateChanges": [
+          "experience:面对删除母亲声音的选择"
+        ],
+        "affectedEntities": [
+          "林逸",
+          "回收站",
+          "母亲的声音"
+        ],
+        "excerpt": "他盯着“清空回收站”那个图标，回收站里躺着母亲的声音。",
+        "actorEvidence": "他盯着“清空回收站”那个图标"
+      }
+    },
+    {
+      "errors": [
+        "missing_consequence",
+        "action_not_grounded"
+      ],
+      "candidate": {
+        "kind": "physical",
+        "actors": [
+          "林逸"
+        ],
+        "action": "林逸摸到录音带",
+        "consequence": "",
+        "stateChanges": [
+          "experience:接触录音带"
+        ],
+        "affectedEntities": [
+          "林逸",
+          "录音带"
+        ],
+        "excerpt": "他左手摸到录音带，拇指抵住磁带壳的边角，塑料棱边压进指腹。",
+        "actorEvidence": "他左手摸到录音带"
+      }
+    },
+    {
+      "errors": [
+        "missing_consequence",
+        "action_not_grounded"
+      ],
+      "candidate": {
+        "kind": "speech",
+        "actors": [
+          "林逸"
+        ],
+        "action": "林逸低声念了一遍",
+        "consequence": "",
+        "stateChanges": [
+          "experience:重复母亲的话"
+        ],
+        "affectedEntities": [
+          "林逸"
+        ],
+        "excerpt": "“不要打开那扇门。”\n\n他低声念了一遍，喉咙里像吞了砂砾。",
+        "actorEvidence": "他低声念了一遍"
+      }
+    },
+    {
+      "errors": [
+        "missing_consequence",
+        "action_not_grounded"
+      ],
+      "candidate": {
+        "kind": "discovery",
+        "actors": [
+          "林逸"
+        ],
+        "action": "林逸把录音带翻了个面",
+        "consequence": "",
+        "stateChanges": [
+          "experience:发现B面手写字"
+        ],
+        "affectedEntities": [
+          "林逸",
+          "录音带"
+        ],
+        "excerpt": "他把录音带翻了个面。B面标签上有一行手写字，墨迹被汗渍洇开：“小逸，如果你听到这里——”",
+        "actorEvidence": "他把录音带翻了个面"
+      }
+    },
+    {
+      "errors": [
+        "missing_consequence"
+      ],
+      "candidate": {
+        "kind": "informational",
+        "actors": [
+          "林逸"
+        ],
+        "action": "林逸的手指停在撕痕上",
+        "consequence": "",
+        "stateChanges": [
+          "experience:发现留言被撕掉"
+        ],
+        "affectedEntities": [
+          "林逸",
+          "录音带"
+        ],
+        "excerpt": "林逸的手指停在撕痕上，边缘参差，像被什么急迫的东西打断了。",
+        "actorEvidence": "林逸的手指停在撕痕上"
+      }
+    },
+    {
+      "errors": [
+        "missing_consequence"
+      ],
+      "candidate": {
+        "kind": "speech",
+        "actors": [
+          "林逸"
+        ],
+        "action": "他对自己说",
+        "consequence": "",
+        "stateChanges": [
+          "experience:权衡公开与不公开的后果"
+        ],
+        "affectedEntities": [
+          "林逸",
+          "苏眠",
+          "苏眠弟弟",
+          "镜渊"
+        ],
+        "excerpt": "“公开，”他对自己说，声音在空荡荡的实验室里撞了一下墙，“苏眠弟弟就会死。”\n\n“不公开，”他低头看着自己的手，掌心有汗，湿漉漉的反着光，“镜渊继续。”",
+        "actorEvidence": "他对自己说"
+      }
+    }
+  ]
+}

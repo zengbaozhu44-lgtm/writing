@@ -7,7 +7,7 @@ import { exists, readJson, readText } from '../../inkos-core/src/lib/paths.js';
 import { brainSystemDir } from '../../inkos-brain/src/loader.js';
 import { loadPromptMetrics, aggregateMetrics } from '../../inkos-prompt/src/metrics.js';
 import { loadBrainRun } from '../../inkos-brain/src/runtime/brain-runtime.js';
-import { loadStoryHealth } from '../../inkos-brain/src/health/story-health.js';
+import { computeCurrentHealth } from '../../inkos-brain/src/health/story-health.js';
 import { listSnapshots, diffSnapshots } from '../../inkos-brain/src/memory/git-memory.js';
 import {
   getBookMeta,
@@ -35,14 +35,14 @@ function inferPhaseDisplay(status) {
   return 'Idle';
 }
 
-/** Story Health — 原样透传，禁止重算 */
+/** Story Health — 实时计算（P3.1b：退役 story_health.json 持久化，从运行产物现算） */
 export function readHealth(bookDir) {
-  const data = loadStoryHealth(bookDir);
+  const health = computeCurrentHealth(bookDir);
   return {
-    overall: data?.current?.overallScore ?? 0,
-    source: 'story_health.json',
-    raw: data?.current ?? null,
-    full: data,
+    overall: health?.overallScore ?? 0,
+    source: 'live:metrics_dashboard',
+    raw: health ?? null,
+    full: health ?? null,
   };
 }
 

@@ -12,6 +12,19 @@ import {
   buildStoryMemoryWriterBlock,
 } from './hints.js';
 
+/** 原子写 — 并发生成时避免 rollup/dashboard 半截 JSON */
+function atomicWriteJson(filePath, data) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  const tmp = `${filePath}.tmp-${process.pid}-${Date.now()}`;
+  try {
+    fs.writeFileSync(tmp, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+    fs.renameSync(tmp, filePath);
+  } catch (err) {
+    try { fs.unlinkSync(tmp); } catch { /* ignore */ }
+    throw err;
+  }
+}
+
 export function getStoryMemoryDir(bookDir) {
   return path.join(bookDir, 'novel', '_system', 'studio', 'story-memory');
 }
@@ -36,14 +49,15 @@ export function persistStoryMemoryReport(bookDir, chapter, scene, report) {
       `ch_${String(chapter).padStart(4, '0')}`,
       `scene_${String(scene?.index ?? 0).padStart(2, '0')}`,
     );
-    fs.mkdirSync(dir, { recursive: true });
     const file = path.join(dir, 'story_memory.json');
-    fs.writeFileSync(file, JSON.stringify(report, null, 2), 'utf8');
+    atomicWriteJson(file, report);
 
     const rollupPath = path.join(getStoryMemoryDir(bookDir), `ch_${String(chapter).padStart(4, '0')}`, 'rollup.json');
     let rollup = { chapter, scenes: [], metrics: null, hints: [], dashboard: null, updatedAt: null };
     if (fs.existsSync(rollupPath)) {
-      rollup = JSON.parse(fs.readFileSync(rollupPath, 'utf8'));
+      try {
+        rollup = JSON.parse(fs.readFileSync(rollupPath, 'utf8'));
+      } catch { /* 并发半截文件 → 从空状态重建 */ }
     }
     const idx = rollup.scenes.findIndex((s) => s.index === scene?.index);
     const entry = { index: scene?.index, metrics: report.metrics, hints: report.hints };
@@ -53,15 +67,15 @@ export function persistStoryMemoryReport(bookDir, chapter, scene, report) {
     rollup.hints = report.hints;
     rollup.dashboard = buildStoryMemoryDashboard(report.metrics, report.memory);
     rollup.updatedAt = new Date().toISOString();
-    fs.writeFileSync(rollupPath, JSON.stringify(rollup, null, 2), 'utf8');
+    atomicWriteJson(rollupPath, rollup);
 
     const bookRollupPath = path.join(getStoryMemoryDir(bookDir), 'dashboard.json');
-    fs.writeFileSync(bookRollupPath, JSON.stringify({
+    atomicWriteJson(bookRollupPath, {
       chapter,
       dashboard: rollup.dashboard,
       hints: report.hints,
       updatedAt: rollup.updatedAt,
-    }, null, 2), 'utf8');
+    });
 
     return file;
   } catch {

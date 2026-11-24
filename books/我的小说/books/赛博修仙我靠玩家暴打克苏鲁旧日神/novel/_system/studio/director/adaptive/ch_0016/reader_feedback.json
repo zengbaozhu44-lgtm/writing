@@ -1,0 +1,457 @@
+{
+  "chapter": 16,
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "chapter": 16,
+      "metrics": {
+        "continueProbability": 55,
+        "questionCount": 0,
+        "dropRisk": 30,
+        "curiosity": 56
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 12,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": true,
+        "addInformationGap": true,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 55% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "Question Count 偏低（0）— 下一章须新增谜团、信息差与悬念，禁止平叙收束",
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 15 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 一刀岁暮（玩家ID，现实身份未知） 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true,
+        "lowQuestionCount": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.44999999999999996,
+        "relationship": 0.35,
+        "action": 0.6499999999999999,
+        "emotion": 0.3,
+        "twist": 0.5,
+        "growth": 0.3,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.44999999999999996,
+          "score": 25,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.35,
+          "score": 19,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 36,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 28,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 55,
+          "curiosity": 56
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 17,
+          "continueProbability": 55,
+          "curiosity": 56
+        }
+      },
+      "at": "2026-08-13T04:18:31.949Z"
+    },
+    {
+      "sceneIndex": 2,
+      "chapter": 16,
+      "metrics": {
+        "continueProbability": 84,
+        "questionCount": 6,
+        "dropRisk": 10,
+        "curiosity": 78
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 15 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 一刀岁暮（玩家ID，现实身份未知） 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.95,
+        "relationship": 1,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.8499999999999999,
+        "growth": 0.6499999999999999,
+        "reasoning": 0.44999999999999996
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.95,
+          "score": 77,
+          "continueProbability": 84,
+          "curiosity": 78
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 1,
+          "score": 82,
+          "continueProbability": 84,
+          "curiosity": 78
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 53,
+          "continueProbability": 84,
+          "curiosity": 78
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 36,
+          "continueProbability": 84,
+          "curiosity": 78
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.8499999999999999,
+          "score": 68,
+          "continueProbability": 84,
+          "curiosity": 78
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.6499999999999999,
+          "score": 53,
+          "continueProbability": 84,
+          "curiosity": 78
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.44999999999999996,
+          "score": 36,
+          "continueProbability": 84,
+          "curiosity": 78
+        }
+      },
+      "at": "2026-08-13T04:19:32.655Z"
+    },
+    {
+      "sceneIndex": 3,
+      "chapter": 16,
+      "metrics": {
+        "continueProbability": 76,
+        "questionCount": 1,
+        "dropRisk": 10,
+        "curiosity": 78
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 15 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 一刀岁暮（玩家ID，现实身份未知） 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.44999999999999996,
+        "relationship": 0.2,
+        "action": 0.7999999999999999,
+        "emotion": 0.6499999999999999,
+        "twist": 1,
+        "growth": 0.7999999999999999,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.44999999999999996,
+          "score": 35,
+          "continueProbability": 76,
+          "curiosity": 78
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.2,
+          "score": 15,
+          "continueProbability": 76,
+          "curiosity": 78
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.7999999999999999,
+          "score": 61,
+          "continueProbability": 76,
+          "curiosity": 78
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.6499999999999999,
+          "score": 50,
+          "continueProbability": 76,
+          "curiosity": 78
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 1,
+          "score": 77,
+          "continueProbability": 76,
+          "curiosity": 78
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.7999999999999999,
+          "score": 62,
+          "continueProbability": 76,
+          "curiosity": 78
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 23,
+          "continueProbability": 76,
+          "curiosity": 78
+        }
+      },
+      "at": "2026-08-13T04:20:24.152Z"
+    },
+    {
+      "sceneIndex": 4,
+      "chapter": 16,
+      "metrics": {
+        "continueProbability": 59,
+        "questionCount": 0,
+        "dropRisk": 30,
+        "curiosity": 62
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 59% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 15 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 一刀岁暮（玩家ID，现实身份未知） 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.7999999999999999,
+        "relationship": 0.2,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.15,
+        "growth": 0.6499999999999999,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.7999999999999999,
+          "score": 49,
+          "continueProbability": 59,
+          "curiosity": 62
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.2,
+          "score": 12,
+          "continueProbability": 59,
+          "curiosity": 62
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 39,
+          "continueProbability": 59,
+          "curiosity": 62
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 27,
+          "continueProbability": 59,
+          "curiosity": 62
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.15,
+          "score": 9,
+          "continueProbability": 59,
+          "curiosity": 62
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.6499999999999999,
+          "score": 39,
+          "continueProbability": 59,
+          "curiosity": 62
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 18,
+          "continueProbability": 59,
+          "curiosity": 62
+        }
+      },
+      "at": "2026-08-13T04:21:04.238Z"
+    }
+  ],
+  "aggregatedMetrics": {
+    "avgContinueProbability": 69,
+    "maxDropRisk": 30,
+    "avgQuestionCount": 2,
+    "avgCuriosity": 69,
+    "sceneCount": 4
+  },
+  "adjustments": {
+    "hookDensityBoost": 15,
+    "mysteryBoost": 12,
+    "conflictBoost": 0,
+    "payoffBoost": 0,
+    "relationshipBeatBoost": 0,
+    "hookLadderBoost": 0,
+    "firstScreenExplosion": false,
+    "advancePacing": false,
+    "increaseConflict": false,
+    "addMystery": true,
+    "addInformationGap": true,
+    "increaseHookDensity": true
+  },
+  "directives": [
+    "Continue Probability 55% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Question Count 偏低（0）— 下一章须新增谜团、信息差与悬念，禁止平叙收束",
+    "[Story Memory · foreshadow] 伏笔「[object Object]」已 15 章未回收，建议本章推进或兑现",
+    "[角色成长] 下一章须推动 一刀岁暮（玩家ID，现实身份未知） 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条",
+    "Continue Probability 59% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Mystery Curve 断档 — 下一章须加深核心追问，禁止过早全解",
+    "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+    "反转力度不足 — 下一章安排预期违背或信息翻盘"
+  ],
+  "storyMemoryDirectives": [
+    "[Story Memory · foreshadow] 伏笔「[object Object]」已 15 章未回收，建议本章推进或兑现",
+    "[角色成长] 下一章须推动 一刀岁暮（玩家ID，现实身份未知） 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+  ],
+  "elementScores": {
+    "conspiracy": 47,
+    "relationship": 32,
+    "action": 47,
+    "emotion": 33,
+    "twist": 46,
+    "growth": 43,
+    "reasoning": 24
+  },
+  "updatedAt": "2026-08-13T04:21:08.620Z",
+  "readerCurveReport": {
+    "readerAddictionScore": 77,
+    "nextChapterGuidance": [
+      "Mystery Curve 断档 — 下一章须加深核心追问，禁止过早全解",
+      "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+      "反转力度不足 — 下一章安排预期违背或信息翻盘"
+    ]
+  },
+  "finalizedAt": "2026-08-13T04:21:08.620Z"
+}

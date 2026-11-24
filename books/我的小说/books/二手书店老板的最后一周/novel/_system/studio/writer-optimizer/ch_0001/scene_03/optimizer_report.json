@@ -1,0 +1,1099 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 3,
+    "sceneType": "ending",
+    "beatMemory": {
+      "newFacts": [
+        "这钉子是他爸钉的",
+        "巷子里的路灯还没亮，那点白像是自己发光的",
+        "他捻起来，字是圆珠笔写的，笔迹压得很重，纸背都凸起了沟痕——",
+        "灰是干的，没有新踩的脚印，纸片是从外面塞进来的，不是从里往外推的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "他指头上的锈灰还没蹭掉，纸片就从门缝底下探出来一角",
+        "巷子里的路灯还没亮，那点白像是自己发光的",
+        "一声。他转身，柜台上的橘子还在，皮上沾着灰。他拿起来，没擦，搁在胸袋那叠纸旁边。\n\n屋里暗下来。他站在柜台后头，听着墙上挂钟走针的声音，每一下都像踩在门缝那道灰"
+      ],
+      "changedDimensions": [],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Decision",
+          "stateChange": false,
+          "afterState": "POV 已锁定可执行目标，局面即将被打破"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Countdown",
+          "stateChange": false,
+          "afterState": "阻力落地，目标受挫，退路收窄"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Decision",
+          "stateChange": false,
+          "afterState": "POV 已做出不可逆选择，后果即将落地"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Countdown",
+          "stateChange": false,
+          "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Discovery",
+          "stateChange": false,
+          "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Danger",
+          "stateChange": false,
+          "afterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+        }
+      ],
+      "lastAfterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChangeCount": 0
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "林守常当前目标：承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人 — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。",
+        "choice": "为了完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-15T08:42:44.313Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "hand_touch",
+            "close_shop_door",
+            "slip_note"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "costed",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 143 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "林守常当前目标：承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Countdown",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：表面冲突是「老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人为修不修旧书产生表面分歧，林守常沉默地修好；老周留下一个橘子。」。真正的冲突不在动作，而在没说出口的话：一方不肯承认自己的窘迫，另一方不肯戳穿这个谎。若本章没有这样一个「被咽回去的句子」作折痕，场景就只是日常流水账——写作时让每一个停顿都压着 — 且局面本身不会让步",
+        "choice": "为了完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-15T08:42:51.267Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "hand_touch",
+            "close_shop_door",
+            "slip_note"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "costed",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 146 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.03571428571428571
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "这钉子是他爸钉的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-15T08:42:53.761Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "hand_touch",
+            "close_shop_door",
+            "slip_note"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "costed",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.00980392156862745
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Countdown",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "巷子里的路灯还没亮，那点白像是自己发光的",
+          "他捻起来，字是圆珠笔写的，笔迹压得很重，纸背都凸起了沟痕——"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "他指头上的锈灰还没蹭掉，纸片就从门缝底下探出来一角",
+          "巷子里的路灯还没亮，那点白像是自己发光的"
+        ],
+        "extractedAt": "2026-08-15T08:43:01.618Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "hand_touch",
+            "close_shop_door",
+            "slip_note"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "costed",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 159 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.019230769230769232
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "灰是干的，没有新踩的脚印，纸片是从外面塞进来的，不是从里往外推的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-15T08:43:12.754Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "hand_touch",
+            "close_shop_door",
+            "slip_note"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "costed",
+          "issues": [
+            "ACTION_REPLAY: 禁止重演已发生动作「塞纸片」；从上一句后果接着写下一动作"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "未承接上一事件的 Effect，像独立抛异常",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+            "ACTION_REPLAY: 禁止重演已发生动作「塞纸片」；从上一句后果接着写下一动作"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林守常已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.011834319526627219
+          },
+          "microPassed": [
+            "新信息",
+            "Promise兑现",
+            "新行动"
+          ],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Danger",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "章尾强 Hook — 未完成动作或致命追问",
+        "choice": "为了完成「独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "一声。他转身，柜台上的橘子还在，皮上沾着灰。他拿起来，没擦，搁在胸袋那叠纸旁边。\n\n屋里暗下来。他站在柜台后头，听着墙上挂钟走针的声音，每一下都像踩在门缝那道灰"
+        ],
+        "extractedAt": "2026-08-15T08:43:24.068Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "hand_touch",
+            "close_shop_door",
+            "slip_note"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 211 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林守常已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.004807692307692308
+          },
+          "microPassed": [
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        }
+      ],
+      "scenePeak": {
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0
+      },
+      "emotionalVariance": 0,
+      "hasFluctuation": false,
+      "generatedAt": "2026-08-15T08:43:24.085Z",
+      "sceneIndex": 3
+    },
+    "readerSimulation": {
+      "curiosity": 68,
+      "questionCount": 0,
+      "dropRisk": 30,
+      "continueProbability": 62,
+      "sceneIndex": 3,
+      "pov": "林守常",
+      "simulatedAt": "2026-08-15T08:43:24.087Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 60,
+      "obstacleStrength": 40,
+      "choiceLevel": 57,
+      "consequenceLevel": 39,
+      "escalationLevel": 57,
+      "informationValue": 42,
+      "hookImpact": 54,
+      "stateChangeRate": 0,
+      "hookBreakdown": {
+        "hookLevel": 54,
+        "hookOutput": {
+          "type": "PointOfNoReturn",
+          "readerQuestion": "如果选这条路，还能回头吗？",
+          "cost": "他站在柜台后头，听着墙上挂钟走针的声音，每一下都像踩在门缝那道灰",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 5,
+          "stage": "PointOfNoReturn",
+          "name": "不可回头",
+          "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+          "example": "主角必须选择重置自己",
+          "hookKind": "ActionHook",
+          "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": true,
+        "cognitiveUpgrade": 50,
+        "emotionalImpact": 38,
+        "characterCost": 75,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 49,
+      "weakest": "consequenceLevel",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-08-15T08:43:24.088Z",
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "他站在柜台后头，听着墙上挂钟走针的声音，每一下都像踩在门缝那道灰",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": false,
+        "valid": true,
+        "promise": "[object Object]",
+        "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+        "confidence": 0,
+        "signals": {
+          "payoffHit": false,
+          "promiseEcho": false
+        }
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 54,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "他站在柜台后头，听着墙上挂钟走针的声音，每一下都像踩在门缝那道灰",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "actionHookScore": 0,
+      "forcesAction": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 75
+    },
+    "reward": {
+      "valid": true,
+      "requiresPromise": false,
+      "promiseId": "H001",
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "promiseSource": "foreshadow",
+      "promiseCategory": "foreshadow",
+      "promiseType": "medium",
+      "promiseImportance": 70,
+      "expectedChapter": 6,
+      "readerExpectation": 75,
+      "foreshadowId": "H001",
+      "description": "兑现期待：选择产生可见代价，局面因此改变",
+      "deliveryBeat": "newInformation",
+      "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+      "status": "pending"
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    },
+    "blocking": false,
+    "generatedAt": "2026-08-15T08:43:24.088Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 60,
+    "obstacleStrength": 40,
+    "choiceLevel": 57,
+    "consequenceLevel": 39,
+    "escalationLevel": 57,
+    "informationValue": 42,
+    "hookImpact": 54,
+    "stateChangeRate": 0,
+    "hookBreakdown": {
+      "hookLevel": 54,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "他站在柜台后头，听着墙上挂钟走针的声音，每一下都像踩在门缝那道灰",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 75,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 49,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-15T08:43:24.088Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "他站在柜台后头，听着墙上挂钟走针的声音，每一下都像踩在门缝那道灰",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 68,
+    "questionCount": 0,
+    "dropRisk": 30,
+    "continueProbability": 62,
+    "sceneIndex": 3,
+    "pov": "林守常",
+    "simulatedAt": "2026-08-15T08:43:24.087Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 0,
+    "hasFluctuation": false,
+    "generatedAt": "2026-08-15T08:43:24.085Z",
+    "sceneIndex": 3
+  },
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s3",
+    "index": 3,
+    "goal": "承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 0,
+        "end": 31,
+        "chars": 31
+      },
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 312,
+        "end": 624,
+        "chars": 302
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 374,
+        "end": 894,
+        "chars": 500
+      },
+      "edits": []
+    }
+  },
+  "scores": {
+    "pacing": 85,
+    "climax": 74,
+    "hook": 90,
+    "commercialPleasure": 60,
+    "styleConsistency": 58,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "scoresBefore": {
+    "pacing": 85,
+    "climax": 74,
+    "hook": 90,
+    "commercialPleasure": 60,
+    "styleConsistency": 58,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "total": 78,
+  "totalBefore": 78,
+  "weakest": [
+    {
+      "id": "styleConsistency",
+      "score": 58
+    },
+    {
+      "id": "commercialPleasure",
+      "score": 60
+    },
+    {
+      "id": "climax",
+      "score": 74
+    }
+  ],
+  "polish": {
+    "changed": false,
+    "mode": "none",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 0,
+          "end": 31,
+          "chars": 31
+        },
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 0,
+        "scoreAfter": 0,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 312,
+          "end": 624,
+          "chars": 302
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 90,
+        "scoreAfter": 90,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 374,
+          "end": 894,
+          "chars": 500
+        },
+        "edits": []
+      }
+    },
+    "edits": []
+  },
+  "diff": {
+    "prefixUnchanged": 894,
+    "draftChars": 866,
+    "polishedChars": 866,
+    "changed": false
+  },
+  "diffLines": [],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-08-15T08:43:24.127Z",
+  "quality": {
+    "scores": {
+      "pacing": 85,
+      "climax": 74,
+      "hook": 90,
+      "commercialPleasure": 60,
+      "styleConsistency": 58,
+      "characterConsistency": 100,
+      "infoRelease": 80
+    },
+    "total": 78,
+    "weak": [
+      {
+        "id": "styleConsistency",
+        "score": 58
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 60
+      },
+      {
+        "id": "climax",
+        "score": 74
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "pacing",
+        "score": 85
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "styleConsistency",
+        "score": 58
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 60
+      },
+      {
+        "id": "climax",
+        "score": 74
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 124,
+        "actionHits": 10,
+        "dialogHits": 0,
+        "variety": 2
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 0,
+        "len": 866
+      },
+      "styleConsistency": {
+        "shortRatio": 66,
+        "expoRun": 124
+      },
+      "characterConsistency": {
+        "pov": "林守常",
+        "present": [
+          "林守常"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 0,
+        "stagger": false
+      }
+    },
+    "chapter": 1,
+    "sceneIndex": 3,
+    "totalChars": 866
+  }
+}

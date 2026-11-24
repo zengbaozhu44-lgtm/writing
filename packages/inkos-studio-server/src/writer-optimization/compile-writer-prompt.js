@@ -10,7 +10,7 @@ import { buildCommercialWriterRulesBlock } from './commercial-writer-rules.js';
 import { buildChapterTitleBlock, resolveChapterSuspenseTitle } from './chapter-title.js';
 import { buildContinuationBlock } from './continuation-engine.js';
 import { deriveSceneBoundaries, buildBoundaryBlock } from './scene-boundary.js';
-import { buildRevealBlock } from './reveal-manager.js';
+import { buildRevealBlock, buildRevisitBlock } from './reveal-manager.js';
 import { generateSceneHook, buildHookBlock } from './hook-generator.js';
 import { loadAdaptiveAdjustments, buildAdaptivePromptBlock } from '@inkos/adaptive-learning';
 import {
@@ -32,14 +32,15 @@ import {
   formatGoldenSampleBlock,
   resolveGoldenSample,
 } from './sample-driven-writer.js';
+import { wrapHistoricalPriorExcerpt, markContinuationHistorical } from '../../../inkos-core/src/lib/prompt-survival.js';
 
 export function getWriterOptimizationDir(bookDir) {
   return path.join(bookDir, 'novel', '_system', 'studio', 'writer-optimization');
 }
 
-export function collectPriorScenesText(intent, sceneIndex) {
-  const scenes = intent?.scenes || [];
-  return scenes
+export function collectPriorScenesText(intent, sceneIndex, scenes = null) {
+  const list = Array.isArray(scenes) && scenes.length ? scenes : (intent?.scenes || []);
+  return list
     .filter((s) => s.index < sceneIndex && s.text?.trim())
     .map((s) => s.text)
     .join('\n\n');
@@ -59,18 +60,27 @@ export function compileStudioWriterPrompt({
   storyDna = null,
   chapterDir = null,
   tokenBudget = null,
+  scenes = null,
+  storyMemory = null,
 }) {
-  const scenes = intent?.scenes || [];
+  // 优先用传入的工作 scenes 数组（orchestrator 循环中已回写正文），再回退 intent.scenes
+  const workScenes = Array.isArray(scenes) && scenes.length ? scenes : (intent?.scenes || []);
   const sceneIndex = scene?.index ?? 1;
-  const priorText = collectPriorScenesText(intent, sceneIndex);
-  const prevScene = scenes.find((s) => s.index === sceneIndex - 1);
+  const priorText = collectPriorScenesText(intent, sceneIndex, workScenes);
+  const prevScene = workScenes.find((s) => s.index === sceneIndex - 1);
   const prevTail = prevScene?.text?.slice(-120) || '';
   const dna = storyDna || (ctx?.bookDir ? readStoryDna(ctx.bookDir) : {}) || {};
 
   const executionPlan = resolveExecutionPlan(scene, intent, chapterDir);
   const boundaries = deriveSceneBoundaries(scene, intent, { prevHook: prevTail, chapter });
-  const continuation = buildContinuationBlock({ scene, intent, scenes, chapter });
+  const continuation = buildContinuationBlock({
+    scene: { ...scene, executionPlan },
+    intent,
+    scenes: workScenes,
+    chapter,
+  });
   const reveal = buildRevealBlock({ chapter, scene, priorScenesText: priorText });
+  const revisit = buildRevisitBlock({ chapter, scene, priorScenesText: priorText, storyMemory });
   const hookSpec = generateSceneHook(scene, boundaries, intent);
   const bookDir = ctx?.bookDir;
   const directorOverrides = bookDir && chapter != null
@@ -154,10 +164,11 @@ export function compileStudioWriterPrompt({
     worldBible,
     storyMemoryBlock: mergedMemory,
     adaptiveBlock,
-    priorExcerpt: priorText ? priorText.slice(-800) : prevTail,
-    continuationBlock: continuation.block,
+    priorExcerpt: priorText ? wrapHistoricalPriorExcerpt(priorText.slice(-800)) : wrapHistoricalPriorExcerpt(prevTail),
+    continuationBlock: markContinuationHistorical(continuation.block),
     boundaryBlock,
     revealBlock: reveal,
+    revisitBlock: revisit,
     hookBlock,
     commercialRules,
     promptRulesBlock,

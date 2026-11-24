@@ -1,0 +1,81 @@
+{
+  "version": "context-rank-1",
+  "chapter": 8,
+  "scene": {
+    "id": "ch8_s4",
+    "index": 4,
+    "goal": "章末钩子（承接转折后果）：no_causal_basis"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2084,
+    "topK": null,
+    "usedChars": 36,
+    "selectedCount": 1,
+    "trimmedCount": 1,
+    "totalCandidates": 2
+  },
+  "topK": [
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "text": "Day 0：回车：回车按下去，屏幕闪了两下，弹出来的不是档案，是一道红锁—",
+      "charCount": 36,
+      "scores": {
+        "relevance": 20,
+        "importance": 40,
+        "freshness": 55,
+        "narrativePriority": 18,
+        "budgetChars": 60,
+        "finalScore": 31.8
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "finalScore": 25.8,
+      "trimReason": "Budget 不足",
+      "charCount": 34
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 8
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 2,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "收束代价与余韵，兑现伏笔，留白而非解释完",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-22T09:49:40.798Z"
+}

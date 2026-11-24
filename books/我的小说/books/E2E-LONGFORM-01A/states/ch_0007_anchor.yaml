@@ -1,0 +1,122 @@
+version: chapter-anchor-3
+chapter: 7
+current_date: Day 0
+pov: 周砚
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 周砚
+  present:
+    - 周砚
+  edges:
+    - from: 周砚
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 8
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止提前揭晓章末钩子：no_causal_basis
+    expiresAtChapter: 8
+  - text: 禁止无损撤回本章代价：no_causal_basis
+    expiresAtChapter: 9
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 8
+voiceDna:
+  version: voice-dna-2
+  presetId: default
+  label: 商业快节奏
+  sentenceLength: short
+  rhythm: staccato
+  sentenceRhythm:
+    mode: emotion
+    label: 读者情绪/信息差
+    rules:
+      - 减少解释。
+      - 增加动作与对白。
+      - 让读者比 POV 更紧张 — 用细节不用旁白。
+  dialogueRatio: 0.42
+  actionDensity: high
+  descriptionDensity: low
+  pov: 限知第三人称
+  notes: 对白推动剧情；动作优先于心理；禁止总结句
+  bannedPhrases:
+    - 不禁
+    - 心中一凛
+    - 隐约感到
+    - 莫名
+    - 仿佛
+    - 似乎
+    - 不由得
+    - 内心深处
+    - 这一刻
+    - 空气仿佛凝固
+    - 时间仿佛静止
+    - 嘴角微微上扬
+    - 眼中闪过一丝
+    - 心中暗道
+    - 脑海中浮现
+    - 一股莫名的
+    - 难以言喻
+    - 说不清道不明
+    - 她感觉
+    - 他感觉
+    - 她意识到
+    - 他意识到
+    - 心中一震
+    - 眉头微皱
+  sampleLines:
+    - 雨滴砸在滑轨上，溅开成暗红色的水花。林异的手套已经磨破了三道口子，第四道正在渗血。
+    - 他把尸体拖上推车，编号栏写着“数据溢出——认知污染”。第九区的夜雨裹着机油味，打在防护服的帽檐上，噼啪作响。
+    - “快点。”对讲机里传来调度员的声音，“天眼三分钟后过境。”
+    - 林异没答话。他拽着滑轨往焚化区走，推车的轮子卡在裂缝里，尸体晃了一下，一只手从白布下滑出来——指甲全没了。
+    - 他停了两秒。然后继续拖。
+  goldenSample: |-
+    雨滴砸在滑轨上，溅开成暗红色的水花。林异的手套已经磨破了三道口子，第四道正在渗血。
+    他把尸体拖上推车，编号栏写着“数据溢出——认知污染”。第九区的夜雨裹着机油味，打在防护服的帽檐上，噼啪作响。
+
+    “快点。”对讲机里传来调度员的声音，“天眼三分钟后过境。”
+
+    林异没答话。他拽着滑轨往焚化区走，推车的轮子卡在裂缝里，尸体晃了一下，一只手从白布下滑出来——指甲全没了。
+
+    他停了两秒。然后继续拖。
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 7
+  closing_emotion: 疑虑·未解之问
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+  mustInheritScene1: true
+  tailExcerpt: 车，编号空着。” 他抓起外套。 周砚把听筒扣回座机，指节在塑料壳上停了一瞬。屏幕上那行反馈还在刷：授权窗口剩余——四十七秒。 他扯过外套，钥匙没拿稳，掉在地上弹了两下，滚进桌腿阴影里。他没弯腰，直接踹开门。 走廊尽头的安全灯一格一格灭下去。
+committedAt: 2026-10-22T09:47:59.000Z
+d1InferenceDemotion:
+  eo: EO-P4
+  role: operational_planner_hint
+  producesObtains: false
+  isRealityAuthority: false
+  isCharacterReality: false
+  isRelationshipFact: false
+  authorityAct: NOT_AN_AUTHORITY_ACT
+  claimLevelAuthority: NOT_THIS_PATH
+  note: Anchor / heuristic ops hint ≠ Reality / obtains.
+  paths:
+    - deriveRelationshipState
+    - deriveClosingEmotion
+    - buildChapterAnchor
+  relationship_state: operational_planner_hint_not_fact
+  closing_emotion: ops_hint_not_character_reality

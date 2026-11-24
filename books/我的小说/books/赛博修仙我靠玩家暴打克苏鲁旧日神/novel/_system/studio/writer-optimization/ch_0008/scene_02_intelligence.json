@@ -1,0 +1,738 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "beatMemory": {
+    "newFacts": [
+      "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了",
+      "不是我们切的"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "relief",
+      "fear",
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了",
+      "他整个人僵住，喉咙里堵着什么",
+      "直播间的在线人数从四百七十万瞬间归零。他听见自己的心跳，像一块石头砸进深井。沈寒舟的声音从耳麦里传来，带着电流的杂音：「信号……不是我们切的。」\n\n林砚盯着"
+    ],
+    "changedDimensions": [
+      "information"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他咬住牙关，牙根发酸——沈寒舟还在镜头边缘，触手已经缠上他的脚踝"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": false,
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 1
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "relief"
+      ],
+      "unresolvedIssues": [
+        "镜头扫过战场边缘的废墟，一段焦黑的断墙后面，有什么东西——不是阴影，不是雾气，是某种粗壮的、湿润的、覆着鳞片的东西，缓缓缩回了"
+      ],
+      "extractedAt": "2026-08-11T06:52:52.893Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "林砚当前目标：承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：铁颅军团巨型战争机器的正面碾压威胁 vs 玩家群体不按常理出牌的混沌战术；表面上是战术与武力的对抗，实质是旧日邪神‘秩序污染’与玩家‘混乱自由意志’的首次理念碰撞。 — 且系统 / 规则本身不会让步",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear",
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:01.633Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 173 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.041176470588235294
+        },
+        "microPassed": [
+          "新信息",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "他咬住牙关，牙根发酸——沈寒舟还在镜头边缘，触手已经缠上他的脚踝",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:09.687Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.013157894736842105
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "他整个人僵住，喉咙里堵着什么"
+      ],
+      "extractedAt": "2026-08-11T06:53:18.601Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.028169014084507043
+        },
+        "microPassed": [
+          "新信息",
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T06:53:28.163Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 190 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0374331550802139
+        },
+        "microPassed": [
+          "Promise兑现",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "不是我们切的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "直播间的在线人数从四百七十万瞬间归零。他听见自己的心跳，像一块石头砸进深井。沈寒舟的声音从耳麦里传来，带着电流的杂音：「信号……不是我们切的。」\n\n林砚盯着"
+      ],
+      "extractedAt": "2026-08-11T06:53:36.798Z",
+      "continuity": {
+        "leftArm": "damaged",
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "gm_auth",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "NAME_DRIFT: 出现未登记角色名「渊猎」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.047058823529411764
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 52,
+        "dominant": "relief"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 39,
+        "hope": 0,
+        "anger": 56,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 56,
+      "surprise": 0,
+      "relief": 52
+    },
+    "emotionalVariance": 56,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-11T06:53:36.815Z",
+    "sceneIndex": 2
+  },
+  "readerSimulation": {
+    "curiosity": 68,
+    "questionCount": 2,
+    "dropRisk": 30,
+    "continueProbability": 66,
+    "sceneIndex": 2,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-11T06:53:36.816Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 62,
+    "obstacleStrength": 42,
+    "choiceLevel": 53,
+    "consequenceLevel": 38,
+    "escalationLevel": 53,
+    "informationValue": 45,
+    "hookImpact": 63,
+    "stateChangeRate": 17,
+    "hookBreakdown": {
+      "hookLevel": 63,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 65,
+      "characterCost": 75,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 51,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-11T06:53:36.817Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 63,
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：战场直播狂欢——主播玩家‘深渊猎手’直播与铁颅军团作战，人气爆棚，观众疯狂打赏。直播高潮时，镜头角落出现高维诡秘触手，直播信号被切断，恐慌与热议在玩家世界爆发。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 50,
+    "emotionalImpact": 65,
+    "characterCost": 75
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 13,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 0,
+    "signals": {
+      "payoffHit": false,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-11T06:53:36.817Z"
+}

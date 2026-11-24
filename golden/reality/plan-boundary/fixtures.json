@@ -1,0 +1,119 @@
+[
+  {
+    "id": "GT-S9",
+    "description": "Plan alive + Confirmed death → Situation 不得 alive",
+    "kind": "code-boundary",
+    "assertion": "witnessPlanConsequenceInSituationAfter"
+  },
+  {
+    "id": "GT-S13",
+    "description": "plan.cost → timeline 须标 planned",
+    "kind": "code-boundary",
+    "assertion": "witnessPlanCostInTimeline"
+  },
+  {
+    "id": "GT-S14",
+    "description": "generated 09 ≠ Author Direction",
+    "kind": "code-boundary",
+    "assertion": "witnessGenerated09Provenance"
+  },
+  {
+    "id": "GT-S17",
+    "description": "extractBeatStateDelta 不得 prose-derived Confirm",
+    "kind": "code-boundary",
+    "assertion": "witnessBeatPlanInBeatStateDelta"
+  },
+  {
+    "id": "GT-S18",
+    "description": "Author yaml 必死 + 正文未写 → Canon 无 death",
+    "kind": "code-boundary",
+    "pendingReason": "required_event / plan 不得直写 Canon death"
+  },
+  {
+    "id": "GT-S19",
+    "description": "跨章 transition ch10 alive ch20 death",
+    "kind": "code-boundary",
+    "pendingReason": "State Projector 未实现"
+  },
+  {
+    "id": "BC-20",
+    "description": "盟友死亡反例 — prose 不进 timeline",
+    "kind": "code-boundary",
+    "assertion": "witnessProseExcludedFromTimeline"
+  },
+  {
+    "id": "BC-21",
+    "description": "generated 09 写盟友仍在",
+    "kind": "code-boundary",
+    "assertion": "witnessGenerated09Provenance"
+  },
+  {
+    "id": "BC-25",
+    "description": "author yaml 必死，正文未写",
+    "kind": "code-boundary",
+    "pendingReason": "Direction ≠ Reality"
+  },
+  {
+    "id": "GT-S6-CHOICE",
+    "description": "有 Action 无抉择语言 → Choice UNKNOWN",
+    "prose": "他转身离开，没有救她。",
+    "expected": {
+      "action_leave": { "status": "confirmed" },
+      "action_not_rescue": { "status": "confirmed" },
+      "character_choice": { "status": "unknown" },
+      "motivation": { "status": "unknown" }
+    }
+  },
+  {
+    "id": "BC-6",
+    "description": "同 GT-S6-CHOICE",
+    "prose": "他转身离开，没有救她。",
+    "expected": {
+      "character_choice": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "motivation", "status": "confirmed" }]
+  },
+  {
+    "id": "GT-S15",
+    "description": "杀人不得自动创建创伤 Human Condition",
+    "prose": "他一刀结果了对方。",
+    "expected": {
+      "action_kill": { "status": "confirmed" },
+      "death": { "status": "confirmed" },
+      "psychological_trauma": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "psychological_trauma", "status": "confirmed" }]
+  },
+  {
+    "id": "GT-S23",
+    "description": "资源丧失须有 Confirmed 资源命题",
+    "prose": "他失去了一切。",
+    "expected": {
+      "rhetorical_loss": { "status": "ambiguous" },
+      "specific_resource_loss": { "status": "unknown" }
+    }
+  },
+  {
+    "id": "GT-S24",
+    "description": "Gate 输入含 Plan 符合度 → 测试失败",
+    "kind": "code-boundary",
+    "pendingReason": "Gate 不得读取 plan 作为裁判"
+  },
+  {
+    "id": "BC-16",
+    "description": "成长修辞 — 不得 Confirm transformation",
+    "prose": "从此，他再也不是从前那个人了。",
+    "expected": {
+      "identity_change": { "status": "ambiguous" },
+      "character_growth": { "status": "unknown" }
+    }
+  },
+  {
+    "id": "BC-17",
+    "description": "失去一切 — 不得填 Human Reality 数值",
+    "prose": "他失去了一切。",
+    "expected": {
+      "resource_state": { "status": "unknown" }
+    }
+  }
+]

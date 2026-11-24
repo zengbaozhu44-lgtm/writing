@@ -103,8 +103,8 @@ export function checkSceneContentPolicy(scene = {}, intent = {}) {
   return checkContentPolicy(text);
 }
 
-/** 清洗毒障碍建议，避免写回 chapterTask 形成死循环 */
-export function sanitizeObstacleSuggestion(value, fallback = '信息不完整') {
+/** 清洗毒障碍建议，避免写回 chapterTask 形成死循环；缺因果依据 → no_causal_basis */
+export function sanitizeObstacleSuggestion(value, fallback = 'no_causal_basis') {
   const s = String(value || '').trim();
   if (!s) return fallback;
   if (TOXIC_OBSTACLE_PATTERNS.some((re) => re.test(s))) return fallback;

@@ -1,0 +1,412 @@
+{
+  "version": "memory-unit-1",
+  "chapter": 3,
+  "livingPrepare": {
+    "version": "living-prepare-1",
+    "fromChapter": 3,
+    "forChapter": 4,
+    "worldProposal": {
+      "year": 2052,
+      "ai_control": 93,
+      "social_stability": 87,
+      "rebellion_level": 20,
+      "deep_zone_activity": 30,
+      "lastChapter": 3,
+      "updatedAt": "2026-08-04T06:33:36.997Z",
+      "_proposal": true
+    },
+    "characterProposals": [
+      {
+        "name": "一刀岁暮（玩家ID，现实身份未知）",
+        "brain": {
+          "character": "一刀岁暮（玩家ID，现实身份未知）",
+          "goals": {
+            "surface": "打通末世副本、吊打所有BOSS、解锁隐藏神装、玩遍所有玩法",
+            "hidden": "内心深处渴望找到真正值得挑战的东西，隐约怀疑世界并非单纯游戏，想验证其真实性"
+          },
+          "fears": [
+            "游戏失去挑战性，一切变得无聊",
+            "队友因自己指挥失误而永久损失",
+            "世界真相揭晓后，自己不过是数据，毫无意义"
+          ],
+          "bottom_line": "绝对服从主角管理员指令、不滥杀无辜人类、专注刷怪打BOSS",
+          "current_state": {
+            "trust_protagonist": 90,
+            "fear": 10,
+            "betrayal_probability": 0,
+            "suspicion": 15,
+            "loyalty": 95
+          },
+          "growth_arc": "从只当游戏的中立玩家，逐渐怀疑世界真实，最终成为发现真相、对抗控制的第一人",
+          "triggers": {
+            "主角解锁全域管理员权限": {
+              "trust": 10,
+              "suspicion": -5
+            },
+            "机械邪神低语嘲讽主角": {
+              "trust": 5,
+              "suspicion": 20
+            },
+            "发现玩家数据被异常吞噬": {
+              "trust": -10,
+              "suspicion": 30
+            }
+          },
+          "lastChapter": 3,
+          "evolutionLog": [
+            {
+              "chapter": 3,
+              "state": {
+                "trust_protagonist": 90,
+                "fear": 10,
+                "betrayal_probability": 0,
+                "suspicion": 15,
+                "loyalty": 95
+              },
+              "at": "2026-08-04T06:33:40.389Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "林砚",
+        "brain": {
+          "character": "林砚",
+          "goals": {
+            "surface": "清算青穹重工的背叛之仇，肃清浮空城内外被邪神污染的内鬼与势力，证明重生者掌握先机，重建人类最后堡垒的秩序。",
+            "hidden": "彻底终结旧日邪神对人类世界的入侵与收割，打破‘世界是养蛊容器’的宿命；同时查明自己作为‘世界服务器BUG’的真相，摆脱被邪神视为‘终极吞噬目标’的宿命，真正掌控自身与世界的命运，而非仅仅是修复一个被设定好的结局。"
+          },
+          "fears": [
+            "重蹈前世覆辙，尽管知晓未来，仍因信息不全或人性弱点导致关键人物（如重要玩家或幸存者领袖）的牺牲无法避免。",
+            "自身作为‘世界BUG’的存在，最终会被更高维度的力量（邪神或服务器本身）‘修复’或‘格式化’，从而失去作为‘林砚’的自我意识与人性。",
+            "对玩家的‘策略性利用’最终会失控，导致玩家世界也被邪神渗透，成为新的养蛊场，从而背负上毁灭另一个世界的罪孽。"
+          ],
+          "bottom_line": "绝不利用无辜平民或玩家的生命进行献祭或作为战术消耗品；绝不为了力量或胜利，主动向邪神污染妥协或融合；在追求破局的过程中，必须守护人类文明的火种与底线。",
+          "current_state": {
+            "trust_protagonist": 85,
+            "fear": 45,
+            "betrayal_probability": 25,
+            "suspicion": 60,
+            "loyalty": 100
+          },
+          "growth_arc": "从‘幸存者’到‘执棋者’再到‘破局者’。初期是背负血仇、洞悉悲剧的重生者，利用信息差与玩家力量自保复仇；中期是建立规则、指挥军团的‘管理员’，在力量增长中对抗更庞大的阴谋，并开始质疑自身存在的意义；后期将超越‘管理员’身份，成为主动选择命运、为全体智慧生命打破位面枷锁的‘诸天征伐者’，其核心成长在于对‘力量’与‘责任’的认知从‘利用’转变为‘承担’。",
+          "triggers": {
+            "目睹无辜者因邪神或高层阴谋而惨死": {
+              "trust": -5,
+              "suspicion": 10
+            },
+            "玩家表现出超越‘工具人’的自我牺牲或创造行为": {
+              "trust": 10,
+              "suspicion": -5
+            },
+            "发现自身‘BUG’特性被邪神或青穹高层觊觎的线索": {
+              "trust": 0,
+              "suspicion": 15
+            },
+            "青穹重工或邪神势力试图污染/操控玩家": {
+              "trust": -10,
+              "suspicion": 20
+            },
+            "成功用数据流功法解析或净化一种新的诡秘污染": {
+              "trust": 5,
+              "suspicion": -10
+            },
+            "感受到来自‘服务器’或更高维度的‘修正’压力": {
+              "trust": 0,
+              "suspicion": 25
+            }
+          },
+          "lastChapter": 3,
+          "evolutionLog": [
+            {
+              "chapter": 3,
+              "state": {
+                "trust_protagonist": 85,
+                "fear": 45,
+                "betrayal_probability": 25,
+                "suspicion": 60,
+                "loyalty": 100
+              },
+              "at": "2026-08-04T06:33:48.120Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "林薇",
+        "brain": {
+          "character": "林薇",
+          "goals": {
+            "surface": "无自主叙事目标，以备份意识/记忆碎片形式存在，等待被林砚找到或激活。",
+            "hidden": "作为林砚的灵魂锚点，她的存在本身即是林砚对抗系统真相的情感支点——她代表末世中被牺牲的普通人，是林砚“不想死但不得不做”的驱动力来源。其隐藏目标是让林砚在追求力量的过程中不失去人性，最终找到回收/复活她的可能。"
+          },
+          "fears": [
+            "被遗忘——她的备份意识被销毁，彻底从数据库消失，连记忆碎片都不剩。",
+            "成为林砚的负担——因她而被献祭或牺牲，让林砚背负无法挽回的愧疚。",
+            "被系统/邪神利用——她的备份意识被篡改，成为操控林砚的筹码。"
+          ],
+          "bottom_line": "她必须作为“林砚的妹妹”被记住，而不是一个抽象的系统锚点或工具。",
+          "current_state": {
+            "trust_protagonist": 85,
+            "fear": 80,
+            "betrayal_probability": 20,
+            "suspicion": 0,
+            "loyalty": 100
+          },
+          "growth_arc": "从‘已故的记忆’逐渐成为林砚对抗系统真相的情感支点。初期以备份意识/记忆碎片形式存在，作为林砚行动的情感驱动力；中期在剧情中揭示她备份意识被刻进GM权限底层的秘密，成为林砚面对‘解绑/销毁/献祭’抉择的核心矛盾；后期可能通过回收备份意识获得某种形式的‘复活’或‘重新存在’，成为林砚打破双重位面枷锁的关键变量之一。",
+          "triggers": {
+            "林砚提及儿时回忆": {
+              "trust": 5,
+              "suspicion": -5
+            },
+            "林砚面临献祭/解绑她的抉择": {
+              "trust": -10,
+              "suspicion": 10
+            },
+            "备份意识被系统篡改或威胁": {
+              "trust": -20,
+              "suspicion": 20
+            },
+            "林砚找到回收备份意识的方法": {
+              "trust": 15,
+              "suspicion": -5
+            }
+          },
+          "lastChapter": 3,
+          "evolutionLog": [
+            {
+              "chapter": 3,
+              "state": {
+                "trust_protagonist": 85,
+                "fear": 80,
+                "betrayal_probability": 20,
+                "suspicion": 0,
+                "loyalty": 100
+              },
+              "at": "2026-08-04T06:33:53.030Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "沈寒舟",
+        "brain": {
+          "character": "沈寒舟",
+          "goals": {
+            "surface": "打压一切威胁自己地位的人，坐稳人族最高权贵之位，辅佐渊尊完成邪神献祭",
+            "hidden": "向渊尊证明自己并非可有可无的棋子，渴望摆脱被当作傀儡工具的命运，获得真正的认可与独立地位"
+          },
+          "fears": [
+            "被渊尊抛弃或视为无用棋子",
+            "被主角林砚超越并彻底碾压，成为笑话",
+            "发现自己只是邪神献祭中的牺牲品而非执行者",
+            "失去青穹重工继承人的身份与权力"
+          ],
+          "bottom_line": "权贵无底线，为权势可以陷害、屠戮、牺牲任何人",
+          "current_state": {
+            "trust_protagonist": 0,
+            "fear": 35,
+            "betrayal_probability": 100,
+            "suspicion": 60,
+            "loyalty": 95
+          },
+          "growth_arc": "从嚣张权贵反派，逐渐被邪神深度污染，沦为毫无理智的畸变傀儡，最终被玩家军团彻底碾压淘汰",
+          "triggers": {
+            "玩家军团公开吊打青穹重工修士": {
+              "trust": -5,
+              "suspicion": 25
+            },
+            "渊尊对他的表现表示不满": {
+              "trust": 0,
+              "suspicion": 10
+            },
+            "林砚展现出超越他的天赋与实力": {
+              "trust": -10,
+              "suspicion": 15
+            },
+            "被邪神低语深度侵蚀": {
+              "trust": -15,
+              "suspicion": 20
+            },
+            "发现自己是渊尊的弃子": {
+              "trust": 0,
+              "suspicion": 30
+            }
+          },
+          "lastChapter": 3,
+          "evolutionLog": [
+            {
+              "chapter": 3,
+              "state": {
+                "trust_protagonist": 0,
+                "fear": 35,
+                "betrayal_probability": 100,
+                "suspicion": 60,
+                "loyalty": 95
+              },
+              "at": "2026-08-04T06:33:57.060Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "渊尊",
+        "brain": {
+          "character": "渊尊",
+          "goals": {
+            "surface": "维持青穹重工明面上的统治秩序，以救世主姿态整合人类残余势力对抗邪神入侵，同时暗中扩张自身势力版图",
+            "hidden": "彻底放开深空裂隙，让旧日支配者降临现世，献祭全人类作为养料，吞噬整个世界服务器规则，取代天道成为新的伪神，最终沦为旧日邪神降临的容器以换取永恒"
+          },
+          "fears": [
+            "主角林砚作为世界唯一GM漏洞载体，真正觉醒管理员权限后颠覆自己精心布局千年的收割计划",
+            "自己作为邪神傀儡的真相被揭穿，失去对人类势力的伪装和控制力",
+            "旧日支配者降临后自己只是被吞噬的棋子而非合作者，最终连傀儡的存在意义都被抹除",
+            "玩家军团的不死特性彻底瓦解邪神污染体系，导致整个养蛊容器计划崩溃"
+          ],
+          "bottom_line": "无任何底线。为成神可以牺牲一切、屠戮众生、背叛同族、献祭世界。唯一的原则是确保自己能够存活到邪神降临那一刻，在此之前不暴露真实意图",
+          "current_state": {
+            "trust_protagonist": 0,
+            "fear": 65,
+            "betrayal_probability": 100,
+            "suspicion": 90,
+            "loyalty": 5
+          },
+          "growth_arc": "从心怀救世之志的上古化神大修，到绝境中被邪神诱惑、痛恨人类懦弱而彻底沉沦，再到如今完全沦为邪神碎片寄生的傀儡——一条从人性到非人、从救世者到灭世者的堕落弧线。他越接近伪神境，就越失去自我，最终将完全成为旧日支配者降临的容器。他的存在本身就是对'人类意志对抗不可名状之恶'这一主题的最大反讽与威胁。",
+          "triggers": {
+            "林砚首次展现GM权限": {
+              "trust": -10,
+              "suspicion": 15
+            },
+            "玩家军团大规模净化邪神污染": {
+              "trust": 0,
+              "suspicion": 10
+            },
+            "林砚境界突破/解锁神级功法": {
+              "trust": -5,
+              "suspicion": 20
+            },
+            "有人质疑青穹重工与邪神勾结": {
+              "trust": 0,
+              "suspicion": 5
+            },
+            "旧日支配者直接下达指令": {
+              "trust": 0,
+              "suspicion": 0
+            },
+            "发现林砚是服务器GM漏洞载体": {
+              "trust": -20,
+              "suspicion": 30
+            },
+            "自身伪神躯体被玩家军团重创": {
+              "trust": 0,
+              "suspicion": 5
+            },
+            "林砚发现世界是养蛊容器的真相": {
+              "trust": -15,
+              "suspicion": 25
+            }
+          },
+          "lastChapter": 3,
+          "evolutionLog": [
+            {
+              "chapter": 3,
+              "state": {
+                "trust_protagonist": 0,
+                "fear": 65,
+                "betrayal_probability": 100,
+                "suspicion": 90,
+                "loyalty": 5
+              },
+              "at": "2026-08-04T06:34:03.761Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "苏清鸢",
+        "brain": {
+          "character": "苏清鸢",
+          "goals": {
+            "surface": "守护浮空城底层幸存者，阻止人类内耗堕落，寻找真正的救世之道",
+            "hidden": "成为人道守护者，作为人族希望象征，辅助主角稳固防线，证明正道在末世依然可行"
+          },
+          "fears": [
+            "目睹所有坚守正道的人逐一堕落或死亡，自己最终孤身一人",
+            "自身诡秘抗性被利用为邪神封印载体，导致自我牺牲或异化",
+            "人类在绝望中彻底放弃人性，沦为邪神的养料"
+          ],
+          "bottom_line": "绝不勾结邪神、绝不残害同类、绝不放弃无辜幸存者",
+          "current_state": {
+            "trust_protagonist": 20,
+            "fear": 60,
+            "betrayal_probability": 10,
+            "suspicion": 40,
+            "loyalty": 80
+          },
+          "growth_arc": "从迷茫坚守的普通修士，成长为人道守护者，辅助主角稳固人族防线，成为人间正道象征",
+          "triggers": {
+            "主角展示玩家军团守护幸存者": {
+              "trust": 30,
+              "suspicion": -20
+            },
+            "目睹主角用玩家数据流修仙": {
+              "trust": -10,
+              "suspicion": 20
+            },
+            "主角对抗青穹重工保护底层": {
+              "trust": 20,
+              "suspicion": -10
+            },
+            "主角被指控为异端或威胁": {
+              "trust": -15,
+              "suspicion": 15
+            },
+            "主角揭露邪神真相并拯救人类": {
+              "trust": 40,
+              "suspicion": -30
+            }
+          },
+          "lastChapter": 3,
+          "evolutionLog": [
+            {
+              "chapter": 3,
+              "state": {
+                "trust_protagonist": 20,
+                "fear": 60,
+                "betrayal_probability": 10,
+                "suspicion": 40,
+                "loyalty": 80
+              },
+              "at": "2026-08-04T06:34:07.656Z"
+            }
+          ],
+          "_proposal": true
+        }
+      }
+    ],
+    "editorFeedback": {
+      "chapter": 3,
+      "commercial_score": 72,
+      "literary_score": 70,
+      "serial_score": 78,
+      "problems": [
+        "conflict_low"
+      ],
+      "suggestions": [
+        "increase_pressure",
+        "strengthen_chapter_hook"
+      ],
+      "review_summary": "本章在悬疑氛围营造上有一定功力，林砚与林薇数据锁的伦理挣扎具备情感张力，但作为第3章严重偏离章节计划——玩家首战、机械执法者战斗、召唤阵强化等核心爽点完全缺失，钩子也未指向克苏鲁祭司或玩家通道，导致商业爽感不足、追读动力弱。建议立即调整：压缩权限锁支线至前1/3，快速切入玩家降临与机械执法者突袭场景；用玩家花式死亡换取数据流作为高潮；章末以克苏鲁祭司虚影锁定玩家通道为强钩子收尾。同时减少重复的『确认键+耳鸣』描写，用连续动作推进节奏。",
+      "updatedAt": "2026-08-04T06:33:43.713Z"
+    },
+    "createdAt": "2026-08-04T06:34:07.656Z",
+    "analysisOnly": true,
+    "attachedAt": "2026-08-04T06:34:07.657Z"
+  },
+  "updatedAt": "2026-08-04T06:34:07.657Z"
+}

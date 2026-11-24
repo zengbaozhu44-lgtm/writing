@@ -1,0 +1,421 @@
+{
+  "intent": {
+    "chapterIntent": "第3章：处理天花板漏水，并与老何当面把责任说清楚",
+    "mainGoal": "处理天花板漏水，并与老何当面把责任说清楚",
+    "obstacles": [
+      "老何认为漏水来自苏晚这边，态度硬",
+      "苏晚有配电间备用钥匙却不肯立刻交出"
+    ],
+    "sceneCount": 4,
+    "scenes": [
+      {
+        "index": 1,
+        "id": "ch3_s1",
+        "title": "进入世界",
+        "goal": "承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：处理天花板漏水",
+        "conflict": "老何认为漏水来自苏晚这边，态度硬",
+        "entities": [
+          "苏晚"
+        ],
+        "beat": "situation",
+        "inheritedEmotion": "压抑·余波未平",
+        "forbiddenOpenings": [
+          "禁止用天气/闹钟/睁开眼开场",
+          "禁止复述上一章已发生的同一事件",
+          "禁止「就在这时」式硬切空降",
+          "禁止用天气/闹钟/睁开眼开场",
+          "禁止复述上一章已发生的同一事件",
+          "禁止「就在这时」式硬切空降"
+        ],
+        "openingConstraint": "开场必须延续情绪：压抑·余波未平；禁止用天气/闹钟/睁开眼开场；禁止复述上一章已发生的同一事件；禁止「就在这时」式硬切空降",
+        "spatialAnchor": {
+          "location": "本章起始现场",
+          "povPosition": "POV 首次落地位置",
+          "note": "后续 Scene 必须承接此处或给出过渡"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": true,
+          "keyRevealBeat": "newInformation"
+        },
+        "authorIntent": "进入世界",
+        "anchorBanNote": [
+          "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙",
+          "禁止重开篇式介绍世界观与主角履历",
+          "禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水"
+        ]
+      },
+      {
+        "index": 2,
+        "id": "ch3_s2",
+        "title": "建立关系",
+        "goal": "钥匙换修理协助",
+        "conflict": "苏晚有配电间备用钥匙却不肯立刻交出",
+        "entities": [
+          "苏晚"
+        ],
+        "beat": "complication",
+        "spatialAnchor": {
+          "location": "承接 Scene1 现场或合理过渡后的邻接区",
+          "note": "禁止重写章开场坠落/濒死"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": false,
+          "advanceOnly": true
+        },
+        "authorIntent": "建立关系",
+        "anchorBanNote": [
+          "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙",
+          "禁止重开篇式介绍世界观与主角履历",
+          "禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水"
+        ]
+      },
+      {
+        "index": 3,
+        "id": "ch3_s3",
+        "title": "第一次失败",
+        "goal": "转折（本 Scene 兑现完整行动线）：苏晚把钥匙交给老何，并得知周四物业要查楼",
+        "conflict": "必须失去：苏晚失去独自掌控配电间钥匙的安全感",
+        "entities": [
+          "苏晚"
+        ],
+        "beat": "turn",
+        "spatialAnchor": {
+          "location": "同线推进至转折点",
+          "note": "禁止换场无过渡；禁止复读已揭示关键信息的「首次发现」"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": false,
+          "advanceOnly": true
+        },
+        "authorIntent": "第一次失败",
+        "anchorBanNote": [
+          "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙",
+          "禁止重开篇式介绍世界观与主角履历",
+          "禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水"
+        ]
+      },
+      {
+        "index": 4,
+        "id": "ch3_s4",
+        "title": "第一次成长",
+        "goal": "章末钩子（承接转折后果）：苏晚独自站在楼梯，听到楼上又滴了一声水",
+        "conflict": "no_causal_basis",
+        "entities": [
+          "苏晚"
+        ],
+        "beat": "hook",
+        "spatialAnchor": {
+          "location": "同线收束现场",
+          "note": "只推进后果与新疑问，不重启开场"
+        },
+        "revealPolicy": {
+          "allowFirstReveal": false,
+          "advanceOnly": true
+        },
+        "authorIntent": "第一次成长",
+        "anchorBanNote": [
+          "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙",
+          "禁止重开篇式介绍世界观与主角履历",
+          "禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水"
+        ]
+      }
+    ],
+    "pov": "苏晚",
+    "bargain": "钥匙换修理协助",
+    "turningPoint": "苏晚把钥匙交给老何，并得知周四物业要查楼",
+    "ending": "苏晚独自站在楼梯，听到楼上又滴了一声水",
+    "mustLose": "苏晚失去独自掌控配电间钥匙的安全感",
+    "newForeshadow": "老何说周四下午三点再来取工具",
+    "location": "未标注",
+    "time": "未标注",
+    "currentDate": "未标注",
+    "bannedElements": [
+      {
+        "text": "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙",
+        "expiresAtChapter": 3
+      },
+      {
+        "text": "禁止重开篇式介绍世界观与主角履历",
+        "expiresAtChapter": null
+      },
+      {
+        "text": "禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水",
+        "expiresAtChapter": 3
+      },
+      {
+        "text": "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙的安全感",
+        "expiresAtChapter": 4
+      }
+    ],
+    "relationshipState": {
+      "machine": "relationship-state-v2",
+      "pov": "苏晚",
+      "present": [
+        "苏晚"
+      ],
+      "edges": [
+        {
+          "from": "苏晚",
+          "to": "世界/系统",
+          "status": "对抗",
+          "tension": "高",
+          "note": "与异常规则对峙",
+          "expectedTransition": {
+            "toStatus": "知情对抗",
+            "byChapter": 3,
+            "reason": "确认规则后进入主动追查"
+          }
+        }
+      ],
+      "overridden": false
+    },
+    "priorAnchor": {
+      "version": "chapter-anchor-3",
+      "chapter": 2,
+      "current_date": "未标注",
+      "pov": "苏晚",
+      "location": "未标注",
+      "relationship_state": {
+        "machine": "relationship-state-v2",
+        "pov": "苏晚",
+        "present": [
+          "苏晚"
+        ],
+        "edges": [
+          {
+            "from": "苏晚",
+            "to": "世界/系统",
+            "status": "对抗",
+            "tension": "高",
+            "note": "与异常规则对峙",
+            "expectedTransition": {
+              "toStatus": "知情对抗",
+              "byChapter": 3,
+              "reason": "确认规则后进入主动追查"
+            }
+          }
+        ],
+        "overridden": false
+      },
+      "banned_elements": [
+        {
+          "text": "禁止提前揭晓章末钩子：约定悬而未决；钥匙已不在苏晚手里",
+          "expiresAtChapter": 2
+        },
+        {
+          "text": "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙",
+          "expiresAtChapter": 3
+        },
+        {
+          "text": "禁止重开篇式介绍世界观与主角履历",
+          "expiresAtChapter": null
+        },
+        {
+          "text": "禁止复述上一章已确认的同一事实（换角度推进）",
+          "expiresAtChapter": 2
+        },
+        {
+          "text": "禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水",
+          "expiresAtChapter": 3
+        },
+        {
+          "text": "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙的安全感",
+          "expiresAtChapter": 4
+        }
+      ],
+      "voiceDna": {
+        "id": "inherit-default",
+        "label": "章级 Voice DNA（待首次写入）",
+        "sentenceLength": "mixed",
+        "rhythm": "varied",
+        "dialogueRatio": 0.45,
+        "actionDensity": "high",
+        "descriptionDensity": "low",
+        "forced": true,
+        "inherited": true
+      },
+      "narrative_momentum": {
+        "version": "narrative-momentum-1",
+        "fromChapter": 2,
+        "closing_emotion": "压抑·余波未平",
+        "forbidden_openings": [
+          "禁止用天气/闹钟/睁开眼开场",
+          "禁止复述上一章已发生的同一事件",
+          "禁止「就在这时」式硬切空降",
+          "禁止用天气/闹钟/睁开眼开场",
+          "禁止复述上一章已发生的同一事件",
+          "禁止「就在这时」式硬切空降"
+        ],
+        "mustInheritScene1": true,
+        "tailExcerpt": "然按着钥匙，金属棱角顶住手心，凉得像冰。 她吸了口气，看着楼梯拐角的灯泡再度吞吐。光线摇晃两次，照亮墙面上的水渍痕迹——从天花板边缘往下，像一条发黑的泪痕，刚好落在她头顶的高度。 她没有动。水又在上面落了一滴，砸进桶里，声音比前两次更清脆。"
+      },
+      "committedAt": "2026-09-11T06:48:04.953Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "operational_planner_hint",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isCharacterReality": false,
+        "isRelationshipFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Anchor / heuristic ops hint ≠ Reality / obtains.",
+        "paths": [
+          "deriveRelationshipState",
+          "deriveClosingEmotion",
+          "buildChapterAnchor"
+        ],
+        "relationship_state": "operational_planner_hint_not_fact",
+        "closing_emotion": "ops_hint_not_character_reality"
+      }
+    },
+    "anchorConstraintsApplied": true,
+    "chapterTone": null,
+    "tone": null,
+    "endingDirection": "苏晚独自站在楼梯，听到楼上又滴了一声水",
+    "wordTarget": null,
+    "storyMap": null,
+    "sceneSeeds": [
+      {
+        "title": "进入世界",
+        "seed": "进入世界",
+        "goal": "进入世界"
+      },
+      {
+        "title": "建立关系",
+        "seed": "建立关系",
+        "goal": "建立关系"
+      },
+      {
+        "title": "第一次失败",
+        "seed": "第一次失败",
+        "goal": "第一次失败"
+      },
+      {
+        "title": "第一次成长",
+        "seed": "第一次成长",
+        "goal": "第一次成长"
+      },
+      {
+        "title": "揭露第一层秘密",
+        "seed": "揭露第一层秘密",
+        "goal": "揭露第一层秘密"
+      }
+    ],
+    "volumeAuthorNotes": "[ ] 可验证项",
+    "volumeSeed": {
+      "title": "第一次失败",
+      "seed": "第一次失败",
+      "goal": "第一次失败"
+    }
+  },
+  "fromChapter": 2,
+  "weights": {
+    "actionSceneWeight": 1,
+    "conflictPriority": 1,
+    "dialogueTarget": 0.45,
+    "hookEmphasis": 1,
+    "styleStrictness": 1,
+    "sceneCountBias": 0
+  },
+  "priorAnchor": {
+    "version": "chapter-anchor-3",
+    "chapter": 2,
+    "current_date": "未标注",
+    "pov": "苏晚",
+    "location": "未标注",
+    "relationship_state": {
+      "machine": "relationship-state-v2",
+      "pov": "苏晚",
+      "present": [
+        "苏晚"
+      ],
+      "edges": [
+        {
+          "from": "苏晚",
+          "to": "世界/系统",
+          "status": "对抗",
+          "tension": "高",
+          "note": "与异常规则对峙",
+          "expectedTransition": {
+            "toStatus": "知情对抗",
+            "byChapter": 3,
+            "reason": "确认规则后进入主动追查"
+          }
+        }
+      ],
+      "overridden": false
+    },
+    "banned_elements": [
+      {
+        "text": "禁止提前揭晓章末钩子：约定悬而未决；钥匙已不在苏晚手里",
+        "expiresAtChapter": 2
+      },
+      {
+        "text": "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙",
+        "expiresAtChapter": 3
+      },
+      {
+        "text": "禁止重开篇式介绍世界观与主角履历",
+        "expiresAtChapter": null
+      },
+      {
+        "text": "禁止复述上一章已确认的同一事实（换角度推进）",
+        "expiresAtChapter": 2
+      },
+      {
+        "text": "禁止提前揭晓章末钩子：苏晚独自站在楼梯，听到楼上又滴了一声水",
+        "expiresAtChapter": 3
+      },
+      {
+        "text": "禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙的安全感",
+        "expiresAtChapter": 4
+      }
+    ],
+    "voiceDna": {
+      "id": "inherit-default",
+      "label": "章级 Voice DNA（待首次写入）",
+      "sentenceLength": "mixed",
+      "rhythm": "varied",
+      "dialogueRatio": 0.45,
+      "actionDensity": "high",
+      "descriptionDensity": "low",
+      "forced": true,
+      "inherited": true
+    },
+    "narrative_momentum": {
+      "version": "narrative-momentum-1",
+      "fromChapter": 2,
+      "closing_emotion": "压抑·余波未平",
+      "forbidden_openings": [
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降",
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降"
+      ],
+      "mustInheritScene1": true,
+      "tailExcerpt": "然按着钥匙，金属棱角顶住手心，凉得像冰。 她吸了口气，看着楼梯拐角的灯泡再度吞吐。光线摇晃两次，照亮墙面上的水渍痕迹——从天花板边缘往下，像一条发黑的泪痕，刚好落在她头顶的高度。 她没有动。水又在上面落了一滴，砸进桶里，声音比前两次更清脆。"
+    },
+    "committedAt": "2026-09-11T06:48:04.953Z",
+    "d1InferenceDemotion": {
+      "eo": "EO-P4",
+      "role": "operational_planner_hint",
+      "producesObtains": false,
+      "isRealityAuthority": false,
+      "isCharacterReality": false,
+      "isRelationshipFact": false,
+      "authorityAct": "NOT_AN_AUTHORITY_ACT",
+      "claimLevelAuthority": "NOT_THIS_PATH",
+      "note": "Anchor / heuristic ops hint ≠ Reality / obtains.",
+      "paths": [
+        "deriveRelationshipState",
+        "deriveClosingEmotion",
+        "buildChapterAnchor"
+      ],
+      "relationship_state": "operational_planner_hint_not_fact",
+      "closing_emotion": "ops_hint_not_character_reality"
+    }
+  }
+}

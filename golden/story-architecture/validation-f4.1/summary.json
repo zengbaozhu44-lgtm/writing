@@ -1,0 +1,241 @@
+{
+  "book": "凌晨四点世界刷新",
+  "chapter": 2,
+  "allPass": true,
+  "rows": [
+    {
+      "scene": 1,
+      "title": "进入局面",
+      "checks": {
+        "clock": true,
+        "ib": true,
+        "characterContext": true,
+        "unknownAbsent": true,
+        "hiddenAbsent": true,
+        "rawSecretAbsent": true,
+        "emptyCardSafe": true,
+        "textLen": 1065,
+        "textPreview": "苏晚推门时，办公室还没亮透。  早晨的光斜切过玻璃幕墙，在地毯上压着一道灰白的线。她把咖啡杯放在林夜工位旁的椅子上，指尖在键盘边缘敲了两下，像是在等什么人坐下。  “昨天……出什么事了？”  声音很轻，她自己都能听见尾音在往后缩。桌面上没有跌落的文件，墙上的便签也整整齐齐。可她记得，十五分钟前她还在走廊接到语音，听见林"
+      },
+      "provenance": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "note": null,
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "note": null,
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        },
+        "character_context": {
+          "key": "character_context",
+          "source": "03_character_bible whitelist",
+          "type": "canon",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "note": null,
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "absent"
+        },
+        "knowledge": {
+          "key": "knowledge",
+          "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+          "type": "projection",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "note": null,
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "trimmed"
+        },
+        "entity": {
+          "key": "entity",
+          "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+          "type": "derived",
+          "priority": "P2",
+          "kept": true,
+          "reason": "scene_relevant",
+          "note": "selected: 苏晚,苏晚,林夜,空卡角色,苏晚,空卡角色",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      "pass": true
+    },
+    {
+      "scene": 2,
+      "title": "受阻与博弈",
+      "checks": {
+        "clock": true,
+        "ib": true,
+        "characterContext": true,
+        "unknownAbsent": true,
+        "hiddenAbsent": true,
+        "rawSecretAbsent": true,
+        "emptyCardSafe": true,
+        "textLen": 1087,
+        "textPreview": "打印区的操作台在寒光里泛着冷白，键盘的键帽磨损得有些光滑。苏晚的手指悬在查询键上，系统提示音还在耳边循环——效率优化项目日常汇报，待处理事项清零，今日日期：10月27日。她没回头，却听见林夜的脚步声在过道里停住。  “你查什么？”他的声音低，像从远处传来，带点沙涩。  “今天的……日程同步。”她说。语气平稳得近乎生硬。"
+      },
+      "provenance": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "note": null,
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "note": null,
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        },
+        "character_context": {
+          "key": "character_context",
+          "source": "03_character_bible whitelist",
+          "type": "canon",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "note": null,
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "absent"
+        },
+        "knowledge": {
+          "key": "knowledge",
+          "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+          "type": "projection",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "note": null,
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "trimmed"
+        },
+        "entity": {
+          "key": "entity",
+          "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+          "type": "derived",
+          "priority": "P2",
+          "kept": false,
+          "reason": "scene_relevant",
+          "note": "selected: 苏晚,苏晚,林夜,空卡角色,苏晚",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed"
+        }
+      },
+      "pass": true
+    },
+    {
+      "scene": 3,
+      "title": "转折与代价",
+      "checks": {
+        "clock": true,
+        "ib": true,
+        "characterContext": true,
+        "unknownAbsent": true,
+        "hiddenAbsent": true,
+        "rawSecretAbsent": true,
+        "emptyCardSafe": true,
+        "textLen": 767,
+        "textPreview": "她的手指悬在查询键上的时候，天花板的恒温灯忽然变了色。  不是灯泡坏了，是光线的底色从昨天的灰蓝切成了今天的冷白，像有人把整个房间翻了一面。苏晚的耳膜里还残着系统提示音，齿轮在转，可屋子里的温度却陡地落了下来。她下意识抬头，看见窗外天色也在这一秒里褪了味——原本压着的暮色不见了，取而代之的是还没亮透的、薄得像纸的黎明。"
+      },
+      "provenance": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "note": null,
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "note": null,
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        },
+        "character_context": {
+          "key": "character_context",
+          "source": "03_character_bible whitelist",
+          "type": "canon",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "note": null,
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "absent"
+        },
+        "knowledge": {
+          "key": "knowledge",
+          "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+          "type": "projection",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "note": null,
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "trimmed"
+        },
+        "entity": {
+          "key": "entity",
+          "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+          "type": "derived",
+          "priority": "P2",
+          "kept": false,
+          "reason": "scene_relevant",
+          "note": "selected: 苏晚,苏晚,林夜,空卡角色,苏晚",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed"
+        }
+      },
+      "pass": true
+    }
+  ]
+}

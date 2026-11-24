@@ -1,0 +1,324 @@
+{
+  "role": "read_only_observability",
+  "readOnly": true,
+  "writesCanon": false,
+  "writesSR": false,
+  "sceneId": "ch2_s3",
+  "sceneIndex": 3,
+  "chapter": 2,
+  "layers": {
+    "L1": {
+      "present": true,
+      "hash": "530a4a7c16ff1977",
+      "chars": 2717,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": true
+    },
+    "L2": {
+      "present": true,
+      "hash": "b1bd18ba08cd7572",
+      "chars": 3558,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": true
+    },
+    "L3": {
+      "present": true,
+      "hash": "4960d964d3ae5304",
+      "chars": 17904,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": false,
+      "sealedHash": "4960d964d3ae5304"
+    },
+    "L4": {
+      "present": true,
+      "hash": "79283abd52a5e2b2",
+      "chars": 1392,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": true,
+      "beatOrder": 1,
+      "beatUserPromptHash": "79283abd52a5e2b2",
+      "writerCallId": "f62-s3-b1"
+    }
+  },
+  "clockSource": "intent_or_scene_field",
+  "ibSource": "buildSceneWritePrompt / Semantic Protected Context",
+  "provenance": {
+    "role": "read_only_diagnostic_trace",
+    "readOnly": true,
+    "writesCanon": false,
+    "writesSR": false,
+    "schema": {
+      "fields": [
+        "key",
+        "type",
+        "source",
+        "priority",
+        "kept",
+        "reason",
+        "layers"
+      ],
+      "types": [
+        "canon",
+        "projection",
+        "plan",
+        "sr",
+        "historical",
+        "temporary",
+        "guard",
+        "derived",
+        "unavailable"
+      ],
+      "priorities": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "blocks": [
+      {
+        "key": "story_clock",
+        "type": "plan",
+        "source": "intent.time",
+        "priority": "P1",
+        "kept": true,
+        "reason": "semantic_protected",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "information_boundary",
+        "type": "guard",
+        "source": "buildSceneWritePrompt / prompt-survival",
+        "priority": "P1",
+        "kept": true,
+        "reason": "semantic_protected",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "character_sr",
+        "type": "sr",
+        "source": "minimal-sr (assembleMinimalSR)",
+        "priority": "P2",
+        "kept": true,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "prior_excerpt",
+        "type": "historical",
+        "source": "scene-02.text",
+        "priority": "P3",
+        "kept": false,
+        "reason": "historical_continuity",
+        "layers": {
+          "L1": "absent",
+          "L2": "absent",
+          "L3": "present",
+          "L4": "trimmed"
+        },
+        "note": "Historical dates ≠ current Story Clock; demoted vs P1 Canonical"
+      },
+      {
+        "key": "prev_summary",
+        "type": "historical",
+        "source": "resolvePreviousScenes → scene-summary",
+        "priority": "P2",
+        "kept": false,
+        "reason": "budget_trim",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed"
+        }
+      },
+      {
+        "key": "observed_continuity",
+        "type": "derived",
+        "source": "scene_2.text → buildObservedContinuity",
+        "priority": "P2",
+        "kept": true,
+        "reason": "budget_trim",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "present"
+        },
+        "note": "Scene-local derived projection for N+1 only; ≠ Canon / SR / Plan settlement"
+      },
+      {
+        "key": "chapter_goal",
+        "type": "plan",
+        "source": "intent.mainGoal",
+        "priority": "P1",
+        "kept": true,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "scene_goal",
+        "type": "plan",
+        "source": "scene.goal",
+        "priority": "P1",
+        "kept": true,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "causal_chain",
+        "type": "plan",
+        "source": "unavailable",
+        "priority": "P1",
+        "kept": false,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "absent",
+          "L2": "absent",
+          "L3": "present",
+          "L4": "trimmed"
+        },
+        "channels": [
+          "L3_P1_narrative"
+        ]
+      },
+      {
+        "key": "entity",
+        "type": "derived",
+        "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+        "priority": "P2",
+        "kept": false,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed"
+        },
+        "note": "selected: 苏晚,苏晚,林夜,苏晚"
+      },
+      {
+        "key": "character_context",
+        "type": "canon",
+        "source": "03_character_bible whitelist",
+        "priority": "P2",
+        "kept": false,
+        "reason": "budget_trim",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "absent"
+        }
+      },
+      {
+        "key": "knowledge",
+        "type": "projection",
+        "source": "unavailable",
+        "priority": "P2",
+        "kept": false,
+        "reason": "unavailable",
+        "layers": {
+          "L1": "absent",
+          "L2": "absent",
+          "L3": "absent",
+          "L4": "absent"
+        }
+      }
+    ],
+    "updatedAt": "2026-09-07T10:07:40.009Z"
+  },
+  "writerCalls": [
+    {
+      "callId": "f2-s3-b1",
+      "beatOrder": 1,
+      "hash": "365da585f7f05d6f",
+      "clock": true,
+      "ib": true,
+      "chars": 1398,
+      "systemHash": null,
+      "at": "2026-09-07T08:15:36.020Z"
+    },
+    {
+      "callId": "f3-s3-b1",
+      "beatOrder": 1,
+      "hash": "07619b71ef9f2899",
+      "clock": true,
+      "ib": true,
+      "chars": 1398,
+      "systemHash": null,
+      "at": "2026-09-07T08:49:21.739Z"
+    },
+    {
+      "callId": "f4-s3-b1",
+      "beatOrder": 1,
+      "hash": "88c1ab1beb2456cf",
+      "clock": true,
+      "ib": true,
+      "chars": 1398,
+      "systemHash": null,
+      "at": "2026-09-07T09:02:30.708Z"
+    },
+    {
+      "callId": "f41-s3-b1",
+      "beatOrder": 1,
+      "hash": "b0680fe777dcd0d2",
+      "clock": true,
+      "ib": true,
+      "chars": 1398,
+      "systemHash": null,
+      "at": "2026-09-07T09:12:03.175Z"
+    },
+    {
+      "callId": "f5-s3-b1",
+      "beatOrder": 1,
+      "hash": "fa31f7f8e25daccd",
+      "clock": true,
+      "ib": true,
+      "chars": 1398,
+      "systemHash": null,
+      "at": "2026-09-07T09:34:08.050Z"
+    },
+    {
+      "callId": "f62-s3-b1",
+      "beatOrder": 1,
+      "hash": "79283abd52a5e2b2",
+      "clock": true,
+      "ib": true,
+      "chars": 1392,
+      "systemHash": null,
+      "at": "2026-09-07T10:07:40.008Z"
+    }
+  ],
+  "writerCallId": "f62-s3-b1",
+  "updatedAt": "2026-09-07T10:07:40.009Z"
+}

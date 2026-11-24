@@ -1,0 +1,1214 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 1,
+    "sceneType": "opening",
+    "beatMemory": {
+      "newFacts": [
+        "林砚的手指悬在确认键上方，屏幕光把指尖照成青白",
+        "不是确认，是切到后台，看了眼林薇的在线状态",
+        "林砚的手指悬在确认键上方，屏幕上玩家投票的条幅还在滚动——「打boss爆神装」的呼声刷了满屏，像一群鬣狗围住了垂死的猎物",
+        "他想起林薇上次进副本前，也是这样笑着说的：哥，就一次，打完就回来",
+        "那次他点了确认"
+      ],
+      "characterStateChanges": [
+        "他盯着那行字看了很久，久到屏幕保护程序开始闪烁，久到他把视线移开，去看窗外第十二天没停的雨"
+      ],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "1」滚过通讯屏，像雪崩压下来。他盯着那串数字，耳鸣嗡嗡地响，忽然记起林薇昨晚趴在门框上跟他说的话——哥，玩家不怕死。玩家怕的，是没有东西值得他们死。\n\n他低头看"
+      ],
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Discovery",
+          "stateChange": true,
+          "afterState": "他盯着那一行字——「全服投票：破坏封印·打BOSS爆神装」——投票数在跳，九千、一万二、一万七，每一跳都像针扎进太阳穴"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Danger",
+          "stateChange": false,
+          "afterState": "阻力落地，目标受挫，退路收窄"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Decision",
+          "stateChange": true,
+          "afterState": "他想起林薇上次进副本前，也是这样笑着说的：哥，就一次，打完就回来"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Danger",
+          "stateChange": false,
+          "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Discovery",
+          "stateChange": true,
+          "afterState": "林砚的手指悬在键盘上方，没有落下去"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Twist",
+          "stateChange": true,
+          "afterState": "他看见那条投票的标题，指尖顿在魔术贴上，没撕下去"
+        }
+      ],
+      "lastAfterState": "他看见那条投票的标题，指尖顿在魔术贴上，没撕下去",
+      "stateChangeCount": 4
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "beforeState": "林砚当前目标：承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第1 — 局势尚未被本 Scene 改写",
+        "action": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转**：玩家集体投票“打boss爆神装”",
+        "choice": "为了完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "他盯着那一行字——「全服投票：破坏封印·打BOSS爆神装」——投票数在跳，九千、一万二、一万七，每一跳都像针扎进太阳穴",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "林砚的手指悬在确认键上方，屏幕光把指尖照成青白",
+          "不是确认，是切到后台，看了眼林薇的在线状态"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-13T04:17:48.328Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "chose",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": false,
+          "storyBefore": "林砚当前目标：承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "资源不足或时间压力 — 且局面本身不会让步",
+        "choice": "为了完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-13T04:17:56.450Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            }
+          ],
+          "eventPhase": "chose",
+          "issues": [
+            "EVENT_LOOP:「系统/监控屏」已发现（相位=chose）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步",
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+            "POV_BREAK: 旁白出现第一人称（我）；全章固定第三人称叙述（用角色姓名/他），仅角色对白内可用「我」。把旁白「我」改写为第三人称。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 180 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "4-gram 自重复：「打boss爆神装…」",
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+            "EVENT_LOOP:「系统/监控屏」已发现（相位=chose）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步",
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": false,
+          "stateChange": true,
+          "fourGram": {
+            "pass": false,
+            "noRepeat": false,
+            "hits": [
+              "打boss爆神装"
+            ],
+            "failReasons": [
+              "4-gram 自重复：「打boss爆神装…」"
+            ],
+            "selfOverlap": 1
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "他想起林薇上次进副本前，也是这样笑着说的：哥，就一次，打完就回来",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "林砚的手指悬在确认键上方，屏幕上玩家投票的条幅还在滚动——「打boss爆神装」的呼声刷了满屏，像一群鬣狗围住了垂死的猎物",
+          "他想起林薇上次进副本前，也是这样笑着说的：哥，就一次，打完就回来",
+          "那次他点了确认"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-13T04:18:04.623Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            }
+          ],
+          "eventPhase": "chose",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Language Variation：与近期表达重复，换动词/句式",
+            "OPENING_REPEAT: 开场句与本章已有文本高度重复（单段复读 15 字「林砚的手指悬在确认键…」）"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.09740259740259741
+          },
+          "microPassed": [
+            "新信息",
+            "关系",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-13T04:18:13.134Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            }
+          ],
+          "eventPhase": "chose",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「齐刷」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。",
+            "POV_DUMP: 广播旁白直接贴信息（耳机/频道传来+引语）而未经林砚感官呈现；改写为他听见对方声音里的颤抖/迟疑、或他看到的画面细节，禁止旁白广播 dump 与非 POV 视角直述"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 169 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+            "NAME_DRIFT: 出现未登记角色名「齐刷」；本书角色只有 林砚/林薇/沈寒舟/渊尊/苏清鸢/一刀岁暮/齐玥。若指妹妹/锚点对象必须用「林薇」；若指他人改用已知角色或泛指（那个探员/那道人影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.012048192771084338
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "林砚的手指悬在键盘上方，没有落下去",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [
+          "他盯着那行字看了很久，久到屏幕保护程序开始闪烁，久到他把视线移开，去看窗外第十二天没停的雨"
+        ],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-13T04:18:21.988Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            }
+          ],
+          "eventPhase": "costed",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 189 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "REPEAT_SEGMENT: 「——「打boss爆神装」…」与上文相似度 30%，mid-beat 复读"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.010752688172043012
+          },
+          "microPassed": [
+            "关系",
+            "Promise兑现"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Twist",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "为了完成「进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转*」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "他看见那条投票的标题，指尖顿在魔术贴上，没撕下去",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "1」滚过通讯屏，像雪崩压下来。他盯着那串数字，耳鸣嗡嗡地响，忽然记起林薇昨晚趴在门框上跟他说的话——哥，玩家不怕死。玩家怕的，是没有东西值得他们死。\n\n他低头看"
+        ],
+        "extractedAt": "2026-08-13T04:18:31.911Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "admin_lock",
+              "label": "权限锁/密钥"
+            }
+          ],
+          "eventPhase": "costed",
+          "issues": [
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 166 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Professional Dialogue：对白须推进剧情/冲突/关系/线索/误导，禁止闲聊",
+            "Micro Scene 仅满足 1/5（关系），须至少两项：新信息/关系/危险/Promise/新行动",
+            "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+            "REPEAT_SEGMENT: 「趴在门框上跟他说的话——…」与上文相似度 72%，mid-beat 复读"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+          "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.11042944785276074
+          },
+          "microPassed": [
+            "关系"
+          ],
+          "continuityPass": false
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 39,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        }
+      ],
+      "scenePeak": {
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0
+      },
+      "emotionalVariance": 39,
+      "hasFluctuation": true,
+      "generatedAt": "2026-08-13T04:18:31.933Z",
+      "sceneIndex": 1
+    },
+    "readerSimulation": {
+      "curiosity": 56,
+      "questionCount": 0,
+      "dropRisk": 30,
+      "continueProbability": 55,
+      "sceneIndex": 1,
+      "pov": "林砚",
+      "simulatedAt": "2026-08-13T04:18:31.936Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 45,
+      "obstacleStrength": 38,
+      "choiceLevel": 54,
+      "consequenceLevel": 39,
+      "escalationLevel": 54,
+      "informationValue": 45,
+      "hookImpact": 49,
+      "stateChangeRate": 67,
+      "hookBreakdown": {
+        "hookLevel": 49,
+        "hookOutput": {
+          "type": "PointOfNoReturn",
+          "readerQuestion": "如果选这条路，还能回头吗？",
+          "cost": "不可逆 — 无论选哪条路都有全局性代价",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 5,
+          "stage": "PointOfNoReturn",
+          "name": "不可回头",
+          "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+          "example": "主角必须选择重置自己",
+          "hookKind": "ActionHook",
+          "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转**：玩家集体投票“打boss爆神装”",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": true,
+        "cognitiveUpgrade": 50,
+        "emotionalImpact": 38,
+        "characterCost": 60,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 45,
+      "weakest": "obstacleStrength",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-08-13T04:18:31.937Z",
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转**：玩家集体投票“打boss爆神装”",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": false,
+        "valid": true,
+        "promise": "[object Object]",
+        "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+        "confidence": 0,
+        "signals": {
+          "payoffHit": false,
+          "promiseEcho": false
+        }
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 49,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转**：玩家集体投票“打boss爆神装”",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "actionHookScore": 0,
+      "forcesAction": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 60
+    },
+    "reward": {
+      "valid": true,
+      "requiresPromise": false,
+      "promiseId": "fs_0",
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "promiseSource": "foreshadow",
+      "promiseCategory": "foreshadow",
+      "promiseType": "medium",
+      "promiseImportance": 70,
+      "expectedChapter": 21,
+      "readerExpectation": 75,
+      "foreshadowId": "fs_0",
+      "description": "兑现期待：选择产生可见代价，局面因此改变",
+      "deliveryBeat": "newInformation",
+      "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+      "status": "pending"
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    },
+    "blocking": false,
+    "generatedAt": "2026-08-13T04:18:31.938Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 45,
+    "obstacleStrength": 38,
+    "choiceLevel": 54,
+    "consequenceLevel": 39,
+    "escalationLevel": 54,
+    "informationValue": 45,
+    "hookImpact": 49,
+    "stateChangeRate": 67,
+    "hookBreakdown": {
+      "hookLevel": 49,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转**：玩家集体投票“打boss爆神装”",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 60,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 45,
+    "weakest": "obstacleStrength",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-13T04:18:31.937Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转**：玩家集体投票“打boss爆神装”",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 56,
+    "questionCount": 0,
+    "dropRisk": 30,
+    "continueProbability": 55,
+    "sceneIndex": 1,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-13T04:18:31.936Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-13T04:18:31.933Z",
+    "sceneIndex": 1
+  },
+  "chapter": 16,
+  "scene": {
+    "id": "ch16_s1",
+    "index": 1,
+    "goal": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：第16章：玩家疯狂时刻 **反转**：玩家集体投票“打boss爆神装”"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 33,
+        "end": 53,
+        "chars": 20
+      },
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 654,
+        "end": 694,
+        "chars": 40
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 40,
+      "scoreAfter": 90,
+      "changed": true,
+      "skipped": false,
+      "mode": "rule+llm",
+      "region": {
+        "start": 185,
+        "end": 709,
+        "chars": 500
+      },
+      "edits": [
+        "ending-hook",
+        "ending-goal-echo",
+        "llm"
+      ]
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 70,
+    "hook": 90,
+    "commercialPleasure": 100,
+    "styleConsistency": 90,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 84,
+    "hook": 40,
+    "commercialPleasure": 92,
+    "styleConsistency": 93,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "total": 89,
+  "totalBefore": 83,
+  "weakest": [
+    {
+      "id": "climax",
+      "score": 70
+    },
+    {
+      "id": "infoRelease",
+      "score": 80
+    },
+    {
+      "id": "hook",
+      "score": 90
+    }
+  ],
+  "polish": {
+    "changed": true,
+    "mode": "four-module",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 33,
+          "end": 53,
+          "chars": 20
+        },
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 654,
+          "end": 694,
+          "chars": 40
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 40,
+        "scoreAfter": 90,
+        "changed": true,
+        "skipped": false,
+        "mode": "rule+llm",
+        "region": {
+          "start": 185,
+          "end": 709,
+          "chars": 500
+        },
+        "edits": [
+          "ending-hook",
+          "ending-goal-echo",
+          "llm"
+        ]
+      }
+    },
+    "edits": [
+      "ending"
+    ]
+  },
+  "diff": {
+    "prefixUnchanged": 510,
+    "draftChars": 679,
+    "polishedChars": 782,
+    "changed": true
+  },
+  "diffLines": [
+    {
+      "type": "change",
+      "before": "林砚",
+      "after": "林砚没回答。他的目光越过那排监控屏，落在角落里一块从未亮过的副屏上——那块屏的电源线，是林薇亲手拔掉的。她拔的时候说过一句话，声音轻得像怕被谁听见：哥，如果有一天投票指向这个地方，别拦我。",
+      "index": 20
+    },
+    {
+      "type": "change",
+      "before": "监控屏上，投票条像一根烧红的铁丝，笔直地指向同一个结果——「打boss爆神装」。",
+      "after": "他那时候不懂。现在他懂了。",
+      "index": 22
+    },
+    {
+      "type": "change",
+      "before": "九万七千票。零反对。",
+      "after": "投票条已经封顶，跳动的数字像心脏最后一次搏动。林砚的手指悬在键盘上，停了两秒，然后朝一个从未按下过的按键移过去——那按键上积了一层灰，灰底下刻着三个字：否决权。",
+      "index": 24
+    },
+    {
+      "type": "change",
+      "before": "林砚的手指悬在键盘上方，没有落下去。他盯着那行字看了很久，久到屏幕保护程序开始闪烁，久到他把视线移开，去看窗外第十二天没停的雨。雨打在钢化玻璃上，噼啪作响，像有人在外头敲。",
+      "after": "通讯频道里沈寒舟还在喊什么，声音越来越远。林砚的拇指压上那枚按键，指腹感受到金属冰凉的触感，却在按下去的前一瞬，停住了。",
+      "index": 26
+    },
+    {
+      "type": "change",
+      "before": "他想起林薇那天晚上趴在门框上跟他说的话：哥，玩家不怕死。玩家怕的是没有理由去死。",
+      "after": "因为他看见投票条下方，悄然浮现一行小字——那是系统从未显示过的字段：「本次投票发起者：林砚」。",
+      "index": 28
+    },
+    {
+      "type": "remove",
+      "before": "他当时说，那就不给他们理由",
+      "after": "",
+      "index": 30
+    }
+  ],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-08-13T04:18:37.216Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 70,
+      "hook": 90,
+      "commercialPleasure": 100,
+      "styleConsistency": 90,
+      "characterConsistency": 100,
+      "infoRelease": 80
+    },
+    "total": 89,
+    "weak": [
+      {
+        "id": "climax",
+        "score": 70
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "styleConsistency",
+        "score": 90
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 100
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "climax",
+        "score": 70
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "hook",
+        "score": 90
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 73,
+        "actionHits": 13,
+        "dialogHits": 3,
+        "variety": 4
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 0
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 3,
+        "len": 782
+      },
+      "styleConsistency": {
+        "shortRatio": 69,
+        "expoRun": 73
+      },
+      "characterConsistency": {
+        "pov": "林砚",
+        "present": [
+          "林砚"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 0,
+        "stagger": false
+      }
+    },
+    "chapter": 16,
+    "sceneIndex": 1,
+    "totalChars": 782
+  }
+}

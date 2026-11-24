@@ -1,0 +1,87 @@
+{
+  "version": "context-rank-1",
+  "chapter": 6,
+  "scene": {
+    "id": "ch6_s3",
+    "index": 3,
+    "goal": "转折（本 Scene 兑现完整行动线）：no_causal_basis"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2322,
+    "topK": null,
+    "usedChars": 70,
+    "selectedCount": 2,
+    "trimmedCount": 0,
+    "totalCandidates": 2
+  },
+  "topK": [
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "text": "Day 0：回车：回车按下去，屏幕闪了两下，弹出来的不是档案，是一道红锁—",
+      "charCount": 36,
+      "scores": {
+        "relevance": 20,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 18,
+        "budgetChars": 332,
+        "finalScore": 37.8
+      }
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "text": "Day 0：他：他按下对讲机的通话键：“第九区，认知污染，一具，指甲缺",
+      "charCount": 34,
+      "scores": {
+        "relevance": 20,
+        "importance": 40,
+        "freshness": 55,
+        "narrativePriority": 18,
+        "budgetChars": 332,
+        "finalScore": 31.8
+      }
+    }
+  ],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "timeline": {
+      "selectedCount": 2,
+      "totalCandidates": 2,
+      "topK": 4
+    }
+  },
+  "intent": {
+    "mainGoal": "推进主线，增加阻碍或信息",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-22T08:59:35.858Z"
+}

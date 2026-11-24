@@ -28,12 +28,16 @@ export const ZH_TO_WAVE = Object.freeze({
   揪心: 'Pressure',
   不忍: 'Pressure',
   压力: 'Pressure',
+  紧迫: 'Pressure',
+  压抑: 'Pressure',
   希望: 'Hope',
   释然: 'Relief',
   轻松: 'Hope',
   震惊: 'Shock',
   愤怒: 'Shock',
   难以置信: 'Shock',
+  惊悚: 'Shock',
+  疑虑: 'Tension',
   后怕: 'Relief',
   迫不及待: 'Tension',
 });
@@ -123,6 +127,13 @@ export function buildEmotionWavePlan({
       if (check.pass) break;
       wave[i] = check.suggested || suggestNextEmotion(recent);
       guard += 1;
+    }
+  }
+
+  // 高潮后强制安静：Shock 后不得直接接 Tension/Pressure（须 Relief 让读者喘口气）
+  for (let i = 0; i < wave.length - 1; i += 1) {
+    if (wave[i] === 'Shock' && PEAK_EMOTIONS.has(wave[i + 1])) {
+      wave[i + 1] = 'Relief';
     }
   }
 

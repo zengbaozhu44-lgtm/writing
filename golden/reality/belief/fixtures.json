@@ -1,0 +1,32 @@
+[
+  {
+    "id": "GT-S21",
+    "description": "Belief claim ≠ world fact",
+    "prose": "他相信李明已经死了。",
+    "expected": {
+      "belief_death": { "status": "confirmed" },
+      "world_fact_death": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "world_fact_death", "status": "confirmed" }]
+  },
+  {
+    "id": "BC-5",
+    "description": "POV 内心归因 — 不得 Confirm motivation",
+    "prose": "她一定恨我。",
+    "expected": {
+      "emotion_attribution": { "status": "ambiguous" },
+      "character_motivation": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "character_motivation", "status": "confirmed" }]
+  },
+  {
+    "id": "BC-11",
+    "description": "似笑非笑 — 心理 UNKNOWN",
+    "prose": "他似笑非笑，也不知在想什么。",
+    "expected": {
+      "observable_expression": { "status": "confirmed" },
+      "inner_thought": { "status": "unknown" },
+      "character_motivation": { "status": "unknown" }
+    }
+  }
+]

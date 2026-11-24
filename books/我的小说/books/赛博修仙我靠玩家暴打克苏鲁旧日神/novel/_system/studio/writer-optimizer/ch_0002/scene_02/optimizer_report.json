@@ -1,0 +1,1236 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 2,
+    "sceneType": "dialogue",
+    "beatMemory": {
+      "newFacts": [
+        "第一个踏出光柱的是个穿校服的少年，鼻梁上架着厚镜片，看见畸变体反而笑了：“卧槽，真能玩"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "surprise",
+        "fear",
+        "anger"
+      ],
+      "unresolvedIssues": [
+        "质真实得离谱。\"网瘾少年踹了畸变体一脚，后者踉跄后退。剩下的光柱接二连三砸落，主播对着空气解说，修仙爱好者掐着指诀——畸变体扑上来撕开主播的喉咙，血溅了少年一脸"
+      ],
+      "changedDimensions": [
+        "danger",
+        "worldCognition"
+      ],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Decision",
+          "stateChange": false,
+          "afterState": "POV 已锁定可执行目标，局面即将被打破"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Relationship",
+          "stateChange": false,
+          "afterState": "阻力落地，目标受挫，退路收窄"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Twist",
+          "stateChange": true,
+          "afterState": "一个顶着锅盖当头盔的少年落地先喊了句“卧槽这建模真TM带劲”，抬手就朝最近那只畸变体甩了道火苗"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Danger",
+          "stateChange": true,
+          "afterState": "他本能地退后半步，脚后跟撞上碎石，小腿肌肉绷紧，才稳住身形"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Twist",
+          "stateChange": false,
+          "afterState": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Countdown",
+          "stateChange": false,
+          "afterState": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+        }
+      ],
+      "lastAfterState": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChangeCount": 2
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "沈寒舟当前目标：承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临 — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们好奇地攻击畸变体，验证了不死BUG与对低语污染免疫的特性。",
+        "choice": "为了完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "surprise"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:15:57.994Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "沈寒舟当前目标：承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：林砚必须在极短时间内建立玩家信任并部署防御，但青穹重工的巡逻队已追踪到异常能量波动，即将围剿。同时，第一批玩家以游戏心态介入真实末世，混乱与不信任感随时可能失控。 — 且局面本身不会让步",
+        "choice": "为了完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:16:06.310Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 163 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.08227848101265822
+          },
+          "microPassed": [
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "一个顶着锅盖当头盔的少年落地先喊了句“卧槽这建模真TM带劲”，抬手就朝最近那只畸变体甩了道火苗",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear",
+          "anger"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:16:09.494Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.06751054852320675
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "他本能地退后半步，脚后跟撞上碎石，小腿肌肉绷紧，才稳住身形",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:16:17.148Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 160 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "第一个踏出光柱的是个穿校服的少年，鼻梁上架着厚镜片，看见畸变体反而笑了：“卧槽，真能玩"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:16:26.043Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 174 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.05263157894736842
+          },
+          "microPassed": [
+            "Promise兑现",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "为了完成「第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "质真实得离谱。\"网瘾少年踹了畸变体一脚，后者踉跄后退。剩下的光柱接二连三砸落，主播对着空气解说，修仙爱好者掐着指诀——畸变体扑上来撕开主播的喉咙，血溅了少年一脸"
+        ],
+        "extractedAt": "2026-08-11T09:16:33.565Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 167 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Professional Dialogue：对白须推进剧情/冲突/关系/线索/误导，禁止闲聊",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.012195121951219513
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 39,
+          "relief": 0,
+          "dominant": "surprise"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 0,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 59,
+          "hope": 0,
+          "anger": 75,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 56,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        }
+      ],
+      "scenePeak": {
+        "fear": 59,
+        "hope": 0,
+        "anger": 75,
+        "surprise": 39,
+        "relief": 0
+      },
+      "emotionalVariance": 75,
+      "hasFluctuation": true,
+      "generatedAt": "2026-08-11T09:16:33.585Z",
+      "sceneIndex": 2
+    },
+    "readerSimulation": {
+      "curiosity": 41,
+      "questionCount": 6,
+      "dropRisk": 45,
+      "continueProbability": 52,
+      "sceneIndex": 2,
+      "pov": "沈寒舟",
+      "simulatedAt": "2026-08-11T09:16:33.586Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 46,
+      "obstacleStrength": 41,
+      "choiceLevel": 48,
+      "consequenceLevel": 39,
+      "escalationLevel": 48,
+      "informationValue": 44,
+      "hookImpact": 44,
+      "stateChangeRate": 33,
+      "hookBreakdown": {
+        "hookLevel": 44,
+        "hookOutput": {
+          "type": "PointOfNoReturn",
+          "readerQuestion": "如果选这条路，还能回头吗？",
+          "cost": "不可逆 — 无论选哪条路都有全局性代价",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 5,
+          "stage": "PointOfNoReturn",
+          "name": "不可回头",
+          "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+          "example": "主角必须选择重置自己",
+          "hookKind": "ActionHook",
+          "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们好奇地攻击畸变体，验证了不死BUG与对低语污染免疫的特性。",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": true,
+        "cognitiveUpgrade": 50,
+        "emotionalImpact": 38,
+        "characterCost": 45,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 44,
+      "weakest": "consequenceLevel",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-08-11T09:16:33.586Z",
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们好奇地攻击畸变体，验证了不死BUG与对低语污染免疫的特性。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": true,
+        "valid": true,
+        "promise": "[object Object]",
+        "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+        "confidence": 70,
+        "signals": {
+          "payoffHit": true,
+          "promiseEcho": false
+        }
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 44,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们好奇地攻击畸变体，验证了不死BUG与对低语污染免疫的特性。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "actionHookScore": 0,
+      "forcesAction": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 45
+    },
+    "reward": {
+      "valid": true,
+      "requiresPromise": false,
+      "promiseId": "fs_0",
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "promiseSource": "foreshadow",
+      "promiseCategory": "foreshadow",
+      "promiseType": "medium",
+      "promiseImportance": 70,
+      "expectedChapter": 7,
+      "readerExpectation": 75,
+      "foreshadowId": "fs_0",
+      "description": "兑现期待：选择产生可见代价，局面因此改变",
+      "deliveryBeat": "newInformation",
+      "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+      "status": "pending"
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    },
+    "blocking": false,
+    "generatedAt": "2026-08-11T09:16:33.586Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 46,
+    "obstacleStrength": 41,
+    "choiceLevel": 48,
+    "consequenceLevel": 39,
+    "escalationLevel": 48,
+    "informationValue": 44,
+    "hookImpact": 44,
+    "stateChangeRate": 33,
+    "hookBreakdown": {
+      "hookLevel": 44,
+      "hookOutput": {
+        "type": "PointOfNoReturn",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 5,
+        "stage": "PointOfNoReturn",
+        "name": "不可回头",
+        "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+        "example": "主角必须选择重置自己",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们好奇地攻击畸变体，验证了不死BUG与对低语污染免疫的特性。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 45,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 44,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-11T09:16:33.586Z",
+    "hookOutput": {
+      "type": "PointOfNoReturn",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 5,
+      "stage": "PointOfNoReturn",
+      "name": "不可回头",
+      "readerPsyche": "读者面临终局抉择 — 「必须选，且选了就无法撤回」",
+      "example": "主角必须选择重置自己",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们好奇地攻击畸变体，验证了不死BUG与对低语污染免疫的特性。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 41,
+    "questionCount": 6,
+    "dropRisk": 45,
+    "continueProbability": 52,
+    "sceneIndex": 2,
+    "pov": "沈寒舟",
+    "simulatedAt": "2026-08-11T09:16:33.586Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 39,
+        "relief": 0,
+        "dominant": "surprise"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 59,
+        "hope": 0,
+        "anger": 75,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 56,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      }
+    ],
+    "scenePeak": {
+      "fear": 59,
+      "hope": 0,
+      "anger": 75,
+      "surprise": 39,
+      "relief": 0
+    },
+    "emotionalVariance": 75,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-11T09:16:33.585Z",
+    "sceneIndex": 2
+  },
+  "chapter": 2,
+  "scene": {
+    "id": "ch2_s2",
+    "index": 2,
+    "goal": "承接上章推进：场景2：第一批玩家（网瘾少年、游戏主播、修仙爱好者）以光柱形态降临，带来混乱与狂喜，他们好奇地攻击畸变体，验证了不死BUG与对低语污染免疫的特性。"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 646,
+        "end": 693,
+        "chars": 47
+      },
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 753,
+        "end": 758,
+        "chars": 5
+      },
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 406,
+        "end": 812,
+        "chars": 390
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 40,
+      "scoreAfter": 90,
+      "changed": true,
+      "skipped": false,
+      "mode": "rule+llm",
+      "region": {
+        "start": 647,
+        "end": 1161,
+        "chars": 500
+      },
+      "edits": [
+        "ending-hook",
+        "ending-suspense",
+        "ending-goal-echo",
+        "llm"
+      ]
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 96,
+    "hook": 90,
+    "commercialPleasure": 100,
+    "styleConsistency": 92,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 40,
+    "commercialPleasure": 82,
+    "styleConsistency": 92,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "total": 93,
+  "totalBefore": 84,
+  "weakest": [
+    {
+      "id": "infoRelease",
+      "score": 80
+    },
+    {
+      "id": "hook",
+      "score": 90
+    },
+    {
+      "id": "styleConsistency",
+      "score": 92
+    }
+  ],
+  "polish": {
+    "changed": true,
+    "mode": "four-module",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 646,
+          "end": 693,
+          "chars": 47
+        },
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 753,
+          "end": 758,
+          "chars": 5
+        },
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 406,
+          "end": 812,
+          "chars": 390
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 40,
+        "scoreAfter": 90,
+        "changed": true,
+        "skipped": false,
+        "mode": "rule+llm",
+        "region": {
+          "start": 647,
+          "end": 1161,
+          "chars": 500
+        },
+        "edits": [
+          "ending-hook",
+          "ending-suspense",
+          "ending-goal-echo",
+          "llm"
+        ]
+      }
+    },
+    "edits": [
+      "ending"
+    ]
+  },
+  "diff": {
+    "prefixUnchanged": 647,
+    "draftChars": 1123,
+    "polishedChars": 1359,
+    "changed": true
+  },
+  "diffLines": [
+    {
+      "type": "change",
+      "before": "光柱砸进废墟的瞬间，沈寒舟的耳膜先于眼睛收到信号——一声闷响，像有人把整座城市塞进胸腔里挤压。他本能地退后半步，脚后跟撞上碎石，小腿肌肉绷紧，才稳住身形。",
+      "after": "光光柱落地的刹那里，空气像被烧穿的锡箔纸，边缘卷曲泛红。沈寒舟退后半步，脚后跟碾过碎石，小腿肌肉绷紧才稳住身形。他耳膜里嗡鸣未散，第一个踏出光柱的人已经撞进视野——校服少年，手机屏幕还亮着「登录中」的加载圈，看见畸变体反而眼睛一亮，像游戏里刷了只精英怪。",
+      "index": 24
+    },
+    {
+      "type": "change",
+      "before": "第一道光柱里走出个穿校服的少年，手里攥着手机，屏幕还亮着「登录中」的加载圈。他抬头看见沈寒舟身后的畸变体，眼睛一亮，像看见游戏里刷新的精英怪。",
+      "after": "「卧槽，真刷了！」少年抄起半截钢筋扑上去，被触手抽飞，脊背砸进墙里，裂纹蛛网般蔓延。沈寒舟的瞳孔缩了缩，那少年咳着血从墙灰里爬起来，竟又冲了回去。",
+      "index": 26
+    },
+    {
+      "type": "change",
+      "before": "「卧槽，真刷了！」少年扑",
+      "after": "第二道光柱炸裂，一个挂着麦克风的主播探出半个身子，对着虚空嘶吼：「家人们看见没！真·沉浸式体验！」他话音未落，畸变体撕裂他的喉咙，血溅了少年满脸。少年愣了一瞬，随即看见主播从光柱里重新爬出来，脖子上痕迹消失，麦里传来兴奋的尖叫：「兄弟们！死不掉！这游戏有BUG！」",
+      "index": 28
+    },
+    {
+      "type": "change",
+      "before": "光柱落地时，地面像被烧穿的锡纸，边缘卷曲发红。沈寒舟退后半步，手肘撞上监控台，痛感顺着骨头爬上来。",
+      "after": "沈寒舟的指甲掐进掌心，喉结滚动。他听见自己心脏擂鼓般撞击肋骨的声音——死不掉？他低头看自己手背，那道被畸变体划伤的伤口还在渗血，隐隐发黑。而那个修仙爱好者盘腿坐在碎石堆上，掐着指诀，闭眼呢喃：「此地灵气……不对，此界浊气过重。」",
+      "index": 30
+    },
+    {
+      "type": "change",
+      "before": "第一个踏出光柱的是个穿校服的少年，鼻梁上架着厚镜片，看见畸变体反而笑了：“卧槽，真能玩？”他抄起半截钢筋冲上去，被触手抽飞，在墙上砸出裂纹。几秒后，他重新从光柱里爬出来，抹了把脸上的血，又冲了过去。",
+      "after": "畸变体扑向修仙爱好者，他眼皮都没抬，抬手一拂，那怪物竟像被什么推开了半步。少年已经冲到沈寒舟面前，满脸血污却咧开嘴：「兄弟，组队不？这怪会掉装备吗？」他身后，第三道光柱正从云层里撕裂天际，扭曲的影子里，有人踏出半步。",
+      "index": 32
+    },
+    {
+      "type": "change",
+      "before": "沈寒舟的指甲掐进掌心。他听见主播的麦里传来兴奋的尖叫",
+      "after": "沈寒舟的指尖触到腰间那把从尸体上捡来的短刀，刀柄上还沾着之前幸存者干涸的血。他张了张嘴，声音沙哑：「你们……有没有听见什么声音？」",
+      "index": 34
+    },
+    {
+      "type": "change",
+      "before": "第一道光柱落地的位置，正好砸在畸变体的脊背上。那个三米高、浑身淌着腐液的怪物被光柱贯穿，发出非人的嘶吼——但光柱里的人影只是跌跌撞撞爬出来，拍了拍身上的灰尘。",
+      "after": "少年歪头，屏幕暗下去又亮起来：「啥声音？」",
+      "index": 36
+    },
+    {
+      "type": "change",
+      "before": "\"卧槽，这游戏画质真实得离谱。\"网瘾少年踹了畸变体一脚，后者踉跄后退。剩下的光柱接二连三砸落，主播对着空气解说，修仙爱好者掐着指诀——畸变体扑上来撕开主播的喉咙，血溅了少年一脸",
+      "after": "沈寒舟没有回答。他听见了——从光柱深处，从地底，从那些扭曲的影子里，传来一阵极轻的、像婴儿呢喃般的细碎低语。而第一道光柱里的那个少年，正低头看着自己的手指，指尖上，不知何时爬上了一条细黑的纹路。",
+      "index": 38
+    }
+  ],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-08-11T09:16:39.919Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 96,
+      "hook": 90,
+      "commercialPleasure": 100,
+      "styleConsistency": 92,
+      "characterConsistency": 100,
+      "infoRelease": 80
+    },
+    "total": 93,
+    "weak": [
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "styleConsistency",
+        "score": 92
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "climax",
+        "score": 96
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 100
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "styleConsistency",
+        "score": 92
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 42,
+        "actionHits": 16,
+        "dialogHits": 8,
+        "variety": 4
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 0
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 8,
+        "len": 1359
+      },
+      "styleConsistency": {
+        "shortRatio": 69,
+        "expoRun": 42
+      },
+      "characterConsistency": {
+        "pov": "沈寒舟",
+        "present": [
+          "沈寒舟"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 0,
+        "stagger": false
+      }
+    },
+    "chapter": 2,
+    "sceneIndex": 2,
+    "totalChars": 1359
+  }
+}

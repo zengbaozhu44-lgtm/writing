@@ -1,0 +1,1365 @@
+{
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "parts": [
+    {
+      "order": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "chars": 105,
+      "beatStateDelta": {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "beforeState": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改写",
+        "action": "克服阻碍：no_causal_basis",
+        "choice": null,
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-15T03:39:10.318Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 105 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：AI 高频表达须改写（深吸一口气）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "AI 套话命中：「深吸一口气」— 改为动作/对白/事件",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sc",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "goal",
+        "beforeState": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改写",
+        "action": "克服阻碍：no_causal_basis",
+        "choice": null,
+        "newInformation": null,
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": true,
+        "requiredDimension": "goalDirection",
+        "missing": [],
+        "hasConcreteDelta": true
+      },
+      "stateChange": false,
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "textPreview": "林守常停下手中的活，手电的光斑在门槛外一晃而过，映出那串黏糊糊的脚印。他没动，只是眼睫毛蹭过下睑，那一下比铅字快，比字浅，比字还快地没了。他深吸一口气，把糨糊瓶扶正，牙刷蘸进去的时候瓶底发出一声细微的“咔嚓”。",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Information Density：约 105 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "storyBefore": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sc",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "chars": 137,
+      "beatStateDelta": {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": null,
+        "choice": null,
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "指尖的颤抖，是他内心焦虑的写照"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear",
+          "anger"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-15T03:39:32.456Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周嘴、周似」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 137 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：AI 高频表达须改写（深吸一口气）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "AI 套话命中：「深吸一口气」— 改为动作/对白/事件"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.029411764705882353
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "obstacle",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "",
+        "choice": null,
+        "newInformation": null,
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": true,
+        "requiredDimension": "danger",
+        "missing": [
+          "obstacle"
+        ],
+        "hasConcreteDelta": false
+      },
+      "stateChange": false,
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "textPreview": "林守常深吸一口气，手指紧握糨糊瓶，眼角瞥见老周嘴角的那抹不易察觉的笑意。他喉咙微动，试图压制住心头涌上的怒火，然后猛地一咬牙，将糨糊涂得更加用力，几乎要将自己心中的怒火倾注其中。指尖的颤抖，是他内心焦虑的写照。老周似乎感受到了这股怒气，嘴角",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Information Density：约 137 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件"
+        ],
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "chars": 170,
+      "beatStateDelta": {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": null,
+        "choice": null,
+        "consequence": "选择本身即代价前奏",
+        "afterState": "他深吸一口气，试图平复情绪，但眼角的余光却捕捉到了老周嘴角那抹不易察觉的微笑",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "”话音刚落，林守常感觉到手背上传来一阵刺痛，那是他用力过度的证明"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-15T03:39:56.879Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周嘴」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 170 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速）",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "AI 套话命中：「深吸一口气」— 改为动作/对白/事件",
+            "AI 套话命中：「心跳加速」— 改为动作/对白/事件",
+            "AI 套话过多（深吸一口气、心跳加速、时间仿佛）"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.0658682634730539
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "choice",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "",
+        "choice": null,
+        "newInformation": null,
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": true,
+        "requiredDimension": "relationship",
+        "missing": [
+          "choice（具体两难抉择，禁止用 scene goal/模板填）"
+        ],
+        "hasConcreteDelta": false
+      },
+      "stateChange": true,
+      "afterState": "他深吸一口气，试图平复情绪，但眼角的余光却捕捉到了老周嘴角那抹不易察觉的微笑",
+      "textPreview": "时间仿佛在这一刻凝固，林守常的心跳加速，手指不自觉地捏紧了柜台边缘。他深吸一口气，试图平复情绪，但眼角的余光却捕捉到了老周嘴角那抹不易察觉的微笑。他迅速将视线转移，低声说道：“下周日，下午三点。”话音刚落，林守常感觉到手背上传来一阵刺痛，那",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Information Density：约 170 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速）",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件",
+          "AI 套话命中：「心跳加速」— 改为动作/对白/事件",
+          "AI 套话过多（深吸一口气、心跳加速、时间仿佛）"
+        ],
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "chars": 127,
+      "beatStateDelta": {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": null,
+        "choice": null,
+        "consequence": "选择代价可见落地",
+        "afterState": "老周的眼神，像一把无形的刀，直直地割在他的心上",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear",
+          "anger",
+          "relief"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-15T03:40:14.382Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周的」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 127 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速）",
+            "Language Variation：与近期表达重复，换动词/句式",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis —",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.18548387096774194
+          },
+          "microPassed": [
+            "危险"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "consequence",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "",
+        "choice": null,
+        "newInformation": null,
+        "consequence": "选择代价可见落地",
+        "afterState": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改",
+        "stateChange": true,
+        "requiredDimension": "resource",
+        "missing": [
+          "consequence"
+        ],
+        "hasConcreteDelta": false
+      },
+      "stateChange": true,
+      "afterState": "老周的眼神，像一把无形的刀，直直地割在他的心上",
+      "textPreview": "时间仿佛在这一刻凝固，林守常的心跳加速，手中的糨糊瓶差点没握稳。老周的眼神，像一把无形的刀，直直地割在他的心上。他深吸一口气，努力让自己的呼吸平稳下来，然后缓缓地将书脊上的胶痕按平。橘子滚到了他的脚边，他没动，只是静静地站在那里，等待着那即",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 127 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速）",
+          "Language Variation：与近期表达重复，换动词/句式",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis —",
+        "microPassed": [
+          "危险"
+        ]
+      }
+    },
+    {
+      "order": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "chars": 190,
+      "beatStateDelta": {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": null,
+        "choice": null,
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "他猛地一吸冷气，额头上渗出细密的汗珠",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear",
+          "relief"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-15T03:40:29.848Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周那、周点、周摇」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Show Don't Tell：禁止直接解释心理/认知（紧张）→ 改为动作/对白/画面",
+            "Information Density：约 190 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：AI 高频表达须改写（心跳加速、紧张）",
+            "Language Variation：与近期表达重复，换动词/句式",
+            "AI 套话命中：「心跳加速」— 改为动作/对白/事件",
+            "NAME_DRIFT: 出现未登记角色名「周那、周点、周摇」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis —",
+          "storyAfter": "危险升级：退路/安全态已失效",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.20855614973262032
+          },
+          "microPassed": [
+            "危险",
+            "Promise兑现"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "newInformation",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "",
+        "choice": null,
+        "newInformation": null,
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改",
+        "stateChange": true,
+        "requiredDimension": "information",
+        "missing": [
+          "newInformation"
+        ],
+        "hasConcreteDelta": false
+      },
+      "stateChange": true,
+      "afterState": "他猛地一吸冷气，额头上渗出细密的汗珠",
+      "textPreview": "时间仿佛在这一刻凝固，林守常的心跳加速，手中的糨糊瓶差点掉落。他猛地一吸冷气，额头上渗出细密的汗珠。老周那句话，像一把锐利的刀，划开了他平静的表面。他放下手中的书，深深地吸了一口气，然后缓缓地吐出，试图平复内心的波动。\n\n“下周日？”他重复",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（紧张）→ 改为动作/对白/画面",
+          "Information Density：约 190 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（心跳加速、紧张）",
+          "Language Variation：与近期表达重复，换动词/句式",
+          "AI 套话命中：「心跳加速」— 改为动作/对白/事件",
+          "NAME_DRIFT: 出现未登记角色名「周那、周点、周摇」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+        ],
+        "storyBefore": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis —",
+        "storyAfter": "危险升级：退路/安全态已失效",
+        "microPassed": [
+          "危险",
+          "Promise兑现"
+        ]
+      }
+    },
+    {
+      "order": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "chars": 144,
+      "beatStateDelta": {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "妹妹活下来了 — 系统日志里出现了她的名字。",
+        "choice": null,
+        "consequence": "新危机/新疑问出现",
+        "afterState": "他抬头看向老周，眼神中闪过一丝紧张，喉咙里滚动着一声低沉的喘息",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "老周却只是微笑着，橘子的香气在空气中弥漫，仿佛在挑衅他的不安"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [
+          "沉的喘息。老周却只是微笑着，橘子的香气在空气中弥漫，仿佛在挑衅他的不安。林守常深吸一口气，将糨糊涂满书脊，然后迅速按在煤炉边，时间仿佛在这一刻，真的被他按慢了。"
+        ],
+        "extractedAt": "2026-10-15T03:43:58.563Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周却」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Show Don't Tell：禁止直接解释心理/认知（紧张）→ 改为动作/对白/画面",
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 144 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速、紧张）",
+            "4-gram 自重复：「时间仿佛在这一刻…」",
+            "AI 套话重复：「时间仿佛」"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "危险升级：退路/安全态已失效",
+          "storyAfter": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sc",
+          "formatPass": false,
+          "noRepeat": false,
+          "stateChange": true,
+          "fourGram": {
+            "pass": false,
+            "noRepeat": false,
+            "hits": [
+              "时间仿佛在这一刻"
+            ],
+            "failReasons": [
+              "4-gram 自重复：「时间仿佛在这一刻…」"
+            ],
+            "selfOverlap": 1
+          },
+          "microPassed": [
+            "新信息"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "hook",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "妹妹活下来了 — 系统日志里出现了她的名字。",
+        "choice": null,
+        "newInformation": null,
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同",
+        "stateChange": true,
+        "requiredDimension": "worldCognition",
+        "missing": [],
+        "hasConcreteDelta": true
+      },
+      "stateChange": true,
+      "afterState": "他抬头看向老周，眼神中闪过一丝紧张，喉咙里滚动着一声低沉的喘息",
+      "textPreview": "时间仿佛在这一刻凝固，林守常的心跳加速，手指紧紧抓着糨糊瓶，呼吸变得急促。他抬头看向老周，眼神中闪过一丝紧张，喉咙里滚动着一声低沉的喘息。老周却只是微笑着，橘子的香气在空气中弥漫，仿佛在挑衅他的不安。林守常深吸一口气，将糨糊涂满书脊，然后迅",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（紧张）→ 改为动作/对白/画面",
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 144 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速、紧张）",
+          "4-gram 自重复：「时间仿佛在这一刻…」",
+          "AI 套话重复：「时间仿佛」"
+        ],
+        "storyBefore": "危险升级：退路/安全态已失效",
+        "storyAfter": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sc",
+        "microPassed": [
+          "新信息"
+        ]
+      }
+    }
+  ],
+  "beatMemory": {
+    "newFacts": [
+      "指尖的颤抖，是他内心焦虑的写照",
+      "”话音刚落，林守常感觉到手背上传来一阵刺痛，那是他用力过度的证明",
+      "老周却只是微笑着，橘子的香气在空气中弥漫，仿佛在挑衅他的不安"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "fear",
+      "anger",
+      "relief"
+    ],
+    "unresolvedIssues": [
+      "沉的喘息。老周却只是微笑着，橘子的香气在空气中弥漫，仿佛在挑衅他的不安。林守常深吸一口气，将糨糊涂满书脊，然后迅速按在煤炉边，时间仿佛在这一刻，真的被他按慢了。"
+    ],
+    "changedDimensions": [
+      "resource"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": false,
+        "afterState": "阻力落地，目标受挫，退路收窄"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他深吸一口气，试图平复情绪，但眼角的余光却捕捉到了老周嘴角那抹不易察觉的微笑"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "老周的眼神，像一把无形的刀，直直地割在他的心上"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他猛地一吸冷气，额头上渗出细密的汗珠"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "他抬头看向老周，眼神中闪过一丝紧张，喉咙里滚动着一声低沉的喘息"
+      }
+    ],
+    "lastAfterState": "他抬头看向老周，眼神中闪过一丝紧张，喉咙里滚动着一声低沉的喘息",
+    "stateChangeCount": 4
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Discovery",
+      "beforeState": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改写",
+      "action": "克服阻碍：no_causal_basis",
+      "choice": null,
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-15T03:39:10.318Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 105 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sc",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": null,
+      "choice": null,
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "阻力落地，目标受挫，退路收窄",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "指尖的颤抖，是他内心焦虑的写照"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear",
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-15T03:39:32.456Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「周嘴、周似」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 137 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气）",
+          "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.029411764705882353
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": null,
+      "choice": null,
+      "consequence": "选择本身即代价前奏",
+      "afterState": "他深吸一口气，试图平复情绪，但眼角的余光却捕捉到了老周嘴角那抹不易察觉的微笑",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "”话音刚落，林守常感觉到手背上传来一阵刺痛，那是他用力过度的证明"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-15T03:39:56.879Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「周嘴」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Information Density：约 170 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速）",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件",
+          "AI 套话命中：「心跳加速」— 改为动作/对白/事件",
+          "AI 套话过多（深吸一口气、心跳加速、时间仿佛）"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0658682634730539
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": null,
+      "choice": null,
+      "consequence": "选择代价可见落地",
+      "afterState": "老周的眼神，像一把无形的刀，直直地割在他的心上",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear",
+        "anger",
+        "relief"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-15T03:40:14.382Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「周的」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 127 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速）",
+          "Language Variation：与近期表达重复，换动词/句式",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis —",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.18548387096774194
+        },
+        "microPassed": [
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": null,
+      "choice": null,
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "他猛地一吸冷气，额头上渗出细密的汗珠",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear",
+        "relief"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-10-15T03:40:29.848Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「周那、周点、周摇」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（紧张）→ 改为动作/对白/画面",
+          "Information Density：约 190 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（心跳加速、紧张）",
+          "Language Variation：与近期表达重复，换动词/句式",
+          "AI 套话命中：「心跳加速」— 改为动作/对白/事件",
+          "NAME_DRIFT: 出现未登记角色名「周那、周点、周摇」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis —",
+        "storyAfter": "危险升级：退路/安全态已失效",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.20855614973262032
+        },
+        "microPassed": [
+          "危险",
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "妹妹活下来了 — 系统日志里出现了她的名字。",
+      "choice": null,
+      "consequence": "新危机/新疑问出现",
+      "afterState": "他抬头看向老周，眼神中闪过一丝紧张，喉咙里滚动着一声低沉的喘息",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "老周却只是微笑着，橘子的香气在空气中弥漫，仿佛在挑衅他的不安"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "沉的喘息。老周却只是微笑着，橘子的香气在空气中弥漫，仿佛在挑衅他的不安。林守常深吸一口气，将糨糊涂满书脊，然后迅速按在煤炉边，时间仿佛在这一刻，真的被他按慢了。"
+      ],
+      "extractedAt": "2026-10-15T03:43:58.563Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "inference_candidate",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isWorldFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+        "paths": [
+          "extractBeatStateDelta",
+          "beatPlan.choice/consequence",
+          "newFacts heuristic"
+        ],
+        "newFactsRole": "heuristic_candidate_not_canon_fact",
+        "planChoiceConsequenceRole": "plan_residue_not_reality"
+      },
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": null,
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [],
+        "eventPhase": "advanced",
+        "issues": [
+          "NAME_DRIFT: 出现未登记角色名「周却」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（紧张）→ 改为动作/对白/画面",
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 144 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Language Variation：AI 高频表达须改写（深吸一口气、心跳加速、紧张）",
+          "4-gram 自重复：「时间仿佛在这一刻…」",
+          "AI 套话重复：「时间仿佛」"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "危险升级：退路/安全态已失效",
+        "storyAfter": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sc",
+        "formatPass": false,
+        "noRepeat": false,
+        "stateChange": true,
+        "fourGram": {
+          "pass": false,
+          "noRepeat": false,
+          "hits": [
+            "时间仿佛在这一刻"
+          ],
+          "failReasons": [
+            "4-gram 自重复：「时间仿佛在这一刻…」"
+          ],
+          "selfOverlap": 1
+        },
+        "microPassed": [
+          "新信息"
+        ],
+        "continuityPass": false
+      }
+    }
+  ],
+  "runtimeSession": {
+    "lastEvent": {
+      "cause": "局势向终局推进 — 林守常当前目标：克服阻碍：no_causal_basis —",
+      "event": "妹妹活下来了 — 系统日志里出现了她的名字。",
+      "effect": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sc"
+    },
+    "beforeState": "林守常当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改写 → 本 Scene 结束后，世界认知/危险/资源须与开局不同",
+    "rewriteCounts": {
+      "1": 3,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 3
+    }
+  },
+  "runtimeV2": false,
+  "sceneOutcome": {
+    "success": "若达成：克服阻碍：no_causal_basis取得可见进展（哪怕只是半步）",
+    "failure": "若失败：no_causal_basis导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "updatedAt": "2026-10-15T03:43:58.581Z"
+}

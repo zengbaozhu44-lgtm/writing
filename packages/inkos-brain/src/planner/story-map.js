@@ -264,18 +264,20 @@ export function applyStoryMapToIntent(intent = {}, bookDir, chapterIdx) {
   const mapGoal = buildChapterGoalFromMap(ctx);
   const next = { ...intent };
 
-  // POV：地图优先于「主角」占位，但不覆盖已有明确 POV（除非地图指定）
+  // POV：地图优先于「主角」占位，但不覆盖已有明确 POV（除非地图指定）。
+  // 注意：不要用 else 无条件覆盖 —— 已确认的具体章节计划（chapter_NNNN.yaml）里
+  // 人工写明的 pov 是权威，地图只能填空，不能替作者改视角。
   if (ctx.pov && (!next.pov || next.pov === '主角')) {
-    next.pov = ctx.pov;
-  } else if (ctx.pov) {
     next.pov = ctx.pov;
   }
 
-  // 章目标：里程碑/铺垫章用地图目标；有向导基调时保留 coreEvent，但附加地图约束
-  if (ctx.chapterFunction === 'milestone' || ctx.chapterFunction === 'setup_for_milestone') {
-    next.mainGoal = mapGoal;
-    next.chapterIntent = `第${ch}章：${mapGoal}`;
-  } else if (!next.mainGoal || next.mainGoal === '推进当前现实目标') {
+  // 章目标：仅当无具体目标（空 / 占位）时用地图目标；已确认的具体计划/章任务目标优先。
+  // 里程碑/铺垫章的地图约束（milestoneMustHave / distanceToMilestone 等）仍写入 storyMap 供 Writer 读取。
+  const hasSpecificGoal = Boolean(next.mainGoal)
+    && next.mainGoal !== '推进当前现实目标'
+    && next.mainGoal !== 'no_causal_basis'
+    && !/待规划|规划中|^—$|placeholder/i.test(String(next.mainGoal));
+  if (!hasSpecificGoal) {
     next.mainGoal = mapGoal;
     next.chapterIntent = `第${ch}章：${mapGoal}`;
   }

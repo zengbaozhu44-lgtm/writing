@@ -42,18 +42,30 @@ export function buildWriterSceneArc({
   const plan = executionPlan.scenePlan || {};
   const situation = executionPlan.situation || {};
 
+  // S8.2-R4-B：consequence 仅 authored；禁止 plan.consequence || conflict.cost
+  const authoredConsequence = (() => {
+    const cons = String(plan.consequence || '').trim();
+    if (!cons || plan._consequenceMissing) return null;
+    if (/选择产生可见代价|局面因此改变|no_causal_basis/u.test(cons)) return null;
+    return cons;
+  })();
+
   const arc = SCENE_ARC_SEQUENCE.map((step) => {
     const contentMap = {
       goal: plan.goal,
       conflict: conflict.opposition || plan.obstacle,
       choice: plan.choice,
-      consequence: plan.consequence || conflict.cost,
+      consequence: authoredConsequence,
       reward: reward.payoff || plan.newInformation,
       newThreat: hookOutput?.actionDeadline || plan.cliffhanger,
     };
+    const raw = contentMap[step.id];
+    const content = step.id === 'consequence'
+      ? (raw || 'missing（非 Conflict cost；≠ Choice consequence）')
+      : (raw || '—');
     return {
       ...step,
-      content: contentMap[step.id] || '—',
+      content,
       dimensions: BEAT_DIMENSION_MAP[step.beat] || ['world'],
     };
   });
@@ -100,7 +112,7 @@ export function formatWriterSceneArcBlock(arc = {}) {
     '',
     `**优先**：${arc.priorities.join(' > ')} — 动作与对白推动，不用心理总结`,
     '- ❌ 调查 → 发现一点 → 继续调查（原地踏步）',
-    '- ✅ 调查 → 付出代价 → 获得奖励 → 更大危机',
+    '- ✅ 调查 → 局势升级 → 获得奖励 → 更大危机（代价仅在有 authored consequence 时写）',
   ];
 
   return lines.join('\n');

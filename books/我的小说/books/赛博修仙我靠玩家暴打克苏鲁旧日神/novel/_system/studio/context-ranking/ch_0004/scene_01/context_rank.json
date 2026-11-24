@@ -1,0 +1,228 @@
+{
+  "version": "context-rank-1",
+  "chapter": 4,
+  "scene": {
+    "id": "ch4_s1",
+    "index": 1,
+    "goal": "承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 1 章"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 3429,
+    "topK": null,
+    "usedChars": 430,
+    "selectedCount": 4,
+    "trimmedCount": 16,
+    "totalCandidates": 20
+  },
+  "topK": [
+    {
+      "id": "facts:7",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4020字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 91,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 41,
+        "budgetChars": 240,
+        "finalScore": 81.4
+      }
+    },
+    {
+      "id": "facts:8",
+      "source": "facts",
+      "text": "第3章完成：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置（4161字）",
+      "charCount": 51,
+      "scores": {
+        "relevance": 91,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 41,
+        "budgetChars": 240,
+        "finalScore": 81.4
+      }
+    },
+    {
+      "id": "timeline:7",
+      "source": "timeline",
+      "text": "Day 3：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章；克服阻碍：青穹重工派遣的机械执法者小队突袭林砚藏身点；林砚利用管理员权限实时提取玩家死亡数据；战斗结束后",
+      "charCount": 164,
+      "scores": {
+        "relevance": 100,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 33,
+        "budgetChars": 386,
+        "finalScore": 75.3
+      }
+    },
+    {
+      "id": "timeline:8",
+      "source": "timeline",
+      "text": "Day 3：承接上章情绪「林砚为复活/拯救妹妹林薇，试图激活GM权限，但面临献祭妹妹灵魂锚点的代价，在痛苦」进入局面 · 承接「林砚为复活/拯救妹妹林薇」进入现场：紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章；克服阻碍：青穹重工派遣的机械执法者小队突袭林砚藏身点；林砚利用管理员权限实时提取玩家死亡数据；战斗结束后",
+      "charCount": 164,
+      "scores": {
+        "relevance": 100,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 33,
+        "budgetChars": 386,
+        "finalScore": 75.3
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:9",
+      "source": "facts",
+      "finalScore": 81.4,
+      "trimReason": "超过 TopK",
+      "charCount": 51
+    },
+    {
+      "id": "facts:5",
+      "source": "facts",
+      "finalScore": 52.25,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:6",
+      "source": "facts",
+      "finalScore": 52.25,
+      "trimReason": "超过 TopK",
+      "charCount": 73
+    },
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 46.6,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "finalScore": 46.6,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "finalScore": 46.6,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "finalScore": 46.6,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "facts:4",
+      "source": "facts",
+      "finalScore": 46.6,
+      "trimReason": "超过 TopK",
+      "charCount": 99
+    },
+    {
+      "id": "timeline:9",
+      "source": "timeline",
+      "finalScore": 75.3,
+      "trimReason": "Budget 不足",
+      "charCount": 322
+    },
+    {
+      "id": "timeline:5",
+      "source": "timeline",
+      "finalScore": 72.3,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:6",
+      "source": "timeline",
+      "finalScore": 72.3,
+      "trimReason": "Budget 不足",
+      "charCount": 154
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "finalScore": 36.7,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "finalScore": 36.7,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "finalScore": 36.7,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:3",
+      "source": "timeline",
+      "finalScore": 36.7,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:4",
+      "source": "timeline",
+      "finalScore": 36.7,
+      "trimReason": "Budget 不足",
+      "charCount": 82
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 2,
+      "totalCandidates": 10,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 5
+    },
+    "timeline": {
+      "selectedCount": 2,
+      "totalCandidates": 10,
+      "topK": 4
+    }
+  },
+  "intent": {
+    "mainGoal": "紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 1 章，须完成前置",
+    "pov": "沈寒舟"
+  },
+  "generatedAt": "2026-08-04T07:36:04.356Z"
+}

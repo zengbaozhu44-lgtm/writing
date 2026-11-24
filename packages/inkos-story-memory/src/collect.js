@@ -62,6 +62,7 @@ export function collectStoryMemory(ctx = {}, storyDna = {}, options = {}) {
     .filter((m) => m.text);
 
   const characterArcs = Object.entries(ctx.characters || {})
+    .filter(([, ch]) => ch && typeof ch === 'object')
     .map(([name, ch]) => ({
       id: `arc_${name}`,
       character: name,

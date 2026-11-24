@@ -15,16 +15,58 @@
   "budget": {
     "maxChars": 2769,
     "topK": null,
-    "usedChars": 181,
-    "selectedCount": 2,
-    "trimmedCount": 0,
-    "totalCandidates": 2
+    "usedChars": 560,
+    "selectedCount": 6,
+    "trimmedCount": 2,
+    "totalCandidates": 8
   },
   "topK": [
     {
       "id": "facts:0",
       "source": "facts",
       "text": "第1章完成：林砚在浮空城陷落、神魂破碎的濒死绝境中，觉醒【世界管理员GM权限】，窥见世界为高维测试服务器的真相，并回溯时间重生至三年前邪神入侵与财团叛变的关键节点，为逆转末世奠定基础。（4881字）",
+      "charCount": 99,
+      "scores": {
+        "relevance": 99,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 59,
+        "budgetChars": 500,
+        "finalScore": 89.2
+      }
+    },
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "text": "第1章完成：林砚在浮空城陷落、神魂破碎的濒死绝境中，觉醒【世界管理员GM权限】，窥见世界为高维测试服务器的真相，并回溯时间重生至三年前邪神入侵与财团叛变的关键节点，为逆转末世奠定基础。（4546字）",
+      "charCount": 99,
+      "scores": {
+        "relevance": 99,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 59,
+        "budgetChars": 500,
+        "finalScore": 89.2
+      }
+    },
+    {
+      "id": "facts:2",
+      "source": "facts",
+      "text": "第1章完成：林砚在浮空城陷落、神魂破碎的濒死绝境中，觉醒【世界管理员GM权限】，窥见世界为高维测试服务器的真相，并回溯时间重生至三年前邪神入侵与财团叛变的关键节点，为逆转末世奠定基础。（5133字）",
+      "charCount": 99,
+      "scores": {
+        "relevance": 99,
+        "importance": 75,
+        "freshness": 100,
+        "narrativePriority": 59,
+        "budgetChars": 500,
+        "finalScore": 89.2
+      }
+    },
+    {
+      "id": "facts:3",
+      "source": "facts",
+      "text": "第1章完成：林砚在浮空城陷落、神魂破碎的濒死绝境中，觉醒【世界管理员GM权限】，窥见世界为高维测试服务器的真相，并回溯时间重生至三年前邪神入侵与财团叛变的关键节点，为逆转末世奠定基础。（4256字）",
       "charCount": 99,
       "scores": {
         "relevance": 99,
@@ -48,14 +90,43 @@
         "budgetChars": 192,
         "finalScore": 68.2
       }
+    },
+    {
+      "id": "timeline:1",
+      "source": "timeline",
+      "text": "Day 1：进入现场并确立危机：林砚在浮空城陷落、神魂破碎的濒死绝境中；克服阻碍：林砚肉身与神魂双重崩毁；林砚在意识即将被低语彻底吞噬的瞬间；看着掌心跳动的数据流权限",
+      "charCount": 82,
+      "scores": {
+        "relevance": 72,
+        "importance": 40,
+        "freshness": 100,
+        "narrativePriority": 58,
+        "budgetChars": 192,
+        "finalScore": 68.2
+      }
     }
   ],
-  "trimmed": [],
+  "trimmed": [
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "finalScore": 68.2,
+      "trimReason": "超过 TopK",
+      "charCount": 82
+    },
+    {
+      "id": "timeline:3",
+      "source": "timeline",
+      "finalScore": 68.2,
+      "trimReason": "超过 TopK",
+      "charCount": 82
+    }
+  ],
   "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
   "bySource": {
     "facts": {
-      "selectedCount": 1,
-      "totalCandidates": 1,
+      "selectedCount": 4,
+      "totalCandidates": 4,
       "topK": 6
     },
     "knowledge": {
@@ -74,8 +145,8 @@
       "topK": 3
     },
     "timeline": {
-      "selectedCount": 1,
-      "totalCandidates": 1,
+      "selectedCount": 2,
+      "totalCandidates": 4,
       "topK": 2
     }
   },
@@ -83,5 +154,5 @@
     "mainGoal": "林砚在浮空城陷落、神魂破碎的濒死绝境中，觉醒【世界管理员GM权限】，窥见世界为高维测试服务器的真相，并回溯时间重生至三年前邪神入侵与财团叛变的关键节点，为逆转末世奠定基础。",
     "pov": "林砚"
   },
-  "generatedAt": "2026-07-31T07:03:49.494Z"
+  "generatedAt": "2026-08-04T04:36:37.705Z"
 }

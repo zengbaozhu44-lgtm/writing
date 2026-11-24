@@ -6,7 +6,9 @@ import path from 'node:path';
 import { exists, readJson, writeJson, readText, writeText } from '../../inkos-core/src/lib/paths.js';
 import { MemoryUnit, purgeChapterDrafts } from '../../inkos-runtime/src/memory/memory-unit.js';
 import { promptCacheDir } from '../../inkos-prompt/src/cache.js';
-import { brainSystemDir } from '../../inkos-brain/src/loader.js';
+import { brainSystemDir, loadBrainContext } from '../../inkos-brain/src/loader.js';
+import { planNextChapter } from '../../inkos-brain/src/planner/planner.js';
+import { writeNextChapterTask } from '../../inkos-brain/src/memory/state-updater.js';
 import { getBookExecutionGuard } from './execution-guard-store.js';
 
 function pad(n) {
@@ -68,11 +70,14 @@ export function listChapterAuditStatuses(bookDir, maxChapter = 10) {
     if (!status) {
       status = i <= unlocked ? 'ready_to_generate' : 'locked';
     }
+    // 有待提交草稿（正文未落盘但可恢复）→ UI 应展示「接受草稿」入口
+    const hasPending = exists(pendingCommitPath(bookDir, i));
     rows.push({
       chapter: i,
       status,
       label: statusLabel(status),
       unlocked: i <= unlocked || status === 'accepted' || status === 'pending_audit' || status === 'ready_to_generate',
+      hasPending,
     });
   }
   return { unlockedThrough: unlocked, chapters: rows, audit };
@@ -178,11 +183,39 @@ export function savePendingCommit(bookDir, chapter, stateDiff = {}) {
 
 /**
  * 接受本章 → 确保 MemoryUnit.commit（若有 pending）→ 解锁下一章
+ *
+ * EO-P1 Dual BLOCK A: Acceptance ≠ obtains. `accepted` / 「入库」= workflow unlock
+ * + artifact retention only — not Reality confirmation / Authority over all Claims.
+ *
+ * EO-P4-48-ACCEPT-PRESERVE-01（Human Seal S1/S2/S3）：
+ * - S2 已 accepted → 幂等 no-op（零写入，含 chapter_audit.json）
+ * - S1 有 state、无 pending → 禁止降级 commit（降级输入会整体替换 states/anchor/canon，
+ *   摧毁 pov/mainGoal/mustLose/timeline/facts/evolution）；保全已有 Truth，仅解锁
+ * - S3 无 pending、无 state → fail-closed：唯一充分重建输入 = 完整 pending stateDiff；
+ *   禁止 intent:{pov:'主角'} / 空 scenes 等猜测性重建；抛错前零写入
+ * - 09 回填 POV 守卫：priorAnchor.pov 存在、非空且非「未标注」才写卡（禁止占位卡）
+ *
+ * @see golden/reality/d1-implementation-contract/INTERPRETATION-BLOCK.md
  */
 export function acceptChapter(bookDir, chapter, { title } = {}) {
   const ch = Number(chapter);
+
+  // S2 幂等闸：已 accepted → no-op。必须在任何 commit / unlink / 09 回填 / audit 写入之前。
+  if (getChapterStatus(bookDir, ch) === 'accepted') {
+    return {
+      ok: true,
+      idempotent: true,
+      chapter: ch,
+      nextChapterUnlocked: true,
+      nextChapter: ch + 1,
+      memoryCommit: null,
+    };
+  }
+
   const pendingFile = pendingCommitPath(bookDir, ch);
+  const stateFile = path.join(bookDir, 'states', `ch_${pad(ch)}.json`);
   let memoryCommit = null;
+  let preserved = false;
 
   if (exists(pendingFile)) {
     const pending = readJson(pendingFile);
@@ -192,25 +225,46 @@ export function acceptChapter(bookDir, chapter, { title } = {}) {
       skipGitCli: pending.skipGitCli !== false,
     });
     try { fs.unlinkSync(pendingFile); } catch { /* */ }
+  } else if (exists(stateFile)) {
+    // S1：state 已存在 → 禁止降级 commit（MemoryUnit.commit 是整体替换写）。
+    // 中断重入（unlink 后、setStatus 前崩溃）与本路径汇合：保全 + 解锁。
+    memoryCommit = {
+      skipped: true,
+      reason: 'existing_state_preserved',
+      stateFile,
+    };
+    preserved = true;
   } else {
-    // 已有正文：补写/刷新 anchor（用现有正文再 commit）
-    const text = loadChapterTextFile(bookDir, ch);
-    if (!text?.trim()) {
-      throw new Error(`第 ${ch} 章无正文，无法接受`);
+    // S3 fail-closed：无 pending（唯一充分重建输入）且无 state → 拒绝猜测性重建。
+    // 抛错前不写 audit store / 09 / anchor / 任何书籍文件。
+    throw new Error(
+      `第 ${ch} 章缺少接受材料：pending_commit/ch_${pad(ch)}.json 与 states/ch_${pad(ch)}.json 均不存在。`
+      + '拒绝以降级输入（占位 POV / 空 scenes）重建状态。'
+      + '处置：重新生成本章（Studio Living 走 deferCommit 产出 pending commit），或提供完整 stateDiff。',
+    );
+  }
+
+  // 09 任务卡回填：deferred 路径 commit 时无 nextChapterPlan，接受后补一次规划并写卡，
+  // 否则 09_current_chapter.md 永远空白模板。
+  // S3 POV 守卫：仅 priorAnchor.pov 存在、非空且非「未标注」才允许写卡；anchor 缺失时
+  // planNextChapter 自身抛错（loadPriorChapterAnchor required）→ 下方 catch 跳过回填。
+  try {
+    const ctx = loadBrainContext(bookDir, { chapter: ch });
+    const nextPlan = planNextChapter(bookDir, ch, ctx, null);
+    const anchorPov = nextPlan?.priorAnchor?.pov;
+    if (nextPlan?.intent && anchorPov && anchorPov !== '未标注') {
+      writeNextChapterTask(bookDir, ch + 1, nextPlan.intent);
+    } else {
+      console.warn(`[chapter-audit] 第 ${ch + 1} 章 09 回填跳过：priorAnchor.pov 缺失或占位（${anchorPov || 'empty'}）——禁止生成占位 POV 任务卡`);
     }
-    memoryCommit = MemoryUnit.commit(bookDir, ch, {
-      chapterText: text,
-      chapterTitle: title || undefined,
-      intent: { pov: '主角' },
-      scenes: [],
-      force: true,
-      skipGitCli: true,
-    });
+  } catch (err) {
+    console.warn('[chapter-audit] 接受后 nextChapter 规划失败（已忽略）:', err?.message || err);
   }
 
   setChapterStatus(bookDir, ch, 'accepted', {
     acceptedAt: new Date().toISOString(),
     anchorFile: memoryCommit?.anchorFile || null,
+    ...(preserved ? { preserved: true } : {}),
   });
 
   return {
@@ -260,6 +314,26 @@ export function deleteChapterDraft(bookDir, chapter) {
   }
 
   // Beat 连续性状态（重新生成须从空状态开始）
+  const studioRoot = path.join(bookDir, 'novel', '_system', 'studio');
+  const staleDirs = [
+    ['writer-optimization', `ch_${pad(ch)}`],
+    ['director', `ch_${pad(ch)}`],
+    ['story-memory', `ch_${pad(ch)}`],
+    ['context-ranking', `ch_${pad(ch)}`],
+    ['story-thread', `ch_${pad(ch)}`],
+    ['dynamic-budget', `ch_${pad(ch)}`],
+    ['prompt-metrics', `ch_${pad(ch)}`],
+    ['hash-dependency', `ch_${pad(ch)}`],
+  ];
+  for (const [group, dir] of staleDirs) {
+    try {
+      const p = path.join(studioRoot, group, dir);
+      if (exists(p)) {
+        fs.rmSync(p, { recursive: true, force: true });
+        purged.purged.push(`${group}/${dir}`);
+      }
+    } catch { /* */ }
+  }
   try {
     const cont = path.join(
       bookDir,

@@ -38,7 +38,6 @@ export function getBookPaths(bookDir) {
         resource_db: path.join(n, '14_resource_db.yaml'),
         npc_simulation: path.join(n, '15_npc_simulation.yaml'),
         chapter_review: path.join(n, '16_chapter_review'),
-        state_machine: path.join(n, '_system/state_machine.yaml'),
         snapshots: path.join(n, '_system/snapshots'),
       },
     };

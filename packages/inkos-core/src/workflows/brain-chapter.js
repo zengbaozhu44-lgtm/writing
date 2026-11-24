@@ -1,4 +1,5 @@
 import { applyPostChapter } from './post-chapter.js';
+import { partitionOperatorRawDelta } from '../lib/tr01-operator-delta.js';
 import { runChapterReview } from './chapter-review.js';
 import { runBrainPipeline } from '../../../inkos-brain/src/runtime/brain-runtime.js';
 import { isBrainEnabled } from '../../../inkos-brain/src/loader.js';
@@ -21,7 +22,12 @@ export function runBrainChapter(bookDir, options = {}) {
   let reviewResult = null;
 
   if (pipeline.pass && options.delta) {
-    postResult = applyPostChapter(bookDir, chapter, options.delta);
+    // EO-TR-01: same raw-delta applicator as inkos post — 11/13 stripped; 12/15 not in this EO.
+    const { operationalDelta, skippedRealityLike } = partitionOperatorRawDelta(options.delta);
+    postResult = {
+      ...applyPostChapter(bookDir, chapter, operationalDelta),
+      d1Tr01: { eo: 'EO-TR-01', skippedRealityLike, producesObtains: false },
+    };
     reviewResult = runChapterReview(bookDir, chapter, options.delta.review || pipeline.reader?.personas?.[0]?.scores || {});
   }
 

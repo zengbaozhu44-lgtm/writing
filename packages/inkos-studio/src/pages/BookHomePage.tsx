@@ -48,9 +48,26 @@ export function BookHomePage() {
     api.listChapters(book.id).then(setChapters).catch(() => {});
   };
 
-  const targetChapter = resolveNextWritableChapter(chapters, chapter, Boolean(
+  // 把审计状态并入章节列表（含无正文的锁定章），供「下一章」解析器跳过被锁定的章
+  const auditByChapterForNext = new Map(auditRows.map((a) => [a.chapter, a.status]));
+  const knownNumbers = new Set(chapters.map((c) => c.number));
+  const chaptersWithStatus = chapters.map((c) => ({
+    ...c,
+    status: auditByChapterForNext.get(c.number) || '',
+  }));
+  for (const a of auditRows) {
+    if (!knownNumbers.has(a.chapter)) {
+      chaptersWithStatus.push({ number: a.chapter, title: '', hasText: false, status: a.status });
+    }
+  }
+  const targetChapter = resolveNextWritableChapter(chaptersWithStatus, chapter, Boolean(
     chapters.find((c) => c.number === chapter)?.hasText,
   ));
+
+  // 有待提交草稿且未接受的第一章 → Home 顶部横幅，让「接受」动作在阻断点可见
+  const pendingChapter = auditRows.find(
+    (a) => a.hasPending && a.status !== 'accepted',
+  )?.chapter || 0;
 
   const runNextChapter = async () => {
     const acq = lock.tryAcquire(targetChapter, `正在生成第 ${targetChapter} 章…`);
@@ -131,6 +148,18 @@ export function BookHomePage() {
     }
   };
 
+  const acceptPendingDraft = async (ch: number) => {
+    if (!window.confirm(`确认接受第 ${ch} 章的待提交草稿？\n接受后将正式入库并解锁下一章。`)) return;
+    setRuntimeMsg(`正在接受第 ${ch} 章草稿…`);
+    try {
+      const r = await api.acceptChapter(book.id, ch);
+      setRuntimeMsg(r.nextChapterUnlocked ? `第 ${ch} 章已接受 · 第 ${r.nextChapter} 章已解锁` : `第 ${ch} 章已接受`);
+      onRuntimeAction();
+    } catch (e) {
+      setRuntimeMsg((e as Error).message || String(e));
+    }
+  };
+
   const openChapter = (n: number) => {
     setChapter(n);
   };
@@ -172,6 +201,7 @@ export function BookHomePage() {
         hasText: h?.hasText,
         auditStatus: h?.auditStatus || a?.status || '',
         auditLabel: h?.auditLabel || a?.label || '',
+        hasPending: a?.hasPending,
       });
     }
     return rows;
@@ -197,6 +227,33 @@ export function BookHomePage() {
         <p className="book-health">Story Health: <strong>{data?.health.overall ?? '—'}</strong></p>
         {storyDna?.core_hook && <p className="text-dim">Story DNA: {String(storyDna.core_hook)}</p>}
       </div>
+
+      {pendingChapter > 0 && (
+        <div className="panel audit-pending-banner" role="alert">
+          <div className="audit-pending-banner-inner">
+            <span className="audit-pending-emoji">🟡</span>
+            <div className="audit-pending-text">
+              <strong>第 {pendingChapter} 章待审计</strong>
+              <span className="text-dim">正文已生成，接受后将正式入库并解锁下一章。</span>
+            </div>
+            <button
+              type="button"
+              className="btn btn-primary"
+              disabled={busy}
+              onClick={() => void acceptPendingDraft(pendingChapter)}
+            >
+              接受第 {pendingChapter} 章
+            </button>
+            <Link
+              to={`${bookTo('ide')}?drawer=diagnostics`}
+              className="btn"
+              onClick={() => openDiagnosis(pendingChapter)}
+            >
+              查看诊断
+            </Link>
+          </div>
+        </div>
+      )}
 
       <LivingNovelDashboard bookId={book.id} key={livingKey} />
       <CreativeDashboardPanel bookId={book.id} storyDna={storyDna} onRefresh={onRuntimeAction} />
@@ -284,6 +341,22 @@ export function BookHomePage() {
                 {auditEmoji(h.auditStatus || '') || h.auditLabel || '—'}
               </span>
               <span className="ch-score">{h.overallScore}</span>
+              {h.hasPending && h.auditStatus !== 'accepted' && (
+                <button
+                  type="button"
+                  className="btn btn-sm btn-primary"
+                  disabled={busy}
+                  title="存在待提交草稿，接受后可解锁下一章"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setChapter(h.chapter);
+                    void acceptPendingDraft(h.chapter);
+                  }}
+                >
+                  接受草稿
+                </button>
+              )}
               {h.hasText !== false && (
                 <button
                   type="button"

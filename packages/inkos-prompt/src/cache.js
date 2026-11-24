@@ -56,20 +56,6 @@ export function saveSceneSummary(bookDir, chapter, entry) {
   return file;
 }
 
-export function loadContextDiff(bookDir, chapter) {
-  const file = path.join(promptCacheDir(bookDir, chapter), 'context_diff.json');
-  if (!exists(file)) return null;
-  return readJson(file);
-}
-
-export function saveContextDiff(bookDir, chapter, diff) {
-  const dir = promptCacheDir(bookDir, chapter);
-  fs.mkdirSync(dir, { recursive: true });
-  const file = path.join(dir, 'context_diff.json');
-  writeJson(file, { ...diff, updatedAt: new Date().toISOString() });
-  return file;
-}
-
 export function loadContextSnapshot(bookDir, chapter) {
   const file = path.join(promptCacheDir(bookDir, chapter), 'context_snapshot.json');
   if (!exists(file)) return null;

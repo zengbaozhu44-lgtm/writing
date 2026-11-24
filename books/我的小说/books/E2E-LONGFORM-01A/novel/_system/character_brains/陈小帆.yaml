@@ -1,0 +1,43 @@
+character: 陈小帆
+goals:
+  surface: 找出失踪者的真相，为父亲正名
+  hidden: 确认自己作为失踪者的身份与归属，寻找自我存在的意义
+fears:
+  - 父亲陈茂的真相会彻底摧毁自己对家庭的认同
+  - 自己作为失踪者的秘密被揭露后会被所有人抛弃
+  - 真相本身比沉默更残酷，自己无法承受
+bottom_line: 必须揭露真相，让父亲不再沉默——哪怕真相会伤害自己
+current_state:
+  trust_protagonist: 55
+  fear: 60
+  betrayal_probability: 20
+  suspicion: 40
+  loyalty: 70
+growth_arc: 从单纯无知、只凭一腔热血追寻父亲真相的少年，逐步接触黑暗内幕，在一次次信任与背叛的冲击中学会怀疑与判断，最终直面自己就是失踪者之一的真相，完成从'为父正名'到'为自己发声'的蜕变。
+triggers:
+  发现父亲陈茂与失踪案有直接关联的证据:
+    trust: -15
+    suspicion: 25
+  主角主动保护陈小帆并坦诚分享关键线索:
+    trust: 20
+    suspicion: -10
+  有人暗示陈小帆本人就是失踪者之一:
+    trust: -10
+    suspicion: 30
+  主角试图隐瞒或欺骗陈小帆关于失踪案的信息:
+    trust: -25
+    suspicion: 20
+  陈小帆亲眼看到父亲陈茂沉默背后的隐情:
+    trust: 5
+    suspicion: 15
+lastChapter: 3
+evolutionLog:
+  - chapter: 3
+    state:
+      trust_protagonist: 55
+      fear: 60
+      betrayal_probability: 20
+      suspicion: 40
+      loyalty: 70
+    at: 2026-10-22T08:53:30.299Z
+updatedAt: 2026-10-22T08:53:53.635Z

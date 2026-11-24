@@ -123,21 +123,23 @@ function fallbackFactions(preset, storyDna) {
 
 function fallbackVolume(pitch, preset, storyDna) {
   const hook = storyDna?.core_hook || pitch;
-  const conflict = storyDna?.main_conflict || '建立核心对立';
-  return `# 第 1 卷 · ${storyDna?.title || preset}\n\n## 卷目标\n1. ${hook}\n2. ${conflict}\n3. 第一次失败与代价\n4. 揭露第一层秘密\n5. 章末大钩子\n\n## 卷末验收\n- [ ] 主角完成阶段目标\n- [ ] 至少一个不可逆变化`;
+  const conflict = storyDna?.main_conflict || 'no_causal_basis';
+  // D2：缺因果依据时用 no_causal_basis 标记，不用「第一次失败与代价」等伪因果占位
+  return `# 第 1 卷 · ${storyDna?.title || preset}\n\n## 卷目标\n1. ${hook}\n2. ${conflict}\n3. no_causal_basis\n4. no_causal_basis\n5. no_causal_basis\n\n## 卷末验收\n- [ ] 主角完成阶段目标\n- [ ] no_causal_basis`;
 }
 
 function fallbackChapterTask(pitch, preset) {
+  // D2：因果字段一律 no_causal_basis（缺数据不伪造因果）；goal=pitch 是真实材料，保留
   const f = {
     pov: '主角',
     goal: pitch,
-    obstacle1: '资源不足或信息缺失',
-    obstacle2: '对立势力阻挠',
-    bargain: '与关键人物博弈',
-    climax: '做出不可逆抉择',
-    cost: '时间或身体代价',
-    foreshadow: '埋下后续伏笔',
-    ending: '发现型钩子',
+    obstacle1: 'no_causal_basis',
+    obstacle2: 'no_causal_basis',
+    bargain: 'no_causal_basis',
+    climax: 'no_causal_basis',
+    cost: 'no_causal_basis',
+    foreshadow: 'no_causal_basis',
+    ending: 'no_causal_basis',
   };
   return { fields: f, markdown: serializeChapterTaskMd(f), source: 'preset' };
 }

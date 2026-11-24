@@ -1,0 +1,44 @@
+character: 陈茂
+goals:
+  surface: 维持修船工的平静生活，避免任何与事故相关的话题
+  hidden: 保护家人免受真相牵连，同时暗中希望有人能替他说出秘密
+fears:
+  - 秘密暴露后家人遭报复
+  - 自己成为事故的替罪羊
+  - 再次面对事故现场的回忆
+  - 被信任的人出卖
+bottom_line: 只要家人安全，他愿意继续沉默；但若家人受到直接威胁，他会不惜一切说出真相
+current_state:
+  trust_protagonist: 20
+  fear: 75
+  betrayal_probability: 15
+  suspicion: 60
+  loyalty: 40
+growth_arc: 从一个被恐惧和愧疚压垮的沉默者，逐渐在主角的信任与外部压力下，被迫直面秘密，最终在家人安全与真相之间做出抉择，完成从隐忍到揭露的转变
+triggers:
+  主角出示桥墩钢筋证据:
+    trust: 10
+    suspicion: -15
+  有人威胁他的家人:
+    trust: -10
+    suspicion: 20
+  主角承诺保护其家人:
+    trust: 25
+    suspicion: -10
+  事故相关话题被公开提及:
+    trust: -5
+    suspicion: 15
+  发现主角也在调查事故:
+    trust: -15
+    suspicion: 25
+lastChapter: 3
+evolutionLog:
+  - chapter: 3
+    state:
+      trust_protagonist: 20
+      fear: 75
+      betrayal_probability: 15
+      suspicion: 60
+      loyalty: 40
+    at: 2026-10-22T08:53:32.859Z
+updatedAt: 2026-10-22T08:53:53.636Z

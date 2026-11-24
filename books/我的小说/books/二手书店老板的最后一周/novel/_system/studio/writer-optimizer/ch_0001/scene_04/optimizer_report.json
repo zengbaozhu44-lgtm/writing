@@ -1,0 +1,1133 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 4,
+    "sceneType": "ending",
+    "beatMemory": {
+      "newFacts": [
+        "他翻到夹枯叶那页，叶子薄得像蝉翼，叶脉在灯光下透出暗褐的纹路，断口齐整，边缘微卷，像是被谁用指甲掐断的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "他掀开刚修好的《陶庵梦忆》，书脊上糨糊的湿气还没散尽，",
+        "他掀开刚修好的《陶庵梦忆》，书脊上糨糊的湿气还没散尽，把叶子平铺在湖心亭那页，拇指按住叶脉，慢慢合上书页",
+        "他翻到夹枯叶那页，叶子薄得像蝉翼，叶脉在灯光下透出暗褐的纹路，断口齐整，边缘微卷，像是被谁用指甲掐断的"
+      ],
+      "changedDimensions": [],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Decision",
+          "stateChange": false,
+          "afterState": "POV 已锁定可执行目标，局面即将被打破"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Countdown",
+          "stateChange": false,
+          "afterState": "阻力落地，目标受挫，退路收窄"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Decision",
+          "stateChange": false,
+          "afterState": "POV 已做出不可逆选择，后果即将落地"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Countdown",
+          "stateChange": false,
+          "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Discovery",
+          "stateChange": false,
+          "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Countdown",
+          "stateChange": false,
+          "afterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+        }
+      ],
+      "lastAfterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChangeCount": 0
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "林守常当前目标：转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用 — 局势尚未被本 Scene 改写",
+        "action": "转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。",
+        "choice": "为了完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-14T13:42:41.126Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "peel_orange",
+            "hand_touch",
+            "feed_cat",
+            "slip_note",
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周搁」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 153 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+            "NAME_DRIFT: 出现未登记角色名「周搁」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "林守常当前目标：转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Countdown",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "必须失去：【角色代价: 失去之物】他接住的不是一件买卖，是一个不肯说出口的处境——他用「多做一点、多给一分」的方式替对方的体面买单，代价是他越来越熟练地接受「告别不必被说出来」。真正的损失不在钱，在每一次被咽回去的话、每一件被轻轻放下又收进抽屉的橘子 — 且局面本身不会让步",
+        "choice": "为了完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "他掀开刚修好的《陶庵梦忆》，书脊上糨糊的湿气还没散尽，"
+        ],
+        "extractedAt": "2026-08-14T13:42:49.428Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "peel_orange",
+            "hand_touch",
+            "feed_cat",
+            "slip_note",
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周的、老槐」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 144 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "NAME_DRIFT: 出现未登记角色名「周的、老槐」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.02127659574468085
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "他掀开刚修好的《陶庵梦忆》，书脊上糨糊的湿气还没散尽，把叶子平铺在湖心亭那页，拇指按住叶脉，慢慢合上书页"
+        ],
+        "extractedAt": "2026-08-14T13:42:58.230Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "peel_orange",
+            "hand_touch",
+            "feed_cat",
+            "slip_note",
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "ACTION_REPLAY: 禁止重演已发生动作「剥橘子」；从上一句后果接着写下一动作"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 138 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：与近期表达重复，换动词/句式",
+            "Professional Dialogue：对白须推进剧情/冲突/关系/线索/误导，禁止闲聊",
+            "与上一段结尾高度重复",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": false,
+          "noRepeat": false,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.32592592592592595
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Countdown",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-14T13:43:08.242Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "peel_orange",
+            "hand_touch",
+            "feed_cat",
+            "slip_note",
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周远」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 152 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Professional Dialogue：对白须推进剧情/冲突/关系/线索/误导，禁止闲聊",
+            "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动",
+            "NAME_DRIFT: 出现未登记角色名「周远」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.04697986577181208
+          },
+          "microPassed": [
+            "危险"
+          ],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Discovery",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-14T13:43:19.330Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "peel_orange",
+            "hand_touch",
+            "feed_cat",
+            "slip_note",
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "ACTION_REPLAY: 禁止重演已发生动作「剥橘子」；从上一句后果接着写下一动作"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 172 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Language Variation：与近期表达重复，换动词/句式",
+            "Professional Dialogue：对白须推进剧情/冲突/关系/线索/误导，禁止闲聊",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 1/5（Promise兑现），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林守常已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "局势向终局推进 — 林守常已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.10650887573964497
+          },
+          "microPassed": [
+            "Promise兑现"
+          ],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "章尾强 Hook — 未完成动作或致命追问",
+        "choice": "为了完成「老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "他翻到夹枯叶那页，叶子薄得像蝉翼，叶脉在灯光下透出暗褐的纹路，断口齐整，边缘微卷，像是被谁用指甲掐断的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "他翻到夹枯叶那页，叶子薄得像蝉翼，叶脉在灯光下透出暗褐的纹路，断口齐整，边缘微卷，像是被谁用指甲掐断的"
+        ],
+        "extractedAt": "2026-08-14T13:43:32.672Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "leaf_into_book",
+            "peel_orange",
+            "hand_touch",
+            "feed_cat",
+            "slip_note",
+            "auth_press"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "NAME_DRIFT: 出现未登记角色名「周消」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Language Variation：与近期表达重复，换动词/句式",
+            "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动",
+            "NAME_DRIFT: 出现未登记角色名「周消」；本书角色只有 周岚、林守常、林小满、老周、阿婆。若指已有角色必须用其登记名；若指他人改用已知角色或泛指（那个人/那道身影），禁止发明新名字。",
+            "OPENING_REPEAT: 开场句与本章已有文本高度重复（「目录」从柜台底下探出半张脸，胡须上沾着）"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 林守常已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "林守常已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.07389162561576355
+          },
+          "microPassed": [
+            "危险"
+          ],
+          "continuityPass": false
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        }
+      ],
+      "scenePeak": {
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0
+      },
+      "emotionalVariance": 0,
+      "hasFluctuation": false,
+      "generatedAt": "2026-08-14T13:43:32.677Z",
+      "sceneIndex": 4
+    },
+    "readerSimulation": {
+      "curiosity": 61,
+      "questionCount": 1,
+      "dropRisk": 30,
+      "continueProbability": 60,
+      "sceneIndex": 4,
+      "pov": "林守常",
+      "simulatedAt": "2026-08-14T13:43:32.677Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 60,
+      "obstacleStrength": 40,
+      "choiceLevel": 52,
+      "consequenceLevel": 38,
+      "escalationLevel": 52,
+      "informationValue": 43,
+      "hookImpact": 58,
+      "stateChangeRate": 0,
+      "hookBreakdown": {
+        "hookLevel": 58,
+        "hookOutput": {
+          "type": "Cost",
+          "readerQuestion": "如果选这条路，还能回头吗？",
+          "cost": "不可逆 — 无论选哪条路都有全局性代价",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 3,
+          "stage": "Cost",
+          "name": "代价",
+          "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+          "example": "记得的人都会死亡",
+          "hookKind": "ActionHook",
+          "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": false,
+        "cognitiveUpgrade": 62,
+        "emotionalImpact": 38,
+        "characterCost": 75,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 49,
+      "weakest": "consequenceLevel",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-08-14T13:43:32.677Z",
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": false,
+        "valid": true,
+        "promise": "[object Object]",
+        "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+        "confidence": 0,
+        "signals": {
+          "payoffHit": false,
+          "promiseEcho": false
+        }
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 58,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "actionHookScore": 0,
+      "forcesAction": true,
+      "cognitiveUpgrade": 62,
+      "emotionalImpact": 38,
+      "characterCost": 75
+    },
+    "reward": {
+      "valid": true,
+      "requiresPromise": false,
+      "promiseId": "H001",
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "promiseSource": "foreshadow",
+      "promiseCategory": "foreshadow",
+      "promiseType": "medium",
+      "promiseImportance": 70,
+      "expectedChapter": 6,
+      "readerExpectation": 75,
+      "foreshadowId": "H001",
+      "description": "兑现期待：选择产生可见代价，局面因此改变",
+      "deliveryBeat": "newInformation",
+      "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+      "status": "pending"
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    },
+    "blocking": false,
+    "generatedAt": "2026-08-14T13:43:32.677Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 60,
+    "obstacleStrength": 40,
+    "choiceLevel": 52,
+    "consequenceLevel": 38,
+    "escalationLevel": 52,
+    "informationValue": 43,
+    "hookImpact": 58,
+    "stateChangeRate": 0,
+    "hookBreakdown": {
+      "hookLevel": 58,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 62,
+      "emotionalImpact": 38,
+      "characterCost": 75,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 49,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-14T13:43:32.677Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 0,
+      "signals": {
+        "payoffHit": false,
+        "promiseEcho": false
+      }
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 61,
+    "questionCount": 1,
+    "dropRisk": 30,
+    "continueProbability": 60,
+    "sceneIndex": 4,
+    "pov": "林守常",
+    "simulatedAt": "2026-08-14T13:43:32.677Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 0,
+      "anger": 0,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 0,
+    "hasFluctuation": false,
+    "generatedAt": "2026-08-14T13:43:32.677Z",
+    "sceneIndex": 4
+  },
+  "chapter": 1,
+  "scene": {
+    "id": "ch1_s4",
+    "index": 4,
+    "goal": "转折：老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 546,
+        "end": 598,
+        "chars": 52
+      },
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 328,
+        "end": 335,
+        "chars": 7
+      },
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 235,
+        "end": 470,
+        "chars": 227
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 159,
+        "end": 673,
+        "chars": 500
+      },
+      "edits": []
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 86,
+    "hook": 75,
+    "commercialPleasure": 68,
+    "styleConsistency": 59,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 86,
+    "hook": 75,
+    "commercialPleasure": 68,
+    "styleConsistency": 59,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "total": 80,
+  "totalBefore": 80,
+  "weakest": [
+    {
+      "id": "styleConsistency",
+      "score": 59
+    },
+    {
+      "id": "commercialPleasure",
+      "score": 68
+    },
+    {
+      "id": "hook",
+      "score": 75
+    }
+  ],
+  "polish": {
+    "changed": false,
+    "mode": "none",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 546,
+          "end": 598,
+          "chars": 52
+        },
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 328,
+          "end": 335,
+          "chars": 7
+        },
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 235,
+          "end": 470,
+          "chars": 227
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 159,
+          "end": 673,
+          "chars": 500
+        },
+        "edits": []
+      }
+    },
+    "edits": []
+  },
+  "diff": {
+    "prefixUnchanged": 673,
+    "draftChars": 655,
+    "polishedChars": 655,
+    "changed": false
+  },
+  "diffLines": [],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-08-14T13:43:32.691Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 86,
+      "hook": 75,
+      "commercialPleasure": 68,
+      "styleConsistency": 59,
+      "characterConsistency": 100,
+      "infoRelease": 80
+    },
+    "total": 80,
+    "weak": [
+      {
+        "id": "styleConsistency",
+        "score": 59
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 68
+      },
+      {
+        "id": "hook",
+        "score": 75
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "climax",
+        "score": 86
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "styleConsistency",
+        "score": 59
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 68
+      },
+      {
+        "id": "hook",
+        "score": 75
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 106,
+        "actionHits": 9,
+        "dialogHits": 3,
+        "variety": 3
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 3,
+        "len": 655
+      },
+      "styleConsistency": {
+        "shortRatio": 71,
+        "expoRun": 106
+      },
+      "characterConsistency": {
+        "pov": "林守常",
+        "present": [
+          "林守常"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 0,
+        "stagger": false
+      }
+    },
+    "chapter": 1,
+    "sceneIndex": 4,
+    "totalChars": 655
+  }
+}

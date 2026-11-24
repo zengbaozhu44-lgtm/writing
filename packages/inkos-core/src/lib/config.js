@@ -12,7 +12,11 @@ function loadDotEnv() {
     if (eq < 0) continue;
     const key = trimmed.slice(0, eq).trim();
     const val = trimmed.slice(eq + 1).trim();
-    if (!process.env[key]) process.env[key] = val;
+    // 2026-08-20 Golden Determinism：显式设空（''）是「禁用」意图，须被尊重。
+    // 原 `!process.env[key]` 会把 '' 当未设置 → 每轮 loadInkOsConfig 都从 .env 重新灌入，
+    // 使方案 B（golden 清 key 走 deterministic heuristic）永远无法生效。
+    // 语义 bug fix：仅当变量完全未定义才用 .env 值填充。正常路径零行为变化。
+    if (process.env[key] === undefined) process.env[key] = val;
   }
 }
 

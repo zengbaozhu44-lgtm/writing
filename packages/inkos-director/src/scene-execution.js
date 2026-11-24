@@ -5,6 +5,7 @@ import {
   STRUCTURAL_BEATS,
   assignLibraryBeats,
   libraryBeatInstruction,
+  sanitizeLibraryBeat,
 } from './beat-library.js';
 import { getSceneHookLadderEntry, formatHookLadderInstruction, formatHookOutputBlock, buildHookOutput, buildActionHookOutput } from './hook-ladder.js';
 import {
@@ -25,6 +26,7 @@ import {
   formatBeatStatePlanBlock,
   formatBeatStateSequenceBlock,
   migrateScenePlan,
+  validateBeatPlanDegeneration,
 } from './beat-state.js';
 import {
   buildSceneSituation,
@@ -46,6 +48,7 @@ import {
 } from './emotion-curve-engine.js';
 import { buildSceneConflict } from './conflict-engine.js';
 import { buildSceneClimaxRole } from './climax-engine.js';
+import { mapWaveToZh } from './reader-emotion-engine.js';
 import {
   buildQuestionRegistry,
   applyQuestionLifecycle,
@@ -192,6 +195,7 @@ export function buildSceneEngineBundle({
       climaxRole,
       sceneIndex,
       sceneCount,
+      storyDna: storyDna || intent?.storyDna || intent?._storyDna || {},
     });
 
   return {
@@ -207,26 +211,84 @@ export function buildSceneEngineBundle({
   };
 }
 
-function buildPlanFromScene(scene = {}, intent = {}) {
-  const sceneIndex = scene.index ?? 1;
-  const slim = (s, n = 42) => {
+/**
+ * S8.2：priorityGoal 不再做「唯一最高优先」裁决。
+ * 仅透传显式 scene/plan.goal（清洗模板壳）；禁止 desire/mainGoal 竞争排序。
+ * 无显式 goal → 空串（缺失 > 假完整）。
+ */
+export function derivePriorityGoal({ plan = {}, scene = {} } = {}) {
+  const slim = (s, n = 180) => {
     const t = String(s || '').trim();
     if (!t) return '';
-    const first = t.split(/[，。；;\n]/u)[0] || t;
-    return first.length <= n ? first : `${first.slice(0, n - 1)}…`;
+    return t.length <= n ? t : `${t.slice(0, n - 1)}…`;
+  };
+  const pick = (...xs) => xs.map((x) => String(x || '').trim()).find(Boolean);
+
+  const sceneGoal = pick(plan.goal, scene.goal);
+  if (!sceneGoal || /推进当前现实目标|推进章目标|no_causal_basis/u.test(sceneGoal)) {
+    return '';
+  }
+  const cleaned = sceneGoal
+    .replace(/^承接上章推进[：:]/u, '')
+    .replace(/^承接上章情绪「[^」]*」/u, '')
+    .replace(/^进入现场并确立危机[：:]?/u, '')
+    .replace(/^克服阻碍[：:]?/u, '')
+    .replace(/^场景[一二三四五六七八九十\d]+[：:]/u, '')
+    .replace(/^转折[：:]/u, '')
+    .replace(/^章末钩子[：:]/u, '')
+    .trim();
+  return cleaned.length >= 4 ? slim(cleaned, 180) : '';
+}
+
+/**
+ * 推导本 Scene 的角色「恐惧」— 仅显式 desire.fear / conflict 展示字段；禁止默认句冒充
+ */
+export function deriveSceneFear({ desire = {}, conflict = {} } = {}) {
+  const pick = (...xs) => xs.map((x) => String(x || '').trim()).find(Boolean);
+  const fear = pick(desire.fear, conflict.risk, conflict.cost);
+  if (!fear) return '';
+  const slim = (s, n = 60) => {
+    const t = String(s || '').trim();
+    if (!t) return '';
+    return t.length <= n ? t : `${t.slice(0, n - 1)}…`;
+  };
+  return slim(fear, 60);
+}
+
+/**
+ * 推导本 Scene 的选择（真实两难，非模板）。
+ * 2026-08-18（Beat Plan 退化硬化，Step 2）：只认显式 choice；
+ * 没有显式 choice 就返回 null —— 禁止用 goal+fear 合成「为了完成『scene goal』…」式的目标复述。
+ * 宁可让 choice 缺数据（buildSceneBeatPlan 记入 missing，Prompt Compiler 暴露缺口），也不拿 scene goal 填。
+ */
+export function deriveSceneChoice({ scene = {}, intent = {}, desire = {} } = {}) {
+  const pick = (...xs) => xs.map((x) => String(x || '').trim()).find(Boolean);
+  const explicit = pick(scene.choice, scene.plan?.choice, intent.choice, intent.chapterChoice);
+  if (explicit) return String(explicit).slice(0, 56);
+  return null;
+}
+
+function buildPlanFromScene(scene = {}, intent = {}) {
+  const sceneIndex = scene.index ?? 1;
+  // 保真截断：具体场景目标/冲突是导演/人工计划的权威内容，须完整流入 Beat。
+  // 仅做超长截断（>180 字）而非按首句 48 字截断，避免丢失「尸潮战术/病毒植入」等关键细节。
+  const slim = (s, n = 180) => {
+    if (typeof s === 'object' && s !== null) return s; // 结构化 newInformation 原样通过
+    const t = String(s || '').trim();
+    if (!t) return '';
+    return t.length <= n ? t : `${t.slice(0, n - 1)}…`;
   };
   const raw = scene.scenePlan || {
-    goal: slim(scene.goal, 48) || slim(intent.mainGoal, 36) || '推进章目标',
-    obstacle: slim(scene.obstacle || scene.conflict || intent.obstacles?.[0], 40) || '外部阻力',
-    escalation: scene.escalation || '冲突升级 — 代价逼近',
+    // 2026-08-18：不再注入模板默认（'推进章目标'/'外部阻力'/'段末悬念' 等）。
+    // 缺失即缺失，由 buildSceneBeatPlan 记入 missing 暴露缺口。
+    goal: slim(scene.goal, 180) || slim(intent.mainGoal, 120) || '',
+    obstacle: slim(scene.obstacle || scene.conflict || intent.obstacles?.[0], 180) || '',
+    escalation: scene.escalation || '',
     choice: scene.choice || null,
     consequence: scene.consequence || scene.cost || null,
     cost: scene.cost || scene.consequence || null,
     reward: scene.reward || null,
-    newInformation: sceneIndex <= 1
-      ? (slim(scene.newInformation, 40) || '落地一条可感知新信息（同一物件上的反馈，禁止另开界面）')
-      : (slim(scene.newInformation, 40) || '推进已有界面的后果/约束，禁止「再发现一个新界面」'),
-    cliffhanger: slim(scene.cliffhanger || scene.hook, 40) || '段末悬念',
+    newInformation: slim(scene.newInformation, 40) || '',
     targetEmotion: scene.targetEmotion || null,
     informationGap: scene.informationGap || null,
     promisePointer: scene.promisePointer || null,
@@ -267,19 +329,39 @@ function inferSceneOutcome(scene = {}, intent = {}, plan = {}) {
   };
 }
 
+/**
+ * 渲染 newInformation：支持结构化 { id, reveal: { object, fact, implication } }（Step 3 点名 schema）。
+ * 结构化 → 「{object}：{fact} → 含义：{implication}」；字符串 → 原样截断。
+ */
+function renderNewInformation(info, n = 48) {
+  if (info && typeof info === 'object') {
+    const reveal = info.reveal || info;
+    const object = String(reveal.object || info.object || info.id || '').trim();
+    const fact = String(reveal.fact || reveal.object || '').trim();
+    const implication = String(reveal.implication || '').trim();
+    const parts = [object || fact, implication ? `含义：${implication}` : ''].filter(Boolean);
+    const joined = parts.join('：');
+    return joined ? (joined.length <= n ? joined : `${joined.slice(0, n - 1)}…`) : '—';
+  }
+  const t = String(info || '').trim();
+  if (!t) return '—';
+  return t.length <= n ? t : `${t.slice(0, n - 1)}…`;
+}
+
 function beatContent(structural, plan, hookEntry, sceneType) {
-  const slim = (s, n = 56) => {
+  // 保真截断：保留具体计划内容（180 字内），不再按首句 56 字砍断关键细节
+  const slim = (s, n = 180) => {
+    if (typeof s === 'object' && s !== null) return renderNewInformation(s, 180);
     const t = String(s || '').trim();
     if (!t) return '—';
-    const first = t.split(/[，。；;\n]/u)[0] || t;
-    return first.length <= n ? first : `${first.slice(0, n - 1)}…`;
+    return t.length <= n ? t : `${t.slice(0, n - 1)}…`;
   };
   const map = {
     goal: slim(plan.goal),
     obstacle: slim(plan.obstacle),
     choice: slim(plan.choice),
     consequence: slim(plan.consequence),
-    newInformation: slim(plan.newInformation, 48),
+    newInformation: renderNewInformation(plan.newInformation, 48),
     hook: slim(plan.cliffhanger),
     escalation: slim(plan.choice),
   };
@@ -289,9 +371,9 @@ function beatContent(structural, plan, hookEntry, sceneType) {
     const instr = formatHookLadderInstruction(hookEntry).replace(/\n/g, ' · ');
     content = `${map.hook} · ${instr}`.slice(0, 120);
   }
-  // 非首 Scene 的 newInformation：禁止再塞整章高潮句
+  // 非首 Scene 的 newInformation：禁止再塞整章高潮句（仍保留具体信息内容）
   if (structural === 'newInformation' && plan.revealPolicy?.advanceOnly) {
-    content = slim(plan.newInformation || '推进已揭示信息的后果，禁止「第一次发现」', 48);
+    content = slim(plan.newInformation || '推进已揭示信息的后果，禁止「第一次发现」', 180);
   }
   if (hint) content = `${content} · [${sceneType}] ${hint}`;
   return content;
@@ -425,12 +507,19 @@ function resolveExecutionEmotionWave({
       sequence[0] = chapterSceneWave.targetEmotion;
     }
 
-    const beatTargets = sequence.map((targetEmotion, i) => ({
-      beatOrder: i + 1,
-      targetEmotion,
-      zh: fromReader?.beatTargets?.[i]?.zh || targetEmotion,
-      phase: fromReader?.beatTargets?.[i]?.phase || null,
-    }));
+    const beatTargets = sequence.map((targetEmotion, i) => {
+      const readerBeat = fromReader?.beatTargets?.[i] || null;
+      // 章级语义映射覆盖 sequence[0] 后，reader 原 beatTargets 的 zh 已失效（如 beat1 标「好奇」
+      // 实为 Tension）→ 只当 emotion 一致时沿用 reader 标签，否则按最终 targetEmotion 重新映射
+      return {
+        beatOrder: i + 1,
+        targetEmotion,
+        zh: readerBeat && readerBeat.targetEmotion === targetEmotion
+          ? (readerBeat.zh || mapWaveToZh(targetEmotion))
+          : mapWaveToZh(targetEmotion),
+        phase: readerBeat?.phase || null,
+      };
+    });
 
     return {
       version: fromReader?.version || chapterWave?.version || 'emotion-wave-1',
@@ -474,7 +563,7 @@ export function buildNarrativeBeatPlan({
     goal: plan.goal || '',
     conflict: plan.obstacle || conflict?.opposition || '',
     choice: plan.choice || '',
-    cost: plan.cost || plan.consequence || conflict?.cost || '',
+    cost: plan.cost || plan.consequence || '',
     reward: rewardText,
     escalation: plan.escalation || conflict?.escalation || '',
     targetEmotion: targetEmotion
@@ -561,6 +650,28 @@ export function buildSceneExecutionPlan({
   if (conflict?.opposition) {
     plan.obstacle = conflict.opposition;
   }
+
+  // S8.2：priorityGoal = 显式 scene.goal 透传，禁止 desire 竞争压缩为「唯一最高优先」
+  const priorityGoal = derivePriorityGoal({ plan, scene });
+  // choice：只认显式（deriveSceneChoice）；consequence：只认 authored，禁止 conflict.cost 升格
+  const isTemplateChoice = !plan.choice
+    || /必须做出选择|有限选项|二选一|冲突升级|代价逼近|外部阻力|no_causal_basis/u.test(plan.choice)
+    || (plan.escalation && plan.choice === plan.escalation);
+  if (isTemplateChoice) {
+    plan.choice = deriveSceneChoice({ scene, intent, desire: characterDesire });
+    if (!plan.choice) plan._choiceMissing = true;
+  }
+  const authoredConsequence = String(plan.consequence || scene.consequence || plan.cost || scene.cost || '').trim();
+  const isTemplateConsequence = !authoredConsequence
+    || /选择产生可见代价|局面因此改变|no_causal_basis/u.test(authoredConsequence);
+  if (isTemplateConsequence) {
+    // 缺失 > 假完整：不把 conflict.cost / inferCost 升为 Choice consequence
+    plan.consequence = '';
+    plan._consequenceMissing = true;
+  } else {
+    plan.consequence = authoredConsequence.slice(0, 180);
+  }
+  plan.cost = plan.consequence || '';
 
   const hookEntryRaw = hookLadder?.find((h) => h.sceneIndex === sceneIndex)
     || getSceneHookLadderEntry(sceneIndex, sceneCount, chapter, 0, storyDna);
@@ -679,7 +790,6 @@ export function buildSceneExecutionPlan({
   const narrativeFields = {
     choice: narrativeBeatPlan.choice,
     cost: narrativeBeatPlan.cost,
-    reward: narrativeBeatPlan.reward,
     escalation: narrativeBeatPlan.escalation,
     targetEmotion: narrativeBeatPlan.targetEmotion,
     informationGap,
@@ -752,7 +862,12 @@ export function buildSceneExecutionPlan({
   beatStatePlans = buildSituationBeatChain(situation, beatStatePlans);
 
   const beats = STRUCTURAL_BEATS.map((structural, order) => {
-    const libraryBeat = libraryMap[structural] || libraryMap.escalation;
+    const rawLibrary = libraryMap[structural] || libraryMap.escalation;
+    // F7.1: Decision only on choice structural beat (or authored concrete choice on plan)
+    const authoredChoice = structural === 'choice' && Boolean(
+      String(plan?.choice || planWithChapter?.choice || '').trim(),
+    );
+    const libraryBeat = sanitizeLibraryBeat(structural, rawLibrary, { authoredChoice });
     const wordBudget = Math.max(70, Math.round(wordTarget * (wordShare[structural] || 0.14)));
     const beatStatePlan = beatStatePlans[order]
       || buildSceneBeatPlan(structural, plan, {
@@ -768,7 +883,7 @@ export function buildSceneExecutionPlan({
       structuralBeat: structural,
       label: STRUCTURAL_LABELS[structural],
       libraryBeat,
-      libraryInstruction: libraryBeatInstruction(libraryBeat),
+      libraryInstruction: libraryBeatInstruction(libraryBeat, structural, { authoredChoice }),
       content: beatContent(structural, plan, structural === 'hook' ? hookEntry : null, resolvedSceneType),
       wordBudget,
       hookLadder: structural === 'hook' ? hookEntry : null,
@@ -780,9 +895,11 @@ export function buildSceneExecutionPlan({
       beatPlan: beatStatePlan,
       beforeState: beatStatePlan?.beforeState,
       action: beatStatePlan?.action,
-      choice: beatStatePlan?.choice || planWithChapter.choice || null,
+      // 2026-08-18（Step 2）：choice 只属于「choice」拍且只认具体两难；
+      // 禁止 scene goal/模板经 planWithChapter.choice 回落到任何拍（含 goal/obstacle 拍）。
+      choice: structural === 'choice' ? (beatStatePlan?.choice || null) : null,
       consequence: beatStatePlan?.consequence,
-      cost: planWithChapter.cost || planWithChapter.consequence || conflict?.cost || beatStatePlan?.consequence || null,
+      cost: planWithChapter.cost || planWithChapter.consequence || beatStatePlan?.consequence || null,
       escalation: planWithChapter.escalation || null,
       afterState: beatStatePlan?.afterState,
       stateChange: beatStatePlan?.stateChange ?? true,
@@ -804,9 +921,16 @@ export function buildSceneExecutionPlan({
     if (b.structuralBeat === 'choice' && characterTransformation?.writerMust) {
       b.content = `${b.content} · ${characterTransformation.writerMust}`;
     }
-    if (b.structuralBeat === 'choice' && characterBehavior?.behaviorLogic?.irrationalAction) {
-      b.content = `${b.content} · 真人动机：${characterBehavior.behaviorLogic.irrationalAction.slice(0, 40)}（欲望/恐惧/经历，非剧情按钮）`;
-      b.behaviorLogic = characterBehavior.behaviorLogic;
+    if (b.structuralBeat === 'choice' && characterBehavior?.behaviorLogic && !characterBehavior.missing) {
+      const bl = characterBehavior.behaviorLogic;
+      const motiveBits = [bl.desire, bl.fear].filter(Boolean).join(' / ');
+      if (motiveBits) {
+        b.content = `${b.content} · 显式动机字段：${motiveBits.slice(0, 40)}（禁止补隐藏理由）`;
+      }
+      b.behaviorLogic = bl;
+      b.characterBehavior = characterBehavior;
+    } else if (b.structuralBeat === 'choice' && characterBehavior?.missing) {
+      b.content = `${b.content} · behavior basis missing（禁止编造私人动机）`;
       b.characterBehavior = characterBehavior;
     }
     if (b.structuralBeat === 'goal' && sceneEntertainment?.entertainment?.visualMoment) {
@@ -818,8 +942,9 @@ export function buildSceneExecutionPlan({
     if (b.structuralBeat === 'hook' && sceneEntertainment?.entertainment?.dialogueMoment) {
       b.content = `${b.content} · 对白瞬间：${sceneEntertainment.entertainment.dialogueMoment.slice(0, 36)}`;
     }
-    if (b.structuralBeat === 'consequence' && conflict?.irreversibleChange) {
-      b.content = `${b.content} · 不可逆：${conflict.irreversibleChange.slice(0, 50)}`;
+    // S8.2-R4-B：conflict irreversible 不得进入 consequence 指令当 Choice 后果
+    if (b.structuralBeat === 'obstacle' && conflict?.irreversibleChange) {
+      b.content = `${b.content} · Conflict potential, not Choice consequence：${conflict.irreversibleChange.slice(0, 45)}`;
     }
   }
 
@@ -885,8 +1010,24 @@ export function buildSceneExecutionPlan({
 
   const libraryTypesUsed = [...new Set(enrichedBeats.map((b) => b.libraryBeat))];
 
+  // Step 4：Beat Plan Degeneration 检测——连续两拍空洞即退化，随 executionPlan 暴露给
+  // Prompt Compiler / Studio 预览，不允许空洞计划无声进入 Writer。
+  const planDegeneration = validateBeatPlanDegeneration(enrichedBeats);
+
+  // P3.4-1：revealPolicy / narrativeRewardText 是 0 消费者输出槽——只从 scenePlan 出口剔除。
+  // 局部计算保留：buildNarrativeBeatPlan 读 planWithChapter.narrativeRewardText（:821）、
+  // beatContent 读 plan.revealPolicy（:406）、构建期 :639-644 仍设置在局部 plan 上。
+  // P3.5-1：authorIntent 双载体收敛——② executionPlan.scenePlan.authorIntent 是 ④ 的冗余传播
+  // （唯一消费者 beat-slimmer:606-609 已改读 scene?.scenePlan?.authorIntent 单链）。
+  // source（scene.authorIntent）+ ④（scene.scenePlan.authorIntent）保留。
+  const scenePlanView = { ...planWithChapter };
+  delete scenePlanView.revealPolicy;
+  delete scenePlanView.narrativeRewardText;
+  delete scenePlanView.authorIntent;
+
   return {
     version: 'scene-execution-10',
+    planDegeneration,
     sceneIndex,
     sceneId: scene.id,
     sceneType: resolvedSceneType,
@@ -911,11 +1052,11 @@ export function buildSceneExecutionPlan({
     informationGap,
     narrativeBeatPlan,
     // 顶层叙事字段（模块 4 / 1.5）
-    choice: narrativeFields.choice,
+    // P3.3：顶层 choice/narrativeReward 投影全仓 0 消费者 → 删。
+    // choice 经 plan.choice（owner）/scenePlan.choice（嵌套）/narrativeBeatPlan.choice（brief）/beat 渲染保留。
     cost: narrativeFields.cost,
     escalation: narrativeFields.escalation,
     targetEmotion: narrativeFields.targetEmotion,
-    narrativeReward: narrativeFields.reward,
     promisePointer,
     chapterNarrativePlan: chapterNarrative,
     promiseLifecycle,
@@ -933,14 +1074,13 @@ export function buildSceneExecutionPlan({
     conflict,
     climaxRole,
     chapterClimax,
-    tensionRewardThreat: {
-      tension: ['goal', 'obstacle', 'choice', 'consequence'],
-      reward: reward.deliveryBeat || 'newInformation',
-      newThreat: 'hook',
-    },
+    // P3.4-1：顶层 tensionRewardThreat 全仓 0 消费者（reward 真实读点是 narrativeBeatPlan.reward）→ 删。
     sceneOutcome: outcome,
+    // P3.2 C2：priorityGoal 收敛到嵌套 scenePlan 单层 owner（顶层投影删）；
+    // sceneFear 顶层+嵌套双删（全仓 0 代码消费者，纯归档 render slot）。
     scenePlan: {
-      ...planWithChapter,
+      ...scenePlanView,
+      priorityGoal,
       situation,
       questions,
       questionRegistry,
@@ -951,7 +1091,7 @@ export function buildSceneExecutionPlan({
       readerEmotion,
       emotionWave,
       informationGap,
-      narrativeBeatPlan,
+      // P3.4-1：嵌套 scenePlan.narrativeBeatPlan 镜像 0 消费者（SD brief 唯一读点=顶层）→ 删。
       choice: narrativeFields.choice,
       cost: narrativeFields.cost,
       escalation: narrativeFields.escalation,
@@ -1003,16 +1143,22 @@ export function buildSceneExecutionPlan({
       questions?.lifecycle?.activeCount != null
         ? `**Question Lifecycle**：活跃 ${questions.lifecycle.activeCount} 条（须回答/收口/过期）`
         : '',
-      conflict?.cost ? `**冲突代价**：${conflict.cost.slice(0, 60)}` : '',
+      conflict?.cost
+        ? (conflict.costAuthored
+          ? `**Authored conflict cost（可展示，≠ 自动 Choice consequence）**：${conflict.cost.slice(0, 55)}`
+          : `**Conflict potential, not Choice consequence**：${conflict.cost.slice(0, 55)}`)
+        : '',
       conflict?.irreversibleChange
-        ? `**不可逆改变**：${conflict.irreversibleChange.slice(0, 55)}`
+        ? `**Conflict potential, not Choice consequence**：${conflict.irreversibleChange.slice(0, 50)}`
         : '',
       characterTransformation?.writerMust
         ? `**人物转变**：${characterTransformation.writerMust.slice(0, 55)}`
         : '',
-      characterBehavior?.behaviorLogic?.irrationalAction
-        ? `**真人行为**：欲望「${characterBehavior.behaviorLogic.desire}」→ ${characterBehavior.behaviorLogic.irrationalAction.slice(0, 40)}`
-        : '',
+      characterBehavior && !characterBehavior.missing && characterBehavior.behaviorLogic?.desire
+        ? `**显式欲望字段**：${characterBehavior.behaviorLogic.desire.slice(0, 40)}`
+        : characterBehavior?.missing
+          ? '**behavior**：basis missing'
+          : '',
       sceneEntertainment?.entertainment?.visualMoment
         ? `**场景好看**：视觉「${sceneEntertainment.entertainment.visualMoment.slice(0, 28)}」· 反转「${sceneEntertainment.entertainment.surpriseMoment?.slice(0, 28) || ''}」`
         : '',
@@ -1046,7 +1192,7 @@ export function buildSceneExecutionPlan({
       `**须回答 Reader Question**：${questions.answeredReaderQuestion?.readerQuestion || questions.answeredQuestion || '—'}`,
       `**须提出 Reader Question ×2**：${(questions.newReaderQuestions || []).map((q) => q.readerQuestion).join(' · ') || (questions.newQuestions || []).join(' · ') || '—'}`,
       '**商业原则1**：不写「事件发生」，写「事件改变局势」— 每 Beat After ≠ Before',
-      '**商业原则2**：问题 → 付出代价 → 获得奖励 — Reward Beat 须让读者感到「赚到了」',
+      '**商业原则2**：问题 →（有 authored consequence 才写代价）→ 获得奖励 — Reward Beat 须让读者感到「赚到了」',
       '**商业原则3**：紧张 → 释放 → 更大危机 — 禁止连续加压无释放',
       '**商业原则4**：本 Scene 须回答「为什么读者现在必须继续看？」',
       '**Scene 心理节奏**：Tension → Reward → New Threat — 禁止全程紧张无释放',
@@ -1075,6 +1221,13 @@ export function buildBeatExecutionPromptBlock(executionPlan) {
     '',
     '**Writer 不得自由发挥**：每 Beat 只写当前段，且必须改变故事状态。',
     '',
+    ...(executionPlan.planDegeneration?.degenerate
+      ? [
+          '⚠️ **Beat Plan 退化**（连续两拍无具体动作/抉择/新信息）——缺口拍必须由 Writer 补上具体内容，禁止用「继续/推进/制造/释放」填空；补不上按硬失败拒稿：',
+          ...executionPlan.planDegeneration.issues.slice(0, 3),
+          '',
+        ]
+      : []),
     ...executionPlan.rules.map((r) => `- ${r}`),
     '',
     formatBeatStateSequenceBlock(executionPlan.beatStatePlans),

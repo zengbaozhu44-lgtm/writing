@@ -82,3 +82,14 @@
 
 - 本次更新仅为审计记录，不修改任何文件内容。
 - 所有结论都带有范围限制，便于后续接续。
+
+## 11. B3 Consumer / Operational Audit — CLOSED
+
+- 44 初始 orphan 候选审计完成：10 OPERATIONAL + 2 STALE + 3 HISTORICAL/DEAD_API_GUARD + 35 UNKNOWN(FROZEN) + 2 REDUNDANT。
+- 44 → 42 脚本。
+- 删除 2 个冗余测试：
+  - `scripts/test-execution-narrative-plan.js`
+  - `scripts/test-module-1_5-execution-narrative.js`
+- 删除验收：module-4 / decision-conflict-null / memory-unit / chapter-audit-flow / beat-execution / regression 全 exit=0；golden 3× normalized byte-identical（sha256 16546bc1…）。
+- 提交：`8284fe7`「chore: remove redundant narrative execution tests」——单独 commit，267 P3 unstaged 改动未混入。
+- B3 CLOSED。

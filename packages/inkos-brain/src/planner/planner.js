@@ -7,6 +7,11 @@ import { exists, readJson } from '../../../inkos-core/src/lib/paths.js';
 import path from 'node:path';
 import { applyStoryMapToIntent } from './story-map.js';
 import { sanitizeObstacleSuggestion } from '../decision/content-policy.js';
+import {
+  sanitizeAuthoredObstacleField,
+  sanitizeAuthoredPlannerField,
+  TEMPLATE_FALLBACKS,
+} from '../authored/authored-input-sanitize.js';
 import { suggestSafeObstacle } from './conflict-suggester.js';
 
 /** 统一命名：states/ch_XXXX_anchor.yaml（4 位，禁止 ch_1_anchor / anchor_0001 等） */
@@ -74,10 +79,19 @@ export function planChapter(ctx, attempt = 1, options = {}) {
   const chapterTone = options.chapterTone
     || (Number(chapter) <= 3 ? loadWizardChapterTone(bookDir, chapter) : null);
 
+  // 主目标：忽略占位符（"待规划第N章" / "—" 等），避免模板自循环；
+  // 真目标只来自 任务卡/08卡/卷纲/故事地图。占位符一旦被当成具体目标，
+  // 会挡掉 story-map 的真实 mapGoal 注入并传播进 09 卡。
+  const PLACEHOLDER_GOAL_RE = /待规划|规划中|^—$|^未|placeholder/i;
+  const realGoal = (v) => {
+    const s = String(v || '').trim();
+    return s && !PLACEHOLDER_GOAL_RE.test(s) ? s : null;
+  };
+
   let mainGoal =
-    chapterTask['目标'] ||
-    chapterTask['本章现实目标'] ||
-    state['任务'] ||
+    realGoal(chapterTask['目标']) ||
+    realGoal(chapterTask['本章现实目标']) ||
+    realGoal(state['任务']) ||
     null;
 
   // 卷纲散文：按章号映射 sceneSeeds / goals（不仅取第 1 条）
@@ -90,19 +104,21 @@ export function planChapter(ctx, attempt = 1, options = {}) {
   const volumeSeed = seeds[volIdx] || null;
   const volumeGoalLine = goals[volIdx] || goals[0] || '';
   if (!mainGoal) {
-    mainGoal = volumeSeed?.seed || volumeGoalLine || '推进当前现实目标';
+    // D2：缺因果依据 → no_causal_basis 标记，绝不模板填空（宁可薄，不假因果）。
+    mainGoal = volumeSeed?.seed || volumeGoalLine || 'no_causal_basis';
   }
 
-  const obstacle1 = sanitizeObstacleSuggestion(
-    chapterTask['第一阻碍'] || chapterTask['阻碍'] || options.suggestObstacle || '资源不足或时间压力',
-    '资源不足或时间压力',
+  // S3：读时隔离 B 类脚手架 —— 与 Causal isTemplateFallback 同口径，禁止升级为作者意图
+  const obstacle1 = sanitizeAuthoredObstacleField(
+    chapterTask['第一阻碍'] || chapterTask['阻碍'] || options.suggestObstacle || '',
   );
-  const obstacle2 = sanitizeObstacleSuggestion(
-    chapterTask['第二阻碍'] || '信息不完整',
-    '信息不完整',
+  const obstacle2 = sanitizeAuthoredObstacleField(chapterTask['第二阻碍'] || '');
+  const turningPoint = sanitizeAuthoredPlannerField(
+    chapterTask['高潮'] || chapterTask['转折'] || '',
   );
-  const turningPoint = chapterTask['高潮'] || chapterTask['转折'] || '关键抉择导致不可逆变化';
-  let ending = chapterTask['结尾'] || chapterTask['结尾方向'] || '发现型钩子';
+  let ending = sanitizeAuthoredPlannerField(
+    chapterTask['结尾'] || chapterTask['结尾方向'] || '',
+  );
   const bargain = chapterTask['博弈'] || chapterTask['人物博弈'] || '';
 
   if (chapterTone) {
@@ -127,7 +143,9 @@ export function planChapter(ctx, attempt = 1, options = {}) {
     ending,
     bargain,
     mustGain: chapterTask['必须获得'] || '',
-    mustLose: chapterTask['必须失去'] || chapterTask['代价'] || '时间或身体代价',
+    mustLose: sanitizeAuthoredPlannerField(
+      chapterTask['必须失去'] || chapterTask['代价'] || '',
+    ),
     newForeshadow: chapterTask['新增伏笔'] || '',
     volumeGoals: goals,
     sceneSeeds: seeds,
@@ -144,6 +162,7 @@ export function planChapter(ctx, attempt = 1, options = {}) {
     narrativeMomentum: priorAnchor?.narrative_momentum || null,
     closingEmotion: priorAnchor?.narrative_momentum?.closing_emotion || null,
     forbiddenOpenings: priorAnchor?.narrative_momentum?.forbidden_openings || [],
+    tailExcerpt: priorAnchor?.narrative_momentum?.tailExcerpt || null,
     voiceDna: priorAnchor?.voiceDna
       ? { ...priorAnchor.voiceDna, forced: true, inherited: true }
       : null,
@@ -172,6 +191,10 @@ export function planChapter(ctx, attempt = 1, options = {}) {
   }
 
   intent.scenes = deriveScenes(intent);
+  // 完整行动线保留在 intent，供 Writer 路径注入（Scene goal 已携带，这里作章级旁注）
+  if (!intent.actionLine && intent.turningPoint) {
+    intent.actionLine = String(intent.turningPoint).trim();
+  }
   intent = applyWeightsToIntent(intent, weights);
   if (priorAnchor) {
     intent = applyAnchorConstraints(intent, priorAnchor);
@@ -190,8 +213,201 @@ export function planChapter(ctx, attempt = 1, options = {}) {
 }
 
 /**
+ * 读取 Studio 导演/人工确认的 chapter_{N}_plan.yaml（具体计划，权威来源）
+ * 结构：{ chapter, goal, conflict, climax, cost, hook, scenes:[...], obstacle1, ending, pov, time }
+ */
+export function loadAuthoredChapterPlan(bookDir, chapter) {
+  if (!bookDir) return null;
+  try {
+    const dir = path.join(bookDir, 'novel', '_system', 'chapter_plans');
+    const n = String(Number(chapter)).padStart(4, '0');
+    for (const name of [`chapter_${n}.yaml`, `ch_${n}.yaml`]) {
+      const file = path.join(dir, name);
+      if (exists(file)) {
+        const plan = readYaml(file);
+        if (plan && (plan.goal || plan.conflict || plan.climax)) return { ...plan, _file: file };
+      }
+    }
+  } catch { /* ignore */ }
+  return null;
+}
+
+const PLAN_TEMPLATE_STRINGS = TEMPLATE_FALLBACKS;
+
+/** 判定 yaml 计划是否具体（含可执行冲突/高潮/场景），而非占位模板 */
+export function isAuthoredPlanSpecific(plan = null) {
+  if (!plan) return false;
+  const corpus = [
+    plan.goal,
+    plan.conflict,
+    plan.obstacle1,
+    plan.climax,
+    plan.hook,
+    plan.ending,
+    ...(Array.isArray(plan.scenes) ? plan.scenes : []),
+  ].join('\n');
+  if (!corpus.trim()) return false;
+  const tokens = corpus.split(/[\s，。；、\n]/u).filter(Boolean);
+  const templateCount = tokens.filter((t) => PLAN_TEMPLATE_STRINGS.has(t.trim())).length;
+  // 具体计划：模板词占比低，且有实质内容
+  return tokens.length >= 8 && templateCount / tokens.length < 0.35;
+}
+
+/**
+ * 判断 authored scene 目标是否已把 plan.climax 演完（内容高度重叠）。
+ * 若已覆盖，serializeAuthoredPlanToIntent 不再用 climax 派生「转折与代价」补拍——
+ * 否则会造出一个与上一 Scene 同目标的场景：Writer 首稿即复读上一幕句子，
+ * 触发防复读硬失败（如 3 场景计划里 scene3 已是「独处收束」高潮，再补 scene4 剥橘子=复读）。
+ * 判据：去除标点/空白后的字符 bigram Jaccard（占较短文本之比），非高潮场景通常 <0.3。
+ */
+function authoredSceneCoversClimax(sceneGoal, climax) {
+  const strip = (t) => String(t)
+    .replace(/承接上章推进：|场景\d+[：:]/gu, '')
+    // 场景设定/禁止类指导语（「本场景他不会出现。」「禁止再写他本人/…/巷口。」）
+    // 稀释内容重叠度，会压低 bigram 比值 → 误判为「未覆盖 climax」→ 冗余补拍。
+    // 必须在标点剥离前移除（标点剥离后「。」已消失，句段正则匹配不到）。
+    .replace(/本场景[^。]*。/gu, '')
+    .replace(/禁止[^。]*。/gu, '')
+    .replace(/[，。！？、；：""''「」—…·\s]/gu, '');
+  const a = strip(sceneGoal);
+  const b = strip(climax);
+  if (!a || !b || a.length < 6 || b.length < 6) return false;
+  const grams = (s) => {
+    const out = new Set();
+    for (let i = 0; i < s.length - 1; i++) out.add(s.slice(i, i + 2));
+    return out;
+  };
+  const A = grams(a);
+  const B = grams(b);
+  let shared = 0;
+  for (const g of A) if (B.has(g)) shared++;
+  return shared / Math.min(A.size, B.size) >= 0.35;
+}
+
+export function serializeAuthoredPlanToIntent(plan, nextChapter, priorAnchor, storyMap = null) {
+  const scenes = Array.isArray(plan.scenes) ? plan.scenes : [];
+  const sceneList = scenes.map((s, i) => {
+    const text = String(s || '').trim();
+    const beat = ['situation', 'complication', 'turn', 'hook'][i] || null;
+    return {
+      index: i + 1,
+      id: `ch${nextChapter}_s${i + 1}`,
+      title: ['进入局面', '受阻与博弈', '转折与代价', '章末钩子'][i] || `场景${i + 1}`,
+      goal: text ? `承接上章推进：${text.slice(0, 150)}` : null,
+      conflict: plan.conflict ? `推进冲突：${String(plan.conflict).slice(0, 150)}` : 'no_causal_basis',
+      entities: [plan.pov || priorAnchor?.pov || '主角'],
+      beat,
+      revealPolicy: { allowFirstReveal: i === 0, advanceOnly: i > 0 },
+    };
+  }).filter((s) => s.goal);
+
+  // 若 authored scenes <4，用 climax/cost/hook/ending 补齐至四拍骨架（保留完整弧线）
+  // 但若最后一段 authored scene 已把 climax 演完（如 scene3 已是独处收束高潮），
+  // 不再补「转折与代价」—— 否则补出的场景与上一 Scene 同目标，Writer 复读上一幕
+  // 句子 → 防复读硬失败（见 authoredSceneCoversClimax）。
+  const lastAuthoredGoal = sceneList[sceneList.length - 1]?.goal || '';
+  const climaxCovered = authoredSceneCoversClimax(lastAuthoredGoal, plan.climax);
+  const pads = [];
+  if (sceneList.length < 4 && !climaxCovered) {
+    const nextIdx = sceneList.length + 1;
+    const turnGoal = plan.climax ? `转折：${String(plan.climax).slice(0, 150)}` : 'no_causal_basis';
+    const turnConflict = plan.cost && plan.cost !== 'no_causal_basis' ? `必须失去：${String(plan.cost).slice(0, 120)}` : 'no_causal_basis';
+    pads.push({
+      index: nextIdx,
+      id: `ch${nextChapter}_s${nextIdx}`,
+      title: '转折与代价',
+      goal: turnGoal,
+      conflict: plan.cost && plan.cost !== 'no_causal_basis' ? `必须失去：${String(plan.cost).slice(0, 120)}` : 'no_causal_basis',
+      entities: [plan.pov || priorAnchor?.pov || '主角'],
+      beat: 'turn',
+      revealPolicy: { allowFirstReveal: false, advanceOnly: true },
+    });
+    if (sceneList.length < 3) {
+      const hookIdx = nextIdx + 1;
+      const endingText = String(plan.ending || plan.hook || '').trim();
+      // 章末钩子必须是「过程」而非「定格瞬间」：钩子是全章收束后的余波推进，
+      // 若直接复用「摧毁瞬间」作整场目标，Writer 会把同一瞬间复写 6 拍。
+      // 过程化改写：从 ending 抽出「余波→异常→威胁成形」的动作链。
+      const hookProcess = endingText
+        ? endingText.replace(/^「[^」]*」被摧毁的瞬间，/u, '余波已落定：')
+        : '';
+      const hookGoal = hookProcess
+        ? `章末钩子·余波：${hookProcess.replace(/^余波已落定：/u, '').slice(0, 150)}`
+        : 'no_causal_basis';
+      const hookConflict = plan.ending && /警告|不该打开|门/u.test(endingText)
+        ? `余波冲突：${endingText.slice(0, 150)}`
+        : 'no_causal_basis';
+      pads.push({
+        index: hookIdx,
+        id: `ch${nextChapter}_s${hookIdx}`,
+        title: '章末钩子',
+        goal: hookGoal,
+        conflict: hookConflict,
+        entities: [plan.pov || priorAnchor?.pov || '主角'],
+        beat: 'hook',
+        revealPolicy: { allowFirstReveal: false, advanceOnly: true },
+      });
+    }
+  }
+  sceneList.push(...pads.filter((p) => p.goal && !p.goal.endsWith('：')));
+  // 归一化 index 连续
+  sceneList.forEach((s, i) => { s.index = i + 1; s.id = `ch${nextChapter}_s${i + 1}`; });
+
+  return {
+    chapter: nextChapter,
+    attempt: 1,
+    pov: plan.pov || priorAnchor?.pov || '主角',
+    present: [plan.pov || '主角'].filter(Boolean),
+    chapterIntent: `第${nextChapter}章：${plan.goal || ''}`,
+    mainGoal: plan.goal || plan.obstacle1 || 'no_causal_basis',
+    obstacles: [plan.obstacle1 || plan.conflict || 'no_causal_basis', plan.obstacle2 || 'no_causal_basis'].filter(Boolean),
+    turningPoint: plan.climax || 'no_causal_basis',
+    ending: plan.ending || plan.hook || 'no_causal_basis',
+    bargain: plan.bargain || '',
+    mustGain: plan.mustGain || '',
+    mustLose: plan.cost || plan.mustLose || 'no_causal_basis',
+    newForeshadow: plan.foreshadow || plan.newForeshadow || '',
+    sceneSeeds: [],
+    volumeAuthorNotes: '',
+    contextFacts: [],
+    location: plan.location || priorAnchor?.location || '',
+    time: plan.time || priorAnchor?.current_date || '',
+    currentDate: plan.time || priorAnchor?.current_date || '',
+    adaptiveWeights: null,
+    priorAnchor: priorAnchor || null,
+    bannedElements: priorAnchor?.banned_elements || [],
+    relationshipState: priorAnchor?.relationship_state || null,
+    narrativeMomentum: priorAnchor?.narrative_momentum || null,
+    closingEmotion: priorAnchor?.narrative_momentum?.closing_emotion || null,
+    forbiddenOpenings: priorAnchor?.narrative_momentum?.forbidden_openings || [],
+    tailExcerpt: priorAnchor?.narrative_momentum?.tailExcerpt || null,
+    voiceDna: priorAnchor?.voiceDna ? { ...priorAnchor.voiceDna, forced: true, inherited: true } : null,
+    chapterTone: null,
+    tone: null,
+    endingDirection: plan.ending || plan.hook || 'no_causal_basis',
+    wordTarget: plan.wordTarget || null,
+    storyMap,
+    // EO-P4-Authored-CADE-Channel-01: 人物侧显式决策创作（authored 通道；
+    // 与 authored Character SR 同模式——独立语义通道，绝不从 mainGoal/
+    // scene.goal/causalChain 等 STORY CONTROL 字段复制/派生）。
+    // 每项: { characterId, actionContent, decisionKind?, sceneIndex? }
+    characterDecisions: Array.isArray(plan.characterDecisions) ? plan.characterDecisions : [],
+    // Phase 3.2 authored Character SR 通道闭合（EO wiring）：
+    // { 人物名: { interpretation:[{of,as}], belief:[...], stance:[{stance,about}], awareness:[...] } }
+    // 人类 authored；SR producer 仅在此显式输入下填充解读三槽（explicit only）。
+    characterSR: plan.characterSR && typeof plan.characterSR === 'object' && !Array.isArray(plan.characterSR)
+      ? plan.characterSR
+      : null,
+    scenes: sceneList,
+  };
+}
+
+/**
  * 规划下一章 — 强制读取上一章 ch_XXXX_anchor.yaml 作为约束
  * 缺文件直接抛错（禁止失忆规划）
+ *
+ * 优先采用 Studio 导演/人工确认的 chapter_{N}_plan.yaml（具体计划），
+ * 仅当不存在具体计划时才从 chapterTask 派生（模板兜底）。
  */
 export function planNextChapter(bookDir, finishedChapter, ctx = {}, weights = null) {
   const priorAnchor = loadPriorChapterAnchor(bookDir, finishedChapter, { required: true });
@@ -215,6 +431,54 @@ export function planNextChapter(bookDir, finishedChapter, ctx = {}, weights = nu
     pov: priorAnchor?.pov || ctx.pov,
   };
 
+  // 1. 优先：已确认的具体 chapter_plan.yaml（Studio 导演/人工计划是权威）
+  const authoredPlan = loadAuthoredChapterPlan(bookDir, nextChapter);
+  if (isAuthoredPlanSpecific(authoredPlan)) {
+    console.log(`[planner] ch${nextChapter} 使用已确认的具体章节计划（${authoredPlan._file}）`);
+    // Story Map 仍注入导航，供 Writer 短摘要
+    const storyMap = (() => {
+      try { return ctx.storyMap || applyStoryMapToIntent({}, bookDir, nextChapter).storyMap || null; } catch { return null; }
+    })();
+    let intent = serializeAuthoredPlanToIntent(authoredPlan, nextChapter, priorAnchor, storyMap);
+    intent = applyStoryMapToIntent(intent, bookDir, nextChapter);
+    return {
+      chapter: nextChapter,
+      intent: {
+        chapterIntent: intent.chapterIntent,
+        mainGoal: intent.mainGoal,
+        obstacles: intent.obstacles,
+        sceneCount: intent.scenes?.length || 0,
+        scenes: intent.scenes,
+        pov: intent.pov,
+        bargain: intent.bargain,
+        turningPoint: intent.turningPoint,
+        ending: intent.ending,
+        mustLose: intent.mustLose,
+        newForeshadow: intent.newForeshadow,
+        location: intent.location,
+        time: intent.time,
+        currentDate: intent.currentDate,
+        bannedElements: intent.bannedElements,
+        relationshipState: intent.relationshipState,
+        priorAnchor: intent.priorAnchor,
+        anchorConstraintsApplied: Boolean(priorAnchor),
+        chapterTone: null,
+        tone: null,
+        endingDirection: intent.endingDirection || intent.ending,
+        wordTarget: intent.wordTarget || null,
+        storyMap: intent.storyMap || null,
+        sceneSeeds: intent.sceneSeeds || [],
+        volumeAuthorNotes: intent.volumeAuthorNotes || '',
+        volumeSeed: intent.volumeSeed || null,
+        _authoredPlanSource: authoredPlan._file || null,
+      },
+      priorAnchor,
+      ready: true,
+      source: 'authored_plan',
+    };
+  }
+
+  // 2. 兜底：从 chapterTask 派生（模板）
   const resolvedWeights = weights || loadAdaptiveState(bookDir || ctx.bookDir).weights;
   const intent = planChapter(nextCtx, 1, { weights: resolvedWeights, priorAnchor });
 
@@ -251,6 +515,7 @@ export function planNextChapter(bookDir, finishedChapter, ctx = {}, weights = nu
     },
     priorAnchor,
     ready: true,
+    source: 'derived',
   };
 }
 
@@ -366,6 +631,27 @@ function slimGoal(text = '', max = 42) {
   return first.length <= max ? first : `${first.slice(0, max - 1)}…`;
 }
 
+/**
+ * 把完整行动线拆成可推进步骤，保留因果链，不截断首段。
+ * 供 Scene 2/3/4 的 goal 使用，避免「只取第一个分句 → 后面步骤全丢」。
+ * 中文行动线常用逗号「，」连接（如「提取数据，解析漏洞，解锁强化，击溃」），
+ * 按句末标点拆不到，故同时按逗号拆；太短的碎句合并进前一步。
+ */
+function splitActionLine(text = '') {
+  const s = String(text || '').trim();
+  if (!s) return [];
+  const raw = s.split(/[。；;\n，]/u).map((x) => x.trim()).filter(Boolean);
+  const steps = [];
+  for (const part of raw) {
+    if (steps.length && part.length < 4) {
+      steps[steps.length - 1] = `${steps[steps.length - 1]}，${part}`;
+    } else {
+      steps.push(part);
+    }
+  }
+  return steps.length ? steps : [s];
+}
+
 function deriveScenes(intent) {
   const emotion = intent.closingEmotion || intent.narrativeMomentum?.closing_emotion;
   const forbidden = intent.forbiddenOpenings || intent.narrativeMomentum?.forbidden_openings || [];
@@ -376,6 +662,9 @@ function deriveScenes(intent) {
   const turnShort = slimGoal(intent.turningPoint, 40);
   const endingShort = slimGoal(intent.ending, 40);
   const bargainShort = slimGoal(intent.bargain, 40);
+  // 完整行动线步骤：让 Scene 2/3/4 推进同一条线，而不是只取第一个分句
+  const actionSteps = splitActionLine(intent.turningPoint);
+  const endingLine = String(intent.ending || '').trim();
 
   let base = [
     {
@@ -383,9 +672,9 @@ function deriveScenes(intent) {
       id: `ch${intent.chapter}_s1`,
       title: '进入局面',
       goal: emotion
-        ? `承接「${String(emotion).slice(0, 12)}」进入现场：${chapterNav || '确立当下危机'}`
-        : `进入现场并确立危机：${chapterNav || '确立当下危机'}`,
-      conflict: intent.obstacles[0] || '外部阻力',
+        ? `承接「${String(emotion).slice(0, 12)}」进入现场：${chapterNav || 'no_causal_basis'}`
+        : `进入现场并确立危机：${chapterNav || 'no_causal_basis'}`,
+      conflict: intent.obstacles[0] || 'no_causal_basis',
       entities: [intent.pov],
       beat: 'situation',
       inheritedEmotion: emotion || null,
@@ -404,8 +693,9 @@ function deriveScenes(intent) {
       index: 2,
       id: `ch${intent.chapter}_s2`,
       title: '受阻与博弈',
-      goal: bargainShort || `克服阻碍：${obstacleShort || '外部阻力'}`,
-      conflict: intent.obstacles[1] || intent.obstacles[0] || '利益冲突',
+      goal: bargainShort
+        || (actionSteps[1] ? `推进阻碍（行动线第2步）：${actionSteps[1]}` : `克服阻碍：${obstacleShort || 'no_causal_basis'}`),
+      conflict: intent.obstacles[1] || intent.obstacles[0] || 'no_causal_basis',
       entities: [intent.pov, ...(intent.present || [])].filter(Boolean),
       beat: 'complication',
       spatialAnchor: {
@@ -418,8 +708,12 @@ function deriveScenes(intent) {
       index: 3,
       id: `ch${intent.chapter}_s3`,
       title: '转折与代价',
-      goal: turnShort || '关键抉择与代价落地',
-      conflict: intent.mustLose ? `必须失去：${slimGoal(intent.mustLose, 40)}` : '代价兑现',
+      goal: intent.turningPoint
+        ? `转折（本 Scene 兑现完整行动线）：${intent.turningPoint}`
+        : (turnShort || 'no_causal_basis'),
+      conflict: intent.mustLose && intent.mustLose !== 'no_causal_basis'
+        ? `必须失去：${slimGoal(intent.mustLose, 40)}`
+        : 'no_causal_basis',
       entities: [intent.pov],
       beat: 'turn',
       spatialAnchor: {
@@ -432,8 +726,10 @@ function deriveScenes(intent) {
       index: 4,
       id: `ch${intent.chapter}_s4`,
       title: '章末钩子',
-      goal: endingShort || '章末钩子，局势改写',
-      conflict: '局势改变',
+      goal: endingLine
+        ? `章末钩子（承接转折后果）：${endingLine}`
+        : (endingShort || 'no_causal_basis'),
+      conflict: 'no_causal_basis',
       entities: [intent.pov],
       beat: 'hook',
       spatialAnchor: {
@@ -456,9 +752,8 @@ function deriveScenes(intent) {
     return {
       ...scene,
       title: seed.title || scene.title,
-      sceneSeed: authorIntent,
+      // P3.2 C3：authorIntent/sceneSeed/lore 三别名合一——只保留 authorIntent
       authorIntent,
-      lore: authorIntent,
       // 作者意图作导航旁注，不再拼进 goal 造成「整章 pitch × N」
       goal: scene.goal,
     };

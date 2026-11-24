@@ -1,12 +1,12 @@
 {
   "version": "hash-dependency-tree-2",
   "chapter": 1,
-  "combinedHash": "4c66d5101e957835",
-  "previousCombinedHash": "4c66d5101e957835",
-  "trigger": null,
+  "combinedHash": "7f287acc9edf6a11",
+  "previousCombinedHash": "7f287acc9edf6a11",
+  "trigger": "canon-write",
   "promptCache": {
-    "status": "cached",
-    "brain": true,
+    "status": "invalid",
+    "brain": false,
     "studio": false,
     "paths": {
       "brain": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神/novel/_system/brain/prompt-cache/ch_0001",
@@ -20,7 +20,7 @@
       "hash": "18bc295698f6aba0",
       "previous": "18bc295698f6aba0",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "01_world_bible.md",
       "dependsOn": [
         "prompt-cache"
@@ -32,7 +32,7 @@
       "hash": "99f83084573f25e0",
       "previous": "99f83084573f25e0",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "03_character_bible/",
       "dependsOn": [
         "prompt-cache"
@@ -41,10 +41,10 @@
     {
       "id": "facts",
       "label": "Facts",
-      "hash": "6711822aa248d098",
-      "previous": "6711822aa248d098",
+      "hash": "fbc765a52899e92b",
+      "previous": "fbc765a52899e92b",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "13_facts_db.yaml",
       "dependsOn": [
         "prompt-cache"
@@ -53,10 +53,10 @@
     {
       "id": "timeline",
       "label": "Timeline",
-      "hash": "c9bb6beb4bc50179",
-      "previous": "c9bb6beb4bc50179",
+      "hash": "3d24c05b2b6c87e2",
+      "previous": "3d24c05b2b6c87e2",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "11_timeline.yaml",
       "dependsOn": [
         "prompt-cache"
@@ -68,7 +68,7 @@
       "hash": "empty",
       "previous": "empty",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "05_relationship_graph.yaml",
       "dependsOn": [
         "prompt-cache"
@@ -80,7 +80,7 @@
       "hash": "4f53cda18c2baa0c",
       "previous": "4f53cda18c2baa0c",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "06_knowledge_matrix.yaml",
       "dependsOn": [
         "prompt-cache"
@@ -92,7 +92,7 @@
       "hash": "44136fa355b3678a",
       "previous": "44136fa355b3678a",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "14_resource_db.yaml",
       "dependsOn": [
         "prompt-cache"
@@ -104,7 +104,7 @@
       "hash": "02b90834d68cc64d",
       "previous": "02b90834d68cc64d",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "_system/style_dna.yaml",
       "dependsOn": [
         "prompt-cache"
@@ -116,7 +116,7 @@
       "hash": "64a08d0c0adf6e5e",
       "previous": "64a08d0c0adf6e5e",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "02_writing_bible.md",
       "dependsOn": [
         "prompt-cache"
@@ -128,58 +128,15 @@
       "hash": "ac91552ffeda2dd7",
       "previous": "ac91552ffeda2dd7",
       "changed": false,
-      "status": "cached",
+      "status": "invalid",
       "canonSource": "_system/story_dna.yaml",
       "dependsOn": [
         "prompt-cache"
       ]
     }
   ],
-  "sceneNodes": [
-    {
-      "id": "scene_1",
-      "type": "scene",
-      "label": "Scene 1",
-      "index": 1,
-      "status": "invalid",
-      "mustRecompile": false
-    },
-    {
-      "id": "scene_2",
-      "type": "scene",
-      "label": "Scene 2",
-      "index": 2,
-      "status": "invalid",
-      "mustRecompile": false
-    },
-    {
-      "id": "scene_3",
-      "type": "scene",
-      "label": "Scene 3",
-      "index": 3,
-      "status": "invalid",
-      "mustRecompile": false
-    },
-    {
-      "id": "scene_4",
-      "type": "scene",
-      "label": "Scene 4",
-      "index": 4,
-      "status": "invalid",
-      "mustRecompile": false
-    }
-  ],
-  "graph": {
-    "affectedScenes": [],
-    "sceneCount": 4,
-    "triggerScene": 4,
-    "summary": {
-      "cached": 10,
-      "modified": 0,
-      "invalid": 4,
-      "regenerating": 0
-    }
-  },
+  "sceneNodes": [],
+  "graph": null,
   "edges": [
     {
       "from": "world",
@@ -232,149 +189,19 @@
       "type": "hash"
     },
     {
-      "from": "world",
-      "to": "scene_1",
-      "type": "depends"
-    },
-    {
-      "from": "world",
-      "to": "scene_2",
-      "type": "depends"
-    },
-    {
-      "from": "world",
-      "to": "scene_3",
-      "type": "depends"
-    },
-    {
-      "from": "world",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "character",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "facts",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "timeline",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "relationship",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "knowledge",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "resources",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "style",
-      "to": "scene_1",
-      "type": "depends"
-    },
-    {
-      "from": "style",
-      "to": "scene_2",
-      "type": "depends"
-    },
-    {
-      "from": "style",
-      "to": "scene_3",
-      "type": "depends"
-    },
-    {
-      "from": "style",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "writing",
-      "to": "scene_1",
-      "type": "depends"
-    },
-    {
-      "from": "writing",
-      "to": "scene_2",
-      "type": "depends"
-    },
-    {
-      "from": "writing",
-      "to": "scene_3",
-      "type": "depends"
-    },
-    {
-      "from": "writing",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "storyDna",
-      "to": "scene_1",
-      "type": "depends"
-    },
-    {
-      "from": "storyDna",
-      "to": "scene_2",
-      "type": "depends"
-    },
-    {
-      "from": "storyDna",
-      "to": "scene_3",
-      "type": "depends"
-    },
-    {
-      "from": "storyDna",
-      "to": "scene_4",
-      "type": "depends"
-    },
-    {
-      "from": "scene_1",
-      "to": "compiled-prompt",
-      "type": "compile"
-    },
-    {
-      "from": "scene_2",
-      "to": "compiled-prompt",
-      "type": "compile"
-    },
-    {
-      "from": "scene_3",
-      "to": "compiled-prompt",
-      "type": "compile"
-    },
-    {
-      "from": "scene_4",
-      "to": "compiled-prompt",
-      "type": "compile"
-    },
-    {
       "from": "prompt-cache",
       "to": "compiled-prompt",
       "type": "compile"
     }
   ],
   "summary": {
-    "cached": 11,
+    "cached": 0,
     "modified": 0,
-    "invalid": 0,
+    "invalid": 11,
     "regenerating": 0
   },
   "invalidated": false,
   "regenerating": false,
   "changed": [],
-  "updatedAt": "2026-07-31T07:04:42.189Z"
+  "updatedAt": "2026-08-04T04:54:05.788Z"
 }

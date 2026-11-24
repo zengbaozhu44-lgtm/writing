@@ -1,0 +1,700 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "beatMemory": {
+    "newFacts": [
+      "」林砚按下语音键，发现自己的手指在抖，抖得按不准键位",
+      "然后沈寒舟笑了一声：「知道"
+    ],
+    "characterStateChanges": [
+      "「颅骨碾压者」从地平线升起时，地面先于声音开始震动",
+      "别让它转向正面",
+      "白光里，那行字跳出来：病毒已注入·反杀开始"
+    ],
+    "emotionChanges": [
+      "hope"
+    ],
+    "unresolvedIssues": [
+      "林砚的耳膜像被什么东西按住，声音变得又远又闷",
+      "谁死了，下一波补上",
+      "计时，三秒缩成一秒——然后屏幕上炸开一团白光。\n\n他等着读秒。白光里，那行字跳出来：病毒已注入·反杀开始。\n\n他喉结滚了一下，把一句“操”咽回去。窗外的雨停了。"
+    ],
+    "changedDimensions": [
+      "goalDirection",
+      "danger",
+      "resource"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "「颅骨碾压者」从地平线升起时，地面先于声音开始震动"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": true,
+        "afterState": "那东西的滚轮比他见过的任何载具都高，玩家编队像被压扁的罐头，一个个头像在队伍列表里暗下去——三十七个，四十一个，数字还在跳"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "玩家的死亡播报像瀑布一样刷过侧屏——他没让停"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "他手指顿了顿，没去点那些名字"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "林砚没看那数字，盯着侧翼，沈寒舟的精英小队正贴着尸潮缝隙往里钻"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "颅骨碾压者已经碾碎了第三排盾墙，红名像水一样从缺口涌进来"
+      }
+    ],
+    "lastAfterState": "颅骨碾压者已经碾碎了第三排盾墙，红名像水一样从缺口涌进来",
+    "stateChangeCount": 6
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：承接上章推进：场景二：尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景二：尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家以自杀式攻击消耗敌方，精英小队突入内部，植入病毒，完成反杀。",
+      "choice": "为了完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "「颅骨碾压者」从地平线升起时，地面先于声音开始震动",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "goalDirection"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "「颅骨碾压者」从地平线升起时，地面先于声音开始震动",
+        "别让它转向正面"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "林砚的耳膜像被什么东西按住，声音变得又远又闷"
+      ],
+      "extractedAt": "2026-08-10T09:30:48.551Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "林砚当前目标：承接上章推进：场景二：尸潮战术——铁颅军团先锋「颅骨碾压者」登场，",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：机械军阀「铁颅军团」的巨型战争机器「颅骨碾压者」逼近浮空城，其内部核心被混沌之核的次级污染驱动，常规攻击无效。林砚必须在不暴露全部底牌的情况下，指挥玩家军团找到破解之法。 — 且局面本身不会让步",
+      "choice": "为了完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "那东西的滚轮比他见过的任何载具都高，玩家编队像被压扁的罐头，一个个头像在队伍列表里暗下去——三十七个，四十一个，数字还在跳",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "」林砚按下语音键，发现自己的手指在抖，抖得按不准键位"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-10T09:30:58.640Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Language Variation：AI 高频表达须改写（深吸一口气）",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+          "AI 套话命中：「深吸一口气」— 改为动作/对白/事件"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.005988023952095809
+        },
+        "microPassed": [
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "玩家的死亡播报像瀑布一样刷过侧屏——他没让停",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "hope"
+      ],
+      "unresolvedIssues": [
+        "谁死了，下一波补上"
+      ],
+      "extractedAt": "2026-08-10T09:31:03.806Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.0759493670886076
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "他手指顿了顿，没去点那些名字",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-10T09:31:12.524Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：推进已有界面的后果/约束，禁止「再发现一个新界面",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.05806451612903226
+        },
+        "microPassed": [
+          "关系",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+      "choice": "为了完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "林砚没看那数字，盯着侧翼，沈寒舟的精英小队正贴着尸潮缝隙往里钻",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "然后沈寒舟笑了一声：「知道"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-10T09:31:23.196Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Show Don't Tell：禁止直接解释心理/认知（知道）→ 改为动作/对白/画面",
+          "Event 缺少可观察动作",
+          "EVENT_LOOP: 选择/代价已发生，禁止回炉凝视界面；写后果推进或新危机",
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：推进已有界面的后果/约束，禁止「再发现一个新界面",
+        "storyAfter": "目标收紧：下一步行动被迫更新",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.016042780748663103
+        },
+        "microPassed": [
+          "新信息",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "段末悬念",
+      "choice": "为了完成「尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "颅骨碾压者已经碾碎了第三排盾墙，红名像水一样从缺口涌进来",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "resource"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "白光里，那行字跳出来：病毒已注入·反杀开始"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "计时，三秒缩成一秒——然后屏幕上炸开一团白光。\n\n他等着读秒。白光里，那行字跳出来：病毒已注入·反杀开始。\n\n他喉结滚了一下，把一句“操”咽回去。窗外的雨停了。"
+      ],
+      "extractedAt": "2026-08-10T09:31:29.167Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "城墙/天台",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "hand_touch",
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "目标收紧：下一步行动被迫更新",
+        "storyAfter": "林砚已掌握：推进已有界面的后果/约束，禁止「再发现一个新界面」；局面代价：选择产",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.01809954751131222
+        },
+        "microPassed": [
+          "危险",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 37,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      }
+    ],
+    "scenePeak": {
+      "fear": 0,
+      "hope": 37,
+      "anger": 38,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 38,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-10T09:31:29.180Z",
+    "sceneIndex": 2
+  },
+  "readerSimulation": {
+    "curiosity": 68,
+    "questionCount": 3,
+    "dropRisk": 45,
+    "continueProbability": 63,
+    "sceneIndex": 2,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-10T09:31:29.181Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 61,
+    "obstacleStrength": 41,
+    "choiceLevel": 59,
+    "consequenceLevel": 39,
+    "escalationLevel": 59,
+    "informationValue": 60,
+    "hookImpact": 57,
+    "stateChangeRate": 100,
+    "hookBreakdown": {
+      "hookLevel": 57,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "这对我有什么威胁？谁会受害？",
+        "cost": "中 — POV 开始感到不安全，威胁可感",
+        "nextNeedToKnow": "危险来自哪里、有多近、能否逃脱",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+        "actionDeadline": "如果现在不行动 — 中 — POV 开始感到不安全，威胁可感",
+        "newGoal": "承接上章推进：场景二：尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家以自杀式攻击消耗敌方，精英小队突入内部，植入病毒，完成反杀。",
+        "newAction": "POV必须针对「危险来自哪里、有多近、能否逃脱」立刻行动",
+        "countdown": "如果现在不行动 — 中 — POV 开始",
+        "plantedPromise": "如果现在不行动 — 中 — POV 开始感到不安全，威胁可感",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 71,
+      "emotionalImpact": 41,
+      "characterCost": 60,
+      "targetType": "Danger",
+      "targetLevel": 2
+    },
+    "average": 53,
+    "weakest": "consequenceLevel",
+    "pass": true,
+    "blocking": false,
+    "analyzedAt": "2026-08-10T09:31:29.183Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "这对我有什么威胁？谁会受害？",
+      "cost": "中 — POV 开始感到不安全，威胁可感",
+      "nextNeedToKnow": "危险来自哪里、有多近、能否逃脱",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+      "actionDeadline": "如果现在不行动 — 中 — POV 开始感到不安全，威胁可感",
+      "newGoal": "承接上章推进：场景二：尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家以自杀式攻击消耗敌方，精英小队突入内部，植入病毒，完成反杀。",
+      "newAction": "POV必须针对「危险来自哪里、有多近、能否逃脱」立刻行动",
+      "countdown": "如果现在不行动 — 中 — POV 开始",
+      "plantedPromise": "如果现在不行动 — 中 — POV 开始感到不安全，威胁可感",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": false,
+      "reason": "no_promise_bound"
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 57,
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "这对我有什么威胁？谁会受害？",
+      "cost": "中 — POV 开始感到不安全，威胁可感",
+      "nextNeedToKnow": "危险来自哪里、有多近、能否逃脱",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "推进已有界面的后果/约束，禁止「再发现一个新界面」",
+      "actionDeadline": "如果现在不行动 — 中 — POV 开始感到不安全，威胁可感",
+      "newGoal": "承接上章推进：场景二：尸潮战术——铁颅军团先锋「颅骨碾压者」登场，正面碾压玩家防线。林砚临场指挥，玩家以自杀式攻击消耗敌方，精英小队突入内部，植入病毒，完成反杀。",
+      "newAction": "POV必须针对「危险来自哪里、有多近、能否逃脱」立刻行动",
+      "countdown": "如果现在不行动 — 中 — POV 开始",
+      "plantedPromise": "如果现在不行动 — 中 — POV 开始感到不安全，威胁可感",
+      "mustForceAction": true
+    },
+    "stageMatch": true,
+    "actionHookScore": 70,
+    "forcesAction": true,
+    "cognitiveUpgrade": 71,
+    "emotionalImpact": 41,
+    "characterCost": 60
+  },
+  "reward": {
+    "valid": false,
+    "requiresPromise": true,
+    "promise": null,
+    "payoff": null,
+    "promiseId": null,
+    "promiseSource": null,
+    "description": "⚠ 本 Scene 无可用 Promise — Writer 须先承接 Story Memory 伏笔/前序 Hook 再写 Payoff",
+    "deliveryBeat": "newInformation",
+    "rule": "没有对应 Promise 的 Reward 不允许出现"
+  },
+  "rewardDelivery": {
+    "delivered": false,
+    "valid": false,
+    "reason": "no_promise_bound"
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-10T09:31:29.183Z"
+}

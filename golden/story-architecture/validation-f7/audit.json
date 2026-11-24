@@ -1,0 +1,254 @@
+{
+  "phase": "F7",
+  "verdict": "AUDIT COMPLETE",
+  "readOnly": true,
+  "productionBook": "凌晨四点世界刷新",
+  "chapter": 2,
+  "rows": [
+    {
+      "scene": 1,
+      "title": "进入局面",
+      "sources": {
+        "sceneGoal": "Planner/Director PLAN",
+        "executionPlan": "Director buildSceneExecutionPlan",
+        "beatCount": 6,
+        "writerInventedStructure": false,
+        "note": "Writer fills prose; cannot change 6-beat structure"
+      },
+      "fakeDecisionOnNonChoiceBeats": [],
+      "beat0FieldClasses": {
+        "structuralBeat": {
+          "value": "goal",
+          "class": "CONSTRAINT"
+        },
+        "content_goal": {
+          "class": "PLAN",
+          "note": "from scene.goal / planner"
+        },
+        "libraryBeat": {
+          "value": "Discovery",
+          "class": "CONSTRAINT"
+        },
+        "libraryInstruction": {
+          "class": "CONSTRAINT",
+          "risk": null
+        },
+        "choice": {
+          "value": "POV 必须在有限选项中做出选择，每个选项都有代价",
+          "class": "PLAN_OR_EXPECTED"
+        },
+        "afterState": {
+          "value": "POV 已锁定可执行目标，局面即将被打破",
+          "class": "EXPECTED"
+        },
+        "beforeState": {
+          "class": "EXPECTED"
+        },
+        "targetEmotion": {
+          "class": "PLAN_OR_EXPECTED"
+        },
+        "action": {
+          "class": "PLAN"
+        }
+      },
+      "observedContinuity": {
+        "confirmed": [
+          "door_warning",
+          "notebook_message",
+          "clock_anomaly"
+        ],
+        "unresolved": [
+          "meaning_door_warning",
+          "meaning_notebook_message",
+          "open_choice_s1",
+          "tail_cliff_s1"
+        ]
+      },
+      "textHead": "闹钟响了。  凌晨四点整。  苏晚盯着手机屏幕上的日期——六月十七日。她划开备忘录，昨晚写的那行字还在：“六月十七日，四点，去天台。”  她关掉闹钟，掀开被子。  走廊灯亮了一盏。隔壁门缝透出光，有人在打电话，声音压得很低：“……对，跟昨天",
+      "textTail": "  门缝里伸出一只手。  女人的手。指甲涂着暗红色，指尖捏着一张纸片。  纸片上只有两个字——  “快跑。”  苏晚认得那指甲油。  她自己的。  可她的手正垂在身侧，指甲是干净的——她今早刚卸掉的。",
+      "expectedVsActual": "MATCH"
+    },
+    {
+      "scene": 2,
+      "title": "受阻与博弈",
+      "sources": {
+        "sceneGoal": "Planner/Director PLAN",
+        "executionPlan": "Director buildSceneExecutionPlan",
+        "beatCount": 6,
+        "writerInventedStructure": false,
+        "note": "Writer fills prose; cannot change 6-beat structure"
+      },
+      "fakeDecisionOnNonChoiceBeats": [
+        {
+          "order": 1,
+          "structural": "goal"
+        }
+      ],
+      "beat0FieldClasses": {
+        "structuralBeat": {
+          "value": "goal",
+          "class": "CONSTRAINT"
+        },
+        "content_goal": {
+          "class": "PLAN",
+          "note": "from scene.goal / planner"
+        },
+        "libraryBeat": {
+          "value": "Decision",
+          "class": "CONSTRAINT"
+        },
+        "libraryInstruction": {
+          "class": "CONSTRAINT",
+          "risk": "FAKE_CHOICE_HINT"
+        },
+        "choice": {
+          "value": "POV 必须在有限选项中做出选择，每个选项都有代价",
+          "class": "PLAN_OR_EXPECTED"
+        },
+        "afterState": {
+          "value": "POV 已锁定可执行目标，局面即将被打破",
+          "class": "EXPECTED"
+        },
+        "beforeState": {
+          "class": "EXPECTED"
+        },
+        "targetEmotion": {
+          "class": "PLAN_OR_EXPECTED"
+        },
+        "action": {
+          "class": "PLAN"
+        }
+      },
+      "observedContinuity": {
+        "confirmed": [],
+        "unresolved": [
+          "open_choice_s2",
+          "tail_cliff_s2"
+        ]
+      },
+      "textHead": "苏晚把手机屏幕转向林夜。  “看这个。”  屏幕上是一段监控录像——公司走廊，昨天下午三点。画面里林夜从电梯出来，左手臂上缠着绷带。  林夜低头看自己的手臂。  光滑的皮肤。没有绷带，没有伤疤。  “这是昨天的录像。”苏晚说，“但你的伤——",
+      "textTail": "  “你现在有两个选择。”她说，“跟我走，去看证明。”  “或者留在这里。”  “等明天醒来，什么都不记得。”  窗外传来一声闷响。  像什么很重的东西砸在地面上。  苏晚没回头。  “你有三十秒。”",
+      "expectedVsActual": "MATCH"
+    },
+    {
+      "scene": 3,
+      "title": "转折与代价",
+      "sources": {
+        "sceneGoal": "Planner/Director PLAN",
+        "executionPlan": "Director buildSceneExecutionPlan",
+        "beatCount": 6,
+        "writerInventedStructure": false,
+        "note": "Writer fills prose; cannot change 6-beat structure"
+      },
+      "fakeDecisionOnNonChoiceBeats": [
+        {
+          "order": 1,
+          "structural": "goal"
+        }
+      ],
+      "beat0FieldClasses": {
+        "structuralBeat": {
+          "value": "goal",
+          "class": "CONSTRAINT"
+        },
+        "content_goal": {
+          "class": "PLAN",
+          "note": "from scene.goal / planner"
+        },
+        "libraryBeat": {
+          "value": "Decision",
+          "class": "CONSTRAINT"
+        },
+        "libraryInstruction": {
+          "class": "CONSTRAINT",
+          "risk": "FAKE_CHOICE_HINT"
+        },
+        "choice": {
+          "value": "POV 必须在有限选项中做出选择，每个选项都有代价",
+          "class": "PLAN_OR_EXPECTED"
+        },
+        "afterState": {
+          "value": "POV 已锁定可执行目标，局面即将被打破",
+          "class": "EXPECTED"
+        },
+        "beforeState": {
+          "class": "EXPECTED"
+        },
+        "targetEmotion": {
+          "class": "PLAN_OR_EXPECTED"
+        },
+        "action": {
+          "class": "PLAN"
+        }
+      },
+      "observedContinuity": {
+        "confirmed": [
+          "clock_anomaly"
+        ],
+        "unresolved": [
+          "open_choice_s3",
+          "tail_cliff_s3"
+        ]
+      },
+      "textHead": "凌晨3:59。林夜盯着的天花板开始变形。  不是眼花。白色天花板的裂缝在收窄——像有人从另一侧把整栋建筑的轮廓往外拉。他的手按在病床护栏上，铁管在掌心发烫。  走廊的灯闪了一下。  护士台的钟秒针停住。输液瓶里的液面不再下降。整层楼的脚步声",
+      "textTail": "在也是‘记得’的人了。”  走廊尽头传来脚步声。不是一个人的。是很多人的。但步调一模一样——像是一个人被复制了无数次。  苏晚往后退了一步，声音压低：  “跟我走，还是留在这等刷新？你选。三十秒内。”",
+      "expectedVsActual": "RESULT_PATH_FOLLOWS_SCENE_GOAL"
+    }
+  ],
+  "crossScene": {
+    "toS3Unresolved": [
+      "meaning_door_warning",
+      "meaning_notebook_message",
+      "open_choice_s1",
+      "tail_cliff_s1",
+      "open_choice_s2",
+      "tail_cliff_s2"
+    ],
+    "ocPreservedOpenChoice": true,
+    "writerFollowedHospitalPlan": true,
+    "choiceSettledInS3": false
+  },
+  "findings": [
+    {
+      "id": "F7-A",
+      "class": "FAKE_CHOICE",
+      "detail": "LibraryBeat Decision assigned to non-choice structural beats (e.g. goal) with predetermined choice hint",
+      "scenes": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "F7-B",
+      "class": "PLAN_LEAK",
+      "detail": "beat-state afterState comes from BEAT_STATE_TEMPLATES; beat-memory may label heuristic newFacts as 已确立事实",
+      "evidence": [
+        "packages/inkos-director/src/beat-state.js afterState: template.afterState",
+        "beat-memory.js formatBeatMemoryBlock"
+      ]
+    },
+    {
+      "id": "F7-C",
+      "class": "RESULT_IGNORED",
+      "detail": "S2 open_choice unresolved in OC; S3 Writer followed Scene Goal hospital wake-up without settling choice",
+      "note": "Beat Expected does not overwrite OC object; Scene Goal + Beat stack still steered Writer. Continuity failure owned by F6.1; F7 attributes steering to PLAN/Beat over-spec."
+    },
+    {
+      "id": "F7-D",
+      "class": "OVER-SPECIFIED",
+      "detail": "Fixed 6-beat + L3 absolute Beat Plan + L4 Before/After/goal/emotion/engines; Writer cannot alter structure"
+    },
+    {
+      "id": "F7-E",
+      "class": "DUPLICATED",
+      "detail": "Planner scene.goal / Director scenePlan / Beat content / L3 Beat Plan / L4 sceneGoalLine repeat same goal text"
+    }
+  ],
+  "roles": {
+    "beatMemory": "heuristic / diagnostic prompt feed (not Canon)",
+    "evaluateStoryStateChange": "heuristic hard gate for rewrite (session only)",
+    "evaluateCauseEffect": "heuristic soft diagnostic",
+    "observedContinuity": "scene-local observation projection (F6.2)",
+    "beat": "structural CONSTRAINT + PLAN/EXPECTED injection — NOT Reality Authority"
+  }
+}

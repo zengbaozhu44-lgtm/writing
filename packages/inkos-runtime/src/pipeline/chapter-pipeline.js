@@ -9,27 +9,26 @@ import { simulateReaders } from '../../../inkos-brain/src/reader/reader.js';
 import { runCritic } from '../../../inkos-brain/src/critic/critic.js';
 import { validateChapter } from '../../../inkos-brain/src/validation/validation.js';
 import { checkConsistency } from '../../../inkos-brain/src/consistency/consistency.js';
-import { computeStoryHealth, saveStoryHealth, loadStoryHealth } from '../../../inkos-brain/src/health/story-health.js';
+import { computeStoryHealth } from '../../../inkos-brain/src/health/story-health.js';
 import { applyAdaptiveFeedback } from '../../../inkos-brain/src/planner/adaptive.js';
 import { replan, planNextChapter } from '../../../inkos-brain/src/planner/planner.js';
 import {
-  appendSceneHistory,
   saveBrainRun,
   saveChapterPlan,
   ensureBrainDir,
 } from '../../../inkos-brain/src/memory/memory.js';
 import { MemoryUnit, buildStateDiff } from '../memory/memory-unit.js';
+import { enrichAttributionAfterStateDiff } from '../../../inkos-brain/src/attribution/index.js';
 import { writeChapterOnly } from '../memory/memory-unit.js';
+import { writeNextChapterTask } from '../../../inkos-brain/src/memory/state-updater.js';
 import {
   runChapterReaderSimulator,
   polishChapterAfterReaderSim,
 } from './reader-simulator.js';
 import {
   shouldTriggerOptimizer,
-  shouldRunAbTest,
   OPTIMIZER_HOOK_FLOOR,
 } from './cost-controls.js';
-import { runTemperatureAbTest } from './ab-test.js';
 
 export async function runChapterPipeline(bookDir, payload, bus) {
   const { chapter, chapterText, intent, scenes, conflictResult, ctx: existingCtx } = payload;
@@ -37,7 +36,9 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   const log = [];
   ensureBrainDir(bookDir);
 
-  if (bus) await bus.emit('chapterFinished', { bookDir, chapter, text: chapterText, intent });
+  // NOTE: chapterFinished 不在入口处发射——它必须是「最终完成」语义（见 saveBrainRun 后的两处 success 出口）。
+  // 过早发射会让 Daemon 的 run?.pass 守卫拦不住 re-entry（loadBrainRun 尚未写入 pass），
+  // 同一正文被重复跑一遍 runChapterPipeline → 双 commit / 非最终尝试也被记为「章节完成」。
 
   const consistency = checkConsistency(ctx, intent, chapterText);
   log.push({ stage: 'consistency', pass: consistency.pass });
@@ -74,7 +75,12 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   }
 
   const readerResult = simulateReaders(chapterText, intent, metrics);
-  log.push({ stage: 'reader', pass: readerResult.pass, readingDrive: readerResult.readingDrive });
+  log.push({
+    stage: 'reader',
+    pass: readerResult.pass,
+    readingDrive: readerResult.readingDrive,
+    withheld: readerResult.highlights?.withheld || null,
+  });
 
   const criticResult = runCritic(chapterText, intent, metrics, readerResult);
   log.push({ stage: 'critic', pass: criticResult.pass, overall: criticResult.overall });
@@ -96,7 +102,7 @@ export async function runChapterPipeline(bookDir, payload, bus) {
       validation,
       replanIntent: newIntent,
       log,
-      error: 'Validation 七项未全部通过 — 重新规划',
+      error: 'Validation 八项未全部通过 — 重新规划',
     };
   }
 
@@ -161,47 +167,6 @@ export async function runChapterPipeline(bookDir, payload, bus) {
     console.warn('[chapter-pipeline] Reader Simulator 失败（忽略）:', err?.message || err);
   }
 
-  // 每 5 章一次 Temperature AB（共享 ExecutionPlan，只比文笔）
-  let abTest = null;
-  if (shouldRunAbTest(chapter, { force: Boolean(payload.forceAbTest) })) {
-    try {
-      const plan = scenes?.[0]?.executionPlan
-        || scenes?.find((s) => s.executionPlan?.beats?.length)?.executionPlan
-        || null;
-      if (plan?.beats?.length) {
-        abTest = await runTemperatureAbTest({
-          executionPlan: plan,
-          bookDir,
-          chapter,
-          persist: true,
-          generateFn: async (temperature, label) => ({
-            // 无 Writer 注入时仅用现有正文做骨架一致性对照（真实并行写需外部 generateFn）
-            text: workingText,
-            meta: {
-              executionPlan: plan,
-              temperature,
-              label,
-              note: 'chapter-pipeline cadence AB：复用本章正文作对照样本',
-            },
-          }),
-        });
-        log.push({
-          stage: 'ab_test',
-          scheduled: true,
-          invalidTest: abTest.invalidTest,
-          winner: abTest.winner,
-          reportPath: abTest.reportPath,
-        });
-      } else {
-        log.push({ stage: 'ab_test', scheduled: true, skipped: 'no-execution-plan' });
-      }
-    } catch (err) {
-      log.push({ stage: 'ab_test', softError: err?.message || String(err) });
-    }
-  } else {
-    log.push({ stage: 'ab_test', scheduled: false, reason: `非第 ${5} 章倍数，跳过` });
-  }
-
   // 仅 Validation 通过（或 force）后进入唯一 Memory 出口
   const adaptive = applyAdaptiveFeedback(bookDir, {
     metrics,
@@ -213,7 +178,6 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   log.push({ stage: 'adaptive', weights: adaptive.weights });
 
   const health = computeStoryHealth(bookDir, dashboard, loadCriticHistory(bookDir), [{ pass: consistency.pass }]);
-  saveStoryHealth(bookDir, health);
   log.push({ stage: 'story_health', overallScore: health.overallScore });
 
   // 先 commit 写出 ch_XXXX_anchor.yaml，再规划下一章（禁止在失忆态 planNext）
@@ -229,6 +193,15 @@ export async function runChapterPipeline(bookDir, payload, bus) {
     readerSimulator,
   });
 
+  // Phase 4.4.1c: optional soft enrichment with StateDiff hints (never blocks commit)
+  try {
+    enrichAttributionAfterStateDiff(bookDir, chapter, scenes, stateDiff, {
+      storyClock: chapter,
+    });
+  } catch (attrErr) {
+    console.warn('[chapter-pipeline] Attribution enrichment skipped:', attrErr?.message || attrErr);
+  }
+
   if (payload.deferCommit) {
     const pendingDir = path.join(bookDir, 'novel', '_system', 'pending_commit');
     const pendingFile = path.join(pendingDir, `ch_${String(chapter).padStart(4, '0')}.json`);
@@ -242,7 +215,6 @@ export async function runChapterPipeline(bookDir, payload, bus) {
 
     const chapterFile = writeChapterOnly(bookDir, chapter, stateDiff);
 
-    appendSceneHistory(bookDir, chapter, scenes);
     const result = {
       pass: true,
       chapter,
@@ -254,9 +226,6 @@ export async function runChapterPipeline(bookDir, payload, bus) {
       validation,
       readerSimulator,
       readerSimPolish: readerSimPolish?.optimizer || null,
-      abTest: abTest
-        ? { invalidTest: abTest.invalidTest, winner: abTest.winner, reportPath: abTest.reportPath }
-        : null,
       adaptive: adaptive.weights,
       health,
       snapshot: null,
@@ -274,6 +243,8 @@ export async function runChapterPipeline(bookDir, payload, bus) {
       finishedAt: new Date().toISOString(),
       ...result,
     });
+    // 最终完成语义：saveBrainRun 已写入 pass:true，Daemon 的 run?.pass 守卫可拦截 re-entry。
+    if (bus) await bus.emit('chapterFinished', { bookDir, chapter, text: workingText, intent, result });
     if (bus) await bus.emit('pipelineCompleted', { bookDir, chapter, result });
     return result;
   }
@@ -293,6 +264,15 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   }
 
   const nextChapterPlan = planNextChapter(bookDir, chapter, ctx, adaptive.weights);
+  // 09 任务卡回填：commit 时 nextChapterPlan 尚为 null → MemoryUnit 写卡分支永不触发，
+  // 必须在此（planNext 之后）立即写卡，否则 09_current_chapter.md 永远空白模板。
+  if (nextChapterPlan?.intent) {
+    try {
+      writeNextChapterTask(bookDir, chapter + 1, nextChapterPlan.intent);
+    } catch (err) {
+      console.warn('[chapter-pipeline] writeNextChapterTask 失败（已忽略）:', err?.message || err);
+    }
+  }
   // 回写 nextChapter 摘要到 states JSON（commit 时尚未有 plan）
   try {
     if (memoryCommit.stateFile && exists(memoryCommit.stateFile)) {
@@ -309,8 +289,6 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   }
 
   if (bus) await bus.emit('memoryUpdated', { bookDir, chapter, snapshot: memoryCommit.snapshot, memoryCommit });
-
-  appendSceneHistory(bookDir, chapter, scenes);
 
   saveChapterPlan(bookDir, chapter + 1, {
     intent: nextChapterPlan.intent,
@@ -332,9 +310,6 @@ export async function runChapterPipeline(bookDir, payload, bus) {
     validation,
     readerSimulator,
     readerSimPolish: readerSimPolish?.optimizer || null,
-    abTest: abTest
-      ? { invalidTest: abTest.invalidTest, winner: abTest.winner, reportPath: abTest.reportPath }
-      : null,
     adaptive: adaptive.weights,
     health,
     snapshot: memoryCommit.snapshot,
@@ -351,6 +326,8 @@ export async function runChapterPipeline(bookDir, payload, bus) {
     ...result,
   });
 
+  // 最终完成语义：saveBrainRun 已写入 pass:true，Daemon 的 run?.pass 守卫可拦截 re-entry。
+  if (bus) await bus.emit('chapterFinished', { bookDir, chapter, text: workingText, intent, result });
   if (bus) await bus.emit('pipelineCompleted', { bookDir, chapter, result });
   return result;
 }
@@ -367,3 +344,4 @@ function loadCriticHistory(bookDir) {
   if (!exists(file)) return [];
   return readJson(file).entries || [];
 }
+

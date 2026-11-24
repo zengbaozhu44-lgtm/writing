@@ -40,17 +40,25 @@ export function createSceneLifecycleHook(bookDir, bookId) {
         detail: 'Hash Dependency · 模块 Hash 检测',
       });
 
-      const hashDep = runHashDependencyCheck({
-        bookDir,
-        chapter: payload.chapter,
-        scene: payload.scene,
-        ctx: payload.ctx,
-        storyDna,
-        styleDna,
-        persistState: false,
-      });
+      // Hash Dependency 为软分析：失败不阻断 Writer（并发 canon 写入会间歇性致半截文件）
+      let hashDep = null;
+      let hashErr = null;
+      try {
+        hashDep = runHashDependencyCheck({
+          bookDir,
+          chapter: payload.chapter,
+          scene: payload.scene,
+          ctx: payload.ctx,
+          storyDna,
+          styleDna,
+          persistState: false,
+        });
+      } catch (err) {
+        hashErr = err;
+        console.warn('[scene-lifecycle] Hash Dependency 失败（跳过，不阻断）:', err?.message || err);
+      }
 
-      if (hashDep.mustRecompile) {
+      if (hashDep?.mustRecompile) {
         payload.scene._hashDependency = hashDep;
       }
 
@@ -58,31 +66,34 @@ export function createSceneLifecycleHook(bookDir, bookId) {
         bookDir,
         chapter: payload.chapter,
         scene: sceneIndex,
-        changed: hashDep.changed,
-        invalidated: hashDep.invalidated,
-        mustRecompile: hashDep.mustRecompile,
-        combinedHash: hashDep.combinedHash,
-        reportPath: hashDep.reportPath,
-        tree: hashDep.tree,
+        changed: hashDep?.changed ?? [],
+        invalidated: hashDep?.invalidated ?? false,
+        mustRecompile: hashDep?.mustRecompile ?? false,
+        combinedHash: hashDep?.combinedHash ?? null,
+        reportPath: hashDep?.reportPath ?? null,
+        tree: hashDep?.tree ?? null,
+        error: hashErr?.message ?? null,
       });
 
       studioEmitRuntimeEvent(bookDir, bookId, 'hashDependencyTreeUpdated', {
         chapter: payload.chapter,
-        tree: hashDep.tree,
-        changed: hashDep.changed,
-        invalidated: hashDep.invalidated,
+        tree: hashDep?.tree ?? null,
+        changed: hashDep?.changed ?? [],
+        invalidated: hashDep?.invalidated ?? false,
       });
 
       studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
         chapter: payload.chapter,
         scene: sceneIndex,
         stage: 'hash-dependency',
-        status: hashDep.invalidated ? 'warning' : 'done',
-        detail: hashDep.invalidated
-          ? `Hash 变化 · ${hashDep.changed.join(', ')} · 已 Invalidate`
-          : hashDep.valid
-            ? 'Hash 稳定 · 无变化'
-            : '首次 Hash 基准',
+        status: hashErr ? 'warning' : (hashDep?.invalidated ? 'warning' : 'done'),
+        detail: hashErr
+          ? `Hash 检测失败已跳过：${hashErr.message}`
+          : (hashDep?.invalidated
+            ? `Hash 变化 · ${hashDep.changed.join(', ')} · 已 Invalidate`
+            : (hashDep?.valid
+              ? 'Hash 稳定 · 无变化'
+              : '首次 Hash 基准')),
       });
 
       studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
@@ -93,13 +104,25 @@ export function createSceneLifecycleHook(bookDir, bookId) {
         detail: 'Dynamic Budget · Type + Complexity',
       });
 
-      const budgetResult = runDynamicBudget({
-        bookDir,
-        chapter: payload.chapter,
-        scene: payload.scene,
-        intent: payload.intent,
-        ctx: payload.ctx,
-      });
+      // Dynamic Budget 为软分析：失败不阻断 Writer，用默认预算兜底
+      let budgetResult = null;
+      try {
+        budgetResult = runDynamicBudget({
+          bookDir,
+          chapter: payload.chapter,
+          scene: payload.scene,
+          intent: payload.intent,
+          ctx: payload.ctx,
+        });
+      } catch (err) {
+        console.warn('[scene-lifecycle] Dynamic Budget 失败（使用默认预算）:', err?.message || err);
+        budgetResult = {
+          budget: { sceneType: 'opening', complexity: { level: 'low' }, allocation: null, totalTokens: 4000 },
+          pie: null,
+          contextTokenBudget: 2000,
+          contextCharBudget: 4000,
+        };
+      }
 
       studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
         chapter: payload.chapter,
@@ -126,38 +149,45 @@ export function createSceneLifecycleHook(bookDir, bookId) {
         detail: 'Context Ranking · Top-K 筛选',
       });
 
-      let compilerBudget = allocationToCompilerBudget(budgetResult.budget.allocation);
-      const adaptiveAdj = loadAdaptiveAdjustments(bookDir);
-      if (adaptiveAdj) {
-        compilerBudget = applyAdjustmentsToBudget(compilerBudget, adaptiveAdj, payload.scene);
+      // Context Ranking + Story Memory 均为软分析：任一失败跳过，不阻断 Writer
+      let contextRank = null;
+      let storyMem = null;
+      try {
+        let compilerBudget = allocationToCompilerBudget(budgetResult.budget.allocation);
+        const adaptiveAdj = loadAdaptiveAdjustments(bookDir);
+        if (adaptiveAdj) {
+          compilerBudget = applyAdjustmentsToBudget(compilerBudget, adaptiveAdj, payload.scene);
+        }
+
+        contextRank = runContextRanking({
+          bookDir,
+          chapter: payload.chapter,
+          scene: payload.scene,
+          intent: payload.intent,
+          ctx: payload.ctx,
+          storyDna,
+          budget: compilerBudget,
+          budgetChars: budgetResult.contextCharBudget,
+        });
+
+        storyMem = runStoryMemory({
+          bookDir,
+          chapter: payload.chapter,
+          scene: payload.scene,
+          ctx: payload.ctx,
+          storyDna,
+        });
+      } catch (err) {
+        console.warn('[scene-lifecycle] Context Ranking / Story Memory 失败（跳过，不阻断）:', err?.message || err);
       }
-
-      const contextRank = runContextRanking({
-        bookDir,
-        chapter: payload.chapter,
-        scene: payload.scene,
-        intent: payload.intent,
-        ctx: payload.ctx,
-        storyDna,
-        budget: compilerBudget,
-        budgetChars: budgetResult.contextCharBudget,
-      });
-
-      const storyMem = runStoryMemory({
-        bookDir,
-        chapter: payload.chapter,
-        scene: payload.scene,
-        ctx: payload.ctx,
-        storyDna,
-      });
 
       studioEmitRuntimeEvent(bookDir, bookId, 'storyMemoryUpdated', {
         chapter: payload.chapter,
         scene: sceneIndex,
-        metrics: storyMem.metrics,
-        hints: storyMem.hints,
-        dashboard: storyMem.dashboard,
-        reportPath: storyMem.reportPath,
+        metrics: storyMem?.metrics ?? null,
+        hints: storyMem?.hints ?? null,
+        dashboard: storyMem?.dashboard ?? null,
+        reportPath: storyMem?.reportPath ?? null,
       });
 
       studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
@@ -165,7 +195,9 @@ export function createSceneLifecycleHook(bookDir, bookId) {
         scene: sceneIndex,
         stage: 'context-ranking',
         status: 'done',
-        detail: `Top-${contextRank.report?.budget?.selectedCount ?? contextRank.topK?.length ?? 0} / ${contextRank.report?.budget?.totalCandidates ?? 0} · 五类 TopK`,
+        detail: contextRank
+          ? `Top-${contextRank.report?.budget?.selectedCount ?? contextRank.topK?.length ?? 0} / ${contextRank.report?.budget?.totalCandidates ?? 0} · 五类 TopK`
+          : 'Context Ranking 失败已跳过',
       });
 
       studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
@@ -176,12 +208,18 @@ export function createSceneLifecycleHook(bookDir, bookId) {
         detail: 'Director · Reader Addiction 规划（Story / Chapter / Scene）',
       });
 
-      const directorResult = await runDirectorPhase(phase, {
-        ...payload,
-        bookDir,
-        bookId,
-        storyDna,
-      });
+      // Director 规划为软分析：失败不阻断 Writer（不污染 scene 状态）
+      let directorResult = { pass: true, blocking: false, promptAppend: '' };
+      try {
+        directorResult = await runDirectorPhase(phase, {
+          ...payload,
+          bookDir,
+          bookId,
+          storyDna,
+        });
+      } catch (err) {
+        console.warn('[scene-lifecycle] Director 规划失败（跳过，不阻断）:', err?.message || err);
+      }
 
       studioEmitRuntimeEvent(bookDir, bookId, 'pipelineStage', {
         chapter: payload.chapter,
@@ -199,7 +237,7 @@ export function createSceneLifecycleHook(bookDir, bookId) {
         storyMemory: storyMem,
         promptAppend: mergePromptAppend(
           formatBudgetBlock(budgetResult),
-          directorResult.promptAppend,
+          directorResult?.promptAppend || '',
         ),
       };
     }

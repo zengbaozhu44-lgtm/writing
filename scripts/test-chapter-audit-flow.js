@@ -232,6 +232,27 @@ const { loadWizardChapterTone: plannerLoadTone, planChapter } = await import(
   markPendingAudit(bookDir, 1);
   ok('delete draft → ready_to_generate → re-mark pending');
 
+  // EO-P4-48：accept 的充分材料 = 完整 pending stateDiff（Studio deferCommit 产物）。
+  // 无 pending 且无 state 的章节现在 fail-closed，不再走「占位 POV + 空 scenes」降级重建。
+  const pendingDir = path.join(bookDir, 'novel', '_system', 'pending_commit');
+  fs.mkdirSync(pendingDir, { recursive: true });
+  const chapterBody = '雨打在铁皮棚上。林深停在邻居门前，空气里有一股锈味。他听见里面有人笑，门锁内侧有新鲜抓痕。\n\n'.repeat(50);
+  fs.writeFileSync(
+    path.join(pendingDir, 'ch_0001.json'),
+    JSON.stringify({
+      chapterText: chapterBody,
+      chapterTitle: '雨夜',
+      intent: { pov: '林深', mainGoal: '主角在雨夜发现邻居并非人类', mustLose: '门锁内侧的抓痕' },
+      scenes: [{ index: 1, id: 'ch1_s1', text: chapterBody }],
+      skipGitCli: true,
+      deferredAt: new Date().toISOString(),
+    }),
+  );
+
+  // 无材料章节 fail-closed（ch2 无 pending、无 state、无正文）
+  assert.throws(() => acceptChapter(bookDir, 2), /缺少接受材料/);
+  ok('EO-48 S3: no pending + no state → fail-closed, no placeholder rebuild');
+
   const accepted = acceptChapter(bookDir, 1, { title: '雨夜' });
   assert.equal(accepted.nextChapterUnlocked, true);
   assert.equal(accepted.nextChapter, 2);
@@ -241,6 +262,14 @@ const { loadWizardChapterTone: plannerLoadTone, planChapter } = await import(
   assert.equal(getChapterStatus(bookDir, 2), 'ready_to_generate');
   assert.doesNotThrow(() => assertChapterUnlocked(bookDir, 2));
   ok('accept Ch1 → unlock Ch2');
+
+  // EO-48 S2：已 accepted 重复接受 → 幂等 no-op（audit store 零写入）
+  const auditFile = path.join(bookDir, 'novel', '_system', 'chapter_audit.json');
+  const auditHashBefore = fs.readFileSync(auditFile, 'utf8');
+  const again = acceptChapter(bookDir, 1, { title: '雨夜' });
+  assert.equal(again.idempotent, true);
+  assert.equal(fs.readFileSync(auditFile, 'utf8'), auditHashBefore);
+  ok('EO-48 S2: re-accept accepted chapter → idempotent no-op');
 
   fs.rmSync(bookDir, { recursive: true, force: true });
 }

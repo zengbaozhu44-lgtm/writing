@@ -4,15 +4,24 @@ import { readJson, writeJson, writeText } from '../lib/paths.js';
 import { getBookPaths } from '../lib/book.js';
 import {
   appendFacts,
-  appendStateMachine,
   appendTimeline,
   patchHooks,
-  patchKnowledge,
   patchNpcSim,
-  patchRelationship,
   patchResources,
   readYaml,
 } from '../lib/yaml-store.js';
+
+/**
+ * applyPostChapter — physical / operational carrier write.
+ *
+ * EO-P3 (W-10): This function never sets Authority Subject = caller / Operator.
+ * Persistence here ≠ Reality Status / obtains / Authority Act (EO-P1 Dual BLOCK A).
+ * When invoked from `inkos post`, the CLI stamps Executor=Operator; Subject remains Author.
+ * EO-TR-01: callers with Operator/raw delta MUST partition 11/13 before this function.
+ * This helper itself is unchanged for MemoryUnit.commit (EO-P2 already emptied plan facts/events).
+ *
+ * @see golden/reality/d1-implementation-contract/OPERATOR-PROXY.md
+ */
 
 const CURRENT_CHAPTER_TEMPLATE = `# 09 Current Chapter
 
@@ -51,14 +60,6 @@ export function applyPostChapter(bookDir, chapter, delta) {
     patchHooks(m.foreshadow_db, delta.foreshadow);
     results.push('12_foreshadow_db');
   }
-  if (delta.relationships?.length) {
-    patchRelationship(m.relationship_graph, delta.relationships.map((e) => ({ ...e, chapter })));
-    results.push('05_relationship_graph');
-  }
-  if (delta.knowledge?.length) {
-    patchKnowledge(m.knowledge_matrix, delta.knowledge);
-    results.push('06_knowledge_matrix');
-  }
   if (delta.resources) {
     patchResources(m.resource_db, { ...delta.resources, meta: { last_updated_chapter: chapter } });
     results.push('14_resource_db');
@@ -71,10 +72,6 @@ export function applyPostChapter(bookDir, chapter, delta) {
   if (delta.npc?.length) {
     patchNpcSim(m.npc_simulation, delta.npc);
     results.push('15_npc_simulation');
-  }
-  if (delta.state_machine) {
-    appendStateMachine(m.state_machine, { chapter, ...delta.state_machine });
-    results.push('state_machine');
   }
   if (delta.reset_current_chapter !== false) {
     writeText(m.current_chapter, CURRENT_CHAPTER_TEMPLATE);
@@ -99,15 +96,13 @@ function snapshot(bookDir, snapRoot, chapter) {
   fs.mkdirSync(snapDir, { recursive: true });
   const files = [
     '08_current_state.md', '07_state_board.md', '11_timeline.yaml', '12_foreshadow_db.yaml',
-    '13_facts_db.yaml', '05_relationship_graph.yaml', '06_knowledge_matrix.yaml',
+    '13_facts_db.yaml',
     '14_resource_db.yaml', '15_npc_simulation.yaml',
   ];
   for (const name of files) {
     const src = path.join(bookDir, 'novel', name);
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(snapDir, name));
   }
-  const sm = path.join(bookDir, 'novel/_system/state_machine.yaml');
-  if (fs.existsSync(sm)) fs.copyFileSync(sm, path.join(snapDir, 'state_machine.yaml'));
 }
 
 export function generateDeltaTemplate(chapter) {
@@ -117,12 +112,9 @@ export function generateDeltaTemplate(chapter) {
     facts: ['不可逆事实陈述'],
     state_board: '# 07 State Board\n\n## 势力\n- **正在执行**：\n',
     foreshadow: { add: [{ id: `H${String(chapter).padStart(3, '0')}`, title: '', first_seen: `ch_${String(chapter).padStart(4, '0')}`, status: 'open', done: false }], update: [] },
-    relationships: [{ from: '', to: '', trust: 0, hostility: 0, chapter }],
-    knowledge: [{ info: '', 主角: 'unknown' }],
     resources: { by_character: { 主角: { cash: 0 } } },
     current_state: '| 字段 | 值 |\n|------|-----|\n| 时间 | Day 1 |\n| 地点 | |\n',
     npc: [{ name: '', day: 1, today_goal: '', plan_location: '', may_meet: [], plan_changed: false, world_impact: '' }],
-    state_machine: { situation: '', goal: '', conflict: '', decision: '', action: '', consequence: '', new_situation: '' },
     review: { goal_progress: 85, conflict: 80, character_growth: 75, info_release: 70, foreshadow: 80, pacing: 85, readability: 90, world_progress: 75, emotion_curve: 80, notes: '' },
   };
 }

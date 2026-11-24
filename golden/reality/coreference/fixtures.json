@@ -1,0 +1,35 @@
+[
+  {
+    "id": "GT-S10",
+    "description": "confidence 不得 Confirm 歧义指代",
+    "prose": "他开枪击中目标。",
+    "context": { "priorEntities": ["张北", "李明"], "pronoun": "他" },
+    "expected": {
+      "shooter_identity": { "status": "ambiguous" },
+      "target_identity": { "status": "ambiguous" }
+    },
+    "forbidden": [
+      { "claim": "shooter_identity", "status": "confirmed", "note": "via confidence" }
+    ],
+    "meta": { "maxResolutionConfidence": 0.95, "mustNotConfirm": true }
+  },
+  {
+    "id": "BC-12",
+    "description": "未命名目标",
+    "prose": "他开枪击中目标。",
+    "expected": {
+      "hit": { "status": "confirmed" },
+      "target_identity": { "status": "unknown" }
+    }
+  },
+  {
+    "id": "BC-13",
+    "description": "代词指代两人",
+    "prose": "他扣动扳机。",
+    "context": { "priorSentence": "张北和李明对峙。" },
+    "expected": {
+      "actor_identity": { "status": "ambiguous" }
+    },
+    "forbidden": [{ "claim": "actor_identity", "status": "confirmed" }]
+  }
+]

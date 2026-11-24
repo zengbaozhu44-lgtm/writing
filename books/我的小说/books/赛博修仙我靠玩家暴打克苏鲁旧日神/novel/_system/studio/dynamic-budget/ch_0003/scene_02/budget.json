@@ -1,0 +1,167 @@
+{
+  "version": "dynamic-budget-3",
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s2",
+    "index": 2,
+    "goal": "推进阻碍（行动线第2步）：解析出执法者护盾的频率漏洞"
+  },
+  "totalTokens": 1998,
+  "budgetRange": {
+    "min": 1800,
+    "max": 3200,
+    "target": 1998
+  },
+  "sceneType": "dialogue",
+  "complexity": {
+    "characterCount": 1,
+    "conflictCount": 4,
+    "worldChange": false,
+    "dialogueDensity": 0.2,
+    "battleScale": 0.1,
+    "infoRelease": 0.25,
+    "score": 0.33,
+    "level": "low"
+  },
+  "dynamic": true,
+  "tierless": true,
+  "allocation": {
+    "goal": {
+      "key": "goal",
+      "label": "Goal",
+      "weight": 0.1154,
+      "tokens": 231,
+      "pct": 11.5,
+      "color": "#5b8def"
+    },
+    "conflict": {
+      "key": "conflict",
+      "label": "Conflict",
+      "weight": 0.1731,
+      "tokens": 346,
+      "pct": 17.3,
+      "color": "#f45b69"
+    },
+    "character": {
+      "key": "character",
+      "label": "Character",
+      "weight": 0.251,
+      "tokens": 501,
+      "pct": 25.1,
+      "color": "#3dd68c"
+    },
+    "world": {
+      "key": "world",
+      "label": "World",
+      "weight": 0.0096,
+      "tokens": 19,
+      "pct": 1,
+      "color": "#a78bfa"
+    },
+    "facts": {
+      "key": "facts",
+      "label": "Facts",
+      "weight": 0.0856,
+      "tokens": 171,
+      "pct": 8.6,
+      "color": "#f5a623"
+    },
+    "history": {
+      "key": "history",
+      "label": "History",
+      "weight": 0.0961,
+      "tokens": 192,
+      "pct": 9.6,
+      "color": "#56cfe1"
+    },
+    "relationship": {
+      "key": "relationship",
+      "label": "Relationship",
+      "weight": 0.2115,
+      "tokens": 423,
+      "pct": 21.2,
+      "color": "#ff6b9d"
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "weight": 0.0577,
+      "tokens": 115,
+      "pct": 5.8,
+      "color": "#ffd166"
+    }
+  },
+  "pie": [
+    {
+      "key": "goal",
+      "label": "Goal",
+      "tokens": 231,
+      "pct": 11.5,
+      "color": "#5b8def"
+    },
+    {
+      "key": "conflict",
+      "label": "Conflict",
+      "tokens": 346,
+      "pct": 17.3,
+      "color": "#f45b69"
+    },
+    {
+      "key": "character",
+      "label": "Character",
+      "tokens": 501,
+      "pct": 25.1,
+      "color": "#3dd68c"
+    },
+    {
+      "key": "world",
+      "label": "World",
+      "tokens": 19,
+      "pct": 1,
+      "color": "#a78bfa"
+    },
+    {
+      "key": "facts",
+      "label": "Facts",
+      "tokens": 171,
+      "pct": 8.6,
+      "color": "#f5a623"
+    },
+    {
+      "key": "history",
+      "label": "History",
+      "tokens": 192,
+      "pct": 9.6,
+      "color": "#56cfe1"
+    },
+    {
+      "key": "relationship",
+      "label": "Relationship",
+      "tokens": 423,
+      "pct": 21.2,
+      "color": "#ff6b9d"
+    },
+    {
+      "key": "knowledge",
+      "label": "Knowledge",
+      "tokens": 115,
+      "pct": 5.8,
+      "color": "#ffd166"
+    }
+  ],
+  "limits": {
+    "goalTokens": 231,
+    "conflictTokens": 346,
+    "characterTokens": 501,
+    "worldTokens": 19,
+    "factsTokens": 171,
+    "historyTokens": 192,
+    "relationshipTokens": 423,
+    "knowledgeTokens": 115
+  },
+  "intent": {
+    "mainGoal": "紧急铺垫：距里程碑「第一次不可逆代价（死亡/暴露/失去）」仅 2 章，须完成前置",
+    "pov": "林砚"
+  },
+  "generatedAt": "2026-08-04T07:16:49.412Z"
+}

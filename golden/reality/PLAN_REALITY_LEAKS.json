@@ -1,0 +1,123 @@
+{
+  "version": "phase-0.5-audit",
+  "description": "Locations where Plan/Inference masquerade as Story Reality",
+  "leaks": [
+    {
+      "id": "L01",
+      "severity": "CRITICAL",
+      "path": "authoredPlan.cost / chapterTask.代价 → mockReason → causalChain.consequence.immediate",
+      "files": ["packages/inkos-brain/src/causal/causal-reasoner.js"],
+      "producer": "PLAN",
+      "consumer": "intent.causalChain → resolveTimelineEvents → 11_timeline.yaml",
+      "masqueradesAs": "已发生 consequence / timeline event"
+    },
+    {
+      "id": "L02",
+      "severity": "CRITICAL",
+      "path": "intent.mainGoal → buildStateDelta.facts",
+      "files": ["packages/inkos-brain/src/memory/state-updater.js:97-101"],
+      "producer": "PLAN",
+      "consumer": "13_facts_db.yaml (immutable: true)",
+      "masqueradesAs": "immutable story fact"
+    },
+    {
+      "id": "L03",
+      "severity": "HIGH",
+      "path": "intent → buildCurrentStateTable → 08_current_state.md",
+      "files": ["packages/inkos-brain/src/memory/state-updater.js:269-281"],
+      "producer": "PLAN",
+      "consumer": "08_current_state.md → loadBrainContext → planNextChapter",
+      "masqueradesAs": "current world state after chapter"
+    },
+    {
+      "id": "L04",
+      "severity": "HIGH",
+      "path": "scenes[].consequence / inferSceneOutcome defaults → resolveTimelineEvents",
+      "files": ["packages/inkos-director/src/scene-execution.js:317-328", "packages/inkos-brain/src/memory/state-updater.js:65-73"],
+      "producer": "PLAN/INFERENCE",
+      "consumer": "11_timeline.yaml",
+      "masqueradesAs": "scene actual outcome"
+    },
+    {
+      "id": "L05",
+      "severity": "HIGH",
+      "path": "plan.consequence / plan.newInformation → inferWorldAfter → situation.worldState.after",
+      "files": ["packages/inkos-director/src/situation-engine.js:127-144"],
+      "producer": "PLAN/INFERENCE",
+      "consumer": "Writer prompt (formatSituationBlock)",
+      "masqueradesAs": "world after scene (reality instruction)"
+    },
+    {
+      "id": "L06",
+      "severity": "HIGH",
+      "path": "intent.obstacles/bargain/mustLose → deriveRelationshipState",
+      "files": ["packages/inkos-runtime/src/memory/memory-unit.js:375-409"],
+      "producer": "PLAN",
+      "consumer": "states/ch_XXXX_anchor.yaml → planNextChapter",
+      "masqueradesAs": "relationship fact + expectedTransition"
+    },
+    {
+      "id": "L07",
+      "severity": "MED",
+      "path": "intent.newForeshadow → buildStateDelta.foreshadow",
+      "files": ["packages/inkos-brain/src/memory/state-updater.js:107-115"],
+      "producer": "PLAN",
+      "consumer": "12_foreshadow_db.yaml",
+      "masqueradesAs": "open hook in canon"
+    },
+    {
+      "id": "L08",
+      "severity": "MED",
+      "path": "planNextChapter → writeNextChapterTask → 09_current_chapter.md",
+      "files": ["packages/inkos-studio-server/src/chapter-audit.js:218-223", "packages/inkos-brain/src/memory/state-updater.js:144-190"],
+      "producer": "GENERATED",
+      "consumer": "next chapter planChapter / assembleWorldPressure",
+      "masqueradesAs": "Author Direction"
+    },
+    {
+      "id": "L09",
+      "severity": "MED",
+      "path": "beatPlan.choice/consequence → extractBeatStateDelta",
+      "files": ["packages/inkos-director/src/beat-memory.js:74-75"],
+      "producer": "PLAN",
+      "consumer": "beat memory prompt block",
+      "masqueradesAs": "prose-derived state delta"
+    },
+    {
+      "id": "L10",
+      "severity": "LOW",
+      "path": "chapterText tail keywords → deriveClosingEmotion → anchor",
+      "files": ["packages/inkos-runtime/src/memory/memory-unit.js:335-347"],
+      "producer": "PROSE-HEURISTIC",
+      "consumer": "anchor.narrative_momentum",
+      "masqueradesAs": "partial reality (emotion only, not event)"
+    },
+    {
+      "id": "L11",
+      "severity": "LOW",
+      "path": "prose regex → beat-continuity body/location",
+      "files": ["packages/inkos-studio-server/src/writer-optimization/beat-continuity.js"],
+      "producer": "PROSE-HEURISTIC",
+      "consumer": "continuity.json (chapter-local)",
+      "masqueradesAs": "state (writer-only, not canon)"
+    },
+    {
+      "id": "L12",
+      "severity": "MED",
+      "path": "facts_db regex → deriveBodyStateFromFacts → continuity seed",
+      "files": ["packages/inkos-studio-server/src/writer-optimization/beat-continuity.js:524-547"],
+      "producer": "CANON-READ (plan-derived facts)",
+      "consumer": "continuity.json",
+      "masqueradesAs": "prose-derived body state"
+    },
+    {
+      "id": "L13",
+      "severity": "MED",
+      "path": "living-novel evolveWorldState regex on chapterText",
+      "files": ["packages/inkos-studio-server/src/living-novel-engine.js:138-154"],
+      "producer": "PROSE-HEURISTIC",
+      "consumer": "world_state proposal (often persist:false)",
+      "masqueradesAs": "world simulation fact"
+    }
+  ]
+}

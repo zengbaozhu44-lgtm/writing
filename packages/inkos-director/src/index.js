@@ -19,7 +19,6 @@ export {
   runSceneDirector,
   runSceneReview,
   runChapterReview,
-  analyzeSceneCheckpoints,
   loadAdaptiveHints,
   buildAdaptivePlannerBlock,
   recordAdaptiveHint,
@@ -169,6 +168,8 @@ export {
   LIBRARY_BEAT_DEFS,
   assignLibraryBeats,
   libraryBeatInstruction,
+  sanitizeLibraryBeat,
+  isDecisionHintAllowed,
 } from './beat-library.js';
 
 export {
@@ -220,6 +221,9 @@ export {
   buildSceneExecutionPlan,
   buildBeatExecutionPromptBlock,
   buildSceneEngineBundle,
+  derivePriorityGoal,
+  deriveSceneFear,
+  deriveSceneChoice,
 } from './scene-execution.js';
 
 export {

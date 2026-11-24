@@ -1,0 +1,97 @@
+{
+  "scene": 3,
+  "title": "转折与代价",
+  "entities": [
+    "苏晚"
+  ],
+  "presentNames": [
+    "苏晚",
+    "林夜"
+  ],
+  "checks": {
+    "clock": true,
+    "ib": true,
+    "characterContext": true,
+    "unknownAbsent": true,
+    "rawSecretAbsent": true,
+    "bystanderAbsent": true,
+    "charCards": 2,
+    "textLen": 1048,
+    "textPreview": "苏晚的手从桌面落下，指尖还残留着咖啡杯沿那个熟悉的缺口凹陷。他望着键盘上闪烁的光标，那光标像是在等一个不存在的按钮。眼前的画面突然扭曲——不是屏幕坏了，而是整个医院病房的光线在一秒内改变了色温。窗外的天空从昏暗的夜色骤然切换成了带着晨雾的灰蓝，光线仿佛从一条不同轨道射入。  他猛地坐起，心脏在胸腔里撞击肋骨。手机在床头柜上震动，他伸手去捏，屏幕亮起的刹那，右"
+  },
+  "provenance": {
+    "story_clock": {
+      "key": "story_clock",
+      "source": "intent.time",
+      "type": "plan",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "L2": "present",
+      "L3": "present",
+      "L4": "present",
+      "note": null
+    },
+    "information_boundary": {
+      "key": "information_boundary",
+      "source": "buildSceneWritePrompt / prompt-survival",
+      "type": "guard",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "L2": "present",
+      "L3": "present",
+      "L4": "present",
+      "note": null
+    },
+    "character_context": {
+      "key": "character_context",
+      "source": "03_character_bible whitelist → char:苏晚",
+      "type": "canon",
+      "priority": "P2",
+      "kept": false,
+      "reason": "budget_trim",
+      "L2": "present",
+      "L3": "trimmed",
+      "L4": "absent",
+      "note": null
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+      "type": "projection",
+      "priority": "P2",
+      "kept": false,
+      "reason": "budget_trim",
+      "L2": "present",
+      "L3": "trimmed",
+      "L4": "trimmed",
+      "note": null
+    },
+    "entity": {
+      "key": "entity",
+      "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+      "type": "derived",
+      "priority": "P2",
+      "kept": false,
+      "reason": "scene_relevant",
+      "L2": "present",
+      "L3": "present",
+      "L4": "trimmed",
+      "note": "selected: 苏晚,苏晚,林夜,苏晚"
+    },
+    "character_sr": {
+      "key": "character_sr",
+      "source": "minimal-sr (assembleMinimalSR)",
+      "type": "sr",
+      "priority": "P2",
+      "kept": true,
+      "reason": "scene_relevant",
+      "L2": "present",
+      "L3": "present",
+      "L4": "present",
+      "note": null
+    }
+  },
+  "pass": true
+}

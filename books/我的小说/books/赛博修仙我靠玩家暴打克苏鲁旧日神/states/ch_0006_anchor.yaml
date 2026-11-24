@@ -1,0 +1,112 @@
+version: chapter-anchor-3
+chapter: 6
+current_date: Day 0
+pov: 林砚
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 林砚
+  present:
+    - 林砚
+  edges:
+    - from: 林砚
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 7
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止无损撤回本章代价：林砚为维持玩家通道稳定，强行燃烧自身神魂作为锚点，导致半机械仙体出现不可逆裂痕，
+    expiresAtChapter: 6
+  - text: 禁止提前揭晓章末钩子：位面碎片显示，玩家世界正被高维诡秘渗透，现实中出现诡异游戏BUG——林砚意识到，这场战争远未结束，玩家世界已成为新战场。
+    expiresAtChapter: 6
+  - text: 禁止无损撤回本章代价：林砚为击溃投影，燃烧自身部分神魂，导致神魂受损，埋下隐患。
+    expiresAtChapter: 7
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 6
+  - text: 禁止提前揭晓章末钩子：林砚通过‘数据眼’的最后一瞥，看到了‘蚀骨’记忆深处的一个坐标——旧日支配者‘混沌之核’的封印之地，赫然就在浮空城地底深
+    expiresAtChapter: 7
+  - text: 禁止无损撤回本章代价：林砚为强行驱动‘数据眼’并解析邪神代码，神魂遭受严重反噬，左臂义体彻底烧毁，短时
+    expiresAtChapter: 8
+voiceDna:
+  version: voice-dna-2
+  presetId: default
+  label: 商业快节奏
+  sentenceLength: short
+  rhythm: staccato
+  sentenceRhythm:
+    mode: emotion
+    label: 读者情绪/信息差
+    rules:
+      - 减少解释。
+      - 增加动作与对白。
+      - 让读者比 POV 更紧张 — 用细节不用旁白。
+  dialogueRatio: 0.42
+  actionDensity: high
+  descriptionDensity: low
+  pov: 限知第三人称
+  notes: 对白推动剧情；动作优先于心理；禁止总结句
+  bannedPhrases:
+    - 不禁
+    - 心中一凛
+    - 隐约感到
+    - 莫名
+    - 仿佛
+    - 似乎
+    - 不由得
+    - 内心深处
+    - 这一刻
+    - 空气仿佛凝固
+    - 时间仿佛静止
+    - 嘴角微微上扬
+    - 眼中闪过一丝
+    - 心中暗道
+    - 脑海中浮现
+    - 一股莫名的
+    - 难以言喻
+    - 说不清道不明
+    - 她感觉
+    - 他感觉
+    - 她意识到
+    - 他意识到
+    - 心中一震
+    - 眉头微皱
+  sampleLines:
+    - 雨滴砸在滑轨上，溅开成暗红色的水花。林异的手套已经磨破了三道口子，第四道正在渗血。
+    - 他把尸体拖上推车，编号栏写着“数据溢出——认知污染”。第九区的夜雨裹着机油味，打在防护服的帽檐上，噼啪作响。
+    - “快点。”对讲机里传来调度员的声音，“天眼三分钟后过境。”
+    - 林异没答话。他拽着滑轨往焚化区走，推车的轮子卡在裂缝里，尸体晃了一下，一只手从白布下滑出来——指甲全没了。
+    - 他停了两秒。然后继续拖。
+  goldenSample: |-
+    雨滴砸在滑轨上，溅开成暗红色的水花。林异的手套已经磨破了三道口子，第四道正在渗血。
+    他把尸体拖上推车，编号栏写着“数据溢出——认知污染”。第九区的夜雨裹着机油味，打在防护服的帽檐上，噼啪作响。
+
+    “快点。”对讲机里传来调度员的声音，“天眼三分钟后过境。”
+
+    林异没答话。他拽着滑轨往焚化区走，推车的轮子卡在裂缝里，尸体晃了一下，一只手从白布下滑出来——指甲全没了。
+
+    他停了两秒。然后继续拖。
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 6
+  closing_emotion: 紧迫·倒计时压迫
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+  mustInheritScene1: true
+  tailExcerpt: 锁孔里。他攥着剩下的半截，金属边缘陷进虎口，血渗进指缝。门缝里挤出沈寒舟的声音，断续，像信号被搅碎：“……蚀骨，三点。” 他手腕抖得厉害，钥匙尖对不准孔位。第二次戳偏，铁屑簌簌落进锁芯。远处传来第一声警笛，越来越近，像倒计时的指针开始走动。
+committedAt: 2026-08-04T08:30:07.065Z

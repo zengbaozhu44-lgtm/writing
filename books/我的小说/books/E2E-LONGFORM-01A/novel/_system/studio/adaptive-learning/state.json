@@ -1,0 +1,126 @@
+{
+  "version": "adaptive-learning-1",
+  "chaptersAnalyzed": [
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "entryCount": 59,
+  "trends": {
+    "hook": {
+      "dimension": "hook",
+      "average": 88,
+      "streak": 2,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 59
+    },
+    "conflict": {
+      "dimension": "conflict",
+      "average": 81,
+      "streak": 2,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 59
+    },
+    "dialogue": {
+      "dimension": "dialogue",
+      "average": 54,
+      "streak": 5,
+      "low": true,
+      "needsBoost": true,
+      "sampleCount": 59
+    },
+    "pacing": {
+      "dimension": "pacing",
+      "average": 71,
+      "streak": 4,
+      "low": false,
+      "needsBoost": true,
+      "sampleCount": 59
+    },
+    "emotion": {
+      "dimension": "emotion",
+      "average": 74,
+      "streak": 4,
+      "low": false,
+      "needsBoost": true,
+      "sampleCount": 59
+    },
+    "style": {
+      "dimension": "style",
+      "average": 56,
+      "streak": 17,
+      "low": true,
+      "needsBoost": true,
+      "sampleCount": 59
+    }
+  },
+  "adjustments": {
+    "activeDimensions": [
+      "dialogue",
+      "pacing",
+      "emotion",
+      "style"
+    ],
+    "budgetWeights": {
+      "character": 0.12000000000000001,
+      "relationship": 0.07,
+      "world": -0.010000000000000002,
+      "history": -0.05,
+      "facts": -0.03,
+      "goal": 0.02
+    },
+    "endingBudgetBoost": 0,
+    "climaxHint": false,
+    "promptLines": [
+      "**对白强化**：增加对白块与潜台词，避免说明式旁白",
+      "对白需体现人物立场差异与情绪节拍",
+      "**节奏强化**：压缩说明段，增加事件推进与场景切换",
+      "避免连续环境描写超过 2 句",
+      "**情绪强化**：POV 内心反应与身体感受必须可见",
+      "情绪需随冲突升级而变化",
+      "**文风强化**：遵守写作圣经硬切、身体先行、限知视角",
+      "减少说明腔，增加具体感官细节"
+    ],
+    "generatedAt": "2026-10-30T09:46:03.079Z"
+  },
+  "suggestions": [
+    {
+      "id": "adaptive_dialogue",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "dialogue",
+      "text": "dialogue 连续 5 次低于 70 分（均分 54）→ 已自动调权 Prompt"
+    },
+    {
+      "id": "adaptive_pacing",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "pacing",
+      "text": "pacing 连续 4 次低于 70 分（均分 71）→ 已自动调权 Prompt"
+    },
+    {
+      "id": "adaptive_emotion",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "emotion",
+      "text": "emotion 连续 4 次低于 70 分（均分 74）→ 已自动调权 Prompt"
+    },
+    {
+      "id": "adaptive_style",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "style",
+      "text": "style 连续 17 次低于 70 分（均分 56）→ 已自动调权 Prompt"
+    }
+  ],
+  "updatedAt": "2026-10-30T09:46:03.079Z"
+}

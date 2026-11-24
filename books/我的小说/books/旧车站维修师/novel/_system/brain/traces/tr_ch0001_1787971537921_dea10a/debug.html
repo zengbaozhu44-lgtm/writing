@@ -1,0 +1,2522 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>InkOS Trace tr_ch0001_1787971537921_dea10a</title>
+  <style>
+    body{font-family:ui-sans-serif,system-ui,sans-serif;margin:24px;background:#0f1419;color:#e7ecf1;line-height:1.45}
+    h1,h2,h3{color:#f5f7fa}
+    .meta{opacity:.85;margin-bottom:20px}
+    details{margin:8px 0;background:#1a222c;padding:8px 12px;border-radius:8px}
+    pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c9d4e0}
+    .beat{border:1px solid #2b3642;border-radius:10px;padding:12px;margin:16px 0;background:#141b22}
+    .rot{color:#7dffb3;font-weight:600}
+    a{color:#7cb7ff}
+  </style>
+</head>
+<body>
+  <h1>Chapter Trace</h1>
+  <div class="meta">
+    <div><b>traceId</b>: tr_ch0001_1787971537921_dea10a</div>
+    <div><b>chapter</b>: 1</div>
+    <div><b>created</b>: 2026-08-29T02:45:37.922Z</div>
+    <div><b>finished</b>: 2026-08-29T02:52:26.380Z</div>
+    <div><b>pass</b>: false</div>
+  </div>
+  <h2>Pipeline Stages</h2>
+  <details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:45:37.924Z&quot;,
+  &quot;chapter&quot;: 1,
+  &quot;options&quot;: {}
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:45:37.926Z&quot;,
+  &quot;attempt&quot;: 1,
+  &quot;summary&quot;: &quot;进入世界&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第1章：进入世界&quot;,
+    &quot;mainGoal&quot;: &quot;进入世界&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: null,
+    &quot;bannedElements&quot;: []
+  },
+  &quot;voiceDnaForced&quot;: false,
+  &quot;bannedCount&quot;: 0
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:45:37.927Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:45:37.928Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;information&quot;
+  ],
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:45:37.929Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch1_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;进入现场并确立危机：进入世界&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;克服阻碍：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:47:51.991Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;进入现场并确立危机：进入世界&quot;,
+  &quot;chars&quot;: 2959,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:48:30.872Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;克服阻碍：no_causal_basis&quot;,
+  &quot;chars&quot;: 2357,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:48:46.978Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;,
+  &quot;chars&quot;: 998,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:01.976Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;,
+  &quot;chars&quot;: 668,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scenes ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scenes&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:01.979Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;count&quot;: 4,
+  &quot;passed&quot;: 4
+}</pre></details>
+<details><summary>consistency ✓</summary><pre>{
+  &quot;stage&quot;: &quot;consistency&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:01.988Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null
+}</pre></details>
+<details><summary>metrics </summary><pre>{
+  &quot;stage&quot;: &quot;metrics&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:01.989Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;chapter&quot;: 1,
+    &quot;sceneCount&quot;: 4,
+    &quot;climaxCount&quot;: 2,
+    &quot;conflictDensity&quot;: 1,
+    &quot;conflictTypes&quot;: [
+      &quot;information&quot;
+    ],
+    &quot;dialogueRatio&quot;: 0,
+    &quot;humanDialogueCount&quot;: 47,
+    &quot;longDialogueBlocks&quot;: 11,
+    &quot;actionRatio&quot;: 0.3,
+    &quot;mindRatio&quot;: 0.02,
+    &quot;wordCount&quot;: 6982,
+    &quot;worldProgress&quot;: 0,
+    &quot;characterGrowth&quot;: 1,
+    &quot;foreshadowRate&quot;: 0,
+    &quot;rhythmPeaks&quot;: [
+      {
+        &quot;index&quot;: 5,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 21
+      },
+      {
+        &quot;index&quot;: 6,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 51
+      },
+      {
+        &quot;index&quot;: 9,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 11
+      },
+      {
+        &quot;index&quot;: 12,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 8
+      },
+      {
+        &quot;index&quot;: 17,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 6
+      }
+    ],
+    &quot;infoDensity&quot;: 17.45,
+    &quot;timestamp&quot;: &quot;2026-08-29T02:49:01.984Z&quot;
+  }
+}</pre></details>
+<details><summary>chapter_replan </summary><pre>{
+  &quot;stage&quot;: &quot;chapter_replan&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:01.997Z&quot;,
+  &quot;count&quot;: 1,
+  &quot;max&quot;: 3,
+  &quot;source&quot;: &quot;metrics_replan&quot;,
+  &quot;summary&quot;: &quot;进入世界&quot;
+}</pre></details>
+<details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:02.005Z&quot;,
+  &quot;chapter&quot;: 1,
+  &quot;options&quot;: {}
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:02.006Z&quot;,
+  &quot;attempt&quot;: 2,
+  &quot;summary&quot;: &quot;进入世界&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第1章：进入世界&quot;,
+    &quot;mainGoal&quot;: &quot;进入世界&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: null,
+    &quot;bannedElements&quot;: []
+  },
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:02.007Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:02.008Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;no_causal_basis&quot;
+  ],
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:02.009Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch1_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;进入现场并确立危机：进入世界&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;克服阻碍：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:23.937Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;进入现场并确立危机：进入世界&quot;,
+  &quot;chars&quot;: 1015,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:49:58.461Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;克服阻碍：no_causal_basis&quot;,
+  &quot;chars&quot;: 1027,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:06.293Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;,
+  &quot;chars&quot;: 797,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.223Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;,
+  &quot;chars&quot;: 487,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scenes ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scenes&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.226Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;count&quot;: 4,
+  &quot;passed&quot;: 4
+}</pre></details>
+<details><summary>consistency ✓</summary><pre>{
+  &quot;stage&quot;: &quot;consistency&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.237Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null
+}</pre></details>
+<details><summary>metrics </summary><pre>{
+  &quot;stage&quot;: &quot;metrics&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.238Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;chapter&quot;: 1,
+    &quot;sceneCount&quot;: 4,
+    &quot;climaxCount&quot;: 2,
+    &quot;conflictDensity&quot;: 1,
+    &quot;conflictTypes&quot;: [
+      &quot;no_causal_basis&quot;
+    ],
+    &quot;dialogueRatio&quot;: 0,
+    &quot;humanDialogueCount&quot;: 16,
+    &quot;longDialogueBlocks&quot;: 0,
+    &quot;actionRatio&quot;: 0.5,
+    &quot;mindRatio&quot;: 0.18,
+    &quot;wordCount&quot;: 3326,
+    &quot;worldProgress&quot;: 0,
+    &quot;characterGrowth&quot;: 1,
+    &quot;foreshadowRate&quot;: 0,
+    &quot;rhythmPeaks&quot;: [
+      {
+        &quot;index&quot;: 5,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 29
+      },
+      {
+        &quot;index&quot;: 7,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 41
+      },
+      {
+        &quot;index&quot;: 10,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 24
+      },
+      {
+        &quot;index&quot;: 19,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 25
+      },
+      {
+        &quot;index&quot;: 23,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 76
+      }
+    ],
+    &quot;infoDensity&quot;: 8.32,
+    &quot;timestamp&quot;: &quot;2026-08-29T02:50:20.231Z&quot;
+  }
+}</pre></details>
+<details><summary>chapter_replan </summary><pre>{
+  &quot;stage&quot;: &quot;chapter_replan&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.253Z&quot;,
+  &quot;count&quot;: 2,
+  &quot;max&quot;: 3,
+  &quot;source&quot;: &quot;metrics_replan&quot;,
+  &quot;summary&quot;: &quot;进入世界&quot;
+}</pre></details>
+<details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.269Z&quot;,
+  &quot;chapter&quot;: 1,
+  &quot;options&quot;: {}
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.271Z&quot;,
+  &quot;attempt&quot;: 3,
+  &quot;summary&quot;: &quot;进入世界&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第1章：进入世界&quot;,
+    &quot;mainGoal&quot;: &quot;进入世界&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: null,
+    &quot;bannedElements&quot;: []
+  },
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.272Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.273Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;no_causal_basis&quot;
+  ],
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:20.274Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch1_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;进入现场并确立危机：进入世界&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;克服阻碍：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:38.745Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;进入现场并确立危机：进入世界&quot;,
+  &quot;chars&quot;: 980,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:50:49.717Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;克服阻碍：no_causal_basis&quot;,
+  &quot;chars&quot;: 838,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:07.404Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;,
+  &quot;chars&quot;: 744,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.942Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;,
+  &quot;chars&quot;: 612,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scenes ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scenes&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.945Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;count&quot;: 4,
+  &quot;passed&quot;: 4
+}</pre></details>
+<details><summary>consistency ✓</summary><pre>{
+  &quot;stage&quot;: &quot;consistency&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.951Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null
+}</pre></details>
+<details><summary>metrics </summary><pre>{
+  &quot;stage&quot;: &quot;metrics&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.953Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;chapter&quot;: 1,
+    &quot;sceneCount&quot;: 4,
+    &quot;climaxCount&quot;: 2,
+    &quot;conflictDensity&quot;: 1,
+    &quot;conflictTypes&quot;: [
+      &quot;no_causal_basis&quot;
+    ],
+    &quot;dialogueRatio&quot;: 0,
+    &quot;humanDialogueCount&quot;: 6,
+    &quot;longDialogueBlocks&quot;: 1,
+    &quot;actionRatio&quot;: 0.65,
+    &quot;mindRatio&quot;: 0.12,
+    &quot;wordCount&quot;: 3174,
+    &quot;worldProgress&quot;: 0,
+    &quot;characterGrowth&quot;: 1,
+    &quot;foreshadowRate&quot;: 0,
+    &quot;rhythmPeaks&quot;: [
+      {
+        &quot;index&quot;: 5,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 50
+      },
+      {
+        &quot;index&quot;: 9,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 43
+      },
+      {
+        &quot;index&quot;: 3,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 10
+      },
+      {
+        &quot;index&quot;: 4,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 66
+      },
+      {
+        &quot;index&quot;: 6,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 48
+      }
+    ],
+    &quot;infoDensity&quot;: 7.94,
+    &quot;timestamp&quot;: &quot;2026-08-29T02:51:31.949Z&quot;
+  }
+}</pre></details>
+<details><summary>chapter_replan </summary><pre>{
+  &quot;stage&quot;: &quot;chapter_replan&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.969Z&quot;,
+  &quot;count&quot;: 3,
+  &quot;max&quot;: 3,
+  &quot;source&quot;: &quot;metrics_replan&quot;,
+  &quot;summary&quot;: &quot;进入世界&quot;
+}</pre></details>
+<details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.976Z&quot;,
+  &quot;chapter&quot;: 1,
+  &quot;options&quot;: {}
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.977Z&quot;,
+  &quot;attempt&quot;: 4,
+  &quot;summary&quot;: &quot;进入世界&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第1章：进入世界&quot;,
+    &quot;mainGoal&quot;: &quot;进入世界&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: null,
+    &quot;bannedElements&quot;: []
+  },
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.979Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.980Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;no_causal_basis&quot;
+  ],
+  &quot;source&quot;: &quot;metrics_replan&quot;
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:31.981Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch1_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;进入现场并确立危机：进入世界&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;克服阻碍：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:51:56.688Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;进入现场并确立危机：进入世界&quot;,
+  &quot;chars&quot;: 1027,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:52:04.652Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;克服阻碍：no_causal_basis&quot;,
+  &quot;chars&quot;: 798,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:52:12.512Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;,
+  &quot;chars&quot;: 1136,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:52:26.371Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;,
+  &quot;chars&quot;: 575,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scenes ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scenes&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:52:26.373Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;count&quot;: 4,
+  &quot;passed&quot;: 4
+}</pre></details>
+<details><summary>consistency ✓</summary><pre>{
+  &quot;stage&quot;: &quot;consistency&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:52:26.376Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null
+}</pre></details>
+<details><summary>metrics </summary><pre>{
+  &quot;stage&quot;: &quot;metrics&quot;,
+  &quot;at&quot;: &quot;2026-08-29T02:52:26.378Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;chapter&quot;: 1,
+    &quot;sceneCount&quot;: 4,
+    &quot;climaxCount&quot;: 2,
+    &quot;conflictDensity&quot;: 1,
+    &quot;conflictTypes&quot;: [
+      &quot;no_causal_basis&quot;
+    ],
+    &quot;dialogueRatio&quot;: 0,
+    &quot;humanDialogueCount&quot;: 4,
+    &quot;longDialogueBlocks&quot;: 0,
+    &quot;actionRatio&quot;: 0.55,
+    &quot;mindRatio&quot;: 0.08,
+    &quot;wordCount&quot;: 3536,
+    &quot;worldProgress&quot;: 0,
+    &quot;characterGrowth&quot;: 1,
+    &quot;foreshadowRate&quot;: 0,
+    &quot;rhythmPeaks&quot;: [
+      {
+        &quot;index&quot;: 32,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 75
+      },
+      {
+        &quot;index&quot;: 49,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 71
+      },
+      {
+        &quot;index&quot;: 2,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 29
+      },
+      {
+        &quot;index&quot;: 5,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 19
+      },
+      {
+        &quot;index&quot;: 6,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 66
+      }
+    ],
+    &quot;infoDensity&quot;: 8.84,
+    &quot;timestamp&quot;: &quot;2026-08-29T02:52:26.374Z&quot;
+  }
+}</pre></details>
+  <h2>Beat I/O</h2>
+  
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=2959 · tension=— · craft=— · hookType=—  · 2026-08-29T02:51:56.684Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 林岚
+- 目标: 进入现场并确立危机：进入世界
+- 冲突: no_causal_basis
+- 节拍: situation
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s1 | tokens=327 | profile=opening | cache=100% | compile=5ms --&gt;
+
+### Scene 目标
+目标: 进入现场并确立危机：进入世界
+节拍: situation
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 当前状态
+# 08 Current State · 第 0 章后
+
+&gt; 上限 1000 字。只写此刻。
+
+| 字段 | 值 |
+|------|-----|
+| 时间 | 车站关闭前三天 |
+| 地点 | 即将被拆除的旧车站 |
+| POV | 林岚 |
+| POV 状态 | 今日来维修最后一台售票机。站长已离开。 |
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转**
+6. **对话是博弈**
+7. **渐进揭秘**
+8. **每章不可逆变化**
+
+## 文风原则
+1. **身体先行**
+2. **感官优先**
+3. **信息寄生**
+4. **异常反噬**
+5. **限知第三人称**
+
+## 平台参数
+| 参数 | 值 |
+|------|-----|
+| 单章字数 | 3000 |
+| 对话占比 | 30%–60% |
+
+## 禁止
+- 解释设定 / 全员
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>车站的大门锈得咬不开了。林岚推了三下，铁皮在她掌心蹭出火星，最后一道铰链发出湿骂声，门终于歪向一侧。里面的空气是铁锈味、霉味和旧胶水混在一起的东西。她闻了闻，没说话，检查了检查鼻腔里的痕迹，确认没有什么东西往里钻。
+
+售票机还在角落里。他妈的，还能再动一下。他妈的，真的能动。
+
+林岚扛着工具箱走过空荡的候车大厅。地砖裂了几条缝，裂缝里长着灰绿色的苔藓，她脚底踩上去有点弹。天花板的风口漏风，吹得她袖口哗啦响。站长的办公室门敞开着，抽屉拉得整整齐齐，连纸杯都被拿走了。她在桌角摸了摸残留的咖啡印，没在抽屉里找到任何工具，转身走向售票机。
+
+售票机是块钢板加塑料外壳的东西。表面掉了漆，按钮排列整齐，译码器显示屏裂了一条纵线。林岚拆下工具箱的包带，打开底板，拉出螺丝刀和一把小扳手。她把灯打开，钨丝嗡嗡响，光线打在机身上的时候，她看见一个东西。
+
+票口下面，有一条不属于这台机器的接头。
+
+细的，黑的，像是从机器底板里钻出来的导线，但没有接口能对应上。林岚停了下来，盯着那条线看了三秒。她把螺丝刀往手里转了一下，慢慢靠近。
+
+线不动。
+
+她用指尖捏住线的尾端。塑料皮烫手，稍微硬，像刚退火的金属。她用力往外拽，线没断，但机身内部传来一阵轻微的震动，像是有什么东西在平行层里转动。售票机的译码器忽然亮了，显示屏上的裂纹不再是白色的，而是闪出一串浅粉的字符。
+
+林岚盯着字符看了三秒，没认出来。
+
+她没有按下任何按钮。她没有报警。她只是把螺丝刀插回工具箱，合上盖子，然后回到售票机前，蹲下来看那条线。
+
+线的尾端慢慢缩进机器底板里，一点一点，像蛇在吸水。机器轻轻嗡了一下，译码器上的字符消失，屏幕恢复裂纹的本色。车站大厅里没人。风还在漏，霉味还在。林岚起身，把工具箱扛在肩上，看了看售票机，看了看入口，看了看天花板漏下的灰尘。
+
+她没有离开。
+
+她走回售票机前，把工具箱放下，打开底板，拿出手电筒照进机身的裂缝里。裂缝里没有线了。只有一道比指甲稍宽的空隙，里面泛着浅粉的光，像什么东西正在往里钻。
+
+林岚把手电筒收好，摸了摸售票机的边角，指尖碰到一层油滑的残留。她没擦，没说话，只是把工具箱打开，拿出一卷胶带，贴在机身外侧的一个裂痕上。胶带贴好的时候，她听见背后的走廊里有脚步声。
+
+脚步声停了。
+
+林岚转过身，看见走廊尽头有个人影站在昏黄的灯光里。人影不动，灯光在他身上晕成一片模糊的光。林岚没认出来他是谁，也没问。车站关闭前三天。站长离开了。售票机修好之前，她还能修。
+
+她盯着人影看了三秒，然后走回售票机，继续拧螺丝。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=2357 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:04.647Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 林岚
+- 目标: 克服阻碍：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: complication
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s2 | tokens=120 | profile=dialogue | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 克服阻碍：no_causal_basis
+节拍: complication
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+
+…[truncated]
+
+### 写作规则
+# 02 Wr
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>螺丝刀尖刮过铜质接线端子，蹭出一粒细小的火星。林岚没抬头，右手拧紧最后一颗固定螺母，左手食指抵住机壳，感受它在震动里的微微松动。车站关闭前三天，站长走后，售票机的余电还能维持三天的测试。她盯着人影看了三秒，然后走回售票机，继续拧螺丝。
+
+走廊里的灯忽明忽暗，人影的轮廓在光与暗的边界上晃。她拧完最后一颗螺母，听见机内继电器轻轻卡了一下，像是吞了口气。她把螺丝刀放回口袋，拇指擦过螺纹上残留的油污。这时，走廊尽头传来金属刮地的声响。人影动了。
+
+林岚手指停在机壳上。她没转身，只把螺丝刀绕进口袋的拉链里。继电器第二次卡响，机壳表面的灰尘被微弱的电磁场扰起，落在她手腕上的旧修补纹里。她知道站长离开的那天，售票机的主继电器被人换过。换的那块不是原厂的。她没问，也没拆。现在继电器在卡，她就得拆。
+
+走廊尽头的人影走近了两步，脚步声压在水泥地上，像是有人在数自己的呼吸。林岚把螺丝刀从拉链里抽出来，刀身在昏黄灯光里反了一下。她没认出来他是谁，也没问。车站里剩下的东西，除了坏掉的，都不属于她。
+
+继电器卡了第三次。机壳内部漏出一丝高频的嗡鸣，穿过接线端子上的塑料套，碰到她手指上的旧茧。她伸手进机壳，食指碰到换过的继电器底座。螺丝拧得太紧，金属表面有划痕，螺母下面的弹簧片被压偏了。她把螺丝刀横过来，顶住端子边沿，往里推。继电器在里面松动了一毫米，她听见轻微的咔哒。
+
+人影在走廊尽头停住。灯光在他身上晕成一片模糊的光，边界模糊得像是刚修好的机壳一样。
+
+林岚把螺丝刀抽出来，转身。走廊里的男人站在灯光里，手里拿着一截断掉的电缆，线头散开，铜丝显露在外。她没问他来干什么，也没等他开口。她拉下售票机的电源隔离盖，手指碰到内部散热片上凝着的冷凝水。继电器卡痕还在，她得把弹簧片找回原位才能走。她把螺丝刀塞回机壳，拇指按住螺母，往下压。继电器不再卡了，机壳里的嗡鸣退了下去，剩下走廊里自己的脚步声，和远处站台边铁门轻轻摇摆的吱呀。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=998 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:12.509Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 林岚
+- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: turn
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s3 | tokens=259 | profile=climax | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+节拍: turn
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. 
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>继电器卡位松开的瞬间，林岚听见指节里有根细纤维断裂的声音。她拇指按得更狠，螺母咬进金属螺纹，冷凝水顺着隔离盖的边缘往下滴，在锈迹斑斑的机壳上划出一道湿线。走廊尽头的灯泡忽明忽暗，铜丝散线从男人手里滑落，搭在水泥地砖上，发出轻微的刮擦。
+
+他没动。售票机的嗡鸣退了下去，只剩铁门吱呀摇摆的节奏，和远处站台上传来的风声。林岚把螺丝刀从机壳里抽出来，柄上沾着黑色的油污，擦在她裤子的膝盖上，留下一条细细的印。
+
+“三天。”男人说。
+
+林岚没回头。她知道那是站长离开前最后一次在广播里念的话。车站大门锁死的日期，贴在服务台玻璃的一面，字迹已经被阳光晒得发白。她还没把那张纸拿下来。
+
+“你拿着这截线干什么。”她问。
+
+男性脚步往前轻轻挪了一步，鞋底蹭过地上的水渍。她看见他手腕内侧有道疤痕，皮肉凸起，像旧胶带拉松了的边缘。他没说话，只是把那截电缆往前递了两寸，线头铜丝在灯下乱抛光泽。
+
+继电器弹簧片已经回位，可售票机里还有一块继电器触头氧化发紫。林岚知道，指头往里插一根镊子，能把氧化皮刮干净，再把触头压回原位。她弯腰去够机壳底部的检修口，指尖碰到冰凉的金属，闻到一股陈年的油味混合着潮湿的铁锈。
+
+男人手里的电缆突然绷直了。不是他用力，是有什么东西从线里传过来，微弱的震颤经过铜丝，爬上他的手掌，也顺着电缆另一端的走向，朝着售票机里的某个接口去了。
+
+林岚的右手停在检修口边缘。她能听见，售票机内部有节奏的轻击声，不是继电器动作的声音，是金属片互相咬合后的余响，一下一下，像有人在敲玻璃。
+
+“别动。”男人说。
+
+林岚没松手。她把螺丝刀重新塞进机壳，螺母重新卡紧，金属咬合的声音短促而干脆。继电器里的微弱电流重新流动，嗡鸣升了起来，低频而钝，像一台旧马达在发烫。她拇指按住螺母，等那嗡鸣稳住，等震颤不再沿着电缆往外跑。
+
+售票机的显示屏黑着，玻璃表面蒙着一层薄灰。她把螺丝刀抽出来，转身面对走廊里的男人。灯泡晃了一下，她看见他手里的电缆线头已经不再散开，铜丝紧紧缠在一起，像根硬骨头。
+
+“你找什么。”她说。
+
+男人把电缆从手里松开，掉在地上。铜丝没散，反而留着形状，摊在水泥地上，像一张没人认识的图。
+
+林岚看着那截线，又看看售票机里的显示屏。她没问为什么来，也没问他是谁。她知道售票机里的继电器修好了，可它还不能走。她知道三天后车站锁死，那截电缆不会留在这里。
+
+她弯腰去捡那截线，指尖碰到铜丝上凝着的冷凝水。冰凉，带着铁锈味。她把电缆往回塞进售票机的检修口，听见内部传来一声闷响，不是继电器动作的声音，是什么东西在里面卡了一下，然后又松了回去。
+
+走廊里的脚步声停了。铁门吱呀摇摆的节奏也停了。只有售票机里的嗡鸣还在，低频而钝，像一台旧马达在发烫。林岚把售票机的电源隔离盖扣好，手指离开金属的瞬间，她感觉到身体里的某个地方也松了回去。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 4 · Beat 0 scene-aggregate </h3>
+  <p>chars=668 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:26.369Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 4/4 · POV 林岚
+- 目标: 章末钩子（承接转折后果）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: hook
+- 字数: ~600
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s4 | tokens=260 | profile=ending | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 章末钩子（承接转折后果）：no_causal_basis
+节拍: hook
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 3.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>售票机的嗡鸣不是在停，是在变调。林岚盯着隔离盖上的裂纹，那道白线原本是垂直的，现在像被人用指甲沿着边缘抠得歪斜了。她的手指还停留在扣下金属盖的肌肉记忆里，关节僵着，血液沿着指腹往外灌，凉得像浸了冰水的铁丝。
+
+走廊里的脚步声真的停了。她屏住呼吸，把耳朵贴近票箱的侧板。金属薄得像纸，用手肘磕了一下，嗡鸣里突然叠进一声极细的、机械的咬合。不是漏气。不是老化。是齿轮在咬合的时候，卡住了。
+
+她没能把它彻底修好。
+
+手电筒的光斜切进票箱内部，照见排针底下的一块小色块。蓝的。她记得自己拆的时候，那里应该是黑的。或者根本没有色块。她的目光在色块上停住，舌根顶着上颚，喉咙里滚了半圈干涩的东西，什么也没吐出来。
+
+隔离盖扣下的瞬间，她感觉到身体里的某个地方松了回去——那是疲惫在松劲，可现在，她的指尖又在抠进金属的边缘，留下一道淡白的压痕。售票机的嗡鸣忽高忽低，像是在模仿什么人的呼吸。
+
+她慢慢把手电筒收回，光柱扫过墙上的旧站台时刻表。三天后。三个字还留在她脑子里，可时钟走针的声音现在和票箱的咬合同步了。她低头看自己的手，指节发白，血渗进掌纹里，变成几条细细的红线。
+
+门没锁。她刚刚算是把它锁上了。或者，她刚刚打开了什么不该动的东西。
+
+售票机突然自己弹出一张票。票面朝下，滑到地板上。林岚没有弯腰去捡。她只看着票的方向，看着那张纸在她脚边停下，听自己的心跳在嗡鸣里被卡进了一拍。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=1015 · tension=— · craft=— · hookType=—  · 2026-08-29T02:51:56.684Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 林岚
+- 目标: 进入现场并确立危机：进入世界
+- 冲突: no_causal_basis
+- 节拍: situation
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s1 | tokens=327 | profile=opening | cache=100% | compile=5ms --&gt;
+
+### Scene 目标
+目标: 进入现场并确立危机：进入世界
+节拍: situation
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 当前状态
+# 08 Current State · 第 0 章后
+
+&gt; 上限 1000 字。只写此刻。
+
+| 字段 | 值 |
+|------|-----|
+| 时间 | 车站关闭前三天 |
+| 地点 | 即将被拆除的旧车站 |
+| POV | 林岚 |
+| POV 状态 | 今日来维修最后一台售票机。站长已离开。 |
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转**
+6. **对话是博弈**
+7. **渐进揭秘**
+8. **每章不可逆变化**
+
+## 文风原则
+1. **身体先行**
+2. **感官优先**
+3. **信息寄生**
+4. **异常反噬**
+5. **限知第三人称**
+
+## 平台参数
+| 参数 | 值 |
+|------|-----|
+| 单章字数 | 3000 |
+| 对话占比 | 30%–60% |
+
+## 禁止
+- 解释设定 / 全员
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>车站的大门锈得咬不开了。林岚推了三下，铁皮在她掌心蹭出火星，最后一道铰链发出湿骂声，门终于歪向一侧。里面的空气是铁锈味、霉味和旧胶水混在一起的东西。她闻了闻，没说话，检查了检查鼻腔里的痕迹，确认没有什么东西往里钻。
+
+售票机还在角落里。他妈的，还能再动一下。他妈的，真的能动。
+
+林岚扛着工具箱走过空荡的候车大厅。地砖裂了几条缝，裂缝里长着灰绿色的苔藓，她脚底踩上去有点弹。天花板的风口漏风，吹得她袖口哗啦响。站长的办公室门敞开着，抽屉拉得整整齐齐，连纸杯都被拿走了。她在桌角摸了摸残留的咖啡印，没在抽屉里找到任何工具，转身走向售票机。
+
+售票机是块钢板加塑料外壳的东西。表面掉了漆，按钮排列整齐，译码器显示屏裂了一条纵线。林岚拆下工具箱的包带，打开底板，拉出螺丝刀和一把小扳手。她把灯打开，钨丝嗡嗡响，光线打在机身上的时候，她看见一个东西。
+
+票口下面，有一条不属于这台机器的接头。
+
+细的，黑的，像是从机器底板里钻出来的导线，但没有接口能对应上。林岚停了下来，盯着那条线看了三秒。她把螺丝刀往手里转了一下，慢慢靠近。
+
+线不动。
+
+她用指尖捏住线的尾端。塑料皮烫手，稍微硬，像刚退火的金属。她用力往外拽，线没断，但机身内部传来一阵轻微的震动，像是有什么东西在平行层里转动。售票机的译码器忽然亮了，显示屏上的裂纹不再是白色的，而是闪出一串浅粉的字符。
+
+林岚盯着字符看了三秒，没认出来。
+
+她没有按下任何按钮。她没有报警。她只是把螺丝刀插回工具箱，合上盖子，然后回到售票机前，蹲下来看那条线。
+
+线的尾端慢慢缩进机器底板里，一点一点，像蛇在吸水。机器轻轻嗡了一下，译码器上的字符消失，屏幕恢复裂纹的本色。车站大厅里没人。风还在漏，霉味还在。林岚起身，把工具箱扛在肩上，看了看售票机，看了看入口，看了看天花板漏下的灰尘。
+
+她没有离开。
+
+她走回售票机前，把工具箱放下，打开底板，拿出手电筒照进机身的裂缝里。裂缝里没有线了。只有一道比指甲稍宽的空隙，里面泛着浅粉的光，像什么东西正在往里钻。
+
+林岚把手电筒收好，摸了摸售票机的边角，指尖碰到一层油滑的残留。她没擦，没说话，只是把工具箱打开，拿出一卷胶带，贴在机身外侧的一个裂痕上。胶带贴好的时候，她听见背后的走廊里有脚步声。
+
+脚步声停了。
+
+林岚转过身，看见走廊尽头有个人影站在昏黄的灯光里。人影不动，灯光在他身上晕成一片模糊的光。林岚没认出来他是谁，也没问。车站关闭前三天。站长离开了。售票机修好之前，她还能修。
+
+她盯着人影看了三秒，然后走回售票机，继续拧螺丝。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=1027 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:04.647Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 林岚
+- 目标: 克服阻碍：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: complication
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s2 | tokens=120 | profile=dialogue | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 克服阻碍：no_causal_basis
+节拍: complication
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+
+…[truncated]
+
+### 写作规则
+# 02 Wr
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>螺丝刀尖刮过铜质接线端子，蹭出一粒细小的火星。林岚没抬头，右手拧紧最后一颗固定螺母，左手食指抵住机壳，感受它在震动里的微微松动。车站关闭前三天，站长走后，售票机的余电还能维持三天的测试。她盯着人影看了三秒，然后走回售票机，继续拧螺丝。
+
+走廊里的灯忽明忽暗，人影的轮廓在光与暗的边界上晃。她拧完最后一颗螺母，听见机内继电器轻轻卡了一下，像是吞了口气。她把螺丝刀放回口袋，拇指擦过螺纹上残留的油污。这时，走廊尽头传来金属刮地的声响。人影动了。
+
+林岚手指停在机壳上。她没转身，只把螺丝刀绕进口袋的拉链里。继电器第二次卡响，机壳表面的灰尘被微弱的电磁场扰起，落在她手腕上的旧修补纹里。她知道站长离开的那天，售票机的主继电器被人换过。换的那块不是原厂的。她没问，也没拆。现在继电器在卡，她就得拆。
+
+走廊尽头的人影走近了两步，脚步声压在水泥地上，像是有人在数自己的呼吸。林岚把螺丝刀从拉链里抽出来，刀身在昏黄灯光里反了一下。她没认出来他是谁，也没问。车站里剩下的东西，除了坏掉的，都不属于她。
+
+继电器卡了第三次。机壳内部漏出一丝高频的嗡鸣，穿过接线端子上的塑料套，碰到她手指上的旧茧。她伸手进机壳，食指碰到换过的继电器底座。螺丝拧得太紧，金属表面有划痕，螺母下面的弹簧片被压偏了。她把螺丝刀横过来，顶住端子边沿，往里推。继电器在里面松动了一毫米，她听见轻微的咔哒。
+
+人影在走廊尽头停住。灯光在他身上晕成一片模糊的光，边界模糊得像是刚修好的机壳一样。
+
+林岚把螺丝刀抽出来，转身。走廊里的男人站在灯光里，手里拿着一截断掉的电缆，线头散开，铜丝显露在外。她没问他来干什么，也没等他开口。她拉下售票机的电源隔离盖，手指碰到内部散热片上凝着的冷凝水。继电器卡痕还在，她得把弹簧片找回原位才能走。她把螺丝刀塞回机壳，拇指按住螺母，往下压。继电器不再卡了，机壳里的嗡鸣退了下去，剩下走廊里自己的脚步声，和远处站台边铁门轻轻摇摆的吱呀。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=797 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:12.509Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 林岚
+- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: turn
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s3 | tokens=259 | profile=climax | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+节拍: turn
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. 
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>继电器卡位松开的瞬间，林岚听见指节里有根细纤维断裂的声音。她拇指按得更狠，螺母咬进金属螺纹，冷凝水顺着隔离盖的边缘往下滴，在锈迹斑斑的机壳上划出一道湿线。走廊尽头的灯泡忽明忽暗，铜丝散线从男人手里滑落，搭在水泥地砖上，发出轻微的刮擦。
+
+他没动。售票机的嗡鸣退了下去，只剩铁门吱呀摇摆的节奏，和远处站台上传来的风声。林岚把螺丝刀从机壳里抽出来，柄上沾着黑色的油污，擦在她裤子的膝盖上，留下一条细细的印。
+
+“三天。”男人说。
+
+林岚没回头。她知道那是站长离开前最后一次在广播里念的话。车站大门锁死的日期，贴在服务台玻璃的一面，字迹已经被阳光晒得发白。她还没把那张纸拿下来。
+
+“你拿着这截线干什么。”她问。
+
+男性脚步往前轻轻挪了一步，鞋底蹭过地上的水渍。她看见他手腕内侧有道疤痕，皮肉凸起，像旧胶带拉松了的边缘。他没说话，只是把那截电缆往前递了两寸，线头铜丝在灯下乱抛光泽。
+
+继电器弹簧片已经回位，可售票机里还有一块继电器触头氧化发紫。林岚知道，指头往里插一根镊子，能把氧化皮刮干净，再把触头压回原位。她弯腰去够机壳底部的检修口，指尖碰到冰凉的金属，闻到一股陈年的油味混合着潮湿的铁锈。
+
+男人手里的电缆突然绷直了。不是他用力，是有什么东西从线里传过来，微弱的震颤经过铜丝，爬上他的手掌，也顺着电缆另一端的走向，朝着售票机里的某个接口去了。
+
+林岚的右手停在检修口边缘。她能听见，售票机内部有节奏的轻击声，不是继电器动作的声音，是金属片互相咬合后的余响，一下一下，像有人在敲玻璃。
+
+“别动。”男人说。
+
+林岚没松手。她把螺丝刀重新塞进机壳，螺母重新卡紧，金属咬合的声音短促而干脆。继电器里的微弱电流重新流动，嗡鸣升了起来，低频而钝，像一台旧马达在发烫。她拇指按住螺母，等那嗡鸣稳住，等震颤不再沿着电缆往外跑。
+
+售票机的显示屏黑着，玻璃表面蒙着一层薄灰。她把螺丝刀抽出来，转身面对走廊里的男人。灯泡晃了一下，她看见他手里的电缆线头已经不再散开，铜丝紧紧缠在一起，像根硬骨头。
+
+“你找什么。”她说。
+
+男人把电缆从手里松开，掉在地上。铜丝没散，反而留着形状，摊在水泥地上，像一张没人认识的图。
+
+林岚看着那截线，又看看售票机里的显示屏。她没问为什么来，也没问他是谁。她知道售票机里的继电器修好了，可它还不能走。她知道三天后车站锁死，那截电缆不会留在这里。
+
+她弯腰去捡那截线，指尖碰到铜丝上凝着的冷凝水。冰凉，带着铁锈味。她把电缆往回塞进售票机的检修口，听见内部传来一声闷响，不是继电器动作的声音，是什么东西在里面卡了一下，然后又松了回去。
+
+走廊里的脚步声停了。铁门吱呀摇摆的节奏也停了。只有售票机里的嗡鸣还在，低频而钝，像一台旧马达在发烫。林岚把售票机的电源隔离盖扣好，手指离开金属的瞬间，她感觉到身体里的某个地方也松了回去。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 4 · Beat 0 scene-aggregate </h3>
+  <p>chars=487 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:26.369Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 4/4 · POV 林岚
+- 目标: 章末钩子（承接转折后果）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: hook
+- 字数: ~600
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s4 | tokens=260 | profile=ending | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 章末钩子（承接转折后果）：no_causal_basis
+节拍: hook
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 3.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>售票机的嗡鸣不是在停，是在变调。林岚盯着隔离盖上的裂纹，那道白线原本是垂直的，现在像被人用指甲沿着边缘抠得歪斜了。她的手指还停留在扣下金属盖的肌肉记忆里，关节僵着，血液沿着指腹往外灌，凉得像浸了冰水的铁丝。
+
+走廊里的脚步声真的停了。她屏住呼吸，把耳朵贴近票箱的侧板。金属薄得像纸，用手肘磕了一下，嗡鸣里突然叠进一声极细的、机械的咬合。不是漏气。不是老化。是齿轮在咬合的时候，卡住了。
+
+她没能把它彻底修好。
+
+手电筒的光斜切进票箱内部，照见排针底下的一块小色块。蓝的。她记得自己拆的时候，那里应该是黑的。或者根本没有色块。她的目光在色块上停住，舌根顶着上颚，喉咙里滚了半圈干涩的东西，什么也没吐出来。
+
+隔离盖扣下的瞬间，她感觉到身体里的某个地方松了回去——那是疲惫在松劲，可现在，她的指尖又在抠进金属的边缘，留下一道淡白的压痕。售票机的嗡鸣忽高忽低，像是在模仿什么人的呼吸。
+
+她慢慢把手电筒收回，光柱扫过墙上的旧站台时刻表。三天后。三个字还留在她脑子里，可时钟走针的声音现在和票箱的咬合同步了。她低头看自己的手，指节发白，血渗进掌纹里，变成几条细细的红线。
+
+门没锁。她刚刚算是把它锁上了。或者，她刚刚打开了什么不该动的东西。
+
+售票机突然自己弹出一张票。票面朝下，滑到地板上。林岚没有弯腰去捡。她只看着票的方向，看着那张纸在她脚边停下，听自己的心跳在嗡鸣里被卡进了一拍。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=980 · tension=— · craft=— · hookType=—  · 2026-08-29T02:51:56.684Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 林岚
+- 目标: 进入现场并确立危机：进入世界
+- 冲突: no_causal_basis
+- 节拍: situation
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s1 | tokens=327 | profile=opening | cache=100% | compile=5ms --&gt;
+
+### Scene 目标
+目标: 进入现场并确立危机：进入世界
+节拍: situation
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 当前状态
+# 08 Current State · 第 0 章后
+
+&gt; 上限 1000 字。只写此刻。
+
+| 字段 | 值 |
+|------|-----|
+| 时间 | 车站关闭前三天 |
+| 地点 | 即将被拆除的旧车站 |
+| POV | 林岚 |
+| POV 状态 | 今日来维修最后一台售票机。站长已离开。 |
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转**
+6. **对话是博弈**
+7. **渐进揭秘**
+8. **每章不可逆变化**
+
+## 文风原则
+1. **身体先行**
+2. **感官优先**
+3. **信息寄生**
+4. **异常反噬**
+5. **限知第三人称**
+
+## 平台参数
+| 参数 | 值 |
+|------|-----|
+| 单章字数 | 3000 |
+| 对话占比 | 30%–60% |
+
+## 禁止
+- 解释设定 / 全员
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>车站的大门锈得咬不开了。林岚推了三下，铁皮在她掌心蹭出火星，最后一道铰链发出湿骂声，门终于歪向一侧。里面的空气是铁锈味、霉味和旧胶水混在一起的东西。她闻了闻，没说话，检查了检查鼻腔里的痕迹，确认没有什么东西往里钻。
+
+售票机还在角落里。他妈的，还能再动一下。他妈的，真的能动。
+
+林岚扛着工具箱走过空荡的候车大厅。地砖裂了几条缝，裂缝里长着灰绿色的苔藓，她脚底踩上去有点弹。天花板的风口漏风，吹得她袖口哗啦响。站长的办公室门敞开着，抽屉拉得整整齐齐，连纸杯都被拿走了。她在桌角摸了摸残留的咖啡印，没在抽屉里找到任何工具，转身走向售票机。
+
+售票机是块钢板加塑料外壳的东西。表面掉了漆，按钮排列整齐，译码器显示屏裂了一条纵线。林岚拆下工具箱的包带，打开底板，拉出螺丝刀和一把小扳手。她把灯打开，钨丝嗡嗡响，光线打在机身上的时候，她看见一个东西。
+
+票口下面，有一条不属于这台机器的接头。
+
+细的，黑的，像是从机器底板里钻出来的导线，但没有接口能对应上。林岚停了下来，盯着那条线看了三秒。她把螺丝刀往手里转了一下，慢慢靠近。
+
+线不动。
+
+她用指尖捏住线的尾端。塑料皮烫手，稍微硬，像刚退火的金属。她用力往外拽，线没断，但机身内部传来一阵轻微的震动，像是有什么东西在平行层里转动。售票机的译码器忽然亮了，显示屏上的裂纹不再是白色的，而是闪出一串浅粉的字符。
+
+林岚盯着字符看了三秒，没认出来。
+
+她没有按下任何按钮。她没有报警。她只是把螺丝刀插回工具箱，合上盖子，然后回到售票机前，蹲下来看那条线。
+
+线的尾端慢慢缩进机器底板里，一点一点，像蛇在吸水。机器轻轻嗡了一下，译码器上的字符消失，屏幕恢复裂纹的本色。车站大厅里没人。风还在漏，霉味还在。林岚起身，把工具箱扛在肩上，看了看售票机，看了看入口，看了看天花板漏下的灰尘。
+
+她没有离开。
+
+她走回售票机前，把工具箱放下，打开底板，拿出手电筒照进机身的裂缝里。裂缝里没有线了。只有一道比指甲稍宽的空隙，里面泛着浅粉的光，像什么东西正在往里钻。
+
+林岚把手电筒收好，摸了摸售票机的边角，指尖碰到一层油滑的残留。她没擦，没说话，只是把工具箱打开，拿出一卷胶带，贴在机身外侧的一个裂痕上。胶带贴好的时候，她听见背后的走廊里有脚步声。
+
+脚步声停了。
+
+林岚转过身，看见走廊尽头有个人影站在昏黄的灯光里。人影不动，灯光在他身上晕成一片模糊的光。林岚没认出来他是谁，也没问。车站关闭前三天。站长离开了。售票机修好之前，她还能修。
+
+她盯着人影看了三秒，然后走回售票机，继续拧螺丝。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=838 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:04.647Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 林岚
+- 目标: 克服阻碍：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: complication
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s2 | tokens=120 | profile=dialogue | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 克服阻碍：no_causal_basis
+节拍: complication
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+
+…[truncated]
+
+### 写作规则
+# 02 Wr
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>螺丝刀尖刮过铜质接线端子，蹭出一粒细小的火星。林岚没抬头，右手拧紧最后一颗固定螺母，左手食指抵住机壳，感受它在震动里的微微松动。车站关闭前三天，站长走后，售票机的余电还能维持三天的测试。她盯着人影看了三秒，然后走回售票机，继续拧螺丝。
+
+走廊里的灯忽明忽暗，人影的轮廓在光与暗的边界上晃。她拧完最后一颗螺母，听见机内继电器轻轻卡了一下，像是吞了口气。她把螺丝刀放回口袋，拇指擦过螺纹上残留的油污。这时，走廊尽头传来金属刮地的声响。人影动了。
+
+林岚手指停在机壳上。她没转身，只把螺丝刀绕进口袋的拉链里。继电器第二次卡响，机壳表面的灰尘被微弱的电磁场扰起，落在她手腕上的旧修补纹里。她知道站长离开的那天，售票机的主继电器被人换过。换的那块不是原厂的。她没问，也没拆。现在继电器在卡，她就得拆。
+
+走廊尽头的人影走近了两步，脚步声压在水泥地上，像是有人在数自己的呼吸。林岚把螺丝刀从拉链里抽出来，刀身在昏黄灯光里反了一下。她没认出来他是谁，也没问。车站里剩下的东西，除了坏掉的，都不属于她。
+
+继电器卡了第三次。机壳内部漏出一丝高频的嗡鸣，穿过接线端子上的塑料套，碰到她手指上的旧茧。她伸手进机壳，食指碰到换过的继电器底座。螺丝拧得太紧，金属表面有划痕，螺母下面的弹簧片被压偏了。她把螺丝刀横过来，顶住端子边沿，往里推。继电器在里面松动了一毫米，她听见轻微的咔哒。
+
+人影在走廊尽头停住。灯光在他身上晕成一片模糊的光，边界模糊得像是刚修好的机壳一样。
+
+林岚把螺丝刀抽出来，转身。走廊里的男人站在灯光里，手里拿着一截断掉的电缆，线头散开，铜丝显露在外。她没问他来干什么，也没等他开口。她拉下售票机的电源隔离盖，手指碰到内部散热片上凝着的冷凝水。继电器卡痕还在，她得把弹簧片找回原位才能走。她把螺丝刀塞回机壳，拇指按住螺母，往下压。继电器不再卡了，机壳里的嗡鸣退了下去，剩下走廊里自己的脚步声，和远处站台边铁门轻轻摇摆的吱呀。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=744 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:12.509Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 林岚
+- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: turn
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s3 | tokens=259 | profile=climax | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+节拍: turn
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. 
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>继电器卡位松开的瞬间，林岚听见指节里有根细纤维断裂的声音。她拇指按得更狠，螺母咬进金属螺纹，冷凝水顺着隔离盖的边缘往下滴，在锈迹斑斑的机壳上划出一道湿线。走廊尽头的灯泡忽明忽暗，铜丝散线从男人手里滑落，搭在水泥地砖上，发出轻微的刮擦。
+
+他没动。售票机的嗡鸣退了下去，只剩铁门吱呀摇摆的节奏，和远处站台上传来的风声。林岚把螺丝刀从机壳里抽出来，柄上沾着黑色的油污，擦在她裤子的膝盖上，留下一条细细的印。
+
+“三天。”男人说。
+
+林岚没回头。她知道那是站长离开前最后一次在广播里念的话。车站大门锁死的日期，贴在服务台玻璃的一面，字迹已经被阳光晒得发白。她还没把那张纸拿下来。
+
+“你拿着这截线干什么。”她问。
+
+男性脚步往前轻轻挪了一步，鞋底蹭过地上的水渍。她看见他手腕内侧有道疤痕，皮肉凸起，像旧胶带拉松了的边缘。他没说话，只是把那截电缆往前递了两寸，线头铜丝在灯下乱抛光泽。
+
+继电器弹簧片已经回位，可售票机里还有一块继电器触头氧化发紫。林岚知道，指头往里插一根镊子，能把氧化皮刮干净，再把触头压回原位。她弯腰去够机壳底部的检修口，指尖碰到冰凉的金属，闻到一股陈年的油味混合着潮湿的铁锈。
+
+男人手里的电缆突然绷直了。不是他用力，是有什么东西从线里传过来，微弱的震颤经过铜丝，爬上他的手掌，也顺着电缆另一端的走向，朝着售票机里的某个接口去了。
+
+林岚的右手停在检修口边缘。她能听见，售票机内部有节奏的轻击声，不是继电器动作的声音，是金属片互相咬合后的余响，一下一下，像有人在敲玻璃。
+
+“别动。”男人说。
+
+林岚没松手。她把螺丝刀重新塞进机壳，螺母重新卡紧，金属咬合的声音短促而干脆。继电器里的微弱电流重新流动，嗡鸣升了起来，低频而钝，像一台旧马达在发烫。她拇指按住螺母，等那嗡鸣稳住，等震颤不再沿着电缆往外跑。
+
+售票机的显示屏黑着，玻璃表面蒙着一层薄灰。她把螺丝刀抽出来，转身面对走廊里的男人。灯泡晃了一下，她看见他手里的电缆线头已经不再散开，铜丝紧紧缠在一起，像根硬骨头。
+
+“你找什么。”她说。
+
+男人把电缆从手里松开，掉在地上。铜丝没散，反而留着形状，摊在水泥地上，像一张没人认识的图。
+
+林岚看着那截线，又看看售票机里的显示屏。她没问为什么来，也没问他是谁。她知道售票机里的继电器修好了，可它还不能走。她知道三天后车站锁死，那截电缆不会留在这里。
+
+她弯腰去捡那截线，指尖碰到铜丝上凝着的冷凝水。冰凉，带着铁锈味。她把电缆往回塞进售票机的检修口，听见内部传来一声闷响，不是继电器动作的声音，是什么东西在里面卡了一下，然后又松了回去。
+
+走廊里的脚步声停了。铁门吱呀摇摆的节奏也停了。只有售票机里的嗡鸣还在，低频而钝，像一台旧马达在发烫。林岚把售票机的电源隔离盖扣好，手指离开金属的瞬间，她感觉到身体里的某个地方也松了回去。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 4 · Beat 0 scene-aggregate </h3>
+  <p>chars=612 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:26.369Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 4/4 · POV 林岚
+- 目标: 章末钩子（承接转折后果）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: hook
+- 字数: ~600
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s4 | tokens=260 | profile=ending | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 章末钩子（承接转折后果）：no_causal_basis
+节拍: hook
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 3.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>售票机的嗡鸣不是在停，是在变调。林岚盯着隔离盖上的裂纹，那道白线原本是垂直的，现在像被人用指甲沿着边缘抠得歪斜了。她的手指还停留在扣下金属盖的肌肉记忆里，关节僵着，血液沿着指腹往外灌，凉得像浸了冰水的铁丝。
+
+走廊里的脚步声真的停了。她屏住呼吸，把耳朵贴近票箱的侧板。金属薄得像纸，用手肘磕了一下，嗡鸣里突然叠进一声极细的、机械的咬合。不是漏气。不是老化。是齿轮在咬合的时候，卡住了。
+
+她没能把它彻底修好。
+
+手电筒的光斜切进票箱内部，照见排针底下的一块小色块。蓝的。她记得自己拆的时候，那里应该是黑的。或者根本没有色块。她的目光在色块上停住，舌根顶着上颚，喉咙里滚了半圈干涩的东西，什么也没吐出来。
+
+隔离盖扣下的瞬间，她感觉到身体里的某个地方松了回去——那是疲惫在松劲，可现在，她的指尖又在抠进金属的边缘，留下一道淡白的压痕。售票机的嗡鸣忽高忽低，像是在模仿什么人的呼吸。
+
+她慢慢把手电筒收回，光柱扫过墙上的旧站台时刻表。三天后。三个字还留在她脑子里，可时钟走针的声音现在和票箱的咬合同步了。她低头看自己的手，指节发白，血渗进掌纹里，变成几条细细的红线。
+
+门没锁。她刚刚算是把它锁上了。或者，她刚刚打开了什么不该动的东西。
+
+售票机突然自己弹出一张票。票面朝下，滑到地板上。林岚没有弯腰去捡。她只看着票的方向，看着那张纸在她脚边停下，听自己的心跳在嗡鸣里被卡进了一拍。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=1027 · tension=— · craft=— · hookType=—  · 2026-08-29T02:51:56.684Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 林岚
+- 目标: 进入现场并确立危机：进入世界
+- 冲突: no_causal_basis
+- 节拍: situation
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s1 | tokens=327 | profile=opening | cache=100% | compile=5ms --&gt;
+
+### Scene 目标
+目标: 进入现场并确立危机：进入世界
+节拍: situation
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 当前状态
+# 08 Current State · 第 0 章后
+
+&gt; 上限 1000 字。只写此刻。
+
+| 字段 | 值 |
+|------|-----|
+| 时间 | 车站关闭前三天 |
+| 地点 | 即将被拆除的旧车站 |
+| POV | 林岚 |
+| POV 状态 | 今日来维修最后一台售票机。站长已离开。 |
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转**
+6. **对话是博弈**
+7. **渐进揭秘**
+8. **每章不可逆变化**
+
+## 文风原则
+1. **身体先行**
+2. **感官优先**
+3. **信息寄生**
+4. **异常反噬**
+5. **限知第三人称**
+
+## 平台参数
+| 参数 | 值 |
+|------|-----|
+| 单章字数 | 3000 |
+| 对话占比 | 30%–60% |
+
+## 禁止
+- 解释设定 / 全员
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>车站的大门锈得咬不开了。林岚推了三下，铁皮在她掌心蹭出火星，最后一道铰链发出湿骂声，门终于歪向一侧。里面的空气是铁锈味、霉味和旧胶水混在一起的东西。她闻了闻，没说话，检查了检查鼻腔里的痕迹，确认没有什么东西往里钻。
+
+售票机还在角落里。他妈的，还能再动一下。他妈的，真的能动。
+
+林岚扛着工具箱走过空荡的候车大厅。地砖裂了几条缝，裂缝里长着灰绿色的苔藓，她脚底踩上去有点弹。天花板的风口漏风，吹得她袖口哗啦响。站长的办公室门敞开着，抽屉拉得整整齐齐，连纸杯都被拿走了。她在桌角摸了摸残留的咖啡印，没在抽屉里找到任何工具，转身走向售票机。
+
+售票机是块钢板加塑料外壳的东西。表面掉了漆，按钮排列整齐，译码器显示屏裂了一条纵线。林岚拆下工具箱的包带，打开底板，拉出螺丝刀和一把小扳手。她把灯打开，钨丝嗡嗡响，光线打在机身上的时候，她看见一个东西。
+
+票口下面，有一条不属于这台机器的接头。
+
+细的，黑的，像是从机器底板里钻出来的导线，但没有接口能对应上。林岚停了下来，盯着那条线看了三秒。她把螺丝刀往手里转了一下，慢慢靠近。
+
+线不动。
+
+她用指尖捏住线的尾端。塑料皮烫手，稍微硬，像刚退火的金属。她用力往外拽，线没断，但机身内部传来一阵轻微的震动，像是有什么东西在平行层里转动。售票机的译码器忽然亮了，显示屏上的裂纹不再是白色的，而是闪出一串浅粉的字符。
+
+林岚盯着字符看了三秒，没认出来。
+
+她没有按下任何按钮。她没有报警。她只是把螺丝刀插回工具箱，合上盖子，然后回到售票机前，蹲下来看那条线。
+
+线的尾端慢慢缩进机器底板里，一点一点，像蛇在吸水。机器轻轻嗡了一下，译码器上的字符消失，屏幕恢复裂纹的本色。车站大厅里没人。风还在漏，霉味还在。林岚起身，把工具箱扛在肩上，看了看售票机，看了看入口，看了看天花板漏下的灰尘。
+
+她没有离开。
+
+她走回售票机前，把工具箱放下，打开底板，拿出手电筒照进机身的裂缝里。裂缝里没有线了。只有一道比指甲稍宽的空隙，里面泛着浅粉的光，像什么东西正在往里钻。
+
+林岚把手电筒收好，摸了摸售票机的边角，指尖碰到一层油滑的残留。她没擦，没说话，只是把工具箱打开，拿出一卷胶带，贴在机身外侧的一个裂痕上。胶带贴好的时候，她听见背后的走廊里有脚步声。
+
+脚步声停了。
+
+林岚转过身，看见走廊尽头有个人影站在昏黄的灯光里。人影不动，灯光在他身上晕成一片模糊的光。林岚没认出来他是谁，也没问。车站关闭前三天。站长离开了。售票机修好之前，她还能修。
+
+她盯着人影看了三秒，然后走回售票机，继续拧螺丝。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=798 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:04.647Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 林岚
+- 目标: 克服阻碍：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: complication
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s2 | tokens=120 | profile=dialogue | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 克服阻碍：no_causal_basis
+节拍: complication
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+
+…[truncated]
+
+### 写作规则
+# 02 Wr
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>螺丝刀尖刮过铜质接线端子，蹭出一粒细小的火星。林岚没抬头，右手拧紧最后一颗固定螺母，左手食指抵住机壳，感受它在震动里的微微松动。车站关闭前三天，站长走后，售票机的余电还能维持三天的测试。她盯着人影看了三秒，然后走回售票机，继续拧螺丝。
+
+走廊里的灯忽明忽暗，人影的轮廓在光与暗的边界上晃。她拧完最后一颗螺母，听见机内继电器轻轻卡了一下，像是吞了口气。她把螺丝刀放回口袋，拇指擦过螺纹上残留的油污。这时，走廊尽头传来金属刮地的声响。人影动了。
+
+林岚手指停在机壳上。她没转身，只把螺丝刀绕进口袋的拉链里。继电器第二次卡响，机壳表面的灰尘被微弱的电磁场扰起，落在她手腕上的旧修补纹里。她知道站长离开的那天，售票机的主继电器被人换过。换的那块不是原厂的。她没问，也没拆。现在继电器在卡，她就得拆。
+
+走廊尽头的人影走近了两步，脚步声压在水泥地上，像是有人在数自己的呼吸。林岚把螺丝刀从拉链里抽出来，刀身在昏黄灯光里反了一下。她没认出来他是谁，也没问。车站里剩下的东西，除了坏掉的，都不属于她。
+
+继电器卡了第三次。机壳内部漏出一丝高频的嗡鸣，穿过接线端子上的塑料套，碰到她手指上的旧茧。她伸手进机壳，食指碰到换过的继电器底座。螺丝拧得太紧，金属表面有划痕，螺母下面的弹簧片被压偏了。她把螺丝刀横过来，顶住端子边沿，往里推。继电器在里面松动了一毫米，她听见轻微的咔哒。
+
+人影在走廊尽头停住。灯光在他身上晕成一片模糊的光，边界模糊得像是刚修好的机壳一样。
+
+林岚把螺丝刀抽出来，转身。走廊里的男人站在灯光里，手里拿着一截断掉的电缆，线头散开，铜丝显露在外。她没问他来干什么，也没等他开口。她拉下售票机的电源隔离盖，手指碰到内部散热片上凝着的冷凝水。继电器卡痕还在，她得把弹簧片找回原位才能走。她把螺丝刀塞回机壳，拇指按住螺母，往下压。继电器不再卡了，机壳里的嗡鸣退了下去，剩下走廊里自己的脚步声，和远处站台边铁门轻轻摇摆的吱呀。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=1136 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:12.509Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 林岚
+- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: turn
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s3 | tokens=259 | profile=climax | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+节拍: turn
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. 
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>继电器卡位松开的瞬间，林岚听见指节里有根细纤维断裂的声音。她拇指按得更狠，螺母咬进金属螺纹，冷凝水顺着隔离盖的边缘往下滴，在锈迹斑斑的机壳上划出一道湿线。走廊尽头的灯泡忽明忽暗，铜丝散线从男人手里滑落，搭在水泥地砖上，发出轻微的刮擦。
+
+他没动。售票机的嗡鸣退了下去，只剩铁门吱呀摇摆的节奏，和远处站台上传来的风声。林岚把螺丝刀从机壳里抽出来，柄上沾着黑色的油污，擦在她裤子的膝盖上，留下一条细细的印。
+
+“三天。”男人说。
+
+林岚没回头。她知道那是站长离开前最后一次在广播里念的话。车站大门锁死的日期，贴在服务台玻璃的一面，字迹已经被阳光晒得发白。她还没把那张纸拿下来。
+
+“你拿着这截线干什么。”她问。
+
+男性脚步往前轻轻挪了一步，鞋底蹭过地上的水渍。她看见他手腕内侧有道疤痕，皮肉凸起，像旧胶带拉松了的边缘。他没说话，只是把那截电缆往前递了两寸，线头铜丝在灯下乱抛光泽。
+
+继电器弹簧片已经回位，可售票机里还有一块继电器触头氧化发紫。林岚知道，指头往里插一根镊子，能把氧化皮刮干净，再把触头压回原位。她弯腰去够机壳底部的检修口，指尖碰到冰凉的金属，闻到一股陈年的油味混合着潮湿的铁锈。
+
+男人手里的电缆突然绷直了。不是他用力，是有什么东西从线里传过来，微弱的震颤经过铜丝，爬上他的手掌，也顺着电缆另一端的走向，朝着售票机里的某个接口去了。
+
+林岚的右手停在检修口边缘。她能听见，售票机内部有节奏的轻击声，不是继电器动作的声音，是金属片互相咬合后的余响，一下一下，像有人在敲玻璃。
+
+“别动。”男人说。
+
+林岚没松手。她把螺丝刀重新塞进机壳，螺母重新卡紧，金属咬合的声音短促而干脆。继电器里的微弱电流重新流动，嗡鸣升了起来，低频而钝，像一台旧马达在发烫。她拇指按住螺母，等那嗡鸣稳住，等震颤不再沿着电缆往外跑。
+
+售票机的显示屏黑着，玻璃表面蒙着一层薄灰。她把螺丝刀抽出来，转身面对走廊里的男人。灯泡晃了一下，她看见他手里的电缆线头已经不再散开，铜丝紧紧缠在一起，像根硬骨头。
+
+“你找什么。”她说。
+
+男人把电缆从手里松开，掉在地上。铜丝没散，反而留着形状，摊在水泥地上，像一张没人认识的图。
+
+林岚看着那截线，又看看售票机里的显示屏。她没问为什么来，也没问他是谁。她知道售票机里的继电器修好了，可它还不能走。她知道三天后车站锁死，那截电缆不会留在这里。
+
+她弯腰去捡那截线，指尖碰到铜丝上凝着的冷凝水。冰凉，带着铁锈味。她把电缆往回塞进售票机的检修口，听见内部传来一声闷响，不是继电器动作的声音，是什么东西在里面卡了一下，然后又松了回去。
+
+走廊里的脚步声停了。铁门吱呀摇摆的节奏也停了。只有售票机里的嗡鸣还在，低频而钝，像一台旧马达在发烫。林岚把售票机的电源隔离盖扣好，手指离开金属的瞬间，她感觉到身体里的某个地方也松了回去。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 4 · Beat 0 scene-aggregate </h3>
+  <p>chars=575 · tension=— · craft=— · hookType=—  · 2026-08-29T02:52:26.369Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 4/4 · POV 林岚
+- 目标: 章末钩子（承接转折后果）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: hook
+- 字数: ~600
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+&lt;!-- prompt-compiler v2 | scene=ch1_s4 | tokens=260 | profile=ending | cache=100% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 章末钩子（承接转折后果）：no_causal_basis
+节拍: hook
+
+### 人物:林岚
+# 林岚
+
+## 恒定属性
+- **身份**：32 岁，旧城区维修师
+- **目标**：把东西修好再离开
+- **价值观**：
+- **底线**：
+- **秘密**：
+- **口头禅**：
+- **成长方向**：
+
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 3.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 旧车站维修师
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。
+
+## 9. 地理
+旧城区旧车站。
+
+
+### 写作规则
+# 02 Writing Bible · 旧车站维修师
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息
+…[truncated]
+
+### 因果链（已确定，禁止重推因果）
+- 欲望（desire）: 「林岚」想 把东西修好再离开
+- Choice: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>售票机的嗡鸣不是在停，是在变调。林岚盯着隔离盖上的裂纹，那道白线原本是垂直的，现在像被人用指甲沿着边缘抠得歪斜了。她的手指还停留在扣下金属盖的肌肉记忆里，关节僵着，血液沿着指腹往外灌，凉得像浸了冰水的铁丝。
+
+走廊里的脚步声真的停了。她屏住呼吸，把耳朵贴近票箱的侧板。金属薄得像纸，用手肘磕了一下，嗡鸣里突然叠进一声极细的、机械的咬合。不是漏气。不是老化。是齿轮在咬合的时候，卡住了。
+
+她没能把它彻底修好。
+
+手电筒的光斜切进票箱内部，照见排针底下的一块小色块。蓝的。她记得自己拆的时候，那里应该是黑的。或者根本没有色块。她的目光在色块上停住，舌根顶着上颚，喉咙里滚了半圈干涩的东西，什么也没吐出来。
+
+隔离盖扣下的瞬间，她感觉到身体里的某个地方松了回去——那是疲惫在松劲，可现在，她的指尖又在抠进金属的边缘，留下一道淡白的压痕。售票机的嗡鸣忽高忽低，像是在模仿什么人的呼吸。
+
+她慢慢把手电筒收回，光柱扫过墙上的旧站台时刻表。三天后。三个字还留在她脑子里，可时钟走针的声音现在和票箱的咬合同步了。她低头看自己的手，指节发白，血渗进掌纹里，变成几条细细的红线。
+
+门没锁。她刚刚算是把它锁上了。或者，她刚刚打开了什么不该动的东西。
+
+售票机突然自己弹出一张票。票面朝下，滑到地板上。林岚没有弯腰去捡。她只看着票的方向，看着那张纸在她脚边停下，听自己的心跳在嗡鸣里被卡进了一拍。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+</body>
+</html>

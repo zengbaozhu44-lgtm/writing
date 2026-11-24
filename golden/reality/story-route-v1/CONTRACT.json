@@ -1,0 +1,91 @@
+{
+  "version": "story-route-v1",
+  "status": "frozen",
+  "spec": "golden/reality/story-route-v1/SPEC.md",
+  "pipeline": [
+    "loadBrainContext",
+    "projectRouteRealityInput",
+    "generateRouteCandidates",
+    "filterRouteCandidates",
+    "selectRouteQualitatively",
+    "writeSidecar"
+  ],
+  "candidateCount": { "min": 3, "max": 5 },
+  "inputSlots": {
+    "required": [
+      "world",
+      "people",
+      "relations",
+      "history",
+      "current_reality",
+      "author_initial_trajectory",
+      "hard_constraints",
+      "literary_orientation"
+    ],
+    "defaults": {
+      "author_initial_trajectory": "",
+      "hard_constraints": [],
+      "literary_orientation": {
+        "observe_self": false,
+        "observe_others": false,
+        "observe_world": false,
+        "stuck_in_things": false,
+        "trapped_in_heart": false,
+        "lost_in_others": false,
+        "lost_nature": false,
+        "notes": ""
+      }
+    }
+  },
+  "projection": {
+    "module": "projectRouteRealityInput",
+    "reuses": [
+      "filterCanonicalTimelineEvents",
+      "isTemplateFallback"
+    ],
+    "neverEnterRouteReality": [
+      "09_current_chapter",
+      "chapter_plans",
+      "volume_outline",
+      "intent.mainGoal",
+      "generated_facts_L02"
+    ]
+  },
+  "selection": {
+    "method": "llm_qualitative_v1",
+    "forbiddenOutputs": [
+      "literary_score",
+      "classicness",
+      "numeric_ranking",
+      "must_include_events",
+      "predicted_outcome"
+    ]
+  },
+  "sidecar": {
+    "root": "novel/_system/story-route",
+    "outputs": [
+      "latest_routes.json",
+      "selected_route.json",
+      "traces/route_*.json"
+    ],
+    "inputs": [
+      "author_trajectory.md",
+      "hard_constraints.yaml",
+      "literary_orientation.yaml"
+    ]
+  },
+  "forbidden": [
+    "write_canon",
+    "orchestrator_injection_v1",
+    "human_or_default_first_selection",
+    "literary_scoring",
+    "fixed_six_routes",
+    "fixed_six_characters",
+    "orientation_checklist_event_injection"
+  ],
+  "acceptance": {
+    "canonPollutionWitness": true,
+    "realBookRuns": 10,
+    "qualitativeGoal": "life_direction_not_plot_outline"
+  }
+}

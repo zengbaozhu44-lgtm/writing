@@ -1,0 +1,711 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "beatMemory": {
+    "newFacts": [
+      "他盯着面前两块屏幕——左边是玩家小队的生命体征，六个点，一个已经"
+    ],
+    "characterStateChanges": [
+      "护盾代码的最后一层还没封口，苏清鸢那边的信号已经开始抖动",
+      "他选择封口，放弃那层他原本打算留给自己的保险"
+    ],
+    "emotionChanges": [
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "护盾代码的最后一层还没封口，苏清鸢那边的信号已经开始抖动",
+      "他没看，指腹压着血把回车键按到底",
+      "，数据猎犬的蜂群突破了外墙。\n\n他同时敲了两行代码，左手砸下基地自爆系统的延迟按钮，右手将一段救援脚本射入玩家频道。指尖在键盘上滑了一下，指甲劈裂，血珠渗进键缝"
+    ],
+    "changedDimensions": [
+      "resource",
+      "goalDirection",
+      "danger",
+      "worldCognition"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": false,
+        "afterState": "POV 已锁定可执行目标，局面即将被打破"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": true,
+        "afterState": "他左手拍下基地防御协议的启动键，右手已经扎进代码层，指尖在虚拟键盘上拖出一道道残影"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "一刀岁暮被吞了——”林砚左手已经甩出三行救援代码，右手同时砸下基地的防御闸门"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "他没看，指腹压着血把回车键按到底"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "他右臂垂着，半边护甲焦黑，喊声隔着噪点传来：“聚合体核心在样本管里——但齐玥被缠住了"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "左屏，玩家小队的生命体征线在诡秘聚合体的触须绞缠中一根根断裂——苏清鸢的HP已跌到11%，一刀岁暮的护盾正在碎裂"
+      }
+    ],
+    "lastAfterState": "左屏，玩家小队的生命体征线在诡秘聚合体的触须绞缠中一根根断裂——苏清鸢的HP已跌到11%，一刀岁暮的护盾正在碎裂",
+    "stateChangeCount": 5
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：承接上章推进：场景2：双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景2：双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同时青穹重工的'数据猎犬'突袭传送阵基地。林砚双线指挥，远程投射代码救援玩家小队，同时启动基地防御系统抵抗入侵。最终传送阵保住，玩家小队带回核心样本，但付出惨重代价。林砚解析样本，收到玩家世界政府密信，发现现实世界",
+      "choice": "为了完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "POV 已锁定可执行目标，局面即将被打破",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [
+        "他盯着面前两块屏幕——左边是玩家小队的生命体征，六个点，一个已经"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:00:43.181Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "chose",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "林砚当前目标：承接上章推进：场景2：双线危机——玩家小队在深入'异常游戏区域'核",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：跨位面传送阵启动后，精英玩家小队在现实世界遭遇高维诡秘侵蚀引发的'异常游戏区域'，怪物强度远超预期，小队伤亡惨重；同时，传送阵的能量波动被青穹重工的残余势力侦测到，他们派出了'数据猎犬'追踪信号源，意图摧毁传送阵，切断林砚与现实世界的联系。 — 且局面本身不会让步",
+      "choice": "为了完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "他左手拍下基地防御协议的启动键，右手已经扎进代码层，指尖在虚拟键盘上拖出一道道残影",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "resource",
+        "goalDirection"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "护盾代码的最后一层还没封口，苏清鸢那边的信号已经开始抖动",
+        "他选择封口，放弃那层他原本打算留给自己的保险"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "护盾代码的最后一层还没封口，苏清鸢那边的信号已经开始抖动"
+      ],
+      "extractedAt": "2026-08-11T08:00:50.510Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [
+          "Micro Scene 仅满足 1/5（危险），须至少两项：新信息/关系/危险/Promise/新行动"
+        ],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.058823529411764705
+        },
+        "microPassed": [
+          "危险"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "一刀岁暮被吞了——”林砚左手已经甩出三行救援代码，右手同时砸下基地的防御闸门",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:00:59.929Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": false,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.018518518518518517
+        },
+        "microPassed": [
+          "危险",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "他没看，指腹压着血把回车键按到底",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "他没看，指腹压着血把回车键按到底"
+      ],
+      "extractedAt": "2026-08-11T08:01:09.417Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.017857142857142856
+        },
+        "microPassed": [
+          "危险",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "他右臂垂着，半边护甲焦黑，喊声隔着噪点传来：“聚合体核心在样本管里——但齐玥被缠住了",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:01:18.285Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "disabled",
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 2,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.03375527426160337
+        },
+        "microPassed": [
+          "新信息",
+          "危险",
+          "Promise兑现",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "左屏，玩家小队的生命体征线在诡秘聚合体的触须绞缠中一根根断裂——苏清鸢的HP已跌到11%，一刀岁暮的护盾正在碎裂",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "，数据猎犬的蜂群突破了外墙。\n\n他同时敲了两行代码，左手砸下基地自爆系统的延迟按钮，右手将一段救援脚本射入玩家频道。指尖在键盘上滑了一下，指甲劈裂，血珠渗进键缝"
+      ],
+      "extractedAt": "2026-08-11T08:01:27.536Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "disabled",
+        "legs": null,
+        "location": "浮空城坠落区",
+        "revealed": [
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press",
+          "hand_touch"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.01818181818181818
+        },
+        "microPassed": [
+          "危险",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 56,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 56,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 56,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-11T08:01:27.558Z",
+    "sceneIndex": 2
+  },
+  "readerSimulation": {
+    "curiosity": 53,
+    "questionCount": 1,
+    "dropRisk": 45,
+    "continueProbability": 50,
+    "sceneIndex": 2,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-11T08:01:27.560Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 47,
+    "obstacleStrength": 51,
+    "choiceLevel": 39,
+    "consequenceLevel": 39,
+    "escalationLevel": 39,
+    "informationValue": 58,
+    "hookImpact": 53,
+    "stateChangeRate": 83,
+    "hookBreakdown": {
+      "hookLevel": 53,
+      "hookOutput": {
+        "type": "Truth",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 4,
+        "stage": "Truth",
+        "name": "真相",
+        "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+        "example": "世界重置是人为控制",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景2：双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同时青穹重工的'数据猎犬'突袭传送阵基地。林砚双线指挥，远程投射代码救援玩家小队，同时启动基地防御系统抵抗入侵。最终传送阵保住，玩家小队带回核心样本，但付出惨重代价。林砚解析样本，收到玩家世界政府密信，发现现实世界",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": true,
+      "cognitiveUpgrade": 75,
+      "emotionalImpact": 38,
+      "characterCost": 45,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 48,
+    "weakest": "choiceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-11T08:01:27.560Z",
+    "hookOutput": {
+      "type": "Truth",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 4,
+      "stage": "Truth",
+      "name": "真相",
+      "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+      "example": "世界重置是人为控制",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同时青穹重工的'数据猎犬'突袭传送阵基地。林砚双线指挥，远程投射代码救援玩家小队，同时启动基地防御系统抵抗入侵。最终传送阵保住，玩家小队带回核心样本，但付出惨重代价。林砚解析样本，收到玩家世界政府密信，发现现实世界",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 53,
+    "hookOutput": {
+      "type": "Truth",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 4,
+      "stage": "Truth",
+      "name": "真相",
+      "readerPsyche": "读者逼近真相 — 「谁在控制？规则是什么？」认知被改写",
+      "example": "世界重置是人为控制",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：双线危机——玩家小队在深入'异常游戏区域'核心时遭遇'诡秘聚合体'，陷入苦战；同时青穹重工的'数据猎犬'突袭传送阵基地。林砚双线指挥，远程投射代码救援玩家小队，同时启动基地防御系统抵抗入侵。最终传送阵保住，玩家小队带回核心样本，但付出惨重代价。林砚解析样本，收到玩家世界政府密信，发现现实世界",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": true,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 75,
+    "emotionalImpact": 38,
+    "characterCost": 45
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 15,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": true,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 70,
+    "signals": {
+      "payoffHit": true,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-11T08:01:27.560Z"
+}

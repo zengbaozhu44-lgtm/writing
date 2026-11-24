@@ -94,8 +94,6 @@ export function serializeEntityMarkdown(type: EntityType, fields: Record<string,
       '| 信息 | 位置 |',
       '|------|------|',
       '| 当前状态 | `08_current_state.md` |',
-      '| 谁知道什么 | `06_knowledge_matrix.yaml` |',
-      '| 关系 | `05_relationship_graph.yaml` |',
     ].join('\n');
   }
   if (type === 'location') {

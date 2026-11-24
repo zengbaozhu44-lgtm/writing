@@ -1,16 +1,16 @@
 {
   "version": "hash-dependency-tree-2",
-  "chapter": 1,
-  "combinedHash": "4c66d5101e957835",
-  "previousCombinedHash": "4c66d5101e957835",
+  "chapter": 17,
+  "combinedHash": "d524e8a4a1366fce",
+  "previousCombinedHash": "d524e8a4a1366fce",
   "trigger": null,
   "promptCache": {
     "status": "cached",
     "brain": true,
     "studio": false,
     "paths": {
-      "brain": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神/novel/_system/brain/prompt-cache/ch_0001",
-      "studio": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神/novel/_system/studio/compiled-prompts/ch_0001"
+      "brain": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神/novel/_system/brain/prompt-cache/ch_0017",
+      "studio": "/Users/zora/Desktop/ai/InkOS/books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神/novel/_system/studio/compiled-prompts/ch_0017"
     }
   },
   "nodes": [
@@ -41,8 +41,8 @@
     {
       "id": "facts",
       "label": "Facts",
-      "hash": "6711822aa248d098",
-      "previous": "6711822aa248d098",
+      "hash": "b40ecabbe2cb6acf",
+      "previous": "b40ecabbe2cb6acf",
       "changed": false,
       "status": "cached",
       "canonSource": "13_facts_db.yaml",
@@ -53,8 +53,8 @@
     {
       "id": "timeline",
       "label": "Timeline",
-      "hash": "c9bb6beb4bc50179",
-      "previous": "c9bb6beb4bc50179",
+      "hash": "2720a44d736612e0",
+      "previous": "2720a44d736612e0",
       "changed": false,
       "status": "cached",
       "canonSource": "11_timeline.yaml",
@@ -172,7 +172,7 @@
   "graph": {
     "affectedScenes": [],
     "sceneCount": 4,
-    "triggerScene": 4,
+    "triggerScene": 1,
     "summary": {
       "cached": 10,
       "modified": 0,
@@ -253,7 +253,37 @@
     },
     {
       "from": "character",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "character",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "character",
       "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "facts",
+      "to": "scene_3",
       "type": "depends"
     },
     {
@@ -263,7 +293,37 @@
     },
     {
       "from": "timeline",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "timeline",
       "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "relationship",
+      "to": "scene_3",
       "type": "depends"
     },
     {
@@ -273,7 +333,37 @@
     },
     {
       "from": "knowledge",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
+      "to": "scene_3",
+      "type": "depends"
+    },
+    {
+      "from": "knowledge",
       "to": "scene_4",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_1",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_2",
+      "type": "depends"
+    },
+    {
+      "from": "resources",
+      "to": "scene_3",
       "type": "depends"
     },
     {
@@ -376,6 +466,6 @@
   "invalidated": false,
   "regenerating": false,
   "changed": [],
-  "updatedAt": "2026-07-31T07:04:42.189Z",
-  "latestChapter": 1
+  "updatedAt": "2026-10-15T03:27:49.482Z",
+  "latestChapter": 17
 }

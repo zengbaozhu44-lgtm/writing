@@ -27,9 +27,27 @@ import {
   createContinuityState,
   mergeContinuityState,
   validateCrossBeatConsistency,
+  isOpeningRepeat,
+  findRepeatedSegment,
+  findOpeningPhraseRecycle,
 } from './beat-continuity.js';
+import { applyProseBoundaryGate } from './prose-boundary.js';
 
 const MAX_BEAT_REWRITES = Number(process.env.INKOS_BEAT_MAX_REWRITES || 2);
+
+/**
+ * 幕内续写锚豁免窗（字）：accumulatedText 末 ≤ANCHOR_WIN 字 = 刚发给模型的【续写原文】（verbatim）。
+ * 模型以它为接点、首句重述锚尾属「接续上文」而非「重开场景」——此类回声不计入开场复读。
+ * 只豁免幕内锚窗；跨 Scene 基准（chapterTextSoFar，上一场景终态）完整保留——
+ * scene 边界回覆（scene3 重写 scene2 终态）仍是硬闸，绝不放行。
+ */
+const ANCHOR_WIN = 120;
+
+/** 幕内开场复读基准：剔除续写锚窗（重述锚尾不算复读），更早内容的重开/意象仍按 hardRun≥7 硬失败 */
+function openerRepeatBase(accumulatedText = '', chapterTextSoFar = '') {
+  const inner = accumulatedText.length > ANCHOR_WIN ? accumulatedText.slice(0, -ANCHOR_WIN) : '';
+  return `${inner}${chapterTextSoFar ? `\n${chapterTextSoFar}` : ''}`;
+}
 
 /** Beat 生成默认温度（可被 sceneType profile 覆盖） */
 export const BEAT_GENERATION_TEMPERATURE = 0.8;
@@ -86,10 +104,13 @@ export function formatSceneOpeningConstraintBlock(scene = {}, intent = {}, conti
     || (continuityState?.revealed || []).length;
   if (idx > 1 || hasCont) {
     lines.push('禁止重写整章「濒死坠落」式开头；承接已确立身体/地点/已揭示信息。');
-    if (scene?.spatialAnchor?.location) {
-      lines.push(`空间锚点：${scene.spatialAnchor.location}`);
-    }
   }
+  // 场景过渡强制锚定（双重保险）：Scene 首拍必写空间/时间坐标，无论是否有既定锚点
+  lines.push(
+    scene?.spatialAnchor?.location
+      ? `空间锚点：${scene.spatialAnchor.location}。首句写「现在在哪 + 当前时间/距上幕多久」。`
+      : '首句必须锚定「现在在哪 + 当前时间/距上幕多久」，由本段确立场景空间坐标，禁止悬空起笔。',
+  );
   return lines.filter(Boolean).join('；');
 }
 
@@ -111,6 +132,8 @@ export function compileSingleBeatPrompt({
   scene = null,
   prevBeat = null,
   continuityState = null,
+  profile = null,
+  usedImages = null,
 }) {
   void sceneIndex;
   void totalBeats;
@@ -119,7 +142,15 @@ export function compileSingleBeatPrompt({
   const opening = beat.order === 1
     ? formatSceneOpeningConstraintBlock(scene, intent, continuityState)
     : '';
-  const hint = [opening, rewriteHint].filter(Boolean).join('\n');
+  // 预防式防复读：前序 beat 已被判重并复刻的短语（悬在确认键上方等）提前注入首稿 prompt，
+  // 让模型第一版就避开，而不是靠 rewrite 与它硬碰（ch16 S3b6 重写后仍保留该短语 → 预防更有效）
+  const hint = [
+    opening,
+    usedImages?.length
+      ? `已用意象防复读：${usedImages.map((p) => `「${p}」`).join(' / ')}。禁止原样出现上述短语字词；同一动作语义可保留，但措辞必须换新（换身体部位/感官/距离/物件细节，如「手停在半空」「掌心悬在按键上方」）。`
+      : '',
+    rewriteHint,
+  ].filter(Boolean).join('\n');
 
   return compileSlimBeatUserPrompt({
     beat,
@@ -132,6 +163,7 @@ export function compileSingleBeatPrompt({
     prevBeat,
     beatMemory,
     continuityState,
+    profile,
   });
 }
 
@@ -164,6 +196,9 @@ export async function writeBeatWithRuntimeV2({
   scene = null,
   prevBeat = null,
   continuityState = null,
+  chapterTextSoFar = '',
+  profile = null,
+  usedImages = null,
 }) {
   let session = runtimeSession || createWriterRuntimeSession(executionPlan);
   let rewriteHint = '';
@@ -176,8 +211,12 @@ export async function writeBeatWithRuntimeV2({
   let workingBeat = beat;
   let needsHumanReview = false;
   let degraded = false;
+  let proseBoundaryHardFail = false;
+  let proseBoundaryHardFailReason = '';
   const prevCont = continuityState || createContinuityState();
   const sceneIndex = scene?.index ?? executionPlan?.sceneIndex ?? 1;
+  // 本 beat 被判复读的具体短语 → 上抛给 executeBeatSequence，注入后续 beat 首稿 prompt（预防式防复读）
+  const dedupRuns = [];
 
   const runOnce = async (forceFull = false) => {
     attempts += 1;
@@ -195,10 +234,14 @@ export async function writeBeatWithRuntimeV2({
       scene,
       prevBeat,
       continuityState: prevCont,
+      profile,
+      usedImages,
     });
     lastUserPrompt = userPrompt;
 
-    const profile = resolveSceneWritingProfile(executionPlan.sceneType || scene?.sceneType);
+    // 注意：此处是「sceneType 写作档」局部变量，与上方 continuity `profile`（书籍档案）是两回事，
+    // 必须用不同名字，否则块级 TDZ 会让 line 220 对 `profile` 的读取抛 ReferenceError
+    const sceneProfile = resolveSceneWritingProfile(executionPlan.sceneType || scene?.sceneType);
     const goldenSample = resolveGoldenSample({
       bookDir: intent?._bookDir || scene?._bookDir || null,
       styleDna: intent?.styleDna || intent?._styleDna || null,
@@ -213,13 +256,46 @@ export async function writeBeatWithRuntimeV2({
       beatMemory,
       runtimeSession: session,
       rewriteAttempt: attempts - 1,
-      temperature: profile.temp || BEAT_GENERATION_TEMPERATURE,
+      temperature: sceneProfile.temp || BEAT_GENERATION_TEMPERATURE,
       model: attempts > 1 ? resolveLightModel(loadInkOsConfig()) : undefined,
       maxTokensHint: Math.min(600, Math.max(120, Math.round(budget * 1.5))),
     });
 
     text = String(chunk || '').trim();
     if (!text) {
+      rewriteHint = '【重写】上一版空正文。必须写出有动作与后果的完整片段。';
+      attemptLogs.push({ attempt: attempts, pass: false, failReasons: ['空正文'] });
+      return false;
+    }
+
+    // RF-01: Prose Boundary — strip leading internal Beat scaffold; residual → hardFail path
+    const proseGate = applyProseBoundaryGate(text, { userPrompt: lastUserPrompt });
+    text = proseGate.text;
+    if (proseGate.strippedCount > 0) {
+      attemptLogs.push({
+        attempt: attempts,
+        proseBoundary: {
+          strippedCount: proseGate.strippedCount,
+          strippedLines: proseGate.strippedLines.slice(0, 3),
+          role: proseGate.role,
+        },
+      });
+    }
+    if (proseGate.hardFail) {
+      proseBoundaryHardFail = true;
+      proseBoundaryHardFailReason = proseGate.hardFailReason;
+      rewriteHint = [
+        '【重写】禁止输出 Beat 标题 / 内部脚手架（如「# Beat 1/6：Goal（主角目标）」）。',
+        '只写小说正文；不要 markdown 标题、不要解释、不要 JSON。',
+      ].join('\n');
+      attemptLogs.push({
+        attempt: attempts,
+        pass: false,
+        failReasons: [proseGate.hardFailReason],
+      });
+      return false;
+    }
+    if (!text.trim()) {
       rewriteHint = '【重写】上一版空正文。必须写出有动作与后果的完整片段。';
       attemptLogs.push({ attempt: attempts, pass: false, failReasons: ['空正文'] });
       return false;
@@ -249,6 +325,7 @@ export async function writeBeatWithRuntimeV2({
     continuityCheck = validateCrossBeatConsistency(text, prevCont, {
       sceneIndex,
       beatOrder: workingBeat?.order ?? beat?.order ?? 1,
+      profile,
     });
     if (!continuityCheck.pass) {
       const mergedFails = [
@@ -265,6 +342,49 @@ export async function writeBeatWithRuntimeV2({
         ].filter(Boolean).join('\n\n'),
         continuity: continuityCheck,
       };
+    }
+
+    // Beat 层防重复 —— 与 V2 校验解耦，无条件执行。
+    // 历史缺陷：本段原嵌在 `if (validation.pass)` 内，凡因 LOOP_STALL/MicroScene 等
+    // 其他原因校验失败的 beat 永远到不了防重复分支 —— 恰是这类反复重开的 beat 最爱
+    // 复读开场意象（ch16「悬在确认键上方」×4 的 S3b1/S4b3 均因此漏网）。现无条件执行：
+    //  validation 已失败 → 追加复读原因，指导本次 rewrite
+    //  validation 通过 → 命中即翻 false 触发 rewrite（原行为）
+    const repeatBase = `${accumulatedText}\n${chapterTextSoFar}`;
+    const repeatHit = findRepeatedSegment(text, repeatBase);
+    // 开场复读用锚窗豁免基准：重述【续写原文】锚尾是接续搭桥，不算重开场景
+    const openerRepeatBaseText = openerRepeatBase(accumulatedText, chapterTextSoFar);
+    const openerHit = findOpeningPhraseRecycle(text, openerRepeatBaseText);
+    const openRepeat = isOpeningRepeat(text, openerRepeatBaseText);
+    if (openRepeat || repeatHit || openerHit) {
+      const isOpening = !repeatHit || repeatHit.at === 0;
+      const hitSeg = openerHit?.segment || repeatHit?.segment || '';
+      const hitSim = openerHit
+        ? `${openerHit.cover}%`
+        : repeatHit
+          ? `${repeatHit.similarity}%`
+          : '60%+';
+      const dedupBase = chapterTextSoFar || accumulatedText;
+      const near = dedupBase.length
+        ? dedupBase.replace(/\s/g, '').slice(-200).replace(/。{1,2}$/, '')
+        : '';
+      validation = {
+        ...(validation || {}),
+        pass: false,
+        failReasons: [...(validation?.failReasons || []), isOpening
+          ? `OPENING_REPEAT: 开场句与本章已有文本高度重复（${openerHit ? (openerHit.hardRun ? `单段复读 ${openerHit.maxRun} 字「${(openerHit.runs[0] || '').slice(0, 10)}…」` : `复刻占比 ${openerHit.cover}%`) : hitSeg}）`
+          : `REPEAT_SEGMENT: 「${hitSeg.slice(0, 12)}…」与上文相似度 ${hitSim}，mid-beat 复读`],
+        rewriteHint: openerHit?.hardRun
+          ? `【防重复】本 Beat 开场句原样复刻本章已写短语「${(openerHit.runs[0] || '').slice(0, 14)}…」（${openerHit.maxRun} 字）。动作语义可保留，但禁止再出现上述字词——换写具体身体/感官/物件细节，如「手停在半空」「掌心悬在按键上方」「拇指距按键一指宽」，不得复写「${(openerHit.runs[0] || '').slice(0, 12)}」。${near ? `上文（勿复用意象）：${near.slice(-80)}` : ''}`
+          : `【防重复】本 Beat ${isOpening ? '开场句' : '内容'}与本章已有文本高度相似（${isOpening
+            ? openerHit
+              ? `复刻占比 ${openerHit.cover}%：${openerHit.runs.slice(0, 2).map((r) => `「${r}」`).join(' / ')}`
+              : '开场画面'
+            : `${hitSim}（「${hitSeg.slice(0, 10)}…」）`}）。重写：换具体的身体/感官/物件细节起笔，避开上文的动作与意象${isOpening ? '' : '，该句别再说同一句话/同一动作'}。${near ? `上文（勿复用意象）：${near.slice(-80)}` : ''}`,
+      };
+      if (openerHit?.runs) dedupRuns.push(...openerHit.runs);
+      else if (repeatHit?.segment) dedupRuns.push(repeatHit.segment);
+      else if (hitSeg) dedupRuns.push(hitSeg);
     }
 
     attemptLogs.push({
@@ -321,6 +441,7 @@ export async function writeBeatWithRuntimeV2({
     continuityCheck = validateCrossBeatConsistency(text, prevCont, {
       sceneIndex,
       beatOrder: workingBeat?.order ?? beat?.order ?? 1,
+      profile,
     });
     if (!continuityCheck.pass) {
       validation = {
@@ -337,10 +458,65 @@ export async function writeBeatWithRuntimeV2({
     needsHumanReview = true;
   }
 
+  // ── A) 防复读/身体禁令硬失败：重写+降配全部耗尽后，最终文本仍复读 → 场景级拒绝
+  //    （Orchestrator 捕获 SCENE_HARD_FAIL 后触发有界重规划），不再降级接受进正文。
+  //    历史根因：ch16「悬在确认键上方」×17 在 needsHumanReview 转义舱里带着坏稿通过全链
+  //    （scene review analysis-only + dedup 软信号 + validation 8 项都不拦）。
+  //    ── 硬失败判据（只认两种强信号，避免误杀合法首章）：
+  //    1) 跨 Scene 复读（chapterTextSoFar 非空）：任意检测器命中都硬失败 ——
+  //       「另一幕在抄这一幕」的结构性复读（ch16 各 scene 复刻开场/中段意象）。
+  //    2) 幕内开场意象复读（findOpeningPhraseRecycle / isOpeningRepeat）：Beat 重开而非续写。
+  //       幕内 findRepeatedSegment 的 mid-beat 20 字相似是弱信号——合法首章场景常因
+  //       场景目标本身就要求同类描写而不可约（2026-08-13 新书第一章 Scene1 被整章误杀），
+  //       此类仍走 needsHumanReview 软降级供人审，不吞稿也不拒稿。
+  const fmtRepeatHit = (hit) => {
+    if (!hit) return '';
+    if (hit === true) return '开场句与本章已有文本高度相似';
+    const seg = hit.segment || hit.runs?.[0] || '';
+    const s = String(seg).slice(0, 12);
+    if (hit.hardRun) return `开场句原样复读 ${hit.maxRun} 字「${s}…」`;
+    if (hit.cover != null) return `复刻占比 ${hit.cover}%（「${s}…」）`;
+    if (hit.similarity != null) return `与上文相似度 ${hit.similarity}%（「${s}…」）`;
+    return `与上文高度相似（「${s}…」）`;
+  };
+  const crossBase = String(chapterTextSoFar || '').trim();
+  const crossHit = crossBase
+    ? (findRepeatedSegment(text, crossBase)
+      || findOpeningPhraseRecycle(text, crossBase)
+      || isOpeningRepeat(text, crossBase))
+    : null;
+  // 幕内开场复读：基准剔除续写锚窗（末 ≤ANCHOR_WIN 字 = 模型刚看到的【续写原文】，重述它属接续而非重开）
+  const withinOpenerBase = openerRepeatBase(accumulatedText, '');
+  const withinOpener = withinOpenerBase
+    ? (findOpeningPhraseRecycle(text, withinOpenerBase)
+      || isOpeningRepeat(text, withinOpenerBase))
+    : null;
+  const finalBodyIssues = (continuityCheck?.issues || [])
+    .filter((i) => /CONSISTENCY: (左臂|右臂)已损毁/u.test(String(i)));
+  // Final prose-boundary pass (defense in depth after rewrites)
+  const finalProseGate = applyProseBoundaryGate(text, { userPrompt: lastUserPrompt });
+  text = finalProseGate.text;
+  if (finalProseGate.hardFail) {
+    proseBoundaryHardFail = true;
+    proseBoundaryHardFailReason = finalProseGate.hardFailReason
+      || proseBoundaryHardFailReason;
+  }
+  const hardFail = Boolean(
+    crossHit || withinOpener || finalBodyIssues.length || proseBoundaryHardFail,
+  );
+  const hardFailReason = [
+    crossHit ? `跨 Scene 复读未通过：${fmtRepeatHit(crossHit)}` : '',
+    withinOpener ? `幕内开场复读未通过：${fmtRepeatHit(withinOpener)}` : '',
+    proseBoundaryHardFail ? (proseBoundaryHardFailReason || 'Prose Boundary: Beat scaffold') : '',
+    ...finalBodyIssues.slice(0, 2),
+  ].filter(Boolean).join('；');
+  if (hardFail) needsHumanReview = true;
+
   const nextContinuity = mergeContinuityState(
     prevCont,
     text,
     validation?.storyState?.after || workingBeat.afterState || '',
+    profile?.vocab,
   );
 
   session = applyBeatToRuntimeSession(session, {
@@ -395,12 +571,15 @@ export async function writeBeatWithRuntimeV2({
     rewritten: attempts > 1,
     degraded,
     needsHumanReview,
+    hardFail,
+    hardFailReason,
     attemptLogs,
     beatStateDelta,
     runtimeSession: session,
     continuityState: nextContinuity,
     userPrompt: lastUserPrompt,
     prompt: lastUserPrompt,
+    dedupRuns,
   };
 }
 
@@ -413,6 +592,11 @@ export async function executeBeatSequence({
   intent = null,
   scene = null,
   continuityState: seedContinuity = null,
+  chapterTextSoFar = '',
+  // 书籍档案（vocab/角色名/POV）：按书籍语境门控 cyberpunk 意象规则
+  profile = null,
+  // 跨 Scene 预防式防复读：上一 Scene 已判复读的具体短语，注入本 Scene 首稿 prompt
+  usedImagesSeed = null,
 } = {}) {
   const parts = [];
   const beatStateDeltas = [];
@@ -420,10 +604,15 @@ export async function executeBeatSequence({
   let runtimeSession = createWriterRuntimeSession(executionPlan);
   let prevBeat = null;
   let needsHumanReview = false;
+  // A) 任一 beat 硬失败（防复读/身体禁令）→ 整 scene 拒绝
+  let hardFail = false;
   // 章级连续性：Studio 可传入上一 Scene 末状态
   let continuityState = createContinuityState(
     seedContinuity || intent?._continuityState || scene?._continuityState || null,
   );
+  // 已判复读的具体短语 → 传给后续 beat 首稿 prompt，预防式避免再写（自积累，只收真命中）
+  // 跨 Scene 累计：seed 由 Writer 传入本章已 flag 过的短语，返回时回传合并
+  const usedImages = new Set(usedImagesSeed || []);
 
   for (const beat of executionPlan.beats || []) {
     onBeatStart?.(beat);
@@ -439,13 +628,30 @@ export async function executeBeatSequence({
       scene,
       prevBeat,
       continuityState,
+      chapterTextSoFar,
+      profile,
+      usedImages: [...usedImages],
     });
+    for (const r of result.dedupRuns || []) {
+      const clean = r.replace(/[。！？!?，,、…—～]/gu, '').trim();
+      if (clean.length >= 4 && clean.length <= 14) usedImages.add(clean.slice(0, 12));
+    }
     parts.push(result);
     if (result.needsHumanReview) needsHumanReview = true;
+    if (result.hardFail) hardFail = true;
     if (result.beatStateDelta) beatStateDeltas.push(result.beatStateDelta);
-    accumulatedText = [accumulatedText, result.text].filter(Boolean).join('\n\n');
+
+    // 防碎片：本 beat 被判「重开场景」（动作重演/事件循环/场景跳跃）而非承接续写 →
+    // 不并入累积正文，保留此前已累积的一稿，重开稿留档供人审（Beat 本意线性推进，重开即拼接源）
+    if (accumulatedText.trim() && isReopenDraft(result)) {
+      needsHumanReview = true;
+      result._reopenedDraft = true;
+    } else {
+      accumulatedText = [accumulatedText, result.text].filter(Boolean).join('\n\n');
+    }
+
     runtimeSession = result.runtimeSession;
-    continuityState = result.continuityState || mergeContinuityState(continuityState, result.text);
+    continuityState = result.continuityState || mergeContinuityState(continuityState, result.text, '', profile?.vocab);
     prevBeat = result.beat || beat;
     onBeatComplete?.(beat, result);
   }
@@ -475,6 +681,11 @@ export async function executeBeatSequence({
     continuity: p.continuityState || p.beatStateDelta?.continuity || null,
   }));
 
+  const hardFailReasons = parts
+    .filter((p) => p.hardFail && p.hardFailReason)
+    .map((p) => p.hardFailReason)
+    .slice(0, 2);
+
   return {
     text: accumulatedText.trim(),
     parts,
@@ -488,8 +699,22 @@ export async function executeBeatSequence({
     continuityState,
     sceneOutcome: executionPlan.sceneOutcome || null,
     needsHumanReview,
+    hardFail,
+    hardFailReason: hardFailReasons.join('；'),
+    // 硬失败时把「模型本应从哪续写」的锚句一并上抛：Orchestrator 的修正指令据此点名
+    // 续写锚点，把 Validator 的判据变成下一轮生成约束（否则修正只报「禁止复读」而无具体续写起点）
+    hardFailAnchor: hardFail ? takeContinuationTail(accumulatedText, { preferOne: true }) : '',
     writerMode: 'beat',
+    usedImages: [...usedImages],
   };
+}
+
+/** 重开草稿判定：continuity 检测已把「重演动作 / 事件循环 / 场景跳跃 / 重复首次揭示」写入 issues */
+function isReopenDraft(result) {
+  const issues = (result?.continuityState?.issues || result?.beatStateDelta?.continuity?.issues || []);
+  if (!Array.isArray(issues) || !issues.length) return false;
+  const joined = issues.join('\n');
+  return /ACTION_REPLAY|EVENT_LOOP|REPEAT_REVEAL|场景跳跃|禁止重新开场|禁止重启开场/u.test(joined);
 }
 
 export { BEAT_SYSTEM };

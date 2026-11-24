@@ -1,0 +1,358 @@
+{
+  "version": "memory-unit-1",
+  "chapter": 1,
+  "livingPrepare": {
+    "version": "living-prepare-1",
+    "fromChapter": 1,
+    "forChapter": 2,
+    "worldProposal": {
+      "year": 2052,
+      "ai_control": 93,
+      "social_stability": 87,
+      "rebellion_level": 20,
+      "deep_zone_activity": 30,
+      "lastChapter": 1,
+      "updatedAt": "2026-08-15T08:43:28.212Z",
+      "_proposal": true
+    },
+    "characterProposals": [
+      {
+        "name": "周岚",
+        "brain": {
+          "character": "周岚",
+          "goals": {
+            "surface": "在最后一周内以高价收购书店房产，解决公司债务危机",
+            "hidden": "想再次接近林守常，试图为自己年轻时偷书一事寻求某种形式的和解或自我救赎"
+          },
+          "fears": [
+            "公司破产后彻底失去社会地位和身份认同",
+            "承认自己年轻时偷书、被那本书改变命运却从未感谢过林守常",
+            "被看作软弱或怀旧，尤其是在林守常面前"
+          ],
+          "bottom_line": "不会使用违法手段强拆，但会利用合同漏洞施压",
+          "current_state": {
+            "trust_protagonist": 20,
+            "fear": 70,
+            "betrayal_probability": 60,
+            "suspicion": 50,
+            "loyalty": 10
+          },
+          "growth_arc": "从冷酷逐利的商人，到在最后一刻意识到书店对林守常、对社区、甚至对自己意味着什么，学会放下利益执念，承认情感价值",
+          "triggers": {
+            "林守常拒绝出售房产": {
+              "trust": -10,
+              "suspicion": 20
+            },
+            "看到书店里那本《植物名实图考》": {
+              "trust": 15,
+              "suspicion": -10
+            },
+            "林守常提到年轻时的事（哪怕模糊）": {
+              "trust": 20,
+              "suspicion": -20
+            },
+            "发现林守常对老猫的照顾": {
+              "trust": 10,
+              "suspicion": -5
+            },
+            "合同谈判陷入僵局": {
+              "trust": -15,
+              "suspicion": 15
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 20,
+                "fear": 70,
+                "betrayal_probability": 60,
+                "suspicion": 50,
+                "loyalty": 10
+              },
+              "at": "2026-08-15T08:43:31.991Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "林守常",
+        "brain": {
+          "character": "林守常",
+          "goals": {
+            "surface": "在书店倒闭前的最后一周，为每位常客找到一本真正需要的书，完成与书店、与常客、与过去的漫长告别",
+            "hidden": "试图通过帮助别人来确认自己存在的意义，同时用这种仪式化的告别来延缓/回避面对自己内心的崩塌——他害怕的不是书店关门，而是关门之后那个无处可去的自己"
+          },
+          "fears": [
+            "被亲近的人欺骗、被抛弃",
+            "书店关门后，常客们很快忘记他",
+            "自己年轻时烧掉的那本小说——那个曾经有过梦想的自己，彻底消失",
+            "深夜独自面对空荡荡的店面，无处可去",
+            "目录（猫）死在自己之前或之后，留他一个人"
+          ],
+          "bottom_line": "绝不出售书页上有前任主人批注的书，即使顾客出高价——因为那些批注是陌生人与书的私密对话，是书真正的生命痕迹，出售它们等同于出卖灵魂",
+          "current_state": {
+            "trust_protagonist": 0,
+            "fear": 75,
+            "betrayal_probability": 20,
+            "suspicion": 40,
+            "loyalty": 100
+          },
+          "growth_arc": "从「把告别当成日常来过」的沉默表演者，到第七天钥匙塞回门槛时，允许自己真正感受到痛——不是崩溃大哭，而是第一次承认：我舍不得。成长不是从冷漠到热情，而是从回避痛到接纳痛",
+          "triggers": {
+            "发现枯叶（周一）": {
+              "trust": 0,
+              "suspicion": 30
+            },
+            "小李翻开有批注的书页": {
+              "trust": 5,
+              "suspicion": 15
+            },
+            "陈姐露出戒痕的手": {
+              "trust": 10,
+              "suspicion": 10
+            },
+            "有人问起他的断指": {
+              "trust": -10,
+              "suspicion": 20
+            },
+            "目录（猫）反常地蹭他手心": {
+              "trust": 15,
+              "suspicion": -5
+            },
+            "有人认出他烧掉的小说": {
+              "trust": -30,
+              "suspicion": 60
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 0,
+                "fear": 75,
+                "betrayal_probability": 20,
+                "suspicion": 40,
+                "loyalty": 100
+              },
+              "at": "2026-08-15T08:43:36.672Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "林小满",
+        "brain": {
+          "character": "林小满",
+          "goals": {
+            "surface": "找到那本特定的绝版诗集，完成编辑的校对任务，证明自己的能力",
+            "hidden": "逃避职场压力——她其实已经读过那本诗集，来书店只是为了给自己一个暂时的避难所，一个不用面对现实世界的借口"
+          },
+          "fears": [
+            "被看穿——被人发现她其实不是真的需要那本诗集，她的专业能力会被质疑",
+            "职场失败——作为刚毕业的编辑助理，害怕犯错、怕被否定、怕证明不了自己",
+            "迷失方向——不知道自己真正想要什么，害怕在成人的世界里随波逐流"
+          ],
+          "bottom_line": "不会为了完成任务而编造内容——即使这意味着任务失败或丢脸",
+          "current_state": {
+            "trust_protagonist": 15,
+            "fear": 65,
+            "betrayal_probability": 10,
+            "suspicion": 30,
+            "loyalty": 10
+          },
+          "growth_arc": "从把书店当作获取工具的地点、把林守常当作服务者，到逐渐意识到这家店是一种情感的庇护所，林守常是一个守护者。她最终会理解：有些地方存在的意义不是交易，而是停留。她的成长不是学会找书，而是学会停下来。",
+          "triggers": {
+            "发现枯叶被夹进书里": {
+              "trust": 5,
+              "suspicion": 15
+            },
+            "看到煤炉是昨天熄的（林守常在拖延什么）": {
+              "trust": 5,
+              "suspicion": 25
+            },
+            "林守常没有直接告诉她诗集在哪，而是让她自己找": {
+              "trust": -5,
+              "suspicion": 20
+            },
+            "发现书架上的书有手写的批注（有人真的读过）": {
+              "trust": 10,
+              "suspicion": -5
+            },
+            "目录（猫）靠近她蹭了一下": {
+              "trust": 8,
+              "suspicion": 0
+            },
+            "林守常说出某句她没有告诉过别人的话（被看穿的瞬间）": {
+              "trust": 15,
+              "suspicion": 10
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 15,
+                "fear": 65,
+                "betrayal_probability": 10,
+                "suspicion": 30,
+                "loyalty": 10
+              },
+              "at": "2026-08-15T08:43:41.200Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "老周",
+        "brain": {
+          "character": "老周",
+          "goals": {
+            "surface": "归还三年前借走的《陶庵梦忆》，完成一次体面的告别",
+            "hidden": "在离开这座城市前，确认林守常能撑过最后一周——他嘴上说破书该散，心里怕老友连同书店一起散掉"
+          },
+          "fears": [
+            "林守常最后一周会崩溃，自己却帮不上忙",
+            "自己走后，这家店连个记得它的人都没有",
+            "承认自己对旧物其实有感情——那会推翻他半辈子的价值观"
+          ],
+          "bottom_line": "不碰林守常的橘子——那是两人之间不成文的默契，碰了就等于承认自己也在乎",
+          "current_state": {
+            "trust_protagonist": 85,
+            "fear": 55,
+            "betrayal_probability": 5,
+            "suspicion": 15,
+            "loyalty": 90
+          },
+          "growth_arc": "从「破书就该让它散」的笃信者，到在还书时手在书脊上多停了一秒——他嘴上说的和手上做的开始分岔，最终在离开时留下一句不像自己会说的话，完成了从「否定依恋」到「承认依恋但不言明」的转变",
+          "triggers": {
+            "林守常把橘子挪到《辞海》旁边": {
+              "trust": 5,
+              "suspicion": 0
+            },
+            "林守常当着他的面翻开《陶庵梦忆》扉页": {
+              "trust": -5,
+              "suspicion": 10
+            },
+            "林守常提起三年前借书的那个下午": {
+              "trust": 10,
+              "suspicion": -5
+            },
+            "林守常问起他女儿来接他的事": {
+              "trust": 0,
+              "suspicion": 15
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 85,
+                "fear": 55,
+                "betrayal_probability": 5,
+                "suspicion": 15,
+                "loyalty": 90
+              },
+              "at": "2026-08-15T08:43:45.593Z"
+            }
+          ],
+          "_proposal": true
+        }
+      },
+      {
+        "name": "阿婆",
+        "brain": {
+          "character": "阿婆",
+          "goals": {
+            "surface": "在书店关闭前，找到一本她年轻时借给初恋的《苔丝》",
+            "hidden": "她真正想找回的不是书，而是年轻时那种被爱过、被记得的感觉——她害怕自己正在遗忘那个人的样子，更害怕自己已经忘了那句话"
+          },
+          "fears": [
+            "记忆正在模糊，初恋的样子和那句话都在褪色",
+            "书店关了就再也无处可寻，那个时代彻底终结",
+            "被看见脆弱——她一生都在用沉默和体面掩饰情感",
+            "目录（猫）死在她之前，她受不了再送走一个活物"
+          ],
+          "bottom_line": "不会主动索要，只等待书自己出现——她的尊严建立在'不开口'之上，开口等于承认自己老了、怕了、放不下",
+          "current_state": {
+            "trust_protagonist": 70,
+            "fear": 65,
+            "betrayal_probability": 5,
+            "suspicion": 20,
+            "loyalty": 85
+          },
+          "growth_arc": "从'用沉默和等待守住记忆'到'在最后一天接受记忆会模糊，但感受不会消失'——她不需要找到那本书，她需要的是允许自己承认：即使忘了那句话，那份感受依然真实地存在过",
+          "triggers": {
+            "林守常把橘子挪到辞海旁边": {
+              "trust": 8,
+              "suspicion": -5
+            },
+            "林守常提到她的初恋或年轻时的事": {
+              "trust": -10,
+              "suspicion": 35
+            },
+            "林守常主动递给她一本《苔丝》": {
+              "trust": 20,
+              "suspicion": -15
+            },
+            "目录（猫）靠近她或在她脚边蹭": {
+              "trust": 10,
+              "suspicion": -5
+            },
+            "林守常告诉她书店最后一天的具体安排": {
+              "trust": 5,
+              "suspicion": 0
+            },
+            "林守常当着她的面翻那本《植物名实图考》": {
+              "trust": -5,
+              "suspicion": 15
+            },
+            "林守常提起'有些人把告别当成日常'": {
+              "trust": 12,
+              "suspicion": -10
+            }
+          },
+          "lastChapter": 1,
+          "evolutionLog": [
+            {
+              "chapter": 1,
+              "state": {
+                "trust_protagonist": 70,
+                "fear": 65,
+                "betrayal_probability": 5,
+                "suspicion": 20,
+                "loyalty": 85
+              },
+              "at": "2026-08-15T08:43:50.720Z"
+            }
+          ],
+          "_proposal": true
+        }
+      }
+    ],
+    "editorFeedback": {
+      "chapter": 1,
+      "commercial_score": 88,
+      "literary_score": 90,
+      "serial_score": 92,
+      "problems": [],
+      "suggestions": [
+        "increase_pressure",
+        "strengthen_chapter_hook"
+      ],
+      "review_summary": "本章悬念密度高，枯叶—旧钉子—等你构成三重认知缺口，连载潜力优秀（92分）。文学质感突出（90分），沉缓的节奏与克制的对白贴合风格。商业性稍弱（88分），主要因重复描写和细节冗余。建议：1）合并重复的叶子与橘子动作，使时间线更黏稠；2）将「等你」纸片与枯叶或《陶庵梦忆》建立物理关联，让钩子更聚焦；3）在结尾增加一个静默的「金动作」（如把橘子皮收进抽屉），强化「告别不必被说出来」的主题。当前最紧迫的是删去重复段落，让读者沿着「清晨枯叶→老周还书→旧钉子→等你」的单线钩子往下走。",
+      "updatedAt": "2026-08-15T08:43:33.333Z"
+    },
+    "createdAt": "2026-08-15T08:43:50.720Z",
+    "analysisOnly": true,
+    "attachedAt": "2026-08-15T08:43:50.721Z"
+  },
+  "updatedAt": "2026-08-15T08:43:50.721Z"
+}

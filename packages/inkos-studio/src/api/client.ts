@@ -273,6 +273,65 @@ export interface PromptAnalytics {
   } | null;
 }
 
+/** F2 Final Context Viewer snapshot (READ-ONLY) */
+export interface FinalContextSnapshot {
+  role?: string;
+  readOnly?: boolean;
+  sceneId: string;
+  sceneIndex: number;
+  chapter: number;
+  clockSource?: string | null;
+  ibSource?: string | null;
+  writerCallId?: string | null;
+  writerCalls?: Array<{
+    callId: string;
+    beatOrder?: number | null;
+    hash: string;
+    clock?: boolean;
+    ib?: boolean;
+    at?: string;
+  }>;
+  layers: {
+    L1?: { present: boolean; hash: string | null; clock?: boolean; ib?: boolean; chars?: number };
+    L2?: { present: boolean; hash: string | null; clock?: boolean; ib?: boolean; chars?: number };
+    L3?: {
+      present: boolean;
+      hash: string | null;
+      sealedHash?: string | null;
+      clock?: boolean;
+      ib?: boolean;
+      chars?: number;
+    };
+    L4?: {
+      present: boolean;
+      hash: string | null;
+      beatUserPromptHash?: string | null;
+      beatOrder?: number | null;
+      writerCallId?: string | null;
+      clock?: boolean;
+      ib?: boolean;
+      chars?: number;
+    };
+  };
+  texts?: Partial<Record<'L1' | 'L2' | 'L3' | 'L4', string>>;
+  provenance?: {
+    role?: string;
+    readOnly?: boolean;
+    blocks?: Array<{
+      key: string;
+      type: string;
+      source: string;
+      priority: string;
+      kept: boolean;
+      reason: string;
+      layers?: Partial<Record<'L1' | 'L2' | 'L3' | 'L4', string>>;
+      channels?: string[];
+      note?: string;
+    }>;
+  };
+  updatedAt?: string;
+}
+
 export interface SceneBudgetReport {
   version: string;
   chapter: number;
@@ -459,6 +518,45 @@ export interface ChapterPlan {
   emotional_beat?: string;
 }
 
+/** 协议渲染器（_tools/generate-chapter-plan.mjs --json）输出的完整 plan */
+export interface RenderedPlan {
+  chapter: number;
+  goal?: string;
+  scenes?: string[];
+  conflict?: string;
+  climax?: string;
+  cost?: string;
+  hook?: string;
+  emotional_beat?: string;
+  obstacle1?: string;
+  obstacle2?: string;
+  ending?: string;
+  bargain?: string;
+  mustGain?: string;
+  pov?: string;
+  time?: string;
+  location?: string;
+  wordTarget?: string | number;
+  foreshadow?: string;
+  _plan_note?: Record<string, unknown>;
+}
+
+/** 渲染器 structuredAudit 的结构化预审 */
+export interface PlanRenderAudit {
+  pov?: string;
+  pov_check?: { ok?: boolean; entrance_chapter?: number };
+  chapter_function?: string;
+  milestone?: string;
+  distance_to_milestone?: number | null;
+  vol?: { index?: number; cost_prefix?: string; emotion_baseline?: string };
+  gaps?: { advance?: string[]; carried?: string[]; protect?: string[] };
+  active_threads?: string[];
+  plant_heuristic?: string;
+  whitelist_coverage?: { ok?: boolean; missing?: string[] };
+  out_path?: string;
+  overwrite?: boolean;
+}
+
 export interface AiEditorReview {
   mode: string;
   chapter?: number;
@@ -584,6 +682,8 @@ export interface ChapterAuditRow {
   status: string;
   label: string;
   unlocked: boolean;
+  /** 是否存在待提交草稿（正文可恢复） */
+  hasPending?: boolean;
 }
 
 export interface ChapterToneDto {
@@ -677,6 +777,20 @@ export const api = {
     fetchJson<{ analytics: PromptAnalytics }>(
       `/books/${encodeURIComponent(bookId)}/prompt-analytics?chapter=${chapter}`,
     ).then((r) => r.analytics),
+
+  /** F2: READ-ONLY Final Context Viewer (L1–L4) */
+  getFinalContext: (bookId: string, chapter: number, scene?: number, includeText = false) =>
+    fetchJson<{
+      readOnly: boolean;
+      chapter: number;
+      snapshots?: FinalContextSnapshot[];
+      snapshot?: FinalContextSnapshot | null;
+      integrity?: { ok: boolean; reasons?: string[] } | Array<{ sceneIndex: number; ok: boolean; reasons?: string[] }>;
+    }>(
+      `/books/${encodeURIComponent(bookId)}/final-context?chapter=${chapter}${
+        scene ? `&scene=${scene}` : ''
+      }${includeText ? '&text=1' : ''}`,
+    ),
 
   getSceneBudget: (bookId: string, chapter: number, scene?: number) =>
     fetchJson<{ budget?: SceneBudgetReport; budgets?: SceneBudgetReport[] }>(
@@ -858,6 +972,20 @@ export const api = {
     fetchJson(`/books/${encodeURIComponent(bookId)}/chapter-plans/${chapter}`, {
       method: 'PUT', body: JSON.stringify(plan),
     }),
+
+  /** 协议渲染器 dry-run（不落盘）；plan/audit 来自渲染器 --json 输出 */
+  renderChapterPlanPreview: (bookId: string, chapter: number, opts?: { plant?: string; overrides?: { goal?: string; scenes?: string[] } }) =>
+    fetchJson<{ ok: boolean; plan?: RenderedPlan | null; audit?: PlanRenderAudit | null }>(
+      `/books/${encodeURIComponent(bookId)}/chapter-plans/${chapter}/render-preview`,
+      { method: 'POST', body: JSON.stringify(opts || {}) },
+    ),
+
+  /** 协议渲染器写盘（--force）；commit 由渲染器重跑卫生校验，失败 4xx 不落盘 */
+  renderChapterPlanCommit: (bookId: string, chapter: number, opts?: { plant?: string; overrides?: { goal?: string; scenes?: string[] }; force?: boolean }) =>
+    fetchJson<{ ok: boolean; plan?: RenderedPlan | null; audit?: PlanRenderAudit | null; outPath?: string }>(
+      `/books/${encodeURIComponent(bookId)}/chapter-plans/${chapter}/render-commit`,
+      { method: 'POST', body: JSON.stringify(opts || {}) },
+    ),
 
   getWorldState: (bookId: string) =>
     fetchJson<{ worldState: Record<string, unknown> | null }>(`/books/${encodeURIComponent(bookId)}/world-state`).then((r) => r.worldState),

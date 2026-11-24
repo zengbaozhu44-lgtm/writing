@@ -1,8 +1,6 @@
 /**
- * Conflict Engine — 每章至少一种冲突类型
+ * Conflict Detector — 每章至少一种冲突类型；缺因果依据时降级通过（no_causal_basis）
  */
-import { CONFLICT_MISSING_SUGGESTION } from '../planner/conflict-suggester.js';
-
 const CONFLICT_TYPES = [
   'resource',
   'relationship',
@@ -53,12 +51,19 @@ export function evaluateConflict(ctx, intent) {
   }
 
   const pass = detected.size >= 1;
+  // D2（Phase 4 · Step 4-D2）：计划明确携带 no_causal_basis（缺因果依据）时，
+  // 不硬拦、不补假因果——以 degraded 通过，让薄场景照常执行。
+  // 若无冲突且无 no_causal_basis，仍返回 no_causal_basis 作为诚实重试建议：
+  // 下一轮计划 obstacle 变成该标记后即 degraded 通过，恰一次有界重试，不死循环。
+  const noBasis = corpus.includes('no_causal_basis');
+  const degraded = noBasis && !pass;
   return {
-    pass,
-    types: [...detected],
+    pass: pass || noBasis,
+    degraded,
+    types: degraded ? ['no_causal_basis'] : [...detected],
     required: CONFLICT_TYPES,
     evidence,
-    primary: [...detected][0] || null,
-    suggestObstacle: pass ? null : CONFLICT_MISSING_SUGGESTION,
+    primary: degraded ? 'no_causal_basis' : [...detected][0] || null,
+    suggestObstacle: pass ? null : 'no_causal_basis',
   };
 }

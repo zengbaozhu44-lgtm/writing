@@ -20,6 +20,7 @@ export function simulateReaders(chapterText, intent, metrics) {
       boring: signals.boringPart,
       draggy: signals.draggyPart,
       anticipated: signals.anticipated,
+      withheld: signals.withheld,
     },
     readingDrive: avgDrive,
     pass: avgDrive >= 60,
@@ -43,6 +44,16 @@ function analyzeText(text, intent, metrics) {
   let draggyPart = null;
   if (len > 4000 && dialogueRatio < 0.2) draggyPart = '长叙述段缺少硬切';
 
+  // 留白检测：结尾 120 字内情绪身体词过密 = 写尽，无留白（悬念章密集身体描写是合理钩子，软判放过）
+  const BODY_EMOTION_RE = /抖|颤|耳鸣|咬|跪|攥|抵|砸|跳|缩|冒汗|发白|刺痛|闷响/g;
+  const tail = String(text).replace(/\s/g, '').slice(-120);
+  const bodyEmotionCount = (tail.match(BODY_EMOTION_RE) || []).length;
+  const withheld = {
+    bodyEmotionCount,
+    overloaded: bodyEmotionCount > 2,
+    note: bodyEmotionCount > 2 ? `结尾 120 字内情绪身体词 ${bodyEmotionCount} 个，写尽无留白，建议删减收束` : null,
+  };
+
   return {
     len,
     dialogueRatio,
@@ -52,6 +63,7 @@ function analyzeText(text, intent, metrics) {
     boringPart,
     draggyPart,
     anticipated: intent.ending || '章末钩子',
+    withheld,
     hookScore: hasHook ? 85 : 50,
     paceScore: dialogueRatio >= 0.25 && dialogueRatio <= 0.65 ? 80 : 65,
     payoffScore: hasConflict ? 78 : 55,

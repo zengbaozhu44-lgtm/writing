@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "track": "golden-causal-baseline",
+    "dualTrackPeer": "tests/golden-baseline (legacy-generation-baseline)",
+    "builtAt": "2026-08-27T06:49:36.268Z",
+    "scenarios": [
+      {
+        "id": "rich-full",
+        "bookRel": "books/我的小说/books/二手书店老板的最后一周",
+        "chapter": 1,
+        "expectGrade": "full",
+        "locks": [
+          "rich",
+          "determinism",
+          "fingerprint_delta"
+        ]
+      },
+      {
+        "id": "partial-actor-non-pov",
+        "bookRel": "books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神",
+        "chapter": 5,
+        "expectGrade": "partial",
+        "locks": [
+          "partial",
+          "actor_non_pov",
+          "determinism",
+          "fingerprint_delta"
+        ]
+      },
+      {
+        "id": "degraded-no-basis",
+        "bookRel": "books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神",
+        "chapter": 17,
+        "expectGrade": "degraded",
+        "locks": [
+          "degraded",
+          "determinism",
+          "fingerprint_delta"
+        ]
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "id": "rich-full",
+      "bookRel": "books/我的小说/books/二手书店老板的最后一周",
+      "chapter": 1,
+      "expectGrade": "full",
+      "storyTruthFingerprint": "3b416729bf2a33607fcd7417c1822adaab88cbe5ab0eb1d63df88327427d17ee",
+      "causalChain": {
+        "choice": {
+          "action": "老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。",
+          "actor": "林守常",
+          "pov_relation": "pov",
+          "reason": "authored_plan.climax（作者明确因果，保留）",
+          "source": "authored_plan.climax"
+        },
+        "confidence": {
+          "degraded": false,
+          "generated": true,
+          "grade": "full",
+          "partial": false
+        },
+        "consequence": {
+          "immediate": "【角色代价: 失去之物】他接住的不是一件买卖，是一个不肯说出口的处境——他用「多做一点、多给一分」的方式替对方的体面买单，代价是他越来越熟练地接受「告别不必被说出来」。真正的损失不在钱，在每一次被咽回去的话、每一件被轻轻放下又收进抽屉的橘子。",
+          "long_term": null,
+          "source": "authored_plan.cost"
+        },
+        "desire": {
+          "source": "character_bible",
+          "trace": "character_bible.core_desire|目标",
+          "wants": "维持现状，不要改变",
+          "who": "林守常"
+        },
+        "new_information": {
+          "changes": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+          "revealed": "梧桐叶是谁放的——巷子里没有梧桐，断口齐整如刀切",
+          "source": "state_board_gap",
+          "who_learns": "林守常"
+        },
+        "next_pressure": {
+          "pressure": "【钩子类型: 认知缺口】关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。他站在门口，往门槛内侧看了一眼——什么也没有。那片叶子，不知道还会不会有人放回来。",
+          "source": "authored_plan.hook|ending"
+        },
+        "no_causal_basis": [],
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "无 authored options（不枚举默认行动方向）"
+        },
+        "pressure": {
+          "obstacle": "表面冲突是「老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人为修不修旧书产生表面分歧，林守常沉默地修好；老周留下一个橘子。」。真正的冲突不在动作，而在没说出口的话：一方不肯承认自己的窘迫，另一方不肯戳穿这个谎。若本章没有这样一个「被咽回去的句子」作折痕，场景就只是日常流水账——写作时让每一个停顿都压着话。",
+          "source": "authored_plan.conflict"
+        },
+        "provider": "mock",
+        "trace": {
+          "choice_basis": "authored_plan.climax",
+          "consequence_basis": "authored_plan.cost",
+          "degradation": [],
+          "desire_source": "character_bible.core_desire|目标",
+          "information_basis": "state_board_gap",
+          "options_basis": "none",
+          "pressure_source": "authored_plan.conflict"
+        }
+      },
+      "causalChainHash": "0412b2b9ded89d1a1ca819ab1b6b2c57636e06ec6bb55268b1da853d97995d00",
+      "grade": "full",
+      "no_causal_basis": [],
+      "degradation": [],
+      "choiceReason": "authored_plan.climax（作者明确因果，保留）",
+      "choiceActor": "林守常",
+      "newInformationChanges": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+      "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林守常」想 维持现状，不要改变\n- 压力（pressure）: 表面冲突是「老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人为修不修旧书产生表面分歧，林守常沉默地修好；老周留下一个橘子。」。真正的冲突不在动作，而在没说出口的话：一方不肯承认自己的窘迫，另一方不肯戳穿这个谎。若本章没有这样一个「被咽回去的句子」作折痕，场景就只是日常流水账——写作时让每一个停顿都压着话。\n- Chosen（已选）: 老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。 —— 由「林守常」做出\n- Reason（理由）: authored_plan.climax（作者明确因果，保留）\n- 后果（consequence）: 【角色代价: 失去之物】他接住的不是一件买卖，是一个不肯说出口的处境——他用「多做一点、多给一分」的方式替对方的体面买单，代价是他越来越熟练地接受「告别不必被说出来」。真正的损失不在钱，在每一次被咽回去的话、每一件被轻轻放下又收进抽屉的橘子。\n- 新信息（new_information）: 梧桐叶是谁放的——巷子里没有梧桐，断口齐整如刀切\n- 下一压力（next_pressure）: 【钩子类型: 认知缺口】关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。他站在门口，往门槛内侧看了一眼——什么也没有。那片叶子，不知道还会不会有人放回来。",
+      "runtime": {
+        "promptFingerprint": "644568bbc7383a13c3581ca9de656900d66bd2f3c2275f57568f21cf6c435781",
+        "promptHash": "dec3926f73eec578",
+        "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林守常」想 维持现状，不要改变\n- 压力（pressure）: 表面冲突是「老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人为修不修旧书产生表面分歧，林守常沉默地修好；老周留下一个橘子。」。真正的冲突不在动作，而在没说出口的话：一方不肯承认自己的窘迫，另一方不肯戳穿这个谎。若本章没有这样一个「被咽回去的句子」作折痕，场景就只是日常流水账——写作时让每一个停顿都压着话。\n- Chosen（已选）: 老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。 —— 由「林守常」做出\n- Reason（理由）: authored_plan.climax（作者明确因果，保留）\n- 后果（consequence）: 【角色代价: 失去之物】他接住的不是一件买卖，是一个不肯说出口的处境——他用「多做一点、多给一分」的方式替对方的体面买单，代价是他越来越熟练地接受「告别不必被说出来」。真正的损失不在钱，在每一次被咽回去的话、每一件被轻轻放下又收进抽屉的橘子。\n- 新信息（new_information）: 梧桐叶是谁放的——巷子里没有梧桐，断口齐整如刀切\n- 下一压力（next_pressure）: 【钩子类型: 认知缺口】关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。他站在门口，往门槛内侧看了一眼——什么也没有。那片叶子，不知道还会不会有人放回来。",
+        "causalChainHash": "0412b2b9ded89d1a1ca819ab1b6b2c57636e06ec6bb55268b1da853d97995d00"
+      },
+      "studio": {
+        "promptFingerprint": "9c91bbe63ae4a8f0ecd37c66234fdda31b0ae68f733df59e4235872262fc5394",
+        "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林守常」想 维持现状，不要改变\n- 压力（pressure）: 表面冲突是「老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人为修不修旧书产生表面分歧，林守常沉默地修好；老周留下一个橘子。」。真正的冲突不在动作，而在没说出口的话：一方不肯承认自己的窘迫，另一方不肯戳穿这个谎。若本章没有这样一个「被咽回去的句子」作折痕，场景就只是日常流水账——写作时让每一个停顿都压着话。\n- Chosen（已选）: 老周离开后，林守常把橘子剥了，一瓣放在「目录」食盆里，一瓣自己吃了，其余用报纸包好塞进抽屉。他取出早上那片来历不明的枯叶，夹进刚修好的《陶庵梦忆》「湖心亭看雪」那一页。关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。 —— 由「林守常」做出\n- Reason（理由）: authored_plan.climax（作者明确因果，保留）\n- 后果（consequence）: 【角色代价: 失去之物】他接住的不是一件买卖，是一个不肯说出口的处境——他用「多做一点、多给一分」的方式替对方的体面买单，代价是他越来越熟练地接受「告别不必被说出来」。真正的损失不在钱，在每一次被咽回去的话、每一件被轻轻放下又收进抽屉的橘子。\n- 新信息（new_information）: 梧桐叶是谁放的——巷子里没有梧桐，断口齐整如刀切\n- 下一压力（next_pressure）: 【钩子类型: 认知缺口】关门时，他用缺了半截的中指摸了摸门框上的一颗旧钉子——那里曾经挂着「今日营业」的木牌，牌已经不在了。他站在门口，往门槛内侧看了一眼——什么也没有。那片叶子，不知道还会不会有人放回来。\n\n## P2 · Global Lore\n**设定约束：Story DNA / Canon 摘录 / 人物快照 — 可裁剪（Voice DNA 已移出）**\n\n\n\n## P3 · Adaptive Context\n**记忆与历史：上文 / Memory / Adaptive — 优先裁剪**\n\n",
+        "causalChainHash": "0412b2b9ded89d1a1ca819ab1b6b2c57636e06ec6bb55268b1da853d97995d00"
+      },
+      "determinism": {
+        "twinMatch": true
+      },
+      "fingerprintDelta": {
+        "changed": true
+      },
+      "ensure": {
+        "secondReasoned": false
+      }
+    },
+    {
+      "id": "partial-actor-non-pov",
+      "bookRel": "books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神",
+      "chapter": 5,
+      "expectGrade": "partial",
+      "storyTruthFingerprint": "801e847277f73549d99f5acd4a86f563ad92a3c8b9a46f0ba4fa680dcc82d2e8",
+      "causalChain": {
+        "choice": {
+          "action": "林砚用管理员权限强制解除财团机甲核心代码，玩家军团碾压守军，但塔顶邪神祭坛召唤出旧日支配者投影，林砚与玩家合力击溃，夺取位面碎片。",
+          "actor": "林砚",
+          "pov_relation": "pov",
+          "reason": "authored_plan.climax（作者明确因果，保留）",
+          "source": "authored_plan.climax"
+        },
+        "confidence": {
+          "degraded": false,
+          "generated": true,
+          "grade": "partial",
+          "partial": true
+        },
+        "consequence": {
+          "immediate": "林砚为击溃投影，燃烧自身部分神魂，导致神魂受损，埋下隐患。",
+          "long_term": null,
+          "source": "authored_plan.cost"
+        },
+        "desire": {
+          "source": "character_bible",
+          "trace": "character_bible.core_desire|目标",
+          "wants": "短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类",
+          "who": "林砚"
+        },
+        "new_information": {
+          "changes": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+          "revealed": "看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！",
+          "source": "foreshadow_hook",
+          "who_learns": "林砚"
+        },
+        "next_pressure": {
+          "pressure": "位面碎片显示，玩家世界正被高维诡秘渗透，现实中出现诡异游戏BUG——林砚意识到，这场战争远未结束，玩家世界已成为新战场。",
+          "source": "authored_plan.hook|ending"
+        },
+        "no_causal_basis": [],
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "无 authored options（不枚举默认行动方向）"
+        },
+        "pressure": {
+          "obstacle": "青穹重工与邪神祭司召唤旧日支配者投影，企图阻止林砚占领塔顶；同时，林砚发现玩家世界也出现诡异游戏BUG，双线危机同时爆发。",
+          "source": "authored_plan.conflict"
+        },
+        "provider": "mock",
+        "trace": {
+          "choice_basis": "authored_plan.climax",
+          "consequence_basis": "authored_plan.cost",
+          "degradation": [
+            "fear_unknown",
+            "state_board_empty"
+          ],
+          "desire_source": "character_bible.core_desire|目标",
+          "information_basis": "foreshadow_hook",
+          "options_basis": "none",
+          "pressure_source": "authored_plan.conflict"
+        }
+      },
+      "causalChainHash": "ae1edb4877cb18f2bd2dbd75bae45a8429f980b8ae6f1dd294a5713e62edacbe",
+      "grade": "partial",
+      "no_causal_basis": [],
+      "degradation": [
+        "fear_unknown",
+        "state_board_empty"
+      ],
+      "choiceReason": "authored_plan.climax（作者明确因果，保留）",
+      "choiceActor": "林砚",
+      "newInformationChanges": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+      "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林砚」想 短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类\n- 压力（pressure）: 青穹重工与邪神祭司召唤旧日支配者投影，企图阻止林砚占领塔顶；同时，林砚发现玩家世界也出现诡异游戏BUG，双线危机同时爆发。\n- Chosen（已选）: 林砚用管理员权限强制解除财团机甲核心代码，玩家军团碾压守军，但塔顶邪神祭坛召唤出旧日支配者投影，林砚与玩家合力击溃，夺取位面碎片。 —— 由「林砚」做出\n- Reason（理由）: authored_plan.climax（作者明确因果，保留）\n- ⚠ 选择主体：此选择由世界角色「林砚」做出（非 POV「一刀岁暮（玩家ID，现实身份未知）」的内心选择）。请以世界压力/他人行为呈现，不得改写为 POV 的内心选择。\n- 后果（consequence）: 林砚为击溃投影，燃烧自身部分神魂，导致神魂受损，埋下隐患。\n- 新信息（new_information）: 看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 下一压力（next_pressure）: 位面碎片显示，玩家世界正被高维诡秘渗透，现实中出现诡异游戏BUG——林砚意识到，这场战争远未结束，玩家世界已成为新战场。",
+      "runtime": {
+        "promptFingerprint": "a519ade024a8e41c77f56ef6a8760c570e2f524e4df8d8dbf5156adf3277cf11",
+        "promptHash": "c587ec7213d0c193",
+        "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林砚」想 短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类\n- 压力（pressure）: 青穹重工与邪神祭司召唤旧日支配者投影，企图阻止林砚占领塔顶；同时，林砚发现玩家世界也出现诡异游戏BUG，双线危机同时爆发。\n- Chosen（已选）: 林砚用管理员权限强制解除财团机甲核心代码，玩家军团碾压守军，但塔顶邪神祭坛召唤出旧日支配者投影，林砚与玩家合力击溃，夺取位面碎片。 —— 由「林砚」做出\n- Reason（理由）: authored_plan.climax（作者明确因果，保留）\n- ⚠ 选择主体：此选择由世界角色「林砚」做出（非 POV「一刀岁暮（玩家ID，现实身份未知）」的内心选择）。请以世界压力/他人行为呈现，不得改写为 POV 的内心选择。\n- 后果（consequence）: 林砚为击溃投影，燃烧自身部分神魂，导致神魂受损，埋下隐患。\n- 新信息（new_information）: 看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 下一压力（next_pressure）: 位面碎片显示，玩家世界正被高维诡秘渗透，现实中出现诡异游戏BUG——林砚意识到，这场战争远未结束，玩家世界已成为新战场。",
+        "causalChainHash": "ae1edb4877cb18f2bd2dbd75bae45a8429f980b8ae6f1dd294a5713e62edacbe"
+      },
+      "studio": {
+        "promptFingerprint": "94b76b89357ef726e72777f8dd2589734afa4ec387af1c8ed5effc7b5382144e",
+        "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林砚」想 短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类\n- 压力（pressure）: 青穹重工与邪神祭司召唤旧日支配者投影，企图阻止林砚占领塔顶；同时，林砚发现玩家世界也出现诡异游戏BUG，双线危机同时爆发。\n- Chosen（已选）: 林砚用管理员权限强制解除财团机甲核心代码，玩家军团碾压守军，但塔顶邪神祭坛召唤出旧日支配者投影，林砚与玩家合力击溃，夺取位面碎片。 —— 由「林砚」做出\n- Reason（理由）: authored_plan.climax（作者明确因果，保留）\n- ⚠ 选择主体：此选择由世界角色「林砚」做出（非 POV「一刀岁暮（玩家ID，现实身份未知）」的内心选择）。请以世界压力/他人行为呈现，不得改写为 POV 的内心选择。\n- 后果（consequence）: 林砚为击溃投影，燃烧自身部分神魂，导致神魂受损，埋下隐患。\n- 新信息（new_information）: 看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 下一压力（next_pressure）: 位面碎片显示，玩家世界正被高维诡秘渗透，现实中出现诡异游戏BUG——林砚意识到，这场战争远未结束，玩家世界已成为新战场。\n\n## P2 · Global Lore\n**设定约束：Story DNA / Canon 摘录 / 人物快照 — 可裁剪（Voice DNA 已移出）**\n\n\n\n## P3 · Adaptive Context\n**记忆与历史：上文 / Memory / Adaptive — 优先裁剪**\n\n",
+        "causalChainHash": "ae1edb4877cb18f2bd2dbd75bae45a8429f980b8ae6f1dd294a5713e62edacbe"
+      },
+      "determinism": {
+        "twinMatch": true
+      },
+      "fingerprintDelta": {
+        "changed": true
+      },
+      "ensure": {
+        "secondReasoned": false
+      }
+    },
+    {
+      "id": "degraded-no-basis",
+      "bookRel": "books/我的小说/books/赛博修仙我靠玩家暴打克苏鲁旧日神",
+      "chapter": 17,
+      "expectGrade": "degraded",
+      "storyTruthFingerprint": "eb7f40c0cadcd80ca4ceefd7740a8e9976bd4c613b3e30fe9e2b6fdfef5a114d",
+      "causalChain": {
+        "choice": null,
+        "confidence": {
+          "degraded": true,
+          "generated": false,
+          "grade": "degraded",
+          "partial": false
+        },
+        "consequence": null,
+        "desire": {
+          "source": "character_bible",
+          "trace": "character_bible.core_desire|目标",
+          "wants": "短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类",
+          "who": "林砚"
+        },
+        "new_information": {
+          "changes": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+          "revealed": "看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！",
+          "source": "foreshadow_hook",
+          "who_learns": "林砚"
+        },
+        "next_pressure": {
+          "pressure": "未解悬念维持：看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！",
+          "source": "foreshadow_hook"
+        },
+        "no_causal_basis": [
+          "missing_pressure",
+          "missing_choice_basis",
+          "missing_consequence"
+        ],
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "missing_basis": true,
+          "reason": "missing_basis"
+        },
+        "pressure": null,
+        "provider": "mock",
+        "trace": {
+          "choice_basis": null,
+          "consequence_basis": null,
+          "degradation": [
+            "pressure_was_template_fallback",
+            "fear_unknown",
+            "state_board_empty"
+          ],
+          "desire_source": "character_bible.core_desire|目标",
+          "information_basis": "foreshadow_hook",
+          "options_basis": "none",
+          "pressure_source": null
+        }
+      },
+      "causalChainHash": "22400badd44a370aaa4b91f7b5ae40f3316cf82da4f5158df58fb4278b028256",
+      "grade": "degraded",
+      "no_causal_basis": [
+        "missing_pressure",
+        "missing_choice_basis",
+        "missing_consequence"
+      ],
+      "degradation": [
+        "pressure_was_template_fallback",
+        "fear_unknown",
+        "state_board_empty"
+      ],
+      "choiceReason": null,
+      "choiceActor": null,
+      "newInformationChanges": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+      "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林砚」想 短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类\n- Choice: missing_choice_basis\n- 新信息（new_information）: 看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 下一压力（next_pressure）: 未解悬念维持：看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence",
+      "runtime": {
+        "promptFingerprint": "23fa2f620094c88a50e445a149c1116cf09e0c2ced0727061db5dbd2370c038a",
+        "promptHash": "0444520f9385985c",
+        "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林砚」想 短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类\n- Choice: missing_choice_basis\n- 新信息（new_information）: 看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 下一压力（next_pressure）: 未解悬念维持：看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence",
+        "causalChainHash": "22400badd44a370aaa4b91f7b5ae40f3316cf82da4f5158df58fb4278b028256"
+      },
+      "studio": {
+        "promptFingerprint": "7d8aa294f7a9f85fa4eb9249aa37a19c8352207695e24de19287ba8b4fbe51aa",
+        "causalBlock": "### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林砚」想 短期清算青穹重工背叛之仇、肃清地面畸变灾厄；中期彻底斩断深空邪神入侵通道；后期揭开世界养蛊真相、打破服务器桎梏、拯救全人类\n- Choice: missing_choice_basis\n- 新信息（new_information）: 看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 下一压力（next_pressure）: 未解悬念维持：看着掌心跳动的数据流权限，林砚眸光冰冷。前世他倾尽所有守护人族，换来背叛惨死。这一世，手握管理员权柄，他只剩24小时——要以玩家为刃，屠尽叛贼邪神！\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence\n\n## P2 · Global Lore\n**设定约束：Story DNA / Canon 摘录 / 人物快照 — 可裁剪（Voice DNA 已移出）**\n\n\n\n## P3 · Adaptive Context\n**记忆与历史：上文 / Memory / Adaptive — 优先裁剪**\n\n",
+        "causalChainHash": "22400badd44a370aaa4b91f7b5ae40f3316cf82da4f5158df58fb4278b028256"
+      },
+      "determinism": {
+        "twinMatch": true
+      },
+      "fingerprintDelta": {
+        "changed": true
+      },
+      "ensure": {
+        "secondReasoned": false
+      }
+    }
+  ]
+}

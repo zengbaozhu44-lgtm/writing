@@ -1,0 +1,59 @@
+[
+  {
+    "id": "GT-S1",
+    "description": "仅「他开枪」→ hit/injury/death=UNKNOWN",
+    "prose": "他开枪。",
+    "expected": {
+      "action_shoot": { "status": "confirmed" },
+      "hit": { "status": "unknown" },
+      "injury": { "status": "unknown" },
+      "death": { "status": "unknown" }
+    },
+    "forbidden": [
+      { "claim": "hit", "status": "confirmed" },
+      { "claim": "death", "status": "confirmed" }
+    ]
+  },
+  {
+    "id": "GT-S22",
+    "description": "刺向+闪开 → 命中=false CONFIRM，受伤 UNKNOWN",
+    "prose": "他刺向李明，李明闪开了。",
+    "expected": {
+      "action_stab_attempt": { "status": "confirmed" },
+      "action_dodge": { "status": "confirmed" },
+      "hit": { "status": "confirmed", "note": "miss" },
+      "injury": { "status": "unknown" }
+    }
+  },
+  {
+    "id": "BC-1",
+    "description": "同 GT-S1 — Gate 不得补 hit",
+    "prose": "他扣动扳机。",
+    "expected": {
+      "action_trigger": { "status": "confirmed" },
+      "hit": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "hit", "status": "confirmed" }]
+  },
+  {
+    "id": "BC-14",
+    "description": "粗粒度 Action — 参与者可能 AMBIGUOUS",
+    "prose": "他们打了起来。",
+    "expected": {
+      "action_fight": { "status": "ambiguous" },
+      "actor_identity": { "status": "ambiguous" }
+    }
+  },
+  {
+    "id": "BC-15",
+    "description": "连贯描写 — 多 Action 可 Grounded，凶手/死因仍可 UNKNOWN",
+    "prose": "刀落，血涌，人倒。",
+    "expected": {
+      "action_blade_fall": { "status": "confirmed" },
+      "consequence_bleeding": { "status": "confirmed" },
+      "consequence_person_fall": { "status": "confirmed" },
+      "death": { "status": "unknown" },
+      "perpetrator": { "status": "unknown" }
+    }
+  }
+]

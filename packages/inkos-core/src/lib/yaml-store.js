@@ -5,13 +5,25 @@ import { exists, readJson, readText } from './paths.js';
 
 export function readYaml(filePath) {
   if (!exists(filePath)) return null;
-  return YAML.parse(readText(filePath));
+  try {
+    return YAML.parse(readText(filePath));
+  } catch {
+    // 并发写入半截 YAML → 返回 null，调用方回退空结构
+    return null;
+  }
 }
 
 export function writeYaml(filePath, data) {
   const dir = path.dirname(filePath);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(filePath, YAML.stringify(data, { lineWidth: 0 }), 'utf8');
+  const tmp = `${filePath}.tmp-${process.pid}-${Date.now()}`;
+  try {
+    fs.writeFileSync(tmp, YAML.stringify(data, { lineWidth: 0 }), 'utf8');
+    fs.renameSync(tmp, filePath);
+  } catch (err) {
+    try { fs.unlinkSync(tmp); } catch { /* ignore */ }
+    throw err;
+  }
 }
 
 export function appendFacts(factsPath, newFacts, chapter) {
@@ -53,30 +65,6 @@ export function patchHooks(hooksPath, { add = [], update = [] }) {
   return db;
 }
 
-export function patchRelationship(graphPath, edges) {
-  const g = readYaml(graphPath) || { edges: [] };
-  const key = (e) => `${e.from}→${e.to}`;
-  const map = new Map(g.edges.map((e) => [key(e), e]));
-  for (const e of edges) {
-    const k = key(e);
-    if (map.has(k)) Object.assign(map.get(k), e, { last_change: e.last_change ?? `ch_${e.chapter}` });
-    else g.edges.push({ ...e, last_change: e.last_change ?? `ch_${e.chapter}` });
-  }
-  writeYaml(graphPath, g);
-  return g;
-}
-
-export function patchKnowledge(matrixPath, rows) {
-  const m = readYaml(matrixPath) || { characters: [], matrix: [] };
-  const byInfo = new Map(m.matrix.map((r) => [r.info, r]));
-  for (const row of rows) {
-    if (byInfo.has(row.info)) Object.assign(byInfo.get(row.info), row);
-    else m.matrix.push(row);
-  }
-  writeYaml(matrixPath, m);
-  return m;
-}
-
 export function patchResources(resPath, delta) {
   const r = readYaml(resPath) || { meta: {}, resources: {}, by_character: {} };
   if (delta.meta) Object.assign(r.meta, delta.meta);
@@ -99,18 +87,3 @@ export function patchNpcSim(npcPath, entries) {
   return n;
 }
 
-export function appendStateMachine(smPath, entry) {
-  const sm = readYaml(smPath) || { current: {}, history: [] };
-  sm.history.push(entry);
-  sm.current = {
-    situation: entry.new_situation ?? entry.situation,
-    goal: null,
-    conflict: null,
-    decision: null,
-    action: null,
-    consequence: null,
-    new_situation: null,
-  };
-  writeYaml(smPath, sm);
-  return sm;
-}

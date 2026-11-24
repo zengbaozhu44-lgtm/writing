@@ -1,0 +1,78 @@
+{
+  "scene": 2,
+  "title": "受阻与博弈",
+  "checks": {
+    "clock": true,
+    "ib": true,
+    "characterContext": true,
+    "unknownAbsent": true,
+    "hiddenAbsent": true,
+    "rawSecretAbsent": true,
+    "emptyCardSafe": true,
+    "textLen": 1087,
+    "textPreview": "打印区的操作台在寒光里泛着冷白，键盘的键帽磨损得有些光滑。苏晚的手指悬在查询键上，系统提示音还在耳边循环——效率优化项目日常汇报，待处理事项清零，今日日期：10月27日。她没回头，却听见林夜的脚步声在过道里停住。  “你查什么？”他的声音低，像从远处传来，带点沙涩。  “今天的……日程同步。”她说。语气平稳得近乎生硬。"
+  },
+  "provenance": {
+    "story_clock": {
+      "key": "story_clock",
+      "source": "intent.time",
+      "type": "plan",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "note": null,
+      "L2": "present",
+      "L3": "present",
+      "L4": "present"
+    },
+    "information_boundary": {
+      "key": "information_boundary",
+      "source": "buildSceneWritePrompt / prompt-survival",
+      "type": "guard",
+      "priority": "P1",
+      "kept": true,
+      "reason": "semantic_protected",
+      "note": null,
+      "L2": "present",
+      "L3": "present",
+      "L4": "present"
+    },
+    "character_context": {
+      "key": "character_context",
+      "source": "03_character_bible whitelist",
+      "type": "canon",
+      "priority": "P2",
+      "kept": false,
+      "reason": "budget_trim",
+      "note": null,
+      "L2": "present",
+      "L3": "trimmed",
+      "L4": "absent"
+    },
+    "knowledge": {
+      "key": "knowledge",
+      "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+      "type": "projection",
+      "priority": "P2",
+      "kept": false,
+      "reason": "budget_trim",
+      "note": null,
+      "L2": "present",
+      "L3": "trimmed",
+      "L4": "trimmed"
+    },
+    "entity": {
+      "key": "entity",
+      "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+      "type": "derived",
+      "priority": "P2",
+      "kept": false,
+      "reason": "scene_relevant",
+      "note": "selected: 苏晚,苏晚,林夜,空卡角色,苏晚",
+      "L2": "present",
+      "L3": "present",
+      "L4": "trimmed"
+    }
+  },
+  "pass": true
+}

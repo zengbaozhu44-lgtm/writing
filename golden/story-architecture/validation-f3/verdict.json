@@ -1,0 +1,234 @@
+{
+  "pass": true,
+  "verdict": "F3 = PASS",
+  "scenes": [
+    {
+      "index": 1,
+      "title": "进入局面",
+      "clockOk": true,
+      "ibOk": true,
+      "histOk": true,
+      "juneExplained": true,
+      "blocks": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        },
+        "prior_excerpt": {
+          "key": "prior_excerpt",
+          "source": "prior_scene.text",
+          "type": "historical",
+          "priority": "P3",
+          "kept": false,
+          "reason": "unavailable",
+          "L2": "absent",
+          "L3": "absent",
+          "L4": "absent",
+          "note": "Historical dates ≠ current Story Clock; demoted vs P1 Canonical",
+          "channels": null
+        },
+        "prev_summary": {
+          "key": "prev_summary",
+          "source": "resolvePreviousScenes → scene-summary",
+          "type": "historical",
+          "priority": "P2",
+          "kept": false,
+          "reason": "unavailable",
+          "L2": "absent",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": null,
+          "channels": null
+        },
+        "character_sr": {
+          "key": "character_sr",
+          "source": "minimal-sr (assembleMinimalSR)",
+          "type": "sr",
+          "priority": "P2",
+          "kept": true,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        }
+      },
+      "bodyHasJune": false
+    },
+    {
+      "index": 2,
+      "title": "受阻与博弈",
+      "clockOk": true,
+      "ibOk": true,
+      "histOk": true,
+      "juneExplained": true,
+      "blocks": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        },
+        "prior_excerpt": {
+          "key": "prior_excerpt",
+          "source": "scene-01.text",
+          "type": "historical",
+          "priority": "P3",
+          "kept": false,
+          "reason": "historical_continuity",
+          "L2": "absent",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": "Historical dates ≠ current Story Clock; demoted vs P1 Canonical",
+          "channels": null
+        },
+        "prev_summary": {
+          "key": "prev_summary",
+          "source": "resolvePreviousScenes → scene-summary",
+          "type": "historical",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": null,
+          "channels": null
+        },
+        "character_sr": {
+          "key": "character_sr",
+          "source": "minimal-sr (assembleMinimalSR)",
+          "type": "sr",
+          "priority": "P2",
+          "kept": true,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        }
+      },
+      "bodyHasJune": false
+    },
+    {
+      "index": 3,
+      "title": "转折与代价",
+      "clockOk": true,
+      "ibOk": true,
+      "histOk": true,
+      "juneExplained": true,
+      "blocks": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        },
+        "prior_excerpt": {
+          "key": "prior_excerpt",
+          "source": "scene-02.text",
+          "type": "historical",
+          "priority": "P3",
+          "kept": false,
+          "reason": "historical_continuity",
+          "L2": "absent",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": "Historical dates ≠ current Story Clock; demoted vs P1 Canonical",
+          "channels": null
+        },
+        "prev_summary": {
+          "key": "prev_summary",
+          "source": "resolvePreviousScenes → scene-summary",
+          "type": "historical",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": null,
+          "channels": null
+        },
+        "character_sr": {
+          "key": "character_sr",
+          "source": "minimal-sr (assembleMinimalSR)",
+          "type": "sr",
+          "priority": "P2",
+          "kept": true,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null,
+          "channels": null
+        }
+      },
+      "bodyHasJune": false
+    }
+  ]
+}

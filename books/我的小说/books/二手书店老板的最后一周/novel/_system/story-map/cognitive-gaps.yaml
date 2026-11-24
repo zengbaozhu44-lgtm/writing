@@ -1,0 +1,211 @@
+# ============================================================================
+# 认知缺口账本 · Cognitive Gap Ledger
+# ----------------------------------------------------------------------------
+# 书：二手书店老板的最后一周 ｜ 账本记录点：ch_0001 之后 ｜ 卷：1
+#
+# 定位：作者视角的「读者心里悬着什么」清单，P0 缺口网络的持久源。
+# 它回答的不是「故事讲了什么」，而是「哪些问题读者还没得到答案、作者还没做决定」。
+#
+# ★ 与现有系统的统一规则（重要）：
+#   1) 信息差 = `novel/06_knowledge_matrix.yaml` 的行
+#      → 每个缺口用 `source: km_00X` 指向那里（缺口 = 读者还不知道的信息差）。
+#   2) 伏笔 = `novel/12_foreshadow_db.yaml` 的 hooks
+#      → 每个缺口用 `foreshadowing_ref: H###` 指向那里（缺口闭合 = 伏笔回收）。
+#   3) 支线 = `novel/_system/story-map/plot-threads.yaml`
+#      → 每个缺口用 `related_thread` 挂到承载它的支线卡片上。
+#   4) 模型真正「看得见」的活通道 = `novel/07_state_board.md`
+#      → prompt-compiler 把 07 注入「局势」区块。status=open 且 urgency=high 的
+#        缺口必须同步出现在 07，否则模型感知不到（伏笔库目前是只写不读的）。
+#
+# 维护约定：每章 accept 后更新 status / expected_reveal / author_note。
+#   系统 commit 不会写本文件（不在 git-memory 的 NOVEL_TRACKED 白名单，纯作者侧）。
+#   状态机：open → touched(有进展未解决) → resolved / cut(作者弃置)；
+#           draft_only(只出现在草稿堆叠中，作者决定 promote 或删除)。
+#   对齐：urgency=high 的缺口应支撑 story_dna 的追更动力（「那片叶子到底什么意思？」…）
+# ============================================================================
+
+meta:
+  book: 二手书店老板的最后一周
+  ledger_after: ch_0001
+  volume: 1
+  status_machine: open | touched | resolved | cut | draft_only
+
+gaps:
+  - id: gap_001
+    title: 「梧桐叶是谁放的」
+    type: identity
+    urgency: high
+    status: open
+    opened_ch: ch_0001
+    opened_by: 周一开门，门槛内侧出现断口齐整如刀切的梧桐叶（巷子里没有梧桐，秋天也还没到）
+    reader_question: 「那片叶子到底什么意思？」——story_dna 追更动力第 2 条
+    source: km_001
+    foreshadowing_ref: H001
+    related_thread: main_core
+    sub_gaps: []
+    expected_reveal_ch: 未定
+    resolve_condition: 作者决定投放者身份并安排揭示场景
+    author_note: >-
+      卷 1 大纲只回收了叶子的「去向」（ch8 烘烤 → ch10 作钥匙），没有回收「投放者」。
+      草稿堆叠里出现了「去年林薇夹在《聊斋》里的那片」「叶心米粒是去年除夕林薇包饺子
+      蹭上去的」这类揭示，但 vol_01 未收录——是否把叶子链到林薇、在卷 1 或卷 2 揭示，
+      请作者拍板。ch1 结束时林守常不知道投放者，系统不应替作者编造答案。
+
+  - id: gap_002
+    title: 「等你」纸片是谁写的、从哪本书里来
+    type: identity
+    urgency: high
+    status: open
+    opened_ch: ch_0001
+    opened_by: 第 1 章钩子：关门后门缝塞入铅笔字纸片「等你」，无署名，边缘卷曲，像被夹在某本书里很久了
+    reader_question: 「今天谁来？」的变体——谁在留信？为什么是「等你」？
+    source: km_007
+    foreshadowing_ref: H002
+    related_thread: main_core
+    sub_gaps:
+      - id: gap_002a
+        title: 纸片曾夹在哪本书里
+        note: 边缘卷曲暗示纸片长期夹在某本书里——「从书里来」的线索，可能指向 gap_004 的照片同源
+    expected_reveal_ch: 未定
+    resolve_condition: 作者决定投递者与揭示章
+    author_note: >-
+      这是 09 任务卡钦定的第 1 章新增伏笔，但没有任何回收计划。候选：林薇遗物 /
+      旧页同盟 / 周岚 / 未来的某位读者。与「从书里来」线索搭配后，很可能是贯穿卷 1
+      的情书式悬念——请作者定夺。
+
+  - id: gap_003
+    title: 老周的谎言与「下周日」
+    type: truth
+    urgency: medium
+    status: open
+    opened_ch: ch_0001
+    opened_by: 老周说老伴儿让他还《浮生六记》→ 林守常点破「你压根没借过」；老周说「下周日店拆了回老家」「这些书你留着，别修了」
+    reader_question: 老周为什么撒谎？他儿子的线（「这书我儿子也读过」）去哪了？
+    source: km_002
+    foreshadowing_ref: H003
+    related_thread: sub_laozhou
+    sub_gaps:
+      - id: gap_003a
+        title: 老周的儿子是谁 / 在哪里
+        note: ch1 一句「这书，我儿子也读过」提起后再无下文；vol_01 未回收。断线或留白，请作者定。
+    expected_reveal_ch: vol_01_ch_10（还书离城）
+    resolve_condition: 作者决定谎言动机与儿子线去留
+    author_note: >-
+      卷 1 大纲 ch10 让老周拿到修好的《陶庵梦忆》，但「为什么撒谎」与「儿子也读过」
+      都没有回收。若为有意留白请标记 resolved（注「留白即答案」）；若为断线请补回收。
+
+  - id: gap_004
+    title: 书脊照片里是谁
+    type: identity
+    urgency: medium
+    status: open
+    opened_ch: ch_0001
+    opened_by: 老周翻开《陶庵梦忆》时，书脊裂缝里夹着泛黄照片；老周：「这书……是三年前你妹妹亲手递给我的」
+    reader_question: 照片与林薇、老周的关系
+    source: km_004
+    foreshadowing_ref: H004
+    related_thread: sub_laozhou
+    sub_gaps: []
+    expected_reveal_ch: 未定
+    resolve_condition: 作者决定照片内容
+    author_note: >-
+      照片在 vol_01 大纲中完全缺席——目前只存在于 ch1 草稿堆叠里。请作者决定：
+      保留为卷 1 线索，还是 cut。它与 gap_002（纸片从书里来）可能同源。
+
+  - id: gap_005
+    title: 林薇是谁、她怎么离开的
+    type: identity
+    urgency: high
+    status: open
+    opened_ch: ch_0001
+    opened_by: 三年前她把《陶庵梦忆》递给老周；吃橘子络过敏；去年除夕包饺子（叶心米粒）；书店里处处是她的痕迹
+    reader_question: 贯穿全卷的幽灵——书店前史的核心
+    source: km_005
+    foreshadowing_ref: H005
+    related_thread: sub_linwei
+    sub_gaps: []
+    expected_reveal_ch: 卷 2（暗线）
+    resolve_condition: 作者定林薇的离开真相与揭示节奏
+    author_note: >-
+      卷 1 大纲的回收说明（枯叶/橘子/猫/木牌/手抄本）只字未提林薇，但第 1 章她已是
+      最强的情感钩子。请作者明确：卷 1 里林薇线推进到哪一步、由哪条支线承载。
+
+  - id: gap_006
+    title: 世界真相：AI 城市里书店 / 书 / 叶子的抵抗意义
+    type: power
+    urgency: medium
+    status: open
+    opened_ch: ch_0001
+    opened_by: 2052 年 AI 控制率 93%、社会稳定 87%、反抗等级 20；「有些书不是用来读的，是用来等你回来认领的」；卷末报纸「大静默三百年纪念：城市立誓保存每一页纸」，日期是明天
+    reader_question: 「我的城市有没有这样的店？」的世界纵深
+    source: km_009
+    foreshadowing_ref: H006
+    related_thread: main_world
+    sub_gaps: []
+    expected_reveal_ch: 卷 2
+    resolve_condition: 卷 1 只露冰山一角（拆迁 / 旧页同盟 / 夜行者），核心真相留卷 2
+    author_note: >-
+      卷末悬念明确把世界级谜团留给卷 2——本账本标记 expected_reveal_ch=卷2，
+      卷 1 内不做回收，避免系统提前解释。系统写作时保持「不知」即可。
+
+  - id: gap_007
+    title: 「今日营业」木牌是谁摘的
+    type: truth
+    urgency: low
+    status: open
+    opened_ch: ch_0001
+    opened_by: 关门时他用缺了半截的中指摸门框旧钉子——那里曾挂「今日营业」木牌，牌已经不在了
+    reader_question: 一块消失的木牌，一个消失的仪式
+    source: km_006
+    foreshadowing_ref: H007
+    related_thread: main_core
+    sub_gaps: []
+    expected_reveal_ch: vol_01_ch_09（祖父手写木板重现）
+    resolve_condition: 大纲只回收「重现」不回收「消失」——消失原因可留白
+    author_note: 若「谁摘的」无意回收，把 status 改 cut 并注明「留白即答案」。
+
+  - id: gap_008
+    title: 「目录」会不会死
+    type: retention
+    urgency: low
+    status: open
+    opened_ch: ch_0001
+    opened_by: 17 岁聋猫，倒计时的生物隐喻
+    reader_question: story_dna 追更动力第 5 条「「目录（猫）还活着吗？」」
+    source: null
+    foreshadowing_ref: H008
+    related_thread: main_core
+    sub_gaps: []
+    expected_reveal_ch: vol_01_ch_10（被林守常抱走，未死）
+    resolve_condition: 作者已定：未死、被抱走。此为读者侧悬疑，非作者待决策
+    author_note: >-
+      归入 retention 型，作者答案已锁定，无需决策。系统写作时保持每章一笔猫的状态即可，
+      绝不在卷 1 内让它死。source 为空：无信息差（全角色都不知/不需要知）。
+
+# ---------------------------------------------------------------------------
+# draft_only 决策记录（2026-08-13 · P0 收尾）
+# 以下元素只出现在 ch1 正文的草稿堆叠中，未进入 vol_01 大纲 / 09 任务卡。
+# 默认决策：cut 4 项 / resolve 1 项。作者可 veto 任意一项（改回 promote）。
+# 决策后正典 = 只认 vol_01 大纲 + 09 任务卡 + 本账本 gaps。
+# ---------------------------------------------------------------------------
+draft_only_decisions:
+  - id: draft_001
+    element: 石阶上落下一粒铜纽扣，沾着干涸暗色，凑近有铁锈味
+    decision: cut
+    reason: 大纲无此物，第 1 章信息已足（叶/橘/纸片/照片/谎言五线同开）；若后续想让「塞纸片的人留下痕迹」，可再 promote 为 gap_009。
+  - id: draft_002
+    element: 关门时门板内侧一枚凸起的铁钉，「昨天还没有」
+    decision: cut
+    reason: 与正典结尾「摸门框旧钉子（挂『今日营业』木牌）」冲突，大纲无此物；新钉细节留待卷 2 如需「有人动过门」时再用。
+  - id: draft_003
+    element: 「目录」开口说话（「那片叶子，是去年林薇夹在《聊斋》里的那片」）
+    decision: cut
+    reason: 猫开口违反该书现实主义基调；正典中「林薇与叶子」的信息由 gap_005 通过物证（照片/橘子络/米粒）渐进释放，不让猫泄底。
+  - id: draft_004
+    element: 阿婆在 ch1 出场（用糨糊瓶压账本、摸叶发现胶痕）
+    decision: cut
+    reason: vol_01 大纲阿婆 ch3 才入场；ch1 出现阿婆是 POV/时序错乱源之一（已配合修复 chapter_0001.yaml 的 pov 阿婆→林守常）。
+  - id: draft_005
+    element: 枯叶夹入位置在草稿间互相矛盾（《植物名实图考》13 页 / 214 页 vs《陶庵梦忆》湖心亭看雪页）
+    decision: resolve
+    reason: 定案正典——林守常清晨拾起时夹进《植物名实图考》（柜台积灰那本）；老周走后、剥橘喂猫后，把枯叶移入修好的《陶庵梦忆》「湖心亭看雪」页。此后该叶所在页即卷 1 追踪点。

@@ -1,0 +1,805 @@
+{
+  "version": "writer-execution-intelligence-2",
+  "role": "writer-execution-intelligence",
+  "mode": "learning-only",
+  "learningOnly": true,
+  "sceneIndex": 2,
+  "sceneType": "dialogue",
+  "beatMemory": {
+    "newFacts": [
+      "林砚的义体左臂在警报声里痉挛了一下——那是林薇当年装给他的旧型号，抗干扰评级只有C",
+      "不是云层裂开，是整个浮空城上方的穹顶像被无形的指甲从内侧划开一道口子，露出后面那片不该存在的黑",
+      "林砚的掌心数据流骤停——不是断连，是玩家的认知屏障被碾碎了"
+    ],
+    "characterStateChanges": [
+      "它没有动，但整座浮空城上所有玩家的系统界面同时开始闪烁",
+      "那人开始用指甲抠自己的脸，一边抠一边笑",
+      "更多的人开始倒下，有人抽搐，有人用头撞地，有人站起来又摔倒，像被什么东西从内部抽空了"
+    ],
+    "emotionChanges": [
+      "relief",
+      "hope",
+      "fear",
+      "anger"
+    ],
+    "unresolvedIssues": [
+      "浮空城上方的云层被撕开一条裂口，像谁用指甲抠进一块溃烂的伤口",
+      "天空裂开一道竖缝，像被什么东西从里面撑开",
+      "没有光漏出来——那道缝里只有深不见底的凝视感，像有什么正隔着亿万光年在看你",
+      "更多的人开始倒下，有人抽搐，有人用头撞地，有人站起来又摔倒，像被什么东西从内部抽空了",
+      "话音未落，投影的目光扫过东侧浮岛，几十具义体同时爆出蓝火，"
+    ],
+    "changedDimensions": [
+      "worldCognition",
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "林砚在指挥舱里抬头，看见那东西的第一眼，视网膜就涌上一层蚁爬般的麻意"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "stateChange": true,
+        "afterState": "投影的注视落下来，像一万根针同时扎进太阳穴"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "stateChange": false,
+        "afterState": "POV 已做出不可逆选择，后果即将落地"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "没有光漏出来——那道缝里只有深不见底的凝视感，像有什么正隔着亿万光年在看你"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "黑里有一只眼，缓缓睁开"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": false,
+        "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变"
+      }
+    ],
+    "lastAfterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+    "stateChangeCount": 4
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "林砚当前目标：承接上章推进：场景2：投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染 — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景2：投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，部分低等级玩家当场精神崩溃、发出尖叫。林砚指挥玩家军团仓促迎战，但投影的‘注视’导致大量玩家技能失效、义体失控，战线崩溃。",
+      "choice": "为了完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "林砚在指挥舱里抬头，看见那东西的第一眼，视网膜就涌上一层蚁爬般的麻意",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "它没有动，但整座浮空城上所有玩家的系统界面同时开始闪烁"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [
+        "浮空城上方的云层被撕开一条裂口，像谁用指甲抠进一块溃烂的伤口"
+      ],
+      "extractedAt": "2026-08-11T08:42:58.002Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "chose",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "林砚当前目标：承接上章推进：场景2：投影降临——‘深空之眼’第一重投影撕裂浮空城",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Relationship",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：双线作战的极限压力：一方面，‘深空之眼’投影的威能远超当前玩家战力，精神污染开始穿透玩家的‘游戏化认知’防御，导致玩家出现真实死亡恐惧与大规模退出；另一方面，玩家世界政府的合作并非无条件，他们要求林砚交出部分管理员权限作为‘信任抵押’，否则拒绝派遣现实武装支援。林砚陷入‘妥协则可能丧失GM权限’与‘ — 且局面本身不会让步",
+      "choice": "为了完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "投影的注视落下来，像一万根针同时扎进太阳穴",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "林砚的义体左臂在警报声里痉挛了一下——那是林薇当年装给他的旧型号，抗干扰评级只有C"
+      ],
+      "characterStateChanges": [
+        "那人开始用指甲抠自己的脸，一边抠一边笑"
+      ],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:43:07.346Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "chose",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.00625
+        },
+        "microPassed": [
+          "关系",
+          "危险"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Twist",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "POV 已做出不可逆选择，后果即将落地",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "relief"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:43:15.695Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "EVENT_LOOP:「掌心数据流」已发现（相位=chose）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步",
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+          "EVENT_LOOP:「掌心数据流」已发现（相位=chose）；禁止再发现/重描首次出现；须基于它做出选择、承担后果、推进下一步",
+          "STYLE: 禁止连续 Beat 使用「不是…是…」；改成直述感官或动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.047619047619047616
+        },
+        "microPassed": [
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "没有光漏出来——那道缝里只有深不见底的凝视感，像有什么正隔着亿万光年在看你",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [
+        "更多的人开始倒下，有人抽搐，有人用头撞地，有人站起来又摔倒，像被什么东西从内部抽空了"
+      ],
+      "emotionChanges": [
+        "hope"
+      ],
+      "unresolvedIssues": [
+        "天空裂开一道竖缝，像被什么东西从里面撑开",
+        "没有光漏出来——那道缝里只有深不见底的凝视感，像有什么正隔着亿万光年在看你",
+        "更多的人开始倒下，有人抽搐，有人用头撞地，有人站起来又摔倒，像被什么东西从内部抽空了"
+      ],
+      "extractedAt": "2026-08-11T08:43:23.293Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "ACTION_REPLAY: 禁止重演已发生动作「跪地撑住」；从上一句后果接着写下一动作"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "4-gram 自重复：「，像被什么东西从…」",
+          "Event 缺少可观察动作",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "ACTION_REPLAY: 禁止重演已发生动作「跪地撑住」；从上一句后果接着写下一动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": false,
+        "noRepeat": false,
+        "stateChange": true,
+        "fourGram": {
+          "pass": false,
+          "noRepeat": false,
+          "hits": [
+            "，像被什么东西从"
+          ],
+          "failReasons": [
+            "4-gram 自重复：「，像被什么东西从…」"
+          ],
+          "selfOverlap": 1
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "黑里有一只眼，缓缓睁开",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "不是云层裂开，是整个浮空城上方的穹顶像被无形的指甲从内侧划开一道口子，露出后面那片不该存在的黑",
+        "林砚的掌心数据流骤停——不是断连，是玩家的认知屏障被碾碎了"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear",
+        "relief"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T08:43:32.137Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "STYLE: 本段「不是…是…」≥2 次；改成直接描写（一处对比即可，或不用）",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+          "STYLE: 本段「不是…是…」≥2 次；改成直接描写（一处对比即可，或不用）",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "局势向终局推进 — 林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.01020408163265306
+        },
+        "microPassed": [
+          "新信息",
+          "Promise兑现"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+      "stateChange": false,
+      "stateChangeValid": false,
+      "changedDimensions": [],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [
+        "话音未落，投影的目光扫过东侧浮岛，几十具义体同时爆出蓝火，"
+      ],
+      "extractedAt": "2026-08-11T08:43:39.738Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": null,
+        "legs": "damaged",
+        "location": "浮空城坠落区",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press",
+          "kneel_ash",
+          "data_orb"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          },
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          }
+        ],
+        "eventPhase": "costed",
+        "issues": [
+          "ACTION_REPLAY: 禁止重演已发生动作「跪地撑住」；从上一句后果接着写下一动作"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Information Density：约 161 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+          "Event 缺少可观察动作",
+          "未承接上一事件的 Effect，像独立抛异常",
+          "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+          "ACTION_REPLAY: 禁止重演已发生动作「跪地撑住」；从上一句后果接着写下一动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 林砚已掌握：信息后果已落地；局面代价：选择产生可",
+        "storyAfter": "林砚已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.012658227848101266
+        },
+        "microPassed": [],
+        "continuityPass": false
+      }
+    }
+  ],
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 52,
+        "dominant": "relief"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 0,
+        "hope": 37,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "hope"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 39,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 52,
+        "dominant": "relief"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 56,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 37,
+      "anger": 56,
+      "surprise": 0,
+      "relief": 52
+    },
+    "emotionalVariance": 56,
+    "hasFluctuation": true,
+    "generatedAt": "2026-08-11T08:43:39.763Z",
+    "sceneIndex": 2
+  },
+  "readerSimulation": {
+    "curiosity": 70,
+    "questionCount": 4,
+    "dropRisk": 10,
+    "continueProbability": 78,
+    "sceneIndex": 2,
+    "pov": "林砚",
+    "simulatedAt": "2026-08-11T08:43:39.765Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 46,
+    "obstacleStrength": 41,
+    "choiceLevel": 54,
+    "consequenceLevel": 40,
+    "escalationLevel": 54,
+    "informationValue": 45,
+    "hookImpact": 54,
+    "stateChangeRate": 67,
+    "hookBreakdown": {
+      "hookLevel": 54,
+      "hookOutput": {
+        "type": "Cost",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 3,
+        "stage": "Cost",
+        "name": "代价",
+        "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+        "example": "记得的人都会死亡",
+        "hookKind": "ActionHook",
+        "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "承接上章推进：场景2：投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，部分低等级玩家当场精神崩溃、发出尖叫。林砚指挥玩家军团仓促迎战，但投影的‘注视’导致大量玩家技能失效、义体失控，战线崩溃。",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 50,
+      "emotionalImpact": 38,
+      "characterCost": 75,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 47,
+    "weakest": "consequenceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-08-11T08:43:39.766Z",
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，部分低等级玩家当场精神崩溃、发出尖叫。林砚指挥玩家军团仓促迎战，但投影的‘注视’导致大量玩家技能失效、义体失控，战线崩溃。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": true,
+      "valid": true,
+      "promise": "[object Object]",
+      "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+      "confidence": 70,
+      "signals": {
+        "payoffHit": true,
+        "promiseEcho": false
+      }
+    }
+  },
+  "hookLevel": {
+    "hookLevel": 54,
+    "hookOutput": {
+      "type": "Cost",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 3,
+      "stage": "Cost",
+      "name": "代价",
+      "readerPsyche": "读者理解代价 — 「记住/行动/追查会付出什么？」",
+      "example": "记得的人都会死亡",
+      "hookKind": "ActionHook",
+      "discovery": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "承接上章推进：场景2：投影降临——‘深空之眼’第一重投影撕裂浮空城上空，精神污染首次穿透玩家认知屏障，部分低等级玩家当场精神崩溃、发出尖叫。林砚指挥玩家军团仓促迎战，但投影的‘注视’导致大量玩家技能失效、义体失控，战线崩溃。",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "stageMatch": false,
+    "actionHookScore": 0,
+    "forcesAction": true,
+    "cognitiveUpgrade": 50,
+    "emotionalImpact": 38,
+    "characterCost": 75
+  },
+  "reward": {
+    "valid": true,
+    "requiresPromise": false,
+    "promiseId": "fs_0",
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "promiseSource": "foreshadow",
+    "promiseCategory": "foreshadow",
+    "promiseType": "medium",
+    "promiseImportance": 70,
+    "expectedChapter": 16,
+    "readerExpectation": 75,
+    "foreshadowId": "fs_0",
+    "description": "兑现期待：选择产生可见代价，局面因此改变",
+    "deliveryBeat": "newInformation",
+    "rule": "Reward = 兑现 Promise，满足读者期待，不是新增信息",
+    "status": "pending"
+  },
+  "rewardDelivery": {
+    "delivered": true,
+    "valid": true,
+    "promise": "[object Object]",
+    "payoff": "兑现期待：选择产生可见代价，局面因此改变",
+    "confidence": 70,
+    "signals": {
+      "payoffHit": true,
+      "promiseEcho": false
+    }
+  },
+  "blocking": false,
+  "generatedAt": "2026-08-11T08:43:39.766Z"
+}

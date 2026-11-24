@@ -7,17 +7,17 @@ import fs from 'node:fs';
 import { writeText, writeJson, exists, readJson } from '../../../inkos-core/src/lib/paths.js';
 import { loadInkOsConfig } from '../../../inkos-core/src/lib/config.js';
 import { loadBrainContext, brainSystemDir } from '../../../inkos-brain/src/loader.js';
-import { planChapter, replan, loadPriorChapterAnchor } from '../../../inkos-brain/src/planner/planner.js';
+import { planChapter, replan, loadPriorChapterAnchor, loadAuthoredChapterPlan, isAuthoredPlanSpecific, serializeAuthoredPlanToIntent } from '../../../inkos-brain/src/planner/planner.js';
+import { applyStoryMapToIntent } from '../../../inkos-brain/src/planner/story-map.js';
 import { evaluateDecisions } from '../../../inkos-brain/src/decision/decision.js';
 import { evaluateConflict } from '../../../inkos-brain/src/conflict/conflict.js';
 import { buildScenePlan, buildSceneWritePrompt, assembleChapter } from '../../../inkos-brain/src/scene/scene.js';
 import { buildDynamicPrompt } from '../../../inkos-brain/src/prompt/dynamic-prompt.js';
+import { ensureChapterCausalChain } from '../../../inkos-brain/src/causal/causal-reasoner.js';
 import { createLlmWriter, isLlmConfigured } from '../../../inkos-brain/src/writer/llm-writer.js';
 import {
   saveChapterPlan,
   saveSceneArtifacts,
-  appendDecisionHistory,
-  appendConflictHistory,
   ensureBrainDir,
 } from '../../../inkos-brain/src/memory/memory.js';
 import { loadAdaptiveState } from '../../../inkos-brain/src/planner/adaptive.js';
@@ -27,6 +27,17 @@ import { runScenePipeline, persistScenes } from './scene-pipeline.js';
 import { runChapterPipeline } from './chapter-pipeline.js';
 import { createChapterTrace } from './trace.js';
 import { ChapterPipelineError, wrapOrchestratorError } from './chapter-pipeline-error.js';
+import { ensureObservedContinuity } from '../../../inkos-prompt/src/scene-observed-continuity.js';
+import { ensureActualEventsWithExtraction } from '../../../inkos-brain/src/events/index.js';
+import { applyCharacterSRAfterActual } from '../../../inkos-brain/src/character/character-sr-updater.js';
+import { syncCharacterWorldFromSeeds, loadCharacterWorld, projectWorldToSRScene, appendT2Experiences, ensureIdentityQuarantine } from '../../../inkos-brain/src/character/character-world.js';
+import { runL1CharacterAudit, saveL1Audit } from '../../../inkos-brain/src/l1/l1-audit.js';
+import { evaluateSceneSubjectEligibility, saveL1Eligibility } from '../../../inkos-brain/src/l1/l1-eligibility.js';
+import { collectAccessEvidenceFromScene, runAccessGate } from '../../../inkos-brain/src/l1/access-gate.js';
+import { runL1ProductionEvaluation } from '../../../inkos-brain/src/l1/l1-evaluation.js';
+import { applyAttributionAfterActual } from '../../../inkos-brain/src/attribution/index.js';
+import { attachActionIntentTruthFromCADE, attachCharacterActionTruth, attachWorldConsequenceTruth, mintCADEFromAuthoredDecisions } from '../../../inkos-brain/src/causality/index.js';
+import { ensurePlanValidity } from '../../../inkos-prompt/src/plan-validity.js';
 
 export class RuntimeOrchestrator {
   constructor(bookDir, options = {}) {
@@ -45,7 +56,26 @@ export class RuntimeOrchestrator {
     if (!this.sceneLifecycleHook) return null;
     try {
       return await this.sceneLifecycleHook(phase, payload);
-    } catch {
+    } catch (err) {
+      if (process.env.INKOS_DEBUG === '1' && this.bookDir) {
+        try {
+          const fs = await import('node:fs');
+          const path = await import('node:path');
+          const dir = path.join(this.bookDir, 'novel', '_system', 'runtime', 'runtime-debug');
+          fs.mkdirSync(dir, { recursive: true });
+          const file = path.join(dir, 'scene-lifecycle-hook-error.log');
+          const entry = JSON.stringify({
+            at: new Date().toISOString(),
+            phase,
+            chapter: payload?.chapter ?? null,
+            scene: payload?.scene?.index ?? payload?.scene ?? null,
+            name: err?.constructor?.name || 'Error',
+            message: err?.message || String(err),
+            stack: err?.stack || '',
+          });
+          fs.appendFileSync(file, `${entry}\n`, 'utf8');
+        } catch { /* ignore */ }
+      }
       return null;
     }
   }
@@ -95,6 +125,12 @@ export class RuntimeOrchestrator {
     const trace = options._trace || createChapterTrace(this.bookDir, ctx.chapter, {
       label: options.label || 'runtime-chapter',
     });
+    // 每章执行上下文：章节重规划 / 场景重规划共用同一预算（有界重入 _runChapter 的依据）。
+    // attempt=执行轮次；chapterReplanCount=metrics/validation replanIntent 重入次数；
+    // sceneReplanCount=scene 失败重入次数；sceneHardFailCount=Studio 硬失败重规划次数（镜像）。
+    const execCtx = options._execCtx
+      || { attempt: 1, chapterReplanCount: 0, sceneReplanCount: 0, sceneHardFailCount: 0, reasons: [] };
+    if (!options._execCtx) options._execCtx = execCtx;
     const pipeline = {
       version: 'runtime-2.0',
       bookDir: this.bookDir,
@@ -116,6 +152,86 @@ export class RuntimeOrchestrator {
       console.log('[anchor] loaded prior', `states/ch_${String(priorChapter).padStart(4, '0')}_anchor.yaml`);
     }
     const planCtx = { ...ctx, priorAnchor };
+
+    // 章节重规划重入（metrics/validation 失败 → replanIntent → _resolveChapterResult → presetIntent）。
+    // 必须在 authored-plan 之前：重规划时 authored plan 仍存在，若不优先用修正后的 intent，
+    // 会重新走同一份 authored intent → 同样的失败 → 重规划永不生效（只有预算打满）。
+    if (options.presetIntent) {
+      const presetIntent = options.presetIntent;
+      const presetSource = presetIntent._replanSource || 'preset_intent';
+      const presetConflict = {
+        pass: true,
+        types: [String(presetIntent.conflict || 'no_causal_basis')],
+        primary: String(presetIntent.conflict || 'no_causal_basis'),
+      };
+      trace.recordStage('planner', {
+        attempt: execCtx.chapterReplanCount + 1,
+        summary: presetIntent?.mainGoal || presetIntent?.chapterIntent,
+        intent: summarizeIntent(presetIntent),
+        source: presetSource,
+      });
+      trace.recordStage('decision', { pass: true, source: presetSource });
+      trace.recordStage('conflict', { pass: true, types: presetConflict.types, source: presetSource });
+      const scenes = buildScenePlan(presetIntent);
+      trace.recordStage('scene_plan', {
+        count: scenes.length,
+        scenes: scenes.map((s) => ({ id: s.id, index: s.index, goal: s.goal })),
+      });
+      return this._resolveChapterResult(
+        ctx.chapter,
+        await this._runScenesAndChapter(ctx.chapter, presetIntent, scenes, {
+          ...options,
+          conflictResult: presetConflict,
+          ctx,
+          pipeline,
+          _trace: trace,
+        }),
+        options,
+        ctx,
+        trace,
+      );
+    }
+
+    // 优先采用 Studio 导演/人工确认的 chapter_{N}_plan.yaml（具体计划，权威）
+    // 仅当不存在具体计划时才走 planChapter/decision/conflict 重试循环。
+    const authoredPlan = loadAuthoredChapterPlan(this.bookDir, ctx.chapter);
+    if (isAuthoredPlanSpecific(authoredPlan)) {
+      console.log(`[orchestrator] ch${ctx.chapter} 使用已确认的具体章节计划（${authoredPlan._file}），跳过派生规划`);
+      let authoredIntent = serializeAuthoredPlanToIntent(authoredPlan, ctx.chapter, priorAnchor);
+      try { authoredIntent = applyStoryMapToIntent(authoredIntent, this.bookDir, ctx.chapter); } catch { /* ignore */ }
+      const authoredConflict = {
+        pass: true,
+        types: [String(authoredPlan.conflict || 'no_causal_basis')],
+        primary: String(authoredPlan.conflict || 'no_causal_basis'),
+      };
+      trace.recordStage('planner', {
+        attempt: 1,
+        summary: authoredIntent?.mainGoal || authoredIntent?.chapterIntent,
+        intent: summarizeIntent(authoredIntent),
+        source: 'authored_plan',
+      });
+      trace.recordStage('decision', { pass: true, source: 'authored_plan' });
+      trace.recordStage('conflict', { pass: true, types: authoredConflict.types, source: 'authored_plan' });
+
+      const scenes = buildScenePlan(authoredIntent);
+      trace.recordStage('scene_plan', {
+        count: scenes.length,
+        scenes: scenes.map((s) => ({ id: s.id, index: s.index, goal: s.goal })),
+      });
+      return this._resolveChapterResult(
+        ctx.chapter,
+        await this._runScenesAndChapter(ctx.chapter, authoredIntent, scenes, {
+          ...options,
+          conflictResult: authoredConflict,
+          ctx,
+          pipeline,
+          _trace: trace,
+        }),
+        options,
+        ctx,
+        trace,
+      );
+    }
 
     const weights = loadAdaptiveState(this.bookDir).weights;
     let intent = null;
@@ -166,8 +282,6 @@ export class RuntimeOrchestrator {
     }
 
     saveChapterPlan(this.bookDir, ctx.chapter, { intent, decisionResult, conflictResult, replanCount });
-    if (decisionResult) appendDecisionHistory(this.bookDir, ctx.chapter, decisionResult);
-    if (conflictResult) appendConflictHistory(this.bookDir, ctx.chapter, conflictResult);
 
     if (!decisionResult?.pass || !conflictResult?.pass) {
       const stage = !decisionResult?.pass ? 'decision' : 'conflict';
@@ -206,16 +320,90 @@ export class RuntimeOrchestrator {
       count: scenes.length,
       scenes: scenes.map((s) => ({ id: s.id, index: s.index, goal: s.goal })),
     });
-    return this._runScenesAndChapter(ctx.chapter, intent, scenes, {
-      ...options,
-      conflictResult,
+    return this._resolveChapterResult(
+      ctx.chapter,
+      await this._runScenesAndChapter(ctx.chapter, intent, scenes, {
+        ...options,
+        conflictResult,
+        ctx,
+        pipeline,
+        _trace: trace,
+      }),
+      options,
       ctx,
-      pipeline,
+      trace,
+    );
+  }
+
+  /**
+   * 章节结果解析 — replanIntent 有界重入 _runChapter 的唯一出口。
+   * 仅当 result.pass===false 且携带 replanIntent 且非 force 时，用新 intent 重入（presetIntent）。
+   * 预算 execCtx.chapterReplanCount 达到 this.maxReplan → 返回 replanExhausted，不再递归。
+   * 重入前调用 _resetGuardForReplan（Studio 覆盖为 ExecutionGuard 单调闸复位）。
+   */
+  async _resolveChapterResult(chapter, result, baseOptions, ctx, trace) {
+    if (!result || result.pass !== false || !result.replanIntent || baseOptions.force) {
+      return result;
+    }
+    const execCtx = baseOptions._execCtx
+      || (baseOptions._execCtx = { attempt: 1, chapterReplanCount: 0, sceneReplanCount: 0, sceneHardFailCount: 0, reasons: [] });
+    if (execCtx.chapterReplanCount >= this.maxReplan) {
+      trace.recordStage('chapter_replan_exhausted', {
+        count: execCtx.chapterReplanCount,
+        max: this.maxReplan,
+        source: result.error || 'unknown',
+      });
+      return { ...result, pass: false, replanExhausted: true };
+    }
+    execCtx.chapterReplanCount += 1;
+    const source = String(result.error || '').includes('Validation') ? 'validation_replan' : 'metrics_replan';
+    execCtx.reasons.push(`chapter_replan#${execCtx.chapterReplanCount}(${source}): ${result.error || ''}`);
+    const newIntent = result.replanIntent;
+    newIntent._replanSource = source;
+    newIntent.attempt = (newIntent.attempt || 1) + 1;
+    trace.recordStage('chapter_replan', {
+      count: execCtx.chapterReplanCount,
+      max: this.maxReplan,
+      source,
+      summary: newIntent?.mainGoal || newIntent?.chapterIntent,
+    });
+    const guardReset = this._resetGuardForReplan(chapter, 'chapter_replan');
+    if (guardReset?.error) {
+      trace.recordStage('chapter_replan', {
+        count: execCtx.chapterReplanCount,
+        max: this.maxReplan,
+        source,
+        guardReset: guardReset.error,
+      });
+      return { ...result, pass: false, replanExhausted: true, error: `${result.error}；且 ExecutionGuard 重置失败：${guardReset.error}` };
+    }
+    return this._runChapter({
+      ...baseOptions,
+      chapter,
+      _execCtx: execCtx,
+      presetIntent: newIntent,
       _trace: trace,
     });
   }
 
+  /** Scene 级重规划预算闸：计数 + 上限检查。Runtime 默认与章节共用 maxReplan。 */
+  _consumeSceneReplanBudget(chapter, scene, sceneResult, options) {
+    const execCtx = options._execCtx
+      || (options._execCtx = { attempt: 1, chapterReplanCount: 0, sceneReplanCount: 0, sceneHardFailCount: 0, reasons: [] });
+    execCtx.sceneReplanCount += 1;
+    execCtx.reasons.push(`scene_${scene.index}: ${sceneResult.error || sceneResult.message || 'scene 失败'}`);
+    return { allow: execCtx.sceneReplanCount <= this.maxReplan, execCtx };
+  }
+
+  /** 章节重规划前守卫重置钩子：Runtime 无 sceneProgress 单调闸，默认 no-op。Studio 覆盖为 ExecutionGuard 复位。 */
+  _resetGuardForReplan(chapter, reason) {
+    return null;
+  }
+
   async _runScenesAndChapter(chapter, intent, scenes, options = {}) {
+    // D3.2：章级因果链唯一入口（与 Studio 共用 ensureChapterCausalChain）。
+    // 已有 intent.causalChain 不重推；失败不抛，下游缺块 / no_causal_basis。
+    ensureChapterCausalChain(this.bookDir, intent, { chapter });
     const trace = options._trace || createChapterTrace(this.bookDir, chapter, {
       label: options.label || 'runtime-resume',
     });
@@ -230,14 +418,65 @@ export class RuntimeOrchestrator {
     };
     pipeline.traceId = pipeline.traceId || trace.traceId;
     const ctx = options.ctx || loadBrainContext(this.bookDir, { chapter, pov: intent?.pov });
+    // EO-CW-Store-Seed-01: book-level Character World（authored seed → validate → store；
+    // 无 Projection / 无消费者——World 不进 prompt/Task/Writer）
+    try {
+      const cw = syncCharacterWorldFromSeeds(this.bookDir);
+      if (cw.synced && cw.rejectedCount) {
+        console.warn('[runtime] Character World seeds rejected items:', cw.rejectedCount);
+      }
+      // G1-A/Q7：historical quarantine 分类（只读 world.json；sidecar manifest 幂等生成）
+      try {
+        const q = ensureIdentityQuarantine(this.bookDir);
+        if (q.invalid.length || q.unknown.length) {
+          console.warn(`[g1a] quarantine manifest: invalid=${q.invalid.length} unknown=${q.unknown.length}`);
+        }
+      } catch (qErr) {
+        console.warn('[g1a] quarantine classifier skipped:', qErr?.message || qErr);
+      }
+    } catch (cwErr) {
+      console.warn('[runtime] Character World sync skipped:', cwErr?.message || cwErr);
+    }
+    // EO-CW-Projection-01: World 一次加载，逐场景投影进 SR（经既有 SR 通道；无 World→Writer 直连）
+    const cwWorld = loadCharacterWorld(this.bookDir);
     const sceneResults = [];
     const useChapterText = Boolean(options.chapterText?.trim());
     const activeWriter = useChapterText ? null : this.writer;
+
+    // EO-P4-Authored-CADE-Channel-01: authored 人物决策 → CADE sidecar
+    //（唯一合法 CADE 生产通道；逐项 fail-closed；不扫 Plan 字段）
+    try {
+      const mint = mintCADEFromAuthoredDecisions(this.bookDir, chapter, intent);
+      if (mint.rejected.length) {
+        console.warn('[runtime] Authored CADE rejected items:', mint.rejected);
+      }
+    } catch (cadeMintErr) {
+      console.warn('[runtime] Authored CADE mint skipped:', cadeMintErr?.message || cadeMintErr);
+    }
 
     for (const scene of scenes) {
       if (scene.status === 'done' && scene.text?.trim()) {
         sceneResults.push({ pass: true, scene });
         continue;
+      }
+
+      // D3：compiler 只读 scene.causalChain（ctx 无 intent），逐 scene 携带整章因果链
+      scene.causalChain = scene.causalChain || intent.causalChain || null;
+
+      // Phase 1.R2：挂载 intent，使 compileScenePrompt 优先消费本轮 scenes[].text
+      //（Studio/Runtime 整章结束才 persistScenes；否则 Scene2+ 会误读磁盘旧稿日期）
+      ctx.intent = intent;
+      ctx.chapterIntent = intent;
+
+      // F8.3: Actual-aware Plan Validity BEFORE Director locks stale Goal/situation
+      // (session/prompt diagnostic; ≠ Canon / Reality / SR; Repair ≠ Regenerate)
+      ensurePlanValidity(scene, intent);
+
+      // EO-P4-Causal-Bridge-01: CADE → Action Intent Truth (beside SR; Writer consume-only)
+      try {
+        attachActionIntentTruthFromCADE(this.bookDir, chapter, scene);
+      } catch (cadeErr) {
+        console.warn('[runtime] Action Intent bridge skipped:', cadeErr?.message || cadeErr);
       }
 
       const dynamicPrompt = buildDynamicPrompt(ctx, scene);
@@ -256,6 +495,40 @@ export class RuntimeOrchestrator {
       if (planHook?.scene?.directorBrief) {
         scene.directorBrief = planHook.scene.directorBrief;
       }
+      // Director 富化产物回填：runDirectorPhase('plan') 把 enrichedIntent（含 _chapterDirector）
+      // 只放进返回值，不污染原 intent。若不回填，studio writer 的 chapterDir 恒为 null，
+      // buildSceneExecutionPlan 读不到 chapterEmotionWave.sceneTargets → beat 情绪落回机械轮转。
+      if (planHook?.intent) {
+        const directorKeys = [
+          '_storyDirector', '_chapterDirector', '_storyDna', '_storyMemory',
+          'hookLadder', 'hookCurve', 'mysteryCurve', 'payoffCurve',
+          'nextChapterGuidanceInput', 'readerWhyContinue', 'readerAddictionGoal',
+          'bookQuestion', 'chapterQuestion',
+          '_readerPreference', 'readerPreference',
+          '_adaptiveDirectorOverrides', '_adaptiveWriterDirectives',
+        ];
+        for (const key of directorKeys) {
+          if (planHook.intent[key] !== undefined) intent[key] = planHook.intent[key];
+        }
+      }
+      if (planHook?.scene) {
+        const dirScene = planHook.scene;
+        for (const key of [
+          'goal', 'obstacle', 'choice', 'consequence', 'escalation',
+          'newInformation', 'cliffhanger', 'hook',
+          'scenePlan', 'situation', 'questions', 'readerWhy', 'sceneOutcome',
+        ]) {
+          if (dirScene[key] !== undefined) scene[key] = dirScene[key];
+        }
+        // 导演已用富化 intent 构建的语义 executionPlan（含 chapterEmotionWave 映射的 beat 情绪），
+        // 回填后 resolveExecutionPlan 直接采用，无需重建
+        if (dirScene.executionPlan?.beats?.length) {
+          scene.executionPlan = dirScene.executionPlan;
+        }
+      }
+
+      // F8.3: re-evaluate after Director may refresh goal text (still ≠ regenerate)
+      ensurePlanValidity(scene, intent);
 
       const provided = options.scenes?.find((s) => s.id === scene.id || s.index === scene.index);
       if (provided?.text) scene.text = provided.text;
@@ -275,6 +548,139 @@ export class RuntimeOrchestrator {
           intent,
           trace,
         });
+      }
+
+      // 场景正文已产出 → 回写 intent.scenes，供下一 Scene 的续写引擎读取（continuation-engine / collectPriorScenesText）
+      // F6.2: attach scene-local observedContinuity (text projection; not Canon / SR)
+      // Phase 1: Actual Events from text (Plan stripped); required before next scene/chapter
+      if (scene.text?.trim()) {
+        ensureObservedContinuity(scene);
+        await ensureActualEventsWithExtraction(scene, {
+          knownNames: collectKnownNames(scene, intent),
+          stripPlan: true,
+          bookDir: this.bookDir,
+          // Phase 1.3 opt-in：options.extraction === 'llm-assisted' 时启用（默认关闭）
+          extraction: this.options.extraction || null,
+          llm: this.options.extractionLlm || null,
+        });
+        if (!(scene.actualEvents || []).length) {
+          const err = new Error(`Scene ${scene.index}: 正文存在但无有效 Actual Event`);
+          err.code = 'ACTUAL_EVENT_REQUIRED';
+          throw err;
+        }
+        // EO-P4-Character-Action-Bridge-01: Intent + matching occurrence → Character Action
+        try {
+          attachCharacterActionTruth(scene);
+        } catch (caErr) {
+          console.warn('[runtime] Character Action bridge skipped:', caErr?.message || caErr);
+        }
+        // EO-P4-World-Consequence-Bridge-01: Character Action + grounded world-change W
+        try {
+          attachWorldConsequenceTruth(scene);
+        } catch (wcErr) {
+          console.warn('[runtime] World Consequence bridge skipped:', wcErr?.message || wcErr);
+        }
+        // Phase 3.2: Actual → IB → CharacterSR（+ EO-CW-Projection-01: World 投影合并）
+        try {
+          // 场景内 SR 名单 = knownNames ∪ Actual actors（Truth 级在场者）
+          const rosterNames = [...new Set([
+            ...collectKnownNames(scene, intent),
+            ...(scene.actualEvents || []).flatMap((e) => e.actors || []),
+          ])].filter(Boolean);
+          applyCharacterSRAfterActual(this.bookDir, chapter, scene, {
+            authoredCharacterSR: intent?.characterSR || intent?.authoredCharacterSR || null,
+            // 接线补齐：authored 路径 scene 不携带 pov/present/characters，
+            // 名单经既有 extraNames 通道供给（Actual actors 已在事件内，
+            // IB 由 characterCanAccessActualEvent 逐事件把守——封存语义不变）
+            extraNames: rosterNames,
+            worldProjection: projectWorldToSRScene({
+              world: cwWorld,
+              characterNames: rosterNames,
+              scene,
+              chapter,
+              bookDir: this.bookDir, // G1-A/Q7：跳过 quarantined legacy 主体
+            }),
+          });
+        } catch (srErr) {
+          if (srErr?.code === 'SR_FORBIDDEN_SOURCE') throw srErr;
+          console.warn('[runtime] CharacterSR update skipped:', srErr?.message || srErr);
+        }
+        // L1 audit-only observation（诊断旁路；observeL1 ≠ L1 Truth；零 Truth 变更）
+        try {
+          const audit = runL1CharacterAudit({
+            scene,
+            characterNames: [...new Set([
+              ...collectKnownNames(scene, intent),
+              ...(scene.actualEvents || []).flatMap((e) => e.actors || []),
+            ])],
+          });
+          if (audit.perCharacter.length) saveL1Audit(this.bookDir, chapter, audit);
+        } catch (l1Err) {
+          console.warn('[runtime] L1 audit skipped:', l1Err?.message || l1Err);
+        }
+        // EO-L1-Subject-Eligibility-01: Actual-grounded Subject Presence → L1-internal
+        // eligibility（粗三态；sidecar 旁路；零 Truth 消费者；不触 Agency/CO/Choice）
+        try {
+          const eligibility = evaluateSceneSubjectEligibility({
+            scene,
+            // 枚举名单仅取 knownNames（枚举≠证据；Frozen #10 禁 roster 作证据——
+            // occurrence actors 并集会把回退路径的伪 actor 枚举成 ELIGIBLE）
+            characterNames: collectKnownNames(scene, intent),
+          });
+          scene.l1Eligibility = eligibility;
+          if (Object.keys(eligibility.characters || {}).length) {
+            saveL1Eligibility(this.bookDir, chapter, eligibility);
+          }
+        } catch (eligErr) {
+          console.warn('[runtime] L1 eligibility skipped:', eligErr?.message || eligErr);
+        }
+        // EO-CW-Trace-01 / EO-L1-Access-Carrier-01 共用枚举名单（仅枚举 ≠ 证据）
+        const rosterNames2 = [...new Set([
+          ...collectKnownNames(scene, intent),
+          ...(scene.actualEvents || []).flatMap((e) => e.actors || []),
+        ])].filter(Boolean);
+        // EO-CW-Trace-01: Actual + Access → T2 episodic trace（幂等；引用式；零解读）
+        try {
+          appendT2Experiences(this.bookDir, { scene, chapter, candidateNames: rosterNames2 });
+        } catch (t2Err) {
+          console.warn('[runtime] T2 trace skipped:', t2Err?.message || t2Err);
+        }
+        // EO-L1-Access-Carrier-01: prose→TypedEvidence→Access Gate→Access Truth
+        //（sidecar-only；唯一消费者=未来 L1 生产评估——本 EO 不实现消费者）
+        try {
+          const evidence = collectAccessEvidenceFromScene({ scene, characterNames: rosterNames2 });
+          if (evidence.length) {
+            const gated = runAccessGate(this.bookDir, { evidence, scene, chapter });
+            if (gated.refused) console.warn('[runtime] L1 Access gate refused:', gated.refused);
+          }
+        } catch (accErr) {
+          console.warn('[runtime] L1 Access carrier skipped:', accErr?.message || accErr);
+        }
+        // EO-L1-Production-Evaluation-01: AccessTruth + Eligibility → P1 合流
+        //（三态 sidecar-only；零消费者；HA-2：VALID 不产生 Choice/Option）
+        try {
+          runL1ProductionEvaluation(this.bookDir);
+        } catch (l1EvalErr) {
+          console.warn('[runtime] L1 evaluation skipped:', l1EvalErr?.message || l1EvalErr);
+        }
+        // Phase 4.4.1c: soft Attribution (parallel; never blocks Actual/State)
+        try {
+          applyAttributionAfterActual(this.bookDir, chapter, scene, {            characterSRState: scene.characterSRState || null,
+          });
+        } catch (attrErr) {
+          console.warn('[runtime] Attribution soft wiring skipped:', attrErr?.message || attrErr);
+        }
+        const target = (intent.scenes || []).find((s) => s.index === scene.index)
+          || (intent.scenes || [])[scene.index - 1];
+        if (target) {
+          target.text = scene.text;
+          if (scene.observedContinuity) target.observedContinuity = scene.observedContinuity;
+          if (scene.actualEvents) target.actualEvents = scene.actualEvents;
+          if (scene.characterSRState) target.characterSRState = scene.characterSRState;
+          if (scene.actionIntentTruth) target.actionIntentTruth = scene.actionIntentTruth;
+          if (scene.characterActionTruth) target.characterActionTruth = scene.characterActionTruth;
+          if (scene.worldConsequenceTruth) target.worldConsequenceTruth = scene.worldConsequenceTruth;
+        }
       }
 
       // 若 Writer 返回了 beatArtifacts，写入 Trace Beat 级 I/O
@@ -317,6 +723,19 @@ export class RuntimeOrchestrator {
         }
 
         await this.bus.emit('sceneRejected', { bookDir: this.bookDir, chapter, scene, sceneResult });
+        const budget = this._consumeSceneReplanBudget(chapter, scene, sceneResult, options);
+        if (!budget.allow) {
+          trace.recordStage('scene_replan_exhausted', {
+            count: budget.execCtx.sceneReplanCount,
+            max: this.maxReplan,
+            scene: scene.index,
+          });
+          pipeline.pass = false;
+          pipeline.error = `场景重规划 ${budget.execCtx.sceneReplanCount} 次仍无法通过：${sceneResult.error || sceneResult.message || ''}`;
+          const finalized = trace.finalize({ pass: false, error: pipeline.error });
+          pipeline.traceHtml = finalized.htmlPath;
+          return pipeline;
+        }
         const newIntent = replan(ctx, [{ type: 'scene', suggestObstacle: sceneResult.error, attempt: (intent.attempt || 1) + 1 }]);
         return this._runChapter({ ...options, chapter, _replanFromScene: true, pov: intent.pov, _trace: trace });
       }
@@ -362,7 +781,9 @@ export class RuntimeOrchestrator {
       passed: sceneResults.filter((r) => r.pass).length,
     });
 
-    const chapterText = options.chapterText || assembleChapter(scenes);
+    // 防碎片：干净 scenes 组装优先，外部注入 chapterText（可能含重开草稿堆叠）仅兜底
+    const assembledText = assembleChapter(scenes);
+    const chapterText = assembledText.trim() ? assembledText : (options.chapterText || '');
     if (!chapterText.trim()) {
       pipeline.awaiting = 'writer';
       pipeline.scenes = scenes;
@@ -438,6 +859,19 @@ export async function runFullPipeline(bookDir, options = {}) {
     return runtime.resumeChapter(chapter, options);
   }
   return runtime.runChapter(options);
+}
+
+function collectKnownNames(scene = {}, intent = {}) {
+  const names = [];
+  if (scene.pov) names.push(String(scene.pov));
+  if (intent.pov) names.push(String(intent.pov));
+  for (const c of scene.characters || []) {
+    names.push(typeof c === 'string' ? c : c?.name);
+  }
+  for (const c of intent.characters || intent.cast || []) {
+    names.push(typeof c === 'string' ? c : c?.name);
+  }
+  return [...new Set(names.map((n) => String(n || '').trim()).filter(Boolean))];
 }
 
 function summarizeIntent(intent) {

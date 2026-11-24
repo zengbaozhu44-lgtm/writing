@@ -1,0 +1,113 @@
+version: chapter-anchor-3
+chapter: 8
+current_date: Day 7
+pov: 林砚
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 林砚
+  present:
+    - 林砚
+    - 一刀岁暮（玩家ID，现实身份未知）
+  edges:
+    - from: 林砚
+      to: 一刀岁暮（玩家ID，现实身份未知）
+      status: 同场
+      tension: 高
+      note: 铁颅军团巨型战争机器的正面碾压威胁 vs 玩家群体不按常理出牌的混沌战术；表面上
+      expectedTransition:
+        toStatus: 信任加深
+        byChapter: 10
+        reason: 随转折推进：一名主播玩家在直播与铁颅军团作战时，其直播间镜头背景中，一只来自高维诡秘
+  overridden: false
+banned_elements:
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止无损撤回本章代价：林砚为强行驱动‘数据眼’并解析邪神代码，神魂遭受严重反噬，左臂义体彻底烧毁，短时
+    expiresAtChapter: 8
+  - text: 禁止提前揭晓章末钩子：「颅骨碾压者」被摧毁的瞬间，林砚的数据眼捕捉到核心深处一串不属于任何已知代码的坐标——直指混沌之核的沉睡之地。同时，现实
+    expiresAtChapter: 8
+  - text: 禁止无损撤回本章代价：玩家军团阵亡超过两万人次，大量低级装备报废；林砚强行以数据流连接战场，神魂再次受
+    expiresAtChapter: 9
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 8
+  - text: 禁止提前揭晓章末钩子：主播直播间画面中，高维诡秘的触手一闪而逝，紧接着直播信号被未知力量强制切断。玩家世界政府紧急联络林砚，语气凝重：“林先生
+    expiresAtChapter: 9
+  - text: 禁止无损撤回本章代价：虽然成功击退了铁颅军团的第一波攻势，但林砚为维持玩家频道稳定和压制邪神对玩家数据
+    expiresAtChapter: 10
+voiceDna:
+  version: voice-dna-2
+  presetId: default
+  label: 商业快节奏
+  sentenceLength: short
+  rhythm: staccato
+  sentenceRhythm:
+    mode: emotion
+    label: 读者情绪/信息差
+    rules:
+      - 减少解释。
+      - 增加动作与对白。
+      - 让读者比 POV 更紧张 — 用细节不用旁白。
+  dialogueRatio: 0.42
+  actionDensity: high
+  descriptionDensity: low
+  pov: 限知第三人称
+  notes: 对白推动剧情；动作优先于心理；禁止总结句
+  bannedPhrases:
+    - 不禁
+    - 心中一凛
+    - 隐约感到
+    - 莫名
+    - 仿佛
+    - 似乎
+    - 不由得
+    - 内心深处
+    - 这一刻
+    - 空气仿佛凝固
+    - 时间仿佛静止
+    - 嘴角微微上扬
+    - 眼中闪过一丝
+    - 心中暗道
+    - 脑海中浮现
+    - 一股莫名的
+    - 难以言喻
+    - 说不清道不明
+    - 她感觉
+    - 他感觉
+    - 她意识到
+    - 他意识到
+    - 心中一震
+    - 眉头微皱
+  sampleLines:
+    - 雨滴砸在滑轨上，溅开成暗红色的水花。林异的手套已经磨破了三道口子，第四道正在渗血。
+    - 他把尸体拖上推车，编号栏写着“数据溢出——认知污染”。第九区的夜雨裹着机油味，打在防护服的帽檐上，噼啪作响。
+    - “快点。”对讲机里传来调度员的声音，“天眼三分钟后过境。”
+    - 林异没答话。他拽着滑轨往焚化区走，推车的轮子卡在裂缝里，尸体晃了一下，一只手从白布下滑出来——指甲全没了。
+    - 他停了两秒。然后继续拖。
+  goldenSample: |-
+    雨滴砸在滑轨上，溅开成暗红色的水花。林异的手套已经磨破了三道口子，第四道正在渗血。
+    他把尸体拖上推车，编号栏写着“数据溢出——认知污染”。第九区的夜雨裹着机油味，打在防护服的帽檐上，噼啪作响。
+
+    “快点。”对讲机里传来调度员的声音，“天眼三分钟后过境。”
+
+    林异没答话。他拽着滑轨往焚化区走，推车的轮子卡在裂缝里，尸体晃了一下，一只手从白布下滑出来——指甲全没了。
+
+    他停了两秒。然后继续拖。
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 8
+  closing_emotion: 疑虑·未解之问
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+  mustInheritScene1: true
+  tailExcerpt: 世界的官方口吻，而是一个女人的声音，压得很低，背景里有人在跑动。她说：“林先生，你们的世界……是不是有什么东西，跟着你们的玩家信号，一起过来了？”林砚没答话。他低头，看见自己捏着通讯器的那只手，指节一根根泛白。他想起林薇的离线提示，想起那条
+committedAt: 2026-08-11T06:58:36.219Z

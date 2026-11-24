@@ -1,0 +1,34 @@
+{
+  "version": "phase-0.5",
+  "description": "Reality Authority Boundary — current vs target vs forbidden",
+  "d1NegativeBoundary": {
+    "status": "FROZEN",
+    "spec": "golden/reality/d1-negative-boundary/SPEC.md",
+    "statusDoc": "golden/reality/D1-STATUS.md",
+    "note": "N1–N9: process properties are not sufficient for Reality; does not define sufficient conditions; does not remediate VIOLATED paths below"
+  },
+  "chain": [
+    { "from": "PROSE", "to": "CANDIDATE", "status": "MISSING", "note": "scene.text 仅存 MD/scenes.json；无 Candidate 类型" },
+    { "from": "CANDIDATE", "to": "GATE", "status": "MISSING", "note": "无 Reality Gate" },
+    { "from": "GATE", "to": "CONFIRMED_REALITY", "status": "MISSING", "note": "acceptChapter 不验 prose 命题" },
+    { "from": "CONFIRMED_REALITY", "to": "STATE", "status": "MISSING", "note": "buildStateDelta 读 intent/causal，不读 prose 事件" },
+    { "from": "STATE", "to": "SITUATION", "status": "PARTIAL_LEAK", "note": "buildSceneSituation 混 plan + inferWorldAfter" },
+    { "from": "SITUATION", "to": "WRITER", "status": "CURRENT", "note": "prompt-compiler / studio writer" }
+  ],
+  "forbidden": [
+    { "from": "PLAN", "to": "CONFIRMED_REALITY", "status": "VIOLATED", "evidence": "wp.cost → causalChain.consequence → resolveTimelineEvents → 11_timeline.yaml" },
+    { "from": "PLAN", "to": "CANON", "status": "VIOLATED", "evidence": "intent.mainGoal → buildStateDelta.facts → 13_facts_db.yaml" },
+    { "from": "INFERENCE", "to": "CONFIRMED_REALITY", "status": "VIOLATED", "evidence": "inferWorldAfter(plan.consequence) → situation.after 作事实指令" },
+    { "from": "INFERENCE", "to": "CANON", "status": "VIOLATED", "evidence": "deriveRelationshipState(intent.obstacles) → anchor.relationship_state" },
+    { "from": "GENERATED_09", "to": "AUTHOR_DIRECTION", "status": "VIOLATED", "evidence": "acceptChapter → writeNextChapterTask" },
+    { "from": "GENERATED_09", "to": "CANON", "status": "FORBIDDEN", "evidence": "09 不进 Canon 但喂 planNextChapter" },
+    { "from": "BEAT_STATE_DELTA", "to": "PROSE_DERIVED", "status": "VIOLATED_RISK", "evidence": "beat-memory.js choice/consequence ← beatPlan" },
+    { "from": "PROSE", "to": "CANON", "status": "FORBIDDEN", "evidence": "契约 F4；当前仅 deriveClosingEmotion 启发式进 anchor" },
+    { "from": "LLM_CONFIDENCE", "to": "CONFIRMED", "status": "FORBIDDEN", "evidence": "Phase 0.5 语义冻结" }
+  ],
+  "allowed_current_sidecars": [
+    { "path": "continuity.json", "to": "WRITER_PROMPT", "not": "CANON" },
+    { "path": "beatMemory", "to": "WRITER_PROMPT", "not": "CANON" },
+    { "path": "deriveClosingEmotion", "to": "ANCHOR_EMOTION", "not": "TIMELINE_FACTS" }
+  ]
+}

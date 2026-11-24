@@ -1,0 +1,42 @@
+[
+  {
+    "id": "GT-S8",
+    "description": "同章互斥 — CONFLICT，不得静默择一",
+    "prose": "盟友还活着。盟友的尸体躺在地上。",
+    "expected": {
+      "ally_alive": { "status": "conflict" },
+      "ally_dead": { "status": "conflict" }
+    }
+  },
+  {
+    "id": "GT-S20",
+    "description": "跨章 CONFLICT — ch20死 ch21活",
+    "prose": "李明正在喝茶，谈笑风生。",
+    "context": { "priorCanon": { "liming_alive": false, "liming_death_chapter": 20 } },
+    "expected": {
+      "liming_alive": { "status": "conflict" }
+    },
+    "kind": "code-boundary",
+    "pendingReason": "跨章 CONFLICT 消解协议 — UNRESOLVED"
+  },
+  {
+    "id": "BC-7",
+    "description": "同章 CONFLICT",
+    "prose": "上句说盟友还活着，下一句盟友的尸体躺在地上。",
+    "expected": {
+      "ally_status": { "status": "conflict" }
+    }
+  },
+  {
+    "id": "BC-8",
+    "description": "跨章：ch15战死 ch20登场",
+    "kind": "code-boundary",
+    "pendingReason": "ch15 prose「盟友战死」未进 Canon + ch20 plan 仍 alive — 当前代码路径可证"
+  },
+  {
+    "id": "BC-19-TRANSITION",
+    "description": "跨章 state transition（非 conflict）",
+    "kind": "code-boundary",
+    "pendingReason": "ch10 alive + ch20 正文确认死亡 = transition；需 State Projector"
+  }
+]

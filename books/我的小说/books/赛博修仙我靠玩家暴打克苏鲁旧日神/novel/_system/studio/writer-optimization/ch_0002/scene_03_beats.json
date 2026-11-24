@@ -1,0 +1,1249 @@
+{
+  "sceneIndex": 3,
+  "sceneType": "climax",
+  "parts": [
+    {
+      "order": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "chars": 160,
+      "beatStateDelta": {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "beforeState": "沈寒舟当前目标：承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOS — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死亡换取战斗数据，林砚在混乱中完成数据收集与权限初調试。",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "他攥着控制台的边缘，指节发白，目光扫过那群正欢呼着举起武器的玩家",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "沈寒舟踩碎半截烧焦的电缆，远处传来机械足肢碾过废钢的声响——三声，间隔两秒，是青穹执法者小队的标准行进节拍"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "anger"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:16:42.414Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": "damaged",
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "沈寒舟当前目标：承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "goal",
+        "beforeState": "沈寒舟当前目标：承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOS — 局势尚未被本 Scene 改写",
+        "action": "承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死亡换取战斗数据，林砚在混乱中完成数据收集与权限初調试。",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "POV 已锁定可执行目标，局面即将被打破",
+        "stateChange": true,
+        "requiredDimension": "goalDirection"
+      },
+      "stateChange": true,
+      "afterState": "他攥着控制台的边缘，指节发白，目光扫过那群正欢呼着举起武器的玩家",
+      "textPreview": "沈寒舟踩碎半截烧焦的电缆，远处传来机械足肢碾过废钢的声响——三声，间隔两秒，是青穹执法者小队的标准行进节拍。他攥着控制台的边缘，指节发白，目光扫过那群正欢呼着举起武器的玩家。他们喊\"世界BOSS\"，喊\"开团\"，像一群扑向火堆的飞蛾。沈寒舟没",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "沈寒舟当前目标：承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "chars": 265,
+      "beatStateDelta": {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：林砚必须在极短时间内建立玩家信任并部署防御，但青穹重工的巡逻队已追踪到异常能量波动，即将围剿。同时，第一批玩家以游戏心态介入真实末世，混乱与不信任感随时可能失控。 — 且局面本身不会让步",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "银白装甲在路灯下泛着冷光，每条机械臂都拖着一截链锯，切割空气的嗡鸣像一群饥饿的蜂",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:16:45.469Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": "damaged",
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.025477707006369428
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "obstacle",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": "推进冲突：林砚必须在极短时间内建立玩家信任并部署防御，但青穹重工的巡逻队已追踪到异常能量波动，即将围剿。同时，第一批玩家以游戏心态介入真实末世，混乱与不信任感随时可能失控。 — 且局面本身不会让步",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "阻力落地，目标受挫，退路收窄",
+        "stateChange": true,
+        "requiredDimension": "danger"
+      },
+      "stateChange": true,
+      "afterState": "银白装甲在路灯下泛着冷光，每条机械臂都拖着一截链锯，切割空气的嗡鸣像一群饥饿的蜂",
+      "textPreview": "沈寒舟站在楼顶边缘，看着那队青穹的机械执法者从街角转出来。银白装甲在路灯下泛着冷光，每条机械臂都拖着一截链锯，切割空气的嗡鸣像一群饥饿的蜂。\n\n底下那群玩家却炸了锅。\n\n“卧槽世界BOSS！兄弟们开团了开团了！”\n\n他看见一个拿木棍的新手冲",
+      "runtimeV2": {
+        "pass": true,
+        "attempts": 1,
+        "rewritten": false,
+        "failReasons": [],
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "microPassed": []
+      }
+    },
+    {
+      "order": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "chars": 172,
+      "beatStateDelta": {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "fear"
+        ],
+        "unresolvedIssues": [
+          "他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面"
+        ],
+        "extractedAt": "2026-08-11T09:16:53.295Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": "damaged",
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+            "PHRASE_REUSE: 复用已用措辞「倒计时」；换一种身体/感官/对白的写法，禁止原样复用"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+            "PHRASE_REUSE: 复用已用措辞「倒计时」；换一种身体/感官/对白的写法，禁止原样复用"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.005917159763313609
+          },
+          "microPassed": [
+            "新信息",
+            "危险",
+            "新行动"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "choice",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": true,
+        "requiredDimension": "relationship"
+      },
+      "stateChange": true,
+      "afterState": "他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面",
+      "textPreview": "沈寒舟盯着机械执法者落地后扬起的灰，右手已经按上终端侧键。他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面。\n\n“沈哥，”林砚没回头，声音压得极低，“他们撞枪口上了——玩家已经开团了。”\n\n沈寒舟听见远处有人喊“BOSS刷新了兄弟们冲",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "PHRASE_REUSE: 复用已用措辞「倒计时」；换一种身体/感官/对白的写法，禁止原样复用"
+        ],
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "microPassed": [
+          "新信息",
+          "危险",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "order": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "chars": 162,
+      "beatStateDelta": {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "为完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "他听见金属足踝碾碎碎石的声响，没抬头，鞋带绑了两次，第二次才系紧",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "anger"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:17:02.880Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": "damaged",
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth",
+            "corp"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Event 缺少可观察动作"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.018867924528301886
+          },
+          "microPassed": [
+            "危险",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "consequence",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": "为完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "choice": "",
+        "consequence": "为完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」付出触碰「再次失去重要的人」的代价，且不可逆",
+        "afterState": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+        "stateChange": true,
+        "requiredDimension": "resource"
+      },
+      "stateChange": true,
+      "afterState": "他听见金属足踝碾碎碎石的声响，没抬头，鞋带绑了两次，第二次才系紧",
+      "textPreview": "机械执法者从青穹重工的货运舱门里踏出来时，沈寒舟正蹲在废墟边绑鞋带。他听见金属足踝碾碎碎石的声响，没抬头，鞋带绑了两次，第二次才系紧。\n\n玩家们已经炸了。\n\n“世界BOSS！开团开团！T拉仇恨，奶妈跟上！”一刀岁暮的嗓音劈开空气，他第一个冲",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作"
+        ],
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "microPassed": [
+          "危险",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "order": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "chars": 174,
+      "beatStateDelta": {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "机械执法者的合金臂刃劈开第三波冲锋时，一个叫“一刀岁暮”的玩家在频道里喊了句“BOSS二阶段了”，随后被拦腰斩断，临死前把武器数据流完整传了回来",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-08-11T09:17:11.420Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": "damaged",
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth",
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": [
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.029239766081871343
+          },
+          "microPassed": [
+            "新信息",
+            "关系",
+            "危险",
+            "Promise兑现",
+            "新行动"
+          ],
+          "continuityPass": false
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "newInformation",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+        "choice": "",
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生",
+        "stateChange": true,
+        "requiredDimension": "information"
+      },
+      "stateChange": true,
+      "afterState": "机械执法者的合金臂刃劈开第三波冲锋时，一个叫“一刀岁暮”的玩家在频道里喊了句“BOSS二阶段了”，随后被拦腰斩断，临死前把武器数据流完整传了回来",
+      "textPreview": "沈寒舟的监控屏上，那四十七名玩家的死亡记录正以每秒两行的速度滚动。机械执法者的合金臂刃劈开第三波冲锋时，一个叫“一刀岁暮”的玩家在频道里喊了句“BOSS二阶段了”，随后被拦腰斩断，临死前把武器数据流完整传了回来。\n\n林砚的手指在权限界面停住",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "microPassed": [
+          "新信息",
+          "关系",
+          "危险",
+          "Promise兑现",
+          "新行动"
+        ]
+      }
+    },
+    {
+      "order": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "chars": 170,
+      "beatStateDelta": {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "他抬头，执法者小队的扫描红光正扫过玩家尸体，有人从废墟里爬出来喊了一嗓子——“世界BOSS",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "danger",
+          "worldCognition"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "anger"
+        ],
+        "unresolvedIssues": [
+          "OSS！兄弟们开团！”欢呼声炸开，几十个虚影朝红光扑过去，像飞蛾扑火。沈寒舟攥紧数据板，看见一名玩家被机械臂拦腰斩断，血溅在碎裂的玻璃幕墙上，他忽然想起林薇死时"
+        ],
+        "extractedAt": "2026-08-11T09:17:21.588Z",
+        "continuity": {
+          "leftArm": null,
+          "rightArm": "damaged",
+          "legs": "damaged",
+          "location": "拘束操作台",
+          "revealed": [
+            "gm_auth",
+            "corp",
+            "sys_ui"
+          ],
+          "doneActions": [
+            "auth_press"
+          ],
+          "activeInterfaces": [
+            {
+              "id": "sys_panel",
+              "label": "系统/监控屏"
+            },
+            {
+              "id": "auth_ui",
+              "label": "权限界面"
+            },
+            {
+              "id": "data_orb",
+              "label": "掌心数据流"
+            }
+          ],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Event 缺少可观察动作"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+          "storyAfter": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.023952095808383235
+          },
+          "microPassed": [
+            "新信息",
+            "关系"
+          ],
+          "continuityPass": true
+        }
+      },
+      "beatPlan": {
+        "structuralBeat": "hook",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "Scene 尾留悬念 — 禁止平收总结",
+        "choice": "",
+        "consequence": "新危机/新疑问出现",
+        "afterState": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
+        "stateChange": true,
+        "requiredDimension": "worldCognition"
+      },
+      "stateChange": true,
+      "afterState": "他抬头，执法者小队的扫描红光正扫过玩家尸体，有人从废墟里爬出来喊了一嗓子——“世界BOSS",
+      "textPreview": "沈寒舟从尸体堆里拽出最后一块数据板，屏幕上的权限条刚跳到61%，远处传来机械履带碾碎钢架的声音。他抬头，执法者小队的扫描红光正扫过玩家尸体，有人从废墟里爬出来喊了一嗓子——“世界BOSS！兄弟们开团！”欢呼声炸开，几十个虚影朝红光扑过去，像",
+      "runtimeV2": {
+        "pass": false,
+        "attempts": 3,
+        "rewritten": true,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作"
+        ],
+        "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+        "microPassed": [
+          "新信息",
+          "关系"
+        ]
+      }
+    }
+  ],
+  "beatMemory": {
+    "newFacts": [
+      "沈寒舟踩碎半截烧焦的电缆，远处传来机械足肢碾过废钢的声响——三声，间隔两秒，是青穹执法者小队的标准行进节拍"
+    ],
+    "characterStateChanges": [],
+    "emotionChanges": [
+      "anger",
+      "fear"
+    ],
+    "unresolvedIssues": [
+      "他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面",
+      "OSS！兄弟们开团！”欢呼声炸开，几十个虚影朝红光扑过去，像飞蛾扑火。沈寒舟攥紧数据板，看见一名玩家被机械臂拦腰斩断，血溅在碎裂的玻璃幕墙上，他忽然想起林薇死时"
+    ],
+    "changedDimensions": [
+      "worldCognition",
+      "information",
+      "danger"
+    ],
+    "beatHistory": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "他攥着控制台的边缘，指节发白，目光扫过那群正欢呼着举起武器的玩家"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "银白装甲在路灯下泛着冷光，每条机械臂都拖着一截链锯，切割空气的嗡鸣像一群饥饿的蜂"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Decision",
+        "stateChange": true,
+        "afterState": "他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "stateChange": true,
+        "afterState": "他听见金属足踝碾碎碎石的声响，没抬头，鞋带绑了两次，第二次才系紧"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "stateChange": true,
+        "afterState": "机械执法者的合金臂刃劈开第三波冲锋时，一个叫“一刀岁暮”的玩家在频道里喊了句“BOSS二阶段了”，随后被拦腰斩断，临死前把武器数据流完整传了回来"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "stateChange": true,
+        "afterState": "他抬头，执法者小队的扫描红光正扫过玩家尸体，有人从废墟里爬出来喊了一嗓子——“世界BOSS"
+      }
+    ],
+    "lastAfterState": "他抬头，执法者小队的扫描红光正扫过玩家尸体，有人从废墟里爬出来喊了一嗓子——“世界BOSS",
+    "stateChangeCount": 6
+  },
+  "beatStateDeltas": [
+    {
+      "beatOrder": 1,
+      "structuralBeat": "goal",
+      "libraryBeat": "Decision",
+      "beforeState": "沈寒舟当前目标：承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOS — 局势尚未被本 Scene 改写",
+      "action": "承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死亡换取战斗数据，林砚在混乱中完成数据收集与权限初調试。",
+      "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "目标锁定，行动方向确定",
+      "afterState": "他攥着控制台的边缘，指节发白，目光扫过那群正欢呼着举起武器的玩家",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [
+        "沈寒舟踩碎半截烧焦的电缆，远处传来机械足肢碾过废钢的声响——三声，间隔两秒，是青穹执法者小队的标准行进节拍"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T09:16:42.414Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": "damaged",
+        "location": "拘束操作台",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "沈寒舟当前目标：承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其",
+        "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 2,
+      "structuralBeat": "obstacle",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+      "action": "推进冲突：林砚必须在极短时间内建立玩家信任并部署防御，但青穹重工的巡逻队已追踪到异常能量波动，即将围剿。同时，第一批玩家以游戏心态介入真实末世，混乱与不信任感随时可能失控。 — 且局面本身不会让步",
+      "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "原路径受阻，stakes 升高",
+      "afterState": "银白装甲在路灯下泛着冷光，每条机械臂都拖着一截链锯，切割空气的嗡鸣像一群饥饿的蜂",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T09:16:45.469Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": "damaged",
+        "location": "拘束操作台",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": true,
+        "failReasons": [],
+        "attempts": 1,
+        "degraded": false,
+        "needsHumanReview": false,
+        "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+        "storyAfter": "阻力落地，目标受挫，退路收窄",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.025477707006369428
+        },
+        "microPassed": [],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 3,
+      "structuralBeat": "choice",
+      "libraryBeat": "Decision",
+      "beforeState": "阻力落地，目标受挫，退路收窄",
+      "action": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "选择本身即代价前奏",
+      "afterState": "他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "fear"
+      ],
+      "unresolvedIssues": [
+        "他看见林砚蹲在掩体后，指腹贴着光屏边缘，还没碰权限界面"
+      ],
+      "extractedAt": "2026-08-11T09:16:53.295Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": "damaged",
+        "location": "拘束操作台",
+        "revealed": [
+          "gm_auth"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "PHRASE_REUSE: 复用已用措辞「倒计时」；换一种身体/感官/对白的写法，禁止原样复用"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。",
+          "PHRASE_REUSE: 复用已用措辞「倒计时」；换一种身体/感官/对白的写法，禁止原样复用"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "阻力落地，目标受挫，退路收窄",
+        "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.005917159763313609
+        },
+        "microPassed": [
+          "新信息",
+          "危险",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 4,
+      "structuralBeat": "consequence",
+      "libraryBeat": "Danger",
+      "beforeState": "POV 已做出不可逆选择，后果即将落地",
+      "action": "为完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "为完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」付出触碰「再次失去重要的人」的代价，且不可逆",
+      "afterState": "他听见金属足踝碾碎碎石的声响，没抬头，鞋带绑了两次，第二次才系紧",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T09:17:02.880Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": "damaged",
+        "location": "拘束操作台",
+        "revealed": [
+          "gm_auth",
+          "corp"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+        "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.018867924528301886
+        },
+        "microPassed": [
+          "危险",
+          "新行动"
+        ],
+        "continuityPass": true
+      }
+    },
+    {
+      "beatOrder": 5,
+      "structuralBeat": "newInformation",
+      "libraryBeat": "Twist",
+      "beforeState": "代价已落地，局面比选择前更紧或更糟",
+      "action": "本 Scene 须释放至少一条新信息（事实/关系/规则）",
+      "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "已有界面吐出新约束/后果",
+      "afterState": "机械执法者的合金臂刃劈开第三波冲锋时，一个叫“一刀岁暮”的玩家在频道里喊了句“BOSS二阶段了”，随后被拦腰斩断，临死前把武器数据流完整传了回来",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [],
+      "unresolvedIssues": [],
+      "extractedAt": "2026-08-11T09:17:11.420Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": "damaged",
+        "location": "拘束操作台",
+        "revealed": [
+          "gm_auth",
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": [
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ]
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Event 缺少可观察动作",
+          "NPC_HEAT: 机械动作/系统提示/伤势清单过多但无可共情热度；本拍必须补一处「活着的人的反应」：疼（写进身体）、脏话、或「不想死但不得不」的紧张对白，禁止只写机械动作+提示音。"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+        "formatPass": true,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.029239766081871343
+        },
+        "microPassed": [
+          "新信息",
+          "关系",
+          "危险",
+          "Promise兑现",
+          "新行动"
+        ],
+        "continuityPass": false
+      }
+    },
+    {
+      "beatOrder": 6,
+      "structuralBeat": "hook",
+      "libraryBeat": "Countdown",
+      "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+      "action": "Scene 尾留悬念 — 禁止平收总结",
+      "choice": "为了完成「青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死」，明知会触碰「再次失去重要的人」仍必须现在行动",
+      "consequence": "新危机/新疑问出现",
+      "afterState": "他抬头，执法者小队的扫描红光正扫过玩家尸体，有人从废墟里爬出来喊了一嗓子——“世界BOSS",
+      "stateChange": true,
+      "stateChangeValid": true,
+      "changedDimensions": [
+        "information",
+        "danger",
+        "worldCognition"
+      ],
+      "repetitive": false,
+      "newFacts": [],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [
+        "OSS！兄弟们开团！”欢呼声炸开，几十个虚影朝红光扑过去，像飞蛾扑火。沈寒舟攥紧数据板，看见一名玩家被机械臂拦腰斩断，血溅在碎裂的玻璃幕墙上，他忽然想起林薇死时"
+      ],
+      "extractedAt": "2026-08-11T09:17:21.588Z",
+      "continuity": {
+        "leftArm": null,
+        "rightArm": "damaged",
+        "legs": "damaged",
+        "location": "拘束操作台",
+        "revealed": [
+          "gm_auth",
+          "corp",
+          "sys_ui"
+        ],
+        "doneActions": [
+          "auth_press"
+        ],
+        "activeInterfaces": [
+          {
+            "id": "sys_panel",
+            "label": "系统/监控屏"
+          },
+          {
+            "id": "auth_ui",
+            "label": "权限界面"
+          },
+          {
+            "id": "data_orb",
+            "label": "掌心数据流"
+          }
+        ],
+        "eventPhase": "advanced",
+        "issues": []
+      },
+      "runtimeV2": {
+        "pass": false,
+        "failReasons": [
+          "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+          "Event 缺少可观察动作"
+        ],
+        "attempts": 3,
+        "degraded": true,
+        "needsHumanReview": true,
+        "storyBefore": "局势向终局推进 — 沈寒舟已掌握：信息后果已落地；局面代价：选择产生",
+        "storyAfter": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价",
+        "formatPass": false,
+        "noRepeat": true,
+        "stateChange": true,
+        "fourGram": {
+          "pass": true,
+          "noRepeat": true,
+          "hits": [],
+          "failReasons": [],
+          "priorOverlap": 0.023952095808383235
+        },
+        "microPassed": [
+          "新信息",
+          "关系"
+        ],
+        "continuityPass": true
+      }
+    }
+  ],
+  "runtimeSession": {
+    "lastEvent": {
+      "cause": "局势向终局推进 — 沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关",
+      "event": "Scene 尾留悬念 — 禁止平收总结",
+      "effect": "沈寒舟已掌握：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价"
+    },
+    "beforeState": "沈寒舟已掌握：信息后果已落地；局面代价：选择产生可见代价，局面因此改变",
+    "rewriteCounts": {
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 3
+    }
+  },
+  "runtimeV2": false,
+  "sceneOutcome": {
+    "success": "若达成：承接上章推进：场景3：青穹重工机械执法者小队循踪而至，玩家们将其视为‘世界BOSS’兴奋开团，以花式死亡换取战斗数据，林砚在混乱中完成数据收集与权限初調试。取得可见进展（哪怕只是半步）",
+    "failure": "若失败：推进冲突：林砚必须在极短时间内建立玩家信任并部署防御，但青穹重工的巡逻队已追踪到异常能量波动，即将围剿。同时，第一批玩家以游戏心态介入真实末世，混乱与不信任感随时可能失控。导致代价落地（信用/时间/关系受损）",
+    "consequence": "无论成败，章内状态必须变化：新增一条未解谜团或收紧选择空间"
+  },
+  "updatedAt": "2026-08-11T09:17:21.607Z"
+}

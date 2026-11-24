@@ -1,0 +1,299 @@
+{
+  "book": "凌晨四点世界刷新",
+  "chapter": 2,
+  "scenes": 3,
+  "allPass": true,
+  "rows": [
+    {
+      "scene": 1,
+      "title": "进入局面",
+      "entities": [
+        "苏晚"
+      ],
+      "presentNames": [
+        "苏晚",
+        "林夜"
+      ],
+      "checks": {
+        "clock": true,
+        "ib": true,
+        "characterContext": true,
+        "unknownAbsent": true,
+        "rawSecretAbsent": true,
+        "bystanderAbsent": true,
+        "charCards": 2,
+        "textLen": 1072,
+        "textPreview": "苏晚的咖啡杯沿有个缺口，指尖每次都能摸到。她不喜欢换杯子，效率项目组的会议室里总有一套固定的器物组合——水壶、咖啡机、白板笔的位置从不移动。秩序让她放心。  可今天早上，林夜坐进工位时，她的手指停了一下。  他左手中指的疤痕不见了。昨天下班前，她还看见那块皮肤发红，像新凝胶一样凸起。他在电话里说，这次出车祸的时候右手扶着方向盘，医生说要留疤。但现在，那里光滑"
+      },
+      "provenance": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        },
+        "character_context": {
+          "key": "character_context",
+          "source": "03_character_bible whitelist → char:苏晚",
+          "type": "canon",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "absent",
+          "note": null
+        },
+        "knowledge": {
+          "key": "knowledge",
+          "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+          "type": "projection",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "trimmed",
+          "note": null
+        },
+        "entity": {
+          "key": "entity",
+          "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+          "type": "derived",
+          "priority": "P2",
+          "kept": false,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": "selected: 苏晚,苏晚,林夜,苏晚"
+        },
+        "character_sr": {
+          "key": "character_sr",
+          "source": "minimal-sr (assembleMinimalSR)",
+          "type": "sr",
+          "priority": "P2",
+          "kept": true,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "scene": 2,
+      "title": "受阻与博弈",
+      "entities": [
+        "苏晚"
+      ],
+      "presentNames": [
+        "苏晚",
+        "林夜"
+      ],
+      "checks": {
+        "clock": true,
+        "ib": true,
+        "characterContext": true,
+        "unknownAbsent": true,
+        "rawSecretAbsent": true,
+        "bystanderAbsent": true,
+        "charCards": 2,
+        "textLen": 954,
+        "textPreview": "他敲下第一个字母时，屏幕右下角的日期跳了出来：2025年10月27日。林夜的目光卡在那串数字上。昨天他记得很清楚——10月28日，雨，医院里荧光灯管的哕嗦声，右手腕上结痂正冒出的皮肉。可现在键盘下的手腕光洁得像从未受过磕碰。  “晚哥，你昨天没来上班啊？”苏晚把凉咖啡推过来，杯底在桌面上留下浅浅的水痕。她的语气平稳，像在确认一份常规报表。“请假单怎么没填？系"
+      },
+      "provenance": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        },
+        "character_context": {
+          "key": "character_context",
+          "source": "03_character_bible whitelist → char:苏晚",
+          "type": "canon",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "absent",
+          "note": null
+        },
+        "knowledge": {
+          "key": "knowledge",
+          "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+          "type": "projection",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "trimmed",
+          "note": null
+        },
+        "entity": {
+          "key": "entity",
+          "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+          "type": "derived",
+          "priority": "P2",
+          "kept": false,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": "selected: 苏晚,苏晚,林夜,苏晚"
+        },
+        "character_sr": {
+          "key": "character_sr",
+          "source": "minimal-sr (assembleMinimalSR)",
+          "type": "sr",
+          "priority": "P2",
+          "kept": true,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        }
+      },
+      "pass": true
+    },
+    {
+      "scene": 3,
+      "title": "转折与代价",
+      "entities": [
+        "苏晚"
+      ],
+      "presentNames": [
+        "苏晚",
+        "林夜"
+      ],
+      "checks": {
+        "clock": true,
+        "ib": true,
+        "characterContext": true,
+        "unknownAbsent": true,
+        "rawSecretAbsent": true,
+        "bystanderAbsent": true,
+        "charCards": 2,
+        "textLen": 1048,
+        "textPreview": "苏晚的手从桌面落下，指尖还残留着咖啡杯沿那个熟悉的缺口凹陷。他望着键盘上闪烁的光标，那光标像是在等一个不存在的按钮。眼前的画面突然扭曲——不是屏幕坏了，而是整个医院病房的光线在一秒内改变了色温。窗外的天空从昏暗的夜色骤然切换成了带着晨雾的灰蓝，光线仿佛从一条不同轨道射入。  他猛地坐起，心脏在胸腔里撞击肋骨。手机在床头柜上震动，他伸手去捏，屏幕亮起的刹那，右"
+      },
+      "provenance": {
+        "story_clock": {
+          "key": "story_clock",
+          "source": "intent.time",
+          "type": "plan",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        },
+        "information_boundary": {
+          "key": "information_boundary",
+          "source": "buildSceneWritePrompt / prompt-survival",
+          "type": "guard",
+          "priority": "P1",
+          "kept": true,
+          "reason": "semantic_protected",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        },
+        "character_context": {
+          "key": "character_context",
+          "source": "03_character_bible whitelist → char:苏晚",
+          "type": "canon",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "absent",
+          "note": null
+        },
+        "knowledge": {
+          "key": "knowledge",
+          "source": "06_knowledge_matrix → filterKnowledgeForPrompt → context-ranking",
+          "type": "projection",
+          "priority": "P2",
+          "kept": false,
+          "reason": "budget_trim",
+          "L2": "present",
+          "L3": "trimmed",
+          "L4": "trimmed",
+          "note": null
+        },
+        "entity": {
+          "key": "entity",
+          "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+          "type": "derived",
+          "priority": "P2",
+          "kept": false,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed",
+          "note": "selected: 苏晚,苏晚,林夜,苏晚"
+        },
+        "character_sr": {
+          "key": "character_sr",
+          "source": "minimal-sr (assembleMinimalSR)",
+          "type": "sr",
+          "priority": "P2",
+          "kept": true,
+          "reason": "scene_relevant",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present",
+          "note": null
+        }
+      },
+      "pass": true
+    }
+  ]
+}

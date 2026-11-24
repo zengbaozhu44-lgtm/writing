@@ -141,6 +141,7 @@ export function DiagnosticsDrawer({
           if (kind === 'delete') onAction?.('deleted');
           if (kind === 'regenerate') onAction?.('regenerate');
           if (kind === 'optimize') onAction?.('optimized');
+          if (kind === 'preview-plan') onAction?.('preview-plan');
         }}
       />
       {diagnosis?.trace?.traceId && (

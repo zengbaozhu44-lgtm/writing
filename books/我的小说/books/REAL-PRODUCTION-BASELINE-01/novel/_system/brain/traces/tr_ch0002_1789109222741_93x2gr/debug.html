@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>InkOS Trace tr_ch0002_1789109222741_93x2gr</title>
+  <style>
+    body{font-family:ui-sans-serif,system-ui,sans-serif;margin:24px;background:#0f1419;color:#e7ecf1;line-height:1.45}
+    h1,h2,h3{color:#f5f7fa}
+    .meta{opacity:.85;margin-bottom:20px}
+    details{margin:8px 0;background:#1a222c;padding:8px 12px;border-radius:8px}
+    pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c9d4e0}
+    .beat{border:1px solid #2b3642;border-radius:10px;padding:12px;margin:16px 0;background:#141b22}
+    .rot{color:#7dffb3;font-weight:600}
+    a{color:#7cb7ff}
+  </style>
+</head>
+<body>
+  <h1>Chapter Trace</h1>
+  <div class="meta">
+    <div><b>traceId</b>: tr_ch0002_1789109222741_93x2gr</div>
+    <div><b>chapter</b>: 2</div>
+    <div><b>created</b>: 2026-09-11T06:47:02.741Z</div>
+    <div><b>finished</b>: 2026-09-11T06:48:05.268Z</div>
+    <div><b>pass</b>: true</div>
+  </div>
+  <h2>Pipeline Stages</h2>
+  <details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:02.742Z&quot;,
+  &quot;chapter&quot;: 2,
+  &quot;options&quot;: {
+    &quot;force&quot;: true
+  }
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:02.747Z&quot;,
+  &quot;attempt&quot;: 1,
+  &quot;summary&quot;: &quot;处理天花板漏水，并与老何当面把责任说清楚&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第2章：处理天花板漏水，并与老何当面把责任说清楚&quot;,
+    &quot;mainGoal&quot;: &quot;处理天花板漏水，并与老何当面把责任说清楚&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: &quot;inherit-default&quot;,
+    &quot;bannedElements&quot;: [
+      {
+        &quot;text&quot;: &quot;禁止提前揭晓章末钩子：约定悬而未决；钥匙已不在苏晚手里&quot;,
+        &quot;expiresAtChapter&quot;: 2
+      },
+      {
+        &quot;text&quot;: &quot;禁止无损撤回本章代价：苏晚失去独自掌控配电间钥匙&quot;,
+        &quot;expiresAtChapter&quot;: 3
+      },
+      {
+        &quot;text&quot;: &quot;禁止重开篇式介绍世界观与主角履历&quot;,
+        &quot;expiresAtChapter&quot;: null
+      }
+    ]
+  },
+  &quot;voiceDnaForced&quot;: true,
+  &quot;bannedCount&quot;: 4
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:02.748Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:02.749Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;resource&quot;,
+    &quot;interest&quot;,
+    &quot;information&quot;
+  ],
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:02.752Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch2_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：处理天花板漏水&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch2_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;钥匙换修理协助&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch2_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;转折（本 Scene 兑现完整行动线）：苏晚把钥匙交给老何，并得知周四物业要查楼&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch2_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;章末钩子（承接转折后果）：苏晚独自站在楼梯，听到楼上又滴了一声水&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:17.494Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：处理天花板漏水&quot;,
+  &quot;chars&quot;: 1180,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:29.106Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;钥匙换修理协助&quot;,
+  &quot;chars&quot;: 830,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:46.476Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;转折（本 Scene 兑现完整行动线）：苏晚把钥匙交给老何，并得知周四物业要查楼&quot;,
+  &quot;chars&quot;: 944,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:53.514Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;章末钩子（承接转折后果）：苏晚独自站在楼梯，听到楼上又滴了一声水&quot;,
+  &quot;chars&quot;: 662,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scenes ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scenes&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:47:53.517Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;count&quot;: 4,
+  &quot;passed&quot;: 4
+}</pre></details>
+<details><summary>consistency ✓</summary><pre>{
+  &quot;stage&quot;: &quot;consistency&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.258Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null
+}</pre></details>
+<details><summary>metrics </summary><pre>{
+  &quot;stage&quot;: &quot;metrics&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.258Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;chapter&quot;: 2,
+    &quot;sceneCount&quot;: 4,
+    &quot;climaxCount&quot;: 2,
+    &quot;conflictDensity&quot;: 3,
+    &quot;conflictTypes&quot;: [
+      &quot;resource&quot;,
+      &quot;interest&quot;,
+      &quot;information&quot;
+    ],
+    &quot;dialogueRatio&quot;: 0,
+    &quot;humanDialogueCount&quot;: 33,
+    &quot;longDialogueBlocks&quot;: 3,
+    &quot;actionRatio&quot;: 0.26,
+    &quot;mindRatio&quot;: 0.04,
+    &quot;wordCount&quot;: 3616,
+    &quot;worldProgress&quot;: 0,
+    &quot;characterGrowth&quot;: 1,
+    &quot;foreshadowRate&quot;: 1,
+    &quot;rhythmPeaks&quot;: [
+      {
+        &quot;index&quot;: 13,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 29
+      },
+      {
+        &quot;index&quot;: 40,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 10
+      },
+      {
+        &quot;index&quot;: 42,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 6
+      },
+      {
+        &quot;index&quot;: 65,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 12
+      },
+      {
+        &quot;index&quot;: 69,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 48
+      }
+    ],
+    &quot;infoDensity&quot;: 9.04,
+    &quot;timestamp&quot;: &quot;2026-09-11T06:47:53.522Z&quot;
+  }
+}</pre></details>
+<details><summary>reader ✓</summary><pre>{
+  &quot;stage&quot;: &quot;reader&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.259Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;readingDrive&quot;: 71,
+  &quot;withheld&quot;: {
+    &quot;bodyEmotionCount&quot;: 1,
+    &quot;overloaded&quot;: false,
+    &quot;note&quot;: null
+  }
+}</pre></details>
+<details><summary>critic ✓</summary><pre>{
+  &quot;stage&quot;: &quot;critic&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.262Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;overall&quot;: 73
+}</pre></details>
+<details><summary>validation ✓</summary><pre>{
+  &quot;stage&quot;: &quot;validation&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.263Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;checks&quot;: {
+    &quot;plot_advanced&quot;: true,
+    &quot;relationship_advanced&quot;: &quot;钥匙换修理协助&quot;,
+    &quot;world_advanced&quot;: true,
+    &quot;character_advanced&quot;: true,
+    &quot;situation_changed&quot;: &quot;苏晚独自站在楼梯，听到楼上又滴了一声水&quot;,
+    &quot;new_goal&quot;: true,
+    &quot;new_problem&quot;: &quot;老何说周四下午三点再来取工具&quot;,
+    &quot;dialogue_balance&quot;: true
+  }
+}</pre></details>
+<details><summary>reader_simulator </summary><pre>{
+  &quot;stage&quot;: &quot;reader_simulator&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.263Z&quot;,
+  &quot;summary&quot;: &quot;hook=7&quot;,
+  &quot;hookScore&quot;: 7,
+  &quot;softFail&quot;: false,
+  &quot;dragCount&quot;: 0,
+  &quot;threshold&quot;: 6,
+  &quot;dualReviewer&quot;: true,
+  &quot;degraded&quot;: false
+}</pre></details>
+<details><summary>reader_simulator_optimizer </summary><pre>{
+  &quot;stage&quot;: &quot;reader_simulator_optimizer&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.264Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;triggered&quot;: false,
+  &quot;reason&quot;: &quot;hookScore=7 ≥ 7，跳过 Optimizer 降本&quot;
+}</pre></details>
+<details><summary>adaptive </summary><pre>{
+  &quot;stage&quot;: &quot;adaptive&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.265Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;weights&quot;: {
+    &quot;actionSceneWeight&quot;: 1,
+    &quot;conflictPriority&quot;: 1,
+    &quot;dialogueTarget&quot;: 0.45,
+    &quot;hookEmphasis&quot;: 1,
+    &quot;styleStrictness&quot;: 1,
+    &quot;sceneCountBias&quot;: 0
+  }
+}</pre></details>
+<details><summary>story_health </summary><pre>{
+  &quot;stage&quot;: &quot;story_health&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.265Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;overallScore&quot;: 77.49
+}</pre></details>
+<details><summary>memory_commit </summary><pre>{
+  &quot;stage&quot;: &quot;memory_commit&quot;,
+  &quot;at&quot;: &quot;2026-09-11T06:48:05.266Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;chapterFile&quot;: &quot;/Users/zora/Desktop/ai/InkOS/books/我的小说/books/REAL-PRODUCTION-BASELINE-01/chapters/0002_第2章.md&quot;,
+  &quot;stateFile&quot;: &quot;/Users/zora/Desktop/ai/InkOS/books/我的小说/books/REAL-PRODUCTION-BASELINE-01/states/ch_0002.json&quot;,
+  &quot;anchorFile&quot;: &quot;/Users/zora/Desktop/ai/InkOS/books/我的小说/books/REAL-PRODUCTION-BASELINE-01/states/ch_0002_anchor.yaml&quot;,
+  &quot;hierarchyFile&quot;: &quot;/Users/zora/Desktop/ai/InkOS/books/我的小说/books/REAL-PRODUCTION-BASELINE-01/novel/_system/brain/memory_hierarchy.json&quot;,
+  &quot;compression&quot;: null,
+  &quot;snapshotId&quot;: &quot;snap_1789109284974_4ac5de&quot;
+}</pre></details>
+  <h2>Beat I/O</h2>
+  
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=1180 · tension=— · craft=— · hookType=—  · 2026-09-11T06:47:17.491Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 苏晚
+- 目标: 承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：处理天花板漏水
+- 冲突: 老何认为漏水来自苏晚这边，态度硬
+- 节拍: situation
+- 字数: ~800
+- 章目标: 处理天花板漏水，并与老何当面把责任说清楚
+- 本章行动线（各 Scene 推进同一条线）: 苏晚把钥匙交给老何，并得知周四物业要查楼
+- 代价: 苏晚失去独自掌控配电间钥匙的安全感
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：unknown（source=08_current_state）
+- 故事钟（锁定）：unknown。后续 Scene 必须沿用此日历，禁止改换另一套月日（如 10月↔六月）。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s1 | tokens=518 | profile=opening | cache=0% | compile=6ms --&gt;
+
+### Scene 目标
+目标: 承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：处理天花板漏水
+节拍: situation
+
+### 人物:苏晚
+### 人物：苏晚
+- **身份**：旧公寓三楼住户，自由插画接单
+- **口头禅**：先这样吧
+- **价值观**：能自己扛就自己扛，不爱欠人情
+- **底线**：不把别人的钥匙随便给人
+- （省略：秘密 / 真实目标 / 成长方向 / raw bible — 非 Writer 公开卡）
+
+### Scene 冲突
+冲突: 老何认为漏水来自苏晚这边，态度硬
+阻碍: 老何认为漏水来自苏晚这边，态度硬
+
+### 本章目标
+处理天花板漏水，并与老何当面把责任说清楚
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Phase 1.R）
+- **World / Narration ≠ Character Knowledge**。
+- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。
+- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。
+- Awareness = omit / unknown → **禁止**写成该角色「已经知道 / 亲眼看见 / 明确确认」该信息。
+- 仍允许：其他角色告知、本场新发现、叙述描写但不归因于角色先验知识。
+- 禁止：把 Goal 里的情节事实直接写成角色此前已知。
+- 当前 Awareness=omit 的角色：苏晚 — 对其不得使用「亲眼看见/确知/早就知道」等先验断言（除非本场新获得并写出获得过程）。
+
+### 苏晚
+- **Awareness**：omit / unknown（无合法知悉
+…[truncated]
+
+### 当前状态
+# 08 Current State · 第 1 章后
+
+| 字段 | 值 |
+| --- | --- |
+| 当前章节 | 1 |
+| POV | 苏晚 |
+| 任务 | — |
+| 地点 | — |
+| 时间 | unknown |
+| 本章字数 | 3667 |
+| 最后更新 | 2026-09-11T06:45:34.795Z |
+
+
+### 世界规则
+# 世界设定 · REAL-PRODUCTION-BASELINE-01
+
+当代城市旧公寓。楼道潮湿，一楼到三楼共用狭窄楼梯。
+故事只发生在本楼：苏晚的房间、楼梯、一楼门厅、配电间门外。
+不写超自然，不写黑帮，不写突然拆迁。
+冲突来自漏水、钥匙、邻里面子与未说清的约定。
+
+
+### 写作规则
+# 写作规则
+
+- POV：苏晚限知第三人称
+- 短句，动作与对白优先，少总结
+- 每场必须有具体物证或动作落地
+- 禁止开场用天气/闹钟/睁开眼
+- 禁止把比喻写成角色完成的物理动作
+
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「苏晚」想 这周交完稿，并把漏水问题解决掉
+- 压力（pressure）: 老何认为漏水来自苏晚这边，态度硬
+- Authorial Planned Direction: missing_choice_basis
+- Authored / Declared outcome: 苏晚失去独自掌控配电间钥匙的安全感
+- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）
+- 新信息（new_information）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 下一压力（next_pressure）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 缺因果依据（no_causal_basis）: missing_choice_basis</pre></details>
+  <details open><summary>输出正文</summary><pre>楼道里有股陈旧的霉味，混着水渍的冷。
+
+苏晚推开配电间的门，手电筒光扫过斑驳的墙面。头顶传来一声闷响，像有人从很远的地方丢下一颗石子。她没转身。听见水珠砸在塑料桶底的声音，细小，规律。
+
+老何在楼梯口停住，鞋头没动。
+
+“又漏了。”
+
+他的声音不高，带着铁。
+
+苏晚把桶往前挪半寸。水面已经快到桶沿，泡着一截泡发的纸皮。她看了看头顶的暗缝，水流顺着钢梁凹陷往下，顺着配电间门框外侧的缝隙，最后掉进桶里。
+
+“三楼往下边。”她说，“从上面来的。”
+
+老何走上来，脚步慢，脚掌踩到楼板时的声音比平时重。他没有看她，眼睛盯着漏水点附近的墙面。一根细长的水痕从天花板往下爬，边缘已经发白，像被反复浸泡过的旧棉布。
+
+“苏姑娘，这次不是上面。”
+
+他停在离桶两步的地方，手插在裤袋里。
+
+苏晚的手抓住门框，掌心出汗。指节发白，她松了手，再抓一次。
+
+老何蹲下来，指甲刮了刮门框下沿的水渍。蹭出来的湿痕是深色的，不是清水的颜色。他没拿起东西，直接说。
+
+“你配电间那边，昨天改过线路对吧？水管是往配电间里接的。”
+
+苏晚的喉咙里滚了一下。她想起昨天晚上为了插座松动，自己把配电面板掀开过，螺丝起子掉在地上，碰了水管外皮一次。她没说。
+
+老何站起身，眼睛仍旧不看她。
+
+“你再漏，我得往楼下报。物业周四来查楼。”
+
+那句话落下来的时候，楼道里的空气变薄了。苏晚听见自己的呼吸在胸口滞了半拍。
+
+她从口袋里摸出钥匙。黄铜壳已经被汗洗得发亮，挂绳上的环磨损了，敲在她手腕上发出沉闷的响。
+
+“钥匙。”
+
+她把钥匙递过去。环子扣在老何的指头上，他接得僵硬，好像接错了什么危险的东西。
+
+苏晚盯着他接钥匙的手。指节粗，关节红。钥匙落到他手里的时候，她感到一股空的重量从手腕上抽走，像有根细线被剪断了，只剩一截线头在指尖打结。
+
+老何没立刻塞进口袋，先把钥匙放在桶边，金属片对着水面，发出轻微的叮。
+
+“你这边的水，我现在不认。”他说，“但我得管。你不能自己管了。”
+
+苏晚低下头，看着桶里晃动的水面。自己的影子歪在水里，碎成两块。
+
+“我自己的问题我来管。”她说得很轻，几乎被楼道里潮湿的沉默盖住。
+
+老何没回答。他把钥匙扣好，环子扣回手腕，走近桶前，拿起一块他带来的旧抹布，搭在水渍上。布吸进水以后，他的手腕动了一下，很快，又慢。
+
+苏晚没有说话。她站在桶后，觉得自己变小了，不是身体，而是空间。以前这扇门是她的，锁住的时候只有她能进去，进去的时候只有自己知道里面有什么线路、什么接头、什么没关严的阀门。现在钥匙在别人手里，她连配电间门外的空气都像被人分走了一半。
+
+楼梯另一头有人走过，鞋底摩擦楼板的声音像砂纸在磨木头。苏晚没抬头。
+
+老何从桶边拿回钥匙，最后把它收进裤袋，拍了下口袋。
+
+“明天我来看。”他说。
+
+他转身，脚步没有比来时急。苏晚看着他的背影消失在楼梯拐角，听见背后传来一声水滴，比前一次更慢，像是等了很久才肯落下来的。
+
+她把手电筒熄了。黑暗里，只剩桶里的水声，和自己指尖还残着的凉。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=830 · tension=— · craft=— · hookType=—  · 2026-09-11T06:47:29.103Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 苏晚
+- 目标: 钥匙换修理协助
+- 冲突: 苏晚有配电间备用钥匙却不肯立刻交出
+- 节拍: complication
+- 字数: ~800
+- 章目标: 处理天花板漏水，并与老何当面把责任说清楚
+- 本章行动线（各 Scene 推进同一条线）: 苏晚把钥匙交给老何，并得知周四物业要查楼
+- 代价: 苏晚失去独自掌控配电间钥匙的安全感
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：unknown（source=08_current_state）
+- 故事钟（锁定）：unknown。后续 Scene 必须沿用此日历，禁止改换另一套月日（如 10月↔六月）。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s2 | tokens=559 | profile=dialogue | cache=100% | compile=8ms --&gt;
+
+### Scene 目标
+目标: 钥匙换修理协助
+节拍: complication
+
+### 人物:苏晚
+### 人物：苏晚
+- **身份**：旧公寓三楼住户，自由插画接单
+- **口头禅**：先这样吧
+- **价值观**：能自己扛就自己扛，不爱欠人情
+- **底线**：不把别人的钥匙随便给人
+- （省略：秘密 / 真实目标 / 成长方向 / raw bible — 非 Writer 公开卡）
+
+### Scene 冲突
+冲突: 苏晚有配电间备用钥匙却不肯立刻交出
+阻碍: 苏晚有配电间备用钥匙却不肯立刻交出
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「unknown」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 楼道里有股陈旧的霉味，混着水渍的冷。 苏晚推开配电间的门，手电筒光扫过斑驳的墙面。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character S
+…[truncated]
+
+### 本章目标
+处理天花板漏水，并与老何当面把责任说清楚
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Phase 1.R）
+- **World / Narration ≠ Character Knowledge**。
+- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。
+- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。
+- Awareness = omit / unknown → **禁止**写成该角色「已经知道 / 亲眼看见 / 明确确认」该信息。
+- 仍允许：其他角色告知、本场新发现、叙述描写但不归因于角色先验知识。
+- 禁止：把 Goal 里的情节事实直接写成角色此前已知。
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Clock Canonical = **unknown**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。
+- **Scene 1** (进入世界): 楼道里有股陈旧的霉味，混着水渍的冷。 苏晚推开配电间的门，手电筒光扫过斑驳的墙面。
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 世界规则
+# 世界设定 · REAL-PRODUCTION-BAS
+…[truncated]
+
+### 写作规则
+# 写作规则
+
+-
+
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「苏晚」想 这周交完稿，并把漏水问题解决掉
+- 压力（pressure）: 老何认为漏水来自苏晚这边，态度硬
+- Authorial Planned Direction: missing_choice_basis
+- Authored / Declared outcome: 苏晚失去独自掌控配电间钥匙的安全感
+- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）
+- 新信息（new_information）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 下一压力（next_pressure）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 缺因果依据（no_causal_basis）: missing_choice_basis</pre></details>
+  <details open><summary>输出正文</summary><pre>他转身，脚步没有比来时急。苏晚看着他的背影消失在楼梯拐角，听见背后传来一声水滴，比前一次更慢，像是等了很久才肯落下来的。
+
+她把手电筒熄了。黑暗里，只剩桶里的水声，和自己指尖还残着的凉。
+
+苏晚没有跟出去。她把桶往前推了推，塑料底在水渍里划出一道黏滑的痕，随后用手背拭了拭脸，水渍混着霉味在鼻腔里结了一层薄膜。三楼的走廊灯坏得早，现在只有配电间门缝里漏出的微弱光，像个不肯闭合的眼睛。
+
+她在门口停住，手指插进裙兜里摸钥匙。那是她自己从楼下配电柜门上取的备用钥匙，表皮已经起了毛，边缘硌着指腹。她没把它给老何。没迎上去说好，她只是把它留在了自己手里。
+
+楼梯上又有声响。脚步慢，鞋底拖着楼板的毛边。这次声音更近了，停在她家单元的门口外。
+
+“苏晚。”
+
+她没开灯。手电筒收在兜里，她站在黑暗里听他说话，嗓子干净得像擦过玻璃。
+
+“你在里面做什么？”
+
+“看看。”
+
+“看什么？”
+
+“水。”
+
+她听见对面有吸气的声音，纸袋子皱了一下。老何没直接进来，他在门外站着，两只手搭在门框上的高度，像是在等她开门，或者等她说出点什么能让他往里走的理由。
+
+苏晚等了三秒。四秒。她把钥匙从兜里拿出来，金属在手心里沉了沉。她没把它递出去。钥匙丢进对方手里，意味着配电间不再只是她自己能确认的地方。她不想现在就交出去。她想再等等，再看看，再让那个房间的门自己 decisive 一次。
+
+“你把门打开。”老何在门外说。
+
+“我在看水。”
+
+“我没说让你看水。我说把门打开。”
+
+他踩了一下门槛下的地砖，碎石硌了一下。苏晚听见指甲在混凝土上刮了一下，短而慢，像在数着什么。
+
+她把钥匙放回兜里。手指陷进钥匙的硌边里，硌得肉在掌心里起了小疙瘩。
+
+“先这样吧。”她说。
+
+她没有开门。她转过身，脚步走回自己家的门口，拉开门栓，推门进去的时候让开一条缝，留出走廊里还没散尽的霉味混着水声继续往里飘。
+
+她把桶放在厨房角落，水面上浮着一层薄薄的灰。她没倒掉。倒掉意味着什么都没留下。她把门关上，锁住，听见楼梯上又传来一声水滴，比前一次更慢，像是有人在上面等着它落下来。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=944 · tension=— · craft=— · hookType=—  · 2026-09-11T06:47:46.474Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 苏晚
+- 目标: 转折（本 Scene 兑现完整行动线）：苏晚把钥匙交给老何，并得知周四物业要查楼
+- 冲突: 必须失去：苏晚失去独自掌控配电间钥匙的安全感
+- 节拍: turn
+- 字数: ~800
+- 章目标: 处理天花板漏水，并与老何当面把责任说清楚
+- 本章行动线（各 Scene 推进同一条线）: 苏晚把钥匙交给老何，并得知周四物业要查楼
+- 代价: 苏晚失去独自掌控配电间钥匙的安全感
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：unknown（source=08_current_state）
+- 故事钟（锁定）：unknown。后续 Scene 必须沿用此日历，禁止改换另一套月日（如 10月↔六月）。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s3 | tokens=689 | profile=climax | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 转折（本 Scene 兑现完整行动线）：苏晚把钥匙交给老何，并得知周四物业要查楼
+节拍: turn
+
+### 人物:苏晚
+### 人物：苏晚
+- **身份**：旧公寓三楼住户，自由插画接单
+- **口头禅**：先这样吧
+- **价值观**：能自己扛就自己扛，不爱欠人情
+- **底线**：不把别人的钥匙随便给人
+- （省略：秘密 / 真实目标 / 成长方向 / raw bible — 非 Writer 公开卡）
+
+### Scene 冲突
+冲突: 必须失去：苏晚失去独自掌控配电间钥匙的安全感
+阻碍: 必须失去：苏晚失去独自掌控配电间钥匙的安全感
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「unknown」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 他转身，脚步没有比来时急。苏晚看着他的背影消失在楼梯拐角，听见背后传来一声水滴，比前一次更慢，像是等了很久才肯落下来的。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate
+&gt; Continuity: 下一
+…[truncated]
+
+### 本章目标
+处理天花板漏水，并与老何当面把责任说清楚
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Phase 1.R）
+- **World / Narration ≠ Character Knowledge**。
+- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。
+- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。
+- Awareness = omit / unknown → **禁止**写成该角色「已经知道 / 亲眼看见 / 明确确认」该信息。
+- 仍允许：其他角色告知
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Clock Canonical = **unknown**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。
+- **Scene 1** (进入世界): 楼道里有股陈旧的霉味，混着水渍的冷。 
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 世界设定 · REAL-PRODUCTION-BASELINE-01
+
+当代城市旧公寓。楼道潮湿，一楼到三楼共用狭窄楼梯。
+故事只发生在本楼：苏晚的房间、楼梯、一楼门厅、配电间门外。
+不写超自然，不写黑帮，不写突然拆迁。
+冲突来自漏水、钥匙、邻里面子与未说清的约定。
+
+
+### 写作规则
+# 写作规则
+
+- POV：苏晚限知第三人称
+- 短句，动作与对白优先，少总结
+- 
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「苏晚」想 这周交完稿，并把漏水问题解决掉
+- 压力（pressure）: 老何认为漏水来自苏晚这边，态度硬
+- Authorial Planned Direction: missing_choice_basis
+- Authored / Declared outcome: 苏晚失去独自掌控配电间钥匙的安全感
+- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）
+- 新信息（new_information）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 下一压力（next_pressure）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 缺因果依据（no_causal_basis）: missing_choice_basis</pre></details>
+  <details open><summary>输出正文</summary><pre>楼梯拐角的灯泡还有半秒的延迟，黄光吞吐两次才照亮脚下的瓷砖。苏晚把手伸进兜里，指尖碰到那截金属的棱角——配电间的钥匙，已经被汗渍磨得发滑。
+
+她没动。
+
+楼上又响了一下。水滴。比刚才更沉，落在铁皮漏斗里的声音像有人用指甲划过锡纸。她低下头，看见自己的影子卡在楼梯转弯处，头顶的天花板渗出一条新来的水渍，沿着墙角蜿蜒下来，刚好够把她脚边那个装了半箱水的塑料桶再填满一点。
+
+她把钥匙拿出来，掌心的金属开始变凉。
+
+门厅方向传来脚步。慢，拖着点东西，像是拖着一天的尾巴。老何出现在一楼门厅的灯光里，背手站在台阶底端，没往上看就先开了口。
+
+“你还没把钥匙给我。”
+
+苏晚把手从兜里抽出来，钥匙在路灯下闪了一下。她没说话。楼梯间很安静，安静到能听见自己喉咙里吞咽的声音。她把钥匙举到空中，一只手便能抓住，转身递出去，也只需要一只手。
+
+“我不是不给。”她说，“我只是……不想一下子把它弄丢。”
+
+老何没接。他的眼睛盯着她手里的钥匙，好像那里面卡着什么比钥匙更重的东西。
+
+“弄丢不了。”他说，“它在你手里的时候，你就已经弄丢了。”
+
+苏晚的指节勒紧了钥匙环，金属蹭进皮肉，留下一道细红的印。她想起画板上还没扫完的线稿，还有一周的交稿日在日历上空着，像一堵没人扶的墙。她想起天花板漏水的地方，在她房间的角落，水滴下来的时候总是先冒泡，再沉下去，再冒泡。
+
+“你要我怎么交？”她问。
+
+“直接给我。”他说，“这样以后有人要进配电间，找的不是你，是门厅的我。”
+
+她看看手里的钥匙。她没把别人的钥匙随便给人，这是她能记住的底线之一。可这把钥匙不再仅仅是她的。天花板漏水，她没法独自扛下去；稿子，她也不想再把时间掰成碎块去等一个没回答的电话。
+
+她把钥匙递了过去。
+
+老何接过来的时候手指没颤。他把钥匙放进兜里，兜口突然塌了下去，像是有什么东西掉进去了又没再出来。
+
+“周四物业要来查楼。”他说，声音比刚才轻了一点，“水渍、水表、配电间的接线，他们都会看。你这边的责任，到时候就按图纸说。”
+
+苏晚的手还悬在空中，没立刻收回去。她听见他的话，听见“责任”这个词落在楼梯的水渍里，慢慢散开。她没回答。她只把手慢慢放下，碰了碰门框，指尖上还残留着钥匙的温度。
+
+“先这样吧。”她说。
+
+她转身往上走，脚步比来时慢。楼上又滴了一声水，比前一次更慢，像是等了很久才肯落下来的。她没回头。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 4 · Beat 0 scene-aggregate </h3>
+  <p>chars=662 · tension=— · craft=— · hookType=—  · 2026-09-11T06:47:53.511Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 4/4 · POV 苏晚
+- 目标: 章末钩子（承接转折后果）：苏晚独自站在楼梯，听到楼上又滴了一声水
+- 冲突: no_causal_basis
+- 节拍: hook
+- 字数: ~600
+- 章目标: 处理天花板漏水，并与老何当面把责任说清楚
+- 本章行动线（各 Scene 推进同一条线）: 苏晚把钥匙交给老何，并得知周四物业要查楼
+- 代价: 苏晚失去独自掌控配电间钥匙的安全感
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：unknown（source=08_current_state）
+- 故事钟（锁定）：unknown。后续 Scene 必须沿用此日历，禁止改换另一套月日（如 10月↔六月）。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s4 | tokens=606 | profile=ending | cache=100% | compile=8ms --&gt;
+
+### Scene 目标
+目标: 章末钩子（承接转折后果）：苏晚独自站在楼梯，听到楼上又滴了一声水
+节拍: hook
+
+### 人物:苏晚
+### 人物：苏晚
+- **身份**：旧公寓三楼住户，自由插画接单
+- **口头禅**：先这样吧
+- **价值观**：能自己扛就自己扛，不爱欠人情
+- **底线**：不把别人的钥匙随便给人
+- （省略：秘密 / 真实目标 / 成长方向 / raw bible — 非 Writer 公开卡）
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 3.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「unknown」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 楼梯拐角的灯泡还有半秒的延迟，黄光吞吐两次才照亮脚下的瓷砖。苏晚把手伸进兜里，指尖碰到那截金属的棱角——配电间的钥匙，已经被汗渍磨得发滑。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality pro
+…[truncated]
+
+### 本章目标
+处理天花板漏水，并与老何当面把责任说清楚
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Phase 1.R）
+- **World / Narration ≠ Character Knowledge**。
+- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。
+- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。
+- Awareness = omit / unknown → **禁止**写成
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Clock Canonical = **unknown**。摘要中若出现其他月日，视为
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 世界设定 · REAL-PRODUCTION-BASELINE-01
+
+当代城市旧公寓。楼道潮湿，一楼到三楼共用狭窄楼梯。
+故事只发生在本楼：苏晚的房间、楼梯、一楼门厅、配电间门外。
+不写超自然，不写黑帮，不写突然拆迁。
+冲突来自漏水、钥匙、邻里面子与未说清的约定。
+
+
+### 写作规则
+# 写作规则
+
+- POV：苏晚限知第三人称
+- 短句，动作与对白优先，少总结
+- 每场必须有具体物证或动作落地
+
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「苏晚」想 这周交完稿，并把漏水问题解决掉
+- 压力（pressure）: 老何认为漏水来自苏晚这边，态度硬
+- Authorial Planned Direction: missing_choice_basis
+- Authored / Declared outcome: 苏晚失去独自掌控配电间钥匙的安全感
+- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）
+- 新信息（new_information）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 下一压力（next_pressure）: 苏晚独自站在楼梯，听到楼上又滴了一声水
+- 缺因果依据（no_causal_basis）: missing_choice_basis</pre></details>
+  <details open><summary>输出正文</summary><pre>楼梯拐角的灯泡还有半秒的延迟，黄光吞吐两次才照亮脚下的瓷砖。苏晚把手伸进兜里，指尖碰到那截金属的棱角——配电间的钥匙，已经被汗渍磨得发滑。
+
+“先这样吧。”她说。
+
+她转身往上走，脚步比来时慢。楼上又滴了一声水，比前一次更慢，像是等了很久才肯落下来的。她没回头。
+
+水滴落进塑料桶里的声音还在耳朵里抖。她停在三楼尽头的转角，靠在潮湿剥落的墙皮上。右手依然插在兜里，握着钥匙扣。左手提着一个空塑料桶，提手在掌心磨出红印。
+
+楼梯间的空气沉得发闷，带着陈腐的木味和一丝刺鼻的水泥味。她把鼻子贴近桶口，嗅了嗅——铁锈味混着灰尘。没开灯，楼道里只剩下一盏昏黄的应急灯，光线斜切过窗棂的裂缝，落在她鞋尖旁的瓷砖缝上。
+
+她低头看桶里的积水。水面漂着细小的石膏碎屑，像有人在天花板上搅动了白灰。水滴的节奏忽快忽慢，像是卡在管子里的水终于找到了出口。
+
+她伸手摸了摸桶沿，指甲底下嵌进一点湿痕。没擦掉。她把手抽回来，握拳扣在掌心，指节发白。
+
+楼上又响了一下。不是滴，是咔哒一声轻微的撞击，像是水管里有什么松动的部件撞了一下金属。苏晚的眼皮跳了一下。她盯着楼梯口上方的阴影，看不见任何东西，只能看见楼道尽头那扇旧木门的轮廓，门框旁边贴着一条泛黄的物业通知，纸角翘起，边缘起毛。
+
+门没锁。她没有过去按门铃。她把提桶的手换到左边，右手依然按着钥匙，金属棱角顶住手心，凉得像冰。
+
+她吸了口气，看着楼梯拐角的灯泡再度吞吐。光线摇晃两次，照亮墙面上的水渍痕迹——从天花板边缘往下，像一条发黑的泪痕，刚好落在她头顶的高度。
+
+她没有动。水又在上面落了一滴，砸进桶里，声音比前两次更清脆。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+</body>
+</html>

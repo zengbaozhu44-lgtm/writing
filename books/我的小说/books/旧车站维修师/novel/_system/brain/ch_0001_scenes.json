@@ -5,7 +5,7 @@
       "index": 1,
       "id": "ch1_s1",
       "title": "进入世界",
-      "goal": "进入现场并确立危机：把售票机修好",
+      "goal": "进入现场并确立危机：进入世界",
       "conflict": "no_causal_basis",
       "entities": [
         "林岚"
@@ -28,12 +28,7 @@
       "wordTarget": 800,
       "reviewRequired": true,
       "causalChain": {
-        "desire": {
-          "who": "林岚",
-          "wants": "把东西修好再离开",
-          "source": "character_bible",
-          "trace": "character_bible.core_desire|目标"
-        },
+        "desire": null,
         "pressure": null,
         "options": [],
         "options_analysis": {
@@ -46,6 +41,7 @@
         "new_information": null,
         "next_pressure": null,
         "no_causal_basis": [
+          "missing_desire",
           "missing_pressure",
           "missing_choice_basis",
           "missing_consequence",
@@ -53,7 +49,7 @@
           "missing_next_pressure"
         ],
         "trace": {
-          "desire_source": "character_bible.core_desire|目标",
+          "desire_source": null,
           "pressure_source": null,
           "options_basis": "none",
           "choice_basis": null,
@@ -75,7 +71,7 @@
         },
         "provider": "mock"
       },
-      "prompt": "# Scene Lore Seed\nScene 1/4 · POV 林岚\n- 目标: 进入现场并确立危机：把售票机修好\n- 冲突: no_causal_basis\n- 节拍: situation\n- 字数: ~800\n- 章目标: 把售票机修好\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s1 | tokens=343 | profile=opening | cache=0% | compile=6ms -->\n\n### Scene 目标\n目标: 进入现场并确立危机：把售票机修好\n节拍: situation\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 当前状态\n# 08 Current State · 第 0 章后\n\n> 上限 1000 字。只写此刻。\n\n| 字段 | 值 |\n|------|-----|\n| 时间 | 车站关闭前三天 |\n| 地点 | 即将被拆除的旧车站 |\n| 天气 | — |\n| POV 状态 | 林岚今天来维修最后一台售票机 |\n| 装备 | — |\n| 能力 | — |\n| 危机 | 站长已经离开 |\n| 限制 | — |\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。\n\n## 9. 地理\n旧城区旧车站。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台参数\n| 参数 | 值 |\n|------|-----|\n| 单章字数 | 3000 |\n| 对话占比 | 30%–60% |\n\n## 禁止\n- 解释设定 / 全员\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "prompt": "# Scene Lore Seed\nScene 1/4 · POV 林岚\n- 目标: 进入现场并确立危机：进入世界\n- 冲突: no_causal_basis\n- 节拍: situation\n- 字数: ~800\n- 章目标: 进入世界\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s1 | tokens=291 | profile=opening | cache=100% | compile=3ms -->\n\n### Scene 目标\n目标: 进入现场并确立危机：进入世界\n节拍: situation\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 当前状态\n# 08 Current State · 第 0 章后\n\n> 上限 1000 字。只写此刻。\n\n| 字段 | 值 |\n|------|-----|\n| 时间 | 车站关闭前三天 |\n| 地点 | 旧车站 |\n| POV | 林岚 |\n| POV 状态 | 今天回来修坏掉的售票机 |\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n林岚是一名旧车站维修师。这个车站还有三天就要关闭，她今天回来，是为了把坏掉的售票机修好。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台参数\n| 参数 | 值 |\n|------|-----|\n| 单章字数 | 3000 |\n| 对话占比 | 30%–60% |\n\n## 禁止\n- 解释设定 / 全员\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
       "dynamic": {
         "entities": [
           "林岚"
@@ -83,83 +79,29 @@
         "factions": [],
         "modules": [
           {
-            "key": "scene_goal",
-            "label": "Scene 目标",
-            "tokens": 17,
-            "category": "goal"
-          },
-          {
-            "key": "char:林岚",
-            "label": "人物:林岚",
-            "tokens": 43,
-            "category": "character"
-          },
-          {
-            "key": "scene_conflict",
-            "label": "Scene 冲突",
-            "tokens": 12,
-            "category": "conflict"
-          },
-          {
-            "key": "state",
-            "label": "当前状态",
-            "tokens": 77,
-            "category": "history"
-          },
-          {
-            "key": "world_bible",
-            "label": "世界规则",
-            "tokens": 55,
-            "category": "world"
-          },
-          {
-            "key": "writing_bible",
-            "label": "写作规则",
-            "tokens": 139,
-            "category": "world"
+            "key": "cached",
+            "label": "cached",
+            "tokens": 399
           }
         ],
-        "totalTokens": 343,
-        "totalChars": 1231,
+        "totalTokens": 399,
+        "totalChars": 1083,
         "withinBudget": true,
-        "text": "<!-- prompt-compiler v2 | scene=ch1_s1 | tokens=343 | profile=opening | cache=0% | compile=6ms -->\n\n### Scene 目标\n目标: 进入现场并确立危机：把售票机修好\n节拍: situation\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 当前状态\n# 08 Current State · 第 0 章后\n\n> 上限 1000 字。只写此刻。\n\n| 字段 | 值 |\n|------|-----|\n| 时间 | 车站关闭前三天 |\n| 地点 | 即将被拆除的旧车站 |\n| 天气 | — |\n| POV 状态 | 林岚今天来维修最后一台售票机 |\n| 装备 | — |\n| 能力 | — |\n| 危机 | 站长已经离开 |\n| 限制 | — |\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。\n\n## 9. 地理\n旧城区旧车站。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台参数\n| 参数 | 值 |\n|------|-----|\n| 单章字数 | 3000 |\n| 对话占比 | 30%–60% |\n\n## 禁止\n- 解释设定 / 全员\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
-        "cacheHit": false,
-        "cacheHitRate": 0,
-        "promptHash": "6747ac4de6172109",
-        "compileMs": 6,
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s1 | tokens=291 | profile=opening | cache=100% | compile=3ms -->\n\n### Scene 目标\n目标: 进入现场并确立危机：进入世界\n节拍: situation\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 当前状态\n# 08 Current State · 第 0 章后\n\n> 上限 1000 字。只写此刻。\n\n| 字段 | 值 |\n|------|-----|\n| 时间 | 车站关闭前三天 |\n| 地点 | 旧车站 |\n| POV | 林岚 |\n| POV 状态 | 今天回来修坏掉的售票机 |\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n林岚是一名旧车站维修师。这个车站还有三天就要关闭，她今天回来，是为了把坏掉的售票机修好。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台参数\n| 参数 | 值 |\n|------|-----|\n| 单章字数 | 3000 |\n| 对话占比 | 30%–60% |\n\n## 禁止\n- 解释设定 / 全员\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "84c3c19b332f1796",
+        "compileMs": 2,
         "profile": "opening",
-        "rankingDrop": 0,
-        "budgetUsage": {
-          "usage": {
-            "goal": 17,
-            "conflict": 12,
-            "character": 43,
-            "world": 194,
-            "facts": 0,
-            "history": 77,
-            "relationship": 0,
-            "knowledge": 0
-          },
-          "pct": {
-            "goal": 4,
-            "conflict": 3,
-            "character": 9,
-            "world": 30,
-            "facts": 0,
-            "history": 30,
-            "relationship": 0,
-            "knowledge": 0
-          }
-        },
         "importance": {
           "林岚": 100
         }
       },
-      "text": "售票机斜斜地站在站台尽头，像一具被遗弃的躯干。林岚把工具包放到水泥地上，布满油污的指节抵住机身侧面。铁皮烫手，可里面已经凉透了——站长走的那天，把总闸拉掉了。\n\n她掰开侧板的卡扣。咔嚓，一处裂纹在指间蔓延。没电。电线在机箱深处垂下来，断口铜线绽开，像被咬过的蠹虫。\n\n“今天是最后一天。”她说。没人回答。风穿过站台上空的钢梁，磨着生锈的螺丝。\n\n售票机是这座站最后的器官。明天拆迁队进来，把这儿剥成空地。林岚不管它。她只管修好它，再走。\n\n她扯下手套，伸进机箱。指尖碰到断芯。铜线太细，焊不上。她把另一截备用导线从包里捻出来，试图绕进接线柱。螺丝锈死了。扳手卡进去打结。她用力，金属喑哑地摩擦，可螺丝丝纹在扳手牙里打滑。额头上出现一根汗线，顺着发梢滴下来。\n\n她停了。眼睛盯着断口。断口边缘氧化发黑。断掉的不仅是电线。\n\n顶楼站长室的灯还亮着，她想。站长走的时候没锁门，电脑屏幕黑着，钥匙插在桌上，可总闸开关被扭断了。她不知道他为什么走得那么快。她不知道售票机为什么在跑最后一班车的时候死掉。\n\n她闻到锈味，还有隔层传来的橘子皮味。谁在站台另一头吃过橘子。橘子皮掉进缝隙里，烂成一小团黏液。\n\n她把焊枪从包里掏出来。焊枪不出火。储液罐漏了，焊丝在里面沾上了潮气。她摇了摇，听到里面一粒干掉的焊剂掉出来，砸在塑料底片上。\n\n“他妈的。”她咬牙，声音没越过站台围栏。\n\n她摸出另一支充电式的。插头不匹配。原来的接口是这个车站从九十年代沿下来的规格。她脱下指尖的胶布，撕一段绝缘胶带裹在头上。胶带粘指头，撕的时候嚎一下。她扯断，试着扎进接口里。头发里的汗顺着脸颊滑下，黏在眼尾。\n\n她等了一分钟。听不到火花。听不到风。只有售票机内部风扇轴卡住的咯吱声，断断续续。\n\n机箱底部有块烂石膏板，她伸手探进去。石膏板碎成粉，落在机箱里的电路板上。短路风险。她忽然觉得胸腔紧缩，像有根针扎在肋骨下面。她呼吸变浅。她知道这意味着什么——旧站的电线，六十岁的铜线，外皮里藏了石棉纤维。她不敢再往里伸。\n\n她抽回手。手掌按在机箱的铁皮上。冰的。\n\n售票机不动。站台对面 elevators 的指示灯闪了一下，又灭了。没人来修。\n\n她在工具包里翻，找出一条旧跳线。绝缘层起皮，里面铜芯发黑。她把断头接上去，扭紧，然后用胶带勒住。胶带勒进铜线，勒出一道凹痕。她看着，心里像堵了堵。\n\n她按下售票机的测试键。\n\n屏幕亮了一瞬，然后黑了。\n\n风停了。\n\n她没说话。她知道还有什么没对上。售票机里一定有根线没接上，或者接错了地方。她没办法在这儿找出来。站长室的钥匙在她包里，可总闸的开关没告诉她在哪儿。\n\n她把工具包提起来。肩胛骨疼。她看了看售票机，看了看站台尽头的空荡荡的检票口。检票口的栏杆垂下来，像断了手臂。\n\n她转身往出口走。走两步，脚停住。她又回来，把焊枪插进墙上的应急插座。应急插座的盖子生锈了，她掰开，听到金属嘎的一声。焊枪插进去，不出火。\n\n她蹲下来，手指伸进机箱底部。石膏粉掉进指甲缝里。她吸了一口气，闻到一股像烧过的塑料味。\n\n屏幕忽然闪出一行字：00:00。时间归零。售票机死了。",
+      "text": "铁铸台阶上露出新鲜裂纹，像是有什么东西最近用力握过这里。林岚的鞋底踩上去，碎石硌进鞋垫，脚趾马上蜷了起来。她压下呼吸，金属工具箱的把手勒进虎口，皮带磨得起了毛。\n\n售票机安静得不对劲。它原本该发出那种持续的嗡嗡声，像是心脏在折腾，现在只剩一块漆皮剥落的铁盒子趴在台面上。林岚拆了电源盖，螺丝纹都被磨钝了，里面没什么烧焦的味道，只有湿气在导线接头上结了一层薄霜。\n\n她起了台阶，把旧钳子伸进接线盒，钢嘴咬住橙色绝缘皮，拉出一段线头。一股金属味在鼻腔里浮起。售票机屏幕没电，黑下来，像闭上的眼睛。她把螺丝刀插进继电器槽，手腕往下压，听见内部零件发出一声闷响，仿佛有雨滴落在空金属罐里。继电器里嵌了异物，像是片碎镀锌板，边缘都卷了起来。\n\n售票机的电源线并不该进水。她记得三天前最后一次拆过这个盒子，里面是干的。雨水来得晚一天，或者根本不是雨。风从站顶洞透下来，把车票残页刮得簌簌响，落在她脚边，旧车票边缘都起了锈，字迹看不清了。\n\n她正要把那碎板子拔出来，售票机忽然抖了一下。不是电流的抖动。像有东西从里面往外推了一下。林岚的手指停在金属边缘，指甲盖咬进肉里。继电器里又响了一声动静，这次带了点哼音，短促，断断续续，像是卡在零件中间的呼吸。她数了三秒，什么也没有再动。继电器里的碎板子又静了下来。\n\n她松开了钳子，金属放进工具箱的凹槽里，叮一下砸在底板上。售票机屏幕突然亮起一抹绿光，照得她眼底发冷。绿光在铁台面上划出一条弯弯的线，扫过她的工具箱，再扫过墙上的站牌广告，最后粘在她的手背上。她看见手背皮肤下有血管在跳，绿光一闪而过，她又盯着售票机看。\n\n售票机屏幕上出现了一行字，没有电字的字体，像是用针在纸上划出来的。她读出三个字，停了。\n\n售票机忽然吐出一张硬卡，撞在台面上，发出清脆的声音。卡片没有车站标志，正面只有一串数字，背面被磨出了划痕，像是被人反复抹过。林岚不认识这串数字，她也没见过这种卡片。她把卡片捏在手里，卡片边缘硌着指腹，冷得像一块埋过雨水的铁片。\n\n她收起工具，往后退了一一步，台阶发出踩踏的声响。售票机又抖了一下，这次是整台机器在抖，金属外壳跟着发出吱吱的响声。林岚没有走近。它还在动。\n\n她盯着售票机，看见屏幕上的绿光又闪了一下，像是有什么东西在台面下移动过，她没看见形状，只看见光斑在移动，像是一只手指在屏幕背后划过。她低下头，看见工具箱的侧边上，有一道指印，大小刚好是一只成人的手，印痕里嵌着铁锈和水渍。\n\n她没走开。售票机又吐出第二张卡，直接落在第一张上面，边缘蹭掉一点绿光，她听见卡片落地的时候，站里其他的售票机全都跟着嗡嗡响了一声，像是全部醒了。\n\n林岚把卡片捡起来，塞进工具箱最里层，扣上盖。她咬了咬嘴唇，钢盔带勒得发紧，忽然觉得喉咙里堵了点什么东西。她没说话，也没呼气。售票机还在亮着，那绿光不够亮，却够她看清台面上的每一道划痕。\n\n她朝站长室的方向走了几步，脚步放轻了，像怕惊醒什么东西。走出三步，她停了，回头看售票机屏幕上的绿光又闪了一下，像是机器在等她走回来。她没有马上转身，先把钳子塞进箱里，金属擦过指腹，留下一道细痕。她走出了车站大门，铁门关上的声音短促，像是上了锁。她没回头。",
       "review": {
         "sceneId": "ch1_s1",
         "pass": true,
-        "wordCount": 1237,
+        "wordCount": 1289,
         "issues": [
           {
             "level": "warning",
@@ -202,7 +144,7 @@
       "decision": {
         "sceneId": "ch1_s1",
         "actor": "林岚",
-        "action": "进入现场并确立危机：把售票机修好",
+        "action": "进入现场并确立危机：进入世界",
         "checks": {
           "content": {
             "pass": true,
@@ -231,7 +173,7 @@
         "blocking": false
       },
       "adaptiveHints": [],
-      "wordCount": 1237
+      "wordCount": 1289
     },
     {
       "index": 2,
@@ -256,12 +198,7 @@
       "wordTarget": 800,
       "reviewRequired": true,
       "causalChain": {
-        "desire": {
-          "who": "林岚",
-          "wants": "把东西修好再离开",
-          "source": "character_bible",
-          "trace": "character_bible.core_desire|目标"
-        },
+        "desire": null,
         "pressure": null,
         "options": [],
         "options_analysis": {
@@ -274,6 +211,7 @@
         "new_information": null,
         "next_pressure": null,
         "no_causal_basis": [
+          "missing_desire",
           "missing_pressure",
           "missing_choice_basis",
           "missing_consequence",
@@ -281,7 +219,7 @@
           "missing_next_pressure"
         ],
         "trace": {
-          "desire_source": "character_bible.core_desire|目标",
+          "desire_source": null,
           "pressure_source": null,
           "options_basis": "none",
           "choice_basis": null,
@@ -303,7 +241,7 @@
         },
         "provider": "mock"
       },
-      "prompt": "# Scene Lore Seed\nScene 2/4 · POV 林岚\n- 目标: 克服阻碍：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: complication\n- 字数: ~800\n- 章目标: 把售票机修好\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s2 | tokens=120 | profile=dialogue | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 克服阻碍：no_causal_basis\n节拍: complication\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n\n…[truncated]\n\n### 写作规则\n# 02 Wr\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "prompt": "# Scene Lore Seed\nScene 2/4 · POV 林岚\n- 目标: 克服阻碍：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: complication\n- 字数: ~800\n- 章目标: 进入世界\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s2 | tokens=137 | profile=dialogue | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 克服阻碍：no_causal_basis\n节拍: complication\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\nPrevious: 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n\n### 前序 Scene\n### 前序 Scene 摘要\n- **Scene 1** (进入世界): 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n\n…[truncated]\n\n### 写作规则\n# 02 Wr\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
       "dynamic": {
         "entities": [
           "林岚"
@@ -311,89 +249,29 @@
         "factions": [],
         "modules": [
           {
-            "key": "scene_goal",
-            "label": "Scene 目标",
-            "tokens": 14,
-            "category": "goal"
-          },
-          {
-            "key": "char:林岚",
-            "label": "人物:林岚",
-            "tokens": 43,
-            "category": "character"
-          },
-          {
-            "key": "scene_conflict",
-            "label": "Scene 冲突",
-            "tokens": 12,
-            "category": "conflict"
-          },
-          {
-            "key": "continuation",
-            "label": "续写",
-            "tokens": 27,
-            "category": "goal"
-          },
-          {
-            "key": "state_diff",
-            "label": "状态差量",
-            "tokens": 6,
-            "category": "history"
-          },
-          {
-            "key": "world_bible",
-            "label": "世界规则",
-            "tokens": 13,
-            "category": "world"
-          },
-          {
-            "key": "writing_bible",
-            "label": "写作规则",
-            "tokens": 5,
-            "category": "world"
+            "key": "cached",
+            "label": "cached",
+            "tokens": 253
           }
         ],
-        "totalTokens": 120,
-        "totalChars": 766,
+        "totalTokens": 253,
+        "totalChars": 791,
         "withinBudget": true,
-        "text": "<!-- prompt-compiler v2 | scene=ch1_s2 | tokens=120 | profile=dialogue | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 克服阻碍：no_causal_basis\n节拍: complication\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n\n…[truncated]\n\n### 写作规则\n# 02 Wr\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s2 | tokens=137 | profile=dialogue | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 克服阻碍：no_causal_basis\n节拍: complication\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\nPrevious: 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n\n### 前序 Scene\n### 前序 Scene 摘要\n- **Scene 1** (进入世界): 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n\n…[truncated]\n\n### 写作规则\n# 02 Wr\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
         "cacheHit": true,
         "cacheHitRate": 100,
-        "promptHash": "771c266faf9ad731",
-        "compileMs": 7,
+        "promptHash": "d3e676605c7ef287",
+        "compileMs": 3,
         "profile": "dialogue",
-        "rankingDrop": 2,
-        "budgetUsage": {
-          "usage": {
-            "goal": 41,
-            "conflict": 12,
-            "character": 43,
-            "world": 18,
-            "facts": 0,
-            "history": 6,
-            "relationship": 0,
-            "knowledge": 0
-          },
-          "pct": {
-            "goal": 18,
-            "conflict": 4,
-            "character": 9,
-            "world": 100,
-            "facts": 0,
-            "history": 3,
-            "relationship": 0,
-            "knowledge": 0
-          }
-        },
         "importance": {
           "林岚": 100
         }
       },
-      "text": "她蹲下来，手指伸进机箱底部。石膏粉掉进指甲缝里。她吸了一口气，闻到一股像烧过的塑料味。\n\n屏幕忽然闪出一行字：00:00。时间归零。售票机死了。\n\n白色液晶屏在她眼前死寂着。林岚的食指在机箱底部摸了又摸，突然刺到一枚生锈的螺丝钉上。金属碎屑扎进指腹，她没躲，反而用拇指按了下去。机身传来一阵轻微的颤抖，像有什么东西在里面磕鞋皮。\n\n她拉起右手，拿起旁边那个改锥。改锥尾端被她磨圆了，握起来像一块熟悉的石头。她把改锥塞进机箱侧面的小孔，往里捅。塑料壳发出咯吱的呻吟。第一次没动。第二次捅得更深，指尖传来微弱的电阻感，像摸到了一团湿润的海绵。\n\n00:00 还在那儿。\n\n她闭眼，耳朵贴到机箱上。里面有极细的嗞嗞声，像老鼠在啃电线。她把耳朵移开，左耳还残留着那个频率，扣在鼓膜上。\n\n“你别闹了。”她说。\n\n声音在旧车站里干巴巴地散掉，没有回音。她伸手去捏机箱顶部的电源开关，开关本身卡在弹起的位置，按不下去。她用指甲掀了掀，指甲缝里塞满了灰白的粉末。开关还是卡着。\n\n她往后退一步，膝盖磕了水泥地面。疼得她咬了牙，但没发出声。她换左手扶住机箱上沿，右手重新伸进底部。这次她没找螺丝，直接把食指肚压进一个黑色的小洞里。洞壁粗糙，像被什么东西烧过。\n\n指尖触到了一块薄薄的金属片，翘起来，像片撕掉的书签。她用改锥尖捅它。金属片跳起来，掉进她的手心。手心传来微弱的震感，一下一下，像心跳。\n\n她把金属片举起来看。上边没有字，只有一条被磨钝的缺口。她盯着缺口看，忽然记起上周在三号站台见过一模一样的形状。那时她正蹲在一个抛弃的机箱旁，看见一个穿灰工装的人把什么东西拧下来，随手扔进了铁皮箱里。\n\n那个人没看见她。她也没敢过去。\n\n00:00 还没变。\n\n她把金属片塞回手指里，按进那个小洞。手腕用力，金属片卡进去的时候发出一声清脆的咔。机身震了一下，屏幕上的数字忽然跳了一格，从 00:00 变成 00:01。接着又回到 00:00。\n\n林岚的手指僵在洞口。她没抽回来。她闭眼，听里面那个嗞嗞声变了频率，像是有人在里面换了根线。\n\n她吸了一口气。鼻子里闻到烧过的塑料味混着一点点铁锈味。她用改锥往旁边的另一个孔里捅。塑料壳再次呻吟。这次她感到阻力更大，像有根线在里面死死缠着。她用力往里推，改锥尾端在她掌心磨出了滑溜溜的汗。\n\n00:00 还在。\n\n她没放弃。她知道如果这时候离开，售票机就会一直死在 00:00 那里。票口空荡荡地张着，像张嘴要等下一个人来买。车站里的人会看着空荡荡的票口走过，谁也不知道昨天晚上发生了什么。她也不知道。\n\n她把改锥抽出来，指尖上沾着黑色的油污。她用袖口擦了擦，再把手伸进去。这次她不再找金属片，也不再捅孔。她直接用拇指顶住机箱底部的一个凹陷，往里压。凹陷下面是空的，手指陷进去一厘米。\n\n她屏住呼吸。\n\n机身发出一声低沉的咯噔。屏幕上的数字跳成 00:03。接着是 00:07。接着是 00:12。数字在她眼前往上爬，像在爬一堵漏风的楼梯。\n\n她松了口气，指头从凹陷里抽出来。油污留在指腹上，黑得发亮。她没顾惜，把手掌贴在机箱侧面，感受里面的震动。嗞嗞声变成了细弱的呜呜，像风穿过裂缝。\n\n00:12 还在稳稳地往前走。\n\n她没笑。她只是把改锥放在一边，拿起旁边一个旧绝缘胶带卷，撕下一段，开始缠那根从机箱侧面露出的线。胶带撕开的时候带出一串细小的塑料屑，掉在她的鞋面上，她没去理会。\n\n她继续缠。线缠完了一圈，又缠第二圈。胶带越缠越紧，手指在上面留下汗印。\n\n屏幕上的数字跳到 00:19。\n\n她没看屏幕。她看着手里的胶带，看着上面渐渐密实的褶皱。她想起那个穿灰工装的人，想起他扔进铁皮箱里的那片金属。她想起自己上周为什么没过去问。\n\n她没想完。她只知道线必须缠好，胶带必须贴紧，否则这机子第二天早上还是会死在 00:00 那里。\n\n胶带缠完最后一圈，她用指甲压了压边缘。胶带粘住了，没散。\n\n她把手从机箱里抽出来。手心上沾满了油污和粉末，指甲缝里全是黑色。她没顾惹，直接拿起旁边的一个塑料瓶，倒了点水在手心，搓了搓。\n\n水混着污垢在指缝里流，流进袖口。\n\n她把塑料瓶放回原处，重新蹲下来。售票机的屏幕还亮着，数字稳稳地走着。她盯着屏幕看了几秒，确认没再跳回 00:00。\n\n然后她从口袋里掏出一个小本子，翻开一页，写下一行字：00:19，线胶带缠三圈，凹陷按压。\n\n她没写完就合上本子，放进口袋。她起身，膝盖上残留着水泥地面的粗粝感。她拿起旁边的工具袋，往车站深处走。背后传来售票机里细弱的呜呜声，像在呼吸。\n\n她没回头。她知道第二天早上如果有人来买票，这机子会喂给他一张纸。至于那张纸是什么票，她不管。\n\n她只是把东西修好再离开。",
+      "text": "她走出了车站大门，铁门关上的声音短促，像是上了锁。她没回头。\n\n风卷着锈屑从她的裤管爬进去，痒得她脚底板发一阵跳。街对面修车摊的马车棚开了，皮革鞭子抽在空中，甩出一串细小的脆响。林岚盯着那儿看了一会儿，直到一个穿绸棉大衣的人影从棚子角落里走出来，拉链拉到下巴，帽檐压得很低。这人没有摘帽，走到她身边时，肩膀几乎碰到她的肘弯。\n\n“售票机屏幕刚才闪过吗？”对方声音里有烟，几乎是从鼻腔顶出来的。\n\n林岚收了钳子，握在手里，金属柄磨掉一层油光，剩下粗糙的纹路贴在掌心。“没有。我在找电池。拧不动。”\n\n那人手指一下子指向售票机的方向，动作快得像是惯性。“旧车站的电池不拧，不是因为螺丝头坏了。是因为里面卡了别的东西。你咬过钥匙环吗？”\n\n林岚的嘴唇动了一下，下巴肌肉收紧，牙齿咬在嘴里的钥匙环上，金属边缘从指甲缝里蹭出来的痕迹还在。“你怎么知道我咬了钥匙环？”\n\n对方没有回答，只是把大衣口袋里的东西倒出来，掉在地上。是一截铜丝，绕成的小圈，中间夹着一片薄得几乎透明的塑料片。塑料片边缘卷了起来，像是被什么东西反复咬过。\n\n“站长室里的绿光不是机器在等你回来。”对方蹲下来，铜丝往前推，手腕往下压到她脚尖前面。“是你咬动力之前，它已经在等你咬过的证据。你拿走旧电池的时候，塑料片会跟着掉进你的指甲里。你没注意，所以它还在。”\n\n林岚看了那铜丝一眼，视线沿着绕圈的金属滚到塑料片的薄边上。她的右手食指不由自主地往下压，指尖蹭到塑料片边缘，薄片几乎在指腹上留下一道静电般的痒。她把钳子放进箱里的时候，指甲蹭进塑料沟里的感觉又回来了，指尖凉得像浸过水。\n\n“你在告诉我，什么东西卡在电池里，还是卡在钥匙环里？”她的声音比刚才低，喉咙里滚了半圈，什么也没说出来。\n\n对方没动。马车棚里的皮鞭又抽了一下，空气里掺进一股油脂和霉味。“如果你再咬一次钥匙环，塑料片就会断掉，留在你的指甲里。然后你就会知道，旧车站的绿光不是机器在等你。它是在等你让别的东西掉出来。”\n\n林岚把钳子握得更紧，金属擦过指腹的细痕开始隐隐作痛。她没有再咬钥匙环，只是用另一只手指尖沿着塑料片的边缘滑过去，薄片发出几乎听不见的脆响，像有什么东西在里面呼吸。\n\n街那头的马车棚关上的时候，她听见一阵金属刮擦声，像是售票机的屏幕在内部动了一下。她回身看了一眼，售票机的大玻璃门已经不见了，原本的地方只剩下一块暗色的铁板，铁板表面有一条新开的缝，缝里透出跟刚才一样的绿光。",
       "review": {
         "sceneId": "ch1_s2",
         "pass": true,
-        "wordCount": 1844,
+        "wordCount": 987,
         "issues": [
           {
             "level": "warning",
@@ -465,7 +343,7 @@
         "blocking": false
       },
       "adaptiveHints": [],
-      "wordCount": 1844
+      "wordCount": 987
     },
     {
       "index": 3,
@@ -490,12 +368,7 @@
       "wordTarget": 800,
       "reviewRequired": true,
       "causalChain": {
-        "desire": {
-          "who": "林岚",
-          "wants": "把东西修好再离开",
-          "source": "character_bible",
-          "trace": "character_bible.core_desire|目标"
-        },
+        "desire": null,
         "pressure": null,
         "options": [],
         "options_analysis": {
@@ -508,6 +381,7 @@
         "new_information": null,
         "next_pressure": null,
         "no_causal_basis": [
+          "missing_desire",
           "missing_pressure",
           "missing_choice_basis",
           "missing_consequence",
@@ -515,7 +389,7 @@
           "missing_next_pressure"
         ],
         "trace": {
-          "desire_source": "character_bible.core_desire|目标",
+          "desire_source": null,
           "pressure_source": null,
           "options_basis": "none",
           "choice_basis": null,
@@ -537,7 +411,7 @@
         },
         "provider": "mock"
       },
-      "prompt": "# Scene Lore Seed\nScene 3/4 · POV 林岚\n- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: turn\n- 字数: ~800\n- 章目标: 把售票机修好\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s3 | tokens=259 | profile=climax | cache=100% | compile=6ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。\n\n## 9. 地理\n旧城区旧车站。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. \n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "prompt": "# Scene Lore Seed\nScene 3/4 · POV 林岚\n- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: turn\n- 字数: ~800\n- 章目标: 进入世界\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s3 | tokens=313 | profile=climax | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\nPrevious: 林岚的手指从售票机背面的胶布边缘抠起。胶布发黄，像旧绷带，边缘起毛。\n\n### 前序 Scene\n### 前序 Scene 摘要\n- **Scene 1** (进入世界): 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n- **Scene 2** (建立关系): 林岚的手指从售票机背面的胶布边缘抠起。胶布发黄，像旧绷带，边缘起毛。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n林岚是一名旧车站维修师。这个车站还有三天就要关闭，她今天回来，是为了把坏掉的售票机修好。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. \n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
       "dynamic": {
         "entities": [
           "林岚"
@@ -545,96 +419,35 @@
         "factions": [],
         "modules": [
           {
-            "key": "scene_goal",
-            "label": "Scene 目标",
-            "tokens": 18,
-            "category": "goal"
-          },
-          {
-            "key": "char:林岚",
-            "label": "人物:林岚",
-            "tokens": 43,
-            "category": "character"
-          },
-          {
-            "key": "scene_conflict",
-            "label": "Scene 冲突",
-            "tokens": 12,
-            "category": "conflict"
-          },
-          {
-            "key": "continuation",
-            "label": "续写",
-            "tokens": 27,
-            "category": "goal"
-          },
-          {
-            "key": "state_diff",
-            "label": "状态差量",
-            "tokens": 6,
-            "category": "history"
-          },
-          {
-            "key": "state_board",
-            "label": "局势",
-            "tokens": 51,
-            "category": "conflict"
-          },
-          {
-            "key": "world_bible",
-            "label": "世界规则",
-            "tokens": 55,
-            "category": "world"
-          },
-          {
-            "key": "writing_bible",
-            "label": "写作规则",
-            "tokens": 47,
-            "category": "world"
+            "key": "cached",
+            "label": "cached",
+            "tokens": 430
           }
         ],
-        "totalTokens": 259,
-        "totalChars": 1073,
+        "totalTokens": 430,
+        "totalChars": 1161,
         "withinBudget": true,
-        "text": "<!-- prompt-compiler v2 | scene=ch1_s3 | tokens=259 | profile=climax | cache=100% | compile=6ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。\n\n## 9. 地理\n旧城区旧车站。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. \n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s3 | tokens=313 | profile=climax | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\nPrevious: 林岚的手指从售票机背面的胶布边缘抠起。胶布发黄，像旧绷带，边缘起毛。\n\n### 前序 Scene\n### 前序 Scene 摘要\n- **Scene 1** (进入世界): 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n- **Scene 2** (建立关系): 林岚的手指从售票机背面的胶布边缘抠起。胶布发黄，像旧绷带，边缘起毛。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n林岚是一名旧车站维修师。这个车站还有三天就要关闭，她今天回来，是为了把坏掉的售票机修好。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. \n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
         "cacheHit": true,
         "cacheHitRate": 100,
-        "promptHash": "2edaa00c2223e2db",
-        "compileMs": 6,
+        "promptHash": "2f4a70a3e5d0225d",
+        "compileMs": 5,
         "profile": "climax",
-        "rankingDrop": 0,
-        "budgetUsage": {
-          "usage": {
-            "goal": 45,
-            "conflict": 63,
-            "character": 43,
-            "world": 102,
-            "facts": 0,
-            "history": 6,
-            "relationship": 0,
-            "knowledge": 0
-          },
-          "pct": {
-            "goal": 10,
-            "conflict": 9,
-            "character": 11,
-            "world": 53,
-            "facts": 0,
-            "history": 3,
-            "relationship": 0,
-            "knowledge": 0
-          }
-        },
         "importance": {
           "林岚": 100
         }
       },
-      "text": "她拆开了最后一块面板。螺丝刀尖在塑料边缘刮过，留下一道细白的痕。机壳里塞着几年来的灰和断线，像一团干涸的蛛网。她用镊子夹出一根烧焦的铜线，头发般细，两端都冒烟过。旧车站的窗棂漏进一道斜光，照在她满是油污的手背上。三天后，这地方就要拆了。站长走的时候留下的钟还在走，她听见它在隔壁售票窗口里咔哒咔哒地走着，像在数她剩下的时间。\n\n她把铜线接上，焊锡熔成一滴亮银。指头在烫焊枪尾端缩了一下，血珠从指纹里渗出来，混进了金属的味道里。她没换手。焊完一针，移动到下一针。线路图不在她脑子里，她记的是哪根线在哪儿通，哪个接头会在冷的时候松。她数着焊点，像数着秒针。窗外有什么东西在金属棚顶上刮过，像只懒惰的鸟。她没停。\n\n最后一针焊好，她把面板按回原位。塑料咬合的声音硬邦邦地响了一下。她拿起机器后面那个红色的测试按钮，按下去。指示灯闪了两下，熄了。她把按钮再按一次，力道大些。灯灭了。她盯着电路板上的走线，喉咙里滚了一圈，什么也没吐出来。\n\n她舔了舔干裂的嘴唇，手指关节发白地捏住测试按钮。第三次按下去时，按钮底部发出吱呀一声，像有什么东西终于松了套。指示灯亮了，红，稳了。她松手。机器内部传来一阵低低的嗡，她听见纸盒里传出咔、咔、咔的节奏。她不知道那是什么票，她只是听见它在吐东西。\n\n她把工具收进工具袋。螺丝刀、镊子、焊枪，每个坑里都塞回去。手扶一下机器上的灰，顺手关掉了旁边那盏不该她关的灯，门口的窗帘被风掀起来一角，她顺手压了下去。东西修好了，她可以走了。\n\n她转过身，鞋底在水泥地上擦了一下。售票机的指示灯还在亮，咔咔声还在响。她没回头。她知道第二天早上如果有人来买票，这机子会喂给他一张纸。至于那张纸是什么票，她不管。\n\n她只是把东西修好再离开。",
+      "text": "她的手指陷进胶布的毛边里，勺子般刮着胶皮下的金属框。售票机的内部空荡荡，什么也没有，只有那条缝在暗处发绿。她把脸贴近玻璃门的残口，吸了口气，闻到一股烧过的棉花和潮湿铁锈味。三天后这里就要封了，她还没把这机器的主板换下来。主板在别的地方，她知道在哪，手指还记着走位，可现在的机器像被人从肋骨里抽空了。\n\n她伸出另一只手，想去摸那块暗色铁板。指尖刚碰到表面，整台机器猛地咬住了她的手腕。不是电击，是铁板上的扣环一下子缩紧，把她手表的表带勒进肉里。她痛得吸气，指甲深陷进胶布起毛的地方，把胶布往下拉了拉。铁板上的缝扩了半毫米，绿光像腺体一样跳了一下，然后又缩了回去。\n\n她的脑子里转着一个算术：售票机拆了，站长会不会查库存单；库存单查不到，她的名字会不会留在封站清单的最后一页。她咬住了唇角，牙齿咬破了皮，血腥味混进铁锈味里。她把钳子从工具腰带里抽出来，钳口咬住了铁板边缘的焊点。焊点发烫，她的手背起了红点，可她没放开。她往里夹，一圈圈地扣，像在解开一块死硬的疤。\n\n铁板动了。先是哆嗦，然后裂开一条比刚才更深的缝，里面露出一截细绒线般的东西，正在往里缩。她突然意识到，这不是坏了的售票机，她只是把它修好，坏的其实是站里没人记得的东西。她的手指从钳子里抽出来，攥着一把碎胶布和几粒掉下来的小螺丝。她把螺丝摁进口袋，没有看里面剩下什么。\n\n绿光从缝里退了回去，铁板合拢时发出一声低沉的咬合，像是门锁上了。她的手腕还留着表带勒出的红印，指节发白，血渗进了掌纹里。她听见站外传来车轮碾过碎石的声音，方向是出口。她知道售票机还没修好，可她已经摸到了里面藏的东西。她把工具腰带上的搭扣咬了一口，咬断了，眼前的机器像块蛀木头，一下子空了。",
       "review": {
         "sceneId": "ch1_s3",
         "pass": true,
-        "wordCount": 712,
-        "issues": [],
+        "wordCount": 702,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含顺承词，违反硬切规则"
+          }
+        ],
         "mode": "analysis-only",
         "blocking": false
       },
@@ -719,7 +532,7 @@
           "message": "Consistency 软分析 · 1 项提示"
         }
       ],
-      "wordCount": 712
+      "wordCount": 702
     },
     {
       "index": 4,
@@ -744,12 +557,7 @@
       "wordTarget": 600,
       "reviewRequired": true,
       "causalChain": {
-        "desire": {
-          "who": "林岚",
-          "wants": "把东西修好再离开",
-          "source": "character_bible",
-          "trace": "character_bible.core_desire|目标"
-        },
+        "desire": null,
         "pressure": null,
         "options": [],
         "options_analysis": {
@@ -762,6 +570,7 @@
         "new_information": null,
         "next_pressure": null,
         "no_causal_basis": [
+          "missing_desire",
           "missing_pressure",
           "missing_choice_basis",
           "missing_consequence",
@@ -769,7 +578,7 @@
           "missing_next_pressure"
         ],
         "trace": {
-          "desire_source": "character_bible.core_desire|目标",
+          "desire_source": null,
           "pressure_source": null,
           "options_basis": "none",
           "choice_basis": null,
@@ -791,7 +600,7 @@
         },
         "provider": "mock"
       },
-      "prompt": "# Scene Lore Seed\nScene 4/4 · POV 林岚\n- 目标: 章末钩子（承接转折后果）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: hook\n- 字数: ~600\n- 章目标: 把售票机修好\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s4 | tokens=260 | profile=ending | cache=100% | compile=6ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。\n\n## 9. 地理\n旧城区旧车站。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "prompt": "# Scene Lore Seed\nScene 4/4 · POV 林岚\n- 目标: 章末钩子（承接转折后果）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: hook\n- 字数: ~600\n- 章目标: 进入世界\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n<!-- prompt-compiler v2 | scene=ch1_s4 | tokens=393 | profile=ending | cache=100% | compile=9ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\nPrevious: 售票机背面的胶布边缘在她眼里像一条慢慢退潮的线。裂纹里的脸也没动，只是眼睛跟着胶布的边角往下滑，滑到玻璃底端的时候，她的影子在玻璃里又歪了一点。\n\n### 前序 Scene\n### 前序 Scene 摘要\n- **Scene 1** (进入世界): 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n- **Scene 2** (建立关系): 林岚的手指从售票机背面的胶布边缘抠起。胶布发黄，像旧绷带，边缘起毛。\n- **Scene 3** (第一次失败): 售票机背面的胶布边缘在她眼里像一条慢慢退潮的线。裂纹里的脸也没动，只是眼睛跟着胶布的边角往下滑，滑到玻璃底端的时候，她的影子在玻璃里又歪了一点。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n林岚是一名旧车站维修师。这个车站还有三天就要关闭，她今天回来，是为了把坏掉的售票机修好。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
       "dynamic": {
         "entities": [
           "林岚"
@@ -799,110 +608,40 @@
         "factions": [],
         "modules": [
           {
-            "key": "scene_goal",
-            "label": "Scene 目标",
-            "tokens": 17,
-            "category": "goal"
-          },
-          {
-            "key": "char:林岚",
-            "label": "人物:林岚",
-            "tokens": 43,
-            "category": "character"
-          },
-          {
-            "key": "scene_conflict",
-            "label": "Scene 冲突",
-            "tokens": 12,
-            "category": "conflict"
-          },
-          {
-            "key": "continuation",
-            "label": "续写",
-            "tokens": 27,
-            "category": "goal"
-          },
-          {
-            "key": "state_diff",
-            "label": "状态差量",
-            "tokens": 6,
-            "category": "history"
-          },
-          {
-            "key": "state_board",
-            "label": "局势",
-            "tokens": 51,
-            "category": "conflict"
-          },
-          {
-            "key": "world_bible",
-            "label": "世界规则",
-            "tokens": 55,
-            "category": "world"
-          },
-          {
-            "key": "writing_bible",
-            "label": "写作规则",
-            "tokens": 49,
-            "category": "world"
+            "key": "cached",
+            "label": "cached",
+            "tokens": 509
           }
         ],
-        "totalTokens": 260,
-        "totalChars": 1070,
+        "totalTokens": 509,
+        "totalChars": 1292,
         "withinBudget": true,
-        "text": "<!-- prompt-compiler v2 | scene=ch1_s4 | tokens=260 | profile=ending | cache=100% | compile=6ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：32 岁，旧城区维修师\n- **目标**：把东西修好再离开\n- **价值观**：\n- **底线**：\n- **秘密**：\n- **口头禅**：\n- **成长方向**：\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n一座即将被拆除的旧车站。车站将在三天后关闭。站长已经离开。\n\n## 9. 地理\n旧城区旧车站。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- 欲望（desire）: 「林岚」想 把东西修好再离开\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s4 | tokens=393 | profile=ending | cache=100% | compile=9ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### 人物:林岚\n# 林岚\n\n## 恒定属性\n- **身份**：旧车站维修师\n\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\nPrevious: 售票机背面的胶布边缘在她眼里像一条慢慢退潮的线。裂纹里的脸也没动，只是眼睛跟着胶布的边角往下滑，滑到玻璃底端的时候，她的影子在玻璃里又歪了一点。\n\n### 前序 Scene\n### 前序 Scene 摘要\n- **Scene 1** (进入世界): 锂电池拧不动。 林岚咬住钥匙环，指甲蹭进塑料沟里。\n- **Scene 2** (建立关系): 林岚的手指从售票机背面的胶布边缘抠起。胶布发黄，像旧绷带，边缘起毛。\n- **Scene 3** (第一次失败): 售票机背面的胶布边缘在她眼里像一条慢慢退潮的线。裂纹里的脸也没动，只是眼睛跟着胶布的边角往下滑，滑到玻璃底端的时候，她的影子在玻璃里又歪了一点。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 旧车站维修师\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n林岚是一名旧车站维修师。这个车站还有三天就要关闭，她今天回来，是为了把坏掉的售票机修好。\n\n\n### 写作规则\n# 02 Writing Bible · 旧车站维修师\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息\n…[truncated]\n\n### 因果链（已确定，禁止重推因果）\n- Choice: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
         "cacheHit": true,
         "cacheHitRate": 100,
-        "promptHash": "0d7b49c64a7f513a",
-        "compileMs": 6,
+        "promptHash": "9efd5e03d2636e01",
+        "compileMs": 5,
         "profile": "ending",
-        "rankingDrop": 0,
-        "budgetUsage": {
-          "usage": {
-            "goal": 44,
-            "conflict": 63,
-            "character": 43,
-            "world": 104,
-            "facts": 0,
-            "history": 6,
-            "relationship": 0,
-            "knowledge": 0
-          },
-          "pct": {
-            "goal": 11,
-            "conflict": 12,
-            "character": 12,
-            "world": 53,
-            "facts": 0,
-            "history": 2,
-            "relationship": 0,
-            "knowledge": 0
-          }
-        },
         "importance": {
           "林岚": 100
         }
       },
-      "text": "售票机嗡嗡地响着，像是吞下最后一张纸后咀嚼不化。林岚的手从插孔里抽出来，指尖黏着胶水和碎塑料。她抹了把脸，抹过的手在衣摆上蹭了蹭，然后没再管它。\n\n指示灯从红转绿，停了一秒，又闪回红。她盯着那个小红点，直到眼睛觉得发干。\n\n手机响了。放在工具箱上，不是口袋里。它在发烫，震得箱子里的螺丝钉叮叮跳。她没去看是谁打来的，指头在屏幕上划了一下，直接锁定了电话。铃还在响，她把它朝里推了一推，直到静音灯亮起。\n\n胶水味在车站里散不出去，混着旧雨水的土腥味。她踏到售票机前，蹲下来接最后一次吐纸的动作。那张纸出来时有点皱，边缘卷了起来，她用指甲把它抠下来，拍在水泥地上。纸背面什么都没有，只是白色的。\n\n她起身，工具箱重一截，拖着箱子往出口走。门口有块遮雨棚，棚底积了三天的雨水，她踩着水面走过去，鞋底黏了雨棚的褪色塑料，一拂就落了。\n\n售票机刷一下，吐出最后一张纸的声音还在她耳朵里打转。她没回头。她知道明天早上有人来买票，这机子会喂给他一张纸。至于那张纸是什么票，她不管。\n\n她只是把东西修好再离开。",
+      "text": "铁板合拢的咬合声还在她耳骨里震。她伸手进去，指尖触到底部有个凹陷，像是被什么东西撬过的缺口。手指弯进去，摸到一块硬的。她捏住，往外拉。里面卡着一张票根，边角打着卷，背面用圆珠笔写着日期，字迹被鞋底摩擦得快要剥掉。\n\n她把票根攥进掌心，指甲按进纸面，留下半道白印。售票机里空了，她的手臂缩回来，肘关节擦过玻璃裂纹，留下一道细小的刮痕。裂纹里的脸还在那里，可眼睛不跟胶布边角走了，盯着她手里攥着的纸。\n\n站外的车轮碾过碎石声更近了，石子被压碎的声音像细碎的骨头。她低头看手腕，表带勒出的红印已经变成淡紫色，皮肤浮起一层薄薄的汗。她咬断的搭扣还在嘴里，塑料边缘硌着舌尖，她吐出来，东西掉在铁板上，发出一声干的弹跳。\n\n售票机底座下面还有东西漏出来，细细的铁丝，弯弯曲曲，不知道是什么电线的残段。她蹲下，手电光扫过去，光斑落在铁丝末端，末端绕着个小圈，圈里挂着个小铁环，生锈，比她拇指甲还小。\n\n她伸手过去，指尖刚碰到铁环，站外传来脚步声。不是车轮，是鞋底踩在水泥上，一下一下，走近车站门口。\n\n她没动。手电光照在售票机玻璃上，裂纹里的脸把她的影子又压扁了一道。她慢慢把手缩回来，铁环留在原地，铁丝末端掉回阴影里。\n\n车站门口的灯亮了，黄光从门缝里斜进来，照在地上，照到她的鞋头，也照到售票机底座漏出的铁丝末端。脚步声停住了。\n\n她把票根塞进工具腰带的夹层里，皮带扣咯吱一下合上。她后退一步，脚跟碰上售票机底座，机器发出一声空的嗡响，像是里面还有什么东西在动。\n\n她没听清是什么，只知道售票机里空了，而她手里攥着的东西，比修机器要来的更急。",
       "review": {
         "sceneId": "ch1_s4",
         "pass": true,
-        "wordCount": 435,
-        "issues": [
-          {
-            "level": "warning",
-            "msg": "含顺承词，违反硬切规则"
-          }
-        ],
+        "wordCount": 650,
+        "issues": [],
         "mode": "analysis-only",
         "blocking": false
       },
       "consistency": {
-        "pass": true,
+        "pass": false,
         "scope": "scene:ch1_s4",
         "checks": {
           "character": {
-            "pass": true
+            "pass": false,
+            "reason": "正文未出现 POV 角色「林岚」"
           },
           "timeline": {
             "pass": true
@@ -923,7 +662,13 @@
             "pass": true
           }
         },
-        "failures": [],
+        "failures": [
+          {
+            "dimension": "character",
+            "pass": false,
+            "reason": "正文未出现 POV 角色「林岚」"
+          }
+        ],
         "analysisOnly": true,
         "blocking": false
       },
@@ -958,9 +703,21 @@
         "analysisOnly": true,
         "blocking": false
       },
-      "adaptiveHints": [],
-      "wordCount": 435
+      "adaptiveHints": [
+        {
+          "source": "scene-pipeline-consistency",
+          "mode": "analysis-only",
+          "blocking": false,
+          "sceneIndex": 4,
+          "targetSceneIndex": 5,
+          "items": [
+            "character: 正文未出现 POV 角色「林岚」"
+          ],
+          "message": "Consistency 软分析 · 1 项提示"
+        }
+      ],
+      "wordCount": 650
     }
   ],
-  "updatedAt": "2026-08-29T02:36:44.545Z"
+  "updatedAt": "2026-08-29T03:05:19.406Z"
 }

@@ -1,0 +1,1230 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": {
+    "version": "writer-execution-intelligence-2",
+    "role": "writer-execution-intelligence",
+    "mode": "learning-only",
+    "learningOnly": true,
+    "sceneIndex": 2,
+    "sceneType": "dialogue",
+    "beatMemory": {
+      "newFacts": [
+        "他摸到编号牌背面还有一行小字——用指甲刻的，血已经发黑：焚化区第三炉是空的",
+        "他抬眼看向那排封条——封条上的火漆印，是总局的章",
+        "“箱里是活的"
+      ],
+      "characterStateChanges": [],
+      "emotionChanges": [
+        "anger"
+      ],
+      "unresolvedIssues": [
+        "周砚把应急频段旋钮拧到底，杂音里浮出一段断续的载波",
+        "他把耳朵压上听筒，指节抵住耳廓，电流声里夹着三短一长的间隔——重复了两遍，第三遍被什么东西压掉了，只剩下沙沙的底噪",
+        "“老宋，凌晨两点十七之后，这个频段谁在用",
+        "”那声音顿了一下，“你身边还有谁",
+        "周砚把听筒摔回座机，屏幕上那行反馈还在闪。他伸手去够抽屉里的钥匙，指节抖了一下，钥匙落回抽屉底。\n\n“还剩四分钟。”他自己念出来，膝盖撞在桌角，没停。"
+      ],
+      "changedDimensions": [
+        "resource",
+        "danger",
+        "information"
+      ],
+      "beatHistory": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "libraryBeat": "Discovery",
+          "stateChange": true,
+          "afterState": "他把耳朵压上听筒，指节抵住耳廓，电流声里夹着三短一长的间隔——重复了两遍，第三遍被什么东西压掉了，只剩下沙沙的底噪"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "libraryBeat": "Relationship",
+          "stateChange": true,
+          "afterState": "应急红灯亮起来，把白布照成粉色"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "libraryBeat": "Twist",
+          "stateChange": false,
+          "afterState": "POV 已做出不可逆选择，后果即将落地"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "libraryBeat": "Danger",
+          "stateChange": true,
+          "afterState": "探照灯从巷口扫过来，光柱压着积水一寸寸逼近，把他钉在这道栅栏和那堵墙之间"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "libraryBeat": "Twist",
+          "stateChange": true,
+          "afterState": "他低头扫了一眼货箱内侧的喷码，手指停住了"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "libraryBeat": "Countdown",
+          "stateChange": true,
+          "afterState": "他伸手去够抽屉里的钥匙，指节抖了一下，钥匙落回抽屉底"
+        }
+      ],
+      "lastAfterState": "他伸手去够抽屉里的钥匙，指节抖了一下，钥匙落回抽屉底",
+      "stateChangeCount": 5
+    },
+    "beatStateDeltas": [
+      {
+        "beatOrder": 1,
+        "structuralBeat": "goal",
+        "libraryBeat": "Discovery",
+        "beforeState": "周砚当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Scene 改写",
+        "action": "克服阻碍：no_causal_basis",
+        "choice": null,
+        "consequence": "目标锁定，行动方向确定",
+        "afterState": "他把耳朵压上听筒，指节抵住耳廓，电流声里夹着三短一长的间隔——重复了两遍，第三遍被什么东西压掉了，只剩下沙沙的底噪",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "周砚把应急频段旋钮拧到底，杂音里浮出一段断续的载波",
+          "他把耳朵压上听筒，指节抵住耳廓，电流声里夹着三短一长的间隔——重复了两遍，第三遍被什么东西压掉了，只剩下沙沙的底噪",
+          "“老宋，凌晨两点十七之后，这个频段谁在用"
+        ],
+        "extractedAt": "2026-10-22T08:51:54.042Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [
+            "Event 缺少可观察动作",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": false,
+          "storyBefore": "周砚当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sce",
+          "storyAfter": "POV 已锁定可执行目标，局面即将被打破",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 2,
+        "structuralBeat": "obstacle",
+        "libraryBeat": "Relationship",
+        "beforeState": "POV 已锁定可执行目标，局面即将被打破",
+        "action": null,
+        "choice": null,
+        "consequence": "原路径受阻，stakes 升高",
+        "afterState": "应急红灯亮起来，把白布照成粉色",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "”那声音顿了一下，“你身边还有谁"
+        ],
+        "extractedAt": "2026-10-22T08:51:56.180Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": true,
+          "failReasons": [],
+          "attempts": 1,
+          "degraded": false,
+          "needsHumanReview": false,
+          "storyBefore": "POV 已锁定可执行目标，局面即将被打破",
+          "storyAfter": "阻力落地，目标受挫，退路收窄",
+          "formatPass": true,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 3,
+        "structuralBeat": "choice",
+        "libraryBeat": "Twist",
+        "beforeState": "阻力落地，目标受挫，退路收窄",
+        "action": null,
+        "choice": null,
+        "consequence": "选择本身即代价前奏",
+        "afterState": "POV 已做出不可逆选择，后果即将落地",
+        "stateChange": false,
+        "stateChangeValid": false,
+        "changedDimensions": [],
+        "repetitive": false,
+        "newFacts": [
+          "他摸到编号牌背面还有一行小字——用指甲刻的，血已经发黑：焚化区第三炉是空的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-22T08:52:01.345Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "ACTION_REPLAY: 禁止重演已发生动作「伸手触碰」；从上一句后果接着写下一动作"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：短段也须至少落地一项新信息/代价/行动",
+            "Micro Scene 仅满足 1/5（新行动），须至少两项：新信息/关系/危险/Promise/新行动",
+            "ACTION_REPLAY: 禁止重演已发生动作「伸手触碰」；从上一句后果接着写下一动作"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "阻力落地，目标受挫，退路收窄",
+          "storyAfter": "POV 已做出不可逆选择，后果即将落地",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [
+            "新行动"
+          ],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 4,
+        "structuralBeat": "consequence",
+        "libraryBeat": "Danger",
+        "beforeState": "POV 已做出不可逆选择，后果即将落地",
+        "action": null,
+        "choice": null,
+        "consequence": "选择代价可见落地",
+        "afterState": "探照灯从巷口扫过来，光柱压着积水一寸寸逼近，把他钉在这道栅栏和那堵墙之间",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "danger"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "anger"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-22T08:52:06.419Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "ACTION_REPLAY: 禁止重演已发生动作「伸手触碰」；从上一句后果接着写下一动作"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Sentence Rhythm · 高潮：须短句/停顿/动作/对白，一句一画面，禁止长段解释",
+            "Information Density：约 94 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "Event 缺少可观察动作",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "POV 已做出不可逆选择，后果即将落地",
+          "storyAfter": "局势向终局推进 — 周砚当前目标：克服阻碍：no_causal_basis — ",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      },
+      {
+        "beatOrder": 5,
+        "structuralBeat": "newInformation",
+        "libraryBeat": "Twist",
+        "beforeState": "代价已落地，局面比选择前更紧或更糟",
+        "action": null,
+        "choice": null,
+        "consequence": "已有界面吐出新约束/后果",
+        "afterState": "他低头扫了一眼货箱内侧的喷码，手指停住了",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information"
+        ],
+        "repetitive": false,
+        "newFacts": [
+          "他抬眼看向那排封条——封条上的火漆印，是总局的章",
+          "“箱里是活的"
+        ],
+        "characterStateChanges": [],
+        "emotionChanges": [
+          "anger"
+        ],
+        "unresolvedIssues": [],
+        "extractedAt": "2026-10-22T08:52:13.911Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": []
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：约 175 字仅 0 项增量，须 ≥1（世界/人物/关系/规则/谜团/线索/代价/Promise/Payoff）",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 周砚当前目标：克服阻碍：no_causal_basis — ",
+          "storyAfter": "局势向终局推进 — 周砚当前目标：克服阻碍：no_causal_basis — ",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0.005813953488372093
+          },
+          "microPassed": [
+            "Promise兑现",
+            "新行动"
+          ],
+          "continuityPass": true
+        }
+      },
+      {
+        "beatOrder": 6,
+        "structuralBeat": "hook",
+        "libraryBeat": "Countdown",
+        "beforeState": "同一界面的反馈更新了局势，POV 须据此行动",
+        "action": "妹妹活下来了 — 系统日志里出现了她的名字。",
+        "choice": null,
+        "consequence": "新危机/新疑问出现",
+        "afterState": "他伸手去够抽屉里的钥匙，指节抖了一下，钥匙落回抽屉底",
+        "stateChange": true,
+        "stateChangeValid": true,
+        "changedDimensions": [
+          "information",
+          "resource"
+        ],
+        "repetitive": false,
+        "newFacts": [],
+        "characterStateChanges": [],
+        "emotionChanges": [],
+        "unresolvedIssues": [
+          "周砚把听筒摔回座机，屏幕上那行反馈还在闪。他伸手去够抽屉里的钥匙，指节抖了一下，钥匙落回抽屉底。\n\n“还剩四分钟。”他自己念出来，膝盖撞在桌角，没停。"
+        ],
+        "extractedAt": "2026-10-22T08:52:19.027Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "inference_candidate",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "extractBeatStateDelta",
+            "beatPlan.choice/consequence",
+            "newFacts heuristic"
+          ],
+          "newFactsRole": "heuristic_candidate_not_canon_fact",
+          "planChoiceConsequenceRole": "plan_residue_not_reality"
+        },
+        "continuity": {
+          "leftArm": null,
+          "rightArm": null,
+          "legs": null,
+          "location": null,
+          "revealed": [],
+          "doneActions": [
+            "hand_touch"
+          ],
+          "activeInterfaces": [],
+          "eventPhase": "advanced",
+          "issues": [
+            "ACTION_REPLAY: 禁止重演已发生动作「伸手触碰」；从上一句后果接着写下一动作"
+          ]
+        },
+        "runtimeV2": {
+          "pass": false,
+          "failReasons": [
+            "Information Density：短段也须至少落地一项新信息/代价/行动",
+            "Paragraph Purpose：本段缺少存在意义（须推进人物/关系/冲突/世界/谜团/Promise/Hook 之一）",
+            "未承接上一事件的 Effect，像独立抛异常",
+            "Micro Scene 仅满足 0/5（无），须至少两项：新信息/关系/危险/Promise/新行动",
+            "本段未推进人物/冲突/关系/世界/谜团/期待中的任一项",
+            "ACTION_REPLAY: 禁止重演已发生动作「伸手触碰」；从上一句后果接着写下一动作"
+          ],
+          "attempts": 3,
+          "degraded": true,
+          "needsHumanReview": true,
+          "storyBefore": "局势向终局推进 — 周砚当前目标：克服阻碍：no_causal_basis — ",
+          "storyAfter": "周砚当前目标：克服阻碍：no_causal_basis — 局势尚未被本 Sce",
+          "formatPass": false,
+          "noRepeat": true,
+          "stateChange": true,
+          "fourGram": {
+            "pass": true,
+            "noRepeat": true,
+            "hits": [],
+            "failReasons": [],
+            "priorOverlap": 0
+          },
+          "microPassed": [],
+          "continuityPass": false
+        }
+      }
+    ],
+    "emotionCurve": {
+      "beats": [
+        {
+          "order": 1,
+          "structuralBeat": "goal",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 2,
+          "structuralBeat": "obstacle",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 3,
+          "structuralBeat": "choice",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 4,
+          "structuralBeat": "consequence",
+          "fear": 39,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        },
+        {
+          "order": 5,
+          "structuralBeat": "newInformation",
+          "fear": 0,
+          "hope": 0,
+          "anger": 38,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "anger"
+        },
+        {
+          "order": 6,
+          "structuralBeat": "hook",
+          "fear": 0,
+          "hope": 0,
+          "anger": 0,
+          "surprise": 0,
+          "relief": 0,
+          "dominant": "fear"
+        }
+      ],
+      "scenePeak": {
+        "fear": 39,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0
+      },
+      "emotionalVariance": 39,
+      "hasFluctuation": true,
+      "generatedAt": "2026-10-22T08:52:19.033Z",
+      "sceneIndex": 2
+    },
+    "readerSimulation": {
+      "curiosity": 55,
+      "questionCount": 7,
+      "dropRisk": 45,
+      "continueProbability": 60,
+      "sceneIndex": 2,
+      "pov": "周砚",
+      "simulatedAt": "2026-10-22T08:52:19.033Z"
+    },
+    "beatCompliance": {
+      "goalCompletion": 60,
+      "obstacleStrength": 44,
+      "choiceLevel": 34,
+      "consequenceLevel": 34,
+      "escalationLevel": 34,
+      "informationValue": 44,
+      "hookImpact": 53,
+      "stateChangeRate": 83,
+      "hookBreakdown": {
+        "hookLevel": 53,
+        "hookOutput": {
+          "type": "Curiosity",
+          "readerQuestion": "如果选这条路，还能回头吗？",
+          "cost": "不可逆 — 无论选哪条路都有全局性代价",
+          "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+          "level": 1,
+          "stage": "Curiosity",
+          "name": "好奇",
+          "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+          "example": "为什么时间突然停了？",
+          "hookKind": "ActionHook",
+          "discovery": "选择之后会发生什么（下一章必须承接）",
+          "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+          "newGoal": "克服阻碍：no_causal_basis",
+          "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+          "countdown": "三十秒",
+          "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+          "mustForceAction": true
+        },
+        "stageMatch": false,
+        "cognitiveUpgrade": 75,
+        "emotionalImpact": 38,
+        "characterCost": 45,
+        "targetType": "PointOfNoReturn",
+        "targetLevel": 5
+      },
+      "average": 44,
+      "weakest": "choiceLevel",
+      "pass": false,
+      "blocking": false,
+      "analyzedAt": "2026-10-22T08:52:19.034Z",
+      "hookOutput": {
+        "type": "Curiosity",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 1,
+        "stage": "Curiosity",
+        "name": "好奇",
+        "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+        "example": "为什么时间突然停了？",
+        "hookKind": "ActionHook",
+        "discovery": "选择之后会发生什么（下一章必须承接）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "克服阻碍：no_causal_basis",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "rewardDelivery": {
+        "delivered": false,
+        "valid": false,
+        "reason": "no_promise_bound"
+      }
+    },
+    "hookLevel": {
+      "hookLevel": 53,
+      "hookOutput": {
+        "type": "Curiosity",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 1,
+        "stage": "Curiosity",
+        "name": "好奇",
+        "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+        "example": "为什么时间突然停了？",
+        "hookKind": "ActionHook",
+        "discovery": "选择之后会发生什么（下一章必须承接）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "克服阻碍：no_causal_basis",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "actionHookScore": 0,
+      "forcesAction": true,
+      "cognitiveUpgrade": 75,
+      "emotionalImpact": 38,
+      "characterCost": 45
+    },
+    "reward": {
+      "valid": false,
+      "requiresPromise": true,
+      "promise": null,
+      "payoff": null,
+      "promiseId": null,
+      "promiseSource": null,
+      "description": "⚠ 本 Scene 无可用 Promise — Writer 须先承接 Story Memory 伏笔/前序 Hook 再写 Payoff",
+      "deliveryBeat": "newInformation",
+      "rule": "没有对应 Promise 的 Reward 不允许出现"
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": false,
+      "reason": "no_promise_bound"
+    },
+    "blocking": false,
+    "generatedAt": "2026-10-22T08:52:19.034Z"
+  },
+  "beatCompliance": {
+    "goalCompletion": 60,
+    "obstacleStrength": 44,
+    "choiceLevel": 34,
+    "consequenceLevel": 34,
+    "escalationLevel": 34,
+    "informationValue": 44,
+    "hookImpact": 53,
+    "stateChangeRate": 83,
+    "hookBreakdown": {
+      "hookLevel": 53,
+      "hookOutput": {
+        "type": "Curiosity",
+        "readerQuestion": "如果选这条路，还能回头吗？",
+        "cost": "不可逆 — 无论选哪条路都有全局性代价",
+        "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+        "level": 1,
+        "stage": "Curiosity",
+        "name": "好奇",
+        "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+        "example": "为什么时间突然停了？",
+        "hookKind": "ActionHook",
+        "discovery": "选择之后会发生什么（下一章必须承接）",
+        "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+        "newGoal": "克服阻碍：no_causal_basis",
+        "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+        "countdown": "三十秒",
+        "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+        "mustForceAction": true
+      },
+      "stageMatch": false,
+      "cognitiveUpgrade": 75,
+      "emotionalImpact": 38,
+      "characterCost": 45,
+      "targetType": "PointOfNoReturn",
+      "targetLevel": 5
+    },
+    "average": 44,
+    "weakest": "choiceLevel",
+    "pass": false,
+    "blocking": false,
+    "analyzedAt": "2026-10-22T08:52:19.034Z",
+    "hookOutput": {
+      "type": "Curiosity",
+      "readerQuestion": "如果选这条路，还能回头吗？",
+      "cost": "不可逆 — 无论选哪条路都有全局性代价",
+      "nextNeedToKnow": "选择之后会发生什么（下一章必须承接）",
+      "level": 1,
+      "stage": "Curiosity",
+      "name": "好奇",
+      "readerPsyche": "读者被点燃好奇心 — 「为什么不对劲？」原因未知，必须追问",
+      "example": "为什么时间突然停了？",
+      "hookKind": "ActionHook",
+      "discovery": "选择之后会发生什么（下一章必须承接）",
+      "actionDeadline": "若现在不选择，退路将在三十秒内关闭",
+      "newGoal": "克服阻碍：no_causal_basis",
+      "newAction": "POV必须在倒计时内穿过/阻止门关闭",
+      "countdown": "三十秒",
+      "plantedPromise": "若现在不选择，退路将在三十秒内关闭",
+      "mustForceAction": true
+    },
+    "rewardDelivery": {
+      "delivered": false,
+      "valid": false,
+      "reason": "no_promise_bound"
+    }
+  },
+  "readerSimulation": {
+    "curiosity": 55,
+    "questionCount": 7,
+    "dropRisk": 45,
+    "continueProbability": 60,
+    "sceneIndex": 2,
+    "pov": "周砚",
+    "simulatedAt": "2026-10-22T08:52:19.033Z"
+  },
+  "emotionCurve": {
+    "beats": [
+      {
+        "order": 1,
+        "structuralBeat": "goal",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 2,
+        "structuralBeat": "obstacle",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 3,
+        "structuralBeat": "choice",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 4,
+        "structuralBeat": "consequence",
+        "fear": 39,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      },
+      {
+        "order": 5,
+        "structuralBeat": "newInformation",
+        "fear": 0,
+        "hope": 0,
+        "anger": 38,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "anger"
+      },
+      {
+        "order": 6,
+        "structuralBeat": "hook",
+        "fear": 0,
+        "hope": 0,
+        "anger": 0,
+        "surprise": 0,
+        "relief": 0,
+        "dominant": "fear"
+      }
+    ],
+    "scenePeak": {
+      "fear": 39,
+      "hope": 0,
+      "anger": 38,
+      "surprise": 0,
+      "relief": 0
+    },
+    "emotionalVariance": 39,
+    "hasFluctuation": true,
+    "generatedAt": "2026-10-22T08:52:19.033Z",
+    "sceneIndex": 2
+  },
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s2",
+    "index": 2,
+    "goal": "克服阻碍：no_causal_basis"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 70,
+      "scoreAfter": 70,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 116,
+        "end": 150,
+        "chars": 34
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 40,
+      "scoreAfter": 40,
+      "changed": true,
+      "skipped": false,
+      "mode": "rule+llm",
+      "region": {
+        "start": 36,
+        "end": 564,
+        "chars": 500
+      },
+      "edits": [
+        "ending-hook",
+        "ending-suspense",
+        "ending-goal-echo",
+        "llm"
+      ]
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 40,
+    "commercialPleasure": 92,
+    "styleConsistency": 62,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 86,
+    "hook": 40,
+    "commercialPleasure": 92,
+    "styleConsistency": 62,
+    "characterConsistency": 100,
+    "infoRelease": 80
+  },
+  "total": 81,
+  "totalBefore": 79,
+  "weakest": [
+    {
+      "id": "hook",
+      "score": 40
+    },
+    {
+      "id": "styleConsistency",
+      "score": 62
+    },
+    {
+      "id": "infoRelease",
+      "score": 80
+    }
+  ],
+  "polish": {
+    "changed": true,
+    "mode": "four-module",
+    "modules": {
+      "description": {
+        "scoreBefore": 70,
+        "scoreAfter": 70,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 0,
+        "scoreAfter": 0,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 116,
+          "end": 150,
+          "chars": 34
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 40,
+        "scoreAfter": 40,
+        "changed": true,
+        "skipped": false,
+        "mode": "rule+llm",
+        "region": {
+          "start": 36,
+          "end": 564,
+          "chars": 500
+        },
+        "edits": [
+          "ending-hook",
+          "ending-suspense",
+          "ending-goal-echo",
+          "llm"
+        ]
+      }
+    },
+    "edits": [
+      "ending"
+    ]
+  },
+  "diff": {
+    "prefixUnchanged": 36,
+    "draftChars": 536,
+    "polishedChars": 640,
+    "changed": true
+  },
+  "diffLines": [
+    {
+      "type": "change",
+      "before": "周砚把应急频段旋钮拧到底，杂音里浮出一段断续的载波。他把耳朵压上听筒，指节抵住耳廓，电流声里夹着三短一长的间隔——重复了两遍，第三遍被什么东西压掉了，只剩下沙沙的底噪。",
+      "after": "周砚把应急频段旋钮拧到底，杂音里浮出一段断续的载波。他把耳朵压上听筒，指对讲机贴在耳廓上，电流声里夹着三短一长的间隔，重复两遍，第三遍被什么东西压掉了，只剩沙沙的底噪。",
+      "index": 0
+    },
+    {
+      "type": "change",
+      "before": "键盘声停了。老宋探过头，屏幕上那页灰流水往下拖了一截，时间戳排得密，却空着几行。",
+      "after": "键盘声停了。老宋探过头，屏幕上那页灰流水往下拖了一截，时间戳排得密，中间却空着几行。",
+      "index": 4
+    },
+    {
+      "type": "change",
+      "before": "“没登记。”他拿笔尖戳",
+      "after": "“没登记。”他拿笔尖戳了戳屏幕，笔尖在空行上点了两点，没再说话。",
+      "index": 6
+    },
+    {
+      "type": "change",
+      "before": "推车卡死在裂缝里，林异蹲下去掰轮轴，指腹刚碰到金属，整条通道的灯“啪”地灭了一半。应急红灯亮起来，把白布照成粉色。",
+      "after": "推车卡死在裂缝里。林异蹲下去掰轮轴，指腹刚碰到金属，整条通道的灯“啪”地灭了一半。应急红灯亮起来，把白布照成粉色。",
+      "index": 8
+    },
+    {
+      "type": "change",
+      "before": "他低头扫了一眼货箱内侧的喷码，手指停住了。喷码日期是三天后。他抬眼看向那排封条——封条上的火漆印，是总局的章。",
+      "after": "他低头扫了一眼货箱内侧的喷码，手指停住了。喷码日期是三天后。他抬眼看向那排封条——火漆印是总局的章。",
+      "index": 22
+    },
+    {
+      "type": "change",
+      "before": "周砚没推。撬棍一别，锁扣崩开，里面整整齐齐码着呼吸面罩，每一副都标着同一个编号，和推车上那具尸体的一模一样。",
+      "after": "周砚没推。撬棍一别，锁扣崩开，里面整整齐齐码着呼吸面罩，每一副都标着同一个编号——和推车上那具尸体的一模一样。他伸手去翻第二层，指尖刚触到隔板，对讲机里那个沉声音忽然贴了上来，近得像是站在他背后：“周砚，别碰。”",
+      "index": 28
+    },
+    {
+      "type": "add",
+      "before": "",
+      "after": "他停住。背后通道的应急红灯，把他的影子拉到了货箱上。影子里多了一道。",
+      "index": 30
+    }
+  ],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-10-22T08:52:22.141Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 100,
+      "hook": 40,
+      "commercialPleasure": 92,
+      "styleConsistency": 62,
+      "characterConsistency": 100,
+      "infoRelease": 80
+    },
+    "total": 81,
+    "weak": [
+      {
+        "id": "hook",
+        "score": 40
+      },
+      {
+        "id": "styleConsistency",
+        "score": 62
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 92
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "climax",
+        "score": 100
+      },
+      {
+        "id": "characterConsistency",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "hook",
+        "score": 40
+      },
+      {
+        "id": "styleConsistency",
+        "score": 62
+      },
+      {
+        "id": "infoRelease",
+        "score": 80
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 46,
+        "actionHits": 9,
+        "dialogHits": 0,
+        "variety": 3
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": false
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 0,
+        "len": 640
+      },
+      "styleConsistency": {
+        "shortRatio": 85,
+        "expoRun": 46
+      },
+      "characterConsistency": {
+        "pov": "周砚",
+        "present": [
+          "周砚"
+        ],
+        "mentioned": 1
+      },
+      "infoRelease": {
+        "loreRun": 0,
+        "stagger": false
+      }
+    },
+    "chapter": 3,
+    "sceneIndex": 2,
+    "totalChars": 640
+  }
+}

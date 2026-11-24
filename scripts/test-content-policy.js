@@ -1,7 +1,7 @@
 /**
  * 分级内容审核冒烟：剧情词放行 · 政治敏感硬拦 · 血腥软提示
  */
-import { checkValues } from '../packages/inkos-brain/src/planner/decision-check.js';
+import { checkValues } from '../packages/inkos-brain/src/decision/decision.js';
 import { evaluateDecisions } from '../packages/inkos-brain/src/decision/decision.js';
 import { sanitizeObstacleSuggestion } from '../packages/inkos-brain/src/decision/content-policy.js';
 import { suggestSafeObstacle, SAFE_RETRY_SUGGESTIONS } from '../packages/inkos-brain/src/planner/conflict-suggester.js';

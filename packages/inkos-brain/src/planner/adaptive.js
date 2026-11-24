@@ -76,13 +76,13 @@ export function applyWeightsToIntent(intent, weights) {
     for (const s of scenes) {
       if (s.beat === 'complication' || s.beat === 'situation') {
         s.wordTarget = Math.round((s.wordTarget || 800) * w.actionSceneWeight);
-        s.conflict = s.conflict || '行动受阻';
+        s.conflict = s.conflict || 'no_causal_basis';
       }
     }
   }
 
   if (w.conflictPriority > 1.1 && intent.obstacles.length < 2) {
-    intent.obstacles.push('利益冲突加剧');
+    intent.obstacles.push('no_causal_basis');
   }
 
   if (w.hookEmphasis > 1.1) {
@@ -96,7 +96,7 @@ export function applyWeightsToIntent(intent, weights) {
       id: `ch${intent.chapter}_s_extra`,
       title: '加压场景',
       goal: '提高冲突密度',
-      conflict: intent.obstacles[0] || '外部压力',
+      conflict: intent.obstacles[0] || 'no_causal_basis',
       entities: [intent.pov],
       beat: 'complication',
     });

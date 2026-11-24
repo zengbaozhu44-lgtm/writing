@@ -1,5 +1,7 @@
 /**
  * Consistency Engine — 六维一致性校验
+ *
+ * EO-P7 R-06 / I-04: pass/fail = qualification vs registrations, not obtains.
  */
 export function checkConsistency(ctx, intent, chapterText = '', scene = null) {
   const text = scene?.text ?? chapterText;
@@ -57,6 +59,7 @@ function checkWorld(ctx, text) {
 }
 
 function checkKnowledgeConsistency(ctx, text) {
+  // EO-P7: knowledge matrix is epistemic constraint, not Reality Authority.
   if (!text) return { pass: true };
   const pov = ctx.pov;
   for (const row of ctx.knowledge.matrix || []) {

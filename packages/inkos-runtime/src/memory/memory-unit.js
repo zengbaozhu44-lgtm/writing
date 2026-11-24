@@ -6,7 +6,12 @@
  *   2) states/ch_XXXX.json（世界/人物/Facts 聚合）
  *   3) Git Memory Snapshot（+ 可选真实 git commit）
  *
+ * EO-P1 Dual BLOCK A: Commit ≠ obtains. Persistence ≠ Reality Status.
+ * Successful commit is operational / registration persistence only — not Authority Act.
+ *
  * Living / AI Editor 不得在此之外写运行态；提案只能进入 stateDiff.livingPrepare。
+ *
+ * @see golden/reality/d1-implementation-contract/INTERPRETATION-BLOCK.md
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,17 +24,18 @@ import {
   listSnapshots,
 } from '../../../inkos-brain/src/memory/git-memory.js';
 import {
-  buildStateDelta,
   applyStateDiffToCanon,
   updateManifestChapter,
   writeNextChapterTask,
 } from '../../../inkos-brain/src/memory/state-updater.js';
+import { evolveFromChapter } from '../../../inkos-brain/src/memory/state-evolution-engine.js';
 import { brainSystemDir } from '../../../inkos-brain/src/loader.js';
 import {
   chapterAnchorPath as plannerAnchorPath,
   chapterAnchorFileName,
 } from '../../../inkos-brain/src/planner/planner.js';
 import { updateMemoryHierarchy } from './memory-hierarchy.js';
+import { stampOpsHint } from '../../../inkos-core/src/lib/inference-demotion.js';
 
 /** 空正文 / 字数过低下禁止 commit + Git */
 export class EmptyArtifactError extends Error {
@@ -204,23 +210,23 @@ export function recoverFailedChapter(bookDir, chapterId, { reason = 'task-failed
  * @property {boolean} [skipGitCli]
  */
 
+/**
+ * Phase 2: semantic StateDiff MUST go through State Evolution Engine.
+ * buildStateDelta remains the operational shell used inside Evolution (EO-P2 empty plan path).
+ */
 export function buildStateDiff(bookDir, chapter, payload = {}) {
-  const delta = buildStateDelta(bookDir, chapter, payload);
-  return {
-    version: 'state-diff-1',
+  return evolveFromChapter({
+    bookDir,
     chapter,
-    chapterText: payload.chapterText || '',
-    chapterTitle: payload.chapterTitle || payload.intent?.chapterTitle || `第${chapter}章`,
-    intent: payload.intent || {},
-    metrics: payload.metrics || null,
     scenes: payload.scenes || [],
+    intent: payload.intent || {},
+    chapterText: payload.chapterText || '',
+    metrics: payload.metrics || null,
     nextChapterPlan: payload.nextChapterPlan || null,
+    force: Boolean(payload.force),
     livingPrepare: payload.livingPrepare || null,
     readerSimulator: payload.readerSimulator || null,
-    force: Boolean(payload.force),
-    canonDelta: delta,
-    builtAt: new Date().toISOString(),
-  };
+  });
 }
 
 function writeChapterMarkdown(bookDir, chapter, { chapterText, chapterTitle, intent }) {
@@ -266,6 +272,8 @@ function writeAggregatedState(bookDir, chapter, stateDiff) {
     facts: stateDiff.canonDelta?.facts || [],
     timeline: stateDiff.canonDelta?.timeline || null,
     current_state: stateDiff.canonDelta?.current_state || null,
+    evolution: stateDiff.evolution || null,
+    provenance: stateDiff.provenance || null,
     metrics: stateDiff.metrics,
     livingPrepare: stateDiff.livingPrepare || null,
     nextChapter: stateDiff.nextChapterPlan
@@ -280,6 +288,9 @@ function writeAggregatedState(bookDir, chapter, stateDiff) {
 
 /**
  * 构建并写入 ch_XXXX_anchor.yaml
+ *
+ * EO-P4 (W-17/W-18): relationship_state / closing_emotion = operational planner hints.
+ * They are NOT relationship facts, Character Reality, or obtains.
  */
 export function buildChapterAnchor(chapter, stateDiff = {}) {
   const intent = stateDiff.intent || {};
@@ -306,6 +317,11 @@ export function buildChapterAnchor(chapter, stateDiff = {}) {
     voiceDna,
     narrative_momentum: buildNarrativeMomentum(chapter, stateDiff, intent),
     committedAt: new Date().toISOString(),
+    d1InferenceDemotion: stampOpsHint({
+      paths: ['deriveRelationshipState', 'deriveClosingEmotion', 'buildChapterAnchor'],
+      relationship_state: 'operational_planner_hint_not_fact',
+      closing_emotion: 'ops_hint_not_character_reality',
+    }),
   };
 }
 
@@ -333,16 +349,17 @@ export function buildNarrativeMomentum(chapter, stateDiff = {}, intent = {}) {
 }
 
 function deriveClosingEmotion(text = '', intent = {}, stateDiff = {}) {
-  if (intent.closingEmotion || intent.closing_emotion) {
-    return String(intent.closingEmotion || intent.closing_emotion).slice(0, 40);
-  }
-  const fromSim = stateDiff.readerSimulator?.summary;
-  if (fromSim) return String(fromSim).slice(0, 40);
+  // EO-P4 (W-18): heuristic / ops hint for chapter seam — ≠ Character Reality / obtains.
   const tail = String(text).slice(-400);
   if (/倒计时|来不及|必须|消失/u.test(tail)) return '紧迫·倒计时压迫';
   if (/[？?]/u.test(tail)) return '疑虑·未解之问';
   if (/冷|沉默|门|离开/u.test(tail)) return '压抑·余波未平';
   if (/系统|刷新|异常/u.test(tail)) return '惊悚·规则压迫';
+  if (intent.closingEmotion || intent.closing_emotion) {
+    return String(intent.closingEmotion || intent.closing_emotion).slice(0, 40);
+  }
+  const fromSim = stateDiff.readerSimulator?.summary;
+  if (fromSim) return String(fromSim).slice(0, 40);
   return '悬置·章末未落定';
 }
 
@@ -372,6 +389,7 @@ function resolveAnchorVoiceDna(intent = {}, stateDiff = {}) {
 }
 
 function deriveRelationshipState(intent = {}, present = [], stateDiff = {}, chapter = 1) {
+  // EO-P4 (W-17): plan-derived edges = operational planner hint — ≠ relationship fact / obtains.
   const uniq = [...new Set(present.map((n) => String(n).trim()).filter(Boolean))];
   const pairs = [];
   const pov = intent.pov || uniq[0] || '主角';
@@ -599,7 +617,16 @@ export function commit(bookDir, chapterId, stateDiff = {}) {
     chapterText: stateDiff.chapterText ?? '',
     chapterTitle: stateDiff.chapterTitle,
     intent: stateDiff.intent || {},
-    canonDelta: stateDiff.canonDelta || buildStateDelta(bookDir, chapter, stateDiff),
+    canonDelta: stateDiff.canonDelta || evolveFromChapter({
+      bookDir,
+      chapter,
+      scenes: stateDiff.scenes || [],
+      intent: stateDiff.intent || {},
+      chapterText: stateDiff.chapterText || '',
+      metrics: stateDiff.metrics || null,
+      nextChapterPlan: stateDiff.nextChapterPlan || null,
+      force: Boolean(stateDiff.force),
+    }).canonDelta,
   };
 
   // ① chapters/*.md

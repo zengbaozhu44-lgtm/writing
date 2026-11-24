@@ -1,0 +1,43 @@
+character: 顾满仓
+goals:
+  surface: 维护镇上的社会治安，保障居民安全，做好本职工作
+  hidden: 暗中调查二十年前断桥坍塌案的真相，找回被抽走的三页卷宗
+fears:
+  - 真相被永久掩埋，自己带着遗憾退休
+  - 调查会牵连到当年的同事或熟人
+  - 被上级或幕后势力打压，失去警察身份
+bottom_line: 解开二十年前的断桥坍塌案，哪怕赌上职业生涯
+current_state:
+  trust_protagonist: 30
+  fear: 55
+  betrayal_probability: 10
+  suspicion: 40
+  loyalty: 70
+growth_arc: 从因顾虑而被动等待，到主动寻求合作、直面旧案真相，重拾年轻时的责任感与勇气
+triggers:
+  主角提及断桥案或卷宗缺失:
+    trust: 10
+    suspicion: 15
+  主角出示与断桥案相关的物证:
+    trust: 20
+    suspicion: 10
+  有人试图威胁或收买顾满仓:
+    trust: -10
+    suspicion: 25
+  主角帮助顾满仓保护关键证人:
+    trust: 25
+    suspicion: -10
+  发现当年同事涉案的证据:
+    trust: -5
+    suspicion: 20
+lastChapter: 3
+evolutionLog:
+  - chapter: 3
+    state:
+      trust_protagonist: 30
+      fear: 55
+      betrayal_probability: 10
+      suspicion: 40
+      loyalty: 70
+    at: 2026-10-22T08:53:35.615Z
+updatedAt: 2026-10-22T08:53:53.637Z

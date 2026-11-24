@@ -10,6 +10,7 @@ export function computeMetrics(chapterText, intent, scenes, conflictResult) {
 
   const lines = text.split('\n').filter((l) => l.trim());
   const dialogueLines = lines.filter((l) => /[「」""]/.test(l) || /^[^。！？]{1,12}[：:]/.test(l));
+  const { humanDialogueCount, longDialogueBlocks } = extractDialogueBlocks(text);
   const actionLines = lines.filter((l) => /走|跑|推|拉|抓|砸|踢|转身|站|蹲|握/.test(l));
   const mindLines = lines.filter((l) => /想起|意识到|觉得|知道|心想/.test(l));
 
@@ -25,6 +26,8 @@ export function computeMetrics(chapterText, intent, scenes, conflictResult) {
     conflictDensity: conflictResult?.types?.length ?? 0,
     conflictTypes: conflictResult?.types ?? [],
     dialogueRatio: lines.length ? round(dialogueLines.length / lines.length) : 0,
+    humanDialogueCount,
+    longDialogueBlocks,
     actionRatio: lines.length ? round(actionLines.length / lines.length) : 0,
     mindRatio: lines.length ? round(mindLines.length / lines.length) : 0,
     wordCount: len,
@@ -35,6 +38,31 @@ export function computeMetrics(chapterText, intent, scenes, conflictResult) {
     infoDensity: round(len / Math.max(sceneCount, 1) / 100),
     timestamp: new Date().toISOString(),
   };
+}
+
+/**
+ * 对话「成型」指标：抽取引号块，区分人话与系统 UI 文本。
+ * flat dialogueRatio 不可靠（依赖行结构，system 文本稀释占比，ch15 字符占比 30.6% 却显得「无对话」）。
+ * 改用成型检查：人话块数 + 长对话块数。
+ * 判定规则：含会话信号（人称/称呼/语气词/问叹）→ 人话；
+ * 否则短 + 命中系统 UI 词 → 系统文本；其余保守计人话（宁放过不误杀）。
+ */
+export function extractDialogueBlocks(text) {
+  const spans = [];
+  for (const re of [/「([^」]*)」/g, /“([^”]*)”/g, /"([^"]*)"/g]) {
+    re.lastIndex = 0;
+    let m;
+    while ((m = re.exec(text))) {
+      const s = String(m[1] || '').replace(/\s/g, '');
+      if (s) spans.push(s);
+    }
+  }
+  const HUMAN_RE = /[你我他她]|哥|姐|爷|吧|呢|么|啊|喂|别|快|问|答|[？!！]/;
+  const SYSTEM_UI_RE = /权限|绑定|加载|系统|界面|指令|检测|验证|继承|执行|完成|离线|锁定|信号|警告|确认|数据|剩余|激活|调用|解析|已/;
+  const humanDialogueCount = spans.filter((s) =>
+    HUMAN_RE.test(s) || !(s.length < 24 && SYSTEM_UI_RE.test(s))).length;
+  const longDialogueBlocks = spans.filter((s) => s.length >= 20).length;
+  return { humanDialogueCount, longDialogueBlocks };
 }
 
 function detectRhythmPeaks(text) {
@@ -79,12 +107,24 @@ export function analyzeMetricsFeedback(metrics, dashboard, scenes = []) {
   const suggestions = [];
   const recent = (dashboard?.chapters ?? []).slice(-5);
 
-  if (metrics.conflictDensity < 2) {
+  // 冲突密度 replan 只针对自动派生计划的章节。
+  // authored plan（导演/渲染器已确认）的 conflict 是单一丰富种子：运行时 authored 路径
+  // 将其硬编码为 types=[1]（orchestrator），密度恒为 1，永远 <2。该章是否兑现冲突已由
+  // scene 硬失败 / critic / validation 把关，无需在此重复索要 ≥2 个关键词桶。
+  // 区分信号：自动派生桶都是短标签（关系/资源/relationship ≤12 字符）；
+  // authored 种子是 ≥20 字的完整冲突描述（含「表面冲突/真正的冲突」等）。
+  const singleRichConflictSeed =
+    Array.isArray(metrics.conflictTypes) &&
+    metrics.conflictTypes.length === 1 &&
+    typeof metrics.conflictTypes[0] === 'string' &&
+    metrics.conflictTypes[0].replace(/\s/g, '').length >= 20;
+
+  if (metrics.conflictDensity < 2 && !singleRichConflictSeed) {
     suggestions.push({
       type: 'conflict',
       target: 'next_scene',
       message: `冲突密度 ${metrics.conflictDensity} 不足，Scene2 需加压`,
-      suggestObstacle: '外部阻力或信息差',
+      suggestObstacle: 'no_causal_basis',
       replan: true,
     });
   }

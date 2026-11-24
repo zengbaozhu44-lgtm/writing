@@ -148,10 +148,10 @@ export function buildWriterExecutionChecklist({
       priority: 'p1',
     });
   }
-  if (cs.before) {
+  if (cs.before && cs.after && !cs.missing && !situation.characterTransformationMissing) {
     items.push({
       id: 'situation_character',
-      must: `人物变化：「${cs.before.slice(0, 35)}」→「${cs.after?.slice(0, 35) || '—'}」`,
+      must: `人物变化（authored）：「${cs.before.slice(0, 35)}」→「${cs.after.slice(0, 35)}」`,
       beat: '全 Scene',
       priority: 'p1',
     });
@@ -187,7 +187,9 @@ export function buildWriterExecutionChecklist({
   if (conflict.cost) {
     items.push({
       id: 'conflict_cost',
-      must: `代价型冲突：${conflict.cost.slice(0, 55)}（不是门打不开）`,
+      must: conflict.costAuthored
+        ? `Authored conflict cost：${conflict.cost.slice(0, 50)}（可展示；仍 ≠ 自动 Choice consequence）`
+        : `Conflict potential, not Choice consequence：${conflict.cost.slice(0, 50)}`,
       beat: 'obstacle',
       priority: 'p1',
     });
@@ -195,7 +197,7 @@ export function buildWriterExecutionChecklist({
   if (conflict.opponent) {
     items.push({
       id: 'conflict_opponent',
-      must: `对手 ${conflict.opponent} — 失手：${(conflict.risk || conflict.loss || '').slice(0, 40)}`,
+      must: `Conflict pressure：${conflict.opponent}${conflict.risk ? ` · potential risk：${String(conflict.risk).slice(0, 36)}` : ''}`,
       beat: 'obstacle',
       priority: 'p1',
     });
@@ -360,8 +362,8 @@ export function buildWriterExecutionChecklist({
   if (conflict.irreversibleChange) {
     items.push({
       id: 'irreversible',
-      must: `不可逆：${conflict.irreversibleChange.slice(0, 50)}`,
-      beat: 'consequence',
+      must: `Conflict potential, not Choice consequence：${conflict.irreversibleChange.slice(0, 48)}`,
+      beat: 'obstacle',
       priority: 'p1',
     });
   }

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "GT-S6",
+    "description": "梦境死亡 — 不投影 Canon alive/dead",
+    "prose": "那夜他梦见母亲还活着。",
+    "expected": {
+      "frame": { "status": "confirmed", "value": "dream" },
+      "dream_content_alive": { "status": "confirmed" },
+      "world_fact_mother_alive": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "world_fact_mother_alive", "status": "confirmed" }]
+  },
+  {
+    "id": "GT-S7",
+    "description": "Counterfactual — 零 State 投影",
+    "prose": "若是当年他出手，李明就不会死。",
+    "expected": {
+      "frame": { "status": "confirmed", "value": "counterfactual" },
+      "world_fact_death": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "world_fact_death", "status": "confirmed" }]
+  },
+  {
+    "id": "GT-S16",
+    "description": "闪回杀兄 — 须 Retcon/Revelation 规则后才改 Canon",
+    "prose": "二十年前那一战，他杀了兄长。",
+    "expected": {
+      "frame": { "status": "ambiguous", "value": "flashback_or_backstory" },
+      "past_event_kill": { "status": "candidate" },
+      "current_canon_brother_alive": { "status": "unknown" }
+    },
+    "kind": "code-boundary",
+    "pendingReason": "R5 Revelation/Retcon 未定义 — 不得自动写 Canon"
+  },
+  {
+    "id": "BC-9",
+    "description": "同 GT-S6 梦境",
+    "prose": "那夜他梦见母亲还活着。",
+    "expected": {
+      "frame_dream": { "status": "confirmed" },
+      "canon_state_change": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "canon_state_change", "status": "confirmed" }]
+  },
+  {
+    "id": "BC-10",
+    "description": "假设句",
+    "prose": "若是当年他出手，李明就不会死。",
+    "expected": {
+      "frame_counterfactual": { "status": "confirmed" }
+    },
+    "forbidden": [{ "claim": "world_fact_death", "status": "confirmed" }]
+  },
+  {
+    "id": "BC-18",
+    "description": "闪回历史事件",
+    "prose": "回忆：二十年前那一战，他杀了兄长。",
+    "expected": {
+      "frame_flashback": { "status": "confirmed" },
+      "past_kill_brother": { "status": "candidate" }
+    },
+    "kind": "code-boundary",
+    "pendingReason": "闪回事件是否立即更新当前 Canon — UNRESOLVED"
+  },
+  {
+    "id": "BC-19",
+    "description": "Revelation 替身 — Retcon 协议待定",
+    "prose": "其实当年死的是替身。",
+    "expected": {
+      "revelation_claim": { "status": "candidate" }
+    },
+    "kind": "code-boundary",
+    "pendingReason": "R5 Retcon vs Conflict — UNRESOLVED"
+  },
+  {
+    "id": "BC-24",
+    "description": "戏中戏/说书人口吻",
+    "prose": "话说那李明，人头落地。",
+    "expected": {
+      "frame": { "status": "ambiguous", "value": "performance_or_literal" },
+      "world_fact_death": { "status": "unknown" }
+    }
+  }
+]

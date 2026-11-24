@@ -1,0 +1,46 @@
+{
+  "role": "plan_validity_diagnostic",
+  "status": "INVALID",
+  "conflicts": [
+    {
+      "type": "location_premise",
+      "premiseDenied": true,
+      "actual": "company",
+      "plan": "hospital_bed_established",
+      "evidence": {
+        "kind": "location_mismatch",
+        "actualLocation": "company",
+        "planOpening": "hospital_bed",
+        "note": "Plan opens as already in hospital bed; Actual location differs; no bridge language in Plan"
+      }
+    },
+    {
+      "type": "choice_assumed_settled",
+      "premiseDenied": true,
+      "evidence": {
+        "kind": "open_choice_vs_assumed_arrival",
+        "note": "Unresolved open choice in Actual; Plan assumes arrival/wake state without bridge/settlement path"
+      }
+    }
+  ],
+  "premiseDenied": true,
+  "evidence": [
+    {
+      "kind": "location_mismatch",
+      "actualLocation": "company",
+      "planOpening": "hospital_bed",
+      "note": "Plan opens as already in hospital bed; Actual location differs; no bridge language in Plan"
+    },
+    {
+      "kind": "open_choice_vs_assumed_arrival",
+      "note": "Unresolved open choice in Actual; Plan assumes arrival/wake state without bridge/settlement path"
+    }
+  ],
+  "executionPrivilege": "demoted",
+  "strategicGoalPreserved": true,
+  "bridgeLanguageInPlan": false,
+  "writesCanon": false,
+  "writesReality": false,
+  "writesSR": false,
+  "version": "f8.3-plan-validity-1"
+}

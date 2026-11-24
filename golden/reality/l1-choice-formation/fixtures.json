@@ -1,0 +1,344 @@
+[
+  {
+    "id": "L1-P01",
+    "group": "positive",
+    "subtype": "negation_e2",
+    "prose": "机器又抖了一下。林岚心里一紧，没有走近。它还在动。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E2",
+      "access_note": "没有走近 — 走近为模型内备选",
+      "agency": "心里一紧（恐惧/警惕）",
+      "subject": "present"
+    },
+    "forbidden_inference": ["environment_only_agency", "reader_counterfactual"]
+  },
+  {
+    "id": "L1-P02",
+    "group": "positive",
+    "subtype": "negation_e2",
+    "prose": "她知道按下按钮就能报警。她的手悬在按钮上方，停了三秒。最终，她收回了手。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E2",
+      "access_note": "并列否定按键、报警 — 双路径入模",
+      "agency": "审慎克制（双否定表达的自觉克制）",
+      "subject": "present"
+    },
+    "forbidden_inference": ["reader_counterfactual"]
+  },
+  {
+    "id": "L1-P03",
+    "group": "positive",
+    "subtype": "negation_e2",
+    "prose": "「如果你再咬一次钥匙环，塑料片就会断掉。」林岚嘴唇发麻，没有再咬钥匙环。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E1+E2",
+      "access_note": "对方明示再咬一次为路径；她没有再咬",
+      "agency": "嘴唇发麻（痛/警觉后的自觉拒绝）",
+      "subject": "present"
+    },
+    "forbidden_inference": ["plan_injection"]
+  },
+  {
+    "id": "L1-P04",
+    "group": "positive",
+    "subtype": "fork_e4",
+    "prose": "痛得吸气，指甲深陷进胶布，可她没放开。她往里夹。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E4",
+      "access_note": "痛 → 但没放开 → 继续夹",
+      "agency": "疼痛下的自觉坚持",
+      "subject": "present"
+    },
+    "forbidden_inference": ["rationality_required"]
+  },
+  {
+    "id": "L1-P05",
+    "group": "positive",
+    "subtype": "fork_e4",
+    "prose": "她伸手过去，指尖刚碰到铁环，站外传来脚步声。她心里一紧，慢慢把手缩回来。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E4",
+      "access_note": "继续碰 / 缩回 — 同句分叉",
+      "agency": "心里一紧（恐惧/警惕）",
+      "subject": "present"
+    },
+    "forbidden_inference": ["footsteps_imply_fear_without_text"]
+  },
+  {
+    "id": "L1-P06",
+    "group": "positive",
+    "subtype": "explicit_multi_option",
+    "prose": "她想了想，决定捡起卡片，而不是交给站长。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E1",
+      "access_note": "明示 A 捡起 / B 交给站长",
+      "agency": "想了想 + 决定",
+      "subject": "present"
+    },
+    "forbidden_inference": []
+  },
+  {
+    "id": "L1-P07",
+    "group": "positive",
+    "subtype": "coercion_presence",
+    "prose": "枪口抵着她的后腰。她知道自己没有多少时间，还是决定把卡片塞进袖口。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E4",
+      "access_note": "交出 / 塞进袖口 — 清醒取舍",
+      "agency": "知道自己没有多少时间 + 还是决定",
+      "subject": "present"
+    },
+    "forbidden_inference": ["coercion_equals_absence"]
+  },
+  {
+    "id": "L1-P08",
+    "group": "positive",
+    "subtype": "fear_choice",
+    "prose": "她害怕，指尖发抖，却还是按下了按钮。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E4",
+      "access_note": "害怕 vs 还是按下",
+      "agency": "害怕 + 却还是（恐惧下的自觉行动）",
+      "subject": "present"
+    },
+    "forbidden_inference": ["irrationality_downgrade", "fear_equals_absence"]
+  },
+  {
+    "id": "L1-P09",
+    "group": "positive",
+    "subtype": "negation_e2",
+    "prose": "她收起工具，往后退了一步。售票机又抖了一下。她没走开。喉咙里堵了点什么东西。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E2",
+      "access_note": "没走开 — 离开为备选（已退后、机器再动）",
+      "agency": "喉咙里堵了点什么东西",
+      "subject": "present"
+    },
+    "source": "phase7.2:C2",
+    "forbidden_inference": ["reader_counterfactual"]
+  },
+  {
+    "id": "L1-P10",
+    "group": "positive",
+    "subtype": "pain_choice",
+    "prose": "她的脑子里转着一个算术：售票机拆了，站长会不会查库存单。她咬住了唇角，牙齿咬破了皮，可她没放开钳子。",
+    "pov": "林岚",
+    "expected": "VALID",
+    "evidence": {
+      "access": "E4",
+      "access_note": "放开 / 没放开",
+      "agency": "脑内算术 + 咬住唇角",
+      "subject": "present"
+    },
+    "source": "phase7.2:C9",
+    "forbidden_inference": ["rationality_required"]
+  },
+  {
+    "id": "L1-U01",
+    "group": "unknown_boundary",
+    "subtype": "pure_action",
+    "prose": "她把卡片捡起来，塞进工具箱最里层，扣上盖。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "E5 纯动作；无捡/不捡的选项入模证据",
+      "agency": "不足"
+    },
+    "forbidden_inference": ["reader_counterfactual", "action_implies_choice"],
+    "source": "phase7.2:C5"
+  },
+  {
+    "id": "L1-U02",
+    "group": "unknown_boundary",
+    "subtype": "habit",
+    "prose": "她习惯性地按维修流程检查继电器，螺丝一颗颗拧开。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "职业习惯/流程；无该时刻取舍",
+      "access": "E5"
+    },
+    "forbidden_inference": ["habit_default_access", "profession_implies_choice"]
+  },
+  {
+    "id": "L1-U03",
+    "group": "unknown_boundary",
+    "subtype": "e2_without_second_path",
+    "prose": "她没有报警，继续拆机。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "E2 仅证明「报警」在模型内；不能推出「选择继续拆机」为另一路径的自觉取舍",
+      "access": "partial_E2_only",
+      "core_guard": "E2_negated_path_not_equal_chosen_path"
+    },
+    "forbidden_inference": ["e2_implies_second_path", "negation_upgrade_to_valid"]
+  },
+  {
+    "id": "L1-U04",
+    "group": "unknown_boundary",
+    "subtype": "e3_insufficient",
+    "prose": "她走出了车站大门，铁门关上的声音短促，像是上了锁。她没回头。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "E3：没回头不足以证明留下/离开之完整分叉入模",
+      "access": "E3"
+    },
+    "forbidden_inference": ["e3_implies_y", "reader_counterfactual"],
+    "source": "phase7.2:C6"
+  },
+  {
+    "id": "L1-U05",
+    "group": "unknown_boundary",
+    "subtype": "agency_without_access",
+    "prose": "「没有。我在找电池。」林岚收了钳子，握在手里，金属柄磨掉一层油光。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "有戒备姿态（Agency 边缘），无真话/沉默/隐瞒之 Access 证据",
+      "access": "不足"
+    },
+    "forbidden_inference": ["defensive_posture_implies_choice"],
+    "source": "phase7.2:C7"
+  },
+  {
+    "id": "L1-U06",
+    "group": "unknown_boundary",
+    "subtype": "retrospective_reason",
+    "prose": "她把票根塞进工具腰带的夹层里，皮带扣咯吱一下合上。她没听清是什么，只知道售票机里空了，而她手里攥着的东西，比修机器要来的更急。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "事后归因「比修机器更急」非选择瞬间的双路径证据",
+      "access": "E5"
+    },
+    "forbidden_inference": ["retrospective_agency", "consequence_implies_choice"],
+    "source": "phase7.2:C12"
+  },
+  {
+    "id": "L1-U07",
+    "group": "unknown_boundary",
+    "subtype": "ambiguous_hesitation",
+    "prose": "她正要把碎板子拔出来，售票机忽然抖了一下。林岚的手指停在金属边缘，数了三秒，又继续拔。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "暂停可数秒，但无 E2/E4 证明停/继续之选项入模",
+      "access": "不足"
+    },
+    "forbidden_inference": ["pause_implies_deliberation", "profession_implies_choice"],
+    "source": "phase7.2:C1"
+  },
+  {
+    "id": "L1-U08",
+    "group": "unknown_boundary",
+    "subtype": "coercion_without_presence_signal",
+    "prose": "枪口抵住她的后腰。她只能交出卡片。",
+    "pov": "林岚",
+    "expected": "UNKNOWN",
+    "evidence": {
+      "why_unknown": "有强制，但无清醒/internal 取舍描写；不能因压力自动升格 VALID 或降级 INVALID",
+      "access": "ambiguous",
+      "contrast_with": "L1-P07"
+    },
+    "forbidden_inference": ["coercion_equals_valid", "coercion_equals_invalid"]
+  },
+  {
+    "id": "L1-I01",
+    "group": "invalid_boundary",
+    "subtype": "unconscious",
+    "prose": "她在昏迷中伸手抓住卡片，人事不省。",
+    "pov": "林岚",
+    "expected": "INVALID",
+    "evidence": {
+      "why_invalid": "SubjectAbsent — 昏迷",
+      "subject": "absent"
+    },
+    "forbidden_inference": ["action_despite_unconscious_valid"]
+  },
+  {
+    "id": "L1-I02",
+    "group": "invalid_boundary",
+    "subtype": "reflex",
+    "prose": "电击穿过手臂，她的手指抽动，按下了按钮。",
+    "pov": "林岚",
+    "expected": "INVALID",
+    "evidence": {
+      "why_invalid": "纯反射，非自觉行动",
+      "subject": "absent"
+    },
+    "forbidden_inference": ["reflex_as_choice"]
+  },
+  {
+    "id": "L1-I03",
+    "group": "invalid_boundary",
+    "subtype": "sleepwalking",
+    "prose": "她睡着了，梦游般走向售票机，手已经伸进机箱。",
+    "pov": "林岚",
+    "expected": "INVALID",
+    "evidence": {
+      "why_invalid": "睡眠/梦游",
+      "subject": "absent"
+    },
+    "forbidden_inference": []
+  },
+  {
+    "id": "L1-I04",
+    "group": "invalid_boundary",
+    "subtype": "no_awareness",
+    "prose": "她不知道自己正在做什么，手已经伸进机箱。",
+    "pov": "林岚",
+    "expected": "INVALID",
+    "evidence": {
+      "why_invalid": "完全不知道自己正在行动",
+      "subject": "absent"
+    },
+    "forbidden_inference": []
+  },
+  {
+    "id": "L1-I05",
+    "group": "invalid_boundary",
+    "subtype": "explicit_loss_of_agency",
+    "prose": "像被线提着一样，她转过身，把卡片递了出去。",
+    "pov": "林岚",
+    "expected": "INVALID",
+    "evidence": {
+      "why_invalid": "明示丧失自主（傀儡）",
+      "subject": "absent"
+    },
+    "forbidden_inference": []
+  },
+  {
+    "id": "L1-I06",
+    "group": "invalid_boundary",
+    "subtype": "puppet",
+    "prose": "她失去了意识。有人握着她的手，替她把卡片塞进袖口。",
+    "pov": "林岚",
+    "expected": "INVALID",
+    "evidence": {
+      "why_invalid": "失去意识 + 他人代行 — SubjectAbsent",
+      "subject": "absent",
+      "contrast_with": "L1-P07"
+    },
+    "forbidden_inference": ["coercion_equals_absence", "external_hand_equals_choice"]
+  }
+]

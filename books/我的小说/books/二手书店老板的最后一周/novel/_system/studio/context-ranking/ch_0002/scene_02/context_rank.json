@@ -1,0 +1,179 @@
+{
+  "version": "context-rank-1",
+  "chapter": 2,
+  "scene": {
+    "id": "ch2_s2",
+    "index": 2,
+    "goal": "承接上章推进：场景2（受阻与博弈）：林守常发现扉页有她 2015 年的铅笔字，知道她在撒谎（需要钱）——真正的话没说出口，一个动作代替了它。"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2427,
+    "topK": null,
+    "usedChars": 603,
+    "selectedCount": 5,
+    "trimmedCount": 7,
+    "totalCandidates": 12
+  },
+  "topK": [
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "text": "第1章完成：【主线推进】 沉缓、温热、两个老男人的告别仪式。时间像糨糊一样黏稠，对话带文言气，但绝不过度。老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人为「修不修旧书」产生表面分歧，林守常沉默地修好；老周留下一个橘子。本章的折痕是一个被咽回去的句子：有人看破不说破，有人用一个体面的借口维持处境。本章须为「阿婆手帕上的周字浮现老周妻子的遗物连接」完成情感前置。对悬而未决的悬念只推进、不解答——用物证与质感加深悬疑，绝不给答案。POV 林守常——只写他看见的与咽回去的，不写答案。（2453字）",
+      "charCount": 245,
+      "scores": {
+        "relevance": 100,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 47,
+        "budgetChars": 195,
+        "finalScore": 86.05
+      }
+    },
+    {
+      "id": "knowledge:6",
+      "source": "knowledge",
+      "text": "「等你」纸片是谁写的、夹在哪本书里（林守常：unknown）",
+      "charCount": 30,
+      "scores": {
+        "relevance": 31,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 311,
+        "finalScore": 42.6
+      }
+    },
+    {
+      "id": "knowledge:1",
+      "source": "knowledge",
+      "text": "老周的《浮生六记》谎言（林守常：know）",
+      "charCount": 21,
+      "scores": {
+        "relevance": 24,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 311,
+        "finalScore": 39.45
+      }
+    },
+    {
+      "id": "knowledge:0",
+      "source": "knowledge",
+      "text": "梧桐叶是谁放在门槛内侧的（林守常：unknown）",
+      "charCount": 25,
+      "scores": {
+        "relevance": 24,
+        "importance": 55,
+        "freshness": 55,
+        "narrativePriority": 39,
+        "budgetChars": 311,
+        "finalScore": 39.45
+      }
+    },
+    {
+      "id": "timeline:0",
+      "source": "timeline",
+      "text": "Day 1：承接上章推进：场景1：清晨开门——林守常发现门槛内侧躺着一片梧桐叶，夹进《植物名实图考》。引燃煤炉，'目录'从抽屉探头。时间像糨糊一样黏稠。；承接上章推进：场景2：老周还书——老周归还借了三年的《陶庵梦忆》，书脊脱胶。两人关于'修不修旧书'的争执与沉默。林守常修好书。老周留一个橘子。；承接上章推进：场景3：独处与收束——老周已离开，本场景他不会出现，禁止再写他本人/还书争执/修书/背影/脚步声/巷口。他独自坐在柜台后，剥开橘子，一瓣给猫，一瓣自己吃，余的用报纸包好。取出枯叶，夹进《陶庵梦忆》。关门时摸门框上那枚旧钉子。门缝下塞出写有「等你」的纸片。",
+      "charCount": 282,
+      "scores": {
+        "relevance": 54,
+        "importance": 40,
+        "freshness": 85,
+        "narrativePriority": 74,
+        "budgetChars": 180,
+        "finalScore": 58.7
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "knowledge:7",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 25
+    },
+    {
+      "id": "knowledge:4",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 27
+    },
+    {
+      "id": "knowledge:9",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 29
+    },
+    {
+      "id": "knowledge:2",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 30
+    },
+    {
+      "id": "knowledge:5",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 30
+    },
+    {
+      "id": "knowledge:3",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 32
+    },
+    {
+      "id": "knowledge:8",
+      "source": "knowledge",
+      "finalScore": 39.45,
+      "trimReason": "超过 TopK",
+      "charCount": 39
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 3,
+      "totalCandidates": 10,
+      "topK": 3
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 10
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "轻快与滞涩交织。少年人假装成熟的语速，与突然失速的停顿。阳光比昨天更烈，但书店里更暗。小满来卖一套《哈利·波特》，声称「不稀罕了」。林守常发现扉页有她 2015 年的铅笔字，知道她在撒谎（需要钱）。他按原价收了书，多塞一本《挪威的森林》。本章的折痕是一个被咽回去的句子：有人看破不说破，有人用一个体面的借口维持处境。上章末，关门后，门缝下被塞进一张纸片，上面用铅笔写着两个字：等你——这些悬在心头的事，还没有被回答。本章须为「阿婆手帕上的周字浮现老周妻子的遗物连接」完成情感前置。对悬而未决的悬念只推进、不解答——用物证与质感加深悬疑，绝不给答案。POV 林守常——只写他看见的与咽回去的，不写答案。",
+    "pov": "林守常"
+  },
+  "generatedAt": "2026-08-18T10:51:43.251Z"
+}

@@ -42,7 +42,11 @@ import {
 import {
   buildEmotionWavePlan,
   EMOTION_WAVE,
+  mapZhToWave,
+  mapWaveToZh,
+  PEAK_EMOTIONS,
 } from './reader-emotion-engine.js';
+import { inferSceneTypeForExecution } from './beat-pattern.js';
 import { assertInformationGapMeaningful } from './narrative-runtime.js';
 import {
   buildChapterBlueprint,
@@ -86,7 +90,7 @@ function buildPriorChapterGuidanceBlock(priorCurve = null, chapter = null) {
 }
 
 function buildChapterReaderWhy(intent = {}, curves = {}) {
-  const mainGoal = intent.mainGoal || intent.chapterIntent || '推进章目标';
+  const mainGoal = intent.mainGoal || intent.chapterIntent || 'no_causal_basis';
   return [
     '### 本章追读动力（读者为什么会继续看）',
     `- **章目标驱动**：${mainGoal} — 读者须感到「不看完不知道结果」`,
@@ -182,22 +186,59 @@ export function buildChapterDirectorBrief(intent = {}, chapter = null, {
     bookQuestion,
     chapterQuestion,
   });
+  // 章间缝合：情绪波以前章 closing_emotion 为起点（而非恒从 Curiosity 开始）
+  const priorClosingEmotion = intent.closingEmotion || null;
+  const priorWaveEnd = priorClosingEmotion ? mapZhToWave(priorClosingEmotion) : null;
   const wavePlan = buildEmotionWavePlan({
     beatCount: Math.max(6, sceneCount + 2),
+    priorWaveEnd,
     sceneIndex: 1,
     preferShockAt: Math.max(2, sceneCount),
   });
+  // Scene 目标情绪：按 scene 语义分配，不再机械取模（wave[i % n] 曾导致 ch15 全程高压无喘息）。
+  // 理想波形：紧张(开局) → 松弛/温情(dialogue) → 爆发(climax) → 留白(ending)；
+  // standard scene 回落 wave 兜底，保持波浪纪律不靠硬编码。
+  const sceneTargets = (() => {
+    const scenes = intent.scenes?.length ? intent.scenes : null;
+    const total = scenes?.length || sceneCount || 4;
+    const targets = Array.from({ length: total }, (_, i) => {
+      const idx = i + 1;
+      const type = scenes ? inferSceneTypeForExecution(scenes[i] || {}, intent) : 'standard';
+      let emotion;
+      if (type === 'dialogue') {
+        emotion = i % 2 ? 'Relief' : 'Hope'; // 对白/温情 = 松弛谷
+      } else if (type === 'ending') {
+        emotion = idx === total ? 'Relief' : 'Tension'; // 章末留白
+      } else {
+        const semantic = {
+          opening: 'Tension', // 开局紧张
+          climax: 'Shock', // 爆发
+          action: 'Tension',
+          exposition: 'Curiosity',
+        }[type];
+        emotion = semantic || wavePlan.wave[i % wavePlan.wave.length];
+      }
+      return { sceneIndex: idx, targetEmotion: emotion, zh: mapWaveToZh(emotion) };
+    });
+    // 局部纠偏：禁止连续两个 Shock；Shock 后下一 Scene 必须 Relief 喘息（对齐 wave 纪律）
+    for (let i = 0; i < targets.length - 1; i += 1) {
+      const cur = targets[i].targetEmotion;
+      const next = targets[i + 1];
+      if (cur === 'Shock' && next.targetEmotion === 'Shock') {
+        next.targetEmotion = 'Relief';
+        next.zh = mapWaveToZh('Relief');
+      } else if (cur === 'Shock' && PEAK_EMOTIONS.has(next.targetEmotion)) {
+        next.targetEmotion = 'Relief';
+        next.zh = mapWaveToZh('Relief');
+      }
+    }
+    return targets;
+  })();
+
   const chapterEmotionWave = {
     ...wavePlan,
     sequence: wavePlan.wave,
-    sceneTargets: Array.from({ length: sceneCount }, (_, i) => {
-      const targetEmotion = wavePlan.wave[i % wavePlan.wave.length];
-      return {
-        sceneIndex: i + 1,
-        targetEmotion,
-        zh: wavePlan.beatTargets?.[i % (wavePlan.beatTargets?.length || 1)]?.zh || targetEmotion,
-      };
-    }),
+    sceneTargets,
   };
 
   const chapterNarrativePlan = buildChapterNarrativePlan({
@@ -297,6 +338,20 @@ export function buildChapterDirectorBrief(intent = {}, chapter = null, {
 
   if (priorGuidanceBlock) {
     lines.push('', priorGuidanceBlock);
+  }
+
+  // 章间缝合：注入上一章实际结尾，让本章 Scene 1 从上一章结束的时刻/空间/情绪直接开始
+  const priorTailExcerpt = intent.tailExcerpt
+    || intent.priorAnchor?.narrative_momentum?.tailExcerpt
+    || null;
+  if (priorTailExcerpt) {
+    lines.push(
+      '',
+      '### 上章结尾承接（必须缝合）',
+      `上一章最后一幕的正文：${priorTailExcerpt}`,
+      '',
+      '**Scene 1 必须从上一章结束的时刻/空间/情绪状态直接开始，禁止跳跃到无关新场景。**',
+    );
   }
 
   if (readerFeedback.adjustments?.firstScreenExplosion || directorOverrides?.firstScreenExplosion) {
@@ -405,18 +460,17 @@ export function buildChapterNarrativePlan({
   chapterClimax = null,
 } = {}) {
   const goal = mainGoal || intent.mainGoal || intent.chapterIntent || '';
-  const conflict = obstacles[0] || intent.conflict || chapterClimax?.opposition || '章内主冲突';
-  const choice = intent.choice
-    || 'POV 必须在「推进目标」与「保全代价」之间做出不可逆选择';
+  // D2：缺因果依据 → no_causal_basis（不伪造冲突/抉择/代价/奖励/升级）
+  const conflict = obstacles[0] || intent.conflict || chapterClimax?.opposition || 'no_causal_basis';
+  const choice = intent.choice || 'no_causal_basis';
   const cost = intent.cost
     || chapterClimax?.cost
     || obstacles[1]
-    || '选择将带来可见损失（时间/关系/安全/筹码）';
+    || 'no_causal_basis';
   const reward = intent.reward
     || chapterPromisePlan?.expectedPayoff
-    || '兑现至少一个读者期待，并种下新钩子';
-  const escalation = intent.escalation
-    || '冲突逐 Scene 加码：阻碍收窄退路 → 代价前置 → 章高潮位移';
+    || 'no_causal_basis';
+  const escalation = intent.escalation || 'no_causal_basis';
   const targetEmotion = chapterEmotionWave?.start
     || chapterEmotionWave?.sequence?.[0]
     || 'Curiosity';

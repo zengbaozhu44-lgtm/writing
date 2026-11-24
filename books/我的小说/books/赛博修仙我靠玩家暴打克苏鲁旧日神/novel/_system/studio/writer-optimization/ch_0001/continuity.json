@@ -1,15 +1,49 @@
 {
-  "leftArm": "damaged",
-  "rightArm": "disabled",
+  "leftArm": null,
+  "rightArm": null,
   "legs": null,
   "other": null,
   "location": "浮空城坠落区",
-  "threat": "系统清除威胁",
-  "revealed": [],
+  "threat": "邪神低语侵蚀",
+  "revealed": [
+    "gm_auth",
+    "sys_ui"
+  ],
   "doneActions": [
     "hand_touch",
+    "kneel_ash",
+    "auth_press",
     "data_orb"
   ],
-  "lastAfterState": "林砚确认/意识到：本 Scene 须释放至少一条新信息（事实/关系/规则）；局面代价：选择产生可见代价，局面因此改变",
-  "updatedAt": "2026-07-31T07:05:31.624Z"
+  "activeInterfaces": [
+    {
+      "id": "sys_panel",
+      "label": "系统/监控屏"
+    },
+    {
+      "id": "auth_ui",
+      "label": "权限界面"
+    },
+    {
+      "id": "data_orb",
+      "label": "掌心数据流"
+    }
+  ],
+  "eventPhase": "advanced",
+  "lastAfterState": "林砚已掌握：信息后果已落地；局面代价：选择产生可见代价，局面因此改变",
+  "usedPhrases": [
+    "声音，沙哑",
+    "铁锈味",
+    "渗出来",
+    "那团光",
+    "颅骨内侧",
+    "倒计时",
+    "声音又干又哑",
+    "像砂纸",
+    "声音哑",
+    "喉咙里涌上"
+  ],
+  "interactLoops": 8,
+  "systemLineCount": 1,
+  "updatedAt": "2026-08-04T04:37:55.305Z"
 }

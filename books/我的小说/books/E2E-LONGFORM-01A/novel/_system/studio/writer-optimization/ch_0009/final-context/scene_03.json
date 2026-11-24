@@ -1,0 +1,506 @@
+{
+  "role": "read_only_observability",
+  "readOnly": true,
+  "writesCanon": false,
+  "writesSR": false,
+  "sceneId": "ch9_s3",
+  "sceneIndex": 3,
+  "chapter": 9,
+  "layers": {
+    "L1": {
+      "present": true,
+      "hash": "5a1c868cda765425",
+      "chars": 2498,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": false
+    },
+    "L2": {
+      "present": true,
+      "hash": "e3571bf7bf57d1a4",
+      "chars": 27624,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": false
+    },
+    "L3": {
+      "present": true,
+      "hash": "973f5d57bf6eea06",
+      "chars": 19264,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": false,
+      "sealedHash": "973f5d57bf6eea06"
+    },
+    "L4": {
+      "present": true,
+      "hash": "45c1f4bfa0b071a2",
+      "chars": 1387,
+      "clock": true,
+      "ib": true,
+      "observedContinuity": true,
+      "beatOrder": 6,
+      "beatUserPromptHash": "45c1f4bfa0b071a2",
+      "writerCallId": "s3-b6-c17"
+    }
+  },
+  "clockSource": "intent_or_scene_field",
+  "ibSource": "buildSceneWritePrompt / Semantic Protected Context",
+  "provenance": {
+    "role": "read_only_diagnostic_trace",
+    "readOnly": true,
+    "writesCanon": false,
+    "writesSR": false,
+    "schema": {
+      "fields": [
+        "key",
+        "type",
+        "source",
+        "priority",
+        "kept",
+        "reason",
+        "layers"
+      ],
+      "types": [
+        "canon",
+        "projection",
+        "plan",
+        "sr",
+        "historical",
+        "temporary",
+        "guard",
+        "derived",
+        "unavailable"
+      ],
+      "priorities": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "blocks": [
+      {
+        "key": "story_clock",
+        "type": "plan",
+        "source": "intent.time",
+        "priority": "P1",
+        "kept": true,
+        "reason": "semantic_protected",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "information_boundary",
+        "type": "guard",
+        "source": "buildSceneWritePrompt / prompt-survival",
+        "priority": "P1",
+        "kept": true,
+        "reason": "semantic_protected",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "character_sr",
+        "type": "sr",
+        "source": "minimal-sr (assembleMinimalSR)",
+        "priority": "P2",
+        "kept": true,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "prior_excerpt",
+        "type": "historical",
+        "source": "scene-02.text",
+        "priority": "P3",
+        "kept": false,
+        "reason": "unavailable",
+        "layers": {
+          "L1": "absent",
+          "L2": "absent",
+          "L3": "absent",
+          "L4": "absent"
+        },
+        "note": "Historical dates ≠ current Story Clock; demoted vs P1 Canonical"
+      },
+      {
+        "key": "prev_summary",
+        "type": "historical",
+        "source": "resolvePreviousScenes → scene-summary",
+        "priority": "P2",
+        "kept": false,
+        "reason": "unavailable",
+        "layers": {
+          "L1": "absent",
+          "L2": "absent",
+          "L3": "present",
+          "L4": "trimmed"
+        }
+      },
+      {
+        "key": "observed_continuity",
+        "type": "derived",
+        "source": "scene_2.text → buildObservedContinuity",
+        "priority": "P2",
+        "kept": true,
+        "reason": "scene_continuity",
+        "layers": {
+          "L1": "absent",
+          "L2": "absent",
+          "L3": "absent",
+          "L4": "present"
+        },
+        "note": "Scene-local derived projection for N+1 only; ≠ Canon / SR / Plan settlement"
+      },
+      {
+        "key": "chapter_goal",
+        "type": "plan",
+        "source": "intent.mainGoal",
+        "priority": "P1",
+        "kept": true,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "scene_goal",
+        "type": "plan",
+        "source": "scene.goal",
+        "priority": "P1",
+        "kept": true,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        }
+      },
+      {
+        "key": "causal_chain",
+        "type": "plan",
+        "source": "scene.causalChain|intent.causalChain",
+        "priority": "P1",
+        "kept": false,
+        "reason": "intentional_projection",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed"
+        },
+        "channels": [
+          "L1_compile_append",
+          "L3_P1_narrative"
+        ],
+        "note": "duplicate: intentional projection (L1 lore append + sealed P1)"
+      },
+      {
+        "key": "entity",
+        "type": "derived",
+        "source": "scene.entities|ctx.pov|ctx.present → inkos-prompt/entity-selector",
+        "priority": "P2",
+        "kept": true,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "present"
+        },
+        "note": "selected: 周砚,周砚"
+      },
+      {
+        "key": "character_context",
+        "type": "canon",
+        "source": "03_character_bible whitelist",
+        "priority": "P2",
+        "kept": false,
+        "reason": "scene_relevant",
+        "layers": {
+          "L1": "present",
+          "L2": "present",
+          "L3": "present",
+          "L4": "trimmed"
+        }
+      },
+      {
+        "key": "knowledge",
+        "type": "projection",
+        "source": "unavailable",
+        "priority": "P2",
+        "kept": false,
+        "reason": "unavailable",
+        "layers": {
+          "L1": "absent",
+          "L2": "absent",
+          "L3": "absent",
+          "L4": "absent"
+        }
+      }
+    ],
+    "updatedAt": "2026-10-26T08:13:16.128Z"
+  },
+  "writerCalls": [
+    {
+      "callId": "s3-b4-c9",
+      "beatOrder": 4,
+      "hash": "260a28897f74eeac",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:31.210Z"
+    },
+    {
+      "callId": "s3-b5-c10",
+      "beatOrder": 5,
+      "hash": "58bf65e3ecb18128",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:32.799Z"
+    },
+    {
+      "callId": "s3-b5-c11",
+      "beatOrder": 5,
+      "hash": "58bf65e3ecb18128",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:34.299Z"
+    },
+    {
+      "callId": "s3-b5-c12",
+      "beatOrder": 5,
+      "hash": "7c29e37ce5683fed",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:36.224Z"
+    },
+    {
+      "callId": "s3-b6-c13",
+      "beatOrder": 6,
+      "hash": "ef78e04b1b1d344d",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:37.761Z"
+    },
+    {
+      "callId": "s3-b6-c14",
+      "beatOrder": 6,
+      "hash": "ef78e04b1b1d344d",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:39.722Z"
+    },
+    {
+      "callId": "s3-b6-c15",
+      "beatOrder": 6,
+      "hash": "d0e6fb8e148a8de5",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:41.664Z"
+    },
+    {
+      "callId": "s3-b1-c1",
+      "beatOrder": 1,
+      "hash": "6a770c95a6ddc25a",
+      "clock": true,
+      "ib": true,
+      "chars": 1389,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:43.313Z"
+    },
+    {
+      "callId": "s3-b1-c2",
+      "beatOrder": 1,
+      "hash": "6a770c95a6ddc25a",
+      "clock": true,
+      "ib": true,
+      "chars": 1389,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:44.488Z"
+    },
+    {
+      "callId": "s3-b1-c3",
+      "beatOrder": 1,
+      "hash": "6a770c95a6ddc25a",
+      "clock": true,
+      "ib": true,
+      "chars": 1389,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:46.465Z"
+    },
+    {
+      "callId": "s3-b2-c4",
+      "beatOrder": 2,
+      "hash": "4d6893341026e8d5",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:48.479Z"
+    },
+    {
+      "callId": "s3-b2-c5",
+      "beatOrder": 2,
+      "hash": "4d6893341026e8d5",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:50.622Z"
+    },
+    {
+      "callId": "s3-b3-c6",
+      "beatOrder": 3,
+      "hash": "a00063603c70db3c",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:53.458Z"
+    },
+    {
+      "callId": "s3-b3-c7",
+      "beatOrder": 3,
+      "hash": "a00063603c70db3c",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:55.575Z"
+    },
+    {
+      "callId": "s3-b3-c8",
+      "beatOrder": 3,
+      "hash": "695314030eccde7e",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:57.946Z"
+    },
+    {
+      "callId": "s3-b4-c9",
+      "beatOrder": 4,
+      "hash": "83011f1ceda3f3ab",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:12:59.266Z"
+    },
+    {
+      "callId": "s3-b4-c10",
+      "beatOrder": 4,
+      "hash": "83011f1ceda3f3ab",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:01.839Z"
+    },
+    {
+      "callId": "s3-b4-c11",
+      "beatOrder": 4,
+      "hash": "1da28c10c8f268ef",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:03.613Z"
+    },
+    {
+      "callId": "s3-b5-c12",
+      "beatOrder": 5,
+      "hash": "5914a09de16ddc93",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:05.470Z"
+    },
+    {
+      "callId": "s3-b5-c13",
+      "beatOrder": 5,
+      "hash": "5914a09de16ddc93",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:07.710Z"
+    },
+    {
+      "callId": "s3-b5-c14",
+      "beatOrder": 5,
+      "hash": "1768cd586ba924ca",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:10.110Z"
+    },
+    {
+      "callId": "s3-b6-c15",
+      "beatOrder": 6,
+      "hash": "07b32bd80d55ba16",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:11.758Z"
+    },
+    {
+      "callId": "s3-b6-c16",
+      "beatOrder": 6,
+      "hash": "07b32bd80d55ba16",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:14.007Z"
+    },
+    {
+      "callId": "s3-b6-c17",
+      "beatOrder": 6,
+      "hash": "45c1f4bfa0b071a2",
+      "clock": true,
+      "ib": true,
+      "chars": 1387,
+      "systemHash": "53a4f786359fedfd",
+      "at": "2026-10-26T08:13:16.127Z"
+    }
+  ],
+  "writerCallId": "s3-b6-c17",
+  "updatedAt": "2026-10-26T08:13:16.129Z"
+}

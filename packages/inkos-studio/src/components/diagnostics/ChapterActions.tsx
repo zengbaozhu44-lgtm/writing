@@ -10,8 +10,8 @@ interface Props {
   bookId: string;
   chapterIdx: number;
   auditStatus?: string | null;
-  /** delete = 仅删草稿；regenerate = 删后由父组件立刻重跑 */
-  onDone?: (kind: 'accept' | 'delete' | 'regenerate' | 'optimize', payload?: unknown) => void;
+  /** delete = 仅删草稿；regenerate = 删后由父组件立刻重跑；preview-plan = 打开协议渲染预览抽屉 */
+  onDone?: (kind: 'accept' | 'delete' | 'regenerate' | 'optimize' | 'preview-plan', payload?: unknown) => void;
 }
 
 const STRATEGIES: { id: OptimizeStrategy; label: string }[] = [
@@ -92,6 +92,15 @@ export function ChapterActions({ bookId, chapterIdx, auditStatus, onDone }: Prop
           onClick={() => void run('delete')}
         >
           {busy === 'delete' ? '删除中…' : '仅删除草稿'}
+        </button>
+        <button
+          type="button"
+          className="btn btn-sm"
+          disabled={!!busy}
+          title="用协议渲染器生成本章 plan（goal/scenes/plant 可改，确认执行落盘后触发生成）"
+          onClick={() => onDone?.('preview-plan')}
+        >
+          预览 plan
         </button>
       </div>
       <div className="chapter-actions-optimize">

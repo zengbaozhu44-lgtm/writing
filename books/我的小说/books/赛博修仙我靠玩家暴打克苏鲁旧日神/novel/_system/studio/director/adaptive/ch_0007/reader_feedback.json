@@ -1,0 +1,444 @@
+{
+  "chapter": 7,
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "chapter": 7,
+      "metrics": {
+        "continueProbability": 79,
+        "questionCount": 3,
+        "dropRisk": 10,
+        "curiosity": 76
+      },
+      "adjustments": {
+        "hookDensityBoost": 0,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": false
+      },
+      "directives": [
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 6 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 林砚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {},
+      "elementWeights": {
+        "conspiracy": 0.6499999999999999,
+        "relationship": 0.15,
+        "action": 0.6499999999999999,
+        "emotion": 0.6499999999999999,
+        "twist": 0.8499999999999999,
+        "growth": 0.3,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.6499999999999999,
+          "score": 50,
+          "continueProbability": 79,
+          "curiosity": 76
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.15,
+          "score": 12,
+          "continueProbability": 79,
+          "curiosity": 76
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 51,
+          "continueProbability": 79,
+          "curiosity": 76
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.6499999999999999,
+          "score": 50,
+          "continueProbability": 79,
+          "curiosity": 76
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.8499999999999999,
+          "score": 65,
+          "continueProbability": 79,
+          "curiosity": 76
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 23,
+          "continueProbability": 79,
+          "curiosity": 76
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 23,
+          "continueProbability": 79,
+          "curiosity": 76
+        }
+      },
+      "at": "2026-08-10T09:30:43.074Z"
+    },
+    {
+      "sceneIndex": 2,
+      "chapter": 7,
+      "metrics": {
+        "continueProbability": 63,
+        "questionCount": 3,
+        "dropRisk": 45,
+        "curiosity": 68
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 15,
+        "payoffBoost": 0,
+        "hookLadderBoost": 1,
+        "firstScreenExplosion": true,
+        "advancePacing": true,
+        "increaseConflict": true,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 63% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "Drop Risk 45% 偏高 — 下一章开篇须第一屏爆点，节奏提前，冲突升级，Hook Ladder 须递进",
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 6 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 林砚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true,
+        "highDropRisk": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.44999999999999996,
+        "relationship": 0.7999999999999999,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.5,
+        "growth": 0.3,
+        "reasoning": 0.44999999999999996
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.44999999999999996,
+          "score": 30,
+          "continueProbability": 63,
+          "curiosity": 68
+        },
+        "relationship": {
+          "id": "relationship",
+          "name": "角色关系",
+          "weight": 0.7999999999999999,
+          "score": 52,
+          "continueProbability": 63,
+          "curiosity": 68
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 42,
+          "continueProbability": 63,
+          "curiosity": 68
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 29,
+          "continueProbability": 63,
+          "curiosity": 68
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 33,
+          "continueProbability": 63,
+          "curiosity": 68
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 20,
+          "continueProbability": 63,
+          "curiosity": 68
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.44999999999999996,
+          "score": 30,
+          "continueProbability": 63,
+          "curiosity": 68
+        }
+      },
+      "at": "2026-08-10T09:31:29.192Z"
+    },
+    {
+      "sceneIndex": 3,
+      "chapter": 7,
+      "metrics": {
+        "continueProbability": 61,
+        "questionCount": 1,
+        "dropRisk": 30,
+        "curiosity": 62
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 61% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 6 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 林砚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.3,
+        "relationship": 0,
+        "action": 0.7999999999999999,
+        "emotion": 0.8499999999999999,
+        "twist": 1,
+        "growth": 0.7999999999999999,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.3,
+          "score": 18,
+          "continueProbability": 61,
+          "curiosity": 62
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.7999999999999999,
+          "score": 49,
+          "continueProbability": 61,
+          "curiosity": 62
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.8499999999999999,
+          "score": 52,
+          "continueProbability": 61,
+          "curiosity": 62
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 1,
+          "score": 62,
+          "continueProbability": 61,
+          "curiosity": 62
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.7999999999999999,
+          "score": 49,
+          "continueProbability": 61,
+          "curiosity": 62
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 18,
+          "continueProbability": 61,
+          "curiosity": 62
+        }
+      },
+      "at": "2026-08-10T09:32:22.122Z"
+    },
+    {
+      "sceneIndex": 4,
+      "chapter": 7,
+      "metrics": {
+        "continueProbability": 64,
+        "questionCount": 2,
+        "dropRisk": 30,
+        "curiosity": 64
+      },
+      "adjustments": {
+        "hookDensityBoost": 15,
+        "mysteryBoost": 0,
+        "conflictBoost": 0,
+        "payoffBoost": 0,
+        "hookLadderBoost": 0,
+        "firstScreenExplosion": false,
+        "advancePacing": false,
+        "increaseConflict": false,
+        "addMystery": false,
+        "addInformationGap": false,
+        "increaseHookDensity": true
+      },
+      "directives": [
+        "Continue Probability 64% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+        "[Story Memory · foreshadow] 伏笔「[object Object]」已 6 章未回收，建议本章推进或兑现",
+        "[角色成长] 下一章须推动 林砚 做出不可逆选择或付出代价",
+        "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+      ],
+      "triggers": {
+        "lowContinueProbability": true
+      },
+      "elementWeights": {
+        "conspiracy": 0.6499999999999999,
+        "relationship": 0,
+        "action": 0.6499999999999999,
+        "emotion": 0.44999999999999996,
+        "twist": 0.5,
+        "growth": 0.3,
+        "reasoning": 0.3
+      },
+      "engagement": {
+        "conspiracy": {
+          "id": "conspiracy",
+          "name": "阴谋",
+          "weight": 0.6499999999999999,
+          "score": 42,
+          "continueProbability": 64,
+          "curiosity": 64
+        },
+        "action": {
+          "id": "action",
+          "name": "动作",
+          "weight": 0.6499999999999999,
+          "score": 42,
+          "continueProbability": 64,
+          "curiosity": 64
+        },
+        "emotion": {
+          "id": "emotion",
+          "name": "情感",
+          "weight": 0.44999999999999996,
+          "score": 29,
+          "continueProbability": 64,
+          "curiosity": 64
+        },
+        "twist": {
+          "id": "twist",
+          "name": "反转",
+          "weight": 0.5,
+          "score": 32,
+          "continueProbability": 64,
+          "curiosity": 64
+        },
+        "growth": {
+          "id": "growth",
+          "name": "成长",
+          "weight": 0.3,
+          "score": 19,
+          "continueProbability": 64,
+          "curiosity": 64
+        },
+        "reasoning": {
+          "id": "reasoning",
+          "name": "推理",
+          "weight": 0.3,
+          "score": 19,
+          "continueProbability": 64,
+          "curiosity": 64
+        }
+      },
+      "at": "2026-08-10T09:32:52.579Z"
+    }
+  ],
+  "aggregatedMetrics": {
+    "avgContinueProbability": 67,
+    "maxDropRisk": 45,
+    "avgQuestionCount": 2,
+    "avgCuriosity": 68,
+    "sceneCount": 4
+  },
+  "adjustments": {
+    "hookDensityBoost": 15,
+    "mysteryBoost": 0,
+    "conflictBoost": 15,
+    "payoffBoost": 0,
+    "relationshipBeatBoost": 0,
+    "hookLadderBoost": 1,
+    "firstScreenExplosion": true,
+    "advancePacing": true,
+    "increaseConflict": true,
+    "addMystery": false,
+    "addInformationGap": false,
+    "increaseHookDensity": true
+  },
+  "directives": [
+    "[Story Memory · foreshadow] 伏笔「[object Object]」已 6 章未回收，建议本章推进或兑现",
+    "[角色成长] 下一章须推动 林砚 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条",
+    "Continue Probability 63% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Drop Risk 45% 偏高 — 下一章开篇须第一屏爆点，节奏提前，冲突升级，Hook Ladder 须递进",
+    "Continue Probability 61% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值",
+    "Continue Probability 64% < 70 — 下一章自动提高 Hook 密度，逐 Scene 递进，章尾须峰值"
+  ],
+  "storyMemoryDirectives": [
+    "[Story Memory · foreshadow] 伏笔「[object Object]」已 6 章未回收，建议本章推进或兑现",
+    "[角色成长] 下一章须推动 林砚 做出不可逆选择或付出代价",
+    "[长期悬念] 下一章规划须接续书级追问，禁止像重新开始 — 开放谜团 0 条"
+  ],
+  "elementScores": {
+    "conspiracy": 35,
+    "relationship": 32,
+    "action": 46,
+    "emotion": 40,
+    "twist": 48,
+    "growth": 28,
+    "reasoning": 23
+  },
+  "updatedAt": "2026-08-10T09:32:52.579Z",
+  "readerCurveReport": {
+    "readerAddictionScore": 69,
+    "nextChapterGuidance": [
+      "Hook 强度回落 — 下一章开篇 Hook 须高于上章末 Scene",
+      "Mystery Curve 断档 — 下一章须加深核心追问，禁止过早全解",
+      "疑问密度偏低 — 下一章每 Scene 至少留一个未答问题",
+      "Payoff 兑现不足 — 下一章须回收本章伏笔，给读者「原来如此」",
+      "阅读驱动力 61/100 偏低 — 下一章增加代价逼近与不可逆选择"
+    ]
+  },
+  "finalizedAt": "2026-08-06T08:45:24.625Z"
+}

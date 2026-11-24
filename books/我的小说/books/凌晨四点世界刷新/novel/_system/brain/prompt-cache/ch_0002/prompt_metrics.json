@@ -3,33 +3,33 @@
     {
       "sceneId": "ch2_s2",
       "index": 2,
-      "input_tokens": 698,
+      "input_tokens": 779,
       "output_tokens": null,
-      "total_tokens": 698,
-      "compile_time_ms": 4,
+      "total_tokens": 779,
+      "compile_time_ms": 5,
       "cache_hit": true,
       "cache_miss": 0,
       "cache_hit_rate": 100,
       "context_size": 87,
-      "ranking_drop": 2,
+      "ranking_drop": 6,
       "budget_usage": {
         "usage": {
-          "goal": 182,
+          "goal": 225,
           "conflict": 11,
-          "character": 380,
+          "character": 412,
           "world": 44,
           "facts": 0,
-          "history": 81,
+          "history": 87,
           "relationship": 0,
           "knowledge": 0
         },
         "pct": {
-          "goal": 82,
+          "goal": 102,
           "conflict": 3,
-          "character": 66,
+          "character": 71,
           "world": 90,
           "facts": 0,
-          "history": 88,
+          "history": 95,
           "relationship": 0,
           "knowledge": 0
         }
@@ -39,11 +39,132 @@
       "temperature": null,
       "retry_count": 0,
       "estimated_cost": null,
-      "prompt_hash": "cce5d0e91cc385cc",
+      "prompt_hash": "66a894e7317a3807",
       "token_source": "estimated",
       "model": null,
       "importance": {
-        "苏晚": 100
+        "苏晚": 100,
+        "林夜": 80
+      },
+      "ranking": {
+        "facts": [],
+        "knowledge": [],
+        "resources": [],
+        "relationships": [],
+        "timeline": [
+          {
+            "score": 29,
+            "text": "Day 1：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。；林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。"
+          }
+        ],
+        "totalTrimmed": 1
+      }
+    },
+    {
+      "sceneId": "ch2_s1",
+      "index": 1,
+      "input_tokens": 1536,
+      "output_tokens": null,
+      "total_tokens": 1536,
+      "compile_time_ms": 19,
+      "cache_hit": false,
+      "cache_miss": 2,
+      "cache_hit_rate": 0,
+      "context_size": 87,
+      "ranking_drop": 3,
+      "budget_usage": {
+        "usage": {
+          "goal": 141,
+          "conflict": 124,
+          "character": 480,
+          "world": 583,
+          "facts": 0,
+          "history": 208,
+          "relationship": 0,
+          "knowledge": 0
+        },
+        "pct": {
+          "goal": 44,
+          "conflict": 39,
+          "character": 65,
+          "world": 94,
+          "facts": 0,
+          "history": 79,
+          "relationship": 0,
+          "knowledge": 0
+        }
+      },
+      "budget_profile": "opening",
+      "llm_latency_ms": null,
+      "temperature": null,
+      "retry_count": 0,
+      "estimated_cost": null,
+      "prompt_hash": "5c3cc9169a5e87ca",
+      "token_source": "estimated",
+      "model": null,
+      "importance": {
+        "苏晚": 100,
+        "林夜": 80
+      },
+      "ranking": {
+        "facts": [],
+        "knowledge": [],
+        "resources": [],
+        "relationships": [],
+        "timeline": [
+          {
+            "score": 34,
+            "text": "Day 1：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。；林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。"
+          }
+        ],
+        "totalTrimmed": 1
+      }
+    },
+    {
+      "sceneId": "ch2_s3",
+      "index": 3,
+      "input_tokens": 1024,
+      "output_tokens": null,
+      "total_tokens": 1024,
+      "compile_time_ms": 3,
+      "cache_hit": true,
+      "cache_miss": 0,
+      "cache_hit_rate": 100,
+      "context_size": 87,
+      "ranking_drop": 5,
+      "budget_usage": {
+        "usage": {
+          "goal": 250,
+          "conflict": 189,
+          "character": 269,
+          "world": 107,
+          "facts": 0,
+          "history": 209,
+          "relationship": 0,
+          "knowledge": 0
+        },
+        "pct": {
+          "goal": 65,
+          "conflict": 37,
+          "character": 68,
+          "world": 97,
+          "facts": 0,
+          "history": 96,
+          "relationship": 0,
+          "knowledge": 0
+        }
+      },
+      "budget_profile": "ending",
+      "llm_latency_ms": null,
+      "temperature": null,
+      "retry_count": 0,
+      "estimated_cost": null,
+      "prompt_hash": "2ff6cffdc23d4138",
+      "token_source": "estimated",
+      "model": null,
+      "importance": {
+        "苏晚": 100,
+        "林夜": 80
       },
       "ranking": {
         "facts": [],
@@ -53,59 +174,11 @@
         "timeline": [
           {
             "score": 100,
-            "text": "Day 1：建立 POV（苏晚）当下目标：让主角林夜经历第一次世界刷新，确认其真实性，并让他意识到自己成为了唯一保留记忆的‘清醒者’，为后续的探索与反抗奠定基础。；克服阻碍：主角林夜所经历的、连续的记忆（昨天被车撞的伤疤消失、日期回退）与整个世界（所有人、所有记录都显示昨天是普通的一天）之间的根本性矛盾。他尝试证明自己是对的，但每一次尝试都加深了他的孤独与世界的不可知。；凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。；林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。"
+            "text": "Day 1：凌晨4:00，林夜在医院的病床上醒来，亲眼目睹世界从‘昨天’（他被撞的那天）瞬间‘更新’为‘今天’（他醒来发现日期倒退的这天）——天空、光线、手机日期、周围人的状态在一秒内完成切换。他通过预设的、不可能被复制的标记（在洗手间镜子上用血写的字）确认了重置的真实性，并确定只有自己记得。；林夜在确认重置的瞬间，手机屏幕亮起。没有信号，没有来电显示，却收到一条由本地系统应用‘效率助手’推送的空白消息。当他试图截屏时，消息消失得无影无踪，仿佛从未存在过。这暗示着‘系统’已经注意到了他这个‘异常体’。"
           }
         ],
-        "totalTrimmed": 0
+        "totalTrimmed": 1
       }
-    },
-    {
-      "sceneId": "ch2_s1",
-      "index": 1,
-      "input_tokens": 1602,
-      "output_tokens": null,
-      "total_tokens": 1602,
-      "compile_time_ms": 4,
-      "cache_hit": true,
-      "cache_miss": 0,
-      "cache_hit_rate": 100,
-      "context_size": 87,
-      "ranking_drop": 0,
-      "budget_usage": null,
-      "budget_profile": "opening",
-      "llm_latency_ms": null,
-      "temperature": null,
-      "retry_count": 0,
-      "estimated_cost": null,
-      "prompt_hash": "df08b62073fc33b6",
-      "token_source": "estimated",
-      "model": null,
-      "importance": null,
-      "ranking": null
-    },
-    {
-      "sceneId": "ch2_s3",
-      "index": 3,
-      "input_tokens": 1179,
-      "output_tokens": null,
-      "total_tokens": 1179,
-      "compile_time_ms": 3,
-      "cache_hit": true,
-      "cache_miss": 0,
-      "cache_hit_rate": 100,
-      "context_size": 87,
-      "ranking_drop": 0,
-      "budget_usage": null,
-      "budget_profile": "climax",
-      "llm_latency_ms": null,
-      "temperature": null,
-      "retry_count": 0,
-      "estimated_cost": null,
-      "prompt_hash": "0fce390ed9184555",
-      "token_source": "estimated",
-      "model": null,
-      "importance": null,
-      "ranking": null
     },
     {
       "sceneId": "ch2_s4",
@@ -168,5 +241,5 @@
     }
   ],
   "chapter": 2,
-  "updatedAt": "2026-07-28T03:20:20.599Z"
+  "updatedAt": "2026-09-07T10:07:39.998Z"
 }

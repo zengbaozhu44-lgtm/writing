@@ -2,6 +2,7 @@
  * 可排序 Context 源 — Prompt Compiler 仅发送 TopK
  */
 import { charCount } from './utils.js';
+import { filterCanonicalTimelineEvents } from './timeline-canon.js';
 
 export const RANKABLE_SOURCES = [
   'facts',
@@ -34,6 +35,8 @@ function item(source, id, text, meta = {}) {
 export function collectFacts(facts = []) {
   return facts.map((f, i) => item('facts', i, f.fact || f.text || String(f), {
     immutable: Boolean(f.immutable),
+    // EO-P7 I-05: immutable is retention/ranking meta, not established truth / obtains
+    immutableRole: 'retention_not_truth',
     chapter: f.chapter,
   })).filter(Boolean);
 }
@@ -47,14 +50,22 @@ export function collectKnowledge(knowledge = {}, pov = '') {
   }).filter(Boolean);
 }
 
+/**
+ * S6.3：仅 Canon-eligible（class=A）events 进入 Writer timeline context。
+ * B/C/D 在此拒绝；整 day 无 A → 不产生候选（宁缺勿滥）。
+ * 不改磁盘 11_timeline.yaml。
+ */
 export function collectTimeline(timeline = [], chapter = 1) {
   const days = Array.isArray(timeline) ? timeline : [];
   return days.map((d, i) => {
-    const events = (d.events || []).slice(0, 4).join('；');
+    const allowed = filterCanonicalTimelineEvents(d.events || []).slice(0, 4);
+    if (!allowed.length) return null;
+    const events = allowed.join('；');
     return item('timeline', i, `Day ${d.day}：${events}`, {
       day: d.day,
       chapter: d.chapter,
       recency: chapter - (d.chapter || 0),
+      canonFiltered: true,
     });
   }).filter(Boolean);
 }
@@ -64,7 +75,8 @@ export function collectRelationships(relationships = [], pov = '', present = [])
   return relationships
     .filter((e) => names.has(e.from) || names.has(e.to))
     .map((e, i) => item('relationships', i,
-      `${e.from}↔${e.to}：信任${e.trust ?? '—'} 敌意${e.hostility ?? '—'}${e.note ? ` · ${e.note}` : ''}`,
+      // WL-04: 方向保真 —— trust/hostility 是 from 对 to 的立场，对称化会让对向私人立场泄成双方共识
+      `${e.from}→${e.to}（${e.from} 对 ${e.to}）：信任${e.trust ?? '—'} 敌意${e.hostility ?? '—'}${e.note ? ` · ${e.note}` : ''}`,
       { from: e.from, to: e.to, hostility: e.hostility, trust: e.trust },
     ))
     .filter(Boolean);

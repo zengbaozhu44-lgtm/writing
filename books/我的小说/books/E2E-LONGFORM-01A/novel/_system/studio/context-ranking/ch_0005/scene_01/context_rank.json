@@ -1,0 +1,73 @@
+{
+  "version": "context-rank-1",
+  "chapter": 5,
+  "scene": {
+    "id": "ch5_s1",
+    "index": 1,
+    "goal": "承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：本章必须发生：第一次不可逆代价（死亡/暴露/失去）"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 3509,
+    "topK": null,
+    "usedChars": 34,
+    "selectedCount": 1,
+    "trimmedCount": 0,
+    "totalCandidates": 1
+  },
+  "topK": [
+    {
+      "id": "timeline:2",
+      "source": "timeline",
+      "text": "Day 0：他：他按下对讲机的通话键：“第九区，认知污染，一具，指甲缺",
+      "charCount": 34,
+      "scores": {
+        "relevance": 20,
+        "importance": 40,
+        "freshness": 70,
+        "narrativePriority": 18,
+        "budgetChars": 444,
+        "finalScore": 34.8
+      }
+    }
+  ],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 7
+    },
+    "timeline": {
+      "selectedCount": 1,
+      "totalCandidates": 1,
+      "topK": 5
+    }
+  },
+  "intent": {
+    "mainGoal": "本章必须发生：第一次不可逆代价（死亡/暴露/失去）；情感冲击落在「牺牲」",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-22T08:56:09.803Z"
+}

@@ -62,17 +62,19 @@ const ep = buildSceneExecutionPlan({
   chapterDir,
 });
 
-if (ep.version !== 'scene-execution-9') {
+// P3.3：顶层 choice / narrativeReward 投影已删（0 消费者）。
+// choice 本体经 scenePlan.choice / narrativeBeatPlan.choice 保留；reward 读 narrativeBeatPlan.reward。
+if (ep.version !== 'scene-execution-10') {
   console.error('FAIL ep version', ep.version);
   process.exit(1);
 }
-for (const k of ['choice', 'cost', 'escalation', 'targetEmotion', 'informationGap', 'promisePointer']) {
+for (const k of ['cost', 'escalation', 'targetEmotion', 'informationGap', 'promisePointer']) {
   if (ep[k] == null || ep[k] === '') {
     console.error('FAIL ep top-level', k, ep[k]);
     process.exit(1);
   }
 }
-if (!ep.narrativeReward && !ep.narrativeBeatPlan?.reward) {
+if (!ep.narrativeBeatPlan?.reward) {
   console.error('FAIL reward field');
   process.exit(1);
 }
@@ -99,7 +101,7 @@ if (expected && ep.beats[0]?.targetEmotion !== expected && ep.targetEmotion !== 
 
 console.log('OK module-4 chapter→execution', {
   chapterPointer: chapterDir.promisePointer,
-  epChoice: String(ep.choice).slice(0, 24),
+  epChoice: String(ep.scenePlan?.choice || ep.narrativeBeatPlan?.choice).slice(0, 24),
   epCost: String(ep.cost).slice(0, 24),
   epTarget: ep.targetEmotion,
   waveSource: ep.emotionWave?.source,

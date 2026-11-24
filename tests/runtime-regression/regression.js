@@ -16,15 +16,14 @@ const BOOK_DIR = path.join(ROOT, 'books/我的小说/books/_runtime-test');
 const GOLDEN_DIR = path.join(__dirname, 'golden');
 const BRAIN = path.join(BOOK_DIR, 'novel/_system/brain');
 
+// P3.1 退役持久化概念：story_health.json / decision_history.yaml / conflict_history.yaml
+// 写端已清零（0 writer），从 manifest 追踪移除（P3.7 A1）。adaptive_state 为活文件保留。
 const TRACKED = [
   'ch_0001_plan.json',
   'ch_0001_scenes.json',
   'ch_0001_run.json',
-  'story_health.json',
   'adaptive_state.json',
   'metrics_dashboard.json',
-  'decision_history.yaml',
-  'conflict_history.yaml',
 ];
 
 function hashFile(p) {

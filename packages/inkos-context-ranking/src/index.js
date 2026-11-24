@@ -24,6 +24,11 @@ export {
   RANKABLE_SOURCES,
   BUDGET_KEY_MAP,
 } from './collect.js';
+export {
+  classifyHistoricalTimelineEvent,
+  isCanonicalTimelineEvent,
+  filterCanonicalTimelineEvents,
+} from './timeline-canon.js';
 export { scoreContextEntry, WEIGHTS } from './score.js';
 export {
   buildContextRankReport,

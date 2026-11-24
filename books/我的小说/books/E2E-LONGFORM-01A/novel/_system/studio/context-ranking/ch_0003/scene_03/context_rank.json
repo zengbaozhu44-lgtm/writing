@@ -1,0 +1,58 @@
+{
+  "version": "context-rank-1",
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s3",
+    "index": 3,
+    "goal": "转折（本 Scene 兑现完整行动线）：no_causal_basis"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2342,
+    "topK": null,
+    "usedChars": 0,
+    "selectedCount": 0,
+    "trimmedCount": 0,
+    "totalCandidates": 0
+  },
+  "topK": [],
+  "trimmed": [],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 3
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 4
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 6
+    },
+    "timeline": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "本章必须发生：第一次主动使用核心能力并付出明确代价；情感冲击落在「绝望」",
+    "pov": "周砚"
+  },
+  "generatedAt": "2026-10-22T08:52:22.198Z"
+}

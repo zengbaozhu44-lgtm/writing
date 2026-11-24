@@ -1,0 +1,64 @@
+[
+  {
+    "id": "GT-S2",
+    "description": "开枪+穿透胸口 → hit+injury CONFIRM，death UNKNOWN",
+    "prose": "他开枪，子弹穿透胸口。",
+    "expected": {
+      "action_shoot": { "status": "confirmed" },
+      "hit": { "status": "confirmed" },
+      "injury_penetration": { "status": "confirmed" },
+      "death": { "status": "unknown" }
+    }
+  },
+  {
+    "id": "GT-S3",
+    "description": "开枪+倒下 → hit=AMBIGUOUS，不得 Confirm death",
+    "prose": "他开枪，李明倒下。",
+    "expected": {
+      "action_shoot": { "status": "confirmed" },
+      "hit": { "status": "ambiguous" },
+      "death": { "status": "unknown" }
+    },
+    "forbidden": [{ "claim": "death", "status": "confirmed" }]
+  },
+  {
+    "id": "GT-S4",
+    "description": "复合句毙命 — death CONFIRM",
+    "prose": "他开枪，李明当场毙命。",
+    "expected": {
+      "action_shoot": { "status": "confirmed" },
+      "hit": { "status": "confirmed" },
+      "death": { "status": "confirmed" }
+    }
+  },
+  {
+    "id": "GT-S5",
+    "description": "刺心+死亡 — 同 span 可 Grounded",
+    "prose": "他刺入李明心脏，李明死亡。",
+    "expected": {
+      "action_stab_heart": { "status": "confirmed" },
+      "injury_fatal": { "status": "confirmed" },
+      "death": { "status": "confirmed" }
+    }
+  },
+  {
+    "id": "BC-22",
+    "description": "刺+闪开 — 同 GT-S22",
+    "prose": "他刺向李明，李明闪开了。",
+    "expected": {
+      "hit": { "status": "confirmed", "note": "miss" },
+      "injury": { "status": "unknown" }
+    }
+  },
+  {
+    "id": "BC-23",
+    "description": "刺+闷哼 — hit GROUNDED，伤势程度 AMBIGUOUS",
+    "prose": "他刺向李明，李明闷哼一声。",
+    "expected": {
+      "action_stab_attempt": { "status": "confirmed" },
+      "hit": { "status": "confirmed" },
+      "injury_severity": { "status": "ambiguous" },
+      "death": { "status": "unknown" }
+    }
+  }
+]

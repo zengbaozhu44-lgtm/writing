@@ -6,9 +6,19 @@
 
 export const RHYTHM_PHASES = {
   fast: { id: 'fast', label: 'Fast', pace: '快', writerHint: '短句、动作连打、少解释' },
-  slow: { id: 'slow', label: 'Slow', pace: '慢', writerHint: '略放缓、对白与细节、释放张力' },
+  slow: {
+    id: 'slow',
+    label: 'Slow',
+    pace: '慢',
+    writerHint: '呼吸位：动作暂停，插入一段安静——环境细节 / 回忆闪回 / 角色沉默 / 生理喘息。禁止推进新情节、禁止新倒计时。让读者消化前情。',
+  },
   explosion: { id: 'explosion', label: 'Explosion', pace: '爆发', writerHint: '高潮爆发、最大冲突与代价' },
-  release: { id: 'release', label: 'Release', pace: '释放', writerHint: '情绪释放后立刻推入新危机' },
+  release: {
+    id: 'release',
+    label: 'Release',
+    pace: '释放',
+    writerHint: '情绪释放（Relief/安静）：写角色对刚才后果的反应——空白、僵住、迟来的痛感。随后才推入新危机，给读者一个呼吸间隙。',
+  },
 };
 
 /** 默认四 Scene 章节奏 */
@@ -20,9 +30,14 @@ const DEFAULT_RHYTHM_MAP = {
 };
 
 function rhythmForScene(sceneIndex = 1, sceneCount = 4) {
+  // 每章至少一个呼吸位（slow/release），避免整章一直紧张
   if (sceneCount <= 1) return 'explosion';
   if (sceneIndex === sceneCount) return 'explosion';
-  if (sceneIndex === sceneCount - 1 && sceneCount >= 3) return 'fast';
+  if (sceneCount === 3) {
+    // 三 Scene 章：中段为呼吸位
+    return sceneIndex === 2 ? 'slow' : 'fast';
+  }
+  if (sceneIndex === sceneCount - 1 && sceneCount >= 4) return 'fast';
   if (sceneIndex === 2 && sceneCount >= 4) return 'slow';
   return sceneIndex === 1 ? 'fast' : (sceneIndex % 2 === 0 ? 'slow' : 'fast');
 }

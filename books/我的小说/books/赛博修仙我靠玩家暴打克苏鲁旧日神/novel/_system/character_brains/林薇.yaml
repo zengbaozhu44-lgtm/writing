@@ -1,0 +1,40 @@
+character: 林薇
+goals:
+  surface: 完成当前任务
+  hidden: 保护重要之人
+fears:
+  - 被抛弃
+  - 失去记忆
+bottom_line: 不伤害无辜者
+current_state:
+  trust_protagonist: 30
+  fear: 45
+  betrayal_probability: 55
+  suspicion: 20
+  loyalty: 70
+growth_arc: 从怀疑到并肩，或走向对立
+triggers:
+  lie:
+    trust: -20
+    suspicion: 30
+  betrayal:
+    betrayal_probability: 25
+lastChapter: 12
+evolutionLog:
+  - chapter: 8
+    state:
+      trust_protagonist: 45
+      fear: 30
+      betrayal_probability: 35
+      suspicion: 20
+      loyalty: 70
+    at: 2026-08-11T06:35:34.381Z
+  - chapter: 12
+    state:
+      trust_protagonist: 30
+      fear: 45
+      betrayal_probability: 55
+      suspicion: 20
+      loyalty: 70
+    at: 2026-08-11T09:03:07.497Z
+updatedAt: 2026-08-11T09:24:38.523Z

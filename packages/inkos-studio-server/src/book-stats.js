@@ -6,7 +6,7 @@ import path from 'node:path';
 import { exists, readJson } from '../../inkos-core/src/lib/paths.js';
 import { getBookMeta } from './book-service.js';
 import { listChapters, getChapterText } from './chapter-service.js';
-import { loadStoryHealth } from '../../inkos-brain/src/health/story-health.js';
+import { computeCurrentHealth } from '../../inkos-brain/src/health/story-health.js';
 import { listBooks } from './book-service.js';
 
 export function getBookStats(bookDir) {
@@ -20,8 +20,8 @@ export function getBookStats(bookDir) {
 
   let health = 0;
   try {
-    const h = loadStoryHealth(bookDir);
-    health = h?.current?.overallScore ?? 0;
+    const h = computeCurrentHealth(bookDir);
+    health = h?.overallScore ?? 0;
   } catch { /* skip */ }
 
   const statusLabel = meta.currentChapter > 0 ? '正在创作' : (meta.status === 'draft' ? '规划中' : meta.status || '草稿');

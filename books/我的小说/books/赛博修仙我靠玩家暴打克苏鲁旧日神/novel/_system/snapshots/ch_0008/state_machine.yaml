@@ -1,0 +1,22 @@
+# Story State Machine
+
+current:
+  situation: null
+  goal: null
+  conflict: null
+  decision: null
+  action: null
+  consequence: null
+  new_situation: null
+
+history: []
+
+# 示例 history 条目:
+# - chapter: 1
+#   situation: 林深在档案馆夜班
+#   goal: 找到父亲线索
+#   conflict: 灰印失控
+#   decision: 主动触碰残页
+#   action: 用灰印读残页
+#   consequence: 残页自燃，获得路线图
+#   new_situation: 目标转向废弃医院

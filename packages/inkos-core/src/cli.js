@@ -6,6 +6,8 @@ import { detectBookVersion } from './lib/book.js';
 import { initBookV4 } from './workflows/init.js';
 import { buildWriteContext, formatContextMarkdown } from './workflows/before-write.js';
 import { applyPostChapter, loadDelta, writeDeltaTemplate } from './workflows/post-chapter.js';
+import { stampOperatorCliPost } from './lib/operator-proxy.js';
+import { partitionOperatorRawDelta } from './lib/tr01-operator-delta.js';
 import { runChapterReview, reviewFromDelta } from './workflows/chapter-review.js';
 import { runNpcSimulation } from './workflows/npc-simulation.js';
 import { runBrainChapter, isBrainEnabled } from './workflows/brain-chapter.js';
@@ -24,7 +26,7 @@ import {
   createBranch,
   listSnapshots,
   diffSnapshots,
-  loadStoryHealth,
+  computeCurrentHealth,
   isLlmConfigured,
 } from '../../inkos-brain/src/index.js';
 import { loadInkOsConfig } from './lib/config.js';
@@ -36,7 +38,7 @@ InkOS Novel OS V4 + Brain + Runtime 2.0
   inkos init <book-id> "<书名>" [题材] [目标目录相对路径]
   inkos context <book-dir> [--pov 角色] [--scene N] [--out 文件.md]
   inkos delta <book-dir> <chapter>          生成章后 delta 模板
-  inkos post <book-dir> <chapter> <delta.json>   Workflow 2: 写后更新
+  inkos post <book-dir> <chapter> <delta.json>   Operator Executor write-after (≠ Authority Subject / Act)
   inkos review <book-dir> <chapter> [delta.json] Workflow 3: 章后评审
   inkos npc <book-dir> <day> [角色1,角色2]     NPC 模拟
   inkos version <book-dir>                  检测书籍 schema 版本
@@ -67,6 +69,9 @@ Git Memory:
   inkos doctor <book-dir> [--chapter N] [--json] [--out file.json]
                               诊断 anchor/lore/prompt/repetition/tension/cost
 
+Story Route V1 (Possibility layer — non-canon sidecar):
+  inkos route generate <book-dir> [--chapter N] [--mock] [--json]
+
 示例:
   inkos init 暗流 "暗流" "都市奇幻"
   inkos doctor books/我的小说/books/暗流 --chapter 2
@@ -90,6 +95,7 @@ function parseArgs(argv) {
     else if (a === '--force') flags.force = true;
     else if (a === '--resume') flags.resume = true;
     else if (a === '--json') flags.json = true;
+    else if (a === '--mock') flags.mock = true;
     else if (a === '--since') flags.since = Number(args.shift());
     else if (a === '--label') flags.label = args.shift();
     else if (a === '--present') flags.present = args.shift()?.split(',') ?? [];
@@ -152,11 +158,23 @@ async function main() {
     }
 
     case 'post': {
+      // EO-P3 W-10: CLI caller is Executor=Operator, never Authority Subject.
+      // post alone ≠ Act; Author delegation is not assumed (recording NOT IMPLEMENTED).
+      // EO-TR-01: Operator raw delta ↛ 11/13 (W-10 residue). Foreshadow/NPC left untouched.
       const bookDir = resolveBookDir(positional[1]);
       const chapter = Number(positional[2]);
       const deltaPath = path.isAbsolute(positional[3]) ? positional[3] : path.join(process.cwd(), positional[3]);
       const delta = loadDelta(deltaPath);
-      const result = applyPostChapter(bookDir, chapter, delta);
+      const { operationalDelta, skippedRealityLike } = partitionOperatorRawDelta(delta);
+      const result = stampOperatorCliPost({
+        ...applyPostChapter(bookDir, chapter, operationalDelta),
+        d1Tr01: {
+          eo: 'EO-TR-01',
+          skippedRealityLike,
+          producesObtains: false,
+          note: 'Operator raw delta ↛ 11/13; post still ≠ Authority Act',
+        },
+      });
       if (delta.review) reviewFromDelta(bookDir, chapter, delta);
       console.log(JSON.stringify(result, null, 2));
       break;
@@ -315,8 +333,12 @@ async function main() {
           break;
         }
         case 'health': {
-          const health = loadStoryHealth(bookDir);
-          console.log(JSON.stringify(health?.current || { message: '尚无 Story Health 数据' }, null, 2));
+          try {
+            const health = computeCurrentHealth(bookDir);
+            console.log(JSON.stringify(health || { message: '尚无 Story Health 数据' }, null, 2));
+          } catch {
+            console.log(JSON.stringify({ message: '尚无 Story Health 数据（无运行产物）' }, null, 2));
+          }
           break;
         }
         default:
@@ -360,6 +382,36 @@ async function main() {
         default:
           console.error(`未知 memory 子命令: ${sub}`);
           process.exitCode = 1;
+      }
+      break;
+    }
+
+    case 'route': {
+      const sub = positional[1];
+      if (sub === 'generate') {
+        const bookDir = resolveBookDir(positional[2]);
+        const { runStoryRouteGenerate } = await import('../../inkos-route/src/index.js');
+        const result = await runStoryRouteGenerate(bookDir, {
+          chapter: flags.chapter,
+          pov: flags.pov,
+          present: flags.present,
+          mock: flags.mock || process.env.INKOS_ROUTE_MOCK === '1',
+        });
+        if (flags.json) {
+          console.log(JSON.stringify(result, null, 2));
+        } else {
+          const sel = result.selection;
+          console.log(`Story Route V1 · ch${result.chapter} · ${sel.selected_route_id}`);
+          console.log(`  标题: ${sel.selected_route?.title}`);
+          console.log(`  方向: ${sel.selected_route?.direction?.slice(0, 120)}…`);
+          console.log(`  候选: ${result.generator.candidates.length} → 合法 ${result.filter.valid.length} → 选中 ${sel.selected_route_id}`);
+          console.log(`  理由:`);
+          for (const r of sel.reasons || []) console.log(`    - ${r}`);
+          console.log(`  sidecar: ${result.paths.selected_route}`);
+        }
+      } else {
+        console.error('用法: inkos route generate <book-dir> [--chapter N] [--mock] [--json]');
+        process.exitCode = 1;
       }
       break;
     }

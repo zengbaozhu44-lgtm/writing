@@ -1,0 +1,81 @@
+{
+  "version": "context-rank-1",
+  "chapter": 3,
+  "scene": {
+    "id": "ch3_s2",
+    "index": 2,
+    "goal": "克服阻碍：no_causal_basis"
+  },
+  "weights": {
+    "relevance": 0.45,
+    "importance": 0.25,
+    "freshness": 0.2,
+    "narrativePriority": 0.1
+  },
+  "budget": {
+    "maxChars": 2259,
+    "topK": null,
+    "usedChars": 310,
+    "selectedCount": 1,
+    "trimmedCount": 1,
+    "totalCandidates": 2
+  },
+  "topK": [
+    {
+      "id": "facts:1",
+      "source": "facts",
+      "text": "第2章完成：轻快与滞涩交织。少年人假装成熟的语速，与突然失速的停顿。阳光比昨天更烈，但书店里更暗。小满来卖一套《哈利·波特》，声称「不稀罕了」。林守常发现扉页有她 2015 年的铅笔字，知道她在撒谎（需要钱）。他按原价收了书，多塞一本《挪威的森林》。本章的折痕是一个被咽回去的句子：有人看破不说破，有人用一个体面的借口维持处境。上章末，关门后，门缝下被塞进一张纸片，上面用铅笔写着两个字：等你——这些悬在心头的事，还没有被回答。本章须为「阿婆手帕上的周字浮现老周妻子的遗物连接」完成情感前置。对悬而未决的悬念只推进、不解答——用物证与质感加深悬疑，绝不给答案。POV 林守常——只写他看见的与咽回去的，不写答案。（2408字）",
+      "charCount": 310,
+      "scores": {
+        "relevance": 24,
+        "importance": 75,
+        "freshness": 88,
+        "narrativePriority": 47,
+        "budgetChars": 120,
+        "finalScore": 51.85
+      }
+    }
+  ],
+  "trimmed": [
+    {
+      "id": "facts:0",
+      "source": "facts",
+      "finalScore": 50.8,
+      "trimReason": "Budget 不足",
+      "charCount": 245
+    }
+  ],
+  "policy": "Context Ranking · 仅 TopK · 禁止全量 Context",
+  "bySource": {
+    "facts": {
+      "selectedCount": 1,
+      "totalCandidates": 2,
+      "topK": 2
+    },
+    "knowledge": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "resources": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    },
+    "relationships": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 10
+    },
+    "timeline": {
+      "selectedCount": 0,
+      "totalCandidates": 0,
+      "topK": 2
+    }
+  },
+  "intent": {
+    "mainGoal": "阿婆如常来店里，不买东西，只坐在角落那把缺腿的椅子上晒太阳。临走时，她留下一个洗干净的橘子（没有塑料袋，用一块旧手帕包着）。林守常回赠一本缺页的《繁星·春水》。两人全程几乎没有对话。",
+    "pov": "林守常"
+  },
+  "generatedAt": "2026-10-15T03:43:58.704Z"
+}
