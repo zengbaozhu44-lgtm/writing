@@ -40,11 +40,31 @@ export function appendFacts(factsPath, newFacts, chapter) {
   return db;
 }
 
+/**
+ * 幂等写入时间线：同一 chapter 只保留最新一条，避免同章 rerun 重复追加。
+ */
 export function appendTimeline(timelinePath, entry) {
   const tl = readYaml(timelinePath) || { meta: {}, days: [] };
   tl.days = tl.days || [];
-  tl.days.push(entry);
-  if (entry.day != null) tl.meta.current_day = entry.day;
+
+  const chapter = entry?.chapter;
+  if (chapter != null) {
+    const existingIndex = tl.days.findIndex((d) => d && d.chapter === chapter);
+    if (existingIndex >= 0) {
+      tl.days[existingIndex] = entry; // 覆盖
+    } else {
+      tl.days.push(entry);
+    }
+  } else {
+    // 无 chapter 时保持追加（兼容旧调用）
+    tl.days.push(entry);
+  }
+
+  if (entry?.day != null) {
+    tl.meta = tl.meta || {};
+    tl.meta.current_day = entry.day;
+  }
+
   writeYaml(timelinePath, tl);
   return tl;
 }
@@ -79,10 +99,31 @@ export function patchResources(resPath, delta) {
   return r;
 }
 
+/**
+ * 按 name + day 去重，避免同章 rerun 重复堆 NPC 记录。
+ */
 export function patchNpcSim(npcPath, entries) {
   const n = readYaml(npcPath) || { meta: {}, npcs: [] };
-  n.npcs.push(...entries);
-  if (entries[0]?.day) n.meta.last_simulated_day = entries[0].day;
+  n.npcs = n.npcs || [];
+
+  for (const entry of entries || []) {
+    const name = entry?.name;
+    const day = entry?.day;
+    if (name != null && day != null) {
+      const idx = n.npcs.findIndex((x) => x && x.name === name && x.day === day);
+      if (idx >= 0) {
+        n.npcs[idx] = entry;
+        continue;
+      }
+    }
+    n.npcs.push(entry);
+  }
+
+  if (entries?.[0]?.day) {
+    n.meta = n.meta || {};
+    n.meta.last_simulated_day = entries[0].day;
+  }
+
   writeYaml(npcPath, n);
   return n;
 }

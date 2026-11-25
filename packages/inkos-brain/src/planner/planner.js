@@ -163,6 +163,7 @@ export function planChapter(ctx, attempt = 1, options = {}) {
     closingEmotion: priorAnchor?.narrative_momentum?.closing_emotion || null,
     forbiddenOpenings: priorAnchor?.narrative_momentum?.forbidden_openings || [],
     tailExcerpt: priorAnchor?.narrative_momentum?.tailExcerpt || null,
+    recentActuals: priorAnchor?.recent_actuals || [],
     voiceDna: priorAnchor?.voiceDna
       ? { ...priorAnchor.voiceDna, forced: true, inherited: true }
       : null,
@@ -381,6 +382,7 @@ export function serializeAuthoredPlanToIntent(plan, nextChapter, priorAnchor, st
     closingEmotion: priorAnchor?.narrative_momentum?.closing_emotion || null,
     forbiddenOpenings: priorAnchor?.narrative_momentum?.forbidden_openings || [],
     tailExcerpt: priorAnchor?.narrative_momentum?.tailExcerpt || null,
+    recentActuals: priorAnchor?.recent_actuals || [],
     voiceDna: priorAnchor?.voiceDna ? { ...priorAnchor.voiceDna, forced: true, inherited: true } : null,
     chapterTone: null,
     tone: null,

@@ -930,7 +930,15 @@ function saveChapterFile(bookDir, chapter, text, intent) {
   const dir = path.join(bookDir, 'chapters');
   fs.mkdirSync(dir, { recursive: true });
   const title = intent.mainGoal?.slice(0, 8) || '章';
-  const file = path.join(dir, `${String(chapter).padStart(4, '0')}_${sanitize(title)}.md`);
+  const pad = String(chapter).padStart(4, '0');
+  // 同章幂等：与 MemoryUnit.writeChapterMarkdown 是两条写盘路径，
+  // 写前清掉本章旧文件，避免 rerun / 双写累积重复章节
+  for (const name of fs.readdirSync(dir)) {
+    if (name.startsWith(`${pad}_`) && name.endsWith('.md')) {
+      fs.unlinkSync(path.join(dir, name));
+    }
+  }
+  const file = path.join(dir, `${pad}_${sanitize(title)}.md`);
   writeText(file, text);
   return file;
 }

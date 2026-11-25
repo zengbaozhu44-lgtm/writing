@@ -28,7 +28,10 @@ import {
   updateManifestChapter,
   writeNextChapterTask,
 } from '../../../inkos-brain/src/memory/state-updater.js';
-import { evolveFromChapter } from '../../../inkos-brain/src/memory/state-evolution-engine.js';
+import {
+  evolveFromChapter,
+  collectActualEventsFromScenes,
+} from '../../../inkos-brain/src/memory/state-evolution-engine.js';
 import { brainSystemDir } from '../../../inkos-brain/src/loader.js';
 import {
   chapterAnchorPath as plannerAnchorPath,
@@ -305,6 +308,7 @@ export function buildChapterAnchor(chapter, stateDiff = {}) {
   const relationship_state = deriveRelationshipState(intent, present, stateDiff, ch);
   const banned_elements = deriveBannedElements(intent, stateDiff, ch);
   const voiceDna = resolveAnchorVoiceDna(intent, stateDiff);
+  const recent_actuals = buildRecentActuals(scenes);
 
   return {
     version: 'chapter-anchor-3',
@@ -316,6 +320,7 @@ export function buildChapterAnchor(chapter, stateDiff = {}) {
     banned_elements,
     voiceDna,
     narrative_momentum: buildNarrativeMomentum(chapter, stateDiff, intent),
+    recent_actuals,
     committedAt: new Date().toISOString(),
     d1InferenceDemotion: stampOpsHint({
       paths: ['deriveRelationshipState', 'deriveClosingEmotion', 'buildChapterAnchor'],
@@ -323,6 +328,26 @@ export function buildChapterAnchor(chapter, stateDiff = {}) {
       closing_emotion: 'ops_hint_not_character_reality',
     }),
   };
+}
+
+/**
+ * 章级软记忆：真实发生事件（scene.actualEvents，text-grounded）→ 下一章 Anchor 读回。
+ * ≠ Canon timeline 写入（EO-P2 不变）；Plan 字段由 collectActualEventsFromScenes 剥离。
+ */
+function buildRecentActuals(scenes = []) {
+  const { events } = collectActualEventsFromScenes(scenes);
+  const out = [];
+  const seen = new Set();
+  for (const ev of events) {
+    if (!ev || typeof ev !== 'object') continue;
+    const text = String(ev.summary || ev.text || ev.action || ev.consequence || '').trim();
+    if (!text) continue;
+    const key = text.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ sceneIndex: ev.fromScene ?? null, text: text.slice(0, 200) });
+  }
+  return out.slice(0, 12);
 }
 
 /**

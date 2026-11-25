@@ -3,6 +3,7 @@
  */
 import { getBookPaths } from '../../../inkos-core/src/lib/book.js';
 import { exists, readJson, readText, writeJson, writeText } from '../../../inkos-core/src/lib/paths.js';
+import { readYaml } from '../../../inkos-core/src/lib/yaml-store.js';
 import { applyPostChapter } from '../../../inkos-core/src/workflows/post-chapter.js';
 import {
   isTemplateFallback,
@@ -81,10 +82,36 @@ export function buildStateDelta(bookDir, chapter, {
     chapter,
   });
 
+  // 保守兜底（Q-S1-c 正式实现前的过渡）：World Event Day 仍 unknown 时，
+  // 若 11_timeline 已有已知 day 则按 prev+1 推进，避免 Day 永远冻在初值。
+  // 来源仅限时间线自身，仍不触 F5 的 chapter N → day N 禁令；
+  // 同章 rerun 复用本章已写入的 day（兜底须幂等，rerun 不推进 Day）。
+  let finalDay = worldDay.day;
+  if (finalDay == null) {
+    try {
+      const tl = readYaml(getBookPaths(bookDir).modules?.timeline);
+      const days = Array.isArray(tl?.days) ? tl.days : [];
+      const own = days.find((d) => d && d.chapter === chapter && typeof d.day === 'number');
+      if (own != null) {
+        finalDay = own.day;
+      } else {
+        let prevDay = null;
+        for (const d of days) {
+          if (d && d.chapter !== chapter && typeof d.day === 'number' && d.day > prevDay) prevDay = d.day;
+        }
+        if (prevDay == null) {
+          const metaDay = tl?.meta?.current_day;
+          if (typeof metaDay === 'number' && Number.isFinite(metaDay)) prevDay = metaDay;
+        }
+        if (prevDay != null) finalDay = prevDay + 1;
+      }
+    } catch { /* 兜底失败保持 unknown */ }
+  }
+
   const delta = {
     timeline: {
       // F5: null = unknown World Event Day (chapter is only on appendTimeline via applyPostChapter)
-      day: worldDay.day,
+      day: finalDay,
       time: extractTime(ctx.time) || extractTime(ctx.currentDate) || '00:00',
       // EO-P2 / S6.1：禁止 plan / modelled causal / scene.goal → Canon timeline
       events: resolveTimelineEvents({ intent: ctx, scenes, causalChain }),

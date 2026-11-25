@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { exists, readJson } from '../../inkos-core/src/lib/paths.js';
+import { readYaml } from '../../inkos-core/src/lib/yaml-store.js';
 import {
   getCachedModule,
   loadSceneSummaries,
@@ -110,6 +111,47 @@ export function loadPriorChapterScenesForActual(bookDir, chapter) {
   }
   const scenes = Array.isArray(data?.scenes) ? data.scenes : [];
   return scenes.filter((s) => s && String(s.text || '').trim()).slice(-2);
+}
+
+/**
+ * 章缝软记忆：读取上一章 ch_(N-1)_anchor.yaml 的 recent_actuals
+ * （MemoryUnit.commit 时从 scene.actualEvents 收敛，整章 ≤12 条）。
+ * consume-only / fail-closed：无文件 / 无字段 → []。
+ */
+export function loadPriorChapterRecentActuals(bookDir, chapter) {
+  const ch = Number(chapter);
+  if (!bookDir || !Number.isFinite(ch) || ch <= 1) return [];
+  const file = path.join(bookDir, 'states', `ch_${String(ch - 1).padStart(4, '0')}_anchor.yaml`);
+  if (!exists(file)) return [];
+  try {
+    const anchor = readYaml(file);
+    const list = Array.isArray(anchor?.recent_actuals) ? anchor.recent_actuals : [];
+    return list.filter((a) => a && String(a.text || '').trim());
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Format prior-chapter Actual block for Writer prompt (soft memory).
+ * Continuity fuel only — 禁止当作未发生；不得在此新增/改写事件。
+ */
+export function formatPriorChapterActualsBlock(recentActuals = []) {
+  const list = (Array.isArray(recentActuals) ? recentActuals : [])
+    .filter((a) => a && String(a.text || '').trim());
+  if (!list.length) return '';
+  const lines = [
+    '### Prior Chapter Actual Events (soft memory)',
+    '> role: chapter_anchor_recent_actuals（consume-only · 软记忆）',
+    '> = 上一章正文已真实发生事件的章级锚点读回；必须尊重，禁止当作未发生。',
+    '> ≠ Canon timeline 写入 · ≠ Plan · 不得在此新增或改写事件。',
+    '',
+  ];
+  for (const a of list) {
+    const idx = a.sceneIndex != null ? `S${a.sceneIndex}` : '?';
+    lines.push(`- [${idx}] ${String(a.text).trim()}`);
+  }
+  return lines.join('\n');
 }
 
 function summaryTextHash(text) {
@@ -344,6 +386,12 @@ export function compileScenePrompt(ctx, scene) {
   const actualEventsBlock = formatActualEventsBlock(prevActual);
   ctx.previousActualEvents = prevActual;
 
+  // 章缝 Scene 1：上一章 Anchor recent_actuals（整章视角；补充 last-2-scenes 读回）
+  const priorRecentActuals = Number(scene.index) <= 1
+    ? loadPriorChapterRecentActuals(bookDir, chapter)
+    : [];
+  const priorActualsBlock = formatPriorChapterActualsBlock(priorRecentActuals);
+
   // F8.3: Plan Validity (session/prompt; before Goal is treated as direct command)
   if (!scene.planValidity) ensurePlanValidity(scene, intent || ctx.intent || {});
   const demoted = isExecutionPrivilegeDemoted(scene.planValidity);
@@ -382,6 +430,8 @@ export function compileScenePrompt(ctx, scene) {
     actualEvents: prevActual
       ? (prevActual.events || []).map((e) => e.id).join(',')
       : null,
+    // 章缝软记忆：上一章 Anchor recent_actuals 变化时失效缓存
+    priorActuals: priorRecentActuals.map((a) => a.text).join('|') || null,
   });
 
   const cachedText = loadCompiledPromptCache(bookDir, chapter, inputHash);
@@ -482,6 +532,16 @@ export function compileScenePrompt(ctx, scene) {
       category: 'history',
       priority: 91,
       content: actualEventsBlock,
+    });
+  }
+  // 章缝软记忆：上一章真实事件（Anchor recent_actuals，必须尊重）
+  if (priorActualsBlock) {
+    add({
+      key: 'prior_chapter_actuals',
+      label: 'Prior Chapter Actual Events (soft)',
+      category: 'history',
+      priority: 90,
+      content: priorActualsBlock,
     });
   }
   const cont = buildContinuationBlock(scene.index, summaries[summaries.length - 1]?.summary, clock);
