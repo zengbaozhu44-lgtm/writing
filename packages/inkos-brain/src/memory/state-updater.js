@@ -1,8 +1,9 @@
 /**
  * State Updater — 构建 StateDiff / 应用 Canon（仅 MemoryUnit.commit 可调用物理写）
  */
+import path from 'node:path';
 import { getBookPaths } from '../../../inkos-core/src/lib/book.js';
-import { exists, readJson, readText, writeJson, writeText } from '../../../inkos-core/src/lib/paths.js';
+import { exists, readJson, readText, writeJson, writeText, chapterNextTaskPath } from '../../../inkos-core/src/lib/paths.js';
 import { readYaml } from '../../../inkos-core/src/lib/yaml-store.js';
 import { applyPostChapter } from '../../../inkos-core/src/workflows/post-chapter.js';
 import {
@@ -134,10 +135,149 @@ export function buildStateDelta(bookDir, chapter, {
   }
 
   if (nextChapterPlan?.intent) {
-    delta.next_chapter_task = nextChapterPlan.intent;
+    // B 回声切断：下一章任务不得复印本章 intent（已支付代价/已完成的交割动作会被逐章重演）
+    delta.next_chapter_task = deriveNextChapterIntent(
+      nextChapterPlan.intent,
+      null,
+      { nextChapter: chapter + 1 },
+    );
   }
 
   return delta;
+}
+
+/**
+ * B 回声切断：从本章 intent 派生「下一章」任务意图。
+ *
+ * 原则：
+ * 1) 完结章的 mustLose 按定义已支付（Validation 靠它通过 character_advanced），
+ *    无条件不再作为下一章任务下发——携带即回声。
+ * 2) 目标/阻碍/高潮/博弈中与已支付代价关联的内容字段一并剥离，
+ *    目标改由 前瞻信号（ending / newForeshadow / anchor recent_actuals）派生。
+ */
+export function deriveNextChapterIntent(finishedIntent = {}, priorAnchor = null, options = {}) {
+  const intent = { ...(finishedIntent || {}) };
+  const chapter = Number(options.nextChapter || (Number(intent.chapter) || 0) + 1);
+
+  const mustLose = String(intent.mustLose || intent['代价'] || '').trim();
+  const mainGoal = String(intent.mainGoal || intent['目标'] || '').trim();
+  const ending = String(intent.ending || '').trim();
+  const foreshadow = String(intent.newForeshadow || '').trim();
+
+  const costKeywords = extractCostKeywords(mustLose, intent.pov);
+  const echoesCost = (text) => costKeywords.some((k) => String(text || '').includes(k));
+  const goalCorpus = [mainGoal, intent.turningPoint, intent.bargain, ...(intent.obstacles || [])];
+  const goalLooksLikeCompletedCost = Boolean(mustLose && goalCorpus.some(echoesCost));
+
+  let nextGoal = mainGoal;
+  if (goalLooksLikeCompletedCost || isMoodOnly(mainGoal)) {
+    // 前者：目标关联已支付代价；后者：目标是纯氛围句（无追查对象，会原地踏步）
+    nextGoal = pickForwardGoal(ending, foreshadow, priorAnchor)
+      || '承接上一章结果，推进未解决线索';
+  }
+
+  const obstacles = (intent.obstacles || [])
+    .map((o) => String(o || '').trim())
+    .filter(Boolean)
+    .filter((o) => !echoesCost(o));
+
+  return {
+    ...intent,
+    chapter,
+    mainGoal: nextGoal,
+    chapterIntent: `第${chapter}章：${nextGoal}`,
+    // 已支付代价一律不下发（下一章的代价由其自身规划/作者设立）
+    mustLose: '',
+    turningPoint: echoesCost(intent.turningPoint) ? '' : intent.turningPoint,
+    bargain: echoesCost(intent.bargain) ? '' : intent.bargain,
+    obstacles: obstacles.length ? obstacles : ['阻力来自上一章后果的延续'],
+    _derivedFrom: 'deriveNextChapterIntent',
+    _completedCostStripped: goalLooksLikeCompletedCost,
+  };
+}
+
+const COST_STOPWORDS = new Set(['失去', '独自', '掌控', '安全', '获得', '感受', '感觉', '代价', '必须', '已经', '无法']);
+
+/**
+ * 从已支付代价中提取内容关键词（2 字滑窗，滤通用词与 POV 名）。
+ * 例：「苏晚失去独自掌控配电间钥匙的安全感」→ [配电, 电间, 间钥, 钥匙, …]
+ */
+function extractCostKeywords(mustLose, pov = '') {
+  const t = String(mustLose || '').replace(/\s/g, '');
+  if (!t) return [];
+  const keys = new Set();
+  for (let i = 0; i + 2 <= t.length; i += 1) {
+    const w = t.slice(i, i + 2);
+    if (COST_STOPWORDS.has(w)) continue;
+    if (pov && pov.includes(w)) continue;
+    keys.add(w);
+  }
+  return [...keys];
+}
+
+function pickForwardGoal(ending, foreshadow, priorAnchor) {
+  const actuals = priorAnchor?.recent_actuals || [];
+
+  // 1) actuals 未解钩子优先（可追查物件/地点/信息）
+  const hook = pickUnresolvedHook(actuals);
+  if (hook) return `追查：${hook}`;
+
+  // 2) 新增伏笔
+  const fromFs = String(foreshadow || '').trim();
+  if (fromFs && fromFs.length >= 4) return `追查：${fromFs.slice(0, 30)}`;
+
+  // 3) ending 最后才用（且尽量不是纯氛围句）
+  const fromEnding = String(ending || '').trim();
+  if (fromEnding && fromEnding.length >= 8 && !isMoodOnly(fromEnding)) {
+    return fromEnding.slice(0, 40);
+  }
+
+  // 4) 兜底
+  if (fromEnding) return `承接：${fromEnding.slice(0, 30)}`;
+  return '';
+}
+
+function pickUnresolvedHook(actuals = []) {
+  // 关键词：未解、可追查物件/地点/信息
+  const HOOK_RE = /(册子|图纸|井道|锁|门|记录|照片|钥匙|管道|八楼|配电|标签|箱|洞|塑料布|工具)/;
+
+  const scored = [];
+  for (const a of actuals) {
+    const text = String(a?.text || '').trim();
+    if (!text || text.length < 8) continue;
+
+    // 已完成交付类（交钥匙、已交给）降低优先级
+    if (/(交给|交还|已交|失去|递出)/.test(text) && /钥匙/.test(text)) continue;
+
+    let score = 0;
+    if (HOOK_RE.test(text)) score += 3;
+    if (/(没有记录|从里面|锁死|按了回去|折死|蒙上|保存)/.test(text)) score += 2;
+    if (/(发现|露出|写着|查)/.test(text)) score += 1;
+
+    if (score > 0) scored.push({ score, text });
+  }
+
+  scored.sort((x, y) => y.score - x.score);
+  if (!scored.length) return '';
+
+  // 压成短可执行目标（尽量截到第一个句读；无句读则截到最后一个逗号，避免半句硬切）
+  const raw = scored[0].text;
+  const m = raw.match(/^(.{8,36}?[。！？!?；;])/);
+  let compact;
+  if (m) {
+    compact = m[1];
+  } else {
+    const slice = raw.slice(0, 36);
+    const c = slice.lastIndexOf('，');
+    compact = c >= 8 ? slice.slice(0, c) : slice;
+  }
+  return compact.replace(/\s+/g, ' ').trim();
+}
+
+function isMoodOnly(s = '') {
+  // 纯氛围/感官句，缺少可执行对象
+  return /(独自|站在|听到|滴了一声|灯|潮|冷|沉默)/.test(s)
+    && !/(册子|图纸|井道|锁|门|记录|钥匙|管道|八楼|配电)/.test(s);
 }
 
 /**
@@ -160,7 +300,18 @@ export function applyStateDiffToCanon(bookDir, chapter, canonDelta = {}) {
   const result = applyPostChapter(bookDir, chapter, postDelta);
 
   if (next_chapter_task) {
-    writeNextChapterTask(bookDir, chapter + 1, next_chapter_task);
+    // B 回声切断：写卡前强制派生（完结章 anchor 已于 ②b 落盘，可为前瞻目标供料）
+    let finishedAnchor = null;
+    try {
+      finishedAnchor = readYaml(
+        path.join(bookDir, 'states', `ch_${String(chapter).padStart(4, '0')}_anchor.yaml`),
+      );
+    } catch { /* anchor 缺失则无前瞻供料，不阻断 */ }
+    writeNextChapterTask(bookDir, chapter + 1, deriveNextChapterIntent(
+      next_chapter_task,
+      finishedAnchor,
+      { nextChapter: chapter + 1 },
+    ));
   }
 
   return { ...result, nextChapter: chapter + 1 };
@@ -174,7 +325,18 @@ export function applyStateDiffToCanon(bookDir, chapter, canonDelta = {}) {
  */
 export function writeNextChapterTask(bookDir, chapter, intent, options = {}) {
   const bp = getBookPaths(bookDir);
-  const target = bp.modules.current_chapter;
+  // B 按章任务卡：states/ch_XXXX_next_task.md 为权威；09_current_chapter.md 仅前沿镜像
+  const target = chapterNextTaskPath(bookDir, chapter);
+  const mirror = bp.modules.current_chapter;
+
+  // 指针只前进：卡目标章落后于当前进度时，禁止用旧章 rerun 的产物覆盖既有按章卡
+  let lastApplied = 0;
+  try {
+    lastApplied = Number(readJson(bp.manifest)?.lastAppliedChapter || 0);
+    if (Number(chapter) <= lastApplied) {
+      return { written: false, skipped: true, path: target, reason: 'behind_progress_frontier' };
+    }
+  } catch { /* manifest 读失败不阻断 */ }
 
   if (exists(target) && options.force !== true) {
     try {
@@ -193,10 +355,11 @@ export function writeNextChapterTask(bookDir, chapter, intent, options = {}) {
   }
 
   const raw = [
-    '# 09 Current Chapter',
+    `# Next Chapter Task · 第 ${chapter} 章`,
     '',
     '> 自动生成 — 下一章任务卡',
     '',
+    `- **章节**：${chapter}`,
     `- **POV**：${intent.pov || ''}`,
     `- **目标**：${intent.mainGoal || ''}`,
     `- **第一阻碍**：${intent.obstacles?.[0] || ''}`,
@@ -214,9 +377,27 @@ export function writeNextChapterTask(bookDir, chapter, intent, options = {}) {
     source: 'writeNextChapterTask',
   });
   writeText(target, stamped);
+
+  // 前沿镜像：仅 chapter === lastApplied+1 时同步 09（authored 09 不覆盖）
+  let mirrored = false;
+  if (Number(chapter) === lastApplied + 1) {
+    let mirrorAuthored = false;
+    try {
+      if (exists(mirror)) {
+        mirrorAuthored = parseChapterTaskProvenance(readText(mirror) || '')?.kind === 'authored';
+      }
+    } catch { /* 读失败视为可镜像 */ }
+    if (!mirrorAuthored) {
+      writeText(mirror, stamped);
+      mirrored = true;
+    }
+  }
+
   return {
     written: true,
     path: target,
+    mirrored,
+    mirrorPath: mirrored ? mirror : null,
     provenance: { kind: 'generated', source: 'writeNextChapterTask' },
   };
 }
@@ -283,6 +464,10 @@ export function patchCurrentStateTime(bookDir, dayStr, chapter = null) {
 export function updateManifestChapter(bookDir, chapter) {
   const bp = getBookPaths(bookDir);
   const manifest = readJson(bp.manifest);
+  // 指针只前进：旧章 rerun 不回卷 lastAppliedChapter（与 applyPostChapter 同规）
+  if (Number(chapter) < Number(manifest?.lastAppliedChapter || 0)) {
+    return { skipped: true, reason: 'old_chapter_rerun' };
+  }
   manifest.lastAppliedChapter = chapter;
   manifest.updatedAt = new Date().toISOString();
   writeJson(bp.manifest, manifest);

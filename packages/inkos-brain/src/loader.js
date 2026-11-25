@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { getBookPaths } from '../../inkos-core/src/lib/book.js';
-import { exists, readJson, readText } from '../../inkos-core/src/lib/paths.js';
+import { exists, readJson, readText, chapterNextTaskPath } from '../../inkos-core/src/lib/paths.js';
 import { readYaml } from '../../inkos-core/src/lib/yaml-store.js';
 import { stampRegisteredLegacy } from '../../inkos-core/src/lib/legacy-read-preference.js';
 import { resolveCharacter } from '../../inkos-core/src/lib/entity-identity.js';
@@ -199,9 +199,28 @@ export function loadBrainContext(bookDir, options = {}) {
   const manifest = readJson(bp.manifest);
   const chapter = options.chapter ?? (manifest.lastAppliedChapter ?? 0) + 1;
 
-  const currentChapterMd = exists(m.current_chapter) ? readText(m.current_chapter) : '';
+  // B 按章任务卡：states/ch_XXXX_next_task.md 为权威；09_current_chapter.md 为前沿镜像/旧书回退
+  let currentChapterMd = '';
+  let taskSource = 'none';
+  const perChapterTask = chapterNextTaskPath(bookDir, chapter);
+  if (exists(perChapterTask)) {
+    currentChapterMd = readText(perChapterTask);
+    taskSource = 'per_chapter';
+  } else if (exists(m.current_chapter)) {
+    currentChapterMd = readText(m.current_chapter);
+    taskSource = 'legacy_09';
+  }
   const currentStateMd = exists(m.current_state) ? readText(m.current_state) : '';
-  const chapterTask = parseChapterTask(currentChapterMd);
+  let chapterTask = parseChapterTask(currentChapterMd);
+  // 卡章号校验：卡上章节与本章不符 = 上章残留泄漏，视为无效（回退卷纲 / anchor）。
+  // 无章号戳的旧卡兼容放行。
+  const cardChapter = Number(chapterTask['章节'] ?? chapterTask.chapter);
+  if (Number.isFinite(cardChapter) && cardChapter !== Number(chapter)) {
+    console.warn(
+      `[loader] stale task card ignored (${taskSource}): card=ch${cardChapter}, planning=ch${chapter} — 旧任务卡不得当作本章目标`,
+    );
+    chapterTask = {};
+  }
   const state = parseStateTable(currentStateMd);
 
   const pov = options.pov || chapterTask.POV || chapterTask.pov || state.POV || '';

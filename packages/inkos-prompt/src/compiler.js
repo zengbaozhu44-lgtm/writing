@@ -134,22 +134,23 @@ export function loadPriorChapterRecentActuals(bookDir, chapter) {
 
 /**
  * Format prior-chapter Actual block for Writer prompt (soft memory).
- * Continuity fuel only — 禁止当作未发生；不得在此新增/改写事件。
+ * 2500-token 总预算下 history 品类仅 ~200-450 token：本块必须紧凑。
+ * 条目由 anchor 侧 formatActualEventText 整形为 ≤60 字完整句；
+ * 此处整句渲染、按总长 ≤300 字上限丢弃多余条目（不句中截断）。
  */
 export function formatPriorChapterActualsBlock(recentActuals = []) {
   const list = (Array.isArray(recentActuals) ? recentActuals : [])
-    .filter((a) => a && String(a.text || '').trim());
+    .map((a) => String(a?.text || '').replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
   if (!list.length) return '';
-  const lines = [
-    '### Prior Chapter Actual Events (soft memory)',
-    '> role: chapter_anchor_recent_actuals（consume-only · 软记忆）',
-    '> = 上一章正文已真实发生事件的章级锚点读回；必须尊重，禁止当作未发生。',
-    '> ≠ Canon timeline 写入 · ≠ Plan · 不得在此新增或改写事件。',
-    '',
-  ];
-  for (const a of list) {
-    const idx = a.sceneIndex != null ? `S${a.sceneIndex}` : '?';
-    lines.push(`- [${idx}] ${String(a.text).trim()}`);
+  const header = '上一章已发生（软记忆 · 必须承接，禁止当作未发生或复述重演）：';
+  const lines = [header];
+  let total = header.length;
+  for (const t of list.slice(0, 5)) {
+    const line = `- ${t}`;
+    if (lines.length > 1 && total + line.length > 300) break;
+    lines.push(line);
+    total += line.length;
   }
   return lines.join('\n');
 }
@@ -534,13 +535,14 @@ export function compileScenePrompt(ctx, scene) {
       content: actualEventsBlock,
     });
   }
-  // 章缝软记忆：上一章真实事件（Anchor recent_actuals，必须尊重）
+  // 章缝软记忆：上一章真实事件（Anchor recent_actuals，必须承接）。
+  // 92 > Occurrence(91)：章缝两块内容重叠，anchor 版优先且必须完整存活
   if (priorActualsBlock) {
     add({
       key: 'prior_chapter_actuals',
-      label: 'Prior Chapter Actual Events (soft)',
+      label: 'Prior Chapter Actuals（上一章已发生）',
       category: 'history',
-      priority: 90,
+      priority: 92,
       content: priorActualsBlock,
     });
   }

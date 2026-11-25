@@ -44,6 +44,14 @@ export function applyPostChapter(bookDir, chapter, delta) {
   const m = bp.modules;
   const results = [];
 
+  // 指针只前进：旧章 rerun（chapter < lastAppliedChapter）不回卷「现在」。
+  // timeline/facts 等幂等载体照常写入；08/09/manifest 是当前指针，仅允许前进。
+  let lastApplied = 0;
+  try {
+    lastApplied = Number(readJson(bp.manifest)?.lastAppliedChapter || 0);
+  } catch { /* ignore */ }
+  const isOldChapterRerun = Number(chapter) < lastApplied;
+
   if (delta.timeline) {
     appendTimeline(m.timeline, { ...delta.timeline, chapter });
     results.push('11_timeline');
@@ -64,29 +72,44 @@ export function applyPostChapter(bookDir, chapter, delta) {
     patchResources(m.resource_db, { ...delta.resources, meta: { last_updated_chapter: chapter } });
     results.push('14_resource_db');
   }
-  if (delta.current_state) {
+  if (delta.current_state && !isOldChapterRerun) {
     const body = typeof delta.current_state === 'string' ? delta.current_state : delta.current_state.content;
     writeText(m.current_state, body.startsWith('#') ? body : `# 08 Current State · 第 ${chapter} 章后\n\n${body}`);
     results.push('08_current_state');
+  } else if (delta.current_state && isOldChapterRerun) {
+    results.push('08_current_state_skipped_old_rerun');
   }
   if (delta.npc?.length) {
     patchNpcSim(m.npc_simulation, delta.npc);
     results.push('15_npc_simulation');
   }
-  if (delta.reset_current_chapter !== false) {
+  if (delta.reset_current_chapter !== false && !isOldChapterRerun) {
     writeText(m.current_chapter, CURRENT_CHAPTER_TEMPLATE);
     results.push('09_current_chapter_reset');
+  } else if (delta.reset_current_chapter !== false && isOldChapterRerun) {
+    results.push('09_current_chapter_reset_skipped_old_rerun');
   }
 
   snapshot(bookDir, m.snapshots, chapter);
   results.push(`snapshot:ch_${String(chapter).padStart(4, '0')}`);
 
-  const manifest = readJson(bp.manifest);
-  manifest.lastAppliedChapter = chapter;
-  manifest.updatedAt = new Date().toISOString();
-  if (delta.timeline?.day != null) manifest.currentDay = delta.timeline.day;
-  writeJson(bp.manifest, manifest);
-  results.push('manifest');
+  // manifest：只允许前进，不允许回退（day 同样只前进）
+  if (!isOldChapterRerun) {
+    const manifest = readJson(bp.manifest);
+    manifest.lastAppliedChapter = chapter;
+    manifest.updatedAt = new Date().toISOString();
+    if (delta.timeline?.day != null) {
+      const prevDay = Number(manifest.currentDay || 0);
+      const nextDay = Number(delta.timeline.day);
+      if (!Number.isFinite(prevDay) || nextDay >= prevDay) {
+        manifest.currentDay = nextDay;
+      }
+    }
+    writeJson(bp.manifest, manifest);
+    results.push('manifest');
+  } else {
+    results.push('manifest_skipped_old_rerun');
+  }
 
   return { chapter, updated: results };
 }

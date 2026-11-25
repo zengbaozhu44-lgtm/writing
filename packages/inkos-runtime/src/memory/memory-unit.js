@@ -27,6 +27,7 @@ import {
   applyStateDiffToCanon,
   updateManifestChapter,
   writeNextChapterTask,
+  deriveNextChapterIntent,
 } from '../../../inkos-brain/src/memory/state-updater.js';
 import {
   evolveFromChapter,
@@ -333,21 +334,79 @@ export function buildChapterAnchor(chapter, stateDiff = {}) {
 /**
  * 章级软记忆：真实发生事件（scene.actualEvents，text-grounded）→ 下一章 Anchor 读回。
  * ≠ Canon timeline 写入（EO-P2 不变）；Plan 字段由 collectActualEventsFromScenes 剥离。
+ * text 经 formatActualEventText 整形为完整句（结构化字段优先），上限 5 条配合 Prompt 预算。
  */
 function buildRecentActuals(scenes = []) {
   const { events } = collectActualEventsFromScenes(scenes);
   const out = [];
   const seen = new Set();
   for (const ev of events) {
-    if (!ev || typeof ev !== 'object') continue;
-    const text = String(ev.summary || ev.text || ev.action || ev.consequence || '').trim();
+    const text = formatActualEventText(ev, 60);
     if (!text) continue;
     const key = text.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    out.push({ sceneIndex: ev.fromScene ?? null, text: text.slice(0, 200) });
+    out.push({ sceneIndex: ev.fromScene ?? null, text });
   }
-  return out.slice(0, 12);
+  return out.slice(0, 5);
+}
+
+/**
+ * 把一条 actual event 变成可读完整句（优先结构化字段）。
+ */
+function formatActualEventText(ev, maxLen = 80) {
+  if (!ev) return '';
+  if (typeof ev === 'string') return cleanSentence(ev, maxLen);
+
+  const action = String(ev.action || ev.act || '').trim();
+  let consequence = String(ev.consequence || ev.outcome || '').trim();
+  // 提取器的合成标记（场面动作已发生：X）不是叙事后果，不得参与拼接
+  if (/^(场面动作已发生|action:|已发生：)/.test(consequence)) consequence = '';
+  const summary = String(ev.summary || ev.text || '').trim();
+
+  let text = '';
+  if (action && consequence) {
+    text = `${action}，导致${consequence}`;
+  } else if (action) {
+    text = action;
+  } else if (consequence) {
+    text = consequence;
+  } else if (summary) {
+    text = summary;
+  } else {
+    return '';
+  }
+
+  return cleanSentence(text, maxLen);
+}
+
+/**
+ * 尽量保留完整句，避免「己改的。」这类残片。
+ */
+function cleanSentence(raw, maxLen = 80) {
+  let t = String(raw || '')
+    .replace(/\s+/g, ' ')
+    .replace(/^[\s"'“”‘’「」『』【】\[\]（）()：:，,。.!！?？]+/, '')
+    .trim();
+
+  if (!t) return '';
+
+  // 丢弃开头的残句碎片（如「己改的。」）：首句读符号出现过早 → 从下一句起
+  const firstEnd = t.search(/[。！？!?；;]/);
+  if (firstEnd >= 0 && firstEnd < 10 && t.length > firstEnd + 12) {
+    t = t.slice(firstEnd + 1).replace(/^[\s“”‘'「」『』【】\[\]（）()：:，,]+/, '').trim();
+  }
+
+  if (t.length <= maxLen) return t;
+
+  // 在 maxLen 内找最后一个句读，保留完整句
+  const slice = t.slice(0, maxLen);
+  const m = slice.match(/^(.*[。！？!?；;])/);
+  if (m && m[1].length >= 12) {
+    return m[1].trim();
+  }
+
+  return slice.trim() + '…';
 }
 
 /**
@@ -687,8 +746,13 @@ export function commit(bookDir, chapterId, stateDiff = {}) {
   }
 
   // 下一章任务卡（若 canonDelta 未带 next_chapter_task）
+  // B 回声切断：用本章 finished intent + 本章刚生成的 anchor 派生，不复印旧目标
   if (diff.nextChapterPlan?.intent && !diff.canonDelta?.next_chapter_task) {
-    writeNextChapterTask(bookDir, chapter + 1, diff.nextChapterPlan.intent);
+    writeNextChapterTask(bookDir, chapter + 1, deriveNextChapterIntent(
+      diff.nextChapterPlan.intent,
+      anchor,
+      { nextChapter: chapter + 1 },
+    ));
   }
 
   updateManifestChapter(bookDir, chapter);

@@ -62,12 +62,22 @@ function checkRelationship(intent, text) {
 function checkWorld(intent, text, metrics) {
   // 世界观推进：度量/意图优先；正文兜底——兼容本书真实的世界发现词汇
   // （旧词 发现|新|异常|规则 之外，深渊/地底/遗迹/封印/裂缝 等是本书特有的世界层展开信号）
-  return metrics?.worldProgress > 0 || intent.mustGain
+  // 意图层信号：mustGain（必须获得）与 newForeshadow（新增伏笔=世界层新钩子）同为
+  // 计划承载的世界推进声明；文学化承接正文可能不踩字面词，不能仅凭词汇否决。
+  return metrics?.worldProgress > 0 || intent.mustGain || intent.newForeshadow
     || /发现|新|异常|规则|深渊|地底|遗迹|封印|裂缝|异变|旧日/.test(text);
 }
 
 function checkCharacter(intent, text, metrics) {
-  return metrics?.characterGrowth > 0 || intent.mustLose || /代价|失去|选择/.test(text);
+  // 角色推进：度量/意图优先；正文兜底。
+  // 前瞻派生卡（B）的 mustLose 已剥离——上一章 anchor 的「禁止无损撤回本章代价」
+  // 禁令是已支付代价的权威存证（按设计继承两章），作为意图层信号接受。
+  const costProtected = (intent.priorAnchor?.banned_elements || []).some((b) => {
+    const t = typeof b === 'string' ? b : String(b?.text || '');
+    return t.includes('禁止无损撤回本章代价');
+  });
+  return metrics?.characterGrowth > 0 || intent.mustLose || costProtected
+    || /代价|失去|选择/.test(text);
 }
 
 function checkSituation(intent, text) {

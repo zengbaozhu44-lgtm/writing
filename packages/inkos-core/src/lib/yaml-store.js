@@ -62,7 +62,11 @@ export function appendTimeline(timelinePath, entry) {
 
   if (entry?.day != null) {
     tl.meta = tl.meta || {};
-    tl.meta.current_day = entry.day;
+    // 指针只前进：旧章 rerun 的条目不得回卷 meta.current_day（entry 自身仍按章覆盖）
+    const prev = tl.meta.current_day;
+    if (prev == null || entry.day >= prev) {
+      tl.meta.current_day = entry.day;
+    }
   }
 
   writeYaml(timelinePath, tl);

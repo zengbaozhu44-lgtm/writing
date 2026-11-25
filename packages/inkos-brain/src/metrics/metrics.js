@@ -119,7 +119,15 @@ export function analyzeMetricsFeedback(metrics, dashboard, scenes = []) {
     typeof metrics.conflictTypes[0] === 'string' &&
     metrics.conflictTypes[0].replace(/\s/g, '').length >= 20;
 
-  if (metrics.conflictDensity < 2 && !singleRichConflictSeed) {
+  // D2 degraded（no_causal_basis 有据降级）按 conflict.js 设计是「通过」：
+  // replan 会把 no_causal_basis 注入 obstacle，若此处仍按密度 replan，
+  // 两道门互相喂养形成死循环（实测连写时四轮耗尽）。
+  const degradedNoBasis =
+    Array.isArray(metrics.conflictTypes) &&
+    metrics.conflictTypes.length === 1 &&
+    metrics.conflictTypes[0] === 'no_causal_basis';
+
+  if (metrics.conflictDensity < 2 && !singleRichConflictSeed && !degradedNoBasis) {
     suggestions.push({
       type: 'conflict',
       target: 'next_scene',

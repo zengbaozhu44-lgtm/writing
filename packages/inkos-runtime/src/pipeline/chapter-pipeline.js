@@ -20,7 +20,7 @@ import {
 import { MemoryUnit, buildStateDiff } from '../memory/memory-unit.js';
 import { enrichAttributionAfterStateDiff } from '../../../inkos-brain/src/attribution/index.js';
 import { writeChapterOnly } from '../memory/memory-unit.js';
-import { writeNextChapterTask } from '../../../inkos-brain/src/memory/state-updater.js';
+import { writeNextChapterTask, deriveNextChapterIntent } from '../../../inkos-brain/src/memory/state-updater.js';
 import {
   runChapterReaderSimulator,
   polishChapterAfterReaderSim,
@@ -266,20 +266,26 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   const nextChapterPlan = planNextChapter(bookDir, chapter, ctx, adaptive.weights);
   // 09 任务卡回填：commit 时 nextChapterPlan 尚为 null → MemoryUnit 写卡分支永不触发，
   // 必须在此（planNext 之后）立即写卡，否则 09_current_chapter.md 永远空白模板。
-  if (nextChapterPlan?.intent) {
+  // B 回声切断：写卡前强制派生（planNextChapter 兜底路径会复读本章旧卡，
+  // 已支付代价/交割动作若不剥离将逐章重演）；本章 anchor 已 commit，作为前瞻供料。
+  const derivedNextIntent = nextChapterPlan?.intent
+    ? deriveNextChapterIntent(nextChapterPlan.intent, memoryCommit.anchor, { nextChapter: chapter + 1 })
+    : null;
+  if (derivedNextIntent) {
     try {
-      writeNextChapterTask(bookDir, chapter + 1, nextChapterPlan.intent);
+      writeNextChapterTask(bookDir, chapter + 1, derivedNextIntent);
     } catch (err) {
       console.warn('[chapter-pipeline] writeNextChapterTask 失败（已忽略）:', err?.message || err);
     }
   }
-  // 回写 nextChapter 摘要到 states JSON（commit 时尚未有 plan）
+  // 回写 nextChapter 摘要到 states JSON（commit 时尚未有 plan）；
+  // intent 用派生后版本，与 09 卡保持同源，避免下游读到回声 intent
   try {
     if (memoryCommit.stateFile && exists(memoryCommit.stateFile)) {
       const blob = readJson(memoryCommit.stateFile);
       blob.nextChapter = {
         chapter: chapter + 1,
-        intent: nextChapterPlan.intent || null,
+        intent: derivedNextIntent || null,
         priorAnchorApplied: Boolean(nextChapterPlan.priorAnchor),
       };
       writeJson(memoryCommit.stateFile, blob);
@@ -291,7 +297,7 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   if (bus) await bus.emit('memoryUpdated', { bookDir, chapter, snapshot: memoryCommit.snapshot, memoryCommit });
 
   saveChapterPlan(bookDir, chapter + 1, {
-    intent: nextChapterPlan.intent,
+    intent: derivedNextIntent || nextChapterPlan.intent,
     fromChapter: chapter,
     weights: adaptive.weights,
     priorAnchor: nextChapterPlan.priorAnchor || null,

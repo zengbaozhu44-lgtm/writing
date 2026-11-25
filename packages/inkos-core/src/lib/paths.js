@@ -74,3 +74,16 @@ export function loadV4Schema() {
 export function v4TemplateDir() {
   return path.join(ROOT, '.inkos/templates/book-v4');
 }
+
+/** B 按章任务卡：states/ch_XXXX_next_task.md（权威），09_current_chapter.md 仅前沿镜像 */
+export function chapterNextTaskFileName(chapter) {
+  const n = Number(chapter);
+  if (!Number.isFinite(n) || n < 1) {
+    throw new Error(`Invalid chapter for next task filename: ${chapter}`);
+  }
+  return `ch_${String(n).padStart(4, '0')}_next_task.md`;
+}
+
+export function chapterNextTaskPath(bookDir, chapter) {
+  return path.join(bookDir, 'states', chapterNextTaskFileName(chapter));
+}
