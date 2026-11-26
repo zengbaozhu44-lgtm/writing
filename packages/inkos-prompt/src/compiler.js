@@ -373,6 +373,27 @@ function renderPrompt(modules, scene, meta) {
 }
 
 /**
+ * 1c-1: 消除源文件文风冲突——旧版措辞「身体先行」「感官优先」随 writing_bible
+ * 源文件全文进 prompt，与 style-adapter/第 9 条规则矛盾。
+ * 选 B（compiler 侧替换，不改源文件）：理由——源文件是书籍资产，同一仓还承载
+ * 其他书与 Studio 路径；compiler 是 CLI prompt 的唯一密封出口，在出口处统一
+ * 措辞可保证所有书生效且不侵入书籍数据。替换时保留「具体、可感」的原意，
+ * 去掉「优先」；被替换处打日志标记。
+ */
+export function sanitizeLegacyStyleWording(writingBibleText = '') {
+  const text = String(writingBibleText || '');
+  if (!text) return text;
+  let replaced = 0;
+  const out = text
+    .replace(/身体先行/g, () => { replaced += 1; return '动作先行（具体、可感）'; })
+    .replace(/感官优先/g, () => { replaced += 1; return '感官只在对白/动作/判断需要时出现，且承担叙事功能（连续不超过 3 句）'; });
+  if (replaced > 0) {
+    console.warn(`[compiler] writing_bible: 旧版文风措辞已替换 ${replaced} 处（身体先行/感官优先 → 功能约束式，被【否决项】覆盖）`);
+  }
+  return out;
+}
+
+/**
  * 1b-3: 写作圣经「每章不可逆变化」提升为独立否决项。
  * 从十项平级编号列表中抽出该条，以「【否决项】」标记放在写作规则块最前，
  * 原列表中该条目移除（避免重复）。平台参数（字数/对话占比）仍在原位。
@@ -881,7 +902,7 @@ export function compileScenePrompt(ctx, scene) {
   if (writingCache.content) {
     // 1b-3: 「每章不可逆变化」（叙事原则第 8 条）从十项平级列表提升为独立否决项，
     // 放写作规则模块最前，不与「单章字数 3000」等平台参数平级。
-    const writingContent = elevateIrreversibleRule(writingCache.content);
+    const writingContent = sanitizeLegacyStyleWording(elevateIrreversibleRule(writingCache.content));
     add({ key: 'writing_bible', label: '写作规则', category: 'world', priority: 50, content: truncateByTokens(writingContent, Math.floor(budget.world * 0.35)) });
   }
 

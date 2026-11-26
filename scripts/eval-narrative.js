@@ -23,6 +23,11 @@ const EVENT_RE = /(获知|发现|追|撞|躲|停|转|拿|拨|说|问|答|杀|晕
 const DESC_RE = /(像|如|仿佛|似乎|般|色泽|气味|味道|轮廓|纹理|安静|沉默|缓缓|慢慢|静静|微微|轻轻|潮|霉|锈|灰|暗|闷|模糊|寂静|弥漫|笼罩|折射|透出|泛出|映出|斑驳|粗粝|细腻|光滑|粗糙|冰凉|温热|刺骨|灼热|喧嚣|嘈杂|空旷|狭小|逼仄|开阔|低矮|高耸|破旧|崭新|整洁|凌乱)/;
 const ACTION_VERB_RE = /(跑|追|撞|躲|出手|打|拨|停|转|冲|拿|逃|抓|砸|踢|推|拔|扑|挡|喊|叫|塞|递|抢|撕|夺|按|敲|划|割|扔|抛|收|藏|挖|埋|烧|浇|擦|洗|拉|拽|拖|提|背|扛|抱|扶|掐|捂|堵|封|拆|装|修|接|伸|缩|摇|点|画|圈|挑|选)/;
 
+// 1c-2: 叙事功能信号——句子承载这些之一则描写「承担叙事功能」
+const FUNCTIONAL_RE = /(获知|发现|知道|明白|意识到|认出|识破|证实|线索|障碍|威胁|危险|选择|决定|拒绝|答应|躲开|避开|挡住|拦|阻止|变化|改变|断了|消失|出现|留下|带走|拿了|丢了|死了|伤了|走了|来了|变了|之前|之后|已经|这次|那|这是|意味着|说明|证明|原来|才发现|才|又|再|却|但|而)/;
+// 1c-2: 纯描写信号——环境/感官/外貌词且无叙事功能
+const PURE_DESC_RE = DESC_RE;
+
 function cleanText(t) {
   return String(t)
     .replace(/^--- PATCH.*?$/gm, '')
@@ -46,6 +51,7 @@ function evalFile(file, label) {
   if (!ss.length) return null;
 
   let event = 0, desc = 0, mixed = 0, neither = 0;
+  let singlePurposeDesc = 0, functionalDesc = 0;
   for (const s of ss) {
     const e = EVENT_RE.test(s);
     const d = DESC_RE.test(s);
@@ -53,6 +59,12 @@ function evalFile(file, label) {
     else if (e) event += 1;
     else if (d) desc += 1;
     else neither += 1;
+    // 1c-2: 描写句的叙事功能分类（口径与定位报告一致：
+    // 只含环境/感官/外貌，且不含新信息/选择/障碍/判断/动作结果 → 单用途纯描写）
+    if (d) {
+      if (FUNCTIONAL_RE.test(s) || e) functionalDesc += 1;
+      else singlePurposeDesc += 1;
+    }
   }
   const chars = text.replace(/\s/g, '').length;
   const actionVerbs = (text.match(new RegExp(ACTION_VERB_RE.source, 'g')) || []).length;
@@ -66,6 +78,8 @@ function evalFile(file, label) {
     descSentenceRatio: +(desc / ss.length).toFixed(2),
     mixedRatio: +(mixed / ss.length).toFixed(2),
     neitherSentenceRatio: +(neither / ss.length).toFixed(2),
+    singlePurposeDescriptionRatio: +(singlePurposeDesc / ss.length).toFixed(2),
+    functionalDescriptionRatio: +(functionalDesc / ss.length).toFixed(2),
     actionVerbPerKilo: +(actionVerbs / chars * 1000).toFixed(1),
     infoDensity: +(chars / clauses).toFixed(1),
   };
@@ -135,8 +149,8 @@ async function main() {
 
   if (results.length > 1) {
     const avg = (k) => +(results.reduce((s, r) => s + r[k], 0) / results.length).toFixed(2);
-    console.log('汇总: avg event=%.2f neither=%.2f action/k=%.1f density=%.1f（基准 event=%.2f neither=%.2f）',
-      avg('eventSentenceRatio'), avg('neitherSentenceRatio'), avg('actionVerbPerKilo'), avg('infoDensity'),
+    console.log('汇总: avg event=%.2f neither=%.2f singleDesc=%.2f action/k=%.1f density=%.1f（基准 event=%.2f neither=%.2f）',
+      avg('eventSentenceRatio'), avg('neitherSentenceRatio'), avg('singlePurposeDescriptionRatio'), avg('actionVerbPerKilo'), avg('infoDensity'),
       baseline.eventSentenceRatio, baseline.neitherSentenceRatio);
   }
 }

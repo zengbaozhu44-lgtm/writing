@@ -48,7 +48,8 @@ export function buildSceneWritePrompt(ctx, intent, scene, dynamicPrompt) {
   // 1b-2: 冲突占位符过滤——no_causal_basis 等下划线占位符不得进入 prompt
   const conflictText = sanitizeConflict(scene.conflict);
 
-  // 1b-2: 上一章结尾状态（概括，不贴原文；空则用情绪/处境句式，不留空）
+  // 1b-2/1c-3: 上一章结尾状态（概括，不贴原文；fallback 时不输出占位空话，
+  // 已由目标行的显式降级声明覆盖，此处不再重复输出空话）
   const prevEnding = buildPrevEndingSummary(intent, ctx);
 
   const lines = [
@@ -63,7 +64,8 @@ export function buildSceneWritePrompt(ctx, intent, scene, dynamicPrompt) {
     scene.wordTarget ? `- 字数: ~${scene.wordTarget}` : '',
     intent.actionLine ? `- 本章行动线（各 Scene 推进同一条线）: ${intent.actionLine}` : '',
     intent.mustLose ? `- 代价: ${intent.mustLose}` : '',
-    prevEnding ? `- 上一章结尾状态: ${prevEnding}` : '',
+    prevEnding.text && prevEnding.source !== 'fallback'
+      ? `- 上一章结尾状态: ${prevEnding.text}` : '',
     '',
     '## 信息边界（Phase 1.R · 必守）',
     '- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。',
@@ -106,13 +108,25 @@ function resolveGoalVerb(intent = {}, scene = {}) {
 export function buildSceneGoalDirective(intent = {}, scene = {}, ctx = {}) {
   const verb = resolveGoalVerb(intent, scene);
   let goalText = sanitizeGoalText(scene.goal, intent.mainGoal);
+  let stateSummarySource = 'scene_goal';
   if (!goalText) {
     // 空槽兜底：上一章结尾概括（章缝 Scene 1 常见——goal 本身就是承接指令）
-    goalText = buildPrevEndingSummary(intent, ctx);
+    const summary = buildPrevEndingSummary(intent, ctx);
+    goalText = summary.text;
+    stateSummarySource = summary.source;
   }
-  const target = goalText
-    ? `本 Scene 结束时，主角必须【${verb}】${goalText}；若未发生，本 Scene 失败。`
-    : `本 Scene 结束时，主角必须做出一个关闭选项的决定；若未发生，本 Scene 失败。`;
+  let target;
+  if (goalText) {
+    target = `本 Scene 结束时，主角必须【${verb}】${goalText}；若未发生，本 Scene 失败。`;
+  } else {
+    // 1c-3: 状态未结构化时不得输出占位空话——显式降级声明 + 动作兜底
+    target = `上一章结尾状态未结构化，本 Scene 以主角当前目标为准：做出一个关闭选项的决定（${verb}）；若未发生，本 Scene 失败。`;
+    stateSummarySource = 'fallback';
+  }
+  // 1c-3: 打在 scene 对象上，供第 2 步因果门控识别「状态输入缺失」
+  if (scene && typeof scene === 'object') {
+    scene.stateSummarySource = stateSummarySource;
+  }
   return `- 目标: ${target}`;
 }
 
@@ -192,14 +206,17 @@ export function buildPrevEndingSummary(intent = {}, ctx = {}) {
     ? summarized.split(/[：:]/).slice(1).join('：').trim()
     : '';
   if (tail && !tail.startsWith('承接') && tail !== '上一章结尾局面') {
-    return tail.slice(0, 40);
+    return { text: tail.slice(0, 40), source: 'mainGoal_summary' };
   }
   // 注：anchor recent_actuals 逐条都是正文原句（台词截断/动作残片）——
-  // 按规约（不贴原文）不作状态槽来源；mood/situation 缺失时走情绪/处境句式兜底。
+  // 按规约（不贴原文）不作状态槽来源。
+  // 1c-3: mood/situation 缺失时不再输出「未标注情绪/悬置局面」占位空话——
+  // 显式标记状态未结构化，供第 2 步因果门控识别（scene.stateSummarySource）。
   const situation = String(anchor.narrative_momentum?.situation || '').trim().slice(0, 20);
-  // 情绪兜底：mood/situation 都缺时，从 intent.emotionCarry 等已有情绪信号取；
-  // 全空则显式标注「悬置」——不留空、不贴原文
-  return `上章以「${mood || '未标注情绪'}」收束，主角处于「${situation || '悬置局面'}」`;
+  if (mood && situation) {
+    return { text: `上章以「${mood}」收束，主角处于「${situation}」`, source: 'anchor_mood' };
+  }
+  return { text: '', source: 'fallback' };
 }
 
 export function reviewScene(scene, text, options = {}) {
