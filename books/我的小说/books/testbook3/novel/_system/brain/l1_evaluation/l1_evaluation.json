@@ -496,20 +496,126 @@
     },
     "主角": {
       "characterId": "主角",
-      "status": "VALID",
-      "reason": "eligible_and_access_pass",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
       "inputs": {
         "eligibility": {
-          "state": "ELIGIBLE",
-          "evidenceOccurrenceIds": [
-            "evt_ch9_s4_e58a8869e"
-          ]
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
         },
         "access": {
           "passCount": 1,
           "rejectedEvidenceCount": 0,
           "passRefs": [
             "evt_ch9_s4_e58a8869e"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "刚才那人": {
+      "characterId": "刚才那人",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch10_s1_e34aaf074"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "和他自己": {
+      "characterId": "和他自己",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch10_s1_e290dda88"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "他试着": {
+      "characterId": "他试着",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch10_s3_e90bc53af"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "但赵婶的手": {
+      "characterId": "但赵婶的手",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch10_s3_edb402adc"
           ],
           "rejectedRefs": []
         }
@@ -538,5 +644,5 @@
     "uniqueConsumer": "future_l2_gate_authorized_only",
     "note": "L1=VALID 不自动产生 Choice/Option/Selection"
   },
-  "updatedAt": "2026-11-26T10:08:10.023Z"
+  "updatedAt": "2026-11-26T10:12:03.935Z"
 }

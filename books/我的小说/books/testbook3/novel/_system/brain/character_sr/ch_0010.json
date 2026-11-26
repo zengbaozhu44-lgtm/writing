@@ -1,0 +1,121 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "场面": {
+      "name": "场面",
+      "awareness": {
+        "items": [
+          {
+            "info": "走。”\n\n雨忽然小了一瞬，又大起来。\n\n他把手伸进怀里，指尖碰到那团湿纸。纸底下，皮肤上有一道旧疤，正一点点发烫。\n\n他掏出纸，举到那线光下。雨立刻打上去，墨迹化开，顺着指缝往下淌。他低头看。\n\n那行字没了。纸是空的。\n\n“念吧。”那人说。",
+            "level": "know",
+            "eventId": "evt_ch10_s4_e45c15062",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch10_s4_e45c15062"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch10_s4_e45c15062",
+            "info": "走。”\n\n雨忽然小了一瞬，又大起来。\n\n他把手伸进怀里，指尖碰到那团湿纸。纸底下，皮肤上有一道旧疤，正一点点发烫。\n\n他掏出纸，举到那线光下。雨立刻打上去，墨迹化开，顺着指缝往下淌。他低头看。\n\n那行字没了。纸是空的。\n\n“念吧。”那人说。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch10_s4_e45c15062"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch10_s4_e45c15062"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch10_s4_e45c15062"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 10,
+  "updatedAt": "2026-11-26T10:12:03.932Z"
+}
