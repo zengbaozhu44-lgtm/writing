@@ -1,0 +1,121 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "场面": {
+      "name": "场面",
+      "awareness": {
+        "items": [
+          {
+            "info": "，只剩个轮廓，肩膀比刚才窄了一圈。\n\n“想起来的时候，”他说，“别急着找我。”\n\n脚步声往下，一级，一级，踩得水响。\n\n我站在门口，手里攥着那叠湿纸。风从楼道灌上来，把最上面那张吹起一角，又落回去。\n\n那行字写的是：别让他们知道你来过这里。",
+            "level": "know",
+            "eventId": "evt_ch12_s4_ec70ec82e",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch12_s4_ec70ec82e"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch12_s4_ec70ec82e",
+            "info": "，只剩个轮廓，肩膀比刚才窄了一圈。\n\n“想起来的时候，”他说，“别急着找我。”\n\n脚步声往下，一级，一级，踩得水响。\n\n我站在门口，手里攥着那叠湿纸。风从楼道灌上来，把最上面那张吹起一角，又落回去。\n\n那行字写的是：别让他们知道你来过这里。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch12_s4_ec70ec82e"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch12_s4_ec70ec82e"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch12_s4_ec70ec82e"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 12,
+  "updatedAt": "2026-11-26T10:14:37.497Z"
+}

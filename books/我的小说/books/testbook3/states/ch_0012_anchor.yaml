@@ -1,0 +1,86 @@
+version: chapter-anchor-3
+chapter: 12
+current_date: Day 0
+pov: 主角
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 主角
+  present:
+    - 主角
+  edges:
+    - from: 主角
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 13
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 12
+voiceDna:
+  id: inherit-default
+  label: 章级 Voice DNA（待首次写入）
+  sentenceLength: mixed
+  rhythm: varied
+  dialogueRatio: 0.45
+  actionDensity: high
+  descriptionDensity: low
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 12
+  closing_emotion: 疑虑·未解之问
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+  mustInheritScene1: true
+  tailExcerpt: 站在黑里，只剩个轮廓，肩膀比刚才窄了一圈。 “想起来的时候，”他说，“别急着找我。” 脚步声往下，一级，一级，踩得水响。 我站在门口，手里攥着那叠湿纸。风从楼道灌上来，把最上面那张吹起一角，又落回去。 那行字写的是：别让他们知道你来过这里？
+recent_actuals:
+  - sceneIndex: 1
+    text: 没完全松开
+  - sceneIndex: 1
+    text: 哪两块——刚才我站起来的时候，也是绕开了那两块
+  - sceneIndex: 1
+    text: 拉开那把椅子坐下
+  - sceneIndex: 1
+    text: 这个动作他做得比站起来顺，先弯右膝，左手撑住桌面，身体重心压下去，左
+  - sceneIndex: 2
+    text: 他把交叉的手指松开了，右手单独伸到桌面中央，掌心朝上，摊平，像在等
+state_ledger:
+  version: 1
+  updated_chapter: 12
+  items: []
+  locations: []
+  open_promises: []
+  settled_costs: []
+committedAt: 2026-11-26T10:14:53.426Z
+d1InferenceDemotion:
+  eo: EO-P4
+  role: operational_planner_hint
+  producesObtains: false
+  isRealityAuthority: false
+  isCharacterReality: false
+  isRelationshipFact: false
+  authorityAct: NOT_AN_AUTHORITY_ACT
+  claimLevelAuthority: NOT_THIS_PATH
+  note: Anchor / heuristic ops hint ≠ Reality / obtains.
+  paths:
+    - deriveRelationshipState
+    - deriveClosingEmotion
+    - buildChapterAnchor
+  relationship_state: operational_planner_hint_not_fact
+  closing_emotion: ops_hint_not_character_reality
