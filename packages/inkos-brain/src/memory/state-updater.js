@@ -176,13 +176,19 @@ export function deriveNextChapterIntent(finishedIntent = {}, priorAnchor = null,
   // no_causal_basis 等模板占位符——原样下发会把占位符传播进
   // states/ch_N.json、nextChapterPlan 与章节文件名（0002_no_causa.md）。
   // 占位符不构成因果目标，一律回退到通用前瞻句（宁缺勿滥，与 C3 口径一致）。
-  if (isTemplateFallback(mainGoal)) {
+  // 同族：本函数自身产出的通用兜底句「承接上一章结果，推进未解决线索」
+  // 也不是可执行目标——下一轮派生时同样要尝试从 anchor actuals 重建，
+  // 否则 mainGoal 静态循环（new_goal 软门禁连续失败）。
+  const GENERIC_FORWARD = '承接上一章结果，推进未解决线索';
+  const isGenericForward = (t) => String(t || '').trim() === GENERIC_FORWARD
+    || String(t || '').trim().startsWith('承接上一章结果');
+  if (isTemplateFallback(mainGoal) || isGenericForward(mainGoal)) {
     nextGoal = pickForwardGoal(ending, foreshadow, priorAnchor)
-      || '承接上一章结果，推进未解决线索';
+      || GENERIC_FORWARD;
   } else if (goalLooksLikeCompletedCost || isMoodOnly(mainGoal, priorAnchor)) {
     // 前者：目标关联已支付代价；后者：目标是纯氛围句（无追查对象，会原地踏步）
     nextGoal = pickForwardGoal(ending, foreshadow, priorAnchor)
-      || '承接上一章结果，推进未解决线索';
+      || GENERIC_FORWARD;
   }
 
   const obstacles = (intent.obstacles || [])
@@ -253,7 +259,27 @@ function pickForwardGoal(ending, foreshadow, priorAnchor) {
     return endingText.slice(0, 40);
   }
 
-  // 4) 兜底
+  // 4) 章末实际事件（Actual）：anchor recent_actuals / narrative_momentum.tailExcerpt
+  //    裸跑（无 authored plan）时 ending/伏笔/台账常全空，此前直接落到通用兜底句
+  //    「承接上一章结果」→ mainGoal 静态循环（new_goal 软门禁连续失败）。
+  //    recent_actuals 是上一章正文实际发生的事（最后一个含信息量的片段即章末状态），
+  //    从中取可执行对象构成追查目标。
+  const actuals = [
+    ...(Array.isArray(priorAnchor?.recent_actuals) ? priorAnchor.recent_actuals : []),
+  ].map((a) => String(a?.text || '').trim())
+    .filter((t) => t && t.length >= 8 && !isTemplateFallback(t));
+  const tailExcerpt = String(priorAnchor?.narrative_momentum?.tailExcerpt || '').trim();
+  if (tailExcerpt && tailExcerpt.length >= 8 && !isTemplateFallback(tailExcerpt)) {
+    actuals.push(tailExcerpt);
+  }
+  if (actuals.length) {
+    // 章末（最后一条）actual 优先——它就是下一章要承接的局面
+    const last = actuals[actuals.length - 1];
+    const chase = last.replace(/\s+/g, '').slice(0, 36);
+    return `追查上一章末尾局面：${chase}`;
+  }
+
+  // 5) ending 兜底（短但非空的承接）
   if (endingText) return `承接：${endingText.slice(0, 30)}`;
   return '';
 }
