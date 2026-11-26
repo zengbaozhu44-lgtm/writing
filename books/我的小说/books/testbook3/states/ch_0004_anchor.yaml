@@ -1,0 +1,86 @@
+version: chapter-anchor-3
+chapter: 4
+current_date: Day 0
+pov: 主角
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 主角
+  present:
+    - 主角
+  edges:
+    - from: 主角
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 5
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 4
+voiceDna:
+  id: inherit-default
+  label: 章级 Voice DNA（待首次写入）
+  sentenceLength: mixed
+  rhythm: varied
+  dialogueRatio: 0.45
+  actionDensity: high
+  descriptionDensity: low
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 4
+  closing_emotion: 疑虑·未解之问
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+  mustInheritScene1: true
+  tailExcerpt: ，脸几乎贴到地面，往那条缝里看。黑的。什么也看不见。可缝里的光——不是屋里的光。屋里没开灯。那道光细细的，白的，从门那边渗过来，照亮了地面上一层薄薄的绒毛，正朝着门的方向，一根一根，慢慢地立。 他伸手，从兜里又摸出那半截粉笔。 这次他画了。
+recent_actuals:
+  - sceneIndex: 1
+    text: 老人站起来的时候，右膝先直后弯，发出一声脆响，像折断一根
+  - sceneIndex: 1
+    text: 他站起来
+  - sceneIndex: 1
+    text: 就像攥紧又松开的手指，像那道刚够侧身通过的门缝，这些细节卡在意
+  - sceneIndex: 2
+    text: 他站起来继续往前
+  - sceneIndex: 3
+    text: 他想松开手，手指却不听使唤，一根一根扣紧，指甲掐进掌心
+state_ledger:
+  version: 1
+  updated_chapter: 4
+  items: []
+  locations: []
+  open_promises: []
+  settled_costs: []
+committedAt: 2026-11-26T09:35:10.032Z
+d1InferenceDemotion:
+  eo: EO-P4
+  role: operational_planner_hint
+  producesObtains: false
+  isRealityAuthority: false
+  isCharacterReality: false
+  isRelationshipFact: false
+  authorityAct: NOT_AN_AUTHORITY_ACT
+  claimLevelAuthority: NOT_THIS_PATH
+  note: Anchor / heuristic ops hint ≠ Reality / obtains.
+  paths:
+    - deriveRelationshipState
+    - deriveClosingEmotion
+    - buildChapterAnchor
+  relationship_state: operational_planner_hint_not_fact
+  closing_emotion: ops_hint_not_character_reality
