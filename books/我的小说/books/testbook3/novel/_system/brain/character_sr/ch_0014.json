@@ -1,0 +1,163 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "他": {
+      "name": "他",
+      "awareness": {
+        "items": [
+          {
+            "info": "上没有水，没有泥印。灯照到的地方都干干净净。 他站起来。椅子腿在木板上刮了一声，就是那块会响的板。他等了一下，没有第二声。 他走到门边，手按在横木上",
+            "level": "know",
+            "eventId": "evt_ch14_s4_e195d98fd",
+            "provenance": {
+              "characterId": "他",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch14_s4_e195d98fd"
+            }
+          },
+          {
+            "info": "很轻。像有人用一根手指，把它转了个方向。 他转身。桌上那只碗还翻扣着。缺口朝着他这边。 他刚才明明把它朝西。 灯芯终于撑不住，红缩成一点，又",
+            "level": "know",
+            "eventId": "evt_ch14_s4_e8aec15c4",
+            "provenance": {
+              "characterId": "他",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch14_s4_e8aec15c4"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch14_s4_e195d98fd",
+            "info": "上没有水，没有泥印。灯照到的地方都干干净净。 他站起来。椅子腿在木板上刮了一声，就是那块会响的板。他等了一下，没有第二声。 他走到门边，手按在横木上",
+            "level": "high",
+            "provenance": {
+              "characterId": "他",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch14_s4_e195d98fd"
+            }
+          },
+          {
+            "eventId": "evt_ch14_s4_e8aec15c4",
+            "info": "很轻。像有人用一根手指，把它转了个方向。 他转身。桌上那只碗还翻扣着。缺口朝着他这边。 他刚才明明把它朝西。 灯芯终于撑不住，红缩成一点，又",
+            "level": "high",
+            "provenance": {
+              "characterId": "他",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch14_s4_e8aec15c4"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "他",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch14_s4_e195d98fd"
+        },
+        {
+          "characterId": "他",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch14_s4_e195d98fd"
+        },
+        {
+          "characterId": "他",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch14_s4_e8aec15c4"
+        },
+        {
+          "characterId": "他",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch14_s4_e8aec15c4"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 2,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 14,
+  "updatedAt": "2026-11-26T10:19:32.181Z"
+}

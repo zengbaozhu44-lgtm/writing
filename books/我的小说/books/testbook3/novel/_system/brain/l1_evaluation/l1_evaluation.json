@@ -95,7 +95,7 @@
           "evidenceOccurrenceIds": []
         },
         "access": {
-          "passCount": 9,
+          "passCount": 10,
           "rejectedEvidenceCount": 0,
           "passRefs": [
             "evt_ch2_s2_e2ab90cfc",
@@ -871,6 +871,33 @@
           "l1_eligibility_sidecar"
         ]
       }
+    },
+    "」那人": {
+      "characterId": "」那人",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch14_s3_eca2c60be"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
     }
   },
   "meta": {
@@ -887,5 +914,5 @@
     "uniqueConsumer": "future_l2_gate_authorized_only",
     "note": "L1=VALID 不自动产生 Choice/Option/Selection"
   },
-  "updatedAt": "2026-11-26T10:18:18.241Z"
+  "updatedAt": "2026-11-26T10:19:32.185Z"
 }
