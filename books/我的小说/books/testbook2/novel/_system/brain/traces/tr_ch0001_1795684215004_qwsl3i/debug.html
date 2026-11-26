@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>InkOS Trace tr_ch0001_1795684215004_qwsl3i</title>
+  <style>
+    body{font-family:ui-sans-serif,system-ui,sans-serif;margin:24px;background:#0f1419;color:#e7ecf1;line-height:1.45}
+    h1,h2,h3{color:#f5f7fa}
+    .meta{opacity:.85;margin-bottom:20px}
+    details{margin:8px 0;background:#1a222c;padding:8px 12px;border-radius:8px}
+    pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c9d4e0}
+    .beat{border:1px solid #2b3642;border-radius:10px;padding:12px;margin:16px 0;background:#141b22}
+    .rot{color:#7dffb3;font-weight:600}
+    a{color:#7cb7ff}
+  </style>
+</head>
+<body>
+  <h1>Chapter Trace</h1>
+  <div class="meta">
+    <div><b>traceId</b>: tr_ch0001_1795684215004_qwsl3i</div>
+    <div><b>chapter</b>: 1</div>
+    <div><b>created</b>: 2026-11-26T09:10:15.005Z</div>
+    <div><b>finished</b>: 2026-11-26T09:11:30.124Z</div>
+    <div><b>pass</b>: true</div>
+  </div>
+  <h2>Pipeline Stages</h2>
+  <details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:10:15.006Z&quot;,
+  &quot;chapter&quot;: 1,
+  &quot;options&quot;: {}
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:10:15.007Z&quot;,
+  &quot;attempt&quot;: 1,
+  &quot;summary&quot;: &quot;进入世界&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第1章：进入世界&quot;,
+    &quot;mainGoal&quot;: &quot;进入世界&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: null,
+    &quot;bannedElements&quot;: []
+  },
+  &quot;voiceDnaForced&quot;: false,
+  &quot;bannedCount&quot;: 0
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:10:15.008Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:10:15.009Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;information&quot;
+  ],
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:10:15.010Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch1_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;进入现场并确立危机：进入世界&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;克服阻碍：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:10:28.764Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;进入现场并确立危机：进入世界&quot;,
+  &quot;chars&quot;: 1197,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:10:49.631Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;克服阻碍：no_causal_basis&quot;,
+  &quot;chars&quot;: 1010,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:02.204Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;,
+  &quot;chars&quot;: 1066,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:17.648Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;,
+  &quot;chars&quot;: 1303,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scenes ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scenes&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:17.652Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;count&quot;: 4,
+  &quot;passed&quot;: 4
+}</pre></details>
+<details><summary>consistency ✓</summary><pre>{
+  &quot;stage&quot;: &quot;consistency&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.118Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null
+}</pre></details>
+<details><summary>metrics </summary><pre>{
+  &quot;stage&quot;: &quot;metrics&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.118Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;chapter&quot;: 1,
+    &quot;sceneCount&quot;: 4,
+    &quot;climaxCount&quot;: 2,
+    &quot;conflictDensity&quot;: 1,
+    &quot;conflictTypes&quot;: [
+      &quot;information&quot;
+    ],
+    &quot;dialogueRatio&quot;: 0.03,
+    &quot;humanDialogueCount&quot;: 34,
+    &quot;longDialogueBlocks&quot;: 0,
+    &quot;actionRatio&quot;: 0.21,
+    &quot;mindRatio&quot;: 0.06,
+    &quot;wordCount&quot;: 4576,
+    &quot;worldProgress&quot;: 0,
+    &quot;characterGrowth&quot;: 1,
+    &quot;foreshadowRate&quot;: 0,
+    &quot;rhythmPeaks&quot;: [
+      {
+        &quot;index&quot;: 29,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 20
+      },
+      {
+        &quot;index&quot;: 41,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 12
+      },
+      {
+        &quot;index&quot;: 47,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 77
+      },
+      {
+        &quot;index&quot;: 87,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 61
+      },
+      {
+        &quot;index&quot;: 88,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 74
+      }
+    ],
+    &quot;infoDensity&quot;: 11.44,
+    &quot;timestamp&quot;: &quot;2026-11-26T09:11:17.657Z&quot;
+  }
+}</pre></details>
+<details><summary>reader ✓</summary><pre>{
+  &quot;stage&quot;: &quot;reader&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.119Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;readingDrive&quot;: 78,
+  &quot;withheld&quot;: {
+    &quot;bodyEmotionCount&quot;: 1,
+    &quot;overloaded&quot;: false,
+    &quot;note&quot;: null
+  }
+}</pre></details>
+<details><summary>critic ✓</summary><pre>{
+  &quot;stage&quot;: &quot;critic&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.119Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;overall&quot;: 76
+}</pre></details>
+<details><summary>validation ✓</summary><pre>{
+  &quot;stage&quot;: &quot;validation&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.120Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;soft&quot;: true,
+  &quot;gatePass&quot;: false,
+  &quot;checks&quot;: {
+    &quot;plot_advanced&quot;: true,
+    &quot;relationship_advanced&quot;: true,
+    &quot;world_advanced&quot;: true,
+    &quot;character_advanced&quot;: true,
+    &quot;situation_changed&quot;: &quot;no_causal_basis&quot;,
+    &quot;new_goal&quot;: true,
+    &quot;new_problem&quot;: true,
+    &quot;dialogue_balance&quot;: false
+  }
+}</pre></details>
+<details><summary>reader_simulator </summary><pre>{
+  &quot;stage&quot;: &quot;reader_simulator&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.120Z&quot;,
+  &quot;summary&quot;: &quot;hook=5&quot;,
+  &quot;hookScore&quot;: 5,
+  &quot;softFail&quot;: true,
+  &quot;dragCount&quot;: 0,
+  &quot;threshold&quot;: 6,
+  &quot;dualReviewer&quot;: true,
+  &quot;degraded&quot;: false
+}</pre></details>
+<details><summary>reader_simulator_optimizer </summary><pre>{
+  &quot;stage&quot;: &quot;reader_simulator_optimizer&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.121Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;triggered&quot;: true,
+  &quot;reason&quot;: &quot;hookScore=5 &lt; 7 或拖戏过多&quot;,
+  &quot;polishChanged&quot;: false
+}</pre></details>
+<details><summary>adaptive </summary><pre>{
+  &quot;stage&quot;: &quot;adaptive&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.121Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;weights&quot;: {
+    &quot;actionSceneWeight&quot;: 1,
+    &quot;conflictPriority&quot;: 1,
+    &quot;dialogueTarget&quot;: 0.45,
+    &quot;hookEmphasis&quot;: 1,
+    &quot;styleStrictness&quot;: 1,
+    &quot;sceneCountBias&quot;: 0
+  }
+}</pre></details>
+<details><summary>story_health </summary><pre>{
+  &quot;stage&quot;: &quot;story_health&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.122Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;overallScore&quot;: 69.75
+}</pre></details>
+<details><summary>memory_commit </summary><pre>{
+  &quot;stage&quot;: &quot;memory_commit&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:11:30.123Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;chapterFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook2/chapters/0001_第1章.md&quot;,
+  &quot;stateFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook2/states/ch_0001.json&quot;,
+  &quot;anchorFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook2/states/ch_0001_anchor.yaml&quot;,
+  &quot;hierarchyFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook2/novel/_system/brain/memory_hierarchy.json&quot;,
+  &quot;compression&quot;: null,
+  &quot;snapshotId&quot;: &quot;snap_1795684289878_ed48af&quot;
+}</pre></details>
+  <h2>Beat I/O</h2>
+  
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=1197 · tension=— · craft=— · hookType=—  · 2026-11-26T09:10:28.761Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 主角
+- 目标: 进入现场并确立危机：进入世界
+- 冲突: no_causal_basis
+- 节拍: situation
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch1_s1 | tokens=419 | profile=opening | cache=0% | compile=5ms --&gt;
+
+### Scene 目标
+目标: 进入现场并确立危机：进入世界
+节拍: situation
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 本章目标
+进入世界
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- **Validity**：current
+
+### 当前状态
+# 08 Current State · 第 0 章后
+
+&gt; 上限 1000 字。只写此刻。
+
+| 字段 | 值 |
+|------|-----|
+| 时间 | Day 0 |
+| 地点 | — |
+| 天气 | — |
+| POV 状态 | — |
+| 装备 | — |
+| 能力 | — |
+| 危机 | — |
+| 限制 | — |
+
+
+### 世界规则
+# 01 World Bible · 回声当铺
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+## 2. 超凡体系
+## 3. 能力体系
+## 4. 势力体系（详情见 04_faction_bible/）
+## 5. 社会规则
+## 6. 资源体系
+## 7. 经济体系
+## 8. 历史
+## 9. 地理
+## 10. 禁忌
+
+
+### 写作规则
+# 02 Writing Bible · 回声当铺
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转**
+6. **对话是博弈**
+7. **渐进揭秘**
+8. **每章不可逆变化**
+
+## 文风原则
+1. **身体先行**
+2. **感官优先**
+3. **信息寄生**
+4. **异常反噬**
+5. **限知第三人称**
+
+## 平台参数
+| 参数 | 值 |
+|------|-----|
+| 单章字数 | 3000 |
+| 对话占比 | 30%–60% |
+
+## 禁止
+- 解释设定 / 全员上帝视角
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>雨在傍晚落下来，不大，但密，像有人在天上筛一层细沙。沈迟站在屋檐下，鞋尖已经湿透，凉意顺着袜子往上爬。他把怀里的纸盒换了只手抱，盒角压出的印子留在小臂上，红白分明。
+
+街对面那家铺子的门开着一条缝，缝里没有光。
+
+他走过去。招牌是木头的，字刻得很深，雨水积在笔画里，把「回声当铺」四个字泡得发亮。他伸手推门，门轴没响。
+
+里面比外头暖。一股樟脑混着旧纸的味道贴上来，堵在鼻腔里，像有人拿手掌按住了他的脸。柜台很高，深色木头，边缘被手掌磨出一段油亮的弧度。柜台上方吊着一只黄灯泡，光是黄的，照不到墙角。
+
+柜台后面坐着个女人，五十上下，披着灰羊毛披肩，手里两根竹针在织，一进一出，咔，咔。她没抬头。
+
+沈迟把纸盒放在柜台上。盒盖被雨气泡软了一角，他掀开，里面是一盘磁带，透明壳，纸标签上用圆珠笔写着两个字。字迹被水洇开，只剩半个轮廓。
+
+“当。”他说。
+
+竹针停了。
+
+女人放下手里的活，抬起眼。她的眼白偏黄，看东西的时候不眨眼，像在数他脸上有几道纹。
+
+“当什么。”她问。
+
+“磁带。”
+
+“我知道是磁带。”她把磁带捏起来，对着灯转了半圈。光穿过塑料壳，在柜台上投下一小片方格。“我是问，当里头的东西。”
+
+沈迟的喉咙动了一下。他想说不知道。可话到嘴边，他发现自己确实不知道——不是忘了怎么形容，是标签上那两个字，他盯着看，看了三秒，读不出来。笔画都在，就是他认不得。
+
+“钱。”他改口，“我要钱。”
+
+女人把磁带放回盒子，没放正，斜着。“钱好说。”她伸手到柜台底下，摸出一把黄铜钥匙，钥匙齿上挂着一段红绳，绳头磨得起毛。“先签字。”
+
+她推过来一本册子。封皮是深蓝布面，边角卷了。翻开那一页，上面已经有很多行字，一行一行，长短不一，最下面空着。
+
+沈迟拿起笔。笔杆是凉的，比外面的雨还凉。他落笔，写了个「沈」。第二个字卡住了。
+
+笔尖悬在纸上，墨聚成一小团，慢慢洇开。他盯着那个墨点，脑子里去找「迟」字，找得到——他看得见那个字的样子，横竖撇捺都在。可它跟自己的名字连不上。像两块本来咬合的齿轮，中间被谁塞了纸片。
+
+“怎么了。”女人问。她没催，语气平得像在问天气。
+
+“没事。”
+
+他重新落笔，凭手感写完了第二个字。写完他自己看了一眼，觉得像，又不像。
+
+女人把册子转回去，低头看。她的手指从那个名字上划过去，停了一下。
+
+“行。”她说，从抽屉里数出几张票子，压在磁带盒上。“三天。三天之内来赎，东西还在。”
+
+沈迟伸手去拿钱。指尖碰到票子的一瞬间，他听见了。
+
+很轻。像是从盒子里面，从那个透明塑料壳里面，有人隔着水说了一句话。听不清内容，只听得见那是个女人的声音，尾音往下沉，沉到一半断了。
+
+他的手停在半空。
+
+“这带子里，”他问，“录的什么。”
+
+女人重新拿起竹针，咔。她没看他。
+
+“你当的东西，”她说，“你自己不知道？”
+
+屋外的雨忽然大了，砸在招牌上，一下一下。沈迟低头看着那盘磁带。标签上被水洇掉的两个字，此刻在他眼里，还是认不出来。可他后颈的汗毛立起来了。
+
+他记得这个声音。他记不起是谁的。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=1010 · tension=— · craft=— · hookType=—  · 2026-11-26T09:10:49.628Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 主角
+- 目标: 克服阻碍：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: complication
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch1_s2 | tokens=437 | profile=dialogue | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 克服阻碍：no_causal_basis
+节拍: complication
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 雨在傍晚落下来，不大，但密，像有人在天上筛一层细沙。沈迟站在屋檐下，鞋尖已经湿透，凉意顺着袜子往上爬。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrenc
+…[truncated]
+
+### 本章目标
+进入世界
+
+### Previous Scene Observed Continuity
+### Previous Scene Observed Continuity
+&gt; **角色：scene-derived · previou
+…[truncated]
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ C
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- **Validity**：current
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Co
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 世界规则
+# 01 World Bible · 回声当铺
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+## 2. 超凡体系
+## 3. 能力体系
+## 4. 势力体系（详情见 04_faction_bible/）
+## 5. 社会规则
+## 6. 资源体系
+## 7. 经济体系
+## 8. 历史
+## 9. 地理
+## 10. 禁忌
+
+
+### 写作规则
+# 02 Writing Bible · 回声当铺
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1.
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>雨更密了，砸在招牌上，又顺着铁皮边沿汇成一股，落在他的鞋边。沈迟没有动。
+
+他把磁带翻过来。背面也是一片洇开的灰，像谁先把字写上去，再拿湿布抹过一遍。塑料壳的边缘有一道细裂，指甲划过去，能感觉到毛刺。他把它凑到鼻尖——旧塑料、潮气，还有一丝很淡的、说不清是香还是霉的味道。这味道让他的喉咙紧了一下。跟那个声音一样，卡在认得和记不起之间。
+
+他把磁带举到窗玻璃前。
+
+玻璃里透出的光是暖黄的，暗得几乎要熄。光穿过那层半透明的壳，两个字的残影浮起来一点，笔画断成几截，横不像横，竖不像竖。他眯起眼。还是认不出来。
+
+屋里有人。
+
+他没听见脚步。是先看见玻璃上多了一道影子——比他的矮，站在他身后，隔着玻璃。沈迟的肩绷起来。他慢慢把磁带收回掌心，握紧，指节抵着塑料的棱。
+
+“门没锁。”
+
+声音很轻，隔着玻璃，闷闷的。不是录音里那个。这个更低，更老，尾音往下坠。
+
+沈迟转过身。招牌下面站着一个老人，撑一把黑伞，伞骨弯了一根，雨水从那一角淌下来，顺着伞沿滴在他肩上。老人没看他的脸，看的是他攥着磁带的那只手。
+
+“当东西，还是赎东西？”
+
+“我不当。”沈迟说。他听见自己声音发哑。
+
+老人笑了一下，皱纹堆在眼角，笑意没到眼底。“那你站这儿半个钟头，是躲雨。”
+
+沈迟没答。他确实站了半个钟头。他本来只是路过——或者说，他本来是要去哪儿的。这句“要去哪儿”在心里翻了一下，翻出一层凉。他想不起来自己是从哪个方向走过来的。鞋尖湿透，膝盖以下却是干的。他低头看了一眼，那点干，比湿更让他不舒服。
+
+老人绕过他，走到门边，伸手推门。门轴响了一声，真没上锁。屋里那盏暖黄的灯晃了晃，把货架照出一点轮廓：一排旧钟、旧收音机，还有一格一格的木抽屉，抽屉上贴着号码，号码有的用红漆写，有的用钢笔。空气里铁锈和樟脑混在一起，压着一点别的什么，说不上来。
+
+“你手里那个，”老人背对着他，声音从门里传出来，“放久了，会咬人。”
+
+沈迟的手指在壳上收了一下。他知道这话荒唐。可他后颈的汗毛，又立起来了。他张嘴想问——问什么？他连要问的问题都没有。声音卡在喉咙里，滚了半圈，什么都没出来。
+
+老人回头看了他一眼。伞还撑着，雨水顺着弯掉的伞骨，滴在门槛上，一滴一滴。
+
+“进来吧。”老人说，“雨一时半会儿停不了。”
+
+沈迟站在原地。磁带在掌心里硌着。他数到七——数到七才动。
+
+抬脚的时候，他注意到门槛上有一道浅浅的凹槽，磨得发亮，像被无数双脚进进出出踩出来的。他把湿鞋跨过去，踩上屋里的青砖。地是干的。
+
+门在他身后，自己合上了。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=1066 · tension=— · craft=— · hookType=—  · 2026-11-26T09:11:02.201Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 主角
+- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: turn
+- 字数: ~800
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch1_s3 | tokens=482 | profile=climax | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+节拍: turn
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 雨更密了，砸在招牌上，又顺着铁皮边沿汇成一股，落在他的鞋边。沈迟没有动。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD A
+…[truncated]
+
+### 本章目标
+进入世界
+
+### Previous Scene Observed Continuity
+### Previous Scene Observed Continuity
+&gt; **角色：scene-deriv
+…[truncated]
+
+### Character Subjective State
+
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- *
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Histo
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 回声当铺
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+## 2. 超凡体系
+## 3. 能力体系
+## 4. 势力体系（详情见 04_faction_bible/）
+## 5. 社会规则
+## 6. 资源体系
+## 7. 经济体系
+## 8. 历史
+## 9. 地理
+## 10. 禁忌
+
+
+### 写作规则
+# 02 Writing Bible · 回声当铺
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>门合上的那一声很轻，像被什么人从外面托着门板，慢慢送进框里。沈迟的肩胛先缩了一下，整个人停在原地，湿发贴在额头上，水珠沿着下颌线滑进领口。
+
+屋里的空气是干的。干得发紧。他吸了一口气，鼻腔里漫进一股旧纸和铜锈混在一起的味道，还有某种更冷的东西，像冬天铁栏杆上的霜气。脚下的青砖不吸潮，鞋底的雨水留在砖面上，一小洼，不动。
+
+他回头看门。木门，门面平整，没有把手，没有门闩，没有插孔。他伸手推了一下。掌心下的木头纹丝不动，连他使力的震感都没传回来。他又推了一次，肩膀抵上去，湿衣服在门板上蹭出一道水痕。
+
+门没开。
+
+他退后半步，鞋跟磕在门槛内侧。那道凹槽还在——从里面看，更深了，槽底磨得发白，能映出一点光。他蹲下去，指腹贴着凹槽摸了一遍，凉，光滑，像被什么反复经过的东西压出来的。
+
+“——有人吗。”
+
+声音出口才发觉自己的嗓子发涩。屋里没有回音，那句话像被什么东西吸走了，干干净净。
+
+沈迟站起来，把湿外套的拉链往下拉了半截，热气从领口散出来，贴着皮肤走。他往里面走。青砖地面往前延伸，两侧的墙很高，刷了暗色的漆，摸上去平整得过分。墙上隔一段挂着一盏灯，灯罩是磨砂的，光很淡，照不出人影。
+
+走到第三盏灯下面，他停住了。
+
+正前方是一张柜台。长条木柜台，台面包着铜皮，边缘磨得发亮，中间凹下去一块，像被无数只手肘撑过。柜台后面是一面通顶的木架，格子里摆满了东西。瓷瓶、木匣、卷起来的纸筒、缺了角的铜镜，还有些认不出形状的物件。每样东西前面立着一枚小签，字迹密密麻麻。
+
+沈迟凑近去看最下面一格的签。墨色很淡，像写上去之后被人拿湿布擦过一遍，只剩下轮廓。他眯起眼，勉强认出两个字，又不太确定。
+
+他的目光移到旁边那格。签上的字清楚一些。三个字，笔画很重，压进纸里。
+
+沈迟。
+
+他的手指停在半空。
+
+那两个字旁边还有一行小字，墨色更旧，几乎渗进木色里。他俯身，鼻尖几乎碰到玻璃隔板，才看清——
+
+待收。
+
+铜皮台面映出他的脸，模糊的一团。他盯着那两个字，喉咙动了一下，咽下去的声音在耳朵里很响。外面雨声还在，隔着几层墙传进来，闷得像谁在很远的地方擂鼓。
+
+他直起身，手从台面上收回来。指尖沾了一层薄灰。他下意识在裤子上蹭了蹭。
+
+然后他听见了。
+
+柜台后面，木架尽头的暗处，有极轻的脚步声。布底鞋踩在砖上，一步，又一步。不快，但也没有停下来的意思。
+
+沈迟的背贴上了柜台边缘。铜皮冰凉，隔着湿衬衫渗进来。他没有退，脚像钉在砖面上。
+
+暗处的人影还没显出来，先出来的是一句话。声音不高，像在他耳边说的。
+
+“你迟了。”
+
+沈迟的指节按在柜台边沿上，发白。他张开嘴，喉咙里滚了半圈，什么也没说出来。
+
+灯焰在最近的灯罩里晃了一下。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 4 · Beat 0 scene-aggregate </h3>
+  <p>chars=1303 · tension=— · craft=— · hookType=—  · 2026-11-26T09:11:17.645Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 4/4 · POV 主角
+- 目标: 章末钩子（承接转折后果）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: hook
+- 字数: ~600
+- 章目标: 进入世界
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch1_s4 | tokens=440 | profile=ending | cache=100% | compile=8ms --&gt;
+
+### Scene 目标
+目标: 章末钩子（承接转折后果）：no_causal_basis
+节拍: hook
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 3.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 门合上的那一声很轻，像被什么人从外面托着门板，慢慢送进框里。沈迟的肩胛先缩了一下，整个人停在原地，湿发贴在额头上，水珠沿着下颌线滑进领口。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+
+…[truncated]
+
+### 本章目标
+进入世界
+
+### Previous Scene Observed Continuity
+### Previous Scene
+…[truncated]
+
+### Character Subjective State
+
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect /
+…[truncated]
+
+### 前序 Scene
+### 前序
+…[truncated]
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01 World Bible · 回声当铺
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+## 2. 超凡体系
+## 3. 能力体系
+## 4. 势力体系（详情见 04_faction_bible/）
+## 5. 社会规则
+## 6. 资源体系
+## 7. 经济体系
+## 8. 历史
+## 9. 地理
+## 10. 禁忌
+
+
+### 写作规则
+# 02 Writing Bible · 回声当铺
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_desire / missing_pressure / missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>沈迟把嘴合上了。喉咙里那半圈东西没散，堵着，像吞了一口没化开的冰。他试着咽，喉结动了一下，那东西还在。
+
+灯焰又晃了一次。这次他看清了——没有风，柜台后面的帘子纹丝不动，但那盏最近的小灯焰尖朝外歪了歪，像被什么东西轻轻吹了口气。他盯着那火苗，数到三，它才直回来。
+
+指尖下的柜台边沿是凉的，但凉得不均匀。他按着的那一块比周围低了几度，像有人刚把手掌从上面拿开。他缩回手，低头看了一眼——指腹上沾了一层薄薄的灰，灰里有一道弧形的印子，是他自己按出来的。他搓了搓手指，灰散进掌纹里。
+
+“有人吗。”
+
+他自己的声音吓了他一跳。声音不大，但在柜台和身后那排木格之间的空隙里撞了两下，落进更深的黑暗里。没人应。
+
+他转身往后看。身后那条窄道通向当铺的里间，门半掩着，门缝里没有光。他记得自己进来的时候那道门是关着的——还是开的？他站在门口等过，等的时候看过那扇门，那时候门缝里也是黑的。他没法确定。
+
+柜台上的铜铃轻轻响了一声。很轻，像有人用指甲弹了一下。他猛地转回来，铜铃还在晃，幅度很小，但确实在晃。铃舌碰到铃壁，发出第二声，比第一声更轻。
+
+“我还没碰。”他对着空柜台说，声音比刚才低，像是说给自己听的。
+
+第三声没响。铜铃停住了，停在歪向一侧的位置，铃舌贴着壁，没有落回中间。沈迟看着那个歪掉的铃，后背的汗一层一层地往外冒，衬衫贴在脊梁上，又湿又凉。
+
+他伸手去够那个铃，想把它拨正。指尖刚碰到铜面，铃身突然转了一下，像被什么东西从另一头拧了半圈。他的手停在半空，指甲盖泛白。
+
+柜台后面的帘子动了。没有风，帘子下摆贴着地面，却自己朝旁边卷起一角，露出一道缝。缝里是黑的，黑得比周围的阴影更实，像有人站在帘子后面，把光都挡住了。
+
+沈迟的脚往后退了半步。鞋跟碰到门槛，发出很轻的一声磕碰。他这才想起来自己还没把门关上——身后的门还开着，门外是巷子，巷子里有路灯，有声音，有活人。
+
+他偏过头，眼角往后瞟。门外的光斜着切进来，在青砖地上铺了一条暖黄色的长条，长条上有什么东西在动。他定睛去看，是雨丝，细细的，斜着落进来。下雨了。
+
+他进来的时候没下雨。
+
+沈迟把视线从门外收回来，落在柜台上。铜铃不知什么时候已经正了，铃舌垂在中间，安安静静。帘子也垂回去了，下摆贴着地面，像什么都没发生过。只有他指腹上的灰还在，和柜台边沿那道弧形的印子还在。
+
+他张了张嘴，喉咙里那半圈东西终于滚下去了。他听见自己说：“我明天再来。”
+
+说完他转身就往门外走，步子很快，鞋底蹭着青砖发出急促的摩擦声。他跨出门槛，雨落在脸上，凉的，真实的，他深吸了一口气，回头看了一眼——
+
+门已经关上了。从外面。门板上挂着一块小木牌，他进来的时候没有这块牌子。木牌上刻着两个字，雨水顺着刻痕往下淌，他凑近才看清：**歇业**。
+
+他伸手去推门，门纹丝不动。他加了两只手，肩膀顶上去，门板发出一声闷响，像从里面被什么东西抵住了。他退开半步，盯着那扇门，雨水顺着下巴滴到胸口。
+
+木牌在他眼前晃了一下——没有风，它自己转了个面，背面朝外，上面也有字，漆是新的，亮得反光：
+
+**明早卯时，带伞。**
+
+沈迟站在雨里，手里攥着那把从当铺里带出来的伞——他什么时候拿的？他低头看着自己的手，伞柄上缠着布条，布条是干的，一滴水都没沾。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+</body>
+</html>
