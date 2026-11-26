@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>InkOS Trace tr_ch0002_1795685328502_8mly31</title>
+  <style>
+    body{font-family:ui-sans-serif,system-ui,sans-serif;margin:24px;background:#0f1419;color:#e7ecf1;line-height:1.45}
+    h1,h2,h3{color:#f5f7fa}
+    .meta{opacity:.85;margin-bottom:20px}
+    details{margin:8px 0;background:#1a222c;padding:8px 12px;border-radius:8px}
+    pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c9d4e0}
+    .beat{border:1px solid #2b3642;border-radius:10px;padding:12px;margin:16px 0;background:#141b22}
+    .rot{color:#7dffb3;font-weight:600}
+    a{color:#7cb7ff}
+  </style>
+</head>
+<body>
+  <h1>Chapter Trace</h1>
+  <div class="meta">
+    <div><b>traceId</b>: tr_ch0002_1795685328502_8mly31</div>
+    <div><b>chapter</b>: 2</div>
+    <div><b>created</b>: 2026-11-26T09:28:48.502Z</div>
+    <div><b>finished</b>: 2026-11-26T09:30:24.921Z</div>
+    <div><b>pass</b>: true</div>
+  </div>
+  <h2>Pipeline Stages</h2>
+  <details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:28:48.503Z&quot;,
+  &quot;chapter&quot;: 2,
+  &quot;options&quot;: {}
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:28:48.508Z&quot;,
+  &quot;attempt&quot;: 1,
+  &quot;summary&quot;: &quot;承接上一章结果，推进未解决线索&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第2章：承接上一章结果，推进未解决线索&quot;,
+    &quot;mainGoal&quot;: &quot;承接上一章结果，推进未解决线索&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: &quot;inherit-default&quot;,
+    &quot;bannedElements&quot;: [
+      {
+        &quot;text&quot;: &quot;禁止提前揭晓章末钩子：no_causal_basis&quot;,
+        &quot;expiresAtChapter&quot;: 2
+      },
+      {
+        &quot;text&quot;: &quot;禁止无损撤回本章代价：no_causal_basis&quot;,
+        &quot;expiresAtChapter&quot;: 3
+      },
+      {
+        &quot;text&quot;: &quot;禁止重开篇式介绍世界观与主角履历&quot;,
+        &quot;expiresAtChapter&quot;: null
+      }
+    ]
+  },
+  &quot;voiceDnaForced&quot;: true,
+  &quot;bannedCount&quot;: 4
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:28:48.509Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:28:48.510Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;information&quot;
+  ],
+  &quot;attempt&quot;: 1
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:28:48.511Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch2_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch2_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;克服阻碍：阻力来自上一章后果的延续&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch2_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch2_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:29:12.137Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果&quot;,
+  &quot;chars&quot;: 742,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:29:51.160Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;克服阻碍：阻力来自上一章后果的延续&quot;,
+  &quot;chars&quot;: 361,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:06.046Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;转折（本 Scene 兑现完整行动线）：no_causal_basis&quot;,
+  &quot;chars&quot;: 851,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:13.355Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;章末钩子（承接转折后果）：no_causal_basis&quot;,
+  &quot;chars&quot;: 739,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scenes ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scenes&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:13.360Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;count&quot;: 4,
+  &quot;passed&quot;: 4
+}</pre></details>
+<details><summary>consistency ✓</summary><pre>{
+  &quot;stage&quot;: &quot;consistency&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.915Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null
+}</pre></details>
+<details><summary>metrics </summary><pre>{
+  &quot;stage&quot;: &quot;metrics&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.916Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;metrics&quot;: {
+    &quot;chapter&quot;: 2,
+    &quot;sceneCount&quot;: 4,
+    &quot;climaxCount&quot;: 2,
+    &quot;conflictDensity&quot;: 1,
+    &quot;conflictTypes&quot;: [
+      &quot;information&quot;
+    ],
+    &quot;dialogueRatio&quot;: 0,
+    &quot;humanDialogueCount&quot;: 0,
+    &quot;longDialogueBlocks&quot;: 0,
+    &quot;actionRatio&quot;: 0.36,
+    &quot;mindRatio&quot;: 0.03,
+    &quot;wordCount&quot;: 2693,
+    &quot;worldProgress&quot;: 0,
+    &quot;characterGrowth&quot;: 1,
+    &quot;foreshadowRate&quot;: 0,
+    &quot;rhythmPeaks&quot;: [
+      {
+        &quot;index&quot;: 51,
+        &quot;intensity&quot;: 3,
+        &quot;chars&quot;: 60
+      },
+      {
+        &quot;index&quot;: 1,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 18
+      },
+      {
+        &quot;index&quot;: 2,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 68
+      },
+      {
+        &quot;index&quot;: 3,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 65
+      },
+      {
+        &quot;index&quot;: 4,
+        &quot;intensity&quot;: 2,
+        &quot;chars&quot;: 4
+      }
+    ],
+    &quot;infoDensity&quot;: 6.73,
+    &quot;timestamp&quot;: &quot;2026-11-26T09:30:13.364Z&quot;
+  }
+}</pre></details>
+<details><summary>reader ✓</summary><pre>{
+  &quot;stage&quot;: &quot;reader&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.916Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;readingDrive&quot;: 69,
+  &quot;withheld&quot;: {
+    &quot;bodyEmotionCount&quot;: 0,
+    &quot;overloaded&quot;: false,
+    &quot;note&quot;: null
+  }
+}</pre></details>
+<details><summary>critic ✓</summary><pre>{
+  &quot;stage&quot;: &quot;critic&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.917Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;overall&quot;: 73
+}</pre></details>
+<details><summary>validation ✓</summary><pre>{
+  &quot;stage&quot;: &quot;validation&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.917Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;summary&quot;: null,
+  &quot;soft&quot;: true,
+  &quot;gatePass&quot;: false,
+  &quot;checks&quot;: {
+    &quot;plot_advanced&quot;: true,
+    &quot;relationship_advanced&quot;: false,
+    &quot;world_advanced&quot;: true,
+    &quot;character_advanced&quot;: true,
+    &quot;situation_changed&quot;: &quot;no_causal_basis&quot;,
+    &quot;new_goal&quot;: true,
+    &quot;new_problem&quot;: true,
+    &quot;dialogue_balance&quot;: false
+  }
+}</pre></details>
+<details><summary>reader_simulator </summary><pre>{
+  &quot;stage&quot;: &quot;reader_simulator&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.918Z&quot;,
+  &quot;summary&quot;: &quot;hook=5&quot;,
+  &quot;hookScore&quot;: 5,
+  &quot;softFail&quot;: true,
+  &quot;dragCount&quot;: 0,
+  &quot;threshold&quot;: 6,
+  &quot;dualReviewer&quot;: true,
+  &quot;degraded&quot;: false
+}</pre></details>
+<details><summary>reader_simulator_optimizer </summary><pre>{
+  &quot;stage&quot;: &quot;reader_simulator_optimizer&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.918Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;triggered&quot;: true,
+  &quot;reason&quot;: &quot;hookScore=5 &lt; 7 或拖戏过多&quot;,
+  &quot;polishChanged&quot;: false
+}</pre></details>
+<details><summary>adaptive </summary><pre>{
+  &quot;stage&quot;: &quot;adaptive&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.919Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;weights&quot;: {
+    &quot;actionSceneWeight&quot;: 1,
+    &quot;conflictPriority&quot;: 1,
+    &quot;dialogueTarget&quot;: 0.45,
+    &quot;hookEmphasis&quot;: 1,
+    &quot;styleStrictness&quot;: 1,
+    &quot;sceneCountBias&quot;: 0
+  }
+}</pre></details>
+<details><summary>story_health </summary><pre>{
+  &quot;stage&quot;: &quot;story_health&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.919Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;overallScore&quot;: 64.84
+}</pre></details>
+<details><summary>memory_commit </summary><pre>{
+  &quot;stage&quot;: &quot;memory_commit&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:30:24.920Z&quot;,
+  &quot;summary&quot;: null,
+  &quot;chapterFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook3/chapters/0002_第2章.md&quot;,
+  &quot;stateFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook3/states/ch_0002.json&quot;,
+  &quot;anchorFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook3/states/ch_0002_anchor.yaml&quot;,
+  &quot;hierarchyFile&quot;: &quot;/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook3/novel/_system/brain/memory_hierarchy.json&quot;,
+  &quot;compression&quot;: null,
+  &quot;snapshotId&quot;: &quot;snap_1795685424630_9199aa&quot;
+}</pre></details>
+  <h2>Beat I/O</h2>
+  
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=742 · tension=— · craft=— · hookType=—  · 2026-11-26T09:29:12.134Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 主角
+- 目标: 承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果
+- 冲突: 阻力来自上一章后果的延续
+- 节拍: situation
+- 字数: ~800
+- 章目标: 承接上一章结果，推进未解决线索
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s1 | tokens=594 | profile=opening | cache=0% | compile=9ms --&gt;
+
+### Scene 目标
+目标: 承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果
+节拍: situation
+
+### Scene 冲突
+冲突: 阻力来自上一章后果的延续
+阻碍: 阻力来自上一章后果的延续
+
+### Prior Chapter Actuals（上一章已发生）
+上一章已发生（软记忆 · 必须承接，禁止当作未发生或复述重演）：
+- 门从里面推开半尺
+- 他重新把门拉开，这次拉得很慢，像在拆一个不知道里面有什么的包裹
+- 侧墙上，像七张合拢的嘴。左边四扇，右边三扇。第三扇在右边。 老人走到尽头，推开门进去了。门轴转动的余音沉下去，只剩雨声。
+- 他站起来，回头看走廊
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certifi
+…[truncated]
+
+### 本章目标
+承接上一章结果，推进未解决线索
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Phase 1.R）
+- **
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- **Validity**：current
+
+### 当前状态
+# 08 Current State · 第 1 章后
+
+| 字段 | 值 |
+| --- | --- |
+| 当前章节 | 1 |
+| POV | 主角 |
+| 任务 | — |
+| 地点 | — |
+| 时间 | Day 0 |
+| 本章字数 | 2774 |
+| 最后更新 | 2026-11-26T09:28:38.444Z |
+
+
+### 世界规则
+# 01 World Bible · 雨巷来客
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+## 2. 超凡体系
+## 3. 能力体系
+## 4. 势力体系（详情见 04_faction_bible/）
+## 5. 社会规则
+## 6. 资源体系
+## 7. 经济体系
+## 8. 历史
+## 9. 地理
+## 10. 禁忌
+
+
+### 写作规则
+# 02 Writing Bible · 雨巷来客
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转**
+6. **对话是博弈**
+7. **渐进揭秘**
+8. **每章不可逆变化**
+
+## 文风原则
+1. **身体先行**
+2. **
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索
+- 压力（pressure）: 阻力来自上一章后果的延续
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>门轴的声音沉下去，走廊里就只剩雨了。
+
+他站着没动。雨水顺袖口往下走，一滴，两滴，落在脚边，把灰扑扑的水泥洇出一小片深色。数到七的时候，那片深色连成一条细线，从鞋跟拖到门槛外。
+
+走廊不长。两边墙皮鼓着，像泡胀的纸，一按就能陷下去。七扇门嵌在侧墙上——左边四扇，右边三扇。第三扇在右边。门缝里不透光，也没有声。
+
+他回头。
+
+来路那扇门还开着半尺。湿风从那儿灌进来，把走廊吹成一条窄河。铜环垂着，不动。他进来的时候推得很慢，像拆一个不知道里面有什么的包裹。现在那半尺宽的缝里，外面是灰的，雨是斜的，巷口一根电线在风里晃。
+
+他转回来，往前走。鞋底在湿地上发出很轻的黏响，走到第二扇门前，脚自己停了。他侧耳。门后没动静。再走两步，到第三扇门前。
+
+门是木头的，漆掉了大半，露出底下的纹路，一道一道，像被指甲刮过。他抬手，掌心贴上去。
+
+木头是凉的。比他想的凉。凉得掌心一缩，指节跟着僵了一下。
+
+他等着。门后还是没声。没有脚步，没有咳嗽，没有椅子拖地那种刮擦。他把耳朵贴上去，脸颊挨着湿木头，一股霉味钻进鼻子，底下还压着一点别的——很淡，像铁锈，又像烧过的灰。
+
+他退开半步。
+
+走廊尽头墙上嵌着扇窗，玻璃碎了一角，雨丝斜斜地飘进来，在窗台积了一小汪水，水面上浮着灰。窗台底下，墙根有一道水痕，从尽头一直拖到第三扇门底下，像有谁拖着湿透的东西走过。
+
+他低头看自己的鞋。鞋尖前面，水痕断了。
+
+走廊里只有他一个人的脚印。
+
+他把手从门上收回来，掌心留着一圈木头的凉，慢慢散开，散不干净。他又数了一遍门。左边四扇，右边三扇。第三扇在右边。老人是走到尽头，推开门进去的，门轴转动的余音沉下去，只剩雨。可尽头那扇门，从这儿看过去，也是合着的，门缝里同样不透光。
+
+雨水还在往下滴。一滴，两滴。
+
+他数到七的时候，第三扇门底下的水痕，好像又往前爬了一指。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=361 · tension=— · craft=— · hookType=—  · 2026-11-26T09:29:51.159Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 主角
+- 目标: 克服阻碍：阻力来自上一章后果的延续
+- 冲突: no_causal_basis
+- 节拍: complication
+- 字数: ~800
+- 章目标: 承接上一章结果，推进未解决线索
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s2 | tokens=427 | profile=dialogue | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 克服阻碍：阻力来自上一章后果的延续
+节拍: complication
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 门轴的声音沉下去，走廊里就只剩雨了。 他站着没动。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate
+&gt; Continuity
+…[truncated]
+
+### 本章目标
+承接上一章结果，推进未解决线索
+
+### Previous Scene Observed Continuity
+### Previous Scene Observed Continuity
+&gt; **角色：scene-derived · previous · ≠ Canon · ≠ Plan · ≠ Character SR**
+&gt; Observed Continuity = 上一场正文实际建立的结果（confirmed）与未结算事项（unresolved）。
+&gt; **不是**
+…[truncated]
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Aut
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- **Validity**：current
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Clock Canonical
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索
+- 压力（pressure）: 阻力来自上一章后果的延续
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>他没有继续数。
+
+因为数意味着承认自己在等。他把手从口袋里抽出来，指节僵着。雨声把墙泡透了，凉从砖缝里渗过来，贴着他的侧脸。
+
+第三扇门底下的水痕还在爬。细的，亮的，像从门缝里挤出来的一条舌头，一寸一寸往走廊中央舔。
+
+他没有动。
+
+灯管在走廊尽头眨了一下。他进来的时候数过——每半分钟亮一次，亮不到两秒。现在它眨完，暗下去，走廊里只剩灰蒙蒙的水光。三扇门底下，都在往外冒。
+
+三扇。
+
+他记得自己进来的时候只有一扇。他推开的那扇。现在水从每一道门缝里渗出来，沿着踢脚线连成一条线，亮晶晶的，像整条走廊被人从底下打穿了。
+
+他蹲下去。
+
+水没过了鞋面。他伸手，指尖碰第三扇门框的底部——木头是软的。一按就凹，指腹上沾了纤维，烂的，像泡了三天的纸浆。门框在渗水，从里往外。
+
+有人在里面堵，用了不对的东西。
+
+他站起来的时候膝盖响了。
+
+灯管又眨。半秒。他看见积水面上</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=851 · tension=— · craft=— · hookType=—  · 2026-11-26T09:30:06.044Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 主角
+- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: turn
+- 字数: ~800
+- 章目标: 承接上一章结果，推进未解决线索
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s3 | tokens=500 | profile=climax | cache=100% | compile=8ms --&gt;
+
+### Scene 目标
+目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis
+节拍: turn
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 他没有继续数。 因为数意味着承认自己在等。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate
+&gt; Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。
+&gt; Attribution 若需要
+…[truncated]
+
+### 本章目标
+承接上一章结果，推进未解决线索
+
+### Previous Scene Observed Continuity
+### Previous Scene Observed Continuity
+&gt; **角色：scene-derived · previous · ≠ Canon · ≠ Plan · ≠ Character SR**
+&gt; Observed Continuity = 上一场正文实际建立的结果（confirmed）与未结算事项（unresolved）。
+&gt; **不是** Plan / Scene Goal；**不是** 
+…[truncated]
+
+### Character Subjective State
+
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / u
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Clock Canonical = **Day 0**。摘要
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索
+- 压力（pressure）: 阻力来自上一章后果的延续
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>灯管又眨了一下。
+
+这次他没眨眼。光重新落下来的时候，积水面上多了一张脸。
+
+他先看见的是眼睛——两只，睁着，从水面下往上看他。水很浅，浅到能看见池底的裂纹，却装得下一整张脸。他的呼吸停在半截。膝盖还保持着刚站直的姿势，酸胀从骨缝里往上爬。他没有退。
+
+那张脸也没有动。
+
+水面上浮着一层薄灰，灰里嵌着灯管的影子，像一根断掉的骨头。他蹲下去，动作很慢，手撑在膝盖上，指节抵着布料，抵得发白。水面离他越来越近。近到能闻见铁锈味，近到那两粒眼睛的轮廓开始发抖——不是眼睛在抖，是水在抖，是他自己的手在抖。
+
+他伸手，指尖碰到水面。
+
+冰的。比空气冷得多。指尖一触，那张脸就散了，涟漪一圈一圈荡开，把灯管的白光搅成碎渣。他盯着看，等水面平下来，等那张脸重新拼回去。
+
+平下来了。水底什么都没有。只有裂纹，只有灰，只有他自己的倒影——一张被水泡得发肿的脸，头发贴在额头上。
+
+他收回手。指尖挂着水，水顺着指缝往下滴，滴回池子里，声音很轻。
+
+然后他听见了。
+
+不是水声。是从池子底下传上来的，很闷，隔着一层混凝土，一下，一下，像有人在下面敲。他没数。他站起来，膝盖又响了一声，这回他没在意。他盯着池底那些裂纹，裂纹里渗出一点暗色，不是水，比水稠。
+
+灯管彻底灭了。
+
+黑暗里，那个声音还在敲。一下。一下。不急。像等了很久，终于等到他站起来。
+
+他往后退了一步。鞋底踩到积水，水花溅在小腿上，凉的。他摸到墙，墙皮潮得发软，一按一个坑。他沿着墙往门口挪，眼睛还没适应黑，只能凭记忆找那扇门。手指划过一块凸起的东西——不是墙。
+
+是开关。灯管的开关。他拇指按下去。
+
+灯没亮。
+
+他又按了一下。还是没亮。第三次的时候，他听见身后池子里的水动了一下，像是有什么东西从水里坐了起来。
+
+他没有回头。
+
+他松开墙，转身，推门。门是铁的，推开的时候发出一声长响。走廊里的应急灯亮着，绿幽幽的，照出他一个人。他站在那里喘气，回头看那扇门。门缝底下，有水慢慢渗出来，顺着门槛，往他脚边爬。
+
+他往后退，水往前追。
+
+退到第三步，他停住了。他看着那道水痕，忽然明白——他不是在等谁。是这东西，一直在等他站起来。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 4 · Beat 0 scene-aggregate </h3>
+  <p>chars=739 · tension=— · craft=— · hookType=—  · 2026-11-26T09:30:13.350Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 4/4 · POV 主角
+- 目标: 章末钩子（承接转折后果）：no_causal_basis
+- 冲突: no_causal_basis
+- 节拍: hook
+- 字数: ~600
+- 章目标: 承接上一章结果，推进未解决线索
+- 本章行动线（各 Scene 推进同一条线）: no_causal_basis
+- 代价: no_causal_basis
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=intent_or_scene_field）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch2_s4 | tokens=434 | profile=ending | cache=100% | compile=7ms --&gt;
+
+### Scene 目标
+目标: 章末钩子（承接转折后果）：no_causal_basis
+节拍: hook
+
+### Scene 冲突
+冲突: no_causal_basis
+阻碍: no_causal_basis
+
+### 续写
+### 续写指令
+Continue from Scene 3.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 灯管又眨了一下。 这次他没眨眼。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character SR / Canon
+…[truncated]
+
+### 本章目标
+承接上一章结果，推进未解决线索
+
+### Previous Scene Observed Continuity
+### Previous Scene Observed Continuity
+&gt; **角色：scene-derived · previous · ≠ Canon · ≠ Plan · ≠ Character SR**
+&gt; Observed Continuity = 上一场正文实际建立的结果（confirmed）与未结算事项（un
+…[truncated]
+
+### Character Subjective State
+
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 主角
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+-
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Cloc
+…[truncated]
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 世界规则
+# 01
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索
+- 压力（pressure）: 阻力来自上一章后果的延续
+- Authorial Planned Direction: missing_choice_basis
+- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure</pre></details>
+  <details open><summary>输出正文</summary><pre>水痕停在他脚前三寸。
+
+他低头看。那道湿线不再往前追，像被什么钉在了地上，却还在微微颤动，表面浮着一层极薄的光——不是反射，没有光源。他蹲下去。
+
+膝盖弯到一半，水痕动了。
+
+不是朝他来的。水痕往左，贴着水泥地面斜斜划出去，绕过一截废弃的钢筋，在墙根堆着的碎砖前停住。停了一秒，又往前探了一寸。
+
+他站起来。水痕立刻朝前推进了半尺。
+
+他往前迈一步。水痕又不动了。
+
+呼吸粗了一拍。他蹲下，水痕向左绕。站起，水痕直行。他慢慢往后退，水痕贴着他的鞋尖跟过来，距离始终固定在三寸。退到墙边，后背抵住砖面，水痕就在他鞋前，安静地晃。
+
+他明白了——这东西的走法，跟着他的姿势变。站着它直走，蹲下它拐弯，后退它跟。他盯着那层微光，忽然想起什么。抬起右脚。
+
+水痕猛地往右偏，像被拽了一下。
+
+他把脚放下。水痕回到正中。
+
+左脚。水痕往左。他试着抬起双手——水痕剧烈震颤起来，光层像被风吹皱的水面，晃动了几秒，然后从中间裂开，分成两股。一股往左，一股往右。
+
+他放下手。两股水痕没有合拢。它们各自朝两个方向延伸，沿着墙根爬去，越爬越细，最后消失在黑暗里。
+
+他站在原地，手垂在身侧。指节发白。
+
+墙角的阴影里，有什么东西在动。不是水。是影子——他刚才蹲下时留在墙上的那一团暗，此刻还保持着蹲下的形状，没有跟着他站起来。
+
+他盯着那道影子。影子也盯着他——如果蜷曲的轮廓能叫盯着。
+
+然后影子缓缓直起身，和他现在的姿势一模一样。水痕从影子的脚下渗出来，往他这边淌。
+
+他往后退。
+
+影子往前迈了一步。水痕跟着影子，没有跟着他。
+
+他退到第三步，后背撞上了什么。冰的。他回头——身后是墙。他刚才明明站在空地中央。
+
+墙上什么都没有。水痕从墙面渗出来，沿着砖缝往下淌，在他脚边汇成一滩。他低下头，看见水面上映着自己的脸。
+
+那张脸在笑。他没有。
+
+灯管又眨了一下。
+
+这次他没眨眼。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+</body>
+</html>

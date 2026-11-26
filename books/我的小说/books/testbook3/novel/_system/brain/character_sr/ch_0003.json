@@ -1,0 +1,163 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "场面": {
+      "name": "场面",
+      "awareness": {
+        "items": [
+          {
+            "info": "的纸上，几乎没有声音。那人走到桌前，拿起旧钥匙，在手里掂了掂。\n\n“这把是你上次拿回来的。”那人说。“你让我保管。”\n\n他盯着桌面上自己放下的那把新钥匙。齿口映着昏光，像还没咬合过的牙。\n\n“这次，”那人把旧钥匙递过来，“你打算拿什么换。”",
+            "level": "know",
+            "eventId": "evt_ch3_s3_efd27f500",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch3_s3_efd27f500"
+            }
+          },
+          {
+            "info": "自己的手在抖，抖得金属彼此相撞，发出很轻的一声——咔。\n\n像有什么东西，在很远的地方，跟着咬上了。\n\n他抬起头。门还关着。门后的干燥没有变。\n\n但他听见了脚步。很慢，隔着不止一扇门，一步，一步，停在他听不清的那一格上。\n\n然后有人敲了三下。",
+            "level": "know",
+            "eventId": "evt_ch3_s4_e7e862203",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch3_s4_e7e862203"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch3_s3_efd27f500",
+            "info": "的纸上，几乎没有声音。那人走到桌前，拿起旧钥匙，在手里掂了掂。\n\n“这把是你上次拿回来的。”那人说。“你让我保管。”\n\n他盯着桌面上自己放下的那把新钥匙。齿口映着昏光，像还没咬合过的牙。\n\n“这次，”那人把旧钥匙递过来，“你打算拿什么换。”",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch3_s3_efd27f500"
+            }
+          },
+          {
+            "eventId": "evt_ch3_s4_e7e862203",
+            "info": "自己的手在抖，抖得金属彼此相撞，发出很轻的一声——咔。\n\n像有什么东西，在很远的地方，跟着咬上了。\n\n他抬起头。门还关着。门后的干燥没有变。\n\n但他听见了脚步。很慢，隔着不止一扇门，一步，一步，停在他听不清的那一格上。\n\n然后有人敲了三下。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch3_s4_e7e862203"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch3_s3_efd27f500"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch3_s3_efd27f500"
+        },
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch3_s4_e7e862203"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch3_s4_e7e862203"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 3,
+  "updatedAt": "2026-11-26T09:33:18.052Z"
+}

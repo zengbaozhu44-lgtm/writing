@@ -203,7 +203,330 @@
   },
   "livingPrepare": null,
   "nextChapter": {
-    "chapter": 3
+    "chapter": 3,
+    "intent": {
+      "chapterIntent": "第3章：承接上一章结果，推进未解决线索",
+      "mainGoal": "承接上一章结果，推进未解决线索",
+      "obstacles": [
+        "阻力来自上一章后果的延续"
+      ],
+      "sceneCount": 4,
+      "scenes": [
+        {
+          "index": 1,
+          "id": "ch3_s1",
+          "title": "进入世界",
+          "goal": "承接上章情绪「紧迫·倒计时压迫」进入局面 · 承接「紧迫·倒计时压迫」进入现场：承接上一章结果",
+          "conflict": "阻力来自上一章后果的延续",
+          "entities": [
+            "主角"
+          ],
+          "beat": "situation",
+          "inheritedEmotion": "紧迫·倒计时压迫",
+          "forbiddenOpenings": [
+            "禁止用天气/闹钟/睁开眼开场",
+            "禁止复述上一章已发生的同一事件",
+            "禁止「就在这时」式硬切空降",
+            "禁止用天气/闹钟/睁开眼开场",
+            "禁止复述上一章已发生的同一事件",
+            "禁止「就在这时」式硬切空降"
+          ],
+          "openingConstraint": "开场必须延续情绪：紧迫·倒计时压迫；禁止用天气/闹钟/睁开眼开场；禁止复述上一章已发生的同一事件；禁止「就在这时」式硬切空降",
+          "spatialAnchor": {
+            "location": "本章起始现场",
+            "povPosition": "POV 首次落地位置",
+            "note": "后续 Scene 必须承接此处或给出过渡"
+          },
+          "revealPolicy": {
+            "allowFirstReveal": true,
+            "keyRevealBeat": "newInformation"
+          },
+          "authorIntent": "进入世界",
+          "anchorBanNote": [
+            "禁止无损撤回本章代价：no_causal_basis",
+            "禁止重开篇式介绍世界观与主角履历"
+          ]
+        },
+        {
+          "index": 2,
+          "id": "ch3_s2",
+          "title": "建立关系",
+          "goal": "克服阻碍：阻力来自上一章后果的延续",
+          "conflict": "no_causal_basis",
+          "entities": [
+            "主角"
+          ],
+          "beat": "complication",
+          "spatialAnchor": {
+            "location": "承接 Scene1 现场或合理过渡后的邻接区",
+            "note": "禁止重写章开场坠落/濒死"
+          },
+          "revealPolicy": {
+            "allowFirstReveal": false,
+            "advanceOnly": true
+          },
+          "authorIntent": "建立关系",
+          "anchorBanNote": [
+            "禁止无损撤回本章代价：no_causal_basis",
+            "禁止重开篇式介绍世界观与主角履历"
+          ]
+        },
+        {
+          "index": 3,
+          "id": "ch3_s3",
+          "title": "第一次失败",
+          "goal": "转折（本 Scene 兑现完整行动线）：no_causal_basis",
+          "conflict": "no_causal_basis",
+          "entities": [
+            "主角"
+          ],
+          "beat": "turn",
+          "spatialAnchor": {
+            "location": "同线推进至转折点",
+            "note": "禁止换场无过渡；禁止复读已揭示关键信息的「首次发现」"
+          },
+          "revealPolicy": {
+            "allowFirstReveal": false,
+            "advanceOnly": true
+          },
+          "authorIntent": "第一次失败",
+          "anchorBanNote": [
+            "禁止无损撤回本章代价：no_causal_basis",
+            "禁止重开篇式介绍世界观与主角履历"
+          ]
+        },
+        {
+          "index": 4,
+          "id": "ch3_s4",
+          "title": "第一次成长",
+          "goal": "章末钩子（承接转折后果）：no_causal_basis",
+          "conflict": "no_causal_basis",
+          "entities": [
+            "主角"
+          ],
+          "beat": "hook",
+          "spatialAnchor": {
+            "location": "同线收束现场",
+            "note": "只推进后果与新疑问，不重启开场"
+          },
+          "revealPolicy": {
+            "allowFirstReveal": false,
+            "advanceOnly": true
+          },
+          "authorIntent": "第一次成长",
+          "anchorBanNote": [
+            "禁止无损撤回本章代价：no_causal_basis",
+            "禁止重开篇式介绍世界观与主角履历"
+          ]
+        }
+      ],
+      "pov": "主角",
+      "bargain": "",
+      "turningPoint": "",
+      "ending": "no_causal_basis",
+      "mustLose": "",
+      "newForeshadow": "",
+      "location": "—",
+      "time": "Day 0",
+      "currentDate": "Day 0",
+      "bannedElements": [
+        {
+          "text": "禁止无损撤回本章代价：no_causal_basis",
+          "expiresAtChapter": 3
+        },
+        {
+          "text": "禁止重开篇式介绍世界观与主角履历",
+          "expiresAtChapter": null
+        }
+      ],
+      "relationshipState": {
+        "machine": "relationship-state-v2",
+        "pov": "主角",
+        "present": [
+          "主角"
+        ],
+        "edges": [
+          {
+            "from": "主角",
+            "to": "世界/系统",
+            "status": "对抗",
+            "tension": "高",
+            "note": "与异常规则对峙",
+            "expectedTransition": {
+              "toStatus": "知情对抗",
+              "byChapter": 3,
+              "reason": "确认规则后进入主动追查"
+            }
+          }
+        ],
+        "overridden": false
+      },
+      "priorAnchor": {
+        "version": "chapter-anchor-3",
+        "chapter": 2,
+        "current_date": "Day 0",
+        "pov": "主角",
+        "location": "—",
+        "relationship_state": {
+          "machine": "relationship-state-v2",
+          "pov": "主角",
+          "present": [
+            "主角"
+          ],
+          "edges": [
+            {
+              "from": "主角",
+              "to": "世界/系统",
+              "status": "对抗",
+              "tension": "高",
+              "note": "与异常规则对峙",
+              "expectedTransition": {
+                "toStatus": "知情对抗",
+                "byChapter": 3,
+                "reason": "确认规则后进入主动追查"
+              }
+            }
+          ],
+          "overridden": false
+        },
+        "banned_elements": [
+          {
+            "text": "禁止提前揭晓章末钩子：no_causal_basis",
+            "expiresAtChapter": 2
+          },
+          {
+            "text": "禁止无损撤回本章代价：no_causal_basis",
+            "expiresAtChapter": 3
+          },
+          {
+            "text": "禁止重开篇式介绍世界观与主角履历",
+            "expiresAtChapter": null
+          },
+          {
+            "text": "禁止复述上一章已确认的同一事实（换角度推进）",
+            "expiresAtChapter": 2
+          }
+        ],
+        "voiceDna": {
+          "id": "inherit-default",
+          "label": "章级 Voice DNA（待首次写入）",
+          "sentenceLength": "mixed",
+          "rhythm": "varied",
+          "dialogueRatio": 0.45,
+          "actionDensity": "high",
+          "descriptionDensity": "low",
+          "forced": true,
+          "inherited": true
+        },
+        "narrative_momentum": {
+          "version": "narrative-momentum-1",
+          "fromChapter": 2,
+          "closing_emotion": "紧迫·倒计时压迫",
+          "forbidden_openings": [
+            "禁止用天气/闹钟/睁开眼开场",
+            "禁止复述上一章已发生的同一事件",
+            "禁止「就在这时」式硬切空降",
+            "禁止用天气/闹钟/睁开眼开场",
+            "禁止复述上一章已发生的同一事件",
+            "禁止「就在这时」式硬切空降"
+          ],
+          "mustInheritScene1": true,
+          "tailExcerpt": "他退到第三步，后背撞上了什么。冰的。他回头——身后是墙。他刚才明明站在空地中央。 墙上什么都没有。水痕从墙面渗出来，沿着砖缝往下淌，在他脚边汇成一滩。他低下头，看见水面上映着自己的脸。 那张脸在笑。他没有。 灯管又眨了一下。 这次他没眨眼。"
+        },
+        "recent_actuals": [
+          {
+            "sceneIndex": 1,
+            "text": "第三扇在右边。老人是走到尽头，推开门进去的，门轴转动的余音沉下去，只剩雨。"
+          },
+          {
+            "sceneIndex": 2,
+            "text": "他推开的那扇"
+          },
+          {
+            "sceneIndex": 2,
+            "text": "他站起来的时候膝盖响了"
+          },
+          {
+            "sceneIndex": 3,
+            "text": "他站起来，膝盖又响了一声，这回他没在意"
+          },
+          {
+            "sceneIndex": 3,
+            "text": "终于等到他站起来"
+          }
+        ],
+        "state_ledger": {
+          "version": 1,
+          "updated_chapter": 2,
+          "items": [],
+          "locations": [],
+          "open_promises": [],
+          "settled_costs": []
+        },
+        "committedAt": "2026-11-26T09:30:24.612Z",
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "operational_planner_hint",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isCharacterReality": false,
+          "isRelationshipFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Anchor / heuristic ops hint ≠ Reality / obtains.",
+          "paths": [
+            "deriveRelationshipState",
+            "deriveClosingEmotion",
+            "buildChapterAnchor"
+          ],
+          "relationship_state": "operational_planner_hint_not_fact",
+          "closing_emotion": "ops_hint_not_character_reality"
+        }
+      },
+      "anchorConstraintsApplied": true,
+      "chapterTone": null,
+      "tone": null,
+      "endingDirection": "no_causal_basis",
+      "wordTarget": null,
+      "storyMap": null,
+      "sceneSeeds": [
+        {
+          "title": "进入世界",
+          "seed": "进入世界",
+          "goal": "进入世界"
+        },
+        {
+          "title": "建立关系",
+          "seed": "建立关系",
+          "goal": "建立关系"
+        },
+        {
+          "title": "第一次失败",
+          "seed": "第一次失败",
+          "goal": "第一次失败"
+        },
+        {
+          "title": "第一次成长",
+          "seed": "第一次成长",
+          "goal": "第一次成长"
+        },
+        {
+          "title": "揭露第一层秘密",
+          "seed": "揭露第一层秘密",
+          "goal": "揭露第一层秘密"
+        }
+      ],
+      "volumeAuthorNotes": "[ ] 可验证项",
+      "volumeSeed": {
+        "title": "第一次失败",
+        "seed": "第一次失败",
+        "goal": "第一次失败"
+      },
+      "chapter": 3,
+      "_derivedFrom": "deriveNextChapterIntent",
+      "_completedCostStripped": true
+    },
+    "priorAnchorApplied": true
   },
   "force": false
 }
