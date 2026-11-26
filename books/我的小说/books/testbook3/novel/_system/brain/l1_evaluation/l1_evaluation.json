@@ -95,7 +95,7 @@
           "evidenceOccurrenceIds": []
         },
         "access": {
-          "passCount": 8,
+          "passCount": 9,
           "rejectedEvidenceCount": 0,
           "passRefs": [
             "evt_ch2_s2_e2ab90cfc",
@@ -413,8 +413,8 @@
         ]
       }
     },
-    "主角": {
-      "characterId": "主角",
+    "那人": {
+      "characterId": "那人",
       "status": "UNKNOWN",
       "reason": "eligibility_unknown",
       "inputs": {
@@ -423,9 +423,94 @@
           "evidenceOccurrenceIds": []
         },
         "access": {
-          "passCount": 0,
+          "passCount": 1,
           "rejectedEvidenceCount": 0,
-          "passRefs": [],
+          "passRefs": [
+            "evt_ch9_s1_e94e57ba1"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "那人已经重新": {
+      "characterId": "那人已经重新",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch9_s1_ef24d18b5"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "手的指头一根一根": {
+      "characterId": "手的指头一根一根",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch9_s3_e9db7b352"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "主角": {
+      "characterId": "主角",
+      "status": "VALID",
+      "reason": "eligible_and_access_pass",
+      "inputs": {
+        "eligibility": {
+          "state": "ELIGIBLE",
+          "evidenceOccurrenceIds": [
+            "evt_ch9_s4_e58a8869e"
+          ]
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch9_s4_e58a8869e"
+          ],
           "rejectedRefs": []
         }
       },
@@ -453,5 +538,5 @@
     "uniqueConsumer": "future_l2_gate_authorized_only",
     "note": "L1=VALID 不自动产生 Choice/Option/Selection"
   },
-  "updatedAt": "2026-11-26T10:06:49.440Z"
+  "updatedAt": "2026-11-26T10:08:10.023Z"
 }

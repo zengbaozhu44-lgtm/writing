@@ -72,6 +72,76 @@
       "at": "2026-11-26T10:06:49.450Z",
       "pass": true,
       "summary": null
+    },
+    {
+      "stage": "consistency",
+      "file": "stages/11_consistency.json",
+      "at": "2026-11-26T10:07:00.099Z",
+      "pass": true,
+      "summary": null
+    },
+    {
+      "stage": "metrics",
+      "file": "stages/12_metrics.json",
+      "at": "2026-11-26T10:07:00.100Z",
+      "summary": null
+    },
+    {
+      "stage": "reader",
+      "file": "stages/13_reader.json",
+      "at": "2026-11-26T10:07:00.100Z",
+      "pass": true,
+      "summary": null
+    },
+    {
+      "stage": "critic",
+      "file": "stages/14_critic.json",
+      "at": "2026-11-26T10:07:00.101Z",
+      "pass": true,
+      "summary": null
+    },
+    {
+      "stage": "validation",
+      "file": "stages/15_validation.json",
+      "at": "2026-11-26T10:07:00.101Z",
+      "pass": true,
+      "summary": null
+    },
+    {
+      "stage": "reader_simulator",
+      "file": "stages/16_reader_simulator.json",
+      "at": "2026-11-26T10:07:00.102Z",
+      "summary": "hook=5"
+    },
+    {
+      "stage": "reader_simulator_optimizer",
+      "file": "stages/17_reader_simulator_optimizer.json",
+      "at": "2026-11-26T10:07:00.102Z",
+      "summary": null
+    },
+    {
+      "stage": "adaptive_learning",
+      "file": "stages/18_adaptive_learning.json",
+      "at": "2026-11-26T10:07:00.103Z",
+      "summary": null
+    },
+    {
+      "stage": "adaptive",
+      "file": "stages/19_adaptive.json",
+      "at": "2026-11-26T10:07:00.104Z",
+      "summary": null
+    },
+    {
+      "stage": "story_health",
+      "file": "stages/20_story_health.json",
+      "at": "2026-11-26T10:07:00.104Z",
+      "summary": null
+    },
+    {
+      "stage": "memory_commit",
+      "file": "stages/21_memory_commit.json",
+      "at": "2026-11-26T10:07:00.105Z",
+      "summary": null
     }
   ],
   "beats": [
@@ -119,5 +189,111 @@
       "craftMode": null,
       "chars": 486
     }
-  ]
+  ],
+  "finishedAt": "2026-11-26T10:07:00.106Z",
+  "pass": true,
+  "chapterFile": "/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook3/chapters/0008_承接上一章结果，.md",
+  "readerSimulator": {
+    "summary": "",
+    "hookScore": 5,
+    "dragSections": [],
+    "softFail": false,
+    "conservative": true,
+    "raw": "",
+    "baseline": {
+      "samples": [
+        {
+          "chapter": 1,
+          "hookScore": 5,
+          "softFail": true,
+          "threshold": 6,
+          "at": "2026-11-26T09:28:38.417Z"
+        },
+        {
+          "chapter": 2,
+          "hookScore": 5,
+          "softFail": true,
+          "threshold": 6,
+          "at": "2026-11-26T09:30:24.573Z"
+        },
+        {
+          "chapter": 3,
+          "hookScore": 6,
+          "softFail": false,
+          "threshold": 6,
+          "at": "2026-11-26T09:33:25.524Z"
+        },
+        {
+          "chapter": 4,
+          "hookScore": 4,
+          "softFail": true,
+          "threshold": 5,
+          "at": "2026-11-26T09:35:10.001Z"
+        },
+        {
+          "chapter": 5,
+          "hookScore": 5,
+          "softFail": false,
+          "threshold": 5,
+          "at": "2026-11-26T09:36:14.484Z"
+        },
+        {
+          "chapter": 6,
+          "hookScore": 5,
+          "softFail": false,
+          "threshold": 5,
+          "at": "2026-11-26T09:57:15.224Z"
+        },
+        {
+          "chapter": 7,
+          "hookScore": 5,
+          "softFail": false,
+          "threshold": 5,
+          "at": "2026-11-26T10:05:41.885Z"
+        }
+      ],
+      "mean": 5,
+      "median": 5,
+      "count": 7
+    },
+    "threshold": 5,
+    "reviewers": [
+      {
+        "label": "primary",
+        "temperature": 0.3,
+        "hookScore": 5,
+        "dragCount": 0,
+        "parseMode": "regex-fallback"
+      },
+      {
+        "label": "secondary",
+        "temperature": 0.7,
+        "hookScore": 5,
+        "dragCount": 0,
+        "parseMode": "regex-fallback"
+      }
+    ],
+    "model": "deepseek/deepseek-v4.1-flash",
+    "dualReviewer": true
+  },
+  "validation": {
+    "pass": true,
+    "passed": 8,
+    "total": 8,
+    "checks": {
+      "plot_advanced": true,
+      "relationship_advanced": true,
+      "world_advanced": true,
+      "character_advanced": true,
+      "situation_changed": "no_causal_basis",
+      "new_goal": true,
+      "new_problem": true,
+      "dialogue_balance": true
+    },
+    "failures": [],
+    "message": "推进校验 + 对话成型全部成立",
+    "soft": true,
+    "gatePass": true
+  },
+  "htmlPath": "/Users/zora/Desktop/ai/InkOSv1/books/我的小说/books/testbook3/novel/_system/brain/traces/tr_ch0008_1795687552162_4qjpb9/debug.html"
 }
