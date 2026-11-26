@@ -55,6 +55,116 @@
         ]
       }
     },
+    "场面": {
+      "characterId": "场面",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch2_s1_e0a1461f3"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "他": {
+      "characterId": "他",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 3,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch2_s2_e2ab90cfc",
+            "evt_ch2_s3_e44ae632d",
+            "evt_ch2_s4_ec938e864"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "终于等到他": {
+      "characterId": "终于等到他",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch2_s3_e8e520e42"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "他拇指": {
+      "characterId": "他拇指",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch2_s3_edb0e1806"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
     "主角": {
       "characterId": "主角",
       "status": "UNKNOWN",
@@ -95,5 +205,5 @@
     "uniqueConsumer": "future_l2_gate_authorized_only",
     "note": "L1=VALID 不自动产生 Choice/Option/Selection"
   },
-  "updatedAt": "2026-11-26T09:28:29.838Z"
+  "updatedAt": "2026-11-26T09:30:13.349Z"
 }
