@@ -1,0 +1,2380 @@
+{
+  "chapter": 1,
+  "scenes": [
+    {
+      "index": 1,
+      "id": "ch1_s1",
+      "title": "进入局面",
+      "goal": "承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。",
+      "conflict": "推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+      "entities": [
+        "林晚"
+      ],
+      "beat": "situation",
+      "revealPolicy": {
+        "allowFirstReveal": true,
+        "advanceOnly": false
+      },
+      "status": "done",
+      "wordTarget": 800,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+          "source": "authored_plan.conflict"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "无 authored options（不枚举默认行动方向）"
+        },
+        "choice": {
+          "actor": "",
+          "pov_relation": "pov",
+          "action": "林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。",
+          "reason": "authored_plan.climax（作者明确因果，保留）",
+          "source": "authored_plan.climax"
+        },
+        "consequence": {
+          "immediate": "林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。",
+          "long_term": null,
+          "source": "authored_plan.cost"
+        },
+        "new_information": {
+          "revealed": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "who_learns": "主角",
+          "changes": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+          "source": "authored_plan.hook|ending"
+        },
+        "next_pressure": {
+          "pressure": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "source": "authored_plan.hook|ending"
+        },
+        "no_causal_basis": [],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "authored_plan.conflict",
+          "options_basis": "none",
+          "choice_basis": "authored_plan.climax",
+          "consequence_basis": "authored_plan.cost",
+          "information_basis": "authored_plan.hook|ending",
+          "degradation": [
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "partial",
+          "generated": true,
+          "partial": true,
+          "degraded": false
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1",
+        "note": "scene_1_no_prior"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 1/4 · POV 林晚\n- 目标: 承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。\n- 冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- 节拍: situation\n- 字数: ~800\n- 章目标: 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 代价: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=08_current_state）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch1_s1 | tokens=542 | profile=opening | cache=100% | compile=5ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。\n节拍: situation\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n### Information Boundary（消费纪律 · Ph\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 当前状态\n# 08 Current State · 第 0 章后\n\n> 上限 1000 字。只写此刻。\n\n| 字段 | 值 |\n|------|-----|\n| 时间 | Day 0 |\n| 地点 | — |\n| 天气 | — |\n| POV 状态 | — |\n| 装备 | — |\n| 能力 | — |\n| 危机 | — |\n| 限制 | — |\n\n\n### 世界规则\n# 01 World Bible · 测试之书\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible · 测试之书\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台参数\n| 参数 | 值\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+      "dynamic": {
+        "entities": [
+          "林晚"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "cached",
+            "label": "cached",
+            "tokens": 993
+          }
+        ],
+        "totalTokens": 993,
+        "totalChars": 2438,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s1 | tokens=542 | profile=opening | cache=100% | compile=5ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。\n节拍: situation\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n### Information Boundary（消费纪律 · Ph\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 当前状态\n# 08 Current State · 第 0 章后\n\n> 上限 1000 字。只写此刻。\n\n| 字段 | 值 |\n|------|-----|\n| 时间 | Day 0 |\n| 地点 | — |\n| 天气 | — |\n| POV 状态 | — |\n| 装备 | — |\n| 能力 | — |\n| 危机 | — |\n| 限制 | — |\n\n\n### 世界规则\n# 01 World Bible · 测试之书\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible · 测试之书\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台参数\n| 参数 | 值\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "67553515a2cede87",
+        "compileMs": 4,
+        "profile": "opening",
+        "importance": {
+          "林晚": 95
+        }
+      },
+      "text": "铜镜的边沿硌进她虎口。\n\n林晚数到第七件，指腹上已经积了一层薄灰，是那种老木头和铜锈混在一起的灰，涩，带一点铁腥味。店里只剩柜台上方那盏黄灯，光从她右肩斜下来，把货单上的字照得发黄。卷帘门早拉下了，门外那条街的声音被隔成一层闷闷的底噪——偶尔一辆车碾过井盖，远远的。\n\n老板的规矩贴在库房门口，打印纸，边角卷了：「深夜到货批次，学徒不得触碰，只登记，不验货。」她刚来时问过一次为什么。老板说，夜里来的东西，性子没定。\n\n她当时没听懂，也没敢再问。\n\n这一批一共十九件，木箱是下午到的，箱盖上的封条写着一个她不认识的地址。登记到第十二件，是一面铜镜。前清的样式，镜背缠枝纹，绿锈斑驳，镜面却反常地干净——干净得不像这个年份该有的东西。\n\n她没碰它。她把编号抄进单子，笔尖顿了顿。\n\n灯灭了半秒。\n\n不是灭，是闪。灯管老了，偶尔这样。可就在那半秒里，铜镜的镜面亮了一下，像有人从里面擦了一把。林晚抬起头。\n\n镜子里不是她的脸。\n\n是街。\n\n她身后墙上挂的是一幅褪色的山水，镜子里却是夜里的街道——湿的柏油路，路灯，一家卷帘门半开的铺子。她认得这条街，她每天下班都走。可镜子里多了一样东西：路灯和电线杆之间，挤着一间铺面，木招牌，白底黑字，写着「回声当铺」。\n\n她盯着那四个字，喉咙里滚了一下，没滚出声音。\n\n外面没有这间铺子。她今天下午走过那条街，走了两遍——早上来的时候一遍，中午出去买饭的时候一遍。没有。那面墙她记得，是一堵刷了白漆的实心墙，上面贴着通下水道的小广告。\n\n她后退半步，鞋跟磕在货架腿上。\n\n「林晚。」\n\n老板的声音从里屋门口传来。她整个人一僵，手背贴上货单，像要盖住什么。\n\n「登记完了？」\n\n「快……还差七件。」\n\n老板没出来。灯把他的影子投在门框上，很长，一动不动。「记住规矩。」他说，「别碰。」\n\n门又合上了。\n\n林晚站在原地，听自己的心跳。一下，两下。她数到七才动——这是她的老毛病，紧张的时候数数，数到七，手就不抖了。\n\n可这一次数到七，手还是抖的。\n\n她伸手去够那面镜子。\n\n指尖离镜面还有一寸，镜子里那间「回声当铺」的门，开了。\n\n她没看清里面有什么。她只看见自己的手——镜子里那只手，比她的先一步，摸到了镜面。\n\n然后是响。\n\n货架晃了一下。她转身太急，胳膊肘撞在最上层。那尊青瓷瓶——老板说过，别碰，那是留给周先生的抵押品——从架子上滑下来，落地，声音很轻，像谁咬碎了一颗糖。\n\n碎片溅到她小腿上。一片划进右手掌心，从虎口到指根，血立刻涌出来，热的，顺着掌纹淌到手腕，滴在货单上，把「第十二件」那行字洇开一小团红。\n\n她跪下去捡，捡了两片就停了。\n\n镜子里，「回声当铺」的门口，站着一个人。\n\n看不清脸。只看得出是个女的，个子和她差不多，站在门里的暗处，没有动。\n\n她攥着流血的手，跪在碎瓷中间，听见自己很轻地说了一句：「完了。」",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch1_s1",
+        "index": 1,
+        "sourceTextHash": "-762288835",
+        "confirmed": [
+          {
+            "id": "quote_-1222354",
+            "label": "原文引语「深夜到货批次，学徒不得触碰，只登记，不验货。」",
+            "evidence": {
+              "sceneId": "ch1_s1",
+              "index": 1,
+              "excerpt": "尔一辆车碾过井盖，远远的。 老板的规矩贴在库房门口，打印纸，边角卷了：「深夜到货批次，学徒不得触碰，只登记，不验货。」她刚来时问过一次为什么。老板说，夜里来的东西，性子没定。 她当时没听懂，也没敢再问。 这一批"
+            }
+          },
+          {
+            "id": "quote_68516693",
+            "label": "原文引语「回声当铺」",
+            "evidence": {
+              "sceneId": "ch1_s1",
+              "index": 1,
+              "excerpt": "子里多了一样东西：路灯和电线杆之间，挤着一间铺面，木招牌，白底黑字，写着「回声当铺」。 她盯着那四个字，喉咙里滚了一下，没滚出声音。 外面没有这间铺子。她今天下午走过那条街，走"
+            }
+          },
+          {
+            "id": "quote_26309311",
+            "label": "原文引语「林晚。」",
+            "evidence": {
+              "sceneId": "ch1_s1",
+              "index": 1,
+              "excerpt": "实心墙，上面贴着通下水道的小广告。 她后退半步，鞋跟磕在货架腿上。 「林晚。」 老板的声音从里屋门口传来。她整个人一僵，手背贴上货单，像要盖住什么。 「登记完了？」 「"
+            }
+          },
+          {
+            "id": "quote_-9649189",
+            "label": "原文引语「登记完了？」",
+            "evidence": {
+              "sceneId": "ch1_s1",
+              "index": 1,
+              "excerpt": "老板的声音从里屋门口传来。她整个人一僵，手背贴上货单，像要盖住什么。 「登记完了？」 「快……还差七件。」 老板没出来。灯把他的影子投在门框上，很长，一动不动。「记住规矩。」他"
+            }
+          }
+        ],
+        "unresolved": [],
+        "empty": false,
+        "extractedAt": "2026-11-26T09:06:22.500Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Observed Continuity ≠ Canon / SR / Plan. Text-span projection only.",
+          "paths": [
+            "buildObservedContinuity",
+            "scene.text literal spans"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch1_s1_e24a202e8",
+          "sceneId": "ch1_s1",
+          "version": "story-event-1",
+          "actors": [
+            "她"
+          ],
+          "action": "她转身太急，胳膊肘撞在最上层",
+          "intent": "",
+          "consequence": "场面动作已发生：转身",
+          "stateChanges": [
+            "action:她:转身"
+          ],
+          "affectedEntities": [
+            "她"
+          ],
+          "evidence": {
+            "excerpt": "步，摸到了镜面。 然后是响。 货架晃了一下。她转身太急，胳膊肘撞在最上层。那尊青瓷瓶——老板说过，别碰，那是留给周先生的抵押品——从架子上滑下来，落地，声音很轻，像谁咬",
+            "offset": 913
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch1_s1",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "林晚": {
+            "name": "林晚",
+            "awareness": {
+              "items": [
+                {
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              }
+            ]
+          },
+          "她": {
+            "name": "她",
+            "awareness": {
+              "items": [
+                {
+                  "info": "步，摸到了镜面。 然后是响。 货架晃了一下。她转身太急，胳膊肘撞在最上层。那尊青瓷瓶——老板说过，别碰，那是留给周先生的抵押品——从架子上滑下来，落地，声音很轻，像谁咬",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e24a202e8",
+                  "provenance": {
+                    "characterId": "她",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e24a202e8"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch1_s1_e24a202e8",
+                  "info": "步，摸到了镜面。 然后是响。 货架晃了一下。她转身太急，胳膊肘撞在最上层。那尊青瓷瓶——老板说过，别碰，那是留给周先生的抵押品——从架子上滑下来，落地，声音很轻，像谁咬",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "她",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e24a202e8"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "她",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e24a202e8"
+              },
+              {
+                "characterId": "她",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e24a202e8"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch1_s1",
+        "characters": {
+          "林晚": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "林晚",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch1_s1",
+        "pass": true,
+        "wordCount": 1120,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含顺承词，违反硬切规则"
+          }
+        ],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch1_s1",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch1_s1",
+        "actor": "",
+        "action": "承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 1120
+    },
+    {
+      "index": 2,
+      "id": "ch1_s2",
+      "title": "受阻与博弈",
+      "goal": "承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的\"回声当铺\"，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。",
+      "conflict": "推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+      "entities": [
+        "林晚"
+      ],
+      "beat": "complication",
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "status": "done",
+      "wordTarget": 800,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+          "source": "authored_plan.conflict"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "无 authored options（不枚举默认行动方向）"
+        },
+        "choice": {
+          "actor": "",
+          "pov_relation": "pov",
+          "action": "林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。",
+          "reason": "authored_plan.climax（作者明确因果，保留）",
+          "source": "authored_plan.climax"
+        },
+        "consequence": {
+          "immediate": "林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。",
+          "long_term": null,
+          "source": "authored_plan.cost"
+        },
+        "new_information": {
+          "revealed": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "who_learns": "主角",
+          "changes": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+          "source": "authored_plan.hook|ending"
+        },
+        "next_pressure": {
+          "pressure": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "source": "authored_plan.hook|ending"
+        },
+        "no_causal_basis": [],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "authored_plan.conflict",
+          "options_basis": "none",
+          "choice_basis": "authored_plan.climax",
+          "consequence_basis": "authored_plan.cost",
+          "information_basis": "authored_plan.hook|ending",
+          "degradation": [
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "partial",
+          "generated": true,
+          "partial": true,
+          "degraded": false
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 2/4 · POV 林晚\n- 目标: 承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的\"回声当铺\"，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。\n- 冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- 节拍: complication\n- 字数: ~800\n- 章目标: 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 代价: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=08_current_state）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch1_s2 | tokens=616 | profile=dialogue | cache=100% | compile=9ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的\"回声当铺\"，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。\n节拍: complication\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 铜镜的边沿硌进她虎口。 林晚数到第七件，指腹上已经积了一层薄灰，是那种老木头和铜锈混在一起的灰，涩，带一点铁腥味。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: 她 · reported happening: 她转身太急，胳膊肘撞在最上层\n  text-noted aftermath: 场面动作已发生：转身\n  state_mentions: action:她:转身\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的\n…[truncated]\n\n### Previous Scene Observed Continuity\n### Previous Scene Observed Continuity\n> **角色：scene-der\n…[truncated]\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：\n  - [know] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Relevance**：\n  - [high] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Histo\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+      "dynamic": {
+        "entities": [
+          "林晚"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 56,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 78,
+            "category": "conflict"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 96,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 182,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 14,
+            "category": "goal"
+          },
+          {
+            "key": "observed_continuity",
+            "label": "Previous Scene Observed Continuity",
+            "tokens": 18,
+            "category": "history"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 153,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 13,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          }
+        ],
+        "totalTokens": 616,
+        "totalChars": 2861,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s2 | tokens=616 | profile=dialogue | cache=100% | compile=9ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的\"回声当铺\"，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。\n节拍: complication\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 铜镜的边沿硌进她虎口。 林晚数到第七件，指腹上已经积了一层薄灰，是那种老木头和铜锈混在一起的灰，涩，带一点铁腥味。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: 她 · reported happening: 她转身太急，胳膊肘撞在最上层\n  text-noted aftermath: 场面动作已发生：转身\n  state_mentions: action:她:转身\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的\n…[truncated]\n\n### Previous Scene Observed Continuity\n### Previous Scene Observed Continuity\n> **角色：scene-der\n…[truncated]\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：\n  - [know] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Relevance**：\n  - [high] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Histo\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "5a2f703db82d0cda",
+        "compileMs": 9,
+        "profile": "dialogue",
+        "rankingDrop": 5,
+        "budgetUsage": {
+          "usage": {
+            "goal": 166,
+            "conflict": 78,
+            "character": 153,
+            "world": 0,
+            "facts": 0,
+            "history": 219,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 102,
+            "conflict": 24,
+            "character": 25,
+            "world": 0,
+            "facts": 0,
+            "history": 100,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "林晚": 95
+        }
+      },
+      "text": "碎瓷还在膝盖底下。她没起来。\n\n血顺着手腕往下淌，在腕骨那儿拐了个弯，滴到青瓷的断口上，把那点雨过天青染成暗红。她没管。她往前挪了半寸，膝盖压碎一片瓷，咯的一声脆响。\n\n铜镜立在斜对面的矮柜上，灰布褪到一半，露出镜面。\n\n镜子里是街对面。\n\n她把脸凑近，近到鼻尖几乎贴上玻璃。镜面凉，呼出的气蒙上一小团白。等那团白慢慢散掉——砖墙的位置上，立着一间铺子。两扇木门半开，门楣挂一块匾，漆掉得差不多了，木纹里嵌着四个字。她一个一个认出来。\n\n回声当铺。\n\n她猛地回头。\n\n身后那扇临街的窗黑着。窗外是砖墙，墙根堆着三只废木箱，墙皮剥落的地方露着红砖，一道裂缝从墙头斜下来。白天她搬货时从那墙根走过两趟，踩过一地的碎砖屑。\n\n没有铺子。\n\n她转回来。镜子里那间铺子还在，门开着，暗处站着个人影，还是那个。她盯着看，人影没动，她也没动，只有手腕上的血在一滴一滴地落。\n\n楼梯响了。\n\n老木楼梯，第三级总要响一声，她来这儿三个月，听熟了。响第二声的时候，她已经伸手去够那块灰布。\n\n“林晚。”\n\n老板的声音从楼梯口压下来。不高，但那种不高。\n\n她一把扯下布，盖住镜面，把边角往矮柜缝里掖。布上的灰扑了一脸，樟脑味呛进鼻子。\n\n“哎，在。”她没站起来。\n\n皮鞋踩到最后一格。灯光把他的影子拉过来，盖住她半边身子。\n\n“数完了？”\n\n“差三件。”\n\n“深夜那批——”他顿了一下，“别碰。客户的东西，明天我亲自点。”\n\n她攥着布角，指甲掐进掌心那道口子里。布底下是镜子，凉气一直渗进来，钝钝地疼。\n\n“听见没有。”\n\n“听见了。”\n\n老板没走。他站在那儿，目光扫过货架，扫过她跪着的姿势，扫过她脚边那堆还没来得及收拾的东西。她往左挪了半寸，用身子挡住。\n\n“锁门。”他说，“灯关了再上去。钥匙放柜台上。”\n\n皮鞋踩上楼梯，第三级又响了一声。里屋的门开了又合。\n\n她没动，数到二十，才低头看自己手底下。\n\n血把布角洇湿了一小块，暗红在灰布上慢慢晕开。青瓷瓶的断口躺在她脚边，两半，上头那滴血已经渗进釉里。这瓶子是留给一个客户的，标签上的字她记得，老板用红笔写的，圈了两道。她这个月的工钱，买不回它的一半。\n\n她慢慢把布掀开一条缝。\n\n镜子里那间铺子的门，开得大了一点。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch1_s2",
+        "index": 2,
+        "sourceTextHash": "-495030249",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T09:06:44.385Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch1_s2_e869e84f0",
+          "sceneId": "ch1_s2",
+          "version": "story-event-1",
+          "actors": [
+            "”她没"
+          ],
+          "action": "”她没站起来",
+          "intent": "",
+          "consequence": "场面动作已发生：站起",
+          "stateChanges": [
+            "action:”她没:站起"
+          ],
+          "affectedEntities": [
+            "”她没"
+          ],
+          "evidence": {
+            "excerpt": "布上的灰扑了一脸，樟脑味呛进鼻子。 “哎，在。”她没站起来。 皮鞋踩到最后一格。灯光把他的影子拉过来，盖住她半边身子。 “数完了？” “差三件。”",
+            "offset": 489
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch1_s2",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "林晚": {
+            "name": "林晚",
+            "awareness": {
+              "items": [
+                {
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              }
+            ]
+          },
+          "”她没": {
+            "name": "”她没",
+            "awareness": {
+              "items": [
+                {
+                  "info": "布上的灰扑了一脸，樟脑味呛进鼻子。 “哎，在。”她没站起来。 皮鞋踩到最后一格。灯光把他的影子拉过来，盖住她半边身子。 “数完了？” “差三件。”",
+                  "level": "know",
+                  "eventId": "evt_ch1_s2_e869e84f0",
+                  "provenance": {
+                    "characterId": "”她没",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s2_e869e84f0"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch1_s2_e869e84f0",
+                  "info": "布上的灰扑了一脸，樟脑味呛进鼻子。 “哎，在。”她没站起来。 皮鞋踩到最后一格。灯光把他的影子拉过来，盖住她半边身子。 “数完了？” “差三件。”",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "”她没",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s2_e869e84f0"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "”她没",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s2_e869e84f0"
+              },
+              {
+                "characterId": "”她没",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s2_e869e84f0"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch1_s2",
+        "characters": {
+          "林晚": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "林晚",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch1_s2",
+        "pass": true,
+        "wordCount": 867,
+        "issues": [],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch1_s2",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch1_s2",
+        "actor": "",
+        "action": "承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的\"回声当铺\"，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 867
+    },
+    {
+      "index": 3,
+      "id": "ch1_s3",
+      "title": "转折与代价",
+      "goal": "承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。",
+      "conflict": "推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+      "entities": [
+        "林晚"
+      ],
+      "beat": "turn",
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "status": "done",
+      "wordTarget": 800,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+          "source": "authored_plan.conflict"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "无 authored options（不枚举默认行动方向）"
+        },
+        "choice": {
+          "actor": "",
+          "pov_relation": "pov",
+          "action": "林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。",
+          "reason": "authored_plan.climax（作者明确因果，保留）",
+          "source": "authored_plan.climax"
+        },
+        "consequence": {
+          "immediate": "林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。",
+          "long_term": null,
+          "source": "authored_plan.cost"
+        },
+        "new_information": {
+          "revealed": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "who_learns": "主角",
+          "changes": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+          "source": "authored_plan.hook|ending"
+        },
+        "next_pressure": {
+          "pressure": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "source": "authored_plan.hook|ending"
+        },
+        "no_causal_basis": [],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "authored_plan.conflict",
+          "options_basis": "none",
+          "choice_basis": "authored_plan.climax",
+          "consequence_basis": "authored_plan.cost",
+          "information_basis": "authored_plan.hook|ending",
+          "degradation": [
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "partial",
+          "generated": true,
+          "partial": true,
+          "degraded": false
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 3/4 · POV 林晚\n- 目标: 承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。\n- 冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- 节拍: turn\n- 字数: ~800\n- 章目标: 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 代价: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=08_current_state）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch1_s3 | tokens=708 | profile=climax | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。\n节拍: turn\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 碎瓷还在膝盖底下。 血顺着手腕往下淌，在腕骨那儿拐了个弯，滴到青瓷的断口上，把那点雨过天青染成暗红。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: 她 · reported happening: 她转身太急，胳膊肘撞在最上层\n  text-noted aftermath: 场面动作已发生：转身\n  state_mentions: action:她:转身\n- [S2/action] participants: ”她没 · reported happening: ”她没站起来\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:”她没:站起\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n\n### Previous Scene Observed Continuity\n### Previous Scene Observed Continuity\n> **角色：scene-derived · pr\n…[truncated]\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：\n  - [know] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Relevance**：\n  - [high] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omi\n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+      "dynamic": {
+        "entities": [
+          "林晚"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 50,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 78,
+            "category": "conflict"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 91,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 222,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 46,
+            "category": "goal"
+          },
+          {
+            "key": "observed_continuity",
+            "label": "Previous Scene Observed Continuity",
+            "tokens": 21,
+            "category": "history"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 129,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 14,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          },
+          {
+            "key": "state_board",
+            "label": "局势",
+            "tokens": 51,
+            "category": "conflict"
+          }
+        ],
+        "totalTokens": 708,
+        "totalChars": 3074,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s3 | tokens=708 | profile=climax | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。\n节拍: turn\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 碎瓷还在膝盖底下。 血顺着手腕往下淌，在腕骨那儿拐了个弯，滴到青瓷的断口上，把那点雨过天青染成暗红。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: 她 · reported happening: 她转身太急，胳膊肘撞在最上层\n  text-noted aftermath: 场面动作已发生：转身\n  state_mentions: action:她:转身\n- [S2/action] participants: ”她没 · reported happening: ”她没站起来\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:”她没:站起\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n\n### Previous Scene Observed Continuity\n### Previous Scene Observed Continuity\n> **角色：scene-derived · pr\n…[truncated]\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：\n  - [know] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Relevance**：\n  - [high] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omi\n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "02fef4114019e2d4",
+        "compileMs": 7,
+        "profile": "climax",
+        "rankingDrop": 4,
+        "budgetUsage": {
+          "usage": {
+            "goal": 187,
+            "conflict": 129,
+            "character": 129,
+            "world": 0,
+            "facts": 0,
+            "history": 263,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 47,
+            "conflict": 16,
+            "character": 27,
+            "world": 0,
+            "facts": 0,
+            "history": 99,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "林晚": 95
+        }
+      },
+      "text": "她没敢把布全掀开。\n\n缝里那线光比刚才亮了些。镜面里的巷子还是那条巷子——墙根湿着，砖缝里长着苔，跟门外一样。只是巷子深处多出来的那间铺子，门开得更大了。方才只是一道黑线，现在是一掌宽。门里没有灯，黑得很干净，像谁把夜灌进去了。\n\n林晚用袖口去擦镜面。\n\n布上掉下的绒毛黏在玻璃上，一根一根，清清楚楚。可镜子里那面墙没有绒毛。她的手停在半空，喉咙里滚了半圈，什么也没说出来。\n\n门里站着人。\n\n一个女人的轮廓，先出来的是肩，再是脸。那张脸她认得——每天早上六点半在洗手间那面起雾的镜子里见过。她下意识往后缩了半寸，后腰撞上货架立柱，铁皮发出一声闷响。\n\n女人抬起手。五指张开，往里勾了一下。像叫人过去，又像叫人别出声。\n\n另一只手举了起来。\n\n一只怀表。银壳，边上缺了一小块珐琅，壳面有一道磕痕，从十二点斜着划到四点。\n\n林晚的呼吸卡在胸口。\n\n那只表她最后见它是在七年前，母亲把它放进外套口袋，出门，再没回来。后来警察给她看过照片，表不在照片里。她记得那道磕痕，是她六岁那年从桌上碰下去的，母亲没骂她，只把表捡起来，说，磕了记性。\n\n镜中人把表往前递，表盖抵在镜面上。玻璃上浮起一圈白雾，从表壳那儿往外散，像有人贴着一块冰呼了口气。\n\n林晚的手抬起来。\n\n指腹碰到镜面，是凉的，凉得不像在屋里放了一夜的玻璃。她往前倾，脚后跟离了地，右臂伸直，肩胛骨绷成一条线——胳膊肘扫过了货架最上层。\n\n瓷器落地不是脆响。先是一声闷的，然后才散开一片细碎的、像撒了一把豆子的声音。\n\n她整个人僵在那儿，手还举着。\n\n掌心里先麻了一下，然后才是疼。她摊开手。一道口子从虎口切到指根，白肉翻着，血涌得比她想得快，顺着手腕往下淌，在腕骨那儿拐了个弯，滴到地上那片雨过天青上，把青色染成暗红。\n\n碎瓷散了一地。一块大些的断口上贴着标签，纸边被水泡过，卷着，四个字朝上——客户预留，勿动。\n\n老板出门前说过三遍，这只瓶子别碰，客户下周来取。\n\n她跪下去，膝盖压住一块碎瓷，也没觉得疼。她伸手去拢那些碎片，指尖抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。\n\n她抬起头。\n\n镜子里那条巷子空了。那扇门关上了。\n\n只在门槛里侧，搁着一点亮的东西，圆圆的，隔着玻璃，离她的指尖不到一寸。\n\n她够不着。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch1_s3",
+        "index": 3,
+        "sourceTextHash": "-1205900133",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T09:07:11.011Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch1_s3_ed854de04",
+          "sceneId": "ch1_s3",
+          "version": "story-event-1",
+          "actors": [
+            "林晚"
+          ],
+          "action": "抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。 她抬起头。 镜子里那条巷子空了。那扇门关上了。 只在门槛里",
+          "intent": "",
+          "consequence": "场面叙述成为后续可引用事实",
+          "stateChanges": [
+            "presence:林晚"
+          ],
+          "affectedEntities": [
+            "林晚"
+          ],
+          "evidence": {
+            "excerpt": "抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。\n\n她抬起头。\n\n镜子里那条巷子空了。那扇门关上了。\n\n只在门槛里侧，搁着一点亮的东西，圆圆的，隔着玻璃，离她的指尖不到一寸。\n\n她够不着。",
+            "offset": 843
+          },
+          "source": "scene.text",
+          "kind": "presence",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch1_s3",
+        "source": "scene.text",
+        "candidateCount": 0,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "林晚": {
+            "name": "林晚",
+            "awareness": {
+              "items": [
+                {
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                },
+                {
+                  "info": "抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。\n\n她抬起头。\n\n镜子里那条巷子空了。那扇门关上了。\n\n只在门槛里侧，搁着一点亮的东西，圆圆的，隔着玻璃，离她的指尖不到一寸。\n\n她够不着。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s3_ed854de04",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s3_ed854de04"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                },
+                {
+                  "eventId": "evt_ch1_s3_ed854de04",
+                  "info": "抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。\n\n她抬起头。\n\n镜子里那条巷子空了。那扇门关上了。\n\n只在门槛里侧，搁着一点亮的东西，圆圆的，隔着玻璃，离她的指尖不到一寸。\n\n她够不着。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s3_ed854de04"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              },
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s3_ed854de04"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s3_ed854de04"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 1
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch1_s3",
+        "characters": {
+          "林晚": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "林晚",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "ELIGIBLE",
+            "reason": "subject_presence_actual_grounded",
+            "evidenceOccurrenceIds": [
+              "evt_ch1_s3_ed854de04"
+            ]
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch1_s3",
+        "pass": true,
+        "wordCount": 917,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含顺承词，违反硬切规则"
+          }
+        ],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch1_s3",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch1_s3",
+        "actor": "",
+        "action": "承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 917
+    },
+    {
+      "index": 4,
+      "id": "ch1_s4",
+      "title": "章末钩子",
+      "goal": "承接上章推进：场景4：疼痛让她退开，但镜中女子将怀表贴上镜面，表盖弹开——照片里是林晚自己，穿着明天面试的西装。",
+      "conflict": "推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+      "entities": [
+        "林晚"
+      ],
+      "beat": "hook",
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "status": "done",
+      "wordTarget": 600,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。",
+          "source": "authored_plan.conflict"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "无 authored options（不枚举默认行动方向）"
+        },
+        "choice": {
+          "actor": "",
+          "pov_relation": "pov",
+          "action": "林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。",
+          "reason": "authored_plan.climax（作者明确因果，保留）",
+          "source": "authored_plan.climax"
+        },
+        "consequence": {
+          "immediate": "林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。",
+          "long_term": null,
+          "source": "authored_plan.cost"
+        },
+        "new_information": {
+          "revealed": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "who_learns": "主角",
+          "changes": "mock_llm_pending（需 LLM 判断是否改变选择空间）",
+          "source": "authored_plan.hook|ending"
+        },
+        "next_pressure": {
+          "pressure": "镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+          "source": "authored_plan.hook|ending"
+        },
+        "no_causal_basis": [],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "authored_plan.conflict",
+          "options_basis": "none",
+          "choice_basis": "authored_plan.climax",
+          "consequence_basis": "authored_plan.cost",
+          "information_basis": "authored_plan.hook|ending",
+          "degradation": [
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "partial",
+          "generated": true,
+          "partial": true,
+          "degraded": false
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 4/4 · POV 林晚\n- 目标: 承接上章推进：场景4：疼痛让她退开，但镜中女子将怀表贴上镜面，表盖弹开——照片里是林晚自己，穿着明天面试的西装。\n- 冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- 节拍: hook\n- 字数: ~600\n- 章目标: 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 代价: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=08_current_state）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch1_s4 | tokens=755 | profile=ending | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景4：疼痛让她退开，但镜中女子将怀表贴上镜面，表盖弹开——照片里是林晚自己，穿着明天面试的西装。\n节拍: hook\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 她没敢把布全掀开。 缝里那线光比刚才亮了些。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: 她 · reported happening: 她转身太急，胳膊肘撞在最上层\n  text-noted aftermath: 场面动作已发生：转身\n  state_mentions: action:她:转身\n- [S2/action] participants: ”她没 · reported happening: ”她没站起来\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:”她没:站起\n- [S3/presence] participants: 林晚 · reported happening: 抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。 她抬起头。 镜子里那条巷子空了。那扇门关上了。 只在门槛里\n  text-noted aftermath: 场面叙述成为后续可引用事实\n  state_mentions: presence:林晚\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n\n### Previous Scene Observed Continuity\n### Previous Scene Observed Continuity\n> **角色：scene-deriv\n…[truncated]\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：\n  - [know] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Relevance**：\n  - [high] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible \n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Histo\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n#\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+      "dynamic": {
+        "entities": [
+          "林晚"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 39,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 78,
+            "category": "conflict"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 74,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 308,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 46,
+            "category": "goal"
+          },
+          {
+            "key": "observed_continuity",
+            "label": "Previous Scene Observed Continuity",
+            "tokens": 19,
+            "category": "history"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 117,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 13,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          },
+          {
+            "key": "state_board",
+            "label": "局势",
+            "tokens": 51,
+            "category": "conflict"
+          },
+          {
+            "key": "world_bible",
+            "label": "世界规则",
+            "tokens": 4,
+            "category": "world"
+          }
+        ],
+        "totalTokens": 755,
+        "totalChars": 3208,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch1_s4 | tokens=755 | profile=ending | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 承接上章推进：场景4：疼痛让她退开，但镜中女子将怀表贴上镜面，表盖弹开——照片里是林晚自己，穿着明天面试的西装。\n节拍: hook\n\n### Scene 冲突\n冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 她没敢把布全掀开。 缝里那线光比刚才亮了些。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: 她 · reported happening: 她转身太急，胳膊肘撞在最上层\n  text-noted aftermath: 场面动作已发生：转身\n  state_mentions: action:她:转身\n- [S2/action] participants: ”她没 · reported happening: ”她没站起来\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:”她没:站起\n- [S3/presence] participants: 林晚 · reported happening: 抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。 她抬起头。 镜子里那条巷子空了。那扇门关上了。 只在门槛里\n  text-noted aftermath: 场面叙述成为后续可引用事实\n  state_mentions: presence:林晚\n\n### 本章目标\n古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n\n### Previous Scene Observed Continuity\n### Previous Scene Observed Continuity\n> **角色：scene-deriv\n…[truncated]\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 林晚\n- **Awareness**：\n  - [know] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Relevance**：\n  - [high] 么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible \n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Histo\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n#\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\"回声当铺\"，而她成为唯一能看见它的人。\n- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。\n- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中\"回声当铺\"的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。\n- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）\n- Authored direction reason: authored_plan.climax（作者明确因果，保留）\n- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。\n- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）\n- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。\n- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "641ffb7246a920e0",
+        "compileMs": 8,
+        "profile": "ending",
+        "rankingDrop": 4,
+        "budgetUsage": {
+          "usage": {
+            "goal": 159,
+            "conflict": 129,
+            "character": 117,
+            "world": 4,
+            "facts": 0,
+            "history": 346,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 43,
+            "conflict": 20,
+            "character": 28,
+            "world": 400,
+            "facts": 0,
+            "history": 100,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "林晚": 95
+        }
+      },
+      "text": "她把手缩回来。\n\n指尖上有一道口子，不深，血珠从皮肤底下慢慢渗出来，聚成圆润的一滴。疼是后到的，先到的是掌心里那层薄薄的汗，把铜镜柄上缠的旧棉线洇湿了一小片。\n\n镜子里那扇门还开着。\n\n门框里侧那点光动了。她一开始以为是自己的呼吸模糊了镜面，眨了眨眼，那点圆光却从门槛里侧升起来，像被人从底下托着。是一块怀表。黄铜壳子，链子垂着，表盖上錾着细密的花纹，被什么力量贴着镜面推过来。\n\n表盖弹开。\n\n林晚的呼吸停在喉咙口。表盖内侧嵌着一张照片，相纸泛着旧象牙色，边缘微翘。照片里是个女人，半身像，背景是灰白的幕布，穿一件深色西装外套，领口别着一枚小小的银色胸针。头发拢在耳后，嘴角有一道极浅的弧度，像笑还没成形就被快门截住了。\n\n那是她自己。\n\n是明天面试要穿的那件西装。昨晚她从衣柜最底层翻出来，熨了四十分钟，袖口还有一道没烫平的褶。她认得那枚胸针——母亲留下的，她别在衣领上试了三次才决定不戴，怕太招眼。\n\n现在它别在照片里那个女人的领口上。\n\n掌心的血已经沿着生命线淌下来，滴在水泥地上，洇开一个暗红的圆点。她感觉不到疼了。胃里有什么东西在往下坠，像电梯失控的那几秒。\n\n镜子里的女人——照片里的女人——抬起头。\n\n隔着铜镜的玻璃面，隔着那条不存在的巷子，她的视线像一根针穿过来，扎在林晚的瞳孔里。她的嘴唇动了。没有声音，但林晚看懂了那个口型。\n\n她在说：别去。\n\n货架深处传来老板的脚步声，拖鞋蹭着水泥地，由远及近。林晚的膝盖还跪在地上，碎瓷片散在脚边，青瓷瓶的残骸像一摊白色的骨头。她应该站起来。应该把碎片扫干净。应该想好怎么解释。\n\n可她的手又伸了出去。\n\n指尖离镜面还有半寸。铜镜表面冰凉的气流裹上来，像冬天呵在玻璃上的白雾，只是冷的。她的指纹几乎要贴上去了。\n\n“林晚。”\n\n老板的声音从背后传来，比平时低了一个调。\n\n“你在干什么。”",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch1_s4",
+        "index": 4,
+        "sourceTextHash": "1807573761",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T09:07:17.588Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch1_s4_e5c7393d8",
+          "sceneId": "ch1_s4",
+          "version": "story-event-1",
+          "actors": [
+            "她应该"
+          ],
+          "action": "她应该站起来",
+          "intent": "",
+          "consequence": "场面动作已发生：站起",
+          "stateChanges": [
+            "action:她应该:站起"
+          ],
+          "affectedEntities": [
+            "她应该"
+          ],
+          "evidence": {
+            "excerpt": "，碎瓷片散在脚边，青瓷瓶的残骸像一摊白色的骨头。她应该站起来。应该把碎片扫干净。应该想好怎么解释。 可她的手又伸了出去。 指尖离镜面还有半寸。铜镜表面冰",
+            "offset": 620
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch1_s4",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "林晚": {
+            "name": "林晚",
+            "awareness": {
+              "items": [
+                {
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                },
+                {
+                  "info": "抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。\n\n她抬起头。\n\n镜子里那条巷子空了。那扇门关上了。\n\n只在门槛里侧，搁着一点亮的东西，圆圆的，隔着玻璃，离她的指尖不到一寸。\n\n她够不着。",
+                  "level": "know",
+                  "eventId": "evt_ch1_s3_ed854de04",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s3_ed854de04"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch1_s1_e5bf90ce8",
+                  "info": "么——客户预留，勿动。\n\n掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。\n\n铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。\n\n楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e5bf90ce8"
+                  }
+                },
+                {
+                  "eventId": "evt_ch1_s1_e9a104430",
+                  "info": "里有东西在流。她摊开手，一道口子从虎口划到腕根，血顺着掌纹往下走，滴在碎瓷上。\n\n镜子还立在泡沫纸里，翻着，那条街亮着。铺子门口站着一个人。\n\n她没看清脸。她只看见那人举起手，掌心贴向镜面——从里面。\n\n而她手里的血，正一滴一滴落在镜缘上。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s1_e9a104430"
+                  }
+                },
+                {
+                  "eventId": "evt_ch1_s3_ed854de04",
+                  "info": "抖得拢不住，一片一片往下滑。押金、月薪、赔多少——这些数字在她脑子里挤成一团，挤得她连一个都数不清。\n\n她抬起头。\n\n镜子里那条巷子空了。那扇门关上了。\n\n只在门槛里侧，搁着一点亮的东西，圆圆的，隔着玻璃，离她的指尖不到一寸。\n\n她够不着。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "林晚",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s3_ed854de04"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e5bf90ce8"
+              },
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s1_e9a104430"
+              },
+              {
+                "characterId": "林晚",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s3_ed854de04"
+              },
+              {
+                "characterId": "林晚",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s3_ed854de04"
+              }
+            ]
+          },
+          "她应该": {
+            "name": "她应该",
+            "awareness": {
+              "items": [
+                {
+                  "info": "，碎瓷片散在脚边，青瓷瓶的残骸像一摊白色的骨头。她应该站起来。应该把碎片扫干净。应该想好怎么解释。 可她的手又伸了出去。 指尖离镜面还有半寸。铜镜表面冰",
+                  "level": "know",
+                  "eventId": "evt_ch1_s4_e5c7393d8",
+                  "provenance": {
+                    "characterId": "她应该",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s4_e5c7393d8"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch1_s4_e5c7393d8",
+                  "info": "，碎瓷片散在脚边，青瓷瓶的残骸像一摊白色的骨头。她应该站起来。应该把碎片扫干净。应该想好怎么解释。 可她的手又伸了出去。 指尖离镜面还有半寸。铜镜表面冰",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "她应该",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch1_s4_e5c7393d8"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "她应该",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s4_e5c7393d8"
+              },
+              {
+                "characterId": "她应该",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch1_s4_e5c7393d8"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch1_s4",
+        "characters": {
+          "林晚": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "林晚",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch1_s4",
+        "pass": true,
+        "wordCount": 738,
+        "issues": [],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch1_s4",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch1_s4",
+        "actor": "",
+        "action": "承接上章推进：场景4：疼痛让她退开，但镜中女子将怀表贴上镜面，表盖弹开——照片里是林晚自己，穿着明天面试的西装。",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 738
+    }
+  ],
+  "updatedAt": "2026-11-26T09:07:17.605Z"
+}

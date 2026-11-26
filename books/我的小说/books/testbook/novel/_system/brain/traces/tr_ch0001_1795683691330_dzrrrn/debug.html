@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>InkOS Trace tr_ch0001_1795683691330_dzrrrn</title>
+  <style>
+    body{font-family:ui-sans-serif,system-ui,sans-serif;margin:24px;background:#0f1419;color:#e7ecf1;line-height:1.45}
+    h1,h2,h3{color:#f5f7fa}
+    .meta{opacity:.85;margin-bottom:20px}
+    details{margin:8px 0;background:#1a222c;padding:8px 12px;border-radius:8px}
+    pre{white-space:pre-wrap;word-break:break-word;font-size:12px;color:#c9d4e0}
+    .beat{border:1px solid #2b3642;border-radius:10px;padding:12px;margin:16px 0;background:#141b22}
+    .rot{color:#7dffb3;font-weight:600}
+    a{color:#7cb7ff}
+  </style>
+</head>
+<body>
+  <h1>Chapter Trace</h1>
+  <div class="meta">
+    <div><b>traceId</b>: tr_ch0001_1795683691330_dzrrrn</div>
+    <div><b>chapter</b>: 1</div>
+    <div><b>created</b>: 2026-11-26T09:01:31.330Z</div>
+    <div><b>finished</b>: 2026-11-26T09:02:47.381Z</div>
+    <div><b>pass</b>: false</div>
+  </div>
+  <h2>Pipeline Stages</h2>
+  <details><summary>start </summary><pre>{
+  &quot;stage&quot;: &quot;start&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:01:31.331Z&quot;,
+  &quot;chapter&quot;: 1,
+  &quot;options&quot;: {
+    &quot;force&quot;: true
+  }
+}</pre></details>
+<details><summary>planner </summary><pre>{
+  &quot;stage&quot;: &quot;planner&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:01:31.333Z&quot;,
+  &quot;attempt&quot;: 1,
+  &quot;summary&quot;: &quot;古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\&quot;回声当铺\&quot;，而她成为唯一能看见它的人。&quot;,
+  &quot;intent&quot;: {
+    &quot;chapterIntent&quot;: &quot;第1章：古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\&quot;回声当铺\&quot;，而她成为唯一能看见它的人。&quot;,
+    &quot;mainGoal&quot;: &quot;古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的\&quot;回声当铺\&quot;，而她成为唯一能看见它的人。&quot;,
+    &quot;sceneCount&quot;: 4,
+    &quot;voiceDna&quot;: null,
+    &quot;bannedElements&quot;: []
+  },
+  &quot;source&quot;: &quot;authored_plan&quot;
+}</pre></details>
+<details><summary>decision ✓</summary><pre>{
+  &quot;stage&quot;: &quot;decision&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:01:31.334Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;source&quot;: &quot;authored_plan&quot;
+}</pre></details>
+<details><summary>conflict ✓</summary><pre>{
+  &quot;stage&quot;: &quot;conflict&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:01:31.334Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;types&quot;: [
+    &quot;林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。&quot;
+  ],
+  &quot;source&quot;: &quot;authored_plan&quot;
+}</pre></details>
+<details><summary>scene_plan </summary><pre>{
+  &quot;stage&quot;: &quot;scene_plan&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:01:31.335Z&quot;,
+  &quot;count&quot;: 4,
+  &quot;scenes&quot;: [
+    {
+      &quot;id&quot;: &quot;ch1_s1&quot;,
+      &quot;index&quot;: 1,
+      &quot;goal&quot;: &quot;承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s2&quot;,
+      &quot;index&quot;: 2,
+      &quot;goal&quot;: &quot;承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的\&quot;回声当铺\&quot;，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s3&quot;,
+      &quot;index&quot;: 3,
+      &quot;goal&quot;: &quot;承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ch1_s4&quot;,
+      &quot;index&quot;: 4,
+      &quot;goal&quot;: &quot;承接上章推进：场景4：疼痛让她退开，但镜中女子将怀表贴上镜面，表盖弹开——照片里是林晚自己，穿着明天面试的西装。&quot;
+    }
+  ]
+}</pre></details>
+<details><summary>scene_1 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_1&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:01:44.562Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。&quot;,
+  &quot;chars&quot;: 1217,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_2 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_2&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:02:01.077Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的\&quot;回声当铺\&quot;，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。&quot;,
+  &quot;chars&quot;: 1021,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_3 ✓</summary><pre>{
+  &quot;stage&quot;: &quot;scene_3&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:02:14.618Z&quot;,
+  &quot;pass&quot;: true,
+  &quot;awaiting&quot;: null,
+  &quot;summary&quot;: &quot;承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。&quot;,
+  &quot;chars&quot;: 934,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+<details><summary>scene_4 ✗</summary><pre>{
+  &quot;stage&quot;: &quot;scene_4&quot;,
+  &quot;at&quot;: &quot;2026-11-26T09:02:47.370Z&quot;,
+  &quot;pass&quot;: false,
+  &quot;awaiting&quot;: &quot;writer&quot;,
+  &quot;summary&quot;: &quot;承接上章推进：场景4：疼痛让她退开，但镜中女子将怀表贴上镜面，表盖弹开——照片里是林晚自己，穿着明天面试的西装。&quot;,
+  &quot;chars&quot;: 0,
+  &quot;validation&quot;: null,
+  &quot;score&quot;: null
+}</pre></details>
+  <h2>Beat I/O</h2>
+  
+<section class="beat">
+  <h3>Scene 1 · Beat 0 scene-aggregate </h3>
+  <p>chars=1217 · tension=— · craft=— · hookType=—  · 2026-11-26T09:01:44.558Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 1/4 · POV 林晚
+- 目标: 承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。
+- 冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+- 节拍: situation
+- 字数: ~800
+- 章目标: 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+- 代价: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=08_current_state）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch1_s1 | tokens=542 | profile=opening | cache=100% | compile=5ms --&gt;
+
+### Scene 目标
+目标: 承接上章推进：场景1：深夜古董店打烊盘点，林晚登记一批刚到货的旧物，一面前清铜镜在灯下泛出不属于店内的街景反光。
+节拍: situation
+
+### Scene 冲突
+冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+
+### 本章目标
+古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）
+
+### Information Boundary（消费纪律 · Ph
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 林晚
+- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- **Validity**：current
+
+### 当前状态
+# 08 Current State · 第 0 章后
+
+&gt; 上限 1000 字。只写此刻。
+
+| 字段 | 值 |
+|------|-----|
+| 时间 | Day 0 |
+| 地点 | — |
+| 天气 | — |
+| POV 状态 | — |
+| 装备 | — |
+| 能力 | — |
+| 危机 | — |
+| 限制 | — |
+
+
+### 世界规则
+# 01 World Bible · 测试之书
+
+&gt; 只保存世界规则。禁止：剧情、当前状态、写作技巧。
+
+## 1. 世界背景
+## 2. 超凡体系
+## 3. 能力体系
+## 4. 势力体系（详情见 04_faction_bible/）
+## 5. 社会规则
+## 6. 资源体系
+## 7. 经济体系
+## 8. 历史
+## 9. 地理
+## 10. 禁忌
+
+
+### 写作规则
+# 02 Writing Bible · 测试之书
+
+&gt; 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。
+
+## 叙事原则
+1. **现实目标优先**
+2. **利益驱动**
+3. **信息收费**
+4. **人物主动**
+5. **世界不围主角转**
+6. **对话是博弈**
+7. **渐进揭秘**
+8. **每章不可逆变化**
+
+## 文风原则
+1. **身体先行**
+2. **感官优先**
+3. **信息寄生**
+4. **异常反噬**
+5. **限知第三人称**
+
+## 平台参数
+| 参数 | 值
+…[truncated]
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中&quot;回声当铺&quot;的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。
+- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）
+- Authored direction reason: authored_plan.climax（作者明确因果，保留）
+- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。
+- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）
+- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。
+- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。</pre></details>
+  <details open><summary>输出正文</summary><pre>铜镜先碰到她的指节。
+
+林晚把最后一箱旧物搬上工作台，箱盖掀开，霉味混着樟脑往外涌。她咬住手套的指尖扯下来，赤手去够箱底那层旧报纸。报纸是脆的，一碰就碎成黄片，落在她手背上。
+
+店里只剩柜台后面那盏灯。老板上楼前扔下一句话：深夜批次不用登记，明天有人来取。她应了声好，声音在空店里散得很快。
+
+她还是登记了。
+
+账本摊在台面，圆珠笔夹在指缝里。她一件一件往外拿：铜锁、缺口的玉扣、三枚方孔钱、一只脱了漆的妆匣。每拿起一件，笔尖就在纸上划一道。数到第七件，箱底只剩一块叠得整齐的粗布。
+
+粗布底下是硬的。
+
+她捏着布角掀开。一面铜镜背朝上躺着，镜背素面，只有边缘一圈细纹，绿锈沿着纹路爬。她把它翻过来，镜面朝上，在灯下按了一下。
+
+镜面没有照出她。
+
+灯是暖的，柜台是深的，她背后的货架一排排摞到天花板。可镜子里那条街她没见过。青石板，湿的，两侧是招牌，风把一只灯笼吹得斜过来。她抬头看自己身后——店里没有窗，卷帘门拉到底，门缝里塞着防尘条。
+
+她低头再看。镜子里那条街还在，灯笼还斜着。多出来的东西在最里面：一块木招牌，字是竖的，写着“回声当铺”。招牌下挂着两串铜钱，风一吹，铜钱互相碰。她听不见声音，但能看见它们在动。
+
+她把镜子往灯下推了半寸。镜面里的街跟着暗了一格，青石板的湿光退下去。她把手撤回来，街又亮起来。她盯着自己按在台面上的手指，指腹干干净净，指甲缝里还留着刚才搬箱子蹭的灰。
+
+“回声当铺”四个字正对着她。
+
+林晚的呼吸慢下来。她数了一下：这条街上没有这家店。她在这条街干了三年，从街口到街尾，修鞋的、卖面的、药店、五金店，闭着眼都能背出来。没有当铺。
+
+她掏出手机，对着镜面拍了一张。屏幕是黑的，只有灯的反光，一片模糊的橘黄。她把照片放大，再放大。什么也没有。
+
+笔从她手里滑下去，在账本上滚了半圈，停在台边。
+
+她伸手去够镜子的边沿，指尖离铜面还有一指宽。老板的话在耳朵里响起来：深夜批次，别碰。
+
+她把手缩回来，插进牛仔裤口袋。指甲掐着掌心。
+
+“就看一眼。”她对自己说。
+
+声音出口的瞬间，她自己吓了一跳。店里没有别人，空调外机在墙外嗡着，嗡嗡声里她那句话像被人接住了一样，悬在半空。
+
+她把手伸出去。指尖碰到铜面，凉的，凉得不像这个屋子里的东西。镜里的街动了一下——不是风，是有人从当铺的门里走出来。她看不清，只看见一个影子，肩很窄，走路的样子有点熟。
+
+她往前凑。
+
+手肘撞上了货架。
+
+木头先响了一声。然后是瓷，一声很闷的碎，接着是碎片在瓷砖上滑开的声音，拉得很长。她整个人僵在那儿，手还伸着，铜镜底下压着她的账本。
+
+她低头。
+
+地上那尊青瓷瓶碎成了七八块，瓶口那一块滚到卷帘门边，停在门缝下面。标签还挂着一片，塑料绳上写着编号和一行小字，字太小，她不用看也知道写着什么——客户预留，勿动。
+
+掌心先麻了一下，然后才是疼。她摊开手，一条血线从虎口斜到指根，正往外渗。
+
+铜镜还在台上，镜面朝上，街灯的光从里面透出来，落在她流血的手背上，像有人替她打了一盏灯。
+
+楼梯上传来脚步声。老板的拖鞋，一阶一阶，很慢。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 2 · Beat 0 scene-aggregate </h3>
+  <p>chars=1021 · tension=— · craft=— · hookType=—  · 2026-11-26T09:02:01.071Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 2/4 · POV 林晚
+- 目标: 承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的&quot;回声当铺&quot;，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。
+- 冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+- 节拍: complication
+- 字数: ~800
+- 章目标: 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+- 代价: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=08_current_state）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch1_s2 | tokens=583 | profile=dialogue | cache=100% | compile=8ms --&gt;
+
+### Scene 目标
+目标: 承接上章推进：场景2：她凑近细看，镜中街对面多出一家挂着木匾的&quot;回声当铺&quot;，可抬头看现实街道，那里只是一堵斑驳的砖墙；老板突然下楼催她锁门，她慌忙用布盖上镜子。
+节拍: complication
+
+### Scene 冲突
+冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+
+### 续写
+### 续写指令
+Continue from Scene 1.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 铜镜先碰到她的指节。 林晚把最后一箱旧物搬上工作台，箱盖掀开，霉味混着樟脑往外涌。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate
+&gt; Continuity:
+…[truncated]
+
+### 本章目标
+古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出
+…[truncated]
+
+### Character Subjective State
+（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 林晚
+- **Awareness**：
+  - [know] 么——客户预留，勿动。
+
+掌心先麻了一下，然后才是疼。她摊开手…
+- **Relevance**：
+  - [high] 么——客户预留，勿动。
+
+掌心先麻了一下，然后才是疼。她摊开手…
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omit / unknown
+- **Validity**：current
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。
+- **Scene 1** (进入局面): 铜镜先碰到她的指节。 林晚把最后一箱旧物搬上工作台，箱盖掀开，霉味混着樟脑往外涌。
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中&quot;回声当铺&quot;的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。
+- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）
+- Authored direction reason: authored_plan.climax（作者明确因果，保留）
+- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。
+- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）
+- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。
+- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。</pre></details>
+  <details open><summary>输出正文</summary><pre>拖鞋声停在楼梯拐角。
+
+林晚的手先动了。绒布就在台边，她一把抓过来，盖住镜面。布角沾上她掌心的血，洇开一小块，颜色比布深。她把那只手塞进围裙口袋，另一只手把箱盖掀回去，压住。
+
+老板推门进来时，她正低头数箱子里剩下的瓷片。
+
+“灯也不开全。”他伸手拨了墙上的开关，顶灯嗡地亮起来，“几点了。”
+
+“马上就好。”
+
+他的目光扫过工作台，扫过货架。林晚跟着那道目光走，走到第三层左边——空了。青瓷瓶不在了。碎瓷在她脚边的纸篓里，用旧报纸盖着，报纸底下湿了一片，还在往下渗。
+
+“这批深夜的货，”老板说，“你别碰。”
+
+“我没碰。”
+
+“铜的、漆的、带封条的，都别碰。”他咳了一声，痰音很重，“上回小周摸了只怀表，第二天人就不来了。”
+
+林晚点头。口袋里那只手在跳，一跳一跳，血把围裙内衬黏在皮肤上。
+
+“锁门，垃圾拎出去。明早有人来看货，台面擦干净。”
+
+他转身往楼上走，走了两级，又停下。
+
+“地上有水？”
+
+“我拖了。”她说，“拖把没拧干。”
+
+老板看了她两秒。那两秒里，林晚听见自己耳朵里的血在响。然后他上去了，拖鞋一阶一阶，很慢，直到楼上传来关门声。
+
+她先去锁前门，卷帘闸拉到底，咔。垃圾袋拎到后巷，回来时顺手把纸篓里的碎瓷倒进袋底，报纸裹紧，扎口。
+
+然后她站在工作台前。
+
+布还盖着。街灯的光从布边渗出来，细细一条，落在她流血的手背上。
+
+她掀开了。
+
+镜面朝上。里面是这条街。对面的楼、卷帘门、电线杆上那张搬家小广告，一样不缺。
+
+只是多了一样东西。
+
+她凑近。街对面那堵砖墙的位置，开着一扇门。门楣上挂一块木匾，漆掉大半，还能认出四个字：回声当铺。匾下悬一盏灯，黄得发旧，光晕在镜子里一圈一圈荡开，像水面。
+
+她抬头。
+
+窗外，街对面只有那堵砖墙。爬山虎枯了一半，墙根堆着两袋水泥，去年就在那儿。
+
+她低头。当铺还在。
+
+她把手指按在镜面上。凉的。指腹底下那层铜锈细得像粉。镜里的灯忽然晃了一下，像有人从门后走过。
+
+她再抬头看窗外。连风都没有。
+
+一声铃响从镜子里传出来——很轻，就一声。她屏住呼吸，等第二声。
+
+第二声没来。
+
+她盯着那扇门。门缝里漏出一条更亮的线，往上，往两边，慢慢地——
+
+“林晚。”
+
+楼上的声音。老板。
+
+“卷帘闸拉到底没有？”
+
+她抓起绒布盖上镜子，手背在布上蹭了一下，留下一道血。她朝楼梯口应：“拉了。”
+
+“再拉一遍。”
+
+她走去前门，把闸门又往下拽了一寸。金属摩擦的声音在空店里滚了一圈。
+
+回到工作台时，她没有再掀布。她把四角往里掖了掖，压上那口箱子，箱子上又摞了一本账册。
+
+镜子的光还是透出来。很细，很稳，像谁在布底下替她留了一盏灯。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+
+<section class="beat">
+  <h3>Scene 3 · Beat 0 scene-aggregate </h3>
+  <p>chars=934 · tension=— · craft=— · hookType=—  · 2026-11-26T09:02:14.614Z</p>
+  <details><summary>输入 Prompt</summary><pre># Scene Lore Seed
+Scene 3/4 · POV 林晚
+- 目标: 承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。
+- 冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+- 节拍: turn
+- 字数: ~800
+- 章目标: 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+- 代价: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。
+## 信息边界（Phase 1.R · 必守）
+- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。
+- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。
+- World / Narration ≠ Character Knowledge。
+## Story Clock（Phase 1.R · Plan/State · 非 SR）
+- **Canonical**：Day 0（source=08_current_state）
+- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**
+&lt;!-- prompt-compiler v2 | scene=ch1_s3 | tokens=663 | profile=climax | cache=100% | compile=9ms --&gt;
+
+### Scene 目标
+目标: 承接上章推进：场景3：老板离开后她忍不住揭开布再次擦拭镜面，当铺的门开了，镜中人朝她招手并举起母亲的怀表；她伸手去够，撞翻青瓷瓶，碎瓷割伤手心。
+节拍: turn
+
+### Scene 冲突
+冲突: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+阻碍: 推进冲突：林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+
+### 续写
+### 续写指令
+Continue from Scene 2.
+Do NOT repeat previous narration.
+Maintain tone. Continue naturally.
+**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**
+Previous（历史承接，非当前日历）: 拖鞋声停在楼梯拐角。 林晚的手先动了。
+
+### Previous Scene Occurrence Events
+### Previous Scene Occurrence Events
+&gt; role: occurrence_readback（continuity fuel · 只读）
+&gt; = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。
+&gt; ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof
+&gt; ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate
+&gt; Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。
+&gt; Attribution 若需要：仍仅
+…[truncated]
+
+### 本章目标
+古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+
+### Character Subjective State
+
+- **Interpretation**：omit / unknown（无合法解释证据）
+- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）
+- **Stance**：omit / unknown（无合法立场证据）### 林晚
+- **Awareness**：
+  - [know] 么——客户预留，勿动。
+
+掌心先麻了一下，然后才是疼。她摊开手…
+- **Relevance**：
+  - [high] 么——客户预留，勿动。
+
+掌心先麻了一下，然后才是疼。她摊开手…
+- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）
+- **Affect / Relationship**：omi
+…[truncated]
+
+### 前序 Scene
+### 前序 Scene 摘要
+&gt; **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。
+&gt; 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。
+- **Scene 1** (进入局面): 铜镜先碰到她的指节。 林晚把最后一箱旧物搬上工作台，箱盖掀开，霉味混着樟脑往外涌。
+- **Scene 2** (受阻与博弈): 拖鞋声停在楼梯拐角。 林晚的手先动了。
+
+### 状态差量
+### 上下文变化（Diff）
+
+### 局势
+# 07 State Board · 第 0 章后
+
+&gt; 整个世界当前状态。各势力此刻在干什么。每章更新。
+
+## {势力 A}
+- **正在调查/执行**：
+- **下一步**：
+
+## {POV 角色}
+- **目前计划**：
+- **不知道**：
+
+
+### 因果链 · 叙事草图（作者向 · 非角色已决事实）
+&gt; Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History
+&gt; 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书
+- 欲望（desire）: 「主角」想 古董店学徒林晚在盘点深夜到货的一批旧物时，发现一面铜镜里映出的街道与现实中不同——镜中多出一家从未存在过的&quot;回声当铺&quot;，而她成为唯一能看见它的人。
+- 压力（pressure）: 林晚想查清铜镜的异象，但老板明令禁止学徒碰深夜批次；她必须在保全工作的危险好奇与被开除的现实恐惧之间抉择。
+- Authorial Planned Direction: 林晚趁老板离开偷偷擦拭铜镜，镜中&quot;回声当铺&quot;的门开了，一个和她长得一模一样的女子站在门口朝她招手，手里举着林晚失踪多年的母亲的旧怀表。
+- Narrative focus character: 「主角」（作者向导航 · ≠ Character Choice · ≠ Attribution）
+- Authored direction reason: authored_plan.climax（作者明确因果，保留）
+- Authored / Declared outcome: 林晚撞翻了货架上一尊待售的青瓷瓶，碎瓷划破了手心，这尊瓶子是老板留给重要客户的抵押品，赔偿金额远超她的月薪。
+- （剧情约束 / 作者向 outcome；≠ Character Choice consequence · ≠ Attribution · ≠ Phase 5 Consequence）
+- 新信息（new_information）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。
+- 下一压力（next_pressure）: 镜中女子把怀表贴在镜面上，表盖弹开，里面的照片不是母亲，而是林晚自己，穿着她明天才要去面试的衣服。</pre></details>
+  <details open><summary>输出正文</summary><pre>楼梯的拖鞋声一阶一阶下去了，很慢，像在数什么东西。然后是门轴转动的声音，锁舌落进扣里，落了两道。
+
+林晚站在原地没动。
+
+她数到二十，又数到四十。街上传来一声很远的车铃，之后就只剩柜台后面那座老钟的走时声。
+
+她转过身。
+
+布掀开的时候，铜镜表面浮着一层薄灰，是她下午搬运时落下的。她拿围裙角去擦，一擦，灰就往布纹里走，第二遍才干净。铜面凉得不像在屋里放了一整天的东西，指腹贴上去，像贴着一小块从井底捞上来的铁。
+
+镜里先亮起来的是石板路。
+
+她认得那条街——店门口往左数第三块招牌，缺了一角的檐，还有对面那家卖纸扎的铺子，白天还挂着白灯笼。可她擦一遍，再看，那些都还在，只是街的尽头多了一样东西。
+
+一间铺面。门楣上两个描金的字，笔画是反的，她眯着眼认了半天才读出来：回声。
+
+白日里她进进出出十几趟，那条街的尽头是一堵砖墙。
+
+她拿指节去敲镜面，铜是实的，凉的。镜里的那条街却像被什么从里面推了一下——那扇描金的门，开了。
+
+门里站着一个人。
+
+林晚的呼吸停在半截。那张脸跟她的一模一样，连左边眉尾那颗小痣的位置都不差。镜里的女子抬起手，慢慢地朝她招了一下，动作轻得像是怕惊了谁。
+
+然后她举起另一只手。
+
+银的，壳子发乌，链子垂下来，缺了一节链环。表盖侧面有一道斜着的划痕。林晚的膝盖先软了一下——那道划痕是她七岁那年拿剪刀划的，母亲把她抱开的时候，表已经破了。她记得那顿打，记得母亲后来把表揣进贴身的衣袋，说这块表不走了也不扔。
+
+后来母亲也没了。
+
+她的手贴上镜面，掌心压着那个银色的影子。不够近。她整个人往前倾，膝盖顶到了货架。
+
+第二层那尊青瓷瓶晃了一下。
+
+她转身去接。
+
+上半截接住了，凉的，滑的。下半截砸在地上，声音碎得很短，像谁把一句话掐断。
+
+掌心先是麻，然后才是疼。她摊开手，一道口子从虎口斜到腕根，血冒出来，先是一颗一颗，接着连成线，顺着掌纹往下淌。
+
+她跪到地上捡碎片。指尖碰到一片带着瓶底的，底下压着一张对折的黄纸标签。她把标签翻过来，血蹭在纸边。
+
+客户预留，勿动。
+
+字是老板的，横画收笔往上挑，跟柜台上那张一样。她下午搬箱子时就看见过同样一张，贴在箱子侧面，当时她只当是别人的东西，没多看。
+
+现在她跪在一地碎瓷中间，掌心朝上，血积在掌窝里，映着头顶那盏灯。铜镜那边还亮着，光透过来，落在她手背上，很细，很稳。
+
+她没有抬头。</pre></details>
+  <details><summary>校验</summary><pre>null</pre></details>
+  <details><summary>评分 / hookRotation</summary><pre>{
+  &quot;score&quot;: null,
+  &quot;hookRotation&quot;: null,
+  &quot;hookType&quot;: null
+}</pre></details>
+</section>
+</body>
+</html>
