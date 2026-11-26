@@ -1,0 +1,86 @@
+version: chapter-anchor-3
+chapter: 8
+current_date: Day 0
+pov: 主角
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 主角
+  present:
+    - 主角
+  edges:
+    - from: 主角
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 9
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 8
+voiceDna:
+  id: inherit-default
+  label: 章级 Voice DNA（待首次写入）
+  sentenceLength: mixed
+  rhythm: varied
+  dialogueRatio: 0.45
+  actionDensity: high
+  descriptionDensity: low
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 8
+  closing_emotion: 疑虑·未解之问
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+  mustInheritScene1: true
+  tailExcerpt: 暗了，桌角椅背的轮廓都糊成一团。他屏住气，听见自己心跳撞着耳膜，一下，两下。 门闩从外面被拨了一下。咔。 那人把他往旁边一拽。他踉跄半步，肩膀撞上墙，墙皮簌簌往下落。门开了一条缝，雨声猛地灌进来。有人站在门槛外面，浑身淌水，抬脚就要往里迈。
+recent_actuals:
+  - sceneIndex: 1
+    text: 说完就坐下了，像这件事跟他无关，又像他必须等一个结果
+  - sceneIndex: 1
+    text: 你自己拉开的那本
+  - sceneIndex: 1
+    text: 那人站起来
+  - sceneIndex: 1
+    text: 他才转身，重新看向那扇窗
+  - sceneIndex: 2
+    text: 他转身的时候，膝盖先于意识动了一下，左腿僵了半秒才跟上
+state_ledger:
+  version: 1
+  updated_chapter: 8
+  items: []
+  locations: []
+  open_promises: []
+  settled_costs: []
+committedAt: 2026-11-26T10:06:59.832Z
+d1InferenceDemotion:
+  eo: EO-P4
+  role: operational_planner_hint
+  producesObtains: false
+  isRealityAuthority: false
+  isCharacterReality: false
+  isRelationshipFact: false
+  authorityAct: NOT_AN_AUTHORITY_ACT
+  claimLevelAuthority: NOT_THIS_PATH
+  note: Anchor / heuristic ops hint ≠ Reality / obtains.
+  paths:
+    - deriveRelationshipState
+    - deriveClosingEmotion
+    - buildChapterAnchor
+  relationship_state: operational_planner_hint_not_fact
+  closing_emotion: ops_hint_not_character_reality

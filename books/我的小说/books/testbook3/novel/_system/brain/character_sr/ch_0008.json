@@ -1,0 +1,163 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "场面": {
+      "name": "场面",
+      "awareness": {
+        "items": [
+          {
+            "info": "，不是笑，是嘴角动了一下。\n\n“好。”那人说，“那我告诉你一件事——这屋子的灯，不是你开的。”\n\n他手一紧，钥匙压在掌心里，硌得生疼。他张了张嘴，雨声灌进来，把那句话堵在喉咙里。窗外的巷子又传来脚步声，一步，两步，三步，往里来的，越来越近。",
+            "level": "know",
+            "eventId": "evt_ch8_s3_e54d5cd98",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch8_s3_e54d5cd98"
+            }
+          },
+          {
+            "info": "，桌角椅背的轮廓都糊成一团。他屏住气，听见自己心跳撞着耳膜，一下，两下。\n\n门闩从外面被拨了一下。咔。\n\n那人把他往旁边一拽。他踉跄半步，肩膀撞上墙，墙皮簌簌往下落。门开了一条缝，雨声猛地灌进来。有人站在门槛外面，浑身淌水，抬脚就要往里迈。",
+            "level": "know",
+            "eventId": "evt_ch8_s4_e90e8b175",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch8_s4_e90e8b175"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch8_s3_e54d5cd98",
+            "info": "，不是笑，是嘴角动了一下。\n\n“好。”那人说，“那我告诉你一件事——这屋子的灯，不是你开的。”\n\n他手一紧，钥匙压在掌心里，硌得生疼。他张了张嘴，雨声灌进来，把那句话堵在喉咙里。窗外的巷子又传来脚步声，一步，两步，三步，往里来的，越来越近。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch8_s3_e54d5cd98"
+            }
+          },
+          {
+            "eventId": "evt_ch8_s4_e90e8b175",
+            "info": "，桌角椅背的轮廓都糊成一团。他屏住气，听见自己心跳撞着耳膜，一下，两下。\n\n门闩从外面被拨了一下。咔。\n\n那人把他往旁边一拽。他踉跄半步，肩膀撞上墙，墙皮簌簌往下落。门开了一条缝，雨声猛地灌进来。有人站在门槛外面，浑身淌水，抬脚就要往里迈。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch8_s4_e90e8b175"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch8_s3_e54d5cd98"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch8_s3_e54d5cd98"
+        },
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch8_s4_e90e8b175"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch8_s4_e90e8b175"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 8,
+  "updatedAt": "2026-11-26T10:06:49.435Z"
+}
