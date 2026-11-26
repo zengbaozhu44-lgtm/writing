@@ -25,6 +25,9 @@ import {
   runChapterReaderSimulator,
   polishChapterAfterReaderSim,
 } from './reader-simulator.js';
+// Adaptive Learning：CLI Runtime 也要跑（此前仅 Studio scene-lifecycle-bridge 调用，
+// CLI 裸跑时 dialogue/pacing 等维度 boost prompt 永不激活）
+import { runAdaptiveLearning } from '@inkos/adaptive-learning';
 import {
   shouldTriggerOptimizer,
   OPTIMIZER_HOOK_FLOOR,
@@ -171,6 +174,20 @@ export async function runChapterPipeline(bookDir, payload, bus) {
       softError: err?.message || String(err),
     });
     console.warn('[chapter-pipeline] Reader Simulator 失败（忽略）:', err?.message || err);
+  }
+
+  // Adaptive Learning：章后刷新（读 writer-optimizer / director review 评分 → 趋势 → boost prompt 行）。
+  // 下一章 compileScenePrompt 的 adaptiveBlock 由此激活（此前仅 Studio bridge 调用，CLI 永不激活）。
+  // 失败软忽略——无评分数据（前几章）时 entries 为空，属正常冷启动。
+  try {
+    const learning = runAdaptiveLearning(bookDir);
+    log.push({
+      stage: 'adaptive_learning',
+      entryCount: learning?.entryCount ?? 0,
+      activeDimensions: learning?.adjustments?.activeDimensions ?? [],
+    });
+  } catch (learnErr) {
+    log.push({ stage: 'adaptive_learning', softError: learnErr?.message || String(learnErr) });
   }
 
   // 仅 Validation 通过（或 force）后进入唯一 Memory 出口

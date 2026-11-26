@@ -65,6 +65,10 @@ export function createLlmWriter(options = {}) {
       '只输出本 Scene 正文，不要标题、不要 markdown 代码块、不要解释。',
       `目标字数约 ${scene.wordTarget || 800} 字。`,
       '遵守写作圣经中的硬切、身体先行、限知视角规则。',
+      // 对白成型（与 validation checkDialogueBalance 同口径：人话块 + ≥20 字长块）
+      // 裸跑时冲突槽多为占位符，writer 全靠动作/心理推进 → 对白占比趋零，
+      // dialogue_balance 软门禁连续失败。这里在生成侧补最低对白要求。
+      '对白成型：每个 Scene 至少包含一轮人物之间的真实对话（引号块），且至少一个对白块 ≥20 字（完整句子/带潜台词），禁止全篇动作描写或心理叙述替代对话；电报式一字对白不算数。',
       // Phase 1.R — R2-A1/A2 consumption (not SR schema)
       '信息边界：Scene 目标/冲突中的事实不是角色先验知识；若 Character Subjective State 的 Awareness=omit，禁止写成该角色已经知道/亲眼看见/确知（允许本场新发现并写出获得过程）。',
       // HPA-02-L1 — Writer realization contract（非 Truth Authority）
