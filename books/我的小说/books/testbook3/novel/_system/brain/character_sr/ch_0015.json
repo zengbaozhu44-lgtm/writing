@@ -1,0 +1,92 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [
+          {
+            "info": "只手抬起来，指尖朝上，像在数什么看不见的东西。\n\n一下。两下。三下。\n\n“你数到七的时候，”那人说，“雨就来了。”\n\n他张嘴想问为什么是七。可嘴唇刚动，就听见了——不是雨声。是脚步声，从很远的地方来，很多，很整齐，正朝这边走。\n\n他数到一。",
+            "level": "know",
+            "eventId": "evt_ch15_s4_e79dc0fa2",
+            "provenance": {
+              "characterId": "主角",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch15_s4_e79dc0fa2"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch15_s4_e79dc0fa2",
+            "info": "只手抬起来，指尖朝上，像在数什么看不见的东西。\n\n一下。两下。三下。\n\n“你数到七的时候，”那人说，“雨就来了。”\n\n他张嘴想问为什么是七。可嘴唇刚动，就听见了——不是雨声。是脚步声，从很远的地方来，很多，很整齐，正朝这边走。\n\n他数到一。",
+            "level": "high",
+            "provenance": {
+              "characterId": "主角",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch15_s4_e79dc0fa2"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "主角",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch15_s4_e79dc0fa2"
+        },
+        {
+          "characterId": "主角",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch15_s4_e79dc0fa2"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 1,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 15,
+  "updatedAt": "2026-11-26T10:20:59.660Z"
+}

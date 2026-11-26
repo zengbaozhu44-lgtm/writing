@@ -95,7 +95,7 @@
           "evidenceOccurrenceIds": []
         },
         "access": {
-          "passCount": 10,
+          "passCount": 11,
           "rejectedEvidenceCount": 0,
           "passRefs": [
             "evt_ch2_s2_e2ab90cfc",
@@ -396,10 +396,11 @@
           "evidenceOccurrenceIds": []
         },
         "access": {
-          "passCount": 1,
+          "passCount": 2,
           "rejectedEvidenceCount": 0,
           "passRefs": [
-            "evt_ch7_s2_e486bf260"
+            "evt_ch7_s2_e486bf260",
+            "evt_ch15_s2_edacff714"
           ],
           "rejectedRefs": []
         }
@@ -496,18 +497,21 @@
     },
     "主角": {
       "characterId": "主角",
-      "status": "UNKNOWN",
-      "reason": "eligibility_unknown",
+      "status": "VALID",
+      "reason": "eligible_and_access_pass",
       "inputs": {
         "eligibility": {
-          "state": "UNKNOWN",
-          "evidenceOccurrenceIds": []
+          "state": "ELIGIBLE",
+          "evidenceOccurrenceIds": [
+            "evt_ch15_s4_e79dc0fa2"
+          ]
         },
         "access": {
-          "passCount": 1,
+          "passCount": 2,
           "rejectedEvidenceCount": 0,
           "passRefs": [
-            "evt_ch9_s4_e58a8869e"
+            "evt_ch9_s4_e58a8869e",
+            "evt_ch15_s4_e79dc0fa2"
           ],
           "rejectedRefs": []
         }
@@ -898,6 +902,60 @@
           "l1_eligibility_sidecar"
         ]
       }
+    },
+    "记得自己": {
+      "characterId": "记得自己",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch15_s1_ed6ef8490"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "那人从板凳上": {
+      "characterId": "那人从板凳上",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch15_s1_e5359e804"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
     }
   },
   "meta": {
@@ -914,5 +972,5 @@
     "uniqueConsumer": "future_l2_gate_authorized_only",
     "note": "L1=VALID 不自动产生 Choice/Option/Selection"
   },
-  "updatedAt": "2026-11-26T10:19:32.185Z"
+  "updatedAt": "2026-11-26T10:20:59.668Z"
 }
