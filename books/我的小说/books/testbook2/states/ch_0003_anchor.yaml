@@ -1,0 +1,90 @@
+version: chapter-anchor-3
+chapter: 3
+current_date: Day 0
+pov: 主角
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 主角
+  present:
+    - 主角
+  edges:
+    - from: 主角
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 4
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止无损撤回本章代价：no_causal_basis
+    expiresAtChapter: 3
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止提前揭晓章末钩子：no_causal_basis
+    expiresAtChapter: 4
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 4
+voiceDna:
+  id: inherit-default
+  label: 章级 Voice DNA（待首次写入）
+  sentenceLength: mixed
+  rhythm: varied
+  dialogueRatio: 0.45
+  actionDensity: high
+  descriptionDensity: low
+  forced: true
+  inherited: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 3
+  closing_emotion: 压抑·余波未平
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+  mustInheritScene1: true
+  tailExcerpt: 温度还没退下去。他想转身，左脚却先往前迈了一步。 柜台后面坐着一个人。 那人抬起头。脸在灯的背面，看不清轮廓，只有下巴和颈子的一截亮。他张了张嘴——先出声的不是那个人。 是柜台。木头里传出一句很轻的、他自己的声音。那是一句他还没说出口的话。
+recent_actuals:
+  - sceneIndex: 1
+    text: 他松开手，退开
+  - sceneIndex: 1
+    text: 然后他转身，走进巷口的亮里
+  - sceneIndex: 2
+    text: 男人站起来，膝盖响了一声，“我就问问
+  - sceneIndex: 3
+    text: 他站起来的时候，膝盖响了一声
+  - sceneIndex: 4
+    text: 他慢慢站起来，膝盖有点麻
+state_ledger:
+  version: 1
+  updated_chapter: 3
+  items: []
+  locations: []
+  open_promises: []
+  settled_costs: []
+committedAt: 2026-11-26T09:14:48.005Z
+d1InferenceDemotion:
+  eo: EO-P4
+  role: operational_planner_hint
+  producesObtains: false
+  isRealityAuthority: false
+  isCharacterReality: false
+  isRelationshipFact: false
+  authorityAct: NOT_AN_AUTHORITY_ACT
+  claimLevelAuthority: NOT_THIS_PATH
+  note: Anchor / heuristic ops hint ≠ Reality / obtains.
+  paths:
+    - deriveRelationshipState
+    - deriveClosingEmotion
+    - buildChapterAnchor
+  relationship_state: operational_planner_hint_not_fact
+  closing_emotion: ops_hint_not_character_reality
