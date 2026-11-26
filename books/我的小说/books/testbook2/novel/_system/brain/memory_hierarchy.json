@@ -1,0 +1,87 @@
+{
+  "version": "memory-hierarchy-1",
+  "L1": {
+    "anchors": [
+      {
+        "chapter": 1,
+        "pov": "主角",
+        "location": "—",
+        "current_date": "Day 0",
+        "closing_emotion": "疑虑·未解之问"
+      }
+    ],
+    "voiceDna": {
+      "id": "inherit-default",
+      "label": "章级 Voice DNA（待首次写入）",
+      "sentenceLength": "mixed",
+      "rhythm": "varied",
+      "dialogueRatio": 0.45,
+      "actionDensity": "high",
+      "descriptionDensity": "low",
+      "forced": true
+    },
+    "coreFacts": [
+      "禁止提前揭晓章末钩子：no_causal_basis",
+      "禁止无损撤回本章代价：no_causal_basis",
+      "禁止重开篇式介绍世界观与主角履历",
+      "禁止复述上一章已确认的同一事实（换角度推进）"
+    ]
+  },
+  "L2": {
+    "chapters": [
+      {
+        "chapter": 1,
+        "summary": {
+          "chars": 4576,
+          "sceneCount": 4,
+          "head": "雨在傍晚落下来，不大，但密，像有人在天上筛一层细沙。沈迟站在屋檐下，鞋尖已经湿透，凉意顺着袜子往上爬。他把怀里的纸盒换了只手抱，盒角压出的印子留在小臂上，红白分明。 街对面那家铺子的门开着一条缝，缝里没有光。 他走过去。招牌是木头的，字刻得",
+          "tail": "反光： **明早卯时，带伞。** 沈迟站在雨里，手里攥着那把从当铺里带出来的伞——他什么时候拿的？他低头看着自己的手，伞柄上缠着布条，布条是干的，一滴水都没沾。",
+          "hookScore": null
+        },
+        "chars": 4576,
+        "at": "2026-11-26T09:11:29.868Z"
+      }
+    ]
+  },
+  "L3": {
+    "keyScenes": [
+      {
+        "chapter": 1,
+        "sceneIndex": 1,
+        "reason": "hook-tail",
+        "goal": "进入现场并确立危机：进入世界",
+        "excerpt": "雨在傍晚落下来，不大，但密，像有人在天上筛一层细沙。沈迟站在屋檐下，鞋尖已经湿透，凉意顺着袜子往上爬。他把怀里的纸盒换了只手抱，盒角压出的印子留在小臂上，红白分明。 街对面那家铺子的门开着一条缝，缝里没有光。 他走过去。招牌是木头的，字刻得很深，雨水积在笔画里，把「回声当铺」四个字泡得发亮。他伸手推门，门轴没响。 里面"
+      },
+      {
+        "chapter": 1,
+        "sceneIndex": 4,
+        "reason": "hook-tail",
+        "goal": "章末钩子（承接转折后果）：no_causal_basis",
+        "excerpt": "沈迟把嘴合上了。喉咙里那半圈东西没散，堵着，像吞了一口没化开的冰。他试着咽，喉结动了一下，那东西还在。 灯焰又晃了一次。这次他看清了——没有风，柜台后面的帘子纹丝不动，但那盏最近的小灯焰尖朝外歪了歪，像被什么东西轻轻吹了口气。他盯着那火苗，数到三，它才直回来。 指尖下的柜台边沿是凉的，但凉得不均匀。他按着的那一块比周围"
+      }
+    ]
+  },
+  "L4": {
+    "entities": {
+      "主角": {
+        "role": "pov",
+        "status": "active",
+        "lastChapter": 1,
+        "seen": [
+          1
+        ]
+      },
+      "世界/系统": {
+        "role": "relation",
+        "status": "对抗",
+        "tension": "高",
+        "lastChapter": 1,
+        "seen": [
+          1
+        ]
+      }
+    }
+  },
+  "compressions": [],
+  "updatedAt": "2026-11-26T09:11:29.869Z"
+}
