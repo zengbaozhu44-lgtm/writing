@@ -1,0 +1,121 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "他撑着墙想": {
+      "name": "他撑着墙想",
+      "awareness": {
+        "items": [
+          {
+            "info": "“行。”他说。 声音落在巷子里，没人接。 他撑着墙想站起来。右手刚使上力，膝盖一软，整个人又滑回去，后脑勺磕在砖棱上，眼前炸开一片白。 白过去之后，他看",
+            "level": "know",
+            "eventId": "evt_ch11_s4_ea96a867c",
+            "provenance": {
+              "characterId": "他撑着墙想",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch11_s4_ea96a867c"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch11_s4_ea96a867c",
+            "info": "“行。”他说。 声音落在巷子里，没人接。 他撑着墙想站起来。右手刚使上力，膝盖一软，整个人又滑回去，后脑勺磕在砖棱上，眼前炸开一片白。 白过去之后，他看",
+            "level": "high",
+            "provenance": {
+              "characterId": "他撑着墙想",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch11_s4_ea96a867c"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "他撑着墙想",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch11_s4_ea96a867c"
+        },
+        {
+          "characterId": "他撑着墙想",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch11_s4_ea96a867c"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 11,
+  "updatedAt": "2026-11-26T10:13:10.300Z"
+}
