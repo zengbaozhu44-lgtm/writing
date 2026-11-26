@@ -1,0 +1,290 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": null,
+  "beatCompliance": null,
+  "readerSimulation": null,
+  "emotionCurve": null,
+  "chapter": 12,
+  "scene": {
+    "id": "ch12_s1",
+    "index": 1,
+    "goal": "承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 176,
+        "end": 207,
+        "chars": 31
+      },
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 0,
+      "scoreAfter": 0,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": null,
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 3044,
+        "end": 3068,
+        "chars": 24
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 40,
+      "scoreAfter": 90,
+      "changed": true,
+      "skipped": false,
+      "mode": "rule",
+      "region": {
+        "start": 2943,
+        "end": 3475,
+        "chars": 500
+      },
+      "edits": [
+        "ending-hook",
+        "ending-goal-echo"
+      ]
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 96,
+    "hook": 90,
+    "commercialPleasure": 74,
+    "styleConsistency": 53,
+    "characterConsistency": 50,
+    "infoRelease": 92
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 96,
+    "hook": 40,
+    "commercialPleasure": 74,
+    "styleConsistency": 53,
+    "characterConsistency": 50,
+    "infoRelease": 92
+  },
+  "total": 79,
+  "totalBefore": 71,
+  "weakest": [
+    {
+      "id": "characterConsistency",
+      "score": 50
+    },
+    {
+      "id": "styleConsistency",
+      "score": 53
+    },
+    {
+      "id": "commercialPleasure",
+      "score": 74
+    }
+  ],
+  "polish": {
+    "changed": true,
+    "mode": "four-module",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 176,
+          "end": 207,
+          "chars": 31
+        },
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 0,
+        "scoreAfter": 0,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": null,
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 3044,
+          "end": 3068,
+          "chars": 24
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 40,
+        "scoreAfter": 90,
+        "changed": true,
+        "skipped": false,
+        "mode": "rule",
+        "region": {
+          "start": 2943,
+          "end": 3475,
+          "chars": 500
+        },
+        "edits": [
+          "ending-hook",
+          "ending-goal-echo"
+        ]
+      }
+    },
+    "edits": [
+      "ending"
+    ]
+  },
+  "diff": {
+    "prefixUnchanged": 3474,
+    "draftChars": 3283,
+    "polishedChars": 3283,
+    "changed": true
+  },
+  "diffLines": [
+    {
+      "type": "change",
+      "before": "那行字写的是：别让他们知道你来过这里。",
+      "after": "那行字写的是：别让他们知道你来过这里？",
+      "index": 192
+    }
+  ],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-11-26T10:14:53.408Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 96,
+      "hook": 90,
+      "commercialPleasure": 74,
+      "styleConsistency": 53,
+      "characterConsistency": 50,
+      "infoRelease": 92
+    },
+    "total": 79,
+    "weak": [
+      {
+        "id": "characterConsistency",
+        "score": 50
+      },
+      {
+        "id": "styleConsistency",
+        "score": 53
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 74
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "infoRelease",
+        "score": 92
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "climax",
+        "score": 96
+      }
+    ],
+    "weakest": [
+      {
+        "id": "characterConsistency",
+        "score": 50
+      },
+      {
+        "id": "styleConsistency",
+        "score": 53
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 74
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 103,
+        "actionHits": 60,
+        "dialogHits": 0,
+        "variety": 3
+      },
+      "climax": {
+        "escFirst": 1,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 0,
+        "len": 3283
+      },
+      "styleConsistency": {
+        "shortRatio": 89,
+        "expoRun": 103
+      },
+      "characterConsistency": {
+        "pov": "主角",
+        "present": [
+          "主角"
+        ],
+        "mentioned": 0
+      },
+      "infoRelease": {
+        "loreRun": 30,
+        "stagger": true
+      }
+    },
+    "chapter": 12,
+    "sceneIndex": 1,
+    "totalChars": 3283
+  }
+}
