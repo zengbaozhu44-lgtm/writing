@@ -9,7 +9,7 @@ export function computeMetrics(chapterText, intent, scenes, conflictResult) {
   const len = chars.length;
 
   const lines = text.split('\n').filter((l) => l.trim());
-  const dialogueLines = lines.filter((l) => /[「」""]/.test(l) || /^[^。！？]{1,12}[：:]/.test(l));
+  const dialogueLines = lines.filter((l) => /[「」“”"']/.test(l) || /^[^。！？]{1,12}[：:]/.test(l));
   const { humanDialogueCount, longDialogueBlocks } = extractDialogueBlocks(text);
   const actionLines = lines.filter((l) => /走|跑|推|拉|抓|砸|踢|转身|站|蹲|握/.test(l));
   const mindLines = lines.filter((l) => /想起|意识到|觉得|知道|心想/.test(l));

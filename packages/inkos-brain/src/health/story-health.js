@@ -37,7 +37,18 @@ export function computeStoryHealth(bookDir, dashboard, criticHistory = [], consi
     resourceDeltaChapters: chapters.filter((c) => c.wordCount > 0).length,
     rhythmWaveform: chapters.map((c) => ({
       chapter: c.chapter,
-      intensity: (c.conflictDensity ?? 0) * 20 + (c.dialogueRatio ?? 0) * 30,
+      // 节奏强度合成：旧公式 conflictDensity*20 + dialogueRatio*30 在裸跑下恒 20
+      // （conflictDensity 类型数恒 1；dialogueRatio 旧 regex 漏弯引号恒 0）→ 波形死平。
+      // 新合成：对白占比（30）+ 长对白块（每块 3，上限 15）+ 高潮场景数（每 scene 5，上限 10）
+      // + 节拍峰（rhythmPeaks 强度 3 的个数 ×2，上限 10）+ 篇幅因子（2200 字 → 5）。
+      // 各章对白/高潮/峰起伏直接反映到波形，上限 100。
+      intensity: round(
+        Math.min((c.dialogueRatio ?? 0) * 30, 30)
+        + Math.min((c.longDialogueBlocks ?? 0) * 3, 15)
+        + Math.min((c.climaxCount ?? 0) * 5, 10)
+        + Math.min((c.rhythmPeaks ?? []).filter((p) => p.intensity >= 3).length * 2, 10)
+        + ((c.wordCount ?? 0) >= 2200 ? 5 : 0),
+      ),
     })),
     infoDensityAvg: round(chapters.reduce((s, c) => s + (c.infoDensity ?? 0), 0) / n),
     criticScoreAvg: criticAvg != null ? round(criticAvg) : null,
