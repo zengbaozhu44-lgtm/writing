@@ -372,6 +372,100 @@ function renderPrompt(modules, scene, meta) {
   return parts.join('\n');
 }
 
+/**
+ * 1b-3: 写作圣经「每章不可逆变化」提升为独立否决项。
+ * 从十项平级编号列表中抽出该条，以「【否决项】」标记放在写作规则块最前，
+ * 原列表中该条目移除（避免重复）。平台参数（字数/对话占比）仍在原位。
+ */
+export function elevateIrreversibleRule(writingBibleText = '') {
+  const text = String(writingBibleText || '').trim();
+  if (!text) return text;
+  const vetoHeader = '【否决项 · 最高优先】每章不可逆变化：本章必须发生至少一个不可逆变化（新信息/关闭选项/局面改变）；本条优先于所有文风、字数与对话占比参数。';
+  // 匹配「8. **每章不可逆变化**」这类平级条目
+  const ruleRe = /^\s*\d+\.\s*\*{0,2}每章不可逆变化\*{0,2}\s*$/m;
+  const hasRule = ruleRe.test(text);
+  const stripped = hasRule ? text.replace(ruleRe, '') : text;
+  if (!hasRule) {
+    // 书籍没写这条：仍然前置注入否决项（规则不依赖书籍配置）
+    return `${vetoHeader}\n\n${stripped}`;
+  }
+  return `${vetoHeader}\n${stripped}`;
+}
+
+/**
+ * 1b-3: World Bible 场景压缩——不再全文注入。
+ * 结构：本 Scene 相关事实（≤5，按 POV/goal 关键词命中排序）+ 禁区（≤3）+ 必须承接的状态（≤3，从「禁忌/状态机」段提取）。
+ * 压缩失败（无命中）时退回「禁区 + 前 400 字概览」，仍远小于全文。
+ */
+export function compressWorldBibleForScene(worldBibleText = '', { pov = '', scene = {}, intent = {} } = {}) {
+  const text = String(worldBibleText || '').trim();
+  if (!text) return '';
+
+  const goal = String(scene.goal || intent?.mainGoal || '').trim();
+  const keywords = [pov, ...extractKeywordsLite(goal)].filter(Boolean);
+
+  // 分段（## 标题），逐段打分：POV/goal 关键词命中数
+  const sections = text.split(/(?=^#{1,3}\s)/mu).filter((s) => s.trim());
+  const scored = sections.map((sec) => {
+    const hits = keywords.reduce((n, k) => n + (sec.includes(k) ? 1 : 0), 0);
+    return { sec, hits, head: (sec.match(/^#{1,3}\s*(.+)$/m) || [])[1] || '' };
+  });
+
+  const relevant = scored
+    .filter((s) => s.hits > 0 && !/禁忌|禁止|状态机/.test(s.head))
+    .sort((a, b) => b.hits - a.hits)
+    .slice(0, 5);
+
+  const banned = scored
+    .filter((s) => /禁忌|禁止/.test(s.head))
+    .slice(0, 3);
+
+  const stateMachine = scored
+    .filter((s) => /状态机|规则/.test(s.head))
+    .slice(0, 3);
+
+  const factLines = relevant.map((s) => summarizeSection(s.sec, 120));
+  const bannedLines = banned.map((s) => summarizeSection(s.sec, 100));
+  const stateLines = stateMachine.map((s) => summarizeSection(s.sec, 100));
+
+  const parts = [
+    '【本 Scene 相关事实】',
+    ...(factLines.length ? factLines : ['（无 POV/目标直接命中——概览）', clipLines(text, 400, 3)]),
+  ];
+  if (bannedLines.length) parts.push('', '【禁区】', ...bannedLines);
+  if (stateLines.length) parts.push('', '【必须承接的状态】', ...stateLines);
+  return parts.join('\n');
+}
+
+function extractKeywordsLite(text = '') {
+  const t = String(text || '');
+  // 中文 2-3 字词粗提：连续 CJK 段切双字窗
+  const words = new Set();
+  const cjkRuns = t.match(/[一-鿿]{2,}/g) || [];
+  for (const run of cjkRuns) {
+    for (let i = 0; i + 2 <= run.length; i += 1) words.add(run.slice(i, i + 2));
+  }
+  return [...words].slice(0, 30);
+}
+
+function summarizeSection(sec = '', maxChars = 120) {
+  const body = sec.replace(/^#{1,3}[^\n]*\n?/, '').replace(/\s+/g, ' ').trim();
+  if (body.length <= maxChars) return `- ${body}`;
+  return `- ${body.slice(0, maxChars)}…`;
+}
+
+function clipLines(text = '', maxChars = 400, maxLines = 3) {
+  const lines = String(text || '').split('\n').filter((l) => l.trim() && !l.startsWith('#'));
+  const out = [];
+  let total = 0;
+  for (const l of lines) {
+    if (total + l.length > maxChars || out.length >= maxLines) break;
+    out.push(l.trim());
+    total += l.length;
+  }
+  return out.map((l) => `- ${l}`).join('\n');
+}
+
 export function compileScenePrompt(ctx, scene) {
   const t0 = performance.now();
   const { bookDir, chapter } = ctx;
@@ -522,6 +616,19 @@ export function compileScenePrompt(ctx, scene) {
   const modules = [];
   const add = (mod) => modules.push(mod);
 
+  // 1b-3: 推进硬规则模块（全模块最高优先，高于 scene_goal 100）
+  add({
+    key: 'progress_hard_rule',
+    label: '推进硬规则（否决性 · 最高优先）',
+    category: 'goal',
+    priority: 120,
+    content: [
+      '【否决性规则】每个 Scene 必须产生至少一个不可逆变化：主角获知新信息、做出关闭某个选项的选择、或局面发生物理/关系改变。',
+      '删除后不影响后续逻辑的描写不得存在。本规则优先级高于所有文风与感官指令。',
+      '【否决性规则】感官与环境描写只在动作/对白/判断需要时出现，且必须承担叙事功能；连续环境/感官描写不超过 3 句。',
+    ].join('\n'),
+  });
+
   add({
     key: 'scene_goal',
     label: 'Scene 目标',
@@ -537,13 +644,21 @@ export function compileScenePrompt(ctx, scene) {
       : `目标: ${scene.goal}\n节拍: ${scene.beat}`,
   });
 
-  add({
-    key: 'scene_conflict',
-    label: 'Scene 冲突',
-    category: 'conflict',
-    priority: 98,
-    content: `冲突: ${scene.conflict}\n阻碍: ${scene.conflict || intent?.obstacles?.[0] || '—'}`,
-  });
+  // 1b-2: 冲突占位符过滤（compiler 侧）——no_causal_basis 等占位符不进 prompt
+  const conflictClean = /^[\w_]*$/.test(String(scene.conflict || '').trim()) && String(scene.conflict || '').includes('_')
+    ? ''
+    : String(scene.conflict || '').trim();
+  if (conflictClean) {
+    add({
+      key: 'scene_conflict',
+      label: 'Scene 冲突',
+      category: 'conflict',
+      priority: 98,
+      content: `冲突: ${conflictClean}\n阻碍: ${conflictClean || intent?.obstacles?.[0] || '—'}`,
+    });
+  } else {
+    console.warn('[compiler] scene.conflict 为占位符（' + String(scene.conflict) + '）——不进 prompt，留给因果门控（第 2 步）');
+  }
 
   // S5：删除 currentChapterMd → chapter_task 整卡注入（B 类模板 / 跨章污染后门）。
   // 正式投影 canonical chapter goal = intent.mainGoal；不投影 required_event（S3.3 边界）。
@@ -764,7 +879,10 @@ export function compileScenePrompt(ctx, scene) {
   const writingCache = getCachedModule(bookDir, chapter, 'writing', truncateByTokens(ctx.writingBible, 2000));
   if (writingCache.hit) cacheHits += 1;
   if (writingCache.content) {
-    add({ key: 'writing_bible', label: '写作规则', category: 'world', priority: 50, content: truncateByTokens(writingCache.content, Math.floor(budget.world * 0.35)) });
+    // 1b-3: 「每章不可逆变化」（叙事原则第 8 条）从十项平级列表提升为独立否决项，
+    // 放写作规则模块最前，不与「单章字数 3000」等平台参数平级。
+    const writingContent = elevateIrreversibleRule(writingCache.content);
+    add({ key: 'writing_bible', label: '写作规则', category: 'world', priority: 50, content: truncateByTokens(writingContent, Math.floor(budget.world * 0.35)) });
   }
 
   if (factionNames.length) {
@@ -778,20 +896,28 @@ export function compileScenePrompt(ctx, scene) {
     }
   }
 
-  // World Bible 始终注入（旧逻辑：有势力时跳过 world → 导致失忆）
+  // 1b-3: World Bible 不再全文注入（全文曾占 prompt 主体、稀释推进规则）。
+  // 压缩为：本 Scene 相关事实（≤5 条）+ 禁区（≤3 条）+ 必须承接的状态（≤3 条），
+  // 移到低优先级（priority 35 < 旧 55）。压缩在 compiler 侧，不改源文件。
   cacheChecks += 1;
   const worldRaw = String(ctx.worldBible || '');
   console.log('[lore] worldBible length:', worldRaw.length, 'bookDir=', bookDir);
   const worldCache = getCachedModule(bookDir, chapter, 'world', truncateByTokens(worldRaw, 2500));
   if (worldCache.hit) cacheHits += 1;
   if (worldCache.content) {
-    add({
-      key: 'world_bible',
-      label: '世界规则',
-      category: 'world',
-      priority: 55,
-      content: truncateByTokens(worldCache.content, Math.max(budget.world || 800, 800)),
-    });
+    const worldCompressed = compressWorldBibleForScene(
+      worldCache.content,
+      { pov: ctx.pov, scene, intent },
+    );
+    if (worldCompressed) {
+      add({
+        key: 'world_bible',
+        label: '世界规则（本 Scene 相关压缩）',
+        category: 'world',
+        priority: 35,
+        content: worldCompressed,
+      });
+    }
   } else {
     console.warn('[lore] worldBible empty or missing — expected novel/01_world_bible.md');
   }
