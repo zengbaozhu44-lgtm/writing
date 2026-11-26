@@ -12,6 +12,8 @@ import { applyStoryMapToIntent } from '../../../inkos-brain/src/planner/story-ma
 import { evaluateDecisions } from '../../../inkos-brain/src/decision/decision.js';
 import { evaluateConflict } from '../../../inkos-brain/src/conflict/conflict.js';
 import { detectIntraSceneRepetition, formatNoRepeatAddendum } from '../../../inkos-brain/src/quality/repetition-guard.js';
+// 2a: Scene 级语义因果门控（只判定不重写；与复读护栏、八项词面校验独立）
+import { evaluateSceneCausality } from '../../../inkos-brain/src/validation/causal-gate.js';
 import { buildScenePlan, buildSceneWritePrompt, assembleChapter } from '../../../inkos-brain/src/scene/scene.js';
 import { buildDynamicPrompt } from '../../../inkos-brain/src/prompt/dynamic-prompt.js';
 import { ensureChapterCausalChain } from '../../../inkos-brain/src/causal/causal-reasoner.js';
@@ -549,6 +551,45 @@ export class RuntimeOrchestrator {
           intent,
           trace,
         });
+      }
+
+      // 2a: 语义因果门控——单次写出后、章级 validate 前判定局面是否真变。
+      // 只记录 scene.causalGate（changeStrength/failureReasons），不重写、不影响 pass。
+      // 2b 接重写。INKOS_CAUSAL_GATE=0 可关。
+      if (scene.text?.trim() && process.env.INKOS_CAUSAL_GATE !== '0' && activeWriter) {
+        try {
+          const goalLine = String(scene.prompt || '').split('\n').find((l) => l.startsWith('- 目标:')) || '';
+          const prevLine = String(scene.prompt || '').split('\n').find((l) => l.startsWith('- 上一章结尾状态:')) || '';
+          const gate = await evaluateSceneCausality({
+            sceneText: scene.text,
+            sceneContext: {
+              goal: goalLine.replace('- 目标: ', '').slice(0, 200),
+              conflict: String(scene.conflict || '').slice(0, 100),
+              goalSlotFallback: scene.stateSummarySource === 'fallback',
+            },
+            prevState: {
+              summary: prevLine.replace('- 上一章结尾状态: ', '').slice(0, 100),
+              stateSummarySource: scene.stateSummarySource || '',
+            },
+            llm: this.options.causalGateLlm || null,
+          });
+          scene.causalGate = gate;
+          console.log(`[causal-gate] ch${chapter} scene${scene.index}: strength=${gate.changeStrength}` +
+            (gate.failureReasons.length ? ` failures=[${gate.failureReasons.join(',')}]` : '') +
+            (gate.degraded ? ` degraded(${gate.degradeReason})` : ''));
+          try {
+            trace.recordStage('causal_gate', {
+              chapter,
+              scene: scene.index,
+              changeStrength: gate.changeStrength,
+              failureReasons: gate.failureReasons,
+              irreversibleChanges: gate.irreversibleChanges?.length || 0,
+              degraded: Boolean(gate.degraded),
+            });
+          } catch { /* trace 可选 */ }
+        } catch (gateErr) {
+          console.warn('[causal-gate] failed (ignored):', gateErr?.message || gateErr);
+        }
       }
 
       // L2 复读护栏：场景内整句/整段逐字复读 → 附加禁复述指令重写该 Scene
