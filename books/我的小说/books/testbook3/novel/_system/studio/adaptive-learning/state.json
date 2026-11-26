@@ -1,16 +1,16 @@
 {
   "version": "adaptive-learning-1",
   "chaptersAnalyzed": [
+    15,
+    14,
+    13,
     12,
     11,
     10,
     9,
     8,
     7,
-    6,
-    5,
-    4,
-    3
+    6
   ],
   "entryCount": 10,
   "trends": {
@@ -24,7 +24,7 @@
     },
     "conflict": {
       "dimension": "conflict",
-      "average": 91,
+      "average": 93,
       "streak": 0,
       "low": false,
       "needsBoost": false,
@@ -32,15 +32,15 @@
     },
     "dialogue": {
       "dimension": "dialogue",
-      "average": 86,
-      "streak": 0,
+      "average": 85,
+      "streak": 1,
       "low": false,
       "needsBoost": false,
       "sampleCount": 10
     },
     "pacing": {
       "dimension": "pacing",
-      "average": 95,
+      "average": 94,
       "streak": 0,
       "low": false,
       "needsBoost": false,
@@ -48,8 +48,8 @@
     },
     "emotion": {
       "dimension": "emotion",
-      "average": 55,
-      "streak": 6,
+      "average": 62,
+      "streak": 3,
       "low": true,
       "needsBoost": true,
       "sampleCount": 10
@@ -82,7 +82,7 @@
       "**文风强化**：遵守写作圣经硬切、身体先行、限知视角",
       "减少说明腔，增加具体感官细节"
     ],
-    "generatedAt": "2026-11-26T10:14:53.418Z"
+    "generatedAt": "2026-11-26T10:21:12.153Z"
   },
   "suggestions": [
     {
@@ -90,7 +90,7 @@
       "source": "adaptive",
       "priority": "high",
       "dimension": "emotion",
-      "text": "emotion 连续 6 次低于 70 分（均分 55）→ 已自动调权 Prompt"
+      "text": "emotion 连续 3 次低于 70 分（均分 62）→ 已自动调权 Prompt"
     },
     {
       "id": "adaptive_style",
@@ -100,5 +100,5 @@
       "text": "style 连续 10 次低于 70 分（均分 51）→ 已自动调权 Prompt"
     }
   ],
-  "updatedAt": "2026-11-26T10:14:53.418Z"
+  "updatedAt": "2026-11-26T10:21:12.153Z"
 }

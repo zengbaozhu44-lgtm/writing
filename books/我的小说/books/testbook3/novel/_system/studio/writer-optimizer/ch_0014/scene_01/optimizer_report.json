@@ -1,0 +1,283 @@
+{
+  "version": "writer-optimizer-5",
+  "role": "writer-optimizer",
+  "mode": "four-module-optimizers",
+  "executionIntelligence": null,
+  "beatCompliance": null,
+  "readerSimulation": null,
+  "emotionCurve": null,
+  "chapter": 14,
+  "scene": {
+    "id": "ch14_s1",
+    "index": 1,
+    "goal": "承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：追查上一章末尾局面：快只剩一个轮廓"
+  },
+  "dimensions": [
+    "pacing",
+    "climax",
+    "hook",
+    "commercialPleasure",
+    "styleConsistency",
+    "characterConsistency",
+    "infoRelease"
+  ],
+  "moduleOptimizers": [
+    "dialogue",
+    "conflict",
+    "description",
+    "ending"
+  ],
+  "modules": {
+    "description": {
+      "scoreBefore": 95,
+      "scoreAfter": 95,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 0,
+        "end": 50,
+        "chars": 50
+      },
+      "edits": []
+    },
+    "dialogue": {
+      "scoreBefore": 100,
+      "scoreAfter": 100,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 1106,
+        "end": 1115,
+        "chars": 9
+      },
+      "edits": []
+    },
+    "conflict": {
+      "scoreBefore": 75,
+      "scoreAfter": 75,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 322,
+        "end": 353,
+        "chars": 31
+      },
+      "edits": []
+    },
+    "ending": {
+      "scoreBefore": 90,
+      "scoreAfter": 90,
+      "changed": false,
+      "skipped": true,
+      "mode": "skip",
+      "region": {
+        "start": 3248,
+        "end": 3782,
+        "chars": 500
+      },
+      "edits": []
+    }
+  },
+  "scores": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 90,
+    "commercialPleasure": 100,
+    "styleConsistency": 50,
+    "characterConsistency": 35,
+    "infoRelease": 100
+  },
+  "scoresBefore": {
+    "pacing": 95,
+    "climax": 100,
+    "hook": 90,
+    "commercialPleasure": 100,
+    "styleConsistency": 50,
+    "characterConsistency": 35,
+    "infoRelease": 100
+  },
+  "total": 81,
+  "totalBefore": 81,
+  "weakest": [
+    {
+      "id": "characterConsistency",
+      "score": 35
+    },
+    {
+      "id": "styleConsistency",
+      "score": 50
+    },
+    {
+      "id": "hook",
+      "score": 90
+    }
+  ],
+  "polish": {
+    "changed": false,
+    "mode": "none",
+    "modules": {
+      "description": {
+        "scoreBefore": 95,
+        "scoreAfter": 95,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 0,
+          "end": 50,
+          "chars": 50
+        },
+        "edits": []
+      },
+      "dialogue": {
+        "scoreBefore": 100,
+        "scoreAfter": 100,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 1106,
+          "end": 1115,
+          "chars": 9
+        },
+        "edits": []
+      },
+      "conflict": {
+        "scoreBefore": 75,
+        "scoreAfter": 75,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 322,
+          "end": 353,
+          "chars": 31
+        },
+        "edits": []
+      },
+      "ending": {
+        "scoreBefore": 90,
+        "scoreAfter": 90,
+        "changed": false,
+        "skipped": true,
+        "mode": "skip",
+        "region": {
+          "start": 3248,
+          "end": 3782,
+          "chars": 500
+        },
+        "edits": []
+      }
+    },
+    "edits": []
+  },
+  "diff": {
+    "prefixUnchanged": 3782,
+    "draftChars": 3506,
+    "polishedChars": 3506,
+    "changed": false
+  },
+  "diffLines": [],
+  "draftPath": "draft.md",
+  "polishedPath": "polished_draft.md",
+  "blocking": false,
+  "policy": "LLM Draft → 四模块 Optimizer（Dialogue/Conflict/Description/Ending）→ Novel",
+  "generatedAt": "2026-11-26T10:19:41.177Z",
+  "quality": {
+    "scores": {
+      "pacing": 95,
+      "climax": 100,
+      "hook": 90,
+      "commercialPleasure": 100,
+      "styleConsistency": 50,
+      "characterConsistency": 35,
+      "infoRelease": 100
+    },
+    "total": 81,
+    "weak": [
+      {
+        "id": "characterConsistency",
+        "score": 35
+      },
+      {
+        "id": "styleConsistency",
+        "score": 50
+      },
+      {
+        "id": "hook",
+        "score": 90
+      },
+      {
+        "id": "pacing",
+        "score": 95
+      },
+      {
+        "id": "climax",
+        "score": 100
+      },
+      {
+        "id": "commercialPleasure",
+        "score": 100
+      },
+      {
+        "id": "infoRelease",
+        "score": 100
+      }
+    ],
+    "weakest": [
+      {
+        "id": "characterConsistency",
+        "score": 35
+      },
+      {
+        "id": "styleConsistency",
+        "score": 50
+      },
+      {
+        "id": "hook",
+        "score": 90
+      }
+    ],
+    "metrics": {
+      "pacing": {
+        "expositionRun": 150,
+        "actionHits": 32,
+        "dialogHits": 54,
+        "variety": 4
+      },
+      "climax": {
+        "escFirst": 0,
+        "escSecond": 1
+      },
+      "hook": {
+        "tailLen": 180,
+        "hasQuestion": true
+      },
+      "commercialPleasure": {
+        "dialogBlocks": 54,
+        "len": 3506
+      },
+      "styleConsistency": {
+        "shortRatio": 96,
+        "expoRun": 150
+      },
+      "characterConsistency": {
+        "pov": "主角",
+        "present": [
+          "主角"
+        ],
+        "mentioned": 0
+      },
+      "infoRelease": {
+        "loreRun": 26,
+        "stagger": true
+      }
+    },
+    "chapter": 14,
+    "sceneIndex": 1,
+    "totalChars": 3506
+  }
+}
