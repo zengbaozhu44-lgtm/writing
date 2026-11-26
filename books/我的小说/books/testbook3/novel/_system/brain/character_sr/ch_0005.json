@@ -1,0 +1,121 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "场面": {
+      "name": "场面",
+      "awareness": {
+        "items": [
+          {
+            "info": "不是灯。\n\n是一扇窗，窗纸破了个洞，里头黑着。光是从更远的地方来的——巷子拐过去，还有一条巷。他站在窗前喘气。玻璃上蒙着水汽，他抬手，在雾气里擦出一道缝。\n\n缝里，他看见一个人影，背对着他，站在雨里，一动不动。\n\n那人影的头，微微偏了一下。",
+            "level": "know",
+            "eventId": "evt_ch5_s4_e5929c9cb",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch5_s4_e5929c9cb"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch5_s4_e5929c9cb",
+            "info": "不是灯。\n\n是一扇窗，窗纸破了个洞，里头黑着。光是从更远的地方来的——巷子拐过去，还有一条巷。他站在窗前喘气。玻璃上蒙着水汽，他抬手，在雾气里擦出一道缝。\n\n缝里，他看见一个人影，背对着他，站在雨里，一动不动。\n\n那人影的头，微微偏了一下。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch5_s4_e5929c9cb"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch5_s4_e5929c9cb"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch5_s4_e5929c9cb"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 5,
+  "updatedAt": "2026-11-26T09:36:06.832Z"
+}
