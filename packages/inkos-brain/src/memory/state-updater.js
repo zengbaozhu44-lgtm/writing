@@ -45,6 +45,55 @@ export function isActualTimelineEvent(text = '') {
 }
 
 /**
+ * 1a-3: 章目标句界净化——追查目标曾把上一章结尾原文（含「一片。」类残句）整段拼进
+ * mainGoal，再原样流入 Scene Lore Seed 的「- 章目标:」行。
+ * 规则：
+ *   - 截断到句界（。！？…），≤40 字（目标行是概括，不是原文粘贴）；
+ *   - 冒号后的承接片段若以残句开头（首句 <6 字），丢弃该片段，返回引导语 + 「上一章结尾局面」概括；
+ *   - 前缀（「追查上一章末尾局面：」等）保留。
+ */
+export function clipGoalToSentenceBoundary(goal = '', { maxLen = 40, minSentenceLen = 6 } = {}) {
+  const t = String(goal || '').trim();
+  if (!t) return '';
+  if (isTemplateFallback(t)) return '';
+
+  const sep = t.match(/[：:]/);
+  const prefix = sep ? t.slice(0, sep.index + 1) : '';
+  const body = sep ? t.slice(sep.index + 1) : t;
+
+  const cleanBody = clipToSentence(body, maxLen, minSentenceLen);
+  if (cleanBody === null) {
+    // 承接片段以残句开头 → 丢弃，改用概括
+    return prefix
+      ? `${prefix}上一章结尾局面`
+      : '承接上一章结尾局面';
+  }
+  return (prefix + cleanBody).trim();
+}
+
+function clipToSentence(body = '', maxLen = 40, minSentenceLen = 6) {
+  const s = String(body || '').replace(/\s+/g, '').trim();
+  if (!s) return null;
+  // 句界切分：保留结尾标点
+  const sentences = s.split(/(?<=[。！？…])/).filter(Boolean);
+  if (!sentences.length) return null;
+  const first = sentences[0];
+  // 残句开头：首句太短（如「一片。」）不是可执行承接 → 整段丢弃
+  if (first.length < minSentenceLen) return null;
+  // 逐句累加到 maxLen
+  let acc = '';
+  for (const sent of sentences) {
+    if ((acc + sent).length > maxLen) break;
+    acc += sent;
+  }
+  if (!acc) {
+    // 首句本身超长：截到句内 maxLen（不再要求句界——超长完整句截断优于残句丢弃）
+    acc = first.slice(0, maxLen);
+  }
+  return acc;
+}
+
+/**
  * S6.1 + EO-P2（D1 Dual BLOCK B）：
  * timeline.events 不得从 plan / modelled causalChain / scene plan fields 写入。
  *
@@ -273,10 +322,13 @@ function pickForwardGoal(ending, foreshadow, priorAnchor) {
     actuals.push(tailExcerpt);
   }
   if (actuals.length) {
-    // 章末（最后一条）actual 优先——它就是下一章要承接的局面
+    // 章末（最后一条）actual 优先——它就是下一章要承接的局面。
+    // 1a-3: 句界净化——旧逻辑 slice(0,36) 会把章末原文（含「一片。」残句开头）整段拼进
+    // mainGoal，再流入 prompt 的章目标行。改为 clipGoalToSentenceBoundary 同口径：
+    // 截到句界 ≤40 字、残句开头丢弃改概括。
     const last = actuals[actuals.length - 1];
-    const chase = last.replace(/\s+/g, '').slice(0, 36);
-    return `追查上一章末尾局面：${chase}`;
+    const chase = clipGoalToSentenceBoundary(`追查上一章末尾局面：${last}`);
+    if (chase) return chase;
   }
 
   // 5) ending 兜底（短但非空的承接）

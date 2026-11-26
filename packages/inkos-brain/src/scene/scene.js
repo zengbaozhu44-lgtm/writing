@@ -2,6 +2,8 @@
  * Scene Planner & Scene Writer prompts
  */
 import { resolveStoryClock, formatStoryClockForPrompt } from '../../../inkos-core/src/lib/story-clock.js';
+import { resolveGoldenSampleCLI, resolveNarrativePrinciples } from '../../../inkos-writer/src/golden-sample.js';
+import { clipGoalToSentenceBoundary } from '../memory/state-updater.js';
 
 export function buildScenePlan(intent) {
   return intent.scenes.map((scene) => ({
@@ -19,6 +21,30 @@ export function buildSceneWritePrompt(ctx, intent, scene, dynamicPrompt) {
     : (dynamicPrompt?.text || '');
   const clock = resolveStoryClock({ ctx, intent, scene });
   const clockBlock = formatStoryClockForPrompt(clock);
+
+  // 1a-1: golden sample / narrative principles 接线——此前 CLI 路径零调用
+  // （loader 定义了但没人消费），prompt 无效率参照。注入位置：目标/冲突/节拍之后、字数之前。
+  const bookDir = ctx?.bookDir || null;
+  const { sample: goldenSample, source: goldenSource } = resolveGoldenSampleCLI({
+    bookDir,
+    styleDna: ctx?.voiceDna || null,
+  });
+  const { principles, source: principlesSource } = resolveNarrativePrinciples({ bookDir });
+  const principlesBlock = [
+    `【叙事效率原则】（否决性规则，不是风格建议 · 来源: ${principlesSource}）`,
+    principles,
+  ].join('\n');
+  const goldenBlock = [
+    `【效率范例】（下限参照，不是模仿上限；允许在节奏/悬念/语言效率上超过它 · 来源: ${goldenSource}）`,
+    '---',
+    goldenSample.slice(0, 600),
+    '---',
+  ].join('\n');
+
+  // 1a-3: 章目标派生污染——mainGoal 曾把上一章结尾原文（含残句）整段拼进目标行。
+  // 这里对 lore seed 里的章目标做句界净化：截断到句界、40 字上限、丢弃残句开头。
+  const chapterGoalClean = clipGoalToSentenceBoundary(intent.mainGoal);
+
   const lines = [
     '# Scene Lore Seed',
     '',
@@ -26,8 +52,10 @@ export function buildSceneWritePrompt(ctx, intent, scene, dynamicPrompt) {
     `- 目标: ${scene.goal}`,
     `- 冲突: ${scene.conflict}`,
     `- 节拍: ${scene.beat}`,
+    principlesBlock,
+    goldenBlock,
     scene.wordTarget ? `- 字数: ~${scene.wordTarget}` : '',
-    intent.mainGoal ? `- 章目标: ${intent.mainGoal}` : '',
+    chapterGoalClean ? `- 章目标: ${chapterGoalClean}` : '',
     intent.actionLine ? `- 本章行动线（各 Scene 推进同一条线）: ${intent.actionLine}` : '',
     intent.mustLose ? `- 代价: ${intent.mustLose}` : '',
     '',

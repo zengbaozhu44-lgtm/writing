@@ -60,11 +60,29 @@ export function createLlmWriter(options = {}) {
       throw new Error('未配置 LLM API Key（INKOS_LLM_API_KEY / LLM_API_KEY / OPENAI_API_KEY）');
     }
 
+    // 1a-2: Voice DNA 空回退——style_dna 模板空值时 formatVoiceDnaBlock 返回空串，
+    // testbook3 全程无文风约束。此处回退到 resolveNarrativePrinciples 的五条原则，
+    // 保证 system prompt 永不缺效率约束。
+    const { formatVoiceDnaBlock } = await import('../../../inkos-director/src/voice-dna.js');
+    const { resolveNarrativePrinciples } = await import('../../../inkos-writer/src/golden-sample.js');
+    const voiceDnaBlock = formatVoiceDnaBlock(ctx?.voiceDna || intent?.voiceDna || {});
+    let styleBlock;
+    if (voiceDnaBlock) {
+      styleBlock = voiceDnaBlock;
+    } else {
+      const { principles, source } = resolveNarrativePrinciples({ bookDir });
+      styleBlock = [
+        `【叙事效率原则】（否决性规则，不是风格建议 · Voice DNA 缺失回退 · 来源: ${source}）`,
+        principles,
+      ].join('\n');
+    }
+
     const system = [
       '你是小说正文写手，不是规划师。',
       '只输出本 Scene 正文，不要标题、不要 markdown 代码块、不要解释。',
       `目标字数约 ${scene.wordTarget || 800} 字。`,
       '遵守写作圣经中的硬切、身体先行、限知视角规则。',
+      styleBlock,
       // 对白成型（与 validation checkDialogueBalance 同口径：人话块 + ≥20 字长块）
       // 裸跑时冲突槽多为占位符，writer 全靠动作/心理推进 → 对白占比趋零，
       // dialogue_balance 软门禁连续失败。这里在生成侧补最低对白要求。
