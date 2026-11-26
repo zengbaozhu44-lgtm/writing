@@ -1,0 +1,151 @@
+{
+  "version": "memory-unit-1",
+  "chapter": 1,
+  "committedAt": "2026-11-26T09:28:38.446Z",
+  "title": "第1章",
+  "intent": {
+    "pov": "主角",
+    "mainGoal": "进入世界",
+    "mustLose": null
+  },
+  "world": null,
+  "characters": null,
+  "facts": [],
+  "timeline": {
+    "day": 0,
+    "time": "00:00",
+    "events": [
+      "门从里面：门从里面推开半尺",
+      "他重新把门：他重新把门拉开，这次拉得很慢，像在拆一个不知道里面有什么的包裹",
+      "场面：侧墙上，像七张合拢的嘴。左边四扇，右边三扇。第三扇在右边。 老人走到尽头，推开门进去了。门轴转动的余音沉下去，只剩雨声。从身后那扇没关严的门外渗进来，贴着地面，",
+      "他：他站起来，回头看走廊"
+    ],
+    "characters_present": [
+      "主角"
+    ]
+  },
+  "current_state": "# 08 Current State · 第 1 章后\n\n| 字段 | 值 |\n| --- | --- |\n| 当前章节 | 1 |\n| POV | 主角 |\n| 任务 | — |\n| 地点 | — |\n| 时间 | Day 0 |\n| 本章字数 | 2774 |\n| 最后更新 | 2026-11-26T09:28:38.444Z |\n",
+  "evolution": {
+    "version": "state-evolution-1",
+    "actualEventIds": [
+      "evt_ch1_s1_e71d5a42a",
+      "evt_ch1_s2_e3a7d5248",
+      "evt_ch1_s3_ef23e11fe",
+      "evt_ch1_s4_e818ec974"
+    ],
+    "timelineEvents": [
+      "门从里面：门从里面推开半尺",
+      "他重新把门：他重新把门拉开，这次拉得很慢，像在拆一个不知道里面有什么的包裹",
+      "场面：侧墙上，像七张合拢的嘴。左边四扇，右边三扇。第三扇在右边。 老人走到尽头，推开门进去了。门轴转动的余音沉下去，只剩雨声。从身后那扇没关严的门外渗进来，贴着地面，",
+      "他：他站起来，回头看走廊"
+    ],
+    "characterHints": [
+      {
+        "character": "门从里面",
+        "action": "门从里面推开半尺",
+        "stateChanges": [
+          "action:门从里面:推开"
+        ],
+        "eventId": "evt_ch1_s1_e71d5a42a"
+      },
+      {
+        "character": "他重新把门",
+        "action": "他重新把门拉开，这次拉得很慢，像在拆一个不知道里面有什么的包裹",
+        "stateChanges": [
+          "action:他重新把门:拉开"
+        ],
+        "eventId": "evt_ch1_s2_e3a7d5248"
+      },
+      {
+        "character": "场面",
+        "action": "侧墙上，像七张合拢的嘴。左边四扇，右边三扇。第三扇在右边。 老人走到尽头，推开门进去了。门轴转动的余音沉下去，只剩雨声。从身后那扇没关严的门外渗进来，贴着地面，",
+        "stateChanges": [
+          "presence:场面"
+        ],
+        "eventId": "evt_ch1_s3_ef23e11fe"
+      },
+      {
+        "character": "他",
+        "action": "他站起来，回头看走廊",
+        "stateChanges": [
+          "action:他:站起"
+        ],
+        "eventId": "evt_ch1_s4_e818ec974"
+      }
+    ],
+    "openLoops": [],
+    "worldHints": [
+      "action:门从里面:推开",
+      "action:他重新把门:拉开",
+      "presence:场面",
+      "action:他:站起"
+    ],
+    "worldConsequences": [],
+    "rejected": []
+  },
+  "provenance": {
+    "engine": "state-evolution-engine",
+    "version": "state-evolution-1",
+    "source": "actual_events",
+    "at": "2026-11-26T09:28:38.444Z",
+    "writesCanonTimeline": true,
+    "writesFacts": false,
+    "writesCharacterBrain": false,
+    "actualEventCount": 4,
+    "timelineEventCount": 4,
+    "consumesWorldConsequenceTruth": false,
+    "worldConsequenceCount": 0
+  },
+  "metrics": {
+    "chapter": 1,
+    "sceneCount": 4,
+    "climaxCount": 2,
+    "conflictDensity": 1,
+    "conflictTypes": [
+      "information"
+    ],
+    "dialogueRatio": 0,
+    "humanDialogueCount": 21,
+    "longDialogueBlocks": 0,
+    "actionRatio": 0.29,
+    "mindRatio": 0.07,
+    "wordCount": 2774,
+    "worldProgress": 0,
+    "characterGrowth": 1,
+    "foreshadowRate": 0,
+    "rhythmPeaks": [
+      {
+        "index": 10,
+        "intensity": 3,
+        "chars": 8
+      },
+      {
+        "index": 13,
+        "intensity": 3,
+        "chars": 7
+      },
+      {
+        "index": 19,
+        "intensity": 3,
+        "chars": 5
+      },
+      {
+        "index": 27,
+        "intensity": 3,
+        "chars": 5
+      },
+      {
+        "index": 31,
+        "intensity": 3,
+        "chars": 7
+      }
+    ],
+    "infoDensity": 6.94,
+    "timestamp": "2026-11-26T09:28:29.850Z"
+  },
+  "livingPrepare": null,
+  "nextChapter": {
+    "chapter": 2
+  },
+  "force": false
+}

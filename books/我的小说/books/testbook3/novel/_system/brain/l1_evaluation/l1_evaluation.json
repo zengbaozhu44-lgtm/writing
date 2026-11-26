@@ -1,0 +1,99 @@
+{
+  "version": "l1-production-evaluation-1",
+  "characters": {
+    "门从里面": {
+      "characterId": "门从里面",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch1_s1_e71d5a42a"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "他重新把门": {
+      "characterId": "他重新把门",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch1_s2_e3a7d5248"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
+    "主角": {
+      "characterId": "主角",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 0,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    }
+  },
+  "meta": {
+    "rule": "P1_short_circuit",
+    "ha": {
+      "ha1": "sealed",
+      "ha2": "sidecar_only_zero_consumers",
+      "ha3": "invalid_evidence_rejected_not_l1_invalid"
+    },
+    "writesCanon": false,
+    "writesSR": false,
+    "writesChoice": false,
+    "writesAgency": false,
+    "uniqueConsumer": "future_l2_gate_authorized_only",
+    "note": "L1=VALID 不自动产生 Choice/Option/Selection"
+  },
+  "updatedAt": "2026-11-26T09:28:29.838Z"
+}

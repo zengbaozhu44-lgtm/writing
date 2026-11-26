@@ -1,0 +1,82 @@
+version: chapter-anchor-3
+chapter: 1
+current_date: Day 0
+pov: 主角
+location: —
+relationship_state:
+  machine: relationship-state-v2
+  pov: 主角
+  present:
+    - 主角
+  edges:
+    - from: 主角
+      to: 世界/系统
+      status: 对抗
+      tension: 高
+      note: 与异常规则对峙
+      expectedTransition:
+        toStatus: 知情对抗
+        byChapter: 2
+        reason: 确认规则后进入主动追查
+  overridden: false
+banned_elements:
+  - text: 禁止提前揭晓章末钩子：no_causal_basis
+    expiresAtChapter: 2
+  - text: 禁止无损撤回本章代价：no_causal_basis
+    expiresAtChapter: 3
+  - text: 禁止重开篇式介绍世界观与主角履历
+    expiresAtChapter: null
+  - text: 禁止复述上一章已确认的同一事实（换角度推进）
+    expiresAtChapter: 2
+voiceDna:
+  id: inherit-default
+  label: 章级 Voice DNA（待首次写入）
+  sentenceLength: mixed
+  rhythm: varied
+  dialogueRatio: 0.45
+  actionDensity: high
+  descriptionDensity: low
+  forced: true
+narrative_momentum:
+  version: narrative-momentum-1
+  fromChapter: 1
+  closing_emotion: 压抑·余波未平
+  forbidden_openings:
+    - 禁止用天气/闹钟/睁开眼开场
+    - 禁止复述上一章已发生的同一事件
+    - 禁止「就在这时」式硬切空降
+  mustInheritScene1: true
+  tailExcerpt: 之后就没再开过。别处没有动静。只有雨还在从身后那扇没关严的门底下往里爬，贴着地面，一寸一寸。 他转回来，把耳朵重新贴上第三扇门。 这一次，里面有人呼吸。 一呼，一吸。很慢，很稳。像是已经这么躺了很久很久。 而且那节奏，和他自己的，一模一样。
+recent_actuals:
+  - sceneIndex: 1
+    text: 门从里面推开半尺
+  - sceneIndex: 2
+    text: 他重新把门拉开，这次拉得很慢，像在拆一个不知道里面有什么的包裹
+  - sceneIndex: 3
+    text: 侧墙上，像七张合拢的嘴。左边四扇，右边三扇。第三扇在右边。 老人走到尽头，推开门进去了。门轴转动的余音沉下去，只剩雨声。
+  - sceneIndex: 4
+    text: 他站起来，回头看走廊
+state_ledger:
+  version: 1
+  updated_chapter: 1
+  items: []
+  locations: []
+  open_promises: []
+  settled_costs: []
+committedAt: 2026-11-26T09:28:38.448Z
+d1InferenceDemotion:
+  eo: EO-P4
+  role: operational_planner_hint
+  producesObtains: false
+  isRealityAuthority: false
+  isCharacterReality: false
+  isRelationshipFact: false
+  authorityAct: NOT_AN_AUTHORITY_ACT
+  claimLevelAuthority: NOT_THIS_PATH
+  note: Anchor / heuristic ops hint ≠ Reality / obtains.
+  paths:
+    - deriveRelationshipState
+    - deriveClosingEmotion
+    - buildChapterAnchor
+  relationship_state: operational_planner_hint_not_fact
+  closing_emotion: ops_hint_not_character_reality

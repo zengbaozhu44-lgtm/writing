@@ -1,0 +1,74 @@
+{
+  "version": "l1-access-truth-1",
+  "characters": {
+    "门从里面": {
+      "records": [
+        {
+          "characterId": "门从里面",
+          "status": "PASS",
+          "type": "E4",
+          "scope": null,
+          "reason": "pass_e4",
+          "optionRefs": [
+            "evt_ch1_s1_e71d5a42a"
+          ],
+          "provenance": {
+            "gate": "l1-access-gate-1",
+            "evidenceSources": [
+              "prose"
+            ],
+            "evidenceRefs": [
+              "evt_ch1_s1_e71d5a42a"
+            ],
+            "forbiddenAsAuthority": true
+          },
+          "gateVersion": "l1-access-gate-1",
+          "formedAt": {
+            "chapter": 1,
+            "sceneId": "ch1_s1"
+          }
+        }
+      ]
+    },
+    "他重新把门": {
+      "records": [
+        {
+          "characterId": "他重新把门",
+          "status": "PASS",
+          "type": "E2",
+          "scope": "rejected-path-only",
+          "reason": "e2_u03_rejected_path_only",
+          "optionRefs": [
+            "evt_ch1_s2_e3a7d5248"
+          ],
+          "provenance": {
+            "gate": "l1-access-gate-1",
+            "evidenceSources": [
+              "prose"
+            ],
+            "evidenceRefs": [
+              "evt_ch1_s2_e3a7d5248"
+            ],
+            "forbiddenAsAuthority": true
+          },
+          "gateVersion": "l1-access-gate-1",
+          "formedAt": {
+            "chapter": 1,
+            "sceneId": "ch1_s2"
+          }
+        }
+      ]
+    }
+  },
+  "meta": {
+    "gateVersion": "l1-access-gate-1",
+    "writesCanon": false,
+    "writesSR": false,
+    "writesActual": false,
+    "writesCharacterWorld": false,
+    "writesChoice": false,
+    "writesAgency": false,
+    "uniqueConsumer": "future_l1_production_evaluation"
+  },
+  "updatedAt": "2026-11-26T09:27:44.693Z"
+}
