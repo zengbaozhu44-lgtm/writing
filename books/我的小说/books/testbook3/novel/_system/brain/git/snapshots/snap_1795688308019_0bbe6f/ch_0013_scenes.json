@@ -1,0 +1,2320 @@
+{
+  "chapter": 13,
+  "scenes": [
+    {
+      "index": 1,
+      "id": "ch13_s1",
+      "title": "进入世界",
+      "goal": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：承接上一章结果",
+      "conflict": "阻力来自上一章后果的延续",
+      "entities": [
+        "主角"
+      ],
+      "beat": "situation",
+      "inheritedEmotion": "疑虑·未解之问",
+      "forbiddenOpenings": [
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降",
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降",
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件"
+      ],
+      "openingConstraint": "开场必须延续情绪：疑虑·未解之问；禁止用天气/闹钟/睁开眼开场；禁止复述上一章已发生的同一事件；禁止「就在这时」式硬切空降",
+      "spatialAnchor": {
+        "location": "本章起始现场",
+        "povPosition": "POV 首次落地位置",
+        "note": "后续 Scene 必须承接此处或给出过渡"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": true,
+        "keyRevealBeat": "newInformation"
+      },
+      "authorIntent": "进入世界",
+      "wordTarget": 800,
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1",
+        "note": "scene_1_no_prior"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 1/4 · POV 主角\n- 目标: 承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：承接上一章结果\n- 冲突: 阻力来自上一章后果的延续\n- 节拍: situation\n- 字数: ~800\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch13_s1 | tokens=747 | profile=opening | cache=0% | compile=11ms -->\n\n### Scene 目标\n目标: 承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：承接上一章结果\n节拍: situation\n\n### Scene 冲突\n冲突: 阻力来自上一章后果的延续\n阻碍: 阻力来自上一章后果的延续\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### Prior Chapter Actuals（上一章已发生）\n上一章已发生（软记忆 · 必须承接，禁止当作未发生或复述重演）：\n- 没完全松开\n- 哪两块——刚才我站起来的时候，也是绕开了那两块\n- 拉开那把椅子坐下\n- 这个动作他做得比站起来顺，先弯右膝，左手撑住桌面，身体重心压下去，左\n- 他把交叉的手指松开了，右手单独伸到桌面中央，掌心朝上，摊平，像在等\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificat\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n### Information Boundary（消费纪律 · Phase 1.R）\n- **World / Narration ≠ Character Knowledge**。\n- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。\n- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。\n- Awaren\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 当前状态\n# 08 Current State · 第 12 章后\n\n| 字段 | 值 |\n| --- | --- |\n| 当前章节 | 12 |\n| POV | 主角 |\n| 任务 | — |\n| 地点 | — |\n| 时间 | Day 0 |\n| 本章字数 | 3283 |\n| 最后更新 | 2026-11-26T10:14:53.422Z |\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible · 雨巷来客\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 32,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 20,
+            "category": "conflict"
+          },
+          {
+            "key": "adaptive_learning",
+            "label": "Adaptive Learning",
+            "tokens": 74,
+            "category": "goal"
+          },
+          {
+            "key": "prior_chapter_actuals",
+            "label": "Prior Chapter Actuals（上一章已发生）",
+            "tokens": 87,
+            "category": "history"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 91,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 200,
+            "category": "character"
+          },
+          {
+            "key": "state",
+            "label": "当前状态",
+            "tokens": 54,
+            "category": "history"
+          },
+          {
+            "key": "world_bible",
+            "label": "世界规则",
+            "tokens": 71,
+            "category": "world"
+          },
+          {
+            "key": "writing_bible",
+            "label": "写作规则",
+            "tokens": 108,
+            "category": "world"
+          }
+        ],
+        "totalTokens": 747,
+        "totalChars": 2708,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch13_s1 | tokens=747 | profile=opening | cache=0% | compile=11ms -->\n\n### Scene 目标\n目标: 承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：承接上一章结果\n节拍: situation\n\n### Scene 冲突\n冲突: 阻力来自上一章后果的延续\n阻碍: 阻力来自上一章后果的延续\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### Prior Chapter Actuals（上一章已发生）\n上一章已发生（软记忆 · 必须承接，禁止当作未发生或复述重演）：\n- 没完全松开\n- 哪两块——刚才我站起来的时候，也是绕开了那两块\n- 拉开那把椅子坐下\n- 这个动作他做得比站起来顺，先弯右膝，左手撑住桌面，身体重心压下去，左\n- 他把交叉的手指松开了，右手单独伸到桌面中央，掌心朝上，摊平，像在等\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificat\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n### Information Boundary（消费纪律 · Phase 1.R）\n- **World / Narration ≠ Character Knowledge**。\n- Scene Goal、冲突、时间线、世界设定、其他角色经历 = 世界/任务信息，**不是** POV 已知事实。\n- Character Subjective State 有明确 Awareness → 可写为该角色已知/经历。\n- Awaren\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 当前状态\n# 08 Current State · 第 12 章后\n\n| 字段 | 值 |\n| --- | --- |\n| 当前章节 | 12 |\n| POV | 主角 |\n| 任务 | — |\n| 地点 | — |\n| 时间 | Day 0 |\n| 本章字数 | 3283 |\n| 最后更新 | 2026-11-26T10:14:53.422Z |\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible · 雨巷来客\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **感官优先**\n3. **信息寄生**\n4. **异常反噬**\n5. **限知第三人称**\n\n## 平台\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": false,
+        "cacheHitRate": 0,
+        "promptHash": "aaf03f054adcb87f",
+        "compileMs": 11,
+        "profile": "opening",
+        "rankingDrop": 1,
+        "budgetUsage": {
+          "usage": {
+            "goal": 116,
+            "conflict": 20,
+            "character": 200,
+            "world": 179,
+            "facts": 0,
+            "history": 232,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 27,
+            "conflict": 5,
+            "character": 25,
+            "world": 37,
+            "facts": 0,
+            "history": 78,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "那只手掌摊在桌面中央，掌纹里嵌着一道旧疤，从虎口斜拉到腕根，像条干涸的河床。主角盯着它，没有动。\n\n雨还在下。窗棂上积了一层水汽，把外面巷子里的灯笼光晕染成模糊的一团。空气里混着潮湿木头和劣质烟草的气味，墙角那只铜炭盆已经凉了，灰烬里埋着几粒没烧透的炭核。桌面上摊开的掌心纹路很深，主角的目光顺着那道疤走了一遍，又走了一遍。\n\n“你等了很久。”对面的人说。\n\n声音不高，尾音被雨声吃掉了一半。主角抬起眼。那人坐在椅子里，背靠着椅背，姿势松弛得不太正常——像是一个人刻意做出来的松弛。右腿叠在左膝上，脚踝处露出一截灰白袜子和磨破的皮鞋边。左手还搭在扶手上，指节微微泛白。\n\n“不算久。”主角说，“你进来之前，我在看那面墙。”\n\n“墙上有东西？”\n\n“水渍。形状像个人脸。”\n\n那人笑了一声，很短，像咳嗽。“然后呢？”\n\n“然后你进来了。”\n\n沉默。雨声从窗缝里挤进来，一阵密一阵疏。那人把摊开的手掌收回，搁在膝盖上，五根手指依次屈起，又依次展开。像是在数什么，又像是在确认手指都还在。\n\n主角注意到他的右手小指不太灵活，弯曲的时候比别的指头慢半拍。\n\n“你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。”\n\n“嗯。”\n\n“你第一次来的时候没绕。”\n\n那人屈指的动作停了。雨声忽然大了一瞬，又落回去。铜炭盆里某粒炭核发出一声极细的碎裂响，像骨头在火里炸开。\n\n“你记得挺清楚。”那人说。\n\n“我记性一般。只是那两块砖的位置太怪了，铺在门槛内侧，稍微踩重一点就翘起来。你上次进来，右脚踩上去，砖翘了，你低头看了一眼，然后继续走。”\n\n那人把叠着的腿放下来，两只脚平踩在地上。他的目光从主角脸上移开，落到桌面那道水渍上。水渍在灯下泛着暗黄色的边。\n\n“所以呢？”\n\n“所以你在掩饰什么。”主角说。声音很平，没什么起伏。“你上次不知道那两块砖会翘。这次你知道了，绕开了。中间这段时间，你来过。”\n\n窗外有人跑过巷子，脚步声啪嗒啪嗒踩在积水里，很快远了。那人没有立刻接话。他伸手去够桌上的茶碗，碗底磕在木面上，发出一声闷响。茶早就凉透了，他端起来抿了一口，喉结动了一下。\n\n“我来过。”他说。\n\n“几次？”\n\n“三次。”\n\n“来做什么？”\n\n那人把茶碗放回去，碗底和桌面之间夹着一小圈水痕，慢慢洇开。他看着那圈水痕，像在看某种只有他自己能读懂的东西。\n\n“看一样东西。”他说，“你屋里那个柜子，最下面那层抽屉。我没打开过，但我量过它的尺寸。”\n\n主角的脊背贴着椅背，木头很硬，硌着肩胛骨。他没有回头去看那个柜子。他知道它在哪儿，在床尾靠墙的位置，最下面那层抽屉上了锁，钥匙在他贴身的衣兜里。那个抽屉里放着什么，他也很清楚。\n\n“你量它做什么？”\n\n“有人托我量。”那人说，终于抬起眼，目光很稳，落在主角脸上，“那人说，抽屉里的东西，值一条命。我想知道，是你的命，还是别人的。”\n\n雨声忽然变得很远。主角听见自己的呼吸，很轻，很稳，从鼻腔里出来，带着一点凉意。他没有说话。那人也没有催。两人隔着一张桌面的距离，像隔着一整条巷子那么远。\n\n铜炭盆里的灰烬塌下去一块，发出一声细响。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch13_s1",
+        "index": 1,
+        "sourceTextHash": "-1452384893",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:17:45.015Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch13_s1_e37cf056f",
+          "sceneId": "ch13_s1",
+          "version": "story-event-1",
+          "actors": [
+            "“你刚才"
+          ],
+          "action": "“你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖",
+          "intent": "",
+          "consequence": "场面动作已发生：站起",
+          "stateChanges": [
+            "action:“你刚才:站起"
+          ],
+          "affectedEntities": [
+            "“你刚才",
+            "主角"
+          ],
+          "evidence": {
+            "excerpt": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+            "offset": 451
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch13_s1",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [
+                {
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "know",
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "low",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "主角",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              },
+              {
+                "characterId": "主角",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              }
+            ]
+          },
+          "“你刚才": {
+            "name": "“你刚才",
+            "awareness": {
+              "items": [
+                {
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "know",
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "provenance": {
+                    "characterId": "“你刚才",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "“你刚才",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "“你刚才",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              },
+              {
+                "characterId": "“你刚才",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch13_s1",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "ELIGIBLE",
+            "reason": "subject_presence_actual_grounded",
+            "evidenceOccurrenceIds": [
+              "evt_ch13_s1_e37cf056f"
+            ]
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch13_s1",
+        "pass": true,
+        "wordCount": 1225,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含顺承词，违反硬切规则"
+          },
+          {
+            "level": "warning",
+            "msg": "含禁词内心标记"
+          }
+        ],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch13_s1",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch13_s1",
+        "actor": "主角",
+        "action": "承接上章情绪「疑虑·未解之问」进入局面 · 承接「疑虑·未解之问」进入现场：承接上一章结果",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 1225
+    },
+    {
+      "index": 2,
+      "id": "ch13_s2",
+      "title": "建立关系",
+      "goal": "克服阻碍：阻力来自上一章后果的延续",
+      "conflict": "no_causal_basis",
+      "entities": [
+        "主角"
+      ],
+      "beat": "complication",
+      "spatialAnchor": {
+        "location": "承接 Scene1 现场或合理过渡后的邻接区",
+        "note": "禁止重写章开场坠落/濒死"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "authorIntent": "建立关系",
+      "wordTarget": 800,
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 2/4 · POV 主角\n- 目标: 克服阻碍：阻力来自上一章后果的延续\n- 冲突: no_causal_basis\n- 节拍: complication\n- 字数: ~800\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch13_s2 | tokens=616 | profile=dialogue | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 克服阻碍：阻力来自上一章后果的延续\n节拍: complication\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 那只手掌摊在桌面中央，掌纹里嵌着一道旧疤，从虎口斜拉到腕根，像条干涸的河床。主角盯着它，没有动。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: “你刚才 · reported happening: “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:“你刚才:站起\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：\n  - [know] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的…\n- **Relevance**：\n  - [low] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Con\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世\n…[truncated]\n\n### 写作规则\n# 02 Writing Bible · \n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 18,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 12,
+            "category": "conflict"
+          },
+          {
+            "key": "adaptive_learning",
+            "label": "Adaptive Learning",
+            "tokens": 74,
+            "category": "goal"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 90,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 193,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 160,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 15,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          },
+          {
+            "key": "world_bible",
+            "label": "世界规则",
+            "tokens": 29,
+            "category": "world"
+          },
+          {
+            "key": "writing_bible",
+            "label": "写作规则",
+            "tokens": 9,
+            "category": "world"
+          }
+        ],
+        "totalTokens": 616,
+        "totalChars": 2460,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch13_s2 | tokens=616 | profile=dialogue | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 克服阻碍：阻力来自上一章后果的延续\n节拍: complication\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 那只手掌摊在桌面中央，掌纹里嵌着一道旧疤，从虎口斜拉到腕根，像条干涸的河床。主角盯着它，没有动。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: “你刚才 · reported happening: “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:“你刚才:站起\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：\n  - [know] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的…\n- **Relevance**：\n  - [low] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Con\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世\n…[truncated]\n\n### 写作规则\n# 02 Writing Bible · \n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "339cefc26ba1483c",
+        "compileMs": 7,
+        "profile": "dialogue",
+        "rankingDrop": 2,
+        "budgetUsage": {
+          "usage": {
+            "goal": 192,
+            "conflict": 12,
+            "character": 160,
+            "world": 38,
+            "facts": 0,
+            "history": 214,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 88,
+            "conflict": 4,
+            "character": 26,
+            "world": 95,
+            "facts": 0,
+            "history": 98,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "那人把手掌翻过来，又翻回去，掌心朝上停住，像是把一件东西摊开给谁看。疤在炭火余光里泛着一点暗红。\n\n“你刚才站起来的时候，绕开了地上那两块松动的砖。”他说，“左一步大，右一步收。走得挺准。”\n\n主角的拇指在膝盖的粗布上蹭了一下。布磨得起毛，蹭上去有点涩。\n\n“砖松了，谁都绕着走。”\n\n“下雨天，满地都是松砖。”那人把掌心按在桌面上，慢慢压平，“可你绕得像是量过。一块，两块，不多不少，两只脚都落在实处。”\n\n主角没说话。他听见檐口的雨砸在青石上，一滴比一滴稀。炭盆里那股塌下去的灰，凉气贴着小腿往上爬。\n\n“这说明有个人事先数给你听。”那人说，“或者你自己数过。数过的东西，走起来才省力气——也才藏得下人。”\n\n“你倒是喜欢看别人走路。”主角说。\n\n“我更喜欢看人怎么躲。”\n\n主角的小指在桌沿底下弯了弯，比别的指头慢半拍才贴住掌心。那只手他熟，熟到闭着眼也知道哪根指头不听话。\n\n“巷子短。”他说。\n\n“短。”那人点头，笑意在嘴角停了一下就散了，“可你今天比昨天走得慢。慢不在腿上。”\n\n雨声忽然又回来了，密密地敲在瓦上。主角伸手去够桌上那只茶碗，碗沿缺了个口，拇指正好卡进去。他没喝，就这么捧着，凉意从豁口渗进来，一直渗到指根。\n\n“你要的东西，不在砖底下。”他说。\n\n那人把手收回去，收得极慢，像卷一张受潮的旧纸。收拢时蹭过桌面，把刚才压出的一小片湿痕抹淡了。\n\n“我知道不在砖底下。”他说，“可我得先看清，你走路的时候心里是不是还留着位置。留着位置，才谈得上往哪儿挪。”\n\n主角捧着碗，指节泛白。\n\n“你想挪什么？”\n\n“挪你。”那人抬眼，“或者，被你挪开。”\n\n檐外有人踩水跑过，哗啦一声，远了。主角数到七，把碗放下。碗底磕在桌面上，脆的一声，缺口对着缺口。\n\n“巷子里的砖，我自己数的。”他说，“数了三年。”",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch13_s2",
+        "index": 2,
+        "sourceTextHash": "-332469404",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:17:57.042Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch13_s2_e5256c62f",
+          "sceneId": "ch13_s2",
+          "version": "story-event-1",
+          "actors": [
+            "“你刚才"
+          ],
+          "action": "“你刚才站起来的时候，绕开了地上那两块松动的砖",
+          "intent": "",
+          "consequence": "场面动作已发生：站起",
+          "stateChanges": [
+            "action:“你刚才:站起"
+          ],
+          "affectedEntities": [
+            "“你刚才"
+          ],
+          "evidence": {
+            "excerpt": "东西摊开给谁看。疤在炭火余光里泛着一点暗红。 “你刚才站起来的时候，绕开了地上那两块松动的砖。”他说，“左一步大，右一步收。走得挺准。” 主角的拇指在膝盖的粗布上蹭了一下。布磨得起毛，蹭",
+            "offset": 26
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch13_s2",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [
+                {
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "know",
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "low",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "主角",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              },
+              {
+                "characterId": "主角",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              }
+            ]
+          },
+          "“你刚才": {
+            "name": "“你刚才",
+            "awareness": {
+              "items": [
+                {
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "know",
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "provenance": {
+                    "characterId": "“你刚才",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                },
+                {
+                  "info": "东西摊开给谁看。疤在炭火余光里泛着一点暗红。 “你刚才站起来的时候，绕开了地上那两块松动的砖。”他说，“左一步大，右一步收。走得挺准。” 主角的拇指在膝盖的粗布上蹭了一下。布磨得起毛，蹭",
+                  "level": "know",
+                  "eventId": "evt_ch13_s2_e5256c62f",
+                  "provenance": {
+                    "characterId": "“你刚才",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s2_e5256c62f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "“你刚才",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                },
+                {
+                  "eventId": "evt_ch13_s2_e5256c62f",
+                  "info": "东西摊开给谁看。疤在炭火余光里泛着一点暗红。 “你刚才站起来的时候，绕开了地上那两块松动的砖。”他说，“左一步大，右一步收。走得挺准。” 主角的拇指在膝盖的粗布上蹭了一下。布磨得起毛，蹭",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "“你刚才",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s2_e5256c62f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "“你刚才",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              },
+              {
+                "characterId": "“你刚才",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              },
+              {
+                "characterId": "“你刚才",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s2_e5256c62f"
+              },
+              {
+                "characterId": "“你刚才",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s2_e5256c62f"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch13_s2",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch13_s2",
+        "pass": true,
+        "wordCount": 721,
+        "issues": [],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch13_s2",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch13_s2",
+        "actor": "主角",
+        "action": "克服阻碍：阻力来自上一章后果的延续",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 721
+    },
+    {
+      "index": 3,
+      "id": "ch13_s3",
+      "title": "第一次失败",
+      "goal": "转折（本 Scene 兑现完整行动线）：no_causal_basis",
+      "conflict": "no_causal_basis",
+      "entities": [
+        "主角"
+      ],
+      "beat": "turn",
+      "spatialAnchor": {
+        "location": "同线推进至转折点",
+        "note": "禁止换场无过渡；禁止复读已揭示关键信息的「首次发现」"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "authorIntent": "第一次失败",
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "wordTarget": 800,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 3/4 · POV 主角\n- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: turn\n- 字数: ~800\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch13_s3 | tokens=739 | profile=climax | cache=100% | compile=9ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 那人把手掌翻过来，又翻回去，掌心朝上停住，像是把一件东西摊开给谁看。疤在炭火余光里泛着一点暗红。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: “你刚才 · reported happening: “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:“你刚才:站起\n- [S2/action] participants: “你刚才 · reported happening: “你刚才站起来的时候，绕开了地上那两块松动的砖\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:“你刚才:站起\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：\n  - [know] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的…\n- **Relevance**：\n  - [low] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Hi\n…[truncated]\n\n### 状态差量\n### 上下文\n…[truncated]\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_f\n…[truncated]\n\n### 写作规则\n# 02 Writing Bible · 雨巷来客\n\n> 只保存写作规则\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 18,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 12,
+            "category": "conflict"
+          },
+          {
+            "key": "adaptive_learning",
+            "label": "Adaptive Learning",
+            "tokens": 74,
+            "category": "goal"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 91,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 246,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 154,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 12,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 7,
+            "category": "history"
+          },
+          {
+            "key": "state_board",
+            "label": "局势",
+            "tokens": 51,
+            "category": "conflict"
+          },
+          {
+            "key": "world_bible",
+            "label": "世界规则",
+            "tokens": 47,
+            "category": "world"
+          },
+          {
+            "key": "writing_bible",
+            "label": "写作规则",
+            "tokens": 17,
+            "category": "world"
+          }
+        ],
+        "totalTokens": 739,
+        "totalChars": 2785,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch13_s3 | tokens=739 | profile=climax | cache=100% | compile=9ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 那人把手掌翻过来，又翻回去，掌心朝上停住，像是把一件东西摊开给谁看。疤在炭火余光里泛着一点暗红。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要：仍仅经 Prose → TypedEvidence → Gate → Registry（本块不跳过 Gate）。\n\n- [S1/action] participants: “你刚才 · reported happening: “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:“你刚才:站起\n- [S2/action] participants: “你刚才 · reported happening: “你刚才站起来的时候，绕开了地上那两块松动的砖\n  text-noted aftermath: 场面动作已发生：站起\n  state_mentions: action:“你刚才:站起\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：\n  - [know] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的…\n- **Relevance**：\n  - [low] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Hi\n…[truncated]\n\n### 状态差量\n### 上下文\n…[truncated]\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_f\n…[truncated]\n\n### 写作规则\n# 02 Writing Bible · 雨巷来客\n\n> 只保存写作规则\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "160d139de92055cf",
+        "compileMs": 9,
+        "profile": "climax",
+        "rankingDrop": 3,
+        "budgetUsage": {
+          "usage": {
+            "goal": 193,
+            "conflict": 63,
+            "character": 154,
+            "world": 64,
+            "facts": 0,
+            "history": 265,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 41,
+            "conflict": 8,
+            "character": 26,
+            "world": 91,
+            "facts": 0,
+            "history": 101,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "碗底那声脆响在木桌上滚了半圈，像一颗石子落进深井。主角看着自己的左手，小指还搭在碗沿上，弯得比别的指头慢半拍——他数过，从食指到小指，依次是四拍、三拍、两拍、一拍。那只小指总在最后一拍上卡住。\n\n“三年。”那人重复了一遍，声音像在称一块湿木头。\n\n“砖窑没拆之前，”主角说，“巷口到巷尾，我走过一千零九十五遍。每一块砖都认识我的鞋底。”\n\n“你刚才绕开了那两块。”\n\n“松动的砖踩上去会响。”\n\n“响了会怎样？”\n\n主角没回答。檐外又有脚步踩过水洼，这次是两个人，啪嗒啪嗒，往巷口去了。他等那声音彻底消失，才把左手从碗沿上收回来，平放在桌面上。小指还是慢半拍，像一根被线拽着的木偶指头。\n\n“你刚才说，”那人开口，“你数了三年。”\n\n“三年。”\n\n“从哪年开始数的？”\n\n主角的喉咙动了一下。他的视线从碗沿移向那人的手，那只手正按在桌角，掌心朝下。疤从虎口延伸到腕骨，在灯下像一道干涸的河床。\n\n“那一年巷子里死了两个人。”主角说。\n\n“哪两个人。”\n\n“你不认识。”\n\n“你怎么知道我不认识？”\n\n主角的指节在桌面上收拢，指腹抵着木纹，来回蹭了两下。那只小指还是没跟上，弯了一半就停住，像被什么东西卡住了。\n\n“因为是我埋的。”他说。\n\n那人没有动。灯焰跳了一下，影子在墙上晃了晃。\n\n“你埋的。”那人重复，语气里听不出惊讶。\n\n“砖窑后面有块空地，土是松的。”\n\n“你一个人？”\n\n“一个人。”\n\n“挖了多久。”\n\n“一夜。”主角说，“天亮之前填回去的。”\n\n他感觉到自己的左手在桌下轻轻抖了一下，小指碰到掌心。他攥住它，用其余四根指头。\n\n那人把手从桌角收回去，搁在膝盖上。他低头看着自己的手，翻过来，又翻回去。疤在光里泛着暗红，像一道刚结痂的口子。\n\n“你数砖，”那人说，“我数人。”\n\n“什么意思。”\n\n“你数这条巷子有多少块砖。我数这条巷子里走过多少人。”\n\n主角的呼吸停了一拍。他听见檐水落进石臼的声音，一下，两下，三下。\n\n“你数了几年。”\n\n“你数三年。我数了十七年。”那人把手掌按在桌面上，掌心那道疤正对着碗底的缺口，“你埋的那两个人，我认识。”\n\n主角没有说话。他感觉到桌下的那只手终于松开了，小指慢慢弯下去，扣住掌心，像一枚锈死的锁终于合上了。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch13_s3",
+        "index": 3,
+        "sourceTextHash": "-1908320377",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:18:08.669Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch13_s3_e4a6b196f",
+          "sceneId": "ch13_s3",
+          "version": "story-event-1",
+          "actors": [
+            "桌下的那只手终于"
+          ],
+          "action": "桌下的那只手终于松开了，小指慢慢弯下去，扣住掌心，像一枚锈死的锁终于",
+          "intent": "",
+          "consequence": "场面动作已发生：松开",
+          "stateChanges": [
+            "action:桌下的那只手终于:松开"
+          ],
+          "affectedEntities": [
+            "桌下的那只手终于"
+          ],
+          "evidence": {
+            "excerpt": "的那两个人，我认识。” 主角没有说话。他感觉到桌下的那只手终于松开了，小指慢慢弯下去，扣住掌心，像一枚锈死的锁终于合上了。",
+            "offset": 872
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch13_s3",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [
+                {
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "know",
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "low",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "主角",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              },
+              {
+                "characterId": "主角",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              }
+            ]
+          },
+          "桌下的那只手终于": {
+            "name": "桌下的那只手终于",
+            "awareness": {
+              "items": [
+                {
+                  "info": "的那两个人，我认识。” 主角没有说话。他感觉到桌下的那只手终于松开了，小指慢慢弯下去，扣住掌心，像一枚锈死的锁终于合上了。",
+                  "level": "know",
+                  "eventId": "evt_ch13_s3_e4a6b196f",
+                  "provenance": {
+                    "characterId": "桌下的那只手终于",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s3_e4a6b196f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s3_e4a6b196f",
+                  "info": "的那两个人，我认识。” 主角没有说话。他感觉到桌下的那只手终于松开了，小指慢慢弯下去，扣住掌心，像一枚锈死的锁终于合上了。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "桌下的那只手终于",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s3_e4a6b196f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "桌下的那只手终于",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s3_e4a6b196f"
+              },
+              {
+                "characterId": "桌下的那只手终于",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s3_e4a6b196f"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch13_s3",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch13_s3",
+        "pass": true,
+        "wordCount": 870,
+        "issues": [],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch13_s3",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch13_s3",
+        "actor": "主角",
+        "action": "转折（本 Scene 兑现完整行动线）：no_causal_basis",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 870
+    },
+    {
+      "index": 4,
+      "id": "ch13_s4",
+      "title": "第一次成长",
+      "goal": "章末钩子（承接转折后果）：no_causal_basis",
+      "conflict": "no_causal_basis",
+      "entities": [
+        "主角"
+      ],
+      "beat": "hook",
+      "spatialAnchor": {
+        "location": "同线收束现场",
+        "note": "只推进后果与新疑问，不重启开场"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "authorIntent": "第一次成长",
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "wordTarget": 600,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 4/4 · POV 主角\n- 目标: 章末钩子（承接转折后果）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: hook\n- 字数: ~600\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch13_s4 | tokens=650 | profile=ending | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 碗底那声脆响在木桌上滚了半圈，像一颗石子落进深井。主角看着自己的左手，小指还搭在碗沿上，弯得比别的指头慢半拍——他数过，从食指到小指，依次是四拍、三拍、两拍、一拍。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal S\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：\n  - [know] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的…\n- **Relevance**：\n  - [low] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界):\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible \n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 17,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 12,
+            "category": "conflict"
+          },
+          {
+            "key": "adaptive_learning",
+            "label": "Adaptive Learning",
+            "tokens": 74,
+            "category": "goal"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 110,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 86,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 141,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 64,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          },
+          {
+            "key": "state_board",
+            "label": "局势",
+            "tokens": 51,
+            "category": "conflict"
+          },
+          {
+            "key": "world_bible",
+            "label": "世界规则",
+            "tokens": 71,
+            "category": "world"
+          },
+          {
+            "key": "writing_bible",
+            "label": "写作规则",
+            "tokens": 8,
+            "category": "world"
+          }
+        ],
+        "totalTokens": 650,
+        "totalChars": 2503,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch13_s4 | tokens=650 | profile=ending | cache=100% | compile=7ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### Adaptive Learning\n<!-- inkos-adaptive-learning -->\n## Adaptive Learning · Prompt 自动调权\n\n活跃维度：emotion、style\n\n- **情绪强化**：POV 内心反应与身体感受必须可见\n- 情绪需随冲突升级而变化\n- **文风强化**：遵守写作圣经硬切、身体先行、限知视角\n- 减少说明腔，增加具体感官细节\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 碗底那声脆响在木桌上滚了半圈，像一颗石子落进深井。主角看着自己的左手，小指还搭在碗沿上，弯得比别的指头慢半拍——他数过，从食指到小指，依次是四拍、三拍、两拍、一拍。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal S\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：\n  - [know] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的…\n- **Relevance**：\n  - [low] 手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时…\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界):\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible \n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "ccc37b7b6d1419cc",
+        "compileMs": 7,
+        "profile": "ending",
+        "rankingDrop": 3,
+        "budgetUsage": {
+          "usage": {
+            "goal": 211,
+            "conflict": 63,
+            "character": 141,
+            "world": 79,
+            "facts": 0,
+            "history": 156,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 43,
+            "conflict": 9,
+            "character": 27,
+            "world": 94,
+            "facts": 0,
+            "history": 80,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "雨还在下。檐角的水滴在青石板上，一下，一下，间隔长得让人以为停了。\n\n那人的手没有收回去。掌心那道疤横过掌纹，像有人用刀在他手里画了条路。\n\n“你认识。”主角终于开口。声音比他预想的干，“他们叫什么。”\n\n那人看着他，像在等这句话等了很久，又像根本没打算答。他把碗底那块缺口转了个方向，正对着主角。\n\n“你埋的时候，给他们盖了脸没有。”\n\n主角的喉咙动了一下。他记得土是湿的，记得铁锹柄上缠的布条磨破了手，记得一锹，两锹，三锹——但脸。他不记得脸。他只记得自己没敢看。\n\n“没盖。”他说。\n\n那人点头，像是印证了什么。“那就对了。”他往椅背上一靠，木椅腿在潮气里吱的一声，“没盖脸的，三年后会自己回来找你。这是规矩。”\n\n主角的手指在桌下收紧。小指还是慢，扣进掌心的时候像被什么绊了一下。\n\n“什么规矩。”\n\n“你埋人的时候没人教你？”\n\n“没人教。”\n\n那人沉默了一会儿。雨声填进来，把两个人之间那点空隙灌满。他忽然伸手，把主角面前那只碗翻过来扣在桌上。碗底朝上，缺口朝西。\n\n“我不是来教你规矩的。”他说，“我是来告诉你，你埋的那两个人，有一个没死。”\n\n主角坐着没动。他听见自己的心跳在耳朵后面，一下，一下，比雨点沉。\n\n“哪个。”\n\n“左边那个。”那人说，“右边那个是真死了。左边那个，你盖土的时候，他还有气。”\n\n主角的胃往上顶了一下。他想起那天的土，想起铲下去的时候有一瞬觉得土是软的，比别处软。他当时以为是雨泡的。\n\n“你怎么知道。”\n\n那人把手收回去，拢进袖子里。“因为是我把他挖出来的。”\n\n他站起来。椅子往后蹭了半尺，声音刮在木地板上。他走到门口，手搭在门框上，回头看了主角一眼。\n\n“他这些年一直在数。数你埋了他多少锹。”\n\n门开了。雨声一下子涌进来，白茫茫堵在门口。那人的背影陷进去，很快只剩一个轮廓。\n\n主角还坐着。桌上那只碗翻扣着，缺口朝西。他伸手想去把它翻回来，指尖碰到碗沿的时候停住了。\n\n他忽然发现自己想不起来——那天，他到底铲了多少锹。\n\n外面，雨声里混进一个脚步声。很轻，一下，一下，间隔长得让人以为停了。正朝这边来。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch13_s4",
+        "index": 4,
+        "sourceTextHash": "1195971371",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:18:18.234Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch13_s4_e9d81715c",
+          "sceneId": "ch13_s4",
+          "version": "story-event-1",
+          "actors": [
+            "他"
+          ],
+          "action": "他站起来",
+          "intent": "",
+          "consequence": "场面动作已发生：站起",
+          "stateChanges": [
+            "action:他:站起"
+          ],
+          "affectedEntities": [
+            "他"
+          ],
+          "evidence": {
+            "excerpt": "回去，拢进袖子里。“因为是我把他挖出来的。” 他站起来。椅子往后蹭了半尺，声音刮在木地板上。他走到门口，手搭在门框上，回头看了主角一眼。 “他这些年",
+            "offset": 631
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch13_s4",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [
+                {
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "know",
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s1_e37cf056f",
+                  "info": "手小指不太灵活，弯曲的时候比别的指头慢半拍。 “你刚才站起来的时候，”主角说，“绕开了地上那两块松动的砖。” “嗯。” “你第一次来的时候没绕。” 那人屈指的动作停了。雨声忽然大了一瞬，又落回去",
+                  "level": "low",
+                  "provenance": {
+                    "characterId": "主角",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s1_e37cf056f"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "主角",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              },
+              {
+                "characterId": "主角",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s1_e37cf056f"
+              }
+            ]
+          },
+          "他": {
+            "name": "他",
+            "awareness": {
+              "items": [
+                {
+                  "info": "回去，拢进袖子里。“因为是我把他挖出来的。” 他站起来。椅子往后蹭了半尺，声音刮在木地板上。他走到门口，手搭在门框上，回头看了主角一眼。 “他这些年",
+                  "level": "know",
+                  "eventId": "evt_ch13_s4_e9d81715c",
+                  "provenance": {
+                    "characterId": "他",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s4_e9d81715c"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch13_s4_e9d81715c",
+                  "info": "回去，拢进袖子里。“因为是我把他挖出来的。” 他站起来。椅子往后蹭了半尺，声音刮在木地板上。他走到门口，手搭在门框上，回头看了主角一眼。 “他这些年",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "他",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch13_s4_e9d81715c"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "他",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s4_e9d81715c"
+              },
+              {
+                "characterId": "他",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch13_s4_e9d81715c"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch13_s4",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch13_s4",
+        "pass": true,
+        "wordCount": 828,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含禁词内心标记"
+          }
+        ],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch13_s4",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch13_s4",
+        "actor": "主角",
+        "action": "章末钩子（承接转折后果）：no_causal_basis",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 828
+    }
+  ],
+  "updatedAt": "2026-11-26T10:18:18.248Z"
+}
