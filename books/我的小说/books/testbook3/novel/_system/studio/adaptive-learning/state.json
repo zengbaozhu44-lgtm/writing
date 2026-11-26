@@ -1,0 +1,103 @@
+{
+  "version": "adaptive-learning-1",
+  "chaptersAnalyzed": [
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "entryCount": 9,
+  "trends": {
+    "hook": {
+      "dimension": "hook",
+      "average": 90,
+      "streak": 0,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 9
+    },
+    "conflict": {
+      "dimension": "conflict",
+      "average": 89,
+      "streak": 0,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 9
+    },
+    "dialogue": {
+      "dimension": "dialogue",
+      "average": 84,
+      "streak": 1,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 9
+    },
+    "pacing": {
+      "dimension": "pacing",
+      "average": 94,
+      "streak": 0,
+      "low": false,
+      "needsBoost": false,
+      "sampleCount": 9
+    },
+    "emotion": {
+      "dimension": "emotion",
+      "average": 61,
+      "streak": 7,
+      "low": true,
+      "needsBoost": true,
+      "sampleCount": 9
+    },
+    "style": {
+      "dimension": "style",
+      "average": 51,
+      "streak": 9,
+      "low": true,
+      "needsBoost": true,
+      "sampleCount": 9
+    }
+  },
+  "adjustments": {
+    "activeDimensions": [
+      "emotion",
+      "style"
+    ],
+    "budgetWeights": {
+      "character": 0.07,
+      "relationship": 0.03,
+      "facts": -0.06,
+      "world": 0.03
+    },
+    "endingBudgetBoost": 0,
+    "climaxHint": false,
+    "promptLines": [
+      "**情绪强化**：POV 内心反应与身体感受必须可见",
+      "情绪需随冲突升级而变化",
+      "**文风强化**：遵守写作圣经硬切、身体先行、限知视角",
+      "减少说明腔，增加具体感官细节"
+    ],
+    "generatedAt": "2026-11-26T10:08:22.983Z"
+  },
+  "suggestions": [
+    {
+      "id": "adaptive_emotion",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "emotion",
+      "text": "emotion 连续 7 次低于 70 分（均分 61）→ 已自动调权 Prompt"
+    },
+    {
+      "id": "adaptive_style",
+      "source": "adaptive",
+      "priority": "high",
+      "dimension": "style",
+      "text": "style 连续 9 次低于 70 分（均分 51）→ 已自动调权 Prompt"
+    }
+  ],
+  "updatedAt": "2026-11-26T10:08:22.983Z"
+}

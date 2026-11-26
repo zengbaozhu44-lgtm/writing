@@ -1,9 +1,9 @@
 <!-- inkos-task-provenance kind=generated source=writeNextChapterTask -->
-# Next Chapter Task · 第 7 章
+# Next Chapter Task · 第 10 章
 
 > 自动生成 — 下一章任务卡
 
-- **章节**：7
+- **章节**：10
 - **POV**：主角
 - **目标**：承接上一章结果，推进未解决线索
 - **第一阻碍**：阻力来自上一章后果的延续

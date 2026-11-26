@@ -1,0 +1,334 @@
+{
+  "intent": {
+    "chapterIntent": "第10章：承接上一章结果，推进未解决线索",
+    "mainGoal": "承接上一章结果，推进未解决线索",
+    "obstacles": [
+      "阻力来自上一章后果的延续"
+    ],
+    "sceneCount": 4,
+    "pov": "主角",
+    "bargain": "",
+    "turningPoint": "",
+    "ending": "",
+    "mustLose": "",
+    "newForeshadow": "",
+    "location": "—",
+    "time": "Day 0",
+    "currentDate": "Day 0",
+    "bannedElements": [
+      {
+        "text": "禁止重开篇式介绍世界观与主角履历",
+        "expiresAtChapter": null
+      },
+      {
+        "text": "禁止复述上一章已确认的同一事实（换角度推进）",
+        "expiresAtChapter": 10
+      }
+    ],
+    "relationshipState": {
+      "machine": "relationship-state-v2",
+      "pov": "主角",
+      "present": [
+        "主角"
+      ],
+      "edges": [
+        {
+          "from": "主角",
+          "to": "世界/系统",
+          "status": "对抗",
+          "tension": "高",
+          "note": "与异常规则对峙",
+          "expectedTransition": {
+            "toStatus": "知情对抗",
+            "byChapter": 10,
+            "reason": "确认规则后进入主动追查"
+          }
+        }
+      ],
+      "overridden": false
+    },
+    "priorAnchor": {
+      "version": "chapter-anchor-3",
+      "chapter": 9,
+      "current_date": "Day 0",
+      "pov": "主角",
+      "location": "—",
+      "relationship_state": {
+        "machine": "relationship-state-v2",
+        "pov": "主角",
+        "present": [
+          "主角"
+        ],
+        "edges": [
+          {
+            "from": "主角",
+            "to": "世界/系统",
+            "status": "对抗",
+            "tension": "高",
+            "note": "与异常规则对峙",
+            "expectedTransition": {
+              "toStatus": "知情对抗",
+              "byChapter": 10,
+              "reason": "确认规则后进入主动追查"
+            }
+          }
+        ],
+        "overridden": false
+      },
+      "banned_elements": [
+        {
+          "text": "禁止重开篇式介绍世界观与主角履历",
+          "expiresAtChapter": null
+        },
+        {
+          "text": "禁止复述上一章已确认的同一事实（换角度推进）",
+          "expiresAtChapter": 10
+        }
+      ],
+      "voiceDna": {
+        "id": "inherit-default",
+        "label": "章级 Voice DNA（待首次写入）",
+        "sentenceLength": "mixed",
+        "rhythm": "varied",
+        "dialogueRatio": 0.45,
+        "actionDensity": "high",
+        "descriptionDensity": "low",
+        "forced": true,
+        "inherited": true
+      },
+      "narrative_momentum": {
+        "version": "narrative-momentum-1",
+        "fromChapter": 9,
+        "closing_emotion": "疑虑·未解之问",
+        "forbidden_openings": [
+          "禁止用天气/闹钟/睁开眼开场",
+          "禁止复述上一章已发生的同一事件",
+          "禁止「就在这时」式硬切空降",
+          "禁止用天气/闹钟/睁开眼开场",
+          "禁止复述上一章已发生的同一事件",
+          "禁止「就在这时」式硬切空降",
+          "禁止用天气/闹钟/睁开眼开场",
+          "禁止复述上一章已发生的同一事件"
+        ],
+        "mustInheritScene1": true,
+        "tailExcerpt": "短促的刹车。两人同时转头。阳光切出的亮带里，多了一道斜长的影子，正往这边拉过来。 男人拎起水壶，转身就走，脚步快得像在躲什么。主角想喊，喉咙里却只滚出半个气音——他盯着那道越来越近的影子，手从口袋里抽出来，掌心里那枚冰凉的金属物件硌得生疼。"
+      },
+      "recent_actuals": [
+        {
+          "sceneIndex": 1,
+          "text": "他站起来的时候，膝盖先于意识动了一下——左腿僵了半秒才"
+        },
+        {
+          "sceneIndex": 1,
+          "text": "那人转身看向窗户的时候，左腿也是这样慢了一拍"
+        },
+        {
+          "sceneIndex": 1,
+          "text": "那人已经重新坐下了，像是腿撑不住，又像是不想再站着"
+        },
+        {
+          "sceneIndex": 1,
+          "text": "他坐下去的动作很重，凳子腿在泥地上压出四个印子"
+        },
+        {
+          "sceneIndex": 2,
+          "text": "主角站起来，膝盖响了一声"
+        }
+      ],
+      "state_ledger": {
+        "version": 1,
+        "updated_chapter": 9,
+        "items": [],
+        "locations": [],
+        "open_promises": [],
+        "settled_costs": []
+      },
+      "committedAt": "2026-11-26T10:08:22.991Z",
+      "d1InferenceDemotion": {
+        "eo": "EO-P4",
+        "role": "operational_planner_hint",
+        "producesObtains": false,
+        "isRealityAuthority": false,
+        "isCharacterReality": false,
+        "isRelationshipFact": false,
+        "authorityAct": "NOT_AN_AUTHORITY_ACT",
+        "claimLevelAuthority": "NOT_THIS_PATH",
+        "note": "Anchor / heuristic ops hint ≠ Reality / obtains.",
+        "paths": [
+          "deriveRelationshipState",
+          "deriveClosingEmotion",
+          "buildChapterAnchor"
+        ],
+        "relationship_state": "operational_planner_hint_not_fact",
+        "closing_emotion": "ops_hint_not_character_reality"
+      }
+    },
+    "anchorConstraintsApplied": true,
+    "chapterTone": null,
+    "tone": null,
+    "endingDirection": "",
+    "wordTarget": null,
+    "storyMap": null,
+    "sceneSeeds": [
+      {
+        "title": "进入世界",
+        "seed": "进入世界",
+        "goal": "进入世界"
+      },
+      {
+        "title": "建立关系",
+        "seed": "建立关系",
+        "goal": "建立关系"
+      },
+      {
+        "title": "第一次失败",
+        "seed": "第一次失败",
+        "goal": "第一次失败"
+      },
+      {
+        "title": "第一次成长",
+        "seed": "第一次成长",
+        "goal": "第一次成长"
+      },
+      {
+        "title": "揭露第一层秘密",
+        "seed": "揭露第一层秘密",
+        "goal": "揭露第一层秘密"
+      }
+    ],
+    "volumeAuthorNotes": "[ ] 可验证项",
+    "volumeSeed": {
+      "title": "揭露第一层秘密",
+      "seed": "揭露第一层秘密",
+      "goal": "揭露第一层秘密"
+    },
+    "chapter": 10,
+    "_derivedFrom": "deriveNextChapterIntent",
+    "_completedCostStripped": true
+  },
+  "fromChapter": 9,
+  "weights": {
+    "actionSceneWeight": 1.5,
+    "conflictPriority": 1.6,
+    "dialogueTarget": 0.45,
+    "hookEmphasis": 1,
+    "styleStrictness": 1.15,
+    "sceneCountBias": 0
+  },
+  "priorAnchor": {
+    "version": "chapter-anchor-3",
+    "chapter": 9,
+    "current_date": "Day 0",
+    "pov": "主角",
+    "location": "—",
+    "relationship_state": {
+      "machine": "relationship-state-v2",
+      "pov": "主角",
+      "present": [
+        "主角"
+      ],
+      "edges": [
+        {
+          "from": "主角",
+          "to": "世界/系统",
+          "status": "对抗",
+          "tension": "高",
+          "note": "与异常规则对峙",
+          "expectedTransition": {
+            "toStatus": "知情对抗",
+            "byChapter": 10,
+            "reason": "确认规则后进入主动追查"
+          }
+        }
+      ],
+      "overridden": false
+    },
+    "banned_elements": [
+      {
+        "text": "禁止重开篇式介绍世界观与主角履历",
+        "expiresAtChapter": null
+      },
+      {
+        "text": "禁止复述上一章已确认的同一事实（换角度推进）",
+        "expiresAtChapter": 10
+      }
+    ],
+    "voiceDna": {
+      "id": "inherit-default",
+      "label": "章级 Voice DNA（待首次写入）",
+      "sentenceLength": "mixed",
+      "rhythm": "varied",
+      "dialogueRatio": 0.45,
+      "actionDensity": "high",
+      "descriptionDensity": "low",
+      "forced": true,
+      "inherited": true
+    },
+    "narrative_momentum": {
+      "version": "narrative-momentum-1",
+      "fromChapter": 9,
+      "closing_emotion": "疑虑·未解之问",
+      "forbidden_openings": [
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降",
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降",
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件"
+      ],
+      "mustInheritScene1": true,
+      "tailExcerpt": "短促的刹车。两人同时转头。阳光切出的亮带里，多了一道斜长的影子，正往这边拉过来。 男人拎起水壶，转身就走，脚步快得像在躲什么。主角想喊，喉咙里却只滚出半个气音——他盯着那道越来越近的影子，手从口袋里抽出来，掌心里那枚冰凉的金属物件硌得生疼。"
+    },
+    "recent_actuals": [
+      {
+        "sceneIndex": 1,
+        "text": "他站起来的时候，膝盖先于意识动了一下——左腿僵了半秒才"
+      },
+      {
+        "sceneIndex": 1,
+        "text": "那人转身看向窗户的时候，左腿也是这样慢了一拍"
+      },
+      {
+        "sceneIndex": 1,
+        "text": "那人已经重新坐下了，像是腿撑不住，又像是不想再站着"
+      },
+      {
+        "sceneIndex": 1,
+        "text": "他坐下去的动作很重，凳子腿在泥地上压出四个印子"
+      },
+      {
+        "sceneIndex": 2,
+        "text": "主角站起来，膝盖响了一声"
+      }
+    ],
+    "state_ledger": {
+      "version": 1,
+      "updated_chapter": 9,
+      "items": [],
+      "locations": [],
+      "open_promises": [],
+      "settled_costs": []
+    },
+    "committedAt": "2026-11-26T10:08:22.991Z",
+    "d1InferenceDemotion": {
+      "eo": "EO-P4",
+      "role": "operational_planner_hint",
+      "producesObtains": false,
+      "isRealityAuthority": false,
+      "isCharacterReality": false,
+      "isRelationshipFact": false,
+      "authorityAct": "NOT_AN_AUTHORITY_ACT",
+      "claimLevelAuthority": "NOT_THIS_PATH",
+      "note": "Anchor / heuristic ops hint ≠ Reality / obtains.",
+      "paths": [
+        "deriveRelationshipState",
+        "deriveClosingEmotion",
+        "buildChapterAnchor"
+      ],
+      "relationship_state": "operational_planner_hint_not_fact",
+      "closing_emotion": "ops_hint_not_character_reality"
+    }
+  }
+}
