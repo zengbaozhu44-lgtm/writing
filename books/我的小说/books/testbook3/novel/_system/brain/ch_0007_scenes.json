@@ -1,0 +1,2384 @@
+{
+  "chapter": 7,
+  "scenes": [
+    {
+      "index": 1,
+      "id": "ch7_s1",
+      "title": "进入世界",
+      "goal": "承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果",
+      "conflict": "阻力来自上一章后果的延续",
+      "entities": [
+        "主角"
+      ],
+      "beat": "situation",
+      "inheritedEmotion": "压抑·余波未平",
+      "forbiddenOpenings": [
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降",
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件",
+        "禁止「就在这时」式硬切空降",
+        "禁止用天气/闹钟/睁开眼开场",
+        "禁止复述上一章已发生的同一事件"
+      ],
+      "openingConstraint": "开场必须延续情绪：压抑·余波未平；禁止用天气/闹钟/睁开眼开场；禁止复述上一章已发生的同一事件；禁止「就在这时」式硬切空降",
+      "spatialAnchor": {
+        "location": "本章起始现场",
+        "povPosition": "POV 首次落地位置",
+        "note": "后续 Scene 必须承接此处或给出过渡"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": true,
+        "keyRevealBeat": "newInformation"
+      },
+      "authorIntent": "进入世界",
+      "wordTarget": 800,
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1",
+        "note": "scene_1_no_prior"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 1/4 · POV 主角\n- 目标: 承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果\n- 冲突: 阻力来自上一章后果的延续\n- 节拍: situation\n- 字数: ~800\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch7_s1 | tokens=587 | profile=opening | cache=0% | compile=14ms -->\n\n### Scene 目标\n目标: 承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果\n节拍: situation\n\n### Scene 冲突\n冲突: 阻力来自上一章后果的延续\n阻碍: 阻力来自上一章后果的延续\n\n### Prior Chapter Actuals（上一章已发生）\n上一章已发生（软记忆 · 必须承接，禁止当作未发生或复述重演）：\n- 又松开——那点血珠被压扁，抹开，成了一小道褐色的印子\n- 他松开手，继续下\n- 他推开，外面的天是灰的，不见太阳，也看不出是上午还是下\n- 到七——数到三就松开了\n- 他拔出来，又插一次\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n### Information Boundary（消费纪律 · Phase 1.R）\n- **\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 当前状态\n# 08 Current State · 第 6 章后\n\n| 字段 | 值 |\n| --- | --- |\n| 当前章节 | 6 |\n| POV | 主角 |\n| 任务 | — |\n| 地点 | — |\n| 时间 | Day 0 |\n| 本章字数 | 3725 |\n| 最后更新 | 2026-11-26T09:57:15.249Z |\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible · 雨巷来客\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 32,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 20,
+            "category": "conflict"
+          },
+          {
+            "key": "prior_chapter_actuals",
+            "label": "Prior Chapter Actuals（上一章已发生）",
+            "tokens": 72,
+            "category": "history"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 100,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 141,
+            "category": "character"
+          },
+          {
+            "key": "state",
+            "label": "当前状态",
+            "tokens": 54,
+            "category": "history"
+          },
+          {
+            "key": "world_bible",
+            "label": "世界规则",
+            "tokens": 71,
+            "category": "world"
+          },
+          {
+            "key": "writing_bible",
+            "label": "写作规则",
+            "tokens": 87,
+            "category": "world"
+          }
+        ],
+        "totalTokens": 587,
+        "totalChars": 2285,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch7_s1 | tokens=587 | profile=opening | cache=0% | compile=14ms -->\n\n### Scene 目标\n目标: 承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果\n节拍: situation\n\n### Scene 冲突\n冲突: 阻力来自上一章后果的延续\n阻碍: 阻力来自上一章后果的延续\n\n### Prior Chapter Actuals（上一章已发生）\n上一章已发生（软记忆 · 必须承接，禁止当作未发生或复述重演）：\n- 又松开——那点血珠被压扁，抹开，成了一小道褐色的印子\n- 他松开手，继续下\n- 他推开，外面的天是灰的，不见太阳，也看不出是上午还是下\n- 到七——数到三就松开了\n- 他拔出来，又插一次\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Authority；≠ Character Brain；缺少证据则 omit）\n\n### Information Boundary（消费纪律 · Phase 1.R）\n- **\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 当前状态\n# 08 Current State · 第 6 章后\n\n| 字段 | 值 |\n| --- | --- |\n| 当前章节 | 6 |\n| POV | 主角 |\n| 任务 | — |\n| 地点 | — |\n| 时间 | Day 0 |\n| 本章字数 | 3725 |\n| 最后更新 | 2026-11-26T09:57:15.249Z |\n\n\n### 世界规则\n# 01 World Bible · 雨巷来客\n\n> 只保存世界规则。禁止：剧情、当前状态、写作技巧。\n\n## 1. 世界背景\n## 2. 超凡体系\n## 3. 能力体系\n## 4. 势力体系（详情见 04_faction_bible/）\n## 5. 社会规则\n## 6. 资源体系\n## 7. 经济体系\n## 8. 历史\n## 9. 地理\n## 10. 禁忌\n\n\n### 写作规则\n# 02 Writing Bible · 雨巷来客\n\n> 只保存写作规则。禁止：章节剧情、世界观设定、角色当前状态。\n\n## 叙事原则\n1. **现实目标优先**\n2. **利益驱动**\n3. **信息收费**\n4. **人物主动**\n5. **世界不围主角转**\n6. **对话是博弈**\n7. **渐进揭秘**\n8. **每章不可逆变化**\n\n## 文风原则\n1. **身体先行**\n2. **\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": false,
+        "cacheHitRate": 0,
+        "promptHash": "ee26684c61e69050",
+        "compileMs": 14,
+        "profile": "opening",
+        "rankingDrop": 1,
+        "budgetUsage": {
+          "usage": {
+            "goal": 42,
+            "conflict": 20,
+            "character": 141,
+            "world": 158,
+            "facts": 0,
+            "history": 226,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 10,
+            "conflict": 5,
+            "character": 24,
+            "world": 41,
+            "facts": 0,
+            "history": 76,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "他数到七，指腹从针孔边缘挪开。棉球按上去的时候已经晚了，血珠从皮下鼓出来，圆圆的，像一颗没长熟的痣。他用拇指碾了一下，血在指纹的沟壑里铺开，变成一道浅褐色的印子，不流了。\n\n窗外那层灰还压着。他分不清是上午还是下午，光从百叶的缝隙里渗进来，落在手背上，没有温度。他把棉球丢进垃圾桶，盖子合上时发出一声闷响，像很远的地方有人关了一扇门。\n\n桌角的搪瓷缸里还剩半缸水，凉了。他端起来喝了一口，铁锈味在舌根化开。昨晚没倒，或者说——他不记得倒过。水面上浮着一层细灰。\n\n手机屏幕亮了一下，又暗下去。他没看。抽屉拉开一半，里面那本册子还摊在昨天的页码上，边角被手指捏得发毛。他盯着那行字看了几秒，然后把抽屉推回去，动作很轻，像怕惊动什么。\n\n门铃响了。\n\n他没动。第二声隔了七秒，比第一声短。他才站起来，走过去，没有直接开，先凑到猫眼前面。走廊的灯坏了一盏，那个人站在明暗交界的地方，半边脸亮着，半边脸沉在阴影里。是隔壁的老周，手里提着一个塑料袋，袋底坠着，像装了两瓶东西。\n\n他开了门，只开一条缝。\n\n“小许，你那个水管——”老周把袋子往前提了提，“物业说今天下午来修，让我先跟你说一声。”\n\n“知道了。”\n\n“还有，”老周的目光从他肩膀上越过去，往屋里扫了一眼，很快收回来，“你脸色不太好。没睡？”\n\n“睡了。”\n\n“哦。”老周没再问，把袋子递过来，“我老婆腌的萝卜，多做了，给你一罐。别老吃泡面。”\n\n他接过来，塑料袋勒进手指。罐子还带着冰箱的凉意，玻璃壁上凝了一层水雾。“谢谢。”\n\n老周转身走了两步，又停下来，没回头。“那个……昨晚后半夜，你听见什么动静没有？楼下那辆面包车，停到三点多才走。”\n\n他握着罐子的手紧了一下。玻璃上的水雾被体温化开，湿漉漉的。“没有。”\n\n“那可能是我听岔了。”老周摆摆手，走进了楼道深处的暗里。\n\n他关上门，反锁，把罐子放在鞋柜上。水雾在玻璃表面凝成细流，顺着罐壁淌下来，在柜面上洇开一小圈湿痕。他盯着那圈水痕看了很久，然后回到桌前，拉开抽屉，把册子翻到新的一页。\n\n笔尖落在纸上的时候，他听见自己的呼吸比平时浅。他写了一个字，又划掉。墨水在纸面上洇开，像一个不肯愈合的针孔。\n\n外面的天始终没有亮起来。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch7_s1",
+        "index": 1,
+        "sourceTextHash": "2126042226",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:04:35.396Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch7_s1_edff85e03",
+          "sceneId": "ch7_s1",
+          "version": "story-event-1",
+          "actors": [
+            "抽屉"
+          ],
+          "action": "抽屉拉开一半，里面那本册子还摊在昨天的页码上，边角被手指",
+          "intent": "",
+          "consequence": "场面动作已发生：拉开",
+          "stateChanges": [
+            "action:抽屉:拉开"
+          ],
+          "affectedEntities": [
+            "抽屉"
+          ],
+          "evidence": {
+            "excerpt": "层细灰。 手机屏幕亮了一下，又暗下去。他没看。抽屉拉开一半，里面那本册子还摊在昨天的页码上，边角被手指捏得发毛。他盯着那行字看了几秒，然后把抽屉推回去，动作很轻，像怕惊动什么。 门铃响了。 他没",
+            "offset": 226
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        },
+        {
+          "id": "evt_ch7_s1_e763b891e",
+          "sceneId": "ch7_s1",
+          "version": "story-event-1",
+          "actors": [
+            "他才"
+          ],
+          "action": "他才站起来，走过去，没有直接开，先凑到猫眼前面",
+          "intent": "",
+          "consequence": "场面动作已发生：站起",
+          "stateChanges": [
+            "action:他才:站起"
+          ],
+          "affectedEntities": [
+            "他才"
+          ],
+          "evidence": {
+            "excerpt": "铃响了。 他没动。第二声隔了七秒，比第一声短。他才站起来，走过去，没有直接开，先凑到猫眼前面。走廊的灯坏了一盏，那个人站在明暗交界的地方，半边脸亮着，半边脸沉在阴影里。是隔壁的老周，手里提",
+            "offset": 318
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        },
+        {
+          "id": "evt_ch7_s1_e09e83b72",
+          "sceneId": "ch7_s1",
+          "version": "story-event-1",
+          "actors": [
+            "老周"
+          ],
+          "action": "老周转身走了两步，又停下来，没回头",
+          "intent": "",
+          "consequence": "场面动作已发生：转身",
+          "stateChanges": [
+            "action:老周:转身"
+          ],
+          "affectedEntities": [
+            "老周"
+          ],
+          "evidence": {
+            "excerpt": "冰箱的凉意，玻璃壁上凝了一层水雾。“谢谢。” 老周转身走了两步，又停下来，没回头。“那个……昨晚后半夜，你听见什么动静没有？楼下那辆面包车，停到三点多才走。” 他握着罐子的手",
+            "offset": 618
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch7_s1",
+        "source": "scene.text",
+        "candidateCount": 3,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [],
+              "status": "omit",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [],
+              "status": "omit",
+              "kind": "relevance"
+            },
+            "mutations": []
+          },
+          "抽屉": {
+            "name": "抽屉",
+            "awareness": {
+              "items": [
+                {
+                  "info": "层细灰。 手机屏幕亮了一下，又暗下去。他没看。抽屉拉开一半，里面那本册子还摊在昨天的页码上，边角被手指捏得发毛。他盯着那行字看了几秒，然后把抽屉推回去，动作很轻，像怕惊动什么。 门铃响了。 他没",
+                  "level": "know",
+                  "eventId": "evt_ch7_s1_edff85e03",
+                  "provenance": {
+                    "characterId": "抽屉",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s1_edff85e03"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch7_s1_edff85e03",
+                  "info": "层细灰。 手机屏幕亮了一下，又暗下去。他没看。抽屉拉开一半，里面那本册子还摊在昨天的页码上，边角被手指捏得发毛。他盯着那行字看了几秒，然后把抽屉推回去，动作很轻，像怕惊动什么。 门铃响了。 他没",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "抽屉",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s1_edff85e03"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "抽屉",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s1_edff85e03"
+              },
+              {
+                "characterId": "抽屉",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s1_edff85e03"
+              }
+            ]
+          },
+          "他才": {
+            "name": "他才",
+            "awareness": {
+              "items": [
+                {
+                  "info": "铃响了。 他没动。第二声隔了七秒，比第一声短。他才站起来，走过去，没有直接开，先凑到猫眼前面。走廊的灯坏了一盏，那个人站在明暗交界的地方，半边脸亮着，半边脸沉在阴影里。是隔壁的老周，手里提",
+                  "level": "know",
+                  "eventId": "evt_ch7_s1_e763b891e",
+                  "provenance": {
+                    "characterId": "他才",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s1_e763b891e"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch7_s1_e763b891e",
+                  "info": "铃响了。 他没动。第二声隔了七秒，比第一声短。他才站起来，走过去，没有直接开，先凑到猫眼前面。走廊的灯坏了一盏，那个人站在明暗交界的地方，半边脸亮着，半边脸沉在阴影里。是隔壁的老周，手里提",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "他才",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s1_e763b891e"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "他才",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s1_e763b891e"
+              },
+              {
+                "characterId": "他才",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s1_e763b891e"
+              }
+            ]
+          },
+          "老周": {
+            "name": "老周",
+            "awareness": {
+              "items": [
+                {
+                  "info": "冰箱的凉意，玻璃壁上凝了一层水雾。“谢谢。” 老周转身走了两步，又停下来，没回头。“那个……昨晚后半夜，你听见什么动静没有？楼下那辆面包车，停到三点多才走。” 他握着罐子的手",
+                  "level": "know",
+                  "eventId": "evt_ch7_s1_e09e83b72",
+                  "provenance": {
+                    "characterId": "老周",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s1_e09e83b72"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch7_s1_e09e83b72",
+                  "info": "冰箱的凉意，玻璃壁上凝了一层水雾。“谢谢。” 老周转身走了两步，又停下来，没回头。“那个……昨晚后半夜，你听见什么动静没有？楼下那辆面包车，停到三点多才走。” 他握着罐子的手",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "老周",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s1_e09e83b72"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "老周",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s1_e09e83b72"
+              },
+              {
+                "characterId": "老周",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s1_e09e83b72"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 3,
+          "characterCount": 4
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch7_s1",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch7_s1",
+        "pass": true,
+        "wordCount": 883,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含顺承词，违反硬切规则"
+          }
+        ],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch7_s1",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch7_s1",
+        "actor": "主角",
+        "action": "承接上章情绪「压抑·余波未平」进入局面 · 承接「压抑·余波未平」进入现场：承接上一章结果",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 883
+    },
+    {
+      "index": 2,
+      "id": "ch7_s2",
+      "title": "建立关系",
+      "goal": "克服阻碍：阻力来自上一章后果的延续",
+      "conflict": "no_causal_basis",
+      "entities": [
+        "主角"
+      ],
+      "beat": "complication",
+      "spatialAnchor": {
+        "location": "承接 Scene1 现场或合理过渡后的邻接区",
+        "note": "禁止重写章开场坠落/濒死"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "authorIntent": "建立关系",
+      "wordTarget": 800,
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 2/4 · POV 主角\n- 目标: 克服阻碍：阻力来自上一章后果的延续\n- 冲突: no_causal_basis\n- 节拍: complication\n- 字数: ~800\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch7_s2 | tokens=440 | profile=dialogue | cache=100% | compile=4ms -->\n\n### Scene 目标\n目标: 克服阻碍：阻力来自上一章后果的延续\n节拍: complication\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 他数到七，指腹从针孔边缘挪开。棉球按上去的时候已经晚了，血珠从皮下鼓出来，圆圆的，像一颗没长熟的痣。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Aut\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界): 他数到七，指腹从针孔边缘挪开。棉球按上去的时候已经晚了，血珠从皮下鼓出来，圆圆的，像一颗没长熟的痣。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 18,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 12,
+            "category": "conflict"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 91,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 95,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 116,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 92,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          }
+        ],
+        "totalTokens": 440,
+        "totalChars": 1925,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch7_s2 | tokens=440 | profile=dialogue | cache=100% | compile=4ms -->\n\n### Scene 目标\n目标: 克服阻碍：阻力来自上一章后果的延续\n节拍: complication\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 1.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 他数到七，指腹从针孔边缘挪开。棉球按上去的时候已经晚了，血珠从皮下鼓出来，圆圆的，像一颗没长熟的痣。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n（Minimal SR = 只读投影 View；≠ Reality Aut\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / unknown\n- **Validity**：current\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界): 他数到七，指腹从针孔边缘挪开。棉球按上去的时候已经晚了，血珠从皮下鼓出来，圆圆的，像一颗没长熟的痣。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "892a51c74ccadb77",
+        "compileMs": 4,
+        "profile": "dialogue",
+        "rankingDrop": 3,
+        "budgetUsage": {
+          "usage": {
+            "goal": 119,
+            "conflict": 12,
+            "character": 116,
+            "world": 0,
+            "facts": 0,
+            "history": 193,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 55,
+            "conflict": 4,
+            "character": 25,
+            "world": 0,
+            "facts": 0,
+            "history": 89,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "门响的时候他没有抬头。\n\n指腹还压在纸上，墨已经洇到纸背。那是他第三次划掉同一个字。笔尖悬在离纸面半寸的地方，空气里有一股铁锈味——他手上的，还是别处的，他分不清。血早就凝了，针孔结成一个小小的硬点，像一粒沙嵌进皮里。\n\n脚步声停在桌边。一只搪瓷杯搁下来，杯底磕在桌角，发出一声很轻的响。\n\n“写完了？”\n\n他没答。杯里的水是温的，热气贴到他手背上，很细的一层。\n\n“今早有人来找过你。”那人说，声音压得低，像怕隔墙有耳，“站门口，没进来。”\n\n他这才抬眼。来人站在光里，脸背着光，看不真切。\n\n“找我的？”\n\n“找你的。”\n\n他把笔搁下。搁得很轻，笔却滚了半圈，掉下桌沿，弹了一下，落进地上的阴影里。他没去捡。\n\n“我说你不在。”那人顿了一下，“他没走。在楼下坐了一上午。”\n\n他听着，手指收拢，指节慢慢发白。楼下——他几乎能看见那个人的样子：坐在台阶第二级上，或者墙根那条长凳上，背对着街，两只手不知道往哪儿放。他不认识这个人，可这个画面像从哪儿借来的，熟悉得让他后背发紧。\n\n“你没问他是谁。”\n\n“问了。”那人的目光落在桌上的纸上，落在那团洇开的墨上，“他不说。只说要等你。”\n\n他伸手把纸翻过去，反面朝上，盖住那个字。动作慢，像怕纸会响。\n\n“等我做什么。”\n\n“不知道。”那人往门口退了一步，“我只是来告诉你一声。”\n\n他盯着那人退步的动作看了很久。那人走得太平静了，平静得不像随口一提，像扔下一块石头就准备看水花。他忽然问：“你为什么现在才说？”\n\n那人停住。半张脸还在光里。\n\n“因为你早上在写东西。”那人说，“我不想打断你。”\n\n这句话落下来，比刚才那杯水还烫。他张了张嘴，喉咙里滚了半圈，一个字没出来。他不记得自己早上写过什么值得被打断的东西。他记得的只有针，只有数到七，只有血珠鼓出来。别的都是空的，被人抽走了，只剩下一张纸，一个划掉的字，和一个他认不出的人名。\n\n“他还在楼下？”\n\n“不知道。”那人推开门，门轴发出一声长响，“你自己看。”\n\n门合上了。屋里重新安静下来，静得能听见纸上墨干的声音——其实听不见，是他自己的呼吸浅了下去。\n\n他坐在原地没动，过了很久，才弯腰去捡那支笔。手指碰到地板的时候，指尖压到一样东西，凉的，硬的。他捏起来看。是一枚针，很细，针尖上有一点黑，像干掉的墨，又像干掉的血。他不记得自己什么时候把它掉在这儿的。\n\n他把针攥进手心，针尖抵着掌纹，没扎进去。外面，天还是没亮。窗纸是灰的，灰得像一张还没写字的纸。\n\n他站起来，走到窗边，从缝里往下看。台阶第二级上没人。长凳上也没人。只有风把一张废纸吹得贴着地面打了个旋，又贴回去。\n\n身后那扇门被敲响了，很轻，三下。\n\n他握针的手，慢慢收紧。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch7_s2",
+        "index": 2,
+        "sourceTextHash": "-1027046690",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:04:43.574Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch7_s2_e486bf260",
+          "sceneId": "ch7_s2",
+          "version": "story-event-1",
+          "actors": [
+            "”那人"
+          ],
+          "action": "”那人推开门，门轴发出一声长响，“你自己看",
+          "intent": "",
+          "consequence": "场面动作已发生：推开",
+          "stateChanges": [
+            "action:”那人:推开"
+          ],
+          "affectedEntities": [
+            "”那人"
+          ],
+          "evidence": {
+            "excerpt": "认不出的人名。 “他还在楼下？” “不知道。”那人推开门，门轴发出一声长响，“你自己看。” 门合上了。屋里重新安静下来，静得能听见纸上墨干的声音——其实听不见，是他自己的呼吸浅了下",
+            "offset": 785
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        },
+        {
+          "id": "evt_ch7_s2_e1331b476",
+          "sceneId": "ch7_s2",
+          "version": "story-event-1",
+          "actors": [
+            "他"
+          ],
+          "action": "他站起来，走到窗边，从缝里往下看",
+          "intent": "",
+          "consequence": "场面动作已发生：站起",
+          "stateChanges": [
+            "action:他:站起"
+          ],
+          "affectedEntities": [
+            "他"
+          ],
+          "evidence": {
+            "excerpt": "是没亮。窗纸是灰的，灰得像一张还没写字的纸。 他站起来，走到窗边，从缝里往下看。台阶第二级上没人。长凳上也没人。只有风把一张废纸吹得贴着地面打了个旋，又贴回去。 身后那扇门",
+            "offset": 1009
+          },
+          "source": "scene.text",
+          "kind": "action",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch7_s2",
+        "source": "scene.text",
+        "candidateCount": 3,
+        "planFieldsIgnored": true,
+        "rejectedCount": 1
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [],
+              "status": "omit",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [],
+              "status": "omit",
+              "kind": "relevance"
+            },
+            "mutations": []
+          },
+          "”那人": {
+            "name": "”那人",
+            "awareness": {
+              "items": [
+                {
+                  "info": "认不出的人名。 “他还在楼下？” “不知道。”那人推开门，门轴发出一声长响，“你自己看。” 门合上了。屋里重新安静下来，静得能听见纸上墨干的声音——其实听不见，是他自己的呼吸浅了下",
+                  "level": "know",
+                  "eventId": "evt_ch7_s2_e486bf260",
+                  "provenance": {
+                    "characterId": "”那人",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s2_e486bf260"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch7_s2_e486bf260",
+                  "info": "认不出的人名。 “他还在楼下？” “不知道。”那人推开门，门轴发出一声长响，“你自己看。” 门合上了。屋里重新安静下来，静得能听见纸上墨干的声音——其实听不见，是他自己的呼吸浅了下",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "”那人",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s2_e486bf260"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "”那人",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s2_e486bf260"
+              },
+              {
+                "characterId": "”那人",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s2_e486bf260"
+              }
+            ]
+          },
+          "他": {
+            "name": "他",
+            "awareness": {
+              "items": [
+                {
+                  "info": "是没亮。窗纸是灰的，灰得像一张还没写字的纸。 他站起来，走到窗边，从缝里往下看。台阶第二级上没人。长凳上也没人。只有风把一张废纸吹得贴着地面打了个旋，又贴回去。 身后那扇门",
+                  "level": "know",
+                  "eventId": "evt_ch7_s2_e1331b476",
+                  "provenance": {
+                    "characterId": "他",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s2_e1331b476"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch7_s2_e1331b476",
+                  "info": "是没亮。窗纸是灰的，灰得像一张还没写字的纸。 他站起来，走到窗边，从缝里往下看。台阶第二级上没人。长凳上也没人。只有风把一张废纸吹得贴着地面打了个旋，又贴回去。 身后那扇门",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "他",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s2_e1331b476"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "他",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s2_e1331b476"
+              },
+              {
+                "characterId": "他",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s2_e1331b476"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 2,
+          "characterCount": 3
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch7_s2",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch7_s2",
+        "pass": true,
+        "wordCount": 1065,
+        "issues": [],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch7_s2",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch7_s2",
+        "actor": "主角",
+        "action": "克服阻碍：阻力来自上一章后果的延续",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 1065
+    },
+    {
+      "index": 3,
+      "id": "ch7_s3",
+      "title": "第一次失败",
+      "goal": "转折（本 Scene 兑现完整行动线）：no_causal_basis",
+      "conflict": "no_causal_basis",
+      "entities": [
+        "主角"
+      ],
+      "beat": "turn",
+      "spatialAnchor": {
+        "location": "同线推进至转折点",
+        "note": "禁止换场无过渡；禁止复读已揭示关键信息的「首次发现」"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "authorIntent": "第一次失败",
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "wordTarget": 800,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 3/4 · POV 主角\n- 目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: turn\n- 字数: ~800\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch7_s3 | tokens=515 | profile=climax | cache=100% | compile=4ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 门响的时候他没有抬头。 指腹还压在纸上，墨已经洇到纸背。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / u\n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界): 他数到七，指腹从针孔边缘挪开。棉球按上去的时候已经晚了，血珠从皮下鼓出来，圆圆的，像一颗没长熟的痣。\n- **Scene 2** (建立关系): 门响的时候他没有抬头。 指腹还压在纸上，墨已经洇到纸背。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 18,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 12,
+            "category": "conflict"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 78,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 123,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 101,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 116,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          },
+          {
+            "key": "state_board",
+            "label": "局势",
+            "tokens": 51,
+            "category": "conflict"
+          }
+        ],
+        "totalTokens": 515,
+        "totalChars": 2112,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch7_s3 | tokens=515 | profile=climax | cache=100% | compile=4ms -->\n\n### Scene 目标\n目标: 转折（本 Scene 兑现完整行动线）：no_causal_basis\n节拍: turn\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 2.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 门响的时候他没有抬头。 指腹还压在纸上，墨已经洇到纸背。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon Reality certificate\n> Continuity: 下一场须承接这些 Occurrence（文本已呈现之事）；不得用 Plan 覆盖或假装未呈现。\n> Attribution 若需要\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n- **Affect / Relationship**：omit / u\n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界): 他数到七，指腹从针孔边缘挪开。棉球按上去的时候已经晚了，血珠从皮下鼓出来，圆圆的，像一颗没长熟的痣。\n- **Scene 2** (建立关系): 门响的时候他没有抬头。 指腹还压在纸上，墨已经洇到纸背。\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "432a4894981faebe",
+        "compileMs": 4,
+        "profile": "climax",
+        "rankingDrop": 3,
+        "budgetUsage": {
+          "usage": {
+            "goal": 106,
+            "conflict": 63,
+            "character": 101,
+            "world": 0,
+            "facts": 0,
+            "history": 245,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 22,
+            "conflict": 8,
+            "character": 26,
+            "world": 0,
+            "facts": 0,
+            "history": 93,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "敲第三下之后，停了。\n\n他没有动。手指还攥着针，针尖抵在拇指侧面，那里有一个浅褐色的点，旧的，昨天或者前天留下的。他数到七，才把针搁下。\n\n门又响了一下，比刚才重。\n\n他走过去。地板有一块是松的，踩上去会发出很轻的一声，他绕开了。手搭上门链，没开，先凑到猫眼。走廊的灯坏了一半，只剩尽头那一盏，光斜斜地切过来，把门外的人分成两截。\n\n是个女人。头发湿的，肩膀也湿。手里捏着一个信封，边角软塌塌的。\n\n他把门链挂着，开了条缝。\n\n\"你找谁。\"\n\n她抬起脸。眼睛在暗处，看不清是睁着还是眯着。\n\n\"你别装了。\"她说，\"你写的那些纸，我全都看过了。\"\n\n他的手指在门框上收紧，指甲嵌进木头的一道缝里。\n\n\"哪张。\"\n\n\"每一张。\"\n\n风从缝里灌进来，带着雨的腥气。拇指侧面那个点又开始发痒，细细的，像有根更小的针在里面慢慢转。他听见自己说：\"进来吧。\"\n\n门链哗啦响了一声，他解开了。\n\n她进门，没换鞋，水在地板上滴出一小摊。她径直走到桌边，低头看那张纸。墨迹从正面洇到背面，最后几个字糊成一团黑。\n\n\"写到一半。\"她说。\n\n\"嗯。\"\n\n\"为什么停。\"\n\n他没答。他站在门口，手还搭在门把上，像随时准备再开一次。\n\n她伸手，把纸拿起来。他没有拦。纸角被她的手指捏住，湿的，很快软下去一块。她看了很久，久到他以为她不会再说话了。\n\n\"这上面的数。\"她终于开口，声音低下去，\"最后一个，是我妈的。\"\n\n他喉咙里滚了半圈，什么也没出来。\n\n\"你写的每一个数，\"她说，\"都是别人家的。\"\n\n\"我知道。\"\n\n\"你知道还写。\"\n\n风把窗上那张旧报纸吹得响了一下。她低头，把纸对折，再对折，塞进那个湿信封里。信封里已经有别的东西，鼓鼓的，被她的手指压下去一角。\n\n\"这个我拿走。\"\n\n他看着她把信封收进外套内袋，贴着胸口的位置。那个动作很轻，像放一件容易碎的东西。他想说那是他写了三天的，想说背面洇透的那几个字还没写完，但话到嘴边，只剩下舌根发苦。\n\n\"明天还来吗。\"他问。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch7_s3",
+        "index": 3,
+        "sourceTextHash": "-2124715550",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:05:13.748Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch7_s3_e95f77a9b",
+          "sceneId": "ch7_s3",
+          "version": "story-event-1",
+          "actors": [
+            "场面"
+          ],
+          "action": "。 \"不来了。\"她说，\"灯修好了也别等。\" 她从他身边走过去。地板那块松的地方响了，她没有绕。 门关上。锁舌咔哒一声落进去。 他站了很久，才低头看自己的手。拇指",
+          "intent": "",
+          "consequence": "场面叙述成为后续可引用事实",
+          "stateChanges": [
+            "presence:场面"
+          ],
+          "affectedEntities": [
+            "场面"
+          ],
+          "evidence": {
+            "excerpt": "。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+            "offset": 826
+          },
+          "source": "scene.text",
+          "kind": "presence",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch7_s3",
+        "source": "scene.text",
+        "candidateCount": 0,
+        "planFieldsIgnored": true,
+        "rejectedCount": 0
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [],
+              "status": "omit",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [],
+              "status": "omit",
+              "kind": "relevance"
+            },
+            "mutations": []
+          },
+          "场面": {
+            "name": "场面",
+            "awareness": {
+              "items": [
+                {
+                  "info": "。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+                  "level": "know",
+                  "eventId": "evt_ch7_s3_e95f77a9b",
+                  "provenance": {
+                    "characterId": "场面",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s3_e95f77a9b"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch7_s3_e95f77a9b",
+                  "info": "。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "场面",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s3_e95f77a9b"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "场面",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s3_e95f77a9b"
+              },
+              {
+                "characterId": "场面",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s3_e95f77a9b"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch7_s3",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch7_s3",
+        "pass": true,
+        "wordCount": 882,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含顺承词，违反硬切规则"
+          }
+        ],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch7_s3",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch7_s3",
+        "actor": "主角",
+        "action": "转折（本 Scene 兑现完整行动线）：no_causal_basis",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 882
+    },
+    {
+      "index": 4,
+      "id": "ch7_s4",
+      "title": "第一次成长",
+      "goal": "章末钩子（承接转折后果）：no_causal_basis",
+      "conflict": "no_causal_basis",
+      "entities": [
+        "主角"
+      ],
+      "beat": "hook",
+      "spatialAnchor": {
+        "location": "同线收束现场",
+        "note": "只推进后果与新疑问，不重启开场"
+      },
+      "revealPolicy": {
+        "allowFirstReveal": false,
+        "advanceOnly": true
+      },
+      "authorIntent": "第一次成长",
+      "anchorBanNote": [
+        "禁止重开篇式介绍世界观与主角履历"
+      ],
+      "status": "done",
+      "wordTarget": 600,
+      "reviewRequired": true,
+      "causalChain": {
+        "desire": {
+          "who": "主角",
+          "wants": "承接上一章结果，推进未解决线索",
+          "source": "world_pressure.event",
+          "trace": "chapter_task|authored_plan.goal|volume"
+        },
+        "pressure": {
+          "obstacle": "阻力来自上一章后果的延续",
+          "source": "chapter_task.阻碍"
+        },
+        "options": [],
+        "options_analysis": {
+          "completeness": "unavailable",
+          "reason": "missing_basis",
+          "missing_basis": true
+        },
+        "choice": null,
+        "consequence": null,
+        "new_information": null,
+        "next_pressure": null,
+        "no_causal_basis": [
+          "missing_choice_basis",
+          "missing_consequence",
+          "missing_new_information",
+          "missing_next_pressure"
+        ],
+        "trace": {
+          "desire_source": "chapter_task|authored_plan.goal|volume",
+          "pressure_source": "chapter_task.阻碍",
+          "options_basis": "none",
+          "choice_basis": null,
+          "consequence_basis": null,
+          "information_basis": null,
+          "degradation": [
+            "no_open_question_or_hook",
+            "fear_unknown",
+            "relationship_missing",
+            "state_board_empty"
+          ]
+        },
+        "confidence": {
+          "grade": "degraded",
+          "generated": false,
+          "partial": false,
+          "degraded": true
+        },
+        "provider": "mock"
+      },
+      "planValidity": {
+        "role": "plan_validity_diagnostic",
+        "status": "VALID",
+        "conflicts": [],
+        "premiseDenied": false,
+        "evidence": [],
+        "executionPrivilege": "direct",
+        "strategicGoalPreserved": true,
+        "bridgeLanguageInPlan": false,
+        "writesCanon": false,
+        "writesReality": false,
+        "writesSR": false,
+        "version": "f8.3-plan-validity-1"
+      },
+      "actionIntentTruth": {
+        "version": "action-intent-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "evidenceRef": null,
+        "reason": "no_cade",
+        "isChoice": false
+      },
+      "_actionIntentPromptBlock": "",
+      "prompt": "# Scene Lore Seed\nScene 4/4 · POV 主角\n- 目标: 章末钩子（承接转折后果）：no_causal_basis\n- 冲突: no_causal_basis\n- 节拍: hook\n- 字数: ~600\n- 章目标: 承接上一章结果，推进未解决线索\n- 本章行动线（各 Scene 推进同一条线）: no_causal_basis\n- 代价: no_causal_basis\n## 信息边界（Phase 1.R · 必守）\n- Scene 目标 / 冲突 / 章目标中的事实 = 写作任务与世界信息，**不是** POV 角色的先验 Awareness。\n- 若 Character Subjective State 中该角色 Awareness = omit：禁止写成其「已经知道 / 亲眼看见 / 确知」这些任务事实；允许本场新获知并写出获得过程。\n- World / Narration ≠ Character Knowledge。\n## Story Clock（Phase 1.R · Plan/State · 非 SR）\n- **Canonical**：Day 0（source=intent_or_scene_field）\n- 故事钟：Day 0。禁止另起无关的「×月×日」日历（除非上一场正文已确立具体月日）。相对时间（今早/昨夜）可以。 **若前序摘要 / Scene Memory / 旧草稿出现不同月日，以本 Canonical 为准，禁止跟随冲突日期。**\n<!-- prompt-compiler v2 | scene=ch7_s4 | tokens=413 | profile=ending | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 敲第三下之后，停了。 他没有动。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n-\n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界):\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+      "dynamic": {
+        "entities": [
+          "主角"
+        ],
+        "factions": [],
+        "modules": [
+          {
+            "key": "scene_goal",
+            "label": "Scene 目标",
+            "tokens": 17,
+            "category": "goal"
+          },
+          {
+            "key": "scene_conflict",
+            "label": "Scene 冲突",
+            "tokens": 12,
+            "category": "conflict"
+          },
+          {
+            "key": "continuation",
+            "label": "续写",
+            "tokens": 70,
+            "category": "goal"
+          },
+          {
+            "key": "actual_events",
+            "label": "Previous Scene Occurrence Events",
+            "tokens": 86,
+            "category": "history"
+          },
+          {
+            "key": "chapter_goal",
+            "label": "本章目标",
+            "tokens": 10,
+            "category": "goal"
+          },
+          {
+            "key": "character_sr",
+            "label": "Character Subjective State",
+            "tokens": 92,
+            "category": "character"
+          },
+          {
+            "key": "prev_summary",
+            "label": "前序 Scene",
+            "tokens": 64,
+            "category": "history"
+          },
+          {
+            "key": "state_diff",
+            "label": "状态差量",
+            "tokens": 6,
+            "category": "history"
+          },
+          {
+            "key": "state_board",
+            "label": "局势",
+            "tokens": 51,
+            "category": "conflict"
+          },
+          {
+            "key": "world_bible",
+            "label": "世界规则",
+            "tokens": 5,
+            "category": "world"
+          }
+        ],
+        "totalTokens": 413,
+        "totalChars": 1897,
+        "withinBudget": true,
+        "text": "<!-- prompt-compiler v2 | scene=ch7_s4 | tokens=413 | profile=ending | cache=100% | compile=8ms -->\n\n### Scene 目标\n目标: 章末钩子（承接转折后果）：no_causal_basis\n节拍: hook\n\n### Scene 冲突\n冲突: no_causal_basis\n阻碍: no_causal_basis\n\n### 续写\n### 续写指令\nContinue from Scene 3.\nDo NOT repeat previous narration.\nMaintain tone. Continue naturally.\n**当前 Scene 日期 = Story Clock Canonical「Day 0」（优先于下方 Previous 中的任何月日）。**\nPrevious（历史承接，非当前日历）: 敲第三下之后，停了。 他没有动。\n\n### Previous Scene Occurrence Events\n### Previous Scene Occurrence Events\n> role: occurrence_readback（continuity fuel · 只读）\n> = 上一场正文所呈现的「发生了什么」的结构化读回（WORLD ACTUALITY → Occurrence）。\n> ≠ Character Choice Fact · ≠ Attribution Fact · ≠ Agency proof · ≠ Intentionality proof\n> ≠ Character Causal History · ≠ Plan / Character SR / Canon\n…[truncated]\n\n### 本章目标\n承接上一章结果，推进未解决线索\n\n### Character Subjective State\n\n- **Interpretation**：omit / unknown（无合法解释证据）\n- **Belief**：omit / unknown（无合法信念证据；Belief 可与 Canon 不符）\n- **Stance**：omit / unknown（无合法立场证据）### 主角\n- **Awareness**：omit / unknown（无合法知悉证据 → 不得写成角色先验已知）\n- **Motive**：omit / unknown（无当前场景合法动机证据；Bible 不得自动生成）\n-\n…[truncated]\n\n### 前序 Scene\n### 前序 Scene 摘要\n> **角色：Historical Continuity（历史承接）** — 不是当前 Scene 日历。\n> 当前 Story Clock Canonical = **Day 0**。摘要中若出现其他月日，视为历史/旧稿提及，**不得**当作「今天」。\n- **Scene 1** (进入世界):\n…[truncated]\n\n### 状态差量\n### 上下文变化（Diff）\n\n### 局势\n# 07 State Board · 第 0 章后\n\n> 整个世界当前状态。各势力此刻在干什么。每章更新。\n\n## {势力 A}\n- **正在调查/执行**：\n- **下一步**：\n\n## {POV 角色}\n- **目前计划**：\n- **不知道**：\n\n\n### 世界规则\n# 01\n…[truncated]\n\n### 因果链 · 叙事草图（作者向 · 非角色已决事实）\n> Narrative Fuel / Authorial Planned Direction · ≠ Character Choice · ≠ Attribution · ≠ Character Causal History\n> 不得另造对立主线；不得把本块读成角色已经选择或已经承担后果的证书\n- 欲望（desire）: 「主角」想 承接上一章结果，推进未解决线索\n- 压力（pressure）: 阻力来自上一章后果的延续\n- Authorial Planned Direction: missing_choice_basis\n- 缺因果依据（no_causal_basis）: missing_choice_basis / missing_consequence / missing_new_information / missing_next_pressure",
+        "cacheHit": true,
+        "cacheHitRate": 100,
+        "promptHash": "d74513fe4d05318a",
+        "compileMs": 8,
+        "profile": "ending",
+        "rankingDrop": 4,
+        "budgetUsage": {
+          "usage": {
+            "goal": 97,
+            "conflict": 63,
+            "character": 92,
+            "world": 5,
+            "facts": 0,
+            "history": 156,
+            "relationship": 0,
+            "knowledge": 0
+          },
+          "pct": {
+            "goal": 20,
+            "conflict": 9,
+            "character": 27,
+            "world": 167,
+            "facts": 0,
+            "history": 80,
+            "relationship": 0,
+            "knowledge": 0
+          }
+        },
+        "importance": {
+          "主角": 100
+        }
+      },
+      "text": "血珠没有落。他翻过手背，在裤缝上蹭了一下，指腹按上去，钝钝地疼。那一小点红留在布料上，很快就成了暗褐色。\n\n门外的走廊很静。静得他能听见自己咽口水的声音。\n\n他把手垂下去。就在这时，门板上响了一下——不是敲，是有人用手掌贴着门，慢慢滑过去，木头发出很轻的摩擦声。\n\n“我知道你在里面。”\n\n女人的声音，隔着门板闷了一层。他认得。也可能不认得。他没有动。\n\n“你不用开门。”她说，“我也不进去。我站着说，你站着听，就这样。”\n\n外面停了两秒。走廊里应该有一盏灯在闪，光从门缝底下漏进来，一明一暗，像有人在呼吸。\n\n“他进去过这间屋子。”她说，“不是今天。是三天前，你还没来的时候。他把东西放在这儿，然后走了。你现在站着的地方，就是他站过的位置。”\n\n他的后颈起了一层薄汗。他低头看脚下——地砖是灰的，什么也没有。可他忽然觉得脚底的那块砖比旁边的凉。\n\n“你手上那个点，”她顿了顿，“别去抠它。”\n\n他下意识把手攥紧了。\n\n“我不是来吓你的。”她说，“我是来告诉你一件事——今天晚上之前，会有人来取。你要是想活着走出这栋楼，就别让他拿到。”\n\n他张了张嘴。喉咙里滚了半圈，什么也没说出来。他想问“他是谁”，想问“你为什么找我”，想问“你怎么知道我手上有伤”，可这些话堵在齿关后面，一句也没出去。\n\n门外的人像是知道他要问什么。\n\n“别问。”她说，“问了我也答不了。我答了，你就得死。”\n\n脚步声。走开两步，又停下。\n\n“还有——”她的声音低下去，“你刚才锁门的时候，锁舌只落了一半。刚才那声咔哒，是它自己弹回去的。”\n\n他的目光猛地钉在门锁上。\n\n黄铜的锁舌，果然露在外面一小截，像一截没缩回去的舌头。\n\n走廊里的灯灭了。门缝底下那道光没了，黑暗从下面漫上来，漫过门板，漫过他的鞋尖。\n\n他听见脚步声往楼梯口去，一级，两级，很慢。然后停了。\n\n停在他听不见也看不见的地方。\n\n他站在黑暗里，手心里全是汗，拇指侧面那点伤又开始跳，一下一下，跟着心跳。\n\n他数到七。走廊里没有声音。\n\n他把手伸向门锁。指尖碰到冰凉的黄铜，锁舌果然在外头。他往下一按——咔哒，这回是真的落进去了。\n\n然后他听见，门外的黑暗里，有人也按了一下什么。\n\n一样的声音。",
+      "observedContinuity": {
+        "role": "scene_derived_continuity",
+        "sceneId": "ch7_s4",
+        "index": 4,
+        "sourceTextHash": "-1377325851",
+        "confirmed": [],
+        "unresolved": [],
+        "empty": true,
+        "extractedAt": "2026-11-26T10:05:23.720Z",
+        "writesCanon": false,
+        "writesSR": false,
+        "d1InferenceDemotion": {
+          "eo": "EO-P4",
+          "role": "scene_local_projection_not_reality",
+          "producesObtains": false,
+          "isRealityAuthority": false,
+          "isWorldFact": false,
+          "authorityAct": "NOT_AN_AUTHORITY_ACT",
+          "claimLevelAuthority": "NOT_THIS_PATH",
+          "note": "Inference ≠ fact. Candidate / evidence / Writer instruction only.",
+          "paths": [
+            "buildObservedContinuity"
+          ]
+        }
+      },
+      "actualEvents": [
+        {
+          "id": "evt_ch7_s4_e38e9df91",
+          "sceneId": "ch7_s4",
+          "version": "story-event-1",
+          "actors": [
+            "场面"
+          ],
+          "action": "汗，拇指侧面那点伤又开始跳，一下一下，跟着心跳。 他数到七。走廊里没有声音。 他把手伸向门锁。指尖碰到冰凉的黄铜，锁舌果然在外头。他往下一按——咔哒，这回是真的",
+          "intent": "",
+          "consequence": "场面叙述成为后续可引用事实",
+          "stateChanges": [
+            "presence:场面"
+          ],
+          "affectedEntities": [
+            "场面"
+          ],
+          "evidence": {
+            "excerpt": "汗，拇指侧面那点伤又开始跳，一下一下，跟着心跳。\n\n他数到七。走廊里没有声音。\n\n他把手伸向门锁。指尖碰到冰凉的黄铜，锁舌果然在外头。他往下一按——咔哒，这回是真的落进去了。\n\n然后他听见，门外的黑暗里，有人也按了一下什么。\n\n一样的声音。",
+            "offset": 798
+          },
+          "source": "scene.text",
+          "kind": "presence",
+          "writesCanon": false,
+          "writesSR": false,
+          "writesReality": false
+        }
+      ],
+      "actualEventMeta": {
+        "sceneId": "ch7_s4",
+        "source": "scene.text",
+        "candidateCount": 1,
+        "planFieldsIgnored": true,
+        "rejectedCount": 1
+      },
+      "characterActionTruth": {
+        "version": "character-action-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "actionContent": null,
+        "intentRef": null,
+        "occurrenceRef": null,
+        "reason": "intent_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "worldConsequenceTruth": {
+        "version": "world-consequence-truth-1",
+        "status": "absent",
+        "characterId": null,
+        "characterActionRef": null,
+        "actionContent": null,
+        "worldChangeContent": null,
+        "occurrenceRef": null,
+        "reason": "character_action_not_asserted",
+        "provenance": null,
+        "isChoice": false
+      },
+      "characterSRState": {
+        "version": "character-sr-1",
+        "engine": "character-sr",
+        "characters": {
+          "主角": {
+            "name": "主角",
+            "awareness": {
+              "items": [],
+              "status": "omit",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [],
+              "status": "omit",
+              "kind": "relevance"
+            },
+            "mutations": []
+          },
+          "场面": {
+            "name": "场面",
+            "awareness": {
+              "items": [
+                {
+                  "info": "。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+                  "level": "know",
+                  "eventId": "evt_ch7_s3_e95f77a9b",
+                  "provenance": {
+                    "characterId": "场面",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s3_e95f77a9b"
+                  }
+                },
+                {
+                  "info": "汗，拇指侧面那点伤又开始跳，一下一下，跟着心跳。\n\n他数到七。走廊里没有声音。\n\n他把手伸向门锁。指尖碰到冰凉的黄铜，锁舌果然在外头。他往下一按——咔哒，这回是真的落进去了。\n\n然后他听见，门外的黑暗里，有人也按了一下什么。\n\n一样的声音。",
+                  "level": "know",
+                  "eventId": "evt_ch7_s4_e38e9df91",
+                  "provenance": {
+                    "characterId": "场面",
+                    "field": "knowledge",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s4_e38e9df91"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "awareness"
+            },
+            "interpretation": {
+              "items": [],
+              "status": "omit",
+              "kind": "interpretation"
+            },
+            "belief": {
+              "items": [],
+              "status": "omit",
+              "kind": "belief"
+            },
+            "stance": {
+              "items": [],
+              "status": "omit",
+              "kind": "stance"
+            },
+            "relevance": {
+              "items": [
+                {
+                  "eventId": "evt_ch7_s3_e95f77a9b",
+                  "info": "。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "场面",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s3_e95f77a9b"
+                  }
+                },
+                {
+                  "eventId": "evt_ch7_s4_e38e9df91",
+                  "info": "汗，拇指侧面那点伤又开始跳，一下一下，跟着心跳。\n\n他数到七。走廊里没有声音。\n\n他把手伸向门锁。指尖碰到冰凉的黄铜，锁舌果然在外头。他往下一按——咔哒，这回是真的落进去了。\n\n然后他听见，门外的黑暗里，有人也按了一下什么。\n\n一样的声音。",
+                  "level": "high",
+                  "provenance": {
+                    "characterId": "场面",
+                    "field": "relevance",
+                    "source": "actual_event",
+                    "engine": "character-sr",
+                    "version": "character-sr-1",
+                    "eventId": "evt_ch7_s4_e38e9df91"
+                  }
+                }
+              ],
+              "status": "present",
+              "kind": "relevance"
+            },
+            "mutations": [
+              {
+                "characterId": "场面",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s3_e95f77a9b"
+              },
+              {
+                "characterId": "场面",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s3_e95f77a9b"
+              },
+              {
+                "characterId": "场面",
+                "field": "relevance",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s4_e38e9df91"
+              },
+              {
+                "characterId": "场面",
+                "field": "knowledge",
+                "source": "actual_event",
+                "engine": "character-sr",
+                "version": "character-sr-1",
+                "eventId": "evt_ch7_s4_e38e9df91"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "writesCanon": false,
+          "writesTimeline": false,
+          "writesFacts": false,
+          "writesActual": false,
+          "isRealityAuthority": false,
+          "eventCount": 1,
+          "characterCount": 2
+        }
+      },
+      "l1Eligibility": {
+        "version": "l1-subject-eligibility-1",
+        "sceneId": "ch7_s4",
+        "characters": {
+          "主角": {
+            "version": "l1-subject-eligibility-1",
+            "characterId": "主角",
+            "provenance": {
+              "predicate": "l1-subject-eligibility-1",
+              "source": "actual_occurrences",
+              "actual_grounded_only": true,
+              "is_agency_truth": false,
+              "l1_internal": true
+            },
+            "state": "UNKNOWN",
+            "reason": "no_actual_evidence",
+            "evidenceOccurrenceIds": []
+          }
+        },
+        "meta": {
+          "l1_internal": true,
+          "is_truth_authority_over_agency": false,
+          "consumes": "actual_events_only",
+          "note": "eligibility ≡ Subject Presence · Model A · 粗三态"
+        }
+      },
+      "attributionRun": {
+        "version": "attribution-wiring-1",
+        "attempted": 0,
+        "written": 0,
+        "statuses": []
+      },
+      "review": {
+        "sceneId": "ch7_s4",
+        "pass": true,
+        "wordCount": 866,
+        "issues": [
+          {
+            "level": "warning",
+            "msg": "含顺承词，违反硬切规则"
+          }
+        ],
+        "mode": "analysis-only",
+        "blocking": false
+      },
+      "consistency": {
+        "pass": true,
+        "scope": "scene:ch7_s4",
+        "checks": {
+          "character": {
+            "pass": true
+          },
+          "timeline": {
+            "pass": true
+          },
+          "world": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "resource": {
+            "pass": true
+          },
+          "ability": {
+            "pass": true
+          }
+        },
+        "failures": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "decision": {
+        "sceneId": "ch7_s4",
+        "actor": "主角",
+        "action": "章末钩子（承接转折后果）：no_causal_basis",
+        "checks": {
+          "content": {
+            "pass": true,
+            "level": "PASS"
+          },
+          "interest": {
+            "pass": true
+          },
+          "resources": {
+            "pass": true
+          },
+          "knowledge": {
+            "pass": true
+          },
+          "relationship": {
+            "pass": true
+          },
+          "risk": {
+            "pass": true
+          }
+        },
+        "pass": true,
+        "failures": [],
+        "warnings": [],
+        "analysisOnly": true,
+        "blocking": false
+      },
+      "adaptiveHints": [],
+      "wordCount": 866
+    }
+  ],
+  "updatedAt": "2026-11-26T10:05:23.729Z"
+}

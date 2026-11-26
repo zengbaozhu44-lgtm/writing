@@ -1,0 +1,163 @@
+{
+  "version": "character-sr-1",
+  "engine": "character-sr",
+  "characters": {
+    "主角": {
+      "name": "主角",
+      "awareness": {
+        "items": [],
+        "status": "omit",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [],
+        "status": "omit",
+        "kind": "relevance"
+      },
+      "mutations": []
+    },
+    "场面": {
+      "name": "场面",
+      "awareness": {
+        "items": [
+          {
+            "info": "。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+            "level": "know",
+            "eventId": "evt_ch7_s3_e95f77a9b",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch7_s3_e95f77a9b"
+            }
+          },
+          {
+            "info": "汗，拇指侧面那点伤又开始跳，一下一下，跟着心跳。\n\n他数到七。走廊里没有声音。\n\n他把手伸向门锁。指尖碰到冰凉的黄铜，锁舌果然在外头。他往下一按——咔哒，这回是真的落进去了。\n\n然后他听见，门外的黑暗里，有人也按了一下什么。\n\n一样的声音。",
+            "level": "know",
+            "eventId": "evt_ch7_s4_e38e9df91",
+            "provenance": {
+              "characterId": "场面",
+              "field": "knowledge",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch7_s4_e38e9df91"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "awareness"
+      },
+      "interpretation": {
+        "items": [],
+        "status": "omit",
+        "kind": "interpretation"
+      },
+      "belief": {
+        "items": [],
+        "status": "omit",
+        "kind": "belief"
+      },
+      "stance": {
+        "items": [],
+        "status": "omit",
+        "kind": "stance"
+      },
+      "relevance": {
+        "items": [
+          {
+            "eventId": "evt_ch7_s3_e95f77a9b",
+            "info": "。\n\n\"不来了。\"她说，\"灯修好了也别等。\"\n\n她从他身边走过去。地板那块松的地方响了，她没有绕。\n\n门关上。锁舌咔哒一声落进去。\n\n他站了很久，才低头看自己的手。拇指侧面那个点，已经被指甲掐破了，血珠慢慢鼓出来，圆圆的，像一颗没长熟的痣。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch7_s3_e95f77a9b"
+            }
+          },
+          {
+            "eventId": "evt_ch7_s4_e38e9df91",
+            "info": "汗，拇指侧面那点伤又开始跳，一下一下，跟着心跳。\n\n他数到七。走廊里没有声音。\n\n他把手伸向门锁。指尖碰到冰凉的黄铜，锁舌果然在外头。他往下一按——咔哒，这回是真的落进去了。\n\n然后他听见，门外的黑暗里，有人也按了一下什么。\n\n一样的声音。",
+            "level": "high",
+            "provenance": {
+              "characterId": "场面",
+              "field": "relevance",
+              "source": "actual_event",
+              "engine": "character-sr",
+              "version": "character-sr-1",
+              "eventId": "evt_ch7_s4_e38e9df91"
+            }
+          }
+        ],
+        "status": "present",
+        "kind": "relevance"
+      },
+      "mutations": [
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch7_s3_e95f77a9b"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch7_s3_e95f77a9b"
+        },
+        {
+          "characterId": "场面",
+          "field": "relevance",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch7_s4_e38e9df91"
+        },
+        {
+          "characterId": "场面",
+          "field": "knowledge",
+          "source": "actual_event",
+          "engine": "character-sr",
+          "version": "character-sr-1",
+          "eventId": "evt_ch7_s4_e38e9df91"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "writesCanon": false,
+    "writesTimeline": false,
+    "writesFacts": false,
+    "writesActual": false,
+    "isRealityAuthority": false,
+    "eventCount": 1,
+    "characterCount": 2,
+    "path": "character_sr_sidecar_only"
+  },
+  "chapter": 7,
+  "updatedAt": "2026-11-26T10:05:23.722Z"
+}
