@@ -751,12 +751,17 @@ export class RuntimeOrchestrator {
         if (sceneResult.awaiting === 'writer') {
           persistScenes(this.bookDir, chapter, scenes);
           pipeline.awaiting = 'writer';
-          pipeline.scenePrompts = scenes.map((s) => ({
-            id: s.id,
-            index: s.index,
-            chars: s.prompt?.length,
-            promptPath: writeScenePromptFile(this.bookDir, chapter, s),
-          }));
+          // 只为已生成 prompt 的 Scene 落盘：循环逐场建 prompt，
+          // 某场 awaiting-writer 提前 return 时，后续场景 prompt 尚为 undefined，
+          // 无条件 writeText(undefined) 会抛 ERR_INVALID_ARG_TYPE（被吞成「系统内部错误」）。
+          pipeline.scenePrompts = scenes
+            .filter((s) => s.prompt?.trim())
+            .map((s) => ({
+              id: s.id,
+              index: s.index,
+              chars: s.prompt?.length,
+              promptPath: writeScenePromptFile(this.bookDir, chapter, s),
+            }));
           pipeline.scenes = scenes;
           pipeline.message = 'Scene prompts 已生成，Writer 填入后 Daemon 自动继续';
           const finalized = trace.finalize({ pass: false, awaiting: 'writer' });
@@ -971,7 +976,13 @@ function writeScenePromptFile(bookDir, chapter, scene) {
 function saveChapterFile(bookDir, chapter, text, intent) {
   const dir = path.join(bookDir, 'chapters');
   fs.mkdirSync(dir, { recursive: true });
-  const title = intent.mainGoal?.slice(0, 8) || '章';
+  // no_causal_basis / 模板占位符不落文件名（曾产出 0002_no_causa.md）；
+  // 归一化为「第N章」，与 memory-unit writeChapterMarkdown 的 fallback 同口径
+  const rawTitle = intent.mainGoal?.slice(0, 8) || '';
+  const isPlaceholder = !rawTitle
+    || rawTitle.includes('no_causal_basis')
+    || rawTitle.trim() === '章';
+  const title = isPlaceholder ? `第${chapter}章` : rawTitle;
   const pad = String(chapter).padStart(4, '0');
   // 同章幂等：与 MemoryUnit.writeChapterMarkdown 是两条写盘路径，
   // 写前清掉本章旧文件，避免 rerun / 双写累积重复章节

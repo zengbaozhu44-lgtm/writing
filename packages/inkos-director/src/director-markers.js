@@ -1,0 +1,26 @@
+/**
+ * Director Markers — re-export from @inkos/core
+ *
+ * 统一配置层已迁移至 packages/inkos-core/src/config/director-markers.js
+ */
+export {
+  HOOK_MARKERS,
+  QUESTION_MARKERS,
+  PAYOFF_MARKERS,
+  TWIST_MARKERS,
+  SUB_THREAD_MARKERS,
+  WORLD_THREAD_MARKERS,
+  CHARACTER_THREAD_MARKERS,
+  BEAT_HOOK_TYPES,
+  STRUCTURAL_DEFAULT_HOOK,
+  getDirectorMarkers,
+  DEFAULT_HOOK_MARKERS,
+  DEFAULT_QUESTION_MARKERS,
+  DEFAULT_PAYOFF_MARKERS,
+  DEFAULT_TWIST_MARKERS,
+  DEFAULT_SUB_THREAD_MARKERS,
+  DEFAULT_WORLD_THREAD_MARKERS,
+  DEFAULT_CHARACTER_THREAD_MARKERS,
+  DEFAULT_BEAT_HOOK_TYPES,
+  DEFAULT_STRUCTURAL_DEFAULT_HOOK,
+} from '../../inkos-core/src/config/director-markers.js';

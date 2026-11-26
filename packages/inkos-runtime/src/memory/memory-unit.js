@@ -28,6 +28,7 @@ import {
   updateManifestChapter,
   writeNextChapterTask,
   deriveNextChapterIntent,
+  isTemplateFallback,
 } from '../../../inkos-brain/src/memory/state-updater.js';
 import {
   evolveFromChapter,
@@ -259,6 +260,11 @@ export function writeChapterOnly(bookDir, chapter, stateDiff = {}) {
   });
 }
 
+/** 占位符判定（模板串 / no_causal_basis / 空值）→ 落盘时置 null */
+function isTemplateFallbackIntent(value) {
+  return !value || isTemplateFallback(String(value));
+}
+
 function writeAggregatedState(bookDir, chapter, stateDiff) {
   ensureDir(statesDir(bookDir));
   const blob = {
@@ -268,8 +274,9 @@ function writeAggregatedState(bookDir, chapter, stateDiff) {
     title: stateDiff.chapterTitle,
     intent: {
       pov: stateDiff.intent?.pov,
-      mainGoal: stateDiff.intent?.mainGoal,
-      mustLose: stateDiff.intent?.mustLose,
+      // 占位符不落盘（no_causal_basis 等模板串曾直接进 states/ch_N.json）
+      mainGoal: isTemplateFallbackIntent(stateDiff.intent?.mainGoal) ? null : stateDiff.intent?.mainGoal,
+      mustLose: isTemplateFallbackIntent(stateDiff.intent?.mustLose) ? null : stateDiff.intent?.mustLose,
     },
     world: stateDiff.livingPrepare?.worldProposal || null,
     characters: stateDiff.livingPrepare?.characterProposals || null,
@@ -709,8 +716,8 @@ function deriveBannedElements(intent = {}, stateDiff = {}, chapter = 1) {
   }
 
   const ending = String(intent.ending || intent.newForeshadow || '').trim();
-  if (ending) pushBan(`禁止提前揭晓章末钩子：${ending.slice(0, 60)}`, chapter + 1);
-  if (intent.mustLose) {
+  if (ending && !isTemplateFallback(ending)) pushBan(`禁止提前揭晓章末钩子：${ending.slice(0, 60)}`, chapter + 1);
+  if (intent.mustLose && !isTemplateFallback(String(intent.mustLose))) {
     pushBan(`禁止无损撤回本章代价：${String(intent.mustLose).slice(0, 40)}`, chapter + 2);
   }
   pushBan('禁止重开篇式介绍世界观与主角履历', null);

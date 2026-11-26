@@ -11,6 +11,8 @@ import {
   parseChapterTaskProvenance,
   stampChapterTaskProvenance,
 } from '../authored/authored-input-sanitize.js';
+// re-export：memory-unit 等下游共用同一占位符判定（单一真源）
+export { isTemplateFallback };
 import {
   resolveWorldEventDay,
   resolveStateTimeLabel,
@@ -170,7 +172,14 @@ export function deriveNextChapterIntent(finishedIntent = {}, priorAnchor = null,
   const goalLooksLikeCompletedCost = Boolean(mustLose && goalCorpus.some(echoesCost));
 
   let nextGoal = mainGoal;
-  if (goalLooksLikeCompletedCost || isMoodOnly(mainGoal, priorAnchor)) {
+  // 裸跑（无 authored plan / task card）时 mainGoal/ending/foreshadow 可能是
+  // no_causal_basis 等模板占位符——原样下发会把占位符传播进
+  // states/ch_N.json、nextChapterPlan 与章节文件名（0002_no_causa.md）。
+  // 占位符不构成因果目标，一律回退到通用前瞻句（宁缺勿滥，与 C3 口径一致）。
+  if (isTemplateFallback(mainGoal)) {
+    nextGoal = pickForwardGoal(ending, foreshadow, priorAnchor)
+      || '承接上一章结果，推进未解决线索';
+  } else if (goalLooksLikeCompletedCost || isMoodOnly(mainGoal, priorAnchor)) {
     // 前者：目标关联已支付代价；后者：目标是纯氛围句（无追查对象，会原地踏步）
     nextGoal = pickForwardGoal(ending, foreshadow, priorAnchor)
       || '承接上一章结果，推进未解决线索';
@@ -179,16 +188,27 @@ export function deriveNextChapterIntent(finishedIntent = {}, priorAnchor = null,
   const obstacles = (intent.obstacles || [])
     .map((o) => String(o || '').trim())
     .filter(Boolean)
-    .filter((o) => !echoesCost(o));
+    .filter((o) => !echoesCost(o))
+    // 占位符阻碍（no_causal_basis 等）不下发
+    .filter((o) => !isTemplateFallback(o));
+
+  // 旧 scenes 是本章已执行完的骨架（goal/conflict 可能嵌占位符，anchorBanNote 带本章禁令），
+  // 原样下发会让下一章从本章场景骨架续写。这里整组丢弃：下一章 scenes 由其自身
+  // planNextChapter → deriveScenes 重建（planNextChapter 兜底路径会重派生）。
+  const { scenes: _staleScenes, anchorBanNote: _staleBan, ...intentRest } = intent;
 
   return {
-    ...intent,
+    ...intentRest,
     chapter,
     mainGoal: nextGoal,
     chapterIntent: `第${chapter}章：${nextGoal}`,
+    // 占位符结尾/结尾方向不下发（下一章由自身规划/前瞻供料重建）
+    ending: isTemplateFallback(intent.ending) ? '' : String(intent.ending || '').trim(),
+    endingDirection: isTemplateFallback(intent.endingDirection) ? '' : intent.endingDirection,
     // 已支付代价一律不下发（下一章的代价由其自身规划/作者设立）
     mustLose: '',
-    turningPoint: echoesCost(intent.turningPoint) ? '' : intent.turningPoint,
+    // 占位符转折同样不下发
+    turningPoint: isTemplateFallback(intent.turningPoint) ? '' : (echoesCost(intent.turningPoint) ? '' : intent.turningPoint),
     bargain: echoesCost(intent.bargain) ? '' : intent.bargain,
     obstacles: obstacles.length ? obstacles : ['阻力来自上一章后果的延续'],
     _derivedFrom: 'deriveNextChapterIntent',
@@ -216,23 +236,25 @@ function extractCostKeywords(mustLose, pov = '') {
 }
 
 function pickForwardGoal(ending, foreshadow, priorAnchor) {
+  // 0) 占位符输入不构成前瞻信号（no_causal_basis 等模板串曾从 ending 漏进 nextGoal）
+  const endingText = isTemplateFallback(String(ending || '')) ? '' : String(ending || '').trim();
+  const fsText = isTemplateFallback(String(foreshadow || '')) ? '' : String(foreshadow || '').trim();
+
   // 1) 台账未关闭承诺（键化硬事实）优先——不用词表猜测
   const open = (priorAnchor?.state_ledger?.open_promises || [])
     .filter((p) => p?.status === 'open');
   if (open.length) return `追查：${String(open[0].claim).slice(0, 36)}`;
 
   // 2) 新增伏笔
-  const fromFs = String(foreshadow || '').trim();
-  if (fromFs && fromFs.length >= 4) return `追查：${fromFs.slice(0, 30)}`;
+  if (fsText && fsText.length >= 4) return `追查：${fsText.slice(0, 30)}`;
 
   // 3) ending（非纯氛围句）
-  const fromEnding = String(ending || '').trim();
-  if (fromEnding && fromEnding.length >= 8 && !isMoodOnly(fromEnding, priorAnchor)) {
-    return fromEnding.slice(0, 40);
+  if (endingText && endingText.length >= 8 && !isMoodOnly(endingText, priorAnchor)) {
+    return endingText.slice(0, 40);
   }
 
   // 4) 兜底
-  if (fromEnding) return `承接：${fromEnding.slice(0, 30)}`;
+  if (endingText) return `承接：${endingText.slice(0, 30)}`;
   return '';
 }
 

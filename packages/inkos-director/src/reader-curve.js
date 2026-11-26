@@ -3,11 +3,12 @@
  * Chapter Review 输出 Reader Addiction 指标 + nextChapterGuidance
  */
 import { charCount, splitCheckpoints } from './utils.js';
-
-const HOOK_MARKERS = /[？?]|吗[？?]?$|呢[？?]?$|能否|会不会|到底|究竟|要不要|难道|突然|猛地|愣住|停住|沉默|抉择|未|还|仍/u;
-const QUESTION_MARKERS = /[？?]|谁|什么|为什么|为何|怎么|如何|能否|会不会|到底|究竟|难道|是不是|会不会|要不要/u;
-const PAYOFF_MARKERS = /原来|终于|意味着|证实|揭晓|兑现|呼应|回收|答案|真相|明白了|难怪|怪不得|正如|早就/u;
-const TWIST_MARKERS = /却|然而|没想到|竟然|居然|反而|竟是|不是.*而是|身份|反转|翻盘|反杀/u;
+import {
+  HOOK_MARKERS,
+  QUESTION_MARKERS,
+  PAYOFF_MARKERS,
+  TWIST_MARKERS,
+} from './director-markers.js';
 
 function clamp(n, min = 0, max = 100) {
   return Math.max(min, Math.min(max, Math.round(n)));

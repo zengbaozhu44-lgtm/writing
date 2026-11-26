@@ -46,7 +46,8 @@ export function wrapOrchestratorError(err, ctx = {}) {
   }
   const raw = err?.message || String(err);
   // 超时 / 中止 / 用户可读业务错误：原样透出，勿吞成「系统内部错误」
-  if (/超时|中止|取代|未配置 LLM|Scene 锁|Scene 状态回退|禁止启动|Writer 超时|重新生成/i.test(raw)) {
+  // LLM 请求失败（401 key 过期 / 429 限流 / 5xx）：属环境配置问题，必须透出真实原因供排查
+  if (/超时|中止|取代|未配置 LLM|Scene 锁|Scene 状态回退|禁止启动|Writer 超时|重新生成|LLM 请求失败 \d{3}/i.test(raw)) {
     return {
       pass: false,
       status: 'failed',

@@ -340,12 +340,15 @@ export class StudioRuntimeOrchestrator extends RuntimeOrchestrator {
         if (sceneResult.awaiting === 'writer') {
           persistScenes(this.bookDir, chapter, scenes);
           pipeline.awaiting = 'writer';
-          pipeline.scenePrompts = scenes.map((s) => ({
-            id: s.id,
-            index: s.index,
-            chars: s.prompt?.length,
-            promptPath: writeScenePromptFile(this.bookDir, chapter, s),
-          }));
+          // 同 Runtime：只为已生成 prompt 的 Scene 落盘，避免 writeText(undefined) 崩溃
+          pipeline.scenePrompts = scenes
+            .filter((s) => s.prompt?.trim())
+            .map((s) => ({
+              id: s.id,
+              index: s.index,
+              chars: s.prompt?.length,
+              promptPath: writeScenePromptFile(this.bookDir, chapter, s),
+            }));
           pipeline.scenes = scenes;
           pipeline.message = sceneResult.message || 'Scene prompts 已生成，Writer 填入后 Daemon 自动继续';
           return pipeline;

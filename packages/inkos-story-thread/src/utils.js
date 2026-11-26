@@ -38,6 +38,14 @@ export function extractMainKeywords(intent = {}, storyDna = {}) {
   return [...words].slice(0, 12);
 }
 
-export const SUB_THREAD_MARKERS = /支线|与此同时|另一边|顺便|额外|插叙|番外|支线任务|次要|无关/u;
-export const WORLD_THREAD_MARKERS = /世界观|设定|系统|规则|协议|算法|机制|背景|历史上|2055|未来|城市|AI/u;
-export const CHARACTER_THREAD_MARKERS = /心里|情绪|关系|信任|恐惧|愤怒|犹豫|抉择|性格|成长|回忆/u;
+/**
+ * Thread Markers — 从共享配置层读取（消除硬编码）
+ * @see packages/inkos-core/src/config/director-markers.js
+ */
+import {
+  SUB_THREAD_MARKERS,
+  WORLD_THREAD_MARKERS,
+  CHARACTER_THREAD_MARKERS,
+} from '../../inkos-core/src/config/director-markers.js';
+
+export { SUB_THREAD_MARKERS, WORLD_THREAD_MARKERS, CHARACTER_THREAD_MARKERS };
