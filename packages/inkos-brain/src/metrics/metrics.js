@@ -127,13 +127,18 @@ export function analyzeMetricsFeedback(metrics, dashboard, scenes = []) {
     metrics.conflictTypes.length === 1 &&
     metrics.conflictTypes[0] === 'no_causal_basis';
 
+  // 门禁分层（L2 默认 soft）：冲突密度/篇幅/场景/趋势都是质量信号，默认只记录不 replan。
+  // replan 会把 suggestObstacle 注入 obstacle，与 conflict D2 degraded 语义互相喂养，
+  // 实测会造成四轮耗尽的空转。INKOS_STRICT_METRICS=1 恢复硬 replan。
+  const strictReplan = process.env.INKOS_STRICT_METRICS === '1';
+
   if (metrics.conflictDensity < 2 && !singleRichConflictSeed && !degradedNoBasis) {
     suggestions.push({
       type: 'conflict',
       target: 'next_scene',
-      message: `冲突密度 ${metrics.conflictDensity} 不足，Scene2 需加压`,
+      message: `冲突密度 ${metrics.conflictDensity} 偏低`,
       suggestObstacle: 'no_causal_basis',
-      replan: true,
+      replan: strictReplan,
     });
   }
 
@@ -150,8 +155,8 @@ export function analyzeMetricsFeedback(metrics, dashboard, scenes = []) {
     suggestions.push({
       type: 'length',
       message: '篇幅偏短，高潮不足',
-      replan: true,
       suggestGoal: '扩展转折场景',
+      replan: strictReplan,
     });
   }
 
@@ -163,7 +168,7 @@ export function analyzeMetricsFeedback(metrics, dashboard, scenes = []) {
       type: 'scene',
       target: `scene_${s.index}`,
       message: `Scene${s.index} 冲突/篇幅不足（${s.len}字）`,
-      replan: true,
+      replan: strictReplan,
     });
   }
 
@@ -173,8 +178,8 @@ export function analyzeMetricsFeedback(metrics, dashboard, scenes = []) {
       suggestions.push({
         type: 'trend',
         message: '连续章节冲突密度偏低',
-        replan: true,
         plannerHint: { type: 'conflictPriority', delta: 0.1 },
+        replan: strictReplan,
       });
     }
   }

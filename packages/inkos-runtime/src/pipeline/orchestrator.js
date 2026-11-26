@@ -11,6 +11,7 @@ import { planChapter, replan, loadPriorChapterAnchor, loadAuthoredChapterPlan, i
 import { applyStoryMapToIntent } from '../../../inkos-brain/src/planner/story-map.js';
 import { evaluateDecisions } from '../../../inkos-brain/src/decision/decision.js';
 import { evaluateConflict } from '../../../inkos-brain/src/conflict/conflict.js';
+import { detectIntraSceneRepetition, formatNoRepeatAddendum } from '../../../inkos-brain/src/quality/repetition-guard.js';
 import { buildScenePlan, buildSceneWritePrompt, assembleChapter } from '../../../inkos-brain/src/scene/scene.js';
 import { buildDynamicPrompt } from '../../../inkos-brain/src/prompt/dynamic-prompt.js';
 import { ensureChapterCausalChain } from '../../../inkos-brain/src/causal/causal-reasoner.js';
@@ -548,6 +549,47 @@ export class RuntimeOrchestrator {
           intent,
           trace,
         });
+      }
+
+      // L2 复读护栏：场景内整句/整段逐字复读 → 附加禁复述指令重写该 Scene
+      // （限次；不整章 replan。INKOS_REPETITION_GUARD=0 关闭，STRICT=1 超限按场景失败）
+      if (scene.text?.trim() && process.env.INKOS_REPETITION_GUARD !== '0') {
+        const maxRewrites = Number(process.env.INKOS_REPETITION_REWRITES || 2);
+        let rewrites = 0;
+        let rep = detectIntraSceneRepetition(scene.text);
+        while (rep.hit && activeWriter && rewrites < maxRewrites) {
+          rewrites += 1;
+          scene.prompt = [scene.prompt, formatNoRepeatAddendum(rep.examples)].join('\n\n');
+          console.warn(`[repetition-guard] ch${chapter} scene${scene.index}: 逐字复读 ×${rep.score}，重写 ${rewrites}/${maxRewrites}`);
+          scene.text = await activeWriter({
+            bookDir: this.bookDir,
+            chapter,
+            scene,
+            prompt: scene.prompt,
+            ctx,
+            intent,
+            trace,
+          });
+          rep = detectIntraSceneRepetition(scene.text);
+        }
+        if (rep.hit) {
+          scene.repetition = { ...rep, rewrites };
+          try {
+            trace.recordStage('repetition_guard', {
+              chapter,
+              scene: scene.index,
+              hit: rep.hit,
+              examples: rep.examples,
+              score: rep.score,
+              rewrites,
+            });
+          } catch { /* trace 可选 */ }
+          if (process.env.INKOS_REPETITION_STRICT === '1') {
+            const err = new Error(`Scene ${scene.index}: 复读护栏超限（${(rep.examples[0] || '').slice(0, 60)}）`);
+            err.code = 'REPETITION_GUARD';
+            throw err;
+          }
+        }
       }
 
       // 场景正文已产出 → 回写 intent.scenes，供下一 Scene 的续写引擎读取（continuation-engine / collectPriorScenesText）

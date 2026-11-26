@@ -170,7 +170,7 @@ export function deriveNextChapterIntent(finishedIntent = {}, priorAnchor = null,
   const goalLooksLikeCompletedCost = Boolean(mustLose && goalCorpus.some(echoesCost));
 
   let nextGoal = mainGoal;
-  if (goalLooksLikeCompletedCost || isMoodOnly(mainGoal)) {
+  if (goalLooksLikeCompletedCost || isMoodOnly(mainGoal, priorAnchor)) {
     // 前者：目标关联已支付代价；后者：目标是纯氛围句（无追查对象，会原地踏步）
     nextGoal = pickForwardGoal(ending, foreshadow, priorAnchor)
       || '承接上一章结果，推进未解决线索';
@@ -216,19 +216,18 @@ function extractCostKeywords(mustLose, pov = '') {
 }
 
 function pickForwardGoal(ending, foreshadow, priorAnchor) {
-  const actuals = priorAnchor?.recent_actuals || [];
-
-  // 1) actuals 未解钩子优先（可追查物件/地点/信息）
-  const hook = pickUnresolvedHook(actuals);
-  if (hook) return `追查：${hook}`;
+  // 1) 台账未关闭承诺（键化硬事实）优先——不用词表猜测
+  const open = (priorAnchor?.state_ledger?.open_promises || [])
+    .filter((p) => p?.status === 'open');
+  if (open.length) return `追查：${String(open[0].claim).slice(0, 36)}`;
 
   // 2) 新增伏笔
   const fromFs = String(foreshadow || '').trim();
   if (fromFs && fromFs.length >= 4) return `追查：${fromFs.slice(0, 30)}`;
 
-  // 3) ending 最后才用（且尽量不是纯氛围句）
+  // 3) ending（非纯氛围句）
   const fromEnding = String(ending || '').trim();
-  if (fromEnding && fromEnding.length >= 8 && !isMoodOnly(fromEnding)) {
+  if (fromEnding && fromEnding.length >= 8 && !isMoodOnly(fromEnding, priorAnchor)) {
     return fromEnding.slice(0, 40);
   }
 
@@ -237,47 +236,20 @@ function pickForwardGoal(ending, foreshadow, priorAnchor) {
   return '';
 }
 
-function pickUnresolvedHook(actuals = []) {
-  // 关键词：未解、可追查物件/地点/信息
-  const HOOK_RE = /(册子|图纸|井道|锁|门|记录|照片|钥匙|管道|八楼|配电|标签|箱|洞|塑料布|工具)/;
-
-  const scored = [];
-  for (const a of actuals) {
-    const text = String(a?.text || '').trim();
-    if (!text || text.length < 8) continue;
-
-    // 已完成交付类（交钥匙、已交给）降低优先级
-    if (/(交给|交还|已交|失去|递出)/.test(text) && /钥匙/.test(text)) continue;
-
-    let score = 0;
-    if (HOOK_RE.test(text)) score += 3;
-    if (/(没有记录|从里面|锁死|按了回去|折死|蒙上|保存)/.test(text)) score += 2;
-    if (/(发现|露出|写着|查)/.test(text)) score += 1;
-
-    if (score > 0) scored.push({ score, text });
-  }
-
-  scored.sort((x, y) => y.score - x.score);
-  if (!scored.length) return '';
-
-  // 压成短可执行目标（尽量截到第一个句读；无句读则截到最后一个逗号，避免半句硬切）
-  const raw = scored[0].text;
-  const m = raw.match(/^(.{8,36}?[。！？!?；;])/);
-  let compact;
-  if (m) {
-    compact = m[1];
-  } else {
-    const slice = raw.slice(0, 36);
-    const c = slice.lastIndexOf('，');
-    compact = c >= 8 ? slice.slice(0, c) : slice;
-  }
-  return compact.replace(/\s+/g, ' ').trim();
-}
-
-function isMoodOnly(s = '') {
-  // 纯氛围/感官句，缺少可执行对象
-  return /(独自|站在|听到|滴了一声|灯|潮|冷|沉默)/.test(s)
-    && !/(册子|图纸|井道|锁|门|记录|钥匙|管道|八楼|配电)/.test(s);
+/**
+ * 纯氛围句判定（通用，无词表）：感官标记 + 无未闭合信息信号
+ * （台账物名 / 冒号 / 问号）。氛围句没有可执行对象，不当目标。
+ */
+function isMoodOnly(s = '', priorAnchor = null) {
+  const t = String(s || '');
+  const sensory = /(独自|站在|听到|滴了一声|灯|潮|冷|沉默|望着|听着)/.test(t);
+  if (!sensory) return false;
+  const ledgerNames = (priorAnchor?.state_ledger?.items || [])
+    .map((i) => String(i?.name || ''))
+    .filter(Boolean);
+  if (ledgerNames.some((n) => t.includes(n))) return false;
+  if (/[：？?]/.test(t)) return false;
+  return true;
 }
 
 /**

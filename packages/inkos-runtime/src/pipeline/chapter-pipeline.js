@@ -93,7 +93,13 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   }
 
   const validation = validateChapter(chapterText, intent, metrics, readerResult);
-  log.push({ stage: 'validation', pass: validation.pass, checks: validation.checks });
+  log.push({
+    stage: 'validation',
+    pass: validation.pass,
+    soft: Boolean(validation.soft),
+    gatePass: validation.gatePass ?? validation.pass,
+    checks: validation.checks,
+  });
   if (!validation.pass && !payload.force) {
     if (bus) await bus.emit('validationRejected', { bookDir, chapter, validation });
     const newIntent = replan(ctx, [{ type: 'validation', attempt: intent.attempt }]);

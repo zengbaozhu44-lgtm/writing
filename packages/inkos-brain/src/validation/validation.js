@@ -8,7 +8,7 @@
  */
 import { extractDialogueBlocks } from '../metrics/metrics.js';
 
-export function validateChapter(chapterText, intent, metrics, readerResult) {
+export function validateChapter(chapterText, intent, metrics, readerResult, options = {}) {
   const text = chapterText || '';
   const checks = {
     plot_advanced: checkPlot(intent, text),
@@ -24,7 +24,7 @@ export function validateChapter(chapterText, intent, metrics, readerResult) {
   const passed = Object.values(checks).filter(Boolean).length;
   const pass = passed === 8;
 
-  return {
+  const result = {
     pass,
     passed,
     total: 8,
@@ -32,6 +32,21 @@ export function validateChapter(chapterText, intent, metrics, readerResult) {
     failures: Object.entries(checks).filter(([, v]) => !v).map(([k]) => k),
     message: pass ? '推进校验 + 对话成型全部成立' : `未通过（${8 - passed}/8 失败）— 需重新规划`,
   };
+
+  // 门禁分层（L2 默认 soft）：八项是质量信号，不是硬门。
+  // 文学化承接正文常不踩字面词（发现/新/…），硬拦会造成整章空转重跑。
+  // INKOS_VALIDATION_MODE=strict 恢复硬门。
+  const mode = options.mode || process.env.INKOS_VALIDATION_MODE || 'soft';
+  if (mode === 'soft') {
+    return {
+      ...result,
+      pass: true,
+      soft: true,
+      gatePass: pass,
+      message: pass ? result.message : `软门禁未全过（${result.failures.join(',')}）— 记录不阻断`,
+    };
+  }
+  return result;
 }
 
 /**

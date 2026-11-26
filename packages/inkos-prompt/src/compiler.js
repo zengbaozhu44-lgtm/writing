@@ -114,8 +114,50 @@ export function loadPriorChapterScenesForActual(bookDir, chapter) {
 }
 
 /**
+ * 章缝台账：读取上一章 ch_(N-1)_anchor.yaml 的 state_ledger（P1 键化硬事实）。
+ * consume-only / fail-closed：无文件 / 无字段 → null。
+ */
+export function loadPriorChapterStateLedger(bookDir, chapter) {
+  const ch = Number(chapter);
+  if (!bookDir || !Number.isFinite(ch) || ch <= 1) return null;
+  const file = path.join(bookDir, 'states', `ch_${String(ch - 1).padStart(4, '0')}_anchor.yaml`);
+  if (!exists(file)) return null;
+  try {
+    const anchor = readYaml(file);
+    const ledger = anchor?.state_ledger;
+    return ledger && typeof ledger === 'object' ? ledger : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * State Ledger → Writer 硬事实块（短，禁止裁成残句）。
+ * 道具归属 / 已支付代价 / 未关闭承诺；禁止 Writer 无解释变更。
+ */
+export function formatStateLedgerBlock(ledger) {
+  if (!ledger || typeof ledger !== 'object') return '';
+  const lines = ['State Ledger（硬事实 · 禁止无解释变更）：'];
+  for (const it of (ledger.items || []).slice(0, 3)) {
+    if (!it?.name) continue;
+    const where = it.status === 'held' && it.holder
+      ? `在${it.holder}处`
+      : (it.status === 'lost' ? '已失去' : it.status === 'destroyed' ? '已销毁' : '下落不明');
+    lines.push(`- ${it.name}：${where}（自第${it.since_chapter}章）`);
+  }
+  for (const c of (ledger.settled_costs || []).slice(-2)) {
+    if (c?.claim) lines.push(`- 已支付代价：${String(c.claim).slice(0, 30)}（第${c.since_chapter}章）`);
+  }
+  for (const p of (ledger.open_promises || []).filter((x) => x?.status === 'open').slice(0, 2)) {
+    if (p?.claim) lines.push(`- 未关闭：${String(p.claim).slice(0, 30)}`);
+  }
+  if (lines.length <= 1) return '';
+  return lines.join('\n');
+}
+
+/**
  * 章缝软记忆：读取上一章 ch_(N-1)_anchor.yaml 的 recent_actuals
- * （MemoryUnit.commit 时从 scene.actualEvents 收敛，整章 ≤12 条）。
+ * （MemoryUnit.commit 时从 scene.actualEvents 收敛，整章 ≤5 条完整句）。
  * consume-only / fail-closed：无文件 / 无字段 → []。
  */
 export function loadPriorChapterRecentActuals(bookDir, chapter) {
@@ -393,6 +435,12 @@ export function compileScenePrompt(ctx, scene) {
     : [];
   const priorActualsBlock = formatPriorChapterActualsBlock(priorRecentActuals);
 
+  // 章缝台账硬事实（P1）：道具归属/已支付代价/未关闭承诺
+  const priorStateLedger = Number(scene.index) <= 1
+    ? loadPriorChapterStateLedger(bookDir, chapter)
+    : null;
+  const stateLedgerBlock = formatStateLedgerBlock(priorStateLedger);
+
   // F8.3: Plan Validity (session/prompt; before Goal is treated as direct command)
   if (!scene.planValidity) ensurePlanValidity(scene, intent || ctx.intent || {});
   const demoted = isExecutionPrivilegeDemoted(scene.planValidity);
@@ -433,6 +481,8 @@ export function compileScenePrompt(ctx, scene) {
       : null,
     // 章缝软记忆：上一章 Anchor recent_actuals 变化时失效缓存
     priorActuals: priorRecentActuals.map((a) => a.text).join('|') || null,
+    // P1 台账硬事实变化时失效缓存
+    stateLedger: stateLedgerBlock || null,
   });
 
   const cachedText = loadCompiledPromptCache(bookDir, chapter, inputHash);
@@ -533,6 +583,16 @@ export function compileScenePrompt(ctx, scene) {
       category: 'history',
       priority: 91,
       content: actualEventsBlock,
+    });
+  }
+  // P1 台账硬事实：道具归属/代价/承诺——高于软记忆，禁止无解释变更
+  if (stateLedgerBlock) {
+    add({
+      key: 'state_ledger',
+      label: 'State Ledger（硬事实）',
+      category: 'history',
+      priority: 93,
+      content: stateLedgerBlock,
     });
   }
   // 章缝软记忆：上一章真实事件（Anchor recent_actuals，必须承接）。

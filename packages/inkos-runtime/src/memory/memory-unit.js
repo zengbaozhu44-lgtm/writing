@@ -310,6 +310,10 @@ export function buildChapterAnchor(chapter, stateDiff = {}) {
   const banned_elements = deriveBannedElements(intent, stateDiff, ch);
   const voiceDna = resolveAnchorVoiceDna(intent, stateDiff);
   const recent_actuals = buildRecentActuals(scenes);
+  const state_ledger = evolveStateLedger(
+    intent.priorAnchor?.state_ledger || stateDiff.priorAnchor?.state_ledger || null,
+    { intent, recentActuals: recent_actuals, chapterText: stateDiff.chapterText, chapter: ch },
+  );
 
   return {
     version: 'chapter-anchor-3',
@@ -322,6 +326,7 @@ export function buildChapterAnchor(chapter, stateDiff = {}) {
     voiceDna,
     narrative_momentum: buildNarrativeMomentum(chapter, stateDiff, intent),
     recent_actuals,
+    state_ledger,
     committedAt: new Date().toISOString(),
     d1InferenceDemotion: stampOpsHint({
       paths: ['deriveRelationshipState', 'deriveClosingEmotion', 'buildChapterAnchor'],
@@ -407,6 +412,121 @@ function cleanSentence(raw, maxLen = 80) {
   }
 
   return slice.trim() + '…';
+}
+
+/**
+ * P1 状态台账：键化硬事实（道具归属 / 已支付代价 / 未关闭承诺）。
+ * 规则少而硬——只信已支付代价与窄标记，不做性格/文风/词表猜测。
+ */
+function evolveStateLedger(prev, { intent, recentActuals, chapterText, chapter }) {
+  const ledger = prev && typeof prev === 'object'
+    ? JSON.parse(JSON.stringify(prev))
+    : { version: 1, updated_chapter: chapter, items: [], locations: [], open_promises: [], settled_costs: [] };
+  ledger.version = 1;
+  ledger.updated_chapter = chapter;
+  ledger.items = ledger.items || [];
+  ledger.open_promises = ledger.open_promises || [];
+  ledger.settled_costs = ledger.settled_costs || [];
+
+  // 已支付代价 → settled_costs（幂等按 claim 去重）
+  const mustLose = String(intent?.mustLose || '').trim();
+  if (mustLose && mustLose !== 'no_causal_basis') {
+    pushUnique(ledger.settled_costs, {
+      id: `cost_ch${chapter}`,
+      claim: mustLose.slice(0, 80),
+      since_chapter: chapter,
+    }, 'claim');
+    applyKeyHandoff(ledger, intent, chapter);
+  }
+
+  // open_promises：actuals 带未闭合窄标记（没有记录/按了回去/折死/锁死/未读/翘着）
+  const UNCLOSED_RE = /(没有记录|按了回去|折死|锁死|未读|未解|翘着)/;
+  for (const a of recentActuals || []) {
+    const t = String(a?.text || '').trim();
+    if (!t || !UNCLOSED_RE.test(t)) continue;
+    pushUnique(ledger.open_promises, {
+      id: `p_ch${chapter}_${t.slice(0, 10)}`,
+      claim: t.slice(0, 60),
+      status: 'open',
+      since_chapter: chapter,
+    }, 'claim');
+  }
+  ledger.open_promises = ledger.open_promises.slice(0, 6);
+
+  tryClosePromises(ledger, { recentActuals, chapterText, chapter });
+
+  return ledger;
+}
+
+/**
+ * open_promises 关闭规则（保守，宁可不关）：
+ * 正文/actuals 明确出现闭环语言（查清/确认是/原来是/有记录…）
+ * 且与 claim 有实词交集 → status: paid。
+ */
+function tryClosePromises(ledger, { recentActuals, chapterText, chapter }) {
+  const actualsBlob = (recentActuals || []).map((a) => a?.text || '').join('\n');
+  const corpus = `${actualsBlob}\n${String(chapterText || '').slice(0, 2000)}`;
+  if (!corpus.trim()) return;
+
+  const CLOSED_RE = /(查清|查实|确认是|原来是|有记录|记录在|真相是)/;
+  if (!CLOSED_RE.test(corpus)) return;
+
+  for (const p of ledger.open_promises || []) {
+    if (!p || p.status !== 'open') continue;
+    if (claimOverlap(p.claim, corpus)) {
+      p.status = 'paid';
+      p.paid_chapter = chapter;
+    }
+  }
+}
+
+/**
+ * claim 与语料的实词交集（4→2 字片段，跳过虚词开头；只服务关闭判定）。
+ */
+function claimOverlap(claim, corpus) {
+  const c = String(claim || '').replace(/\s/g, '');
+  if (c.length < 4) return false;
+  const flat = String(corpus || '').replace(/\s/g, '');
+  for (let n = 4; n >= 2; n -= 1) {
+    for (let i = 0; i <= c.length - n; i += 1) {
+      const sub = c.slice(i, i + n);
+      if (/^[的了在是有和与]/.test(sub)) continue;
+      if (flat.includes(sub)) return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * 极窄钥匙归属规则：语料含钥匙 + 交割动词（交给/交还/递给/递出/换给）
+ * → holder 落交割对象（代词/空则 other）。禁止用泛化词（门/箱/冷）触发。
+ */
+function applyKeyHandoff(ledger, intent, chapter) {
+  const corpus = [
+    intent?.turningPoint, intent?.bargain, intent?.mainGoal, ...(intent?.obstacles || []),
+  ].map((s) => String(s || '')).join('\n');
+  if (!/钥匙/.test(corpus) || !/(交给|交还|递给|递出|换给)/.test(corpus)) return;
+
+  const m = corpus.match(/(?:交给|交还|递给|递出|换给)([^\s，。、""''：:]{2,6})/);
+  const holder = (m && m[1] && !/^(他|她|它|对方|别人)$/.test(m[1])) ? m[1] : 'other';
+  const name = /配电间/.test(corpus) ? '配电间钥匙' : '钥匙';
+  const id = name === '配电间钥匙' ? 'key_distribution_room' : 'key_general';
+  const evidence = String(intent?.mustLose || '').slice(0, 40);
+
+  const existing = ledger.items.find((i) => i && i.id === id);
+  if (existing) {
+    existing.holder = holder;
+    existing.status = 'held';
+    existing.since_chapter = chapter;
+    existing.evidence = evidence;
+  } else {
+    ledger.items.push({ id, name, holder, status: 'held', since_chapter: chapter, evidence });
+  }
+}
+
+function pushUnique(list, entry, key) {
+  if (list.some((e) => e && e[key] === entry[key])) return;
+  list.push(entry);
 }
 
 /**
