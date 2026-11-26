@@ -94,12 +94,13 @@
           "evidenceOccurrenceIds": []
         },
         "access": {
-          "passCount": 3,
+          "passCount": 7,
           "rejectedEvidenceCount": 0,
           "passRefs": [
             "evt_ch2_s2_e2ab90cfc",
             "evt_ch2_s3_e44ae632d",
-            "evt_ch2_s4_ec938e864"
+            "evt_ch2_s4_ec938e864",
+            "evt_ch6_s1_e8fd2f1ad+evt_ch6_s1_e113621e6"
           ],
           "rejectedRefs": []
         }
@@ -357,6 +358,33 @@
         ]
       }
     },
+    "到七——数到三就": {
+      "characterId": "到七——数到三就",
+      "status": "UNKNOWN",
+      "reason": "eligibility_unknown",
+      "inputs": {
+        "eligibility": {
+          "state": "UNKNOWN",
+          "evidenceOccurrenceIds": []
+        },
+        "access": {
+          "passCount": 1,
+          "rejectedEvidenceCount": 0,
+          "passRefs": [
+            "evt_ch6_s1_ef94a2e8d"
+          ],
+          "rejectedRefs": []
+        }
+      },
+      "provenance": {
+        "evaluator": "l1-production-evaluation-1",
+        "rule": "P1_short_circuit",
+        "sources": [
+          "l1_access_truth_sidecar",
+          "l1_eligibility_sidecar"
+        ]
+      }
+    },
     "主角": {
       "characterId": "主角",
       "status": "UNKNOWN",
@@ -397,5 +425,5 @@
     "uniqueConsumer": "future_l2_gate_authorized_only",
     "note": "L1=VALID 不自动产生 Choice/Option/Selection"
   },
-  "updatedAt": "2026-11-26T09:36:06.836Z"
+  "updatedAt": "2026-11-26T09:57:06.395Z"
 }
