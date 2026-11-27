@@ -67,17 +67,27 @@ export function classifySentences(text) {
 
 /**
  * dragSpan——连续无新信息句子的最大段落长度（句数）。
- * 「无新信息」= neither 句（非事件非描写）或 singlePurpose 描写句；
- * 事件句/功能描写句重置计数。补 neither 只测句级的不足（段落级拖拽）。
+ * 注意：EVENT_RE 词汇级（走/掉/露出/来/去）会把「挂钟走得很慢」这类环境动态
+ * 句误判为事件——拖拽检测不能靠它重置计数。此处用更严格的「新信息」信号：
+ * - 认知/决策/获知（主动心智行为，区别于悬浮回忆）；
+ * - 人物主语 + 动作动词（排除「挂钟走」「漆磨掉」这类物品主语环境句）；
+ * - 对白（引号块）；
+ * - 功能信号（FUNCTIONAL_RE：转折/因果/信息指代）。
+ * 消费者：metrics.dragSpan → 3b feedback（拖拽 hint）。
  */
 export function computeDragSpan(text) {
   const ss = splitSentences(text);
+  const COGNITIVE_RE = /(发现|知道了|得知|明白|意识到|决定|选择|认出|识破|断定|证实|答应|拒绝|放弃|杀|死|伤|晕|倒下|断|碎)/;
+  const ACTOR_RE = /(他|她|我|你)[^。！？]{0,10}(说|问|答|冲|抓|推|拉|拿|放|扔|接|递|拔|按|敲|砸|踢|拨|转身|抬头|低头|站起来|坐下|蹲|掏|塞|签|挂|写|翻|查|追|逃|挡|拦|掀|撕|合上|关上|打开|离开|走进|走到|拿起|放下|停|跑|走)/;
+  const DIALOGUE_RE = /[「“][^」”]{4,}[」”]/;
+
   let max = 0, cur = 0, start = -1;
   let worstStart = -1;
   ss.forEach((s, i) => {
-    const e = EVENT_RE.test(s);
-    const d = DESC_RE.test(s);
-    const hasInfo = e || (d && FUNCTIONAL_RE.test(s));
+    const hasInfo = COGNITIVE_RE.test(s)
+      || ACTOR_RE.test(s)
+      || DIALOGUE_RE.test(s)
+      || FUNCTIONAL_RE.test(s);
     if (hasInfo) {
       cur = 0;
       start = -1;

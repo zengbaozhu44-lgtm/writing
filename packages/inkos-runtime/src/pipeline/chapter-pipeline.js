@@ -287,6 +287,17 @@ export async function runChapterPipeline(bookDir, payload, bus) {
     console.log('[anchor] written to', memoryCommit.anchorFile);
   }
 
+  // 3b-3: upstreamDefects 消费者——读本章 scenes 的上游缺陷标记（2b 写入），
+  // 转成下一章 plan 的修复提示。goal_slot_too_weak → 要求 plan 给具体 goalVerb；
+  // state_input_missing → 要求 anchor 落结构化章末局面字段。
+  // 不只打日志：写入 plan 对象（upstreamRepairHints），下一章 scene goal 组装读取。
+  const upstreamDefects = [...new Set(
+    (scenes || []).flatMap((s) => s?.causalGate?.upstreamDefects || []),
+  )];
+  if (upstreamDefects.length) {
+    console.warn('[chapter-pipeline] 上游缺陷已消费: [' + upstreamDefects.join(',') + '] → 下一章 plan.upstreamRepairHints');
+  }
+
   const nextChapterPlan = planNextChapter(bookDir, chapter, ctx, adaptive.weights);
   // 09 任务卡回填：commit 时 nextChapterPlan 尚为 null → MemoryUnit 写卡分支永不触发，
   // 必须在此（planNext 之后）立即写卡，否则 09_current_chapter.md 永远空白模板。
@@ -295,6 +306,27 @@ export async function runChapterPipeline(bookDir, payload, bus) {
   const derivedNextIntent = nextChapterPlan?.intent
     ? deriveNextChapterIntent(nextChapterPlan.intent, memoryCommit.anchor, { nextChapter: chapter + 1 })
     : null;
+
+  // 3b-3: 修复提示写入派生 intent（goalVerb 槽）——goal_slot_too_weak 时
+  // 从本章 mainGoal/章末局面派生具体动词，避免下一章 goal 再落兜底
+  if (upstreamDefects.length && derivedNextIntent) {
+    derivedNextIntent.upstreamRepairHints = upstreamDefects.map((d) => ({
+      defect: d,
+      instruction: d === 'goal_slot_too_weak'
+        ? '下一章 plan 必须提供具体 goalVerb（追查/谈判/反击/逃脱…），禁止兜底动词'
+        : d === 'state_input_missing'
+          ? '下一章 anchor 必须落结构化章末局面字段（mood/situation），禁止只存 tailExcerpt 原文'
+          : `修复上游缺陷: ${d}`,
+    }));
+    // goal_slot_too_weak：立即尝试给 intent 挂 goalVerb（scene.js resolveGoalVerb 优先读）
+    if (upstreamDefects.includes('goal_slot_too_weak')) {
+      const fallbackVerb = deriveGoalVerbFromIntent(derivedNextIntent, scenes);
+      if (fallbackVerb) {
+        derivedNextIntent.goalVerb = fallbackVerb;
+        console.warn(`[chapter-pipeline] upstreamRepair: goalVerb=${fallbackVerb}（派生自章末局面）`);
+      }
+    }
+  }
   if (derivedNextIntent) {
     try {
       writeNextChapterTask(bookDir, chapter + 1, derivedNextIntent);
@@ -373,5 +405,30 @@ function loadCriticHistory(bookDir) {
   const file = path.join(brainSystemDir(bookDir), 'critic_history.json');
   if (!exists(file)) return [];
   return readJson(file).entries || [];
+}
+
+/**
+ * 3b-3: goal_slot_too_weak 修复——从本章 mainGoal / 章末实际事件派生具体 goalVerb
+ * （追查/逃脱/谈成/反击/隐瞒），写入 derivedNextIntent.goalVerb。
+ * scene.js resolveGoalVerb 优先读 intent.goalVerb → 下一章 goal 槽不再落兜底。
+ */
+const REPAIR_VERB_MAP = [
+  [/追查|调查|线索|真相|下落/, '追查'],
+  [/逃|跑|脱身|追捕|离开/, '逃脱'],
+  [/谈判|交易|交涉|博弈|换/, '谈成'],
+  [/反击|对抗|报复|敌/, '反击'],
+  [/隐瞒|掩饰|秘密|藏/, '隐瞒'],
+  [/找|寻|搜/, '找出'],
+  [/救|护|保/, '保住'],
+];
+function deriveGoalVerbFromIntent(intent = {}, scenes = []) {
+  const corpus = [
+    String(intent?.mainGoal || ''),
+    ...(Array.isArray(scenes) ? scenes.map((s) => String(s?.causalGate?.endState || '')) : []),
+  ].join(' ');
+  for (const [re, verb] of REPAIR_VERB_MAP) {
+    if (re.test(corpus)) return verb;
+  }
+  return null;
 }
 

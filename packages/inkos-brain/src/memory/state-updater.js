@@ -63,6 +63,15 @@ export function clipGoalToSentenceBoundary(goal = '', { maxLen = 40, minSentence
 
   const cleanBody = clipToSentence(body, maxLen, minSentenceLen);
   if (cleanBody === null) {
+    // 3b-3: 短而完整的可执行目标对象（「查老赵下落」，4-5 字无标点）不是
+    // 对话残句——直接保留。只有对话/氛围残片（含标点碎片、纯氛围词）才丢弃。
+    const raw = String(body || '').replace(/\s+/g, '').trim();
+    const looksLikeObject = raw.length >= 3 && raw.length < minSentenceLen
+      && !/[，。！？…「」“”]/.test(raw)
+      && /(查|找|逃|谈|见|回|去|拿|取|送|守|救|问|看|追|查清|找出)/.test(raw);
+    if (looksLikeObject) {
+      return (prefix + raw).trim();
+    }
     // 承接片段以残句开头 → 丢弃，改用概括
     return prefix
       ? `${prefix}上一章结尾局面`

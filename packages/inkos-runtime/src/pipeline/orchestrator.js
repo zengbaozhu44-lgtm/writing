@@ -13,7 +13,9 @@ import { evaluateDecisions } from '../../../inkos-brain/src/decision/decision.js
 import { evaluateConflict } from '../../../inkos-brain/src/conflict/conflict.js';
 import { detectIntraSceneRepetition, formatNoRepeatAddendum } from '../../../inkos-brain/src/quality/repetition-guard.js';
 // 2a/2b: Scene 级语义因果门控（判定 + 按 failureReasons 分流重写；与复读护栏、八项词面校验独立）
-import { evaluateSceneCausality, decideGateAction, formatCausalRewriteAddendum } from '../../../inkos-brain/src/validation/causal-gate.js';
+import { evaluateSceneCausality, decideGateAction, formatCausalRewriteAddendum, formatMetricsHints, detectRewriteStaticRegression } from '../../../inkos-brain/src/validation/causal-gate.js';
+// 3b-1: scene 级效率指标（feedback / rerank 共用，不重算）
+import { computeSceneEfficiencyMetrics } from '../../../inkos-brain/src/metrics/metrics.js';
 import { buildScenePlan, buildSceneWritePrompt, assembleChapter } from '../../../inkos-brain/src/scene/scene.js';
 import { buildDynamicPrompt } from '../../../inkos-brain/src/prompt/dynamic-prompt.js';
 import { ensureChapterCausalChain } from '../../../inkos-brain/src/causal/causal-reasoner.js';
@@ -583,6 +585,11 @@ export class RuntimeOrchestrator {
           gate = await runGate();
           let decision = decideGateAction(gate);
 
+          // 3b-1: 首版 metrics（重写循环前——hints 与反升检测需要首版基线）
+          try {
+            scene.metrics = computeSceneEfficiencyMetrics(scene.text, { causalGate: gate });
+          } catch { /* metrics 可选 */ }
+
           // 2b 分流（写死，不做三档一刀切）：
           // - none → 重写（计失败次数），可重试至预算耗尽
           // - weak → 重写一次（不计失败）；重写后仍 weak 放行
@@ -606,7 +613,22 @@ export class RuntimeOrchestrator {
               (decision.countFailure ? '（计失败）' : '（不计失败，一次）'));
 
             // 重写 addendum：具体缺失项 + evidence 短句（禁止只写「无不可逆变化」）
-            const addendum = formatCausalRewriteAddendum(gate);
+            // + 3b-2 metrics hints（dragSpan/信息密度/静态描写；与 gate 指令同类去重）
+            // + 3b-4 反升检测（重写后 singlePurpose 上升 > 0.03 → 追加描写约束）
+            const preRewriteMetrics = scene.metrics || null;
+            const gateAddendum = formatCausalRewriteAddendum(gate);
+            const metricsHints = formatMetricsHints(preRewriteMetrics);
+            const staticReg = preRewriteMetrics && preRewriteMetrics._preRewriteSinglePurpose != null
+              ? detectRewriteStaticRegression(preRewriteMetrics._preRewriteSinglePurpose, preRewriteMetrics.singlePurposeDescriptionRatio)
+              : null;
+            const hintLines = [...metricsHints];
+            if (staticReg) {
+              hintLines.push(staticReg.instruction);
+              scene.rewriteStaticRegression = staticReg.feedback;
+              console.warn(`[causal-gate] ch${chapter} scene${scene.index}: ${staticReg.feedback} — 追加描写约束`);
+            }
+            const addendum = [gateAddendum, hintLines.length ? hintLines.map((h) => `- ${h}`).join('\n') : '']
+              .filter(Boolean).join('\n');
             const basePrompt = gateRewrites === 1
               ? scene.prompt
               : scene.prompt.split('<!-- causal-gate-rewrite v1 -->')[0].trim();
@@ -620,6 +642,15 @@ export class RuntimeOrchestrator {
               intent,
               trace,
             });
+
+            // 3b-4: 重写后重算 metrics，记录 preRewrite 基准供下一轮反升检测
+            try {
+              const postMetrics = computeSceneEfficiencyMetrics(scene.text, { causalGate: gate });
+              if (preRewriteMetrics && postMetrics) {
+                postMetrics._preRewriteSinglePurpose = preRewriteMetrics.singlePurposeDescriptionRatio;
+              }
+              if (postMetrics) scene.metrics = postMetrics;
+            } catch { /* metrics 可选 */ }
 
             gate = await runGate();
             decision = decideGateAction(gate);
@@ -643,6 +674,10 @@ export class RuntimeOrchestrator {
           }
           scene.causalGate.gateRewrites = gateRewrites;
           scene.causalGate.gateFailures = gateFailures;
+          // 3b-1: 最终 metrics 与最终 gate 对齐（重写过则 gate 透传字段已变）
+          try {
+            scene.metrics = computeSceneEfficiencyMetrics(scene.text, { causalGate: gate });
+          } catch { /* metrics 可选 */ }
           console.log(`[causal-gate] ch${chapter} scene${scene.index}: 最终 strength=${gate.changeStrength}` +
             (gate.failureReasons.length ? ` failures=[${gate.failureReasons.join(',')}]` : '') +
             (gate.degraded ? ` degraded(${gate.degradeReason})` : '') +
@@ -663,6 +698,17 @@ export class RuntimeOrchestrator {
           } catch { /* trace 可选 */ }
         } catch (gateErr) {
           console.warn('[causal-gate] failed (ignored):', gateErr?.message || gateErr);
+        }
+      }
+
+      // 3b-1: scene.metrics 落定——门控开启时已随循环维护（含重写后重算）；
+      // 门控关闭时在此计算（metrics 不依赖 LLM）。feedback 注入与第 5 步 rerank
+      // 读同一份 scene.metrics，不重算。
+      if (scene.text?.trim() && !scene.metrics) {
+        try {
+          scene.metrics = computeSceneEfficiencyMetrics(scene.text, scene);
+        } catch (mErr) {
+          console.warn('[scene-metrics] failed (ignored):', mErr?.message || mErr);
         }
       }
 

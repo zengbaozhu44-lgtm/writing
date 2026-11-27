@@ -289,3 +289,43 @@ export function formatCausalRewriteAddendum(gate) {
   }
   return lines.join('\n');
 }
+
+// ─── 3b-2 / 3b-4: metrics hints 并入重写 addendum（与 gate 指令同类去重） ──
+
+/**
+ * scene.metrics → 具体 hint 指令（节奏拖拽/信息密度/静态描写）。
+ * 消费者：causal-gate 重写 addendum（与 gate 指令合并、同类去重）。
+ * hints 与 gate failureReasons 的重叠语义（描写约束）由调用方去重——
+ * 本函数返回的指令文本与 REASON_INSTRUCTIONS 的静态描写指令同串，天然去重。
+ */
+export function formatMetricsHints(metrics) {
+  if (!metrics) return [];
+  const hints = [];
+  if (metrics.dragSpan != null && metrics.dragSpan >= 4) {
+    hints.push(`本 Scene 连续 ${metrics.dragSpan} 句无新信息，删减或合并为 1 句承担叙事功能的描写。`);
+  }
+  if (metrics.infoDensity != null && metrics.infoDensity < 6) {
+    hints.push(`信息密度 ${metrics.infoDensity} 字/子句偏低；压缩子句，每句至少携带一个新信息或动作结果。`);
+  }
+  if (metrics.singlePurposeDescriptionRatio != null && metrics.singlePurposeDescriptionRatio > 0.1) {
+    hints.push('删除不影响后续逻辑的描写；连续环境/感官描写不超过 3 句。');
+  }
+  return hints;
+}
+
+/**
+ * 3b-4: 重写后 singlePurpose 反升检测——句级精确值（scene.metrics），不用 LLM 大段判定。
+ * 重写后比重写前上升 > 0.03 → 追加「重写引入了新静态段」feedback 与描写约束指令。
+ */
+export function detectRewriteStaticRegression(beforeRatio, afterRatio) {
+  const b = Number(beforeRatio);
+  const a = Number(afterRatio);
+  if (!Number.isFinite(b) || !Number.isFinite(a)) return null;
+  if (a - b > 0.03) {
+    return {
+      feedback: `重写引入了新静态段（singlePurpose ${b}→${a}）`,
+      instruction: '删除不影响后续逻辑的描写；连续环境/感官描写不超过 3 句。',
+    };
+  }
+  return null;
+}

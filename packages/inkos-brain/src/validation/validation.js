@@ -7,13 +7,16 @@
  * @see golden/reality/d1-implementation-contract/INTERPRETATION-BLOCK.md
  */
 import { extractDialogueBlocks } from '../metrics/metrics.js';
+// 3b-5: 降级路径用共享口径做基本检查（不再裸奔回旧词面判定）
+import { classifySentences, computeDragSpan } from '../metrics/sentence-utils.js';
 
 export function validateChapter(chapterText, intent, metrics, readerResult, options = {}) {
   const text = chapterText || '';
   // 3a: 语义化校验——situation_changed / new_goal 优先消费 scenes[].causalGate
   // （Scene 级语义判定），无门控结果时（INKOS_CAUSAL_GATE=0 或门控失败）
-  // 降级到启发式并标 validationSource。
-  const gateScenes = (options.scenes || intent?.scenes || []).filter((s) => s?.causalGate && !s.causalGate.degraded);
+  // 降级到 heuristic_degraded（共享口径基本检查，非旧词面裸奔）。
+  const allScenes = (options.scenes || intent?.scenes || []);
+  const gateScenes = allScenes.filter((s) => s?.causalGate && !s.causalGate.degraded);
   const hasGate = gateScenes.length > 0;
 
   const checks = {
@@ -21,7 +24,7 @@ export function validateChapter(chapterText, intent, metrics, readerResult, opti
     relationship_advanced: checkRelationship(intent, text),
     world_advanced: checkWorld(intent, text, metrics),
     character_advanced: checkCharacter(intent, text, metrics),
-    situation_changed: hasGate ? checkSituationGate(gateScenes) : checkSituation(intent, text),
+    situation_changed: hasGate ? checkSituationGate(gateScenes) : checkSituationDegraded(intent, text),
     new_goal: hasGate ? checkNewGoalGate(gateScenes) : checkNewGoal(intent, text),
     new_problem: checkNewProblem(intent, text),
     dialogue_balance: checkDialogueBalance(metrics, text),
@@ -30,18 +33,30 @@ export function validateChapter(chapterText, intent, metrics, readerResult, opti
   const passed = Object.values(checks).filter(Boolean).length;
   const pass = passed === 8;
 
+  // 3b-0: weak 场景在章级 pass，但打 situationWeak 标记写入 scene.validationFlags，
+  // 供 3b feedback 消费；不得触发章级 replan（2b 分流已放行，章级不得再打死）。
+  for (const s of gateScenes) {
+    if (s.causalGate.changeStrength === 'weak' && s && typeof s === 'object') {
+      s.validationFlags = { ...(s.validationFlags || {}), situationWeak: true };
+    }
+  }
+
   const result = {
     pass,
     passed,
     total: 8,
     checks,
     validationSource: {
-      situation_changed: hasGate ? 'gate' : 'heuristic',
+      situation_changed: hasGate ? 'gate' : 'heuristic_degraded',
       new_goal: hasGate ? 'gate' : 'heuristic',
     },
     failures: Object.entries(checks).filter(([, v]) => !v).map(([k]) => k),
     message: pass ? '推进校验 + 对话成型全部成立' : `未通过（${8 - passed}/8 失败）— 需重新规划`,
   };
+  if (!hasGate && !checks.situation_changed) {
+    console.warn('[validation] 因果门控未运行（INKOS_CAUSAL_GATE=0 或门控失败），situation_changed 经降级启发式判定为 fail —— 降级判定不可靠，建议开启门控');
+    result.degradedWarning = 'situation_changed: heuristic_degraded';
+  }
 
   // 门禁分层（L2 默认 soft）：八项是质量信号，不是硬门。
   // 文学化承接正文常不踩字面词（发现/新/…），硬拦会造成整章空转重跑。
@@ -106,13 +121,15 @@ function checkCharacter(intent, text, metrics) {
 }
 
 /**
- * 3a: 语义化 situation 判定（gate 源）——局面是否真的变了。
+ * 3a/3b-0: 语义化 situation 判定（gate 源）——局面是否真的变了。
  * 依据：任一 Scene 门控 strong（不可逆变化直接改变主角目标/知识/处境）。
- * 多数 weak（有变化但主角全程被动）不通过；none 不通过。
- * 旧词面判定（但是/却/然而即过）废弃为降级路径。
+ * weak 在章级 pass 但打 situationWeak 标记（与 2b 分流一致：weak 触发过
+ * 一次 Scene 级重写，重写后仍 weak 放行——章级不得再打死，只供 feedback 消费）；
+ * 不得触发章级 replan。只有 none 才 fail。
  */
 function checkSituationGate(gateScenes) {
-  return gateScenes.some((s) => s.causalGate.changeStrength === 'strong');
+  return gateScenes.some((s) => s.causalGate.changeStrength === 'strong')
+    || gateScenes.some((s) => s.causalGate.changeStrength === 'weak');
 }
 
 /**
@@ -132,9 +149,31 @@ function checkNewGoalGate(gateScenes) {
   });
 }
 
-function checkSituation(intent, text) {
-  // 降级启发式（无门控结果时）。旧口径保留但不再作为主路径。
-  return intent.ending || intent.turningPoint || /但是|却|然而/.test(text);
+/**
+ * 3b-5: 降级 situation 判定——门控关闭时不裸奔回旧词面（但是/却/然而即过）。
+ * 用共享口径做基本检查。认知状态句（知道/觉得/想起）会被 EVENT_RE 命中，
+ * 但「但是堆砌无变化」的特征是转折词密度高 + 无具体动作结果——
+ * 所以额外查动作动词密度（但堆砌文的动作动词趋零）与转折词密度的比值。
+ * 不要求门控精度，只拦明显静态。结果标 heuristic_degraded + 警告。
+ */
+function checkSituationDegraded(intent, text) {
+  if (intent.ending || intent.turningPoint) return true;
+  const calib = classifySentences(text);
+  const drag = computeDragSpan(text);
+  if (!calib.total) return false;
+
+  // 转折堆砌检测：转折词多而动作动词少 = 转折不承载变化
+  const chars = String(text).replace(/\s/g, '').length || 1;
+  const butCount = (String(text).match(/但是|却|然而/g) || []).length;
+  const actionVerbs = (String(text).match(/(跑|追|撞|躲|出手|打|拨|停|转|冲|拿|逃|抓|砸|踢|推|拔|扑|挡|塞|递|抢|撕|夺|按|敲|划|割|扔|抛|收|藏|挖|埋|烧|拉|拽|拖|提|背|扛|抱|扶|掐|捂|堵|封|拆|装|修|接|伸|缩|摇|画|圈|挑|选)/g) || []).length;
+  const butPerKilo = butCount / chars * 1000;
+  const actionPerKilo = actionVerbs / chars * 1000;
+  const butPadding = butPerKilo > 10 && actionPerKilo < 5;
+
+  return calib.eventSentenceRatio >= 0.3
+    && drag.dragSpan <= 8
+    && calib.singlePurposeDescriptionRatio <= 0.3
+    && !butPadding;
 }
 
 function checkNewGoal(intent, text) {
