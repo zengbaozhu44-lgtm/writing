@@ -201,3 +201,78 @@ function degraded(reason) {
     degradeReason: reason,
   };
 }
+
+// ─── 2b: 分流决策 + 重写 addendum ──────────────────────────────────────
+
+/** 上游输入缺陷（重写解决不了，只标记） */
+const UPSTREAM_DEFECTS = new Set(['goal_slot_too_weak', 'state_input_missing']);
+/** 静态描写缺陷（strong 仍出现也值得重写） */
+const STATIC_DEFECTS = new Set(['single_purpose_description', 'static_environment_loop']);
+
+/**
+ * 2b 分流决策——按 failureReasons 细分，不做 strong/weak/none 三档一刀切：
+ * - none          → rewrite（计失败次数）
+ * - weak          → rewrite（不计失败次数，拉偏弱样本，不判死）
+ * - strong+空     → pass
+ * - strong+仅上游 → pass + upstreamDefects 标记（重写解决不了输入缺失）
+ * - strong+静态   → rewrite（不计失败——正文有推进但夹大段静态描摹）
+ *
+ * @returns {{action:'pass'|'rewrite', countFailure:boolean, upstreamDefects:string[]}}
+ */
+export function decideGateAction(gate) {
+  if (!gate || gate.degraded) return { action: 'pass', countFailure: false, upstreamDefects: [] };
+  const reasons = gate.failureReasons || [];
+  const upstream = reasons.filter((r) => UPSTREAM_DEFECTS.has(r));
+  const statics = reasons.filter((r) => STATIC_DEFECTS.has(r));
+
+  if (gate.changeStrength === 'none') {
+    // none：上游缺陷也一并标记（供 feedback 消费），但主体是重写
+    return { action: 'rewrite', countFailure: true, upstreamDefects: upstream };
+  }
+  if (gate.changeStrength === 'weak') {
+    return { action: 'rewrite', countFailure: false, upstreamDefects: upstream };
+  }
+  // strong
+  if (statics.length) {
+    return { action: 'rewrite', countFailure: false, upstreamDefects: upstream };
+  }
+  // strong + 非静态缺陷 → 通过；上游缺陷标记
+  return { action: 'pass', countFailure: false, upstreamDefects: upstream };
+}
+
+/** failureReasons → 具体指令（禁止只写「无不可逆变化」） */
+const REASON_INSTRUCTIONS = {
+  no_irreversible_change: '上一版没有任何改变主角目标/知识/处境的变化；本 Scene 必须让主角做出一个关闭选项的选择，或主动行动获得关键新信息。',
+  no_choice_made: '上一版主角只是被动获知；本 Scene 主角必须主动做出选择或出手。',
+  goal_slot_too_weak: '上一版目标槽为兜底动词；本 Scene 必须明确主角要追查/谈判/反击的具体对象。',
+  state_input_missing: '上一章结尾状态未结构化；本 Scene 以主角当前目标为准，不要等待环境提示。',
+  single_purpose_description: '删除不影响后续逻辑的描写；连续环境/感官描写不超过 3 句。',
+  static_environment_loop: '删除不影响后续逻辑的描写；连续环境/感官描写不超过 3 句。',
+};
+
+/**
+ * 2b: 重写 addendum——具体缺失项 + evidence 短句。
+ * evidence 比抽象指令有效，必须带上。
+ */
+export function formatCausalRewriteAddendum(gate) {
+  const reasons = (gate?.failureReasons || []).filter(Boolean);
+  if (!reasons.length) return '';
+  const lines = [
+    '<!-- causal-gate-rewrite v1 -->',
+    '## 上一版门控否决（必须针对性修正，禁止原样复写上一版）',
+  ];
+  const seen = new Set();
+  for (const r of reasons) {
+    const instr = REASON_INSTRUCTIONS[r];
+    if (instr && !seen.has(instr)) {
+      seen.add(instr);
+      lines.push(`- ${instr}`);
+    }
+  }
+  const evidence = (gate?.evidence || []).filter(Boolean).slice(0, 3);
+  if (evidence.length) {
+    lines.push('', '以下句子被判定为无功能描写/被动获知，重写时删除或改写为承担叙事功能的句子：');
+    for (const e of evidence) lines.push(`- 「${e}」`);
+  }
+  return lines.join('\n');
+}

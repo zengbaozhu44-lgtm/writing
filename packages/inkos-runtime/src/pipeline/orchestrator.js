@@ -12,8 +12,8 @@ import { applyStoryMapToIntent } from '../../../inkos-brain/src/planner/story-ma
 import { evaluateDecisions } from '../../../inkos-brain/src/decision/decision.js';
 import { evaluateConflict } from '../../../inkos-brain/src/conflict/conflict.js';
 import { detectIntraSceneRepetition, formatNoRepeatAddendum } from '../../../inkos-brain/src/quality/repetition-guard.js';
-// 2a: Scene 级语义因果门控（只判定不重写；与复读护栏、八项词面校验独立）
-import { evaluateSceneCausality } from '../../../inkos-brain/src/validation/causal-gate.js';
+// 2a/2b: Scene 级语义因果门控（判定 + 按 failureReasons 分流重写；与复读护栏、八项词面校验独立）
+import { evaluateSceneCausality, decideGateAction, formatCausalRewriteAddendum } from '../../../inkos-brain/src/validation/causal-gate.js';
 import { buildScenePlan, buildSceneWritePrompt, assembleChapter } from '../../../inkos-brain/src/scene/scene.js';
 import { buildDynamicPrompt } from '../../../inkos-brain/src/prompt/dynamic-prompt.js';
 import { ensureChapterCausalChain } from '../../../inkos-brain/src/causal/causal-reasoner.js';
@@ -553,30 +553,100 @@ export class RuntimeOrchestrator {
         });
       }
 
-      // 2a: 语义因果门控——单次写出后、章级 validate 前判定局面是否真变。
-      // 只记录 scene.causalGate（changeStrength/failureReasons），不重写、不影响 pass。
-      // 2b 接重写。INKOS_CAUSAL_GATE=0 可关。
+      // 2a/2b: 语义因果门控——单次写出后、章级 validate 前判定局面是否真变。
+      // 2a 只记录；2b 按 failureReasons 分流：none→重写（计失败）、weak→重写一次
+      // （不计失败）、strong+空→通过、strong+仅上游缺陷→通过+upstreamDefects 标记
+      // （重写解决不了输入缺失）、strong+静态描摹→重写一次（有推进但夹静态段）。
+      // INKOS_CAUSAL_GATE=0 时门控和重写都关闭。
       if (scene.text?.trim() && process.env.INKOS_CAUSAL_GATE !== '0' && activeWriter) {
+        const maxGateRewrites = Number(process.env.INKOS_CAUSAL_GATE_REWRITES || 2);
+        let gateFailures = 0; // 计失败次数（none 重写消耗；weak/strong+静态 不计）
+        let gateRewrites = 0; // 总重写次数（上限）
+        let gate;
         try {
-          const goalLine = String(scene.prompt || '').split('\n').find((l) => l.startsWith('- 目标:')) || '';
-          const prevLine = String(scene.prompt || '').split('\n').find((l) => l.startsWith('- 上一章结尾状态:')) || '';
-          const gate = await evaluateSceneCausality({
+          const goalLine = () => String(scene.prompt || '').split('\n').find((l) => l.startsWith('- 目标:')) || '';
+          const prevLine = () => String(scene.prompt || '').split('\n').find((l) => l.startsWith('- 上一章结尾状态:')) || '';
+          const runGate = () => evaluateSceneCausality({
             sceneText: scene.text,
             sceneContext: {
-              goal: goalLine.replace('- 目标: ', '').slice(0, 200),
+              goal: goalLine().replace('- 目标: ', '').slice(0, 200),
               conflict: String(scene.conflict || '').slice(0, 100),
               goalSlotFallback: scene.stateSummarySource === 'fallback',
             },
             prevState: {
-              summary: prevLine.replace('- 上一章结尾状态: ', '').slice(0, 100),
+              summary: prevLine().replace('- 上一章结尾状态: ', '').slice(0, 100),
               stateSummarySource: scene.stateSummarySource || '',
             },
             llm: this.options.causalGateLlm || null,
           });
+
+          gate = await runGate();
+          let decision = decideGateAction(gate);
+
+          // 2b 分流（写死，不做三档一刀切）：
+          // - none → 重写（计失败次数），可重试至预算耗尽
+          // - weak → 重写一次（不计失败）；重写后仍 weak 放行
+          // - strong+空 → 通过
+          // - strong+仅上游缺陷 → 通过 + upstreamDefects（重写解决不了输入缺失）
+          // - strong+静态描摹 → 重写一次（不计失败）
+          let weakOrStaticRewritten = false;
+          const isWeakOrStatic = (d) => !d.countFailure; // weak / strong+静态
+          while (decision.action === 'rewrite' && gateRewrites < maxGateRewrites && activeWriter) {
+            // weak / strong+静态 只重写一次：已重写过则放行（记录但不阻塞）
+            if (isWeakOrStatic(decision) && weakOrStaticRewritten) {
+              console.warn(`[causal-gate] ch${chapter} scene${scene.index}: 重写后仍 ${gate.changeStrength} — 放行（不阻塞），已记录`);
+              break;
+            }
+            gateRewrites += 1;
+            if (decision.countFailure) gateFailures += 1;
+            if (isWeakOrStatic(decision)) weakOrStaticRewritten = true;
+            scene.causalGate = gate;
+            console.warn(`[causal-gate] ch${chapter} scene${scene.index}: strength=${gate.changeStrength}` +
+              ` failures=[${gate.failureReasons.join(',')}] → 重写 ${gateRewrites}/${maxGateRewrites}` +
+              (decision.countFailure ? '（计失败）' : '（不计失败，一次）'));
+
+            // 重写 addendum：具体缺失项 + evidence 短句（禁止只写「无不可逆变化」）
+            const addendum = formatCausalRewriteAddendum(gate);
+            const basePrompt = gateRewrites === 1
+              ? scene.prompt
+              : scene.prompt.split('<!-- causal-gate-rewrite v1 -->')[0].trim();
+            scene.prompt = addendum ? [basePrompt, addendum].join('\n\n') : basePrompt;
+            scene.text = await activeWriter({
+              bookDir: this.bookDir,
+              chapter,
+              scene,
+              prompt: scene.prompt,
+              ctx,
+              intent,
+              trace,
+            });
+
+            gate = await runGate();
+            decision = decideGateAction(gate);
+          }
+
+          // 出口：通过 / 超预算
           scene.causalGate = gate;
-          console.log(`[causal-gate] ch${chapter} scene${scene.index}: strength=${gate.changeStrength}` +
+          if (decision.action === 'rewrite') {
+            // 预算耗尽仍需重写：none 记录失败交章级处理；weak 放行不阻塞
+            scene.causalGate.rewriteExhausted = true;
+            scene.causalGate.gateRewrites = gateRewrites;
+            if (gate.changeStrength === 'none') {
+              scene.causalGate.gateFailed = true;
+              console.warn(`[causal-gate] ch${chapter} scene${scene.index}: 重写预算耗尽仍 none — 记录失败，交章级处理`);
+            } else {
+              console.warn(`[causal-gate] ch${chapter} scene${scene.index}: 重写后仍 ${gate.changeStrength} — 放行（不阻塞），已记录`);
+            }
+          } else if (decision.upstreamDefects.length) {
+            scene.causalGate.upstreamDefects = decision.upstreamDefects;
+            console.warn(`[causal-gate] ch${chapter} scene${scene.index}: 正文通过但输入缺失，已标记上游缺陷 [${decision.upstreamDefects.join(',')}]`);
+          }
+          scene.causalGate.gateRewrites = gateRewrites;
+          scene.causalGate.gateFailures = gateFailures;
+          console.log(`[causal-gate] ch${chapter} scene${scene.index}: 最终 strength=${gate.changeStrength}` +
             (gate.failureReasons.length ? ` failures=[${gate.failureReasons.join(',')}]` : '') +
-            (gate.degraded ? ` degraded(${gate.degradeReason})` : ''));
+            (gate.degraded ? ` degraded(${gate.degradeReason})` : '') +
+            ` rewrites=${gateRewrites} failures=${gateFailures}`);
           try {
             trace.recordStage('causal_gate', {
               chapter,
@@ -585,6 +655,10 @@ export class RuntimeOrchestrator {
               failureReasons: gate.failureReasons,
               irreversibleChanges: gate.irreversibleChanges?.length || 0,
               degraded: Boolean(gate.degraded),
+              rewrites: gateRewrites,
+              countedFailures: gateFailures,
+              rewriteExhausted: Boolean(scene.causalGate.rewriteExhausted),
+              upstreamDefects: decision.upstreamDefects,
             });
           } catch { /* trace 可选 */ }
         } catch (gateErr) {
