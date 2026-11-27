@@ -95,7 +95,8 @@ export async function runChapterPipeline(bookDir, payload, bus) {
     return { pass: false, critic: criticResult, metrics, reader: readerResult, log, error: 'Critic 拒绝' };
   }
 
-  const validation = validateChapter(chapterText, intent, metrics, readerResult);
+  // 3a: 传入 scenes（含 causalGate）——situation_changed/new_goal 语义化校验消费门控结果
+  const validation = validateChapter(chapterText, intent, metrics, readerResult, { scenes });
   log.push({
     stage: 'validation',
     pass: validation.pass,

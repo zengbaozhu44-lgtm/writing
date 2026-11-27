@@ -13,6 +13,8 @@
  */
 import { loadInkOsConfig } from '../../../inkos-core/src/lib/config.js';
 import { chatCompletion } from '../writer/llm-writer.js';
+// 3a 口径对齐：句级统计与 eval-narrative 同源（共享工具，禁止两套口径）
+import { classifySentences } from '../metrics/sentence-utils.js';
 
 /**
  * 门控 schema（最终版）：
@@ -133,7 +135,18 @@ export async function evaluateSceneCausality({ sceneText, sceneContext = {}, pre
   if (!parsed) {
     return degraded(`parse_fail: ${String(res.content).slice(0, 120)}`);
   }
-  return normalizeGateResult(parsed);
+  // 3a 口径对齐：附加与 eval-narrative 完全同口径的句级统计
+  // （splitSentences/classifySentences 共享工具，两处 import 同一套）。
+  // LLM 的 failureReasons.single_purpose_description 是大段静态判定，
+  // 这里的 singlePurposeSentenceCount 是句级精确口径——3b feedback 消费。
+  const calib = classifySentences(text);
+  return {
+    ...normalizeGateResult(parsed),
+    singlePurposeSentenceCount: calib.singlePurposeDesc,
+    functionalSentenceCount: calib.functionalDesc,
+    totalSentences: calib.total,
+    singlePurposeDescriptionRatio: calib.singlePurposeDescriptionRatio,
+  };
 }
 
 function parseGateJson(content) {

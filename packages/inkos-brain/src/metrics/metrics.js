@@ -2,6 +2,8 @@
  * Narrative Metrics — 叙事指标 Dashboard
  */
 import { exists, readJson, writeJson } from '../../../inkos-core/src/lib/paths.js';
+// 3a: 句级口径共享工具（与 eval-narrative / causal-gate 同源）
+import { classifySentences, computeDragSpan } from './sentence-utils.js';
 
 export function computeMetrics(chapterText, intent, scenes, conflictResult) {
   const text = chapterText || '';
@@ -75,6 +77,74 @@ function detectRhythmPeaks(text) {
     }))
     .sort((a, b) => b.intensity - a.intensity)
     .slice(0, 5);
+}
+
+/**
+ * 3a: Scene 级叙事效率指标（生成侧）——只补 causalGate 不测的「浓度与节奏」维度。
+ * 消费者清单（四选一，写不出消费者的不加）：
+ *   - infoDensity（chars/子句）                    → 3b feedback 注入 + 第 5 步 rerank
+ *   - dragSpan（连续无新信息句子的最大段长）        → 3b feedback（段落级拖拽，补 neither 句级不足）
+ *   - singlePurposeDescriptionRatio / functionalDescriptionRatio
+ *                                                 → 3b feedback 注入 + 第 5 步 rerank
+ *   - dialogueGameDensity（对白块立场变化密度）     → 第 5 步 rerank
+ *   - hookStrength（Scene 尾句未闭合信息）          → 复用 reader-simulator hookScore（LLM 判定），
+ *                                                     此处只提供词汇级兜底信号；不重造 LLM 评分
+ *   - irreversibleChangeCount / optionsDelta / infoDelta
+ *                                                 → 3b feedback；直接从 scene.causalGate 读，不重算
+ *
+ * @param {string} sceneText Scene 正文
+ * @param {object} scene 带 causalGate 的 scene 对象（可选）
+ */
+export function computeSceneEfficiencyMetrics(sceneText, scene = {}) {
+  const text = String(sceneText || '');
+  const chars = text.replace(/\s/g, '').length;
+  if (!chars) return null;
+
+  const calib = classifySentences(text);
+  const drag = computeDragSpan(text);
+  const clauses = text.split(/[，。；！？]/).filter(Boolean).length;
+
+  // 对白博弈密度：对白块中含立场信号（威胁/拒绝/承诺/条件/让步/反问）的占比
+  const dialogueSpans = [];
+  for (const re of [/「([^」]*)」/g, /“([^”]*)”/g]) {
+    re.lastIndex = 0;
+    let m;
+    while ((m = re.exec(text))) {
+      const s = String(m[1] || '').trim();
+      if (s) dialogueSpans.push(s);
+    }
+  }
+  const GAME_RE = /(不许|不行|别想|休想|除非|否则|就别|那就|我要|你必须|你得|给我|你敢|试问|凭什么|凭什么|你先|可以|不行|成交|拒绝|答应|放过|饶|威胁|警告|给你两条路|二选一|要么)/;
+  const gameCount = dialogueSpans.filter((s) => GAME_RE.test(s)).length;
+
+  // hookStrength 词汇级兜底：尾句（最后 2 句）含未闭合信号（问号/悬念词/新信息指代）
+  const tailSentences = calib.sentences.slice(-2).join('');
+  const HOOK_RE = /[？?]|谁|什么人|下落|去向|在哪|去哪|是谁|是什么|下一?步|接下来|还没|尚未|不见|失踪|消失|开枪|倒计时|还剩/;
+  const hookLexical = HOOK_RE.test(tailSentences) ? 1 : 0;
+
+  const gate = scene?.causalGate || null;
+  return {
+    // ── 浓度与节奏（本函数计算）──
+    infoDensity: clauses ? round2(chars / clauses) : 0, // chars/子句
+    dragSpan: drag.dragSpan, // 连续无新信息句子数
+    dragStartIndex: drag.dragStartIndex,
+    singlePurposeDescriptionRatio: calib.singlePurposeDescriptionRatio,
+    functionalDescriptionRatio: calib.functionalDescriptionRatio,
+    dialogueGameDensity: dialogueSpans.length
+      ? round2(gameCount / dialogueSpans.length)
+      : 0,
+    hookLexical, // 词汇级兜底；LLM 级用 reader-simulator hookScore（优先）
+    sentenceCount: calib.total,
+    // ── 门控字段透传（不重算）──
+    irreversibleChangeCount: gate?.irreversibleChanges?.length ?? null,
+    optionsDelta: gate?.optionsDelta ?? null,
+    infoDelta: gate?.infoDelta ?? null,
+    changeStrength: gate?.changeStrength ?? null,
+  };
+}
+
+function round2(n) {
+  return Math.round(n * 100) / 100;
 }
 
 function round(n) {

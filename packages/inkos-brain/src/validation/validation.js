@@ -10,13 +10,19 @@ import { extractDialogueBlocks } from '../metrics/metrics.js';
 
 export function validateChapter(chapterText, intent, metrics, readerResult, options = {}) {
   const text = chapterText || '';
+  // 3a: 语义化校验——situation_changed / new_goal 优先消费 scenes[].causalGate
+  // （Scene 级语义判定），无门控结果时（INKOS_CAUSAL_GATE=0 或门控失败）
+  // 降级到启发式并标 validationSource。
+  const gateScenes = (options.scenes || intent?.scenes || []).filter((s) => s?.causalGate && !s.causalGate.degraded);
+  const hasGate = gateScenes.length > 0;
+
   const checks = {
     plot_advanced: checkPlot(intent, text),
     relationship_advanced: checkRelationship(intent, text),
     world_advanced: checkWorld(intent, text, metrics),
     character_advanced: checkCharacter(intent, text, metrics),
-    situation_changed: checkSituation(intent, text),
-    new_goal: checkNewGoal(intent, text),
+    situation_changed: hasGate ? checkSituationGate(gateScenes) : checkSituation(intent, text),
+    new_goal: hasGate ? checkNewGoalGate(gateScenes) : checkNewGoal(intent, text),
     new_problem: checkNewProblem(intent, text),
     dialogue_balance: checkDialogueBalance(metrics, text),
   };
@@ -29,6 +35,10 @@ export function validateChapter(chapterText, intent, metrics, readerResult, opti
     passed,
     total: 8,
     checks,
+    validationSource: {
+      situation_changed: hasGate ? 'gate' : 'heuristic',
+      new_goal: hasGate ? 'gate' : 'heuristic',
+    },
     failures: Object.entries(checks).filter(([, v]) => !v).map(([k]) => k),
     message: pass ? '推进校验 + 对话成型全部成立' : `未通过（${8 - passed}/8 失败）— 需重新规划`,
   };
@@ -95,17 +105,43 @@ function checkCharacter(intent, text, metrics) {
     || /代价|失去|选择/.test(text);
 }
 
+/**
+ * 3a: 语义化 situation 判定（gate 源）——局面是否真的变了。
+ * 依据：任一 Scene 门控 strong（不可逆变化直接改变主角目标/知识/处境）。
+ * 多数 weak（有变化但主角全程被动）不通过；none 不通过。
+ * 旧词面判定（但是/却/然而即过）废弃为降级路径。
+ */
+function checkSituationGate(gateScenes) {
+  return gateScenes.some((s) => s.causalGate.changeStrength === 'strong');
+}
+
+/**
+ * 3a: 语义化 new_goal 判定（gate 源）——具体目标变化。
+ * 依据：门控 endState 与 startState 有实质差异（非同文），且终态含变化信号
+ * （主角的目标/知识/处境描述不同）。旧「章末 200 字含动作词即过」废弃为降级路径。
+ */
+function checkNewGoalGate(gateScenes) {
+  return gateScenes.some((s) => {
+    const g = s.causalGate;
+    if (!g?.startState || !g?.endState) return false;
+    const a = String(g.startState).replace(/\s/g, '');
+    const b = String(g.endState).replace(/\s/g, '');
+    if (a === b) return false;
+    // endState 必须含具体变化语义（目标/知道/处境改变的词面），不接受同义复述
+    return /(要|想|得知|发现|明白|知道|失去|获得|拿|逃|去|前往|追|查|谈|决定|不再|必须|换|留|离|处于|陷入)/.test(b);
+  });
+}
+
 function checkSituation(intent, text) {
+  // 降级启发式（无门控结果时）。旧口径保留但不再作为主路径。
   return intent.ending || intent.turningPoint || /但是|却|然而/.test(text);
 }
 
 function checkNewGoal(intent, text) {
-  // 真结尾（非模板占位且长度足够）本身即"新目标成立"；否则查章末动作词，
-  // 兼容本书以动作收尾的钩子风格（冲/追/锁/绑定…），避免误杀真实推进。
+  // 降级启发式（无门控结果时）。
   const ending = String(intent.ending || '');
   const TPL = /发现型钩子|关键抉择导致不可逆变化|待规划|no_causal_basis/;
   if (ending.length >= 10 && !TPL.test(ending)) return true;
-  // 章末动作/张力/对话：真实结尾必有向前的推动感（覆盖动作词、紧迫词、对话引号）
   const tail = String(text).slice(-200) + ending;
   return /下一步|必须|需要|前往|冲|追|锁|握|奔|踏入|逼近|绑定|奔赴|拔|扑|跃|闪|响|炸|轰|警报|警笛|倒计时|还剩|过载|弹出|跳出|转向|亮起|冒出|攥|抵|砸|劈|刺|掀|撞|袭|杀|翻|滚|爬|跪|吼|嘶|爆|震|崩|[「“『]/.test(tail);
 }
